@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="datamaps.usa.min.js"></script>
+</head>
+<body>
+
+<div style="height: 900px; width: 100%;" class="map" id="map_election"></div>
+          
+    <script data-info="Map source for US Election map and labels plugin">
+    var election = new Datamap({
+      scope: 'usa',
+      element: document.getElementById('map_election'),
+      responsive: true,
+      geographyConfig: {
+        highlightBorderColor: '#bada55',
+       popupTemplate: function(geography, data) {
+          return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong> <br />Electoral Votes:' +  data.electoralVotes + ' </div>'
+        },
+        highlightBorderWidth: 3
+      },
+
+      fills: {
+      'Legal': '#CC4731',
+      'Illegal': '#306596',
+      'Illegal-CBD Legal': '#667FAF',
+      'Light Illegal': '#A9C0DE',
+      'Heavy Legal': '#CA5E5B',
+      'Light Legal': '#EAA9A8',
+      defaultFill: '#EDDC4E'
+    },
+    data:{
+      "AZ": {
+          "fillKey": "Legal",
+          "electoralVotes": 5,
+      },
+      "CO": {
+          "fillKey": "Light Illegal",
+          "electoralVotes": 5
+      },
+      "DE": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "FL": {
+          "fillKey": "UNDECIDED",
+          "electoralVotes": 29
+      },
+      "GA": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "HI": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "ID": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "IL": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "IN": {
+          "fillKey": "Legal",
+          "electoralVotes": 11
+      },
+      "IA": {
+          "fillKey": "Light Illegal",
+          "electoralVotes": 11
+      },
+      "KS": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "KY": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "LA": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "MD": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "ME": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "MA": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "MN": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "MI": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "MS": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "MO": {
+          "fillKey": "Legal",
+          "electoralVotes": 13
+      },
+      "MT": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "NC": {
+          "fillKey": "Light Legal",
+          "electoralVotes": 32
+      },
+      "NE": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "NV": {
+          "fillKey": "Illegal-CBD Legal",
+          "electoralVotes": 32
+      },
+      "NH": {
+          "fillKey": "Light Illegal",
+          "electoralVotes": 32
+      },
+      "NJ": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "NY": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "ND": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "NM": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "OH": {
+          "fillKey": "UNDECIDED",
+          "electoralVotes": 32
+      },
+      "OK": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "OR": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "PA": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "RI": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "SC": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "SD": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "TN": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "TX": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "UT": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "WI": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "VA": {
+          "fillKey": "Light Illegal",
+          "electoralVotes": 32
+      },
+      "VT": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "WA": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "WV": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "WY": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "CA": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "CT": {
+          "fillKey": "Illegal",
+          "electoralVotes": 32
+      },
+      "AK": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "AR": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      },
+      "AL": {
+          "fillKey": "Legal",
+          "electoralVotes": 32
+      }
+    }
+    });
+    window.addEventListener('resize', function() {
+            map_election.resize();
+        });
+    election.labels();
+    </script>
+</body>
+</html>
