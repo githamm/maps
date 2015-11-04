@@ -36,7 +36,7 @@
       geographyConfig: {
         highlightBorderColor: '#808080',
        popupTemplate: function(geography, data) {
-          return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong> <br />Policy:' +  data.policy + ' </div>'
+          return '<div class="hoverinfo"><span style="font-weight: bold; color: rgba(0,0,0,0.5); font-size: 18px">' + geography.properties.name + '</span><br />Policy:' +  data.policy + '</div>'
         },
         highlightBorderWidth: 0
       },
