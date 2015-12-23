@@ -2,259 +2,312 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marijuana Laws Across the United States | The Denver Post</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800|Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <title>Marijuana Laws Across the United States | The Denver Post</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800|Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 
 
-    <!-- SCRIPTS -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="datamaps.usa.min.js"></script>
+  <!-- SCRIPTS -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
+  <script src="js/d3.min.js"></script>
+  <script src="js/topojson.min.js"></script>
+  <script src="js/datamaps.usa.min.js"></script>
 
-    <style type="text/css">
-    	h1 {
-    		font-family: "Open Sans", Arial, sans-serif;
-    		font-weight: 800;
-    		color: rgba(0,0,0,0.7);
-    		text-align: center;
-    		margin-bottom: -30px;
-    	}
-    </style>
+  <style type="text/css">
+  	body {
+  	    background-color: rgba(0,0,0,0.2);
+  	}
+
+  	h1 {
+  		font-family: "Open Sans", Arial, sans-serif;
+  		font-weight: 800;
+  		color: rgba(0,0,0,0.7);
+  		text-align: center;
+  		margin-bottom: -30px;
+  	}
+  	.legend {
+  	    list-style: none;
+  	    border: 2px solid #ccc;
+  	    padding: 1em;
+  	}
+    .legend li {
+        float: left;
+        margin-right: 10px;
+    }
+    .legend span {
+        border: 1px solid #ccc;
+        float: left;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-top: .3em;
+        margin-right: .3em;
+    }
+    .legend .superawesome {
+        background-color: #ff00ff;
+    }
+    .legend .awesome {
+        background-color: #00ffff;
+    }
+    .legend .kindaawesome {
+        background-color: #0000ff;
+    }
+    .legend .notawesome {
+        background-color: #000000;
+    }
+    hr {
+        background-color: blue;
+        height: .5em;
+        margin-bottom: -10px;
+    }
+  </style>
 </head>
 <body>
+    <div id="wrapper">
+        <h1>Marijuana Laws Across the United States</h1>
+        <!-- MAP -->
+        <div style="height: auto; width: 100%;" class="map" id="map_marijuana"></div>
+        <!-- LEGEND -->
+        <ul class="legend">
+            <li><span class="superawesome"></span> Super Awesome</li>
+            <li><span class="awesome"></span> Awesome</li>
+            <li><span class="kindaawesome"></span> Kinda Awesome</li>
+            <li><span class="notawesome"></span> Not Awesome</li>
+        </ul>
 
-<div id="wrapper">
-	<h1>Marijuana Laws Across the United States</h1>
-	<div style="height: auto; width: 100%;" class="map" id="map_marijuana"></div>
-</div>
-          
+        <div style="width: 10%;">
+            <hr>
+            <p style="font-size: 10px; font-weight: bold; text-align: right;">Something</p>
+        </div>
+    </div>
+
     <script data-info="Map source for US marijuana map and labels plugin">
     var marijuanaLaws = new Datamap({
-      scope: 'usa',
-      element: document.getElementById('map_marijuana'),
-      responsive: true,
-      geographyConfig: {
-        highlightBorderColor: '#808080',
-       popupTemplate: function(geography, data) {
-          return '<div class="hoverinfo"><span style="font-weight: bold; color: rgba(0,0,0,0.5); font-size: 18px">' + geography.properties.name + '</span><br />Policy:' +  data.policy + '</div>'
-        },
-        highlightBorderWidth: 0
+    scope: 'usa',
+    element: document.getElementById('map_marijuana'),
+    responsive: true,
+    geographyConfig: {
+      highlightBorderColor: '#808080',
+     popupTemplate: function(geography, data) {
+        return '<div class="hoverinfo"><span style="font-weight: bold; color: rgba(0,0,0,0.5); font-size: 18px">' + geography.properties.name + '</span><br />Policy:' +  data.policy + '</div>'
       },
+      highlightBorderWidth: 0
+    },
 
-      fills: {
-      'Heavy Legal': '#762a83',
-      'Light Illegal': '#af8dc3',
-      'Illegal-CBD Legal': '#e7d4e8',
-      'Illegal': '#d9f0d3',
-      'Legal': '#7fbf7b',
-      defaultFill: '#1b7837'
+    fills: {
+    'Heavy Legal': '#762a83',
+    'Light Illegal': '#af8dc3',
+    'Illegal-CBD Legal': '#e7d4e8',
+    'Illegal': '#d9f0d3',
+    'Legal': '#7fbf7b',
+    defaultFill: '#1b7837'
     },
     data:{
-      "AZ": {
-          "fillKey": "Legal",
-          "policy": "In 1973, Arizona decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot"
-      },
-      "CO": {
-          "fillKey": "Light Illegal",
-          "policy": 5
-      },
-      "DE": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "FL": {
-          "fillKey": "UNDECIDED",
-          "policy": 29
-      },
-      "GA": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "HI": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "ID": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "IL": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "IN": {
-          "fillKey": "Legal",
-          "policy": 11
-      },
-      "IA": {
-          "fillKey": "Light Illegal",
-          "policy": 11
-      },
-      "KS": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "KY": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "LA": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "MD": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "ME": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "MA": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "MN": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "MI": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "MS": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "MO": {
-          "fillKey": "Legal",
-          "policy": 13
-      },
-      "MT": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "NC": {
-          "fillKey": "Light Legal",
-          "policy": 32
-      },
-      "NE": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "NV": {
-          "fillKey": "Illegal-CBD Legal",
-          "policy": 32
-      },
-      "NH": {
-          "fillKey": "Light Illegal",
-          "policy": 32
-      },
-      "NJ": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "NY": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "ND": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "NM": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "OH": {
-          "fillKey": "UNDECIDED",
-          "policy": 32
-      },
-      "OK": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "OR": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "PA": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "RI": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "SC": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "SD": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "TN": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "TX": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "UT": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "WI": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "VA": {
-          "fillKey": "Light Illegal",
-          "policy": 32
-      },
-      "VT": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "WA": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "WV": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "WY": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "CA": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "CT": {
-          "fillKey": "Illegal",
-          "policy": 32
-      },
-      "AK": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "AR": {
-          "fillKey": "Legal",
-          "policy": 32
-      },
-      "AL": {
-          "fillKey": "Legal",
-          "policy": 32
-      }
+    "AZ": {
+        "fillKey": "Legal",
+        "policy": "In 1973, Arizona decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot decided so smoke pot"
+    },
+    "CO": {
+        "fillKey": "Light Illegal",
+        "policy": 5
+    },
+    "DE": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "FL": {
+        "fillKey": "UNDECIDED",
+        "policy": 29
+    },
+    "GA": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "HI": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "ID": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "IL": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "IN": {
+        "fillKey": "Legal",
+        "policy": 11
+    },
+    "IA": {
+        "fillKey": "Light Illegal",
+        "policy": 11
+    },
+    "KS": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "KY": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "LA": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "MD": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "ME": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "MA": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "MN": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "MI": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "MS": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "MO": {
+        "fillKey": "Legal",
+        "policy": 13
+    },
+    "MT": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "NC": {
+        "fillKey": "Light Legal",
+        "policy": 32
+    },
+    "NE": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "NV": {
+        "fillKey": "Illegal-CBD Legal",
+        "policy": 32
+    },
+    "NH": {
+        "fillKey": "Light Illegal",
+        "policy": 32
+    },
+    "NJ": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "NY": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "ND": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "NM": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "OH": {
+        "fillKey": "UNDECIDED",
+        "policy": 32
+    },
+    "OK": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "OR": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "PA": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "RI": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "SC": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "SD": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "TN": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "TX": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "UT": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "WI": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "VA": {
+        "fillKey": "Light Illegal",
+        "policy": 32
+    },
+    "VT": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "WA": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "WV": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "WY": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "CA": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "CT": {
+        "fillKey": "Illegal",
+        "policy": 32
+    },
+    "AK": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "AR": {
+        "fillKey": "Legal",
+        "policy": 32
+    },
+    "AL": {
+        "fillKey": "Legal",
+        "policy": 32
+    }
     }
     });
     window.addEventListener('resize', function() {
-            map_marijuana.resize();
-        });
+          map_marijuana.resize();
+      });
     marijuanaLaws.labels();
     </script>
 </body>
