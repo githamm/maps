@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>U.S. Congressional Districts in Colorado</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<link rel="stylesheet" href="leaflet.label.css" />
+	<style>
+		#map {
+			width: 100%;
+			height: 500px;
+		}
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+		.info {
+			color: #777;
+		}
+		img.headshot {
+			width: 65px; 
+			height: 90px; 
+			padding: 5px 5px 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="leaflet.label.js"></script>
+	<script src="us-congressional-districts-colorado-geojson.js"></script>
+	<script>
+		//House map
+		var map = L.map('map').setView([39.0, -105.5], 7);
+
+		L.tileLayer('http://{s}.{base}.maps.cit.api.here.com/maptile/2.1/{type}/{mapID}/reduced.day/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}', {
+            attribution: 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
+            subdomains: '1234',
+            mapID: 'newest',
+            app_id: '2K8wqfYF2CuD5D67HdQx',
+            app_code: '5PforzMWCWQoYPBUP-0p_A',
+            base: 'base',
+            maxZoom: 18,
+            type: 'maptile',
+            language: 'eng',
+            format: 'png8',
+            size: '256'
+        }).addTo(map);
+
+        L.circleMarker([39.647, -104.994], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 1", { direction: 'left' })
+        		.addTo(map)
+				.showLabel();
+		L.circleMarker([40.377, -105.526], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 2", { direction: 'left' })
+        		.addTo(map)
+				.showLabel();
+		L.circleMarker([39.0667, -108.5667], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 3", { direction: 'right' })
+        		.addTo(map)
+				.showLabel();
+		L.circleMarker([40.626, -103.212], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 4", { direction: 'center' })
+        		.addTo(map)
+				.showLabel();
+		L.circleMarker([38.8673, -104.7607], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 5", { direction: 'left' })
+        		.addTo(map)
+				.showLabel();
+		L.circleMarker([39.6880, -104.7897], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 6", { direction: 'right' })
+        		.addTo(map)
+				.showLabel();
+		L.circleMarker([39.896, -104.920], { color: "rgba(0,0,0,0", radius: 12 }).bindLabel( "District 7", { direction: 'left' })
+        		.addTo(map)
+				.showLabel();
+
+		// control that shows district info on hover
+		var infoDistrict = L.control();
+
+		infoDistrict.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info');
+			this.update();
+			return this._div;
+		};
+
+		/* infoDistrict.update = function (props) {
+			this._div.innerHTML = '<div><div style="float: left;"><h4>' + (props ?
+				props.leg_first + '<br>' + props.leg_last + ' (' + props.party + ') <hr><span style="font-size: 12px; font-style: italic;">District ' + props.district + '</span></h4></div>' + '<div style="float: right;"><img style="width: 70px; height: 90px; padding: 5px 5px 0 10px;" src="https://raw.githubusercontent.com/denverpost/bill-tracker/master/application/static/img/l-1-lontine.jpg" /></div>'
+				: 'Hover over a district');
+		}; */
+
+		infoDistrict.update = function (props) {
+			this._div.innerHTML = '<div><div style="float: left;"><h4>' + (props ?
+				props.namelsad
+				: 'Hover over a district');
+		};
+		infoDistrict.addTo(map);
+
+		// get color depending on caucus winner
+		function getColor(d) {
+			return d == '01' ? 'rgba(128,0,128,1.0)' :
+			/* return d == '02' ? 'rgba(128,0,128,0.9)' :
+			return d == '03' ? 'rgba(128,0,128,0.8)' :
+			return d == '04' ? 'rgba(128,0,128,0.7)' :
+			return d == '05' ? 'rgba(128,0,128,0.6)' :
+			return d == '06' ? 'rgba(128,0,128,0.5)' :
+			return d == '07' ? 'rgba(128,0,128,0.4)' : */
+			                  '#ccc';
+		}
+
+		function style(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'gray',
+				dashArray: '',
+				fillOpacity: 0.4,
+				fillColor: getColor(feature.properties.cd114fp)
+			};
+		}
+
+		function highlightFeature(e) {
+			var layer = e.target;
+
+			layer.setStyle({
+				weight: 3,
+				color: 'gray',
+				dashArray: '',
+				fillOpacity: 0.7
+			});
+
+			infoDistrict.update(layer.feature.properties);
+		}
+
+		var geojson;
+
+		function resetHighlight(e) {
+			geojson.resetStyle(e.target);
+			infoDistrict.update();
+		}
+
+		function zoomToFeature(e) {
+			map.fitBounds(e.target.getBounds());
+		}
+
+		/* function openURL(e) {
+			window.open('http://extras.denverpost.com/app/bill-tracker/house/' + (e.target.feature.properties.district) + '/' + (e.target.feature.properties.leg_last), '_self');
+		} */
+
+		function onEachFeature(feature, layer) {
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight,
+				click: zoomToFeature
+			});
+		}
+
+		geojson = L.geoJson(districtData, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map);
+	</script>
+</body>
+</html>
