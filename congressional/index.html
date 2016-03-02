@@ -87,12 +87,6 @@
 			return this._div;
 		};
 
-		/* infoDistrict.update = function (props) {
-			this._div.innerHTML = '<div><div style="float: left;"><h4>' + (props ?
-				props.leg_first + '<br>' + props.leg_last + ' (' + props.party + ') <hr><span style="font-size: 12px; font-style: italic;">District ' + props.district + '</span></h4></div>' + '<div style="float: right;"><img style="width: 70px; height: 90px; padding: 5px 5px 0 10px;" src="https://raw.githubusercontent.com/denverpost/bill-tracker/master/application/static/img/l-1-lontine.jpg" /></div>'
-				: 'Hover over a district');
-		}; */
-
 		infoDistrict.update = function (props) {
 			this._div.innerHTML = '<div><div style="float: left;"><h4>' + (props ?
 				props.namelsad
@@ -102,8 +96,8 @@
 
 		// get color depending on caucus winner
 		function getColor(d) {
-			return d == '01' ? 'rgba(128,0,128,1.0)' :
-			/* return d == '02' ? 'rgba(128,0,128,0.9)' :
+			/* return d == '01' ? 'rgba(128,0,128,1.0)' :
+			return d == '02' ? 'rgba(128,0,128,0.9)' :
 			return d == '03' ? 'rgba(128,0,128,0.8)' :
 			return d == '04' ? 'rgba(128,0,128,0.7)' :
 			return d == '05' ? 'rgba(128,0,128,0.6)' :
@@ -116,9 +110,9 @@
 			return {
 				weight: 1,
 				opacity: 1,
-				color: 'gray',
+				color: 'steelblue',
 				dashArray: '',
-				fillOpacity: 0.4,
+				fillOpacity: 0.3,
 				fillColor: getColor(feature.properties.cd114fp)
 			};
 		}
@@ -128,9 +122,9 @@
 
 			layer.setStyle({
 				weight: 3,
-				color: 'gray',
+				color: 'steelblue',
 				dashArray: '',
-				fillOpacity: 0.7
+				fillOpacity: 0.5
 			});
 
 			infoDistrict.update(layer.feature.properties);
