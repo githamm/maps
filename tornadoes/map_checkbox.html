@@ -26,22 +26,27 @@
                 <div id="legend-container">
                     <div class="legend" id="f-0">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=0 checked> F-0
+                            <input type='checkbox' name='filters' onclick='showTornadoesFScale();' value=0> F-0
                         </label>
                     </div>
                     <div class="legend" id="f-1">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=1 checked> F-1
+                            <input type='checkbox' name='filters' onclick='showTornadoesFScale();' value=1> F-1
                         </label>
                     </div>
                     <div class="legend" id="F-2">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=2 checked> F-2
+                            <input type='checkbox' name='filters' onclick='showTornadoesFScale();' value=2> F-2
                         </label>
                     </div>
                     <div class="legend" id="f-3">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=3 checked> F-3
+                            <input type='checkbox' name='filters' onclick='showTornadoesFScale();' value=3> F-3
+                        </label>
+                    </div>
+                    <div class="legend" id="may">
+                        <label>
+                            <input type='checkbox' name='filters' onclick='showTornadoesMonth();' value=5> May
                         </label>
                     </div>
             </form>
@@ -83,7 +88,8 @@
             .on('ready', function(e) {
                 layers = e.target;
                 console.log(e);
-                showTornadoes();
+                showTornadoesFScale();
+                showTornadoesMonth();
             });
         var filters;
         /* $(document).ready(function () {
@@ -110,12 +116,12 @@
         // we're creating - we're making marker groups in a MarkerClusterGroup layer.
         // Thus we distill filtering down to its essential part: an 'if' statement
         // in a loop.
-        function showTornadoes() {
+        function showTornadoesFScale() {
             // first collect all of the checked boxes and create an array of strings
             // like ['green', 'blue']
-            var list = [];
+            var listFScale = [];
             for (var i = 0; i < filters.length; i++) {
-                if (filters[i].checked) list.push(+filters[i].value);
+                if (filters[i].checked) listFScale.push(+filters[i].value);
                 console.log(i);
             }
             // then remove any previously-displayed marker groups
@@ -124,7 +130,28 @@
             var clusterGroup = new L.MarkerClusterGroup().addTo(overlays);
             // and add any markers that fit the filtered criteria to that group.
             layers.eachLayer(function(layer) {
-                if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
+                if (listFScale.indexOf(+layer.feature.properties.fScale) !== -1) {
+                    layer.bindPopup('<strong>' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.fullDate);
+                    clusterGroup.addLayer(layer);
+                }
+            });
+        };
+
+        function showTornadoesMonth() {
+            // first collect all of the checked boxes and create an array of strings
+            // like ['green', 'blue']
+            var listMonth = [];
+            for (var i = 0; i < filters.length; i++) {
+                if (filters[i].checked) listMonth.push(+filters[i].value);
+                console.log(i);
+            }
+            // then remove any previously-displayed marker groups
+            overlays.clearLayers();
+            // create a new marker group
+            var clusterGroup = new L.MarkerClusterGroup().addTo(overlays);
+            // and add any markers that fit the filtered criteria to that group.
+            layers.eachLayer(function(layer) {
+                if (listMonth.indexOf(+layer.feature.properties.month) !== -1) {
                     layer.bindPopup('<strong>' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.fullDate);
                     clusterGroup.addLayer(layer);
                 }

@@ -5,7 +5,7 @@
     <meta charset=utf-8 />
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <!-- STYLE SHEETS -->
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
     <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/foundation.css" />
@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <!-- SCRIPTS -->
     <script src="http://extras.denverpost.com/foundation/js/vendor/jquery.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
     <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
 </head>
@@ -22,26 +22,31 @@
 <body>
     <div class="row" id="desktop">
         <div class="large-3 medium-3 small-6 columns">
-            <form id='teams-desktop'>
+            <form id='fScaleFilter'>
                 <div id="legend-container">
                     <div class="legend" id="f-0">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=0 checked> F-0
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="0" checked> F-0
                         </label>
                     </div>
                     <div class="legend" id="f-1">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=1 checked> F-1
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked> F-1
                         </label>
                     </div>
                     <div class="legend" id="F-2">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=2 checked> F-2
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="2" checked> F-2
                         </label>
                     </div>
                     <div class="legend" id="f-3">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value=3 checked> F-3
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="3" checked> F-3
+                        </label>
+                    </div>
+                    <div class="legend" id="f-4">
+                        <label>
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="4" checked> F-4
                         </label>
                     </div>
             </form>
@@ -79,31 +84,43 @@
         // Since featureLayer is an asynchronous method, we use the `.on('ready'`
         // call to only use its marker data once we know it is actually loaded.
         L.mapbox.featureLayer()
-            .loadURL('tornadoes_geojson.js')
+            //.loadURL('json_test.js')
+            .loadURL('colorado_tornadoes_no_zero_geojson.js')
             .on('ready', function(e) {
                 layers = e.target;
-                console.log(e);
+                //console.log(e);
                 showTornadoes();
+                this.eachLayer(function(marker) {
+                    if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries == 0) {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#63a148',
+                            'marker-size': 'medium'
+                        }))
+                    } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries == 0) {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#4863a0',
+                            'marker-size': 'medium'
+                        }))
+                    } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries == 0) {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#a14863',
+                            'marker-size': 'medium'
+                        }))
+                    } else if (marker.toGeoJSON().properties.fScale == 4 && marker.toGeoJSON().properties.injuries == 0) {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#cccccc',
+                            'marker-size': 'medium'
+                        }))
+                    } else {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#000000',
+                            'marker-symbol': 'o',
+                            'marker-size': 'medium'
+                        }));
+                    };
+                });
             });
-        var filters;
-        /* $(document).ready(function () {
-            if (is_mobile == 'YES') {
-            $("#desktop").remove();
-                filters = document.getElementById('teams-mobile').filters;
-            } else {
-                filters = document.getElementById('teams-desktop').filters;
-                }
-        }); */
-
-        $(document).ready(function() {
-            var width = $(window).width();
-            if (width < 600) {
-                $("#desktop").remove();
-                filters = document.getElementById('teams-mobile').filters;
-            } else {
-                filters = document.getElementById('teams-desktop').filters;
-            }
-        });
+        var filters = document.getElementById('fScaleFilter').filters;
 
         // There are many ways to filter data. Mapbox.js has the .setFilter method,
         // but it only applies to L.mapbox.featureLayer layers, and that isn't what
@@ -116,8 +133,9 @@
             var list = [];
             for (var i = 0; i < filters.length; i++) {
                 if (filters[i].checked) list.push(+filters[i].value);
-                console.log(i);
+                //console.log(i);
             }
+            //console.log(list);
             // then remove any previously-displayed marker groups
             overlays.clearLayers();
             // create a new marker group
@@ -125,12 +143,14 @@
             // and add any markers that fit the filtered criteria to that group.
             layers.eachLayer(function(layer) {
                 if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
-                    layer.bindPopup('<strong>' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.fullDate);
+                    layer.bindPopup('<strong>F-scale: ' + layer.feature.properties.fScale + '<br>Date: ' + layer.feature.properties.fullDate + '<br>Injuries: ' + layer.feature.properties.injuries);
                     clusterGroup.addLayer(layer);
                 }
+                //console.log(layer);
+                //console.log(layer.feature.properties.fScale);
             });
-        }
+        };
         </script>
-        </body>
+</body>
 
 </html>
