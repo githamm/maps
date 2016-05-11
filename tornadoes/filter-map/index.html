@@ -8,6 +8,7 @@
     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
     <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/foundation.css" />
     <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/normalize.css" />
     <link rel="stylesheet" href="http://extras.denverpost.com/maps/news/college-football/css/styles.css" type="text/css">
@@ -16,6 +17,7 @@
     <script src="http://extras.denverpost.com/foundation/js/vendor/jquery.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
     <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
     <style>
     #map {
@@ -34,11 +36,6 @@
         <div class="large-3 medium-3 small-6 columns">
             <form id='fScaleFilter'>
                 <div id="legend-container">
-                    <div class="legend" id="f-0">
-                        <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="0" checked> F-0
-                        </label>
-                    </div>
                     <div class="legend" id="f-1">
                         <label>
                             <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked> F-1
@@ -74,9 +71,13 @@
         // Here we don't use the second argument to map, since that would automatically
         // load in non-clustered markers from the layer. Instead we add just the
         // backing tileLayer, and then use the featureLayer only for its data.
-        var map = L.mapbox.map('map')
-            .setView([39.7392, -104.9903], 10)
-            .addLayer(L.mapbox.tileLayer('mapbox.streets'));
+        var map = L.mapbox.map('map', 'mapbox.streets')
+            .setView([39.707083, -104.65684], 9)
+            //.addLayer(L.mapbox.tileLayer('mapbox.streets'))
+            .on('ready', function() {
+                new L.Control.MiniMap(L.mapbox.tileLayer('mapbox.streets'))
+                    .addTo(map);
+            });
 
         // Disable drag and zoom handlers
         //map.dragging.disable();
@@ -95,7 +96,7 @@
         // call to only use its marker data once we know it is actually loaded.
         L.mapbox.featureLayer()
             //.loadURL('json_test.js')
-            .loadURL('colorado_tornadoes_no_zero_geojson.js')
+            .loadURL('colorado_tornadoes_final_geojson.js')
             .on('ready', function(e) {
                 layers = e.target;
                 //console.log(e);
@@ -103,23 +104,23 @@
                 this.eachLayer(function(marker) {
                     if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries == 0) {
                         marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#63a148',
+                            'marker-color': '#4863a1',
                             'marker-size': 'medium'
                         }))
                     } else if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries != 0) {
                         marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#63a148',
+                            'marker-color': '#4863a1',
                             'marker-symbol': 'star',
                             'marker-size': 'medium'
                         }))
                     } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries == 0) {
                         marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#4863a0',
+                            'marker-color': '#8648a1',
                             'marker-size': 'medium'
                         }))
                     } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries != 0) {
                         marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#4863a0',
+                            'marker-color': '#8648a1',
                             'marker-symbol': 'star',
                             'marker-size': 'medium'
                         }))
@@ -165,7 +166,7 @@
             // and add any markers that fit the filtered criteria to that group.
             layers.eachLayer(function(layer) {
                 if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
-                    layer.bindPopup('<strong>' + layer.feature.properties.countyName + ' County<br>' + 'F-' + layer.feature.properties.fScale + ' &bull; ' + layer.feature.properties.fullDate + '</strong><hr class="popup">' + '<br>Injuries: ' + layer.feature.properties.injuries + '<br>Fatalities: ' + layer.feature.properties.fatalities + '<br>Length: ' + layer.feature.properties.lengthMiles + ' miles' + '<br>Width: ' + layer.feature.properties.widthYards + ' yards');
+                    layer.bindPopup('<strong>' + layer.feature.properties.fullDate + ' &bull; ' + 'F-' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.countyName + ' County<br>' + '</strong><hr class="popup">' + '<br>Injuries: ' + layer.feature.properties.injuries + '<br>Fatalities: ' + layer.feature.properties.fatalities + '<br>Length: ' + layer.feature.properties.lengthMiles + ' miles' + '<br>Width: ' + layer.feature.properties.widthYards + ' yards' + '<br>Time: ' + layer.feature.properties.fullTime);
                     clusterGroup.addLayer(layer);
                 }
                 //console.log(layer);
