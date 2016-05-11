@@ -17,6 +17,16 @@
     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
     <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <style>
+    #map {
+        width: 100%;
+        height: 750px;
+    }
+    
+    hr.popup {
+        margin: 5px 0 -10px 0;
+    }
+    </style>
 </head>
 
 <body>
@@ -96,9 +106,21 @@
                             'marker-color': '#63a148',
                             'marker-size': 'medium'
                         }))
+                    } else if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries != 0) {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#63a148',
+                            'marker-symbol': 'star',
+                            'marker-size': 'medium'
+                        }))
                     } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries == 0) {
                         marker.setIcon(L.mapbox.marker.icon({
                             'marker-color': '#4863a0',
+                            'marker-size': 'medium'
+                        }))
+                    } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries != 0) {
+                        marker.setIcon(L.mapbox.marker.icon({
+                            'marker-color': '#4863a0',
+                            'marker-symbol': 'star',
                             'marker-size': 'medium'
                         }))
                     } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries == 0) {
@@ -106,15 +128,15 @@
                             'marker-color': '#a14863',
                             'marker-size': 'medium'
                         }))
-                    } else if (marker.toGeoJSON().properties.fScale == 4 && marker.toGeoJSON().properties.injuries == 0) {
+                    } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries != 0) {
                         marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#cccccc',
+                            'marker-color': '#a14863',
+                            'marker-symbol': 'star',
                             'marker-size': 'medium'
                         }))
                     } else {
                         marker.setIcon(L.mapbox.marker.icon({
                             'marker-color': '#000000',
-                            'marker-symbol': 'o',
                             'marker-size': 'medium'
                         }));
                     };
@@ -143,7 +165,7 @@
             // and add any markers that fit the filtered criteria to that group.
             layers.eachLayer(function(layer) {
                 if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
-                    layer.bindPopup('<strong>F-scale: ' + layer.feature.properties.fScale + '<br>Date: ' + layer.feature.properties.fullDate + '<br>Injuries: ' + layer.feature.properties.injuries);
+                    layer.bindPopup('<strong>' + layer.feature.properties.countyName + ' County<br>' + 'F-' + layer.feature.properties.fScale + ' &bull; ' + layer.feature.properties.fullDate + '</strong><hr class="popup">' + '<br>Injuries: ' + layer.feature.properties.injuries + '<br>Fatalities: ' + layer.feature.properties.fatalities + '<br>Length: ' + layer.feature.properties.lengthMiles + ' miles' + '<br>Width: ' + layer.feature.properties.widthYards + ' yards');
                     clusterGroup.addLayer(layer);
                 }
                 //console.log(layer);
