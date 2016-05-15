@@ -28,20 +28,54 @@
     hr.popup {
         margin: 5px 0 -10px 0;
     }
+    
+    .legend {
+        display: inline-block;
+        margin: 1em;
+    }
+    
+    #f-1 {
+        border-top: 13px solid #4863a1;
+    }
+    
+    #f-2 {
+        border-top: 13px solid #8648a1;
+    }
+    
+    #f-3 {
+        border-top: 13px solid #a14863;
+    }
+    
+    #f-4 {
+        border-top: 13px solid #000000;
+    }
+    
+    .maki-icon {
+        width: 12px;
+        height: 12px;
+    }
     </style>
 </head>
 
 <body>
-    <div class="row" id="desktop">
-        <div class="large-3 medium-3 small-6 columns">
+    <div class="row">
+        <div class="large-10 large-centered columns">
+            <h1>Colorado Tornadoes: By the Numbers</h1>
+            <h2>A breakdown of storms from 1950-2015</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
             <form id='fScaleFilter'>
                 <div id="legend-container">
+                    <p class="legend"><strong>Show only certain categories of storms:</strong>
+                        <br><em>&#9733; indicates injuries/fatalities</em></p>
                     <div class="legend" id="f-1">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked> F-1
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked>F-1
                         </label>
                     </div>
-                    <div class="legend" id="F-2">
+                    <div class="legend" id="f-2">
                         <label>
                             <input type='checkbox' name='filters' onclick='showTornadoes();' value="2" checked> F-2
                         </label>
@@ -56,124 +90,144 @@
                             <input type='checkbox' name='filters' onclick='showTornadoes();' value="4" checked> F-4
                         </label>
                     </div>
+                </div>
             </form>
-            </div>
         </div>
-        <!-- MAP -->
-        <div class="row">
-            <div class="large-12 medium-12 small-12 columns">
-                <div id='map'></div>
-            </div>
+    </div>
+    <!-- MAP -->
+    <div class="row">
+        <div class="large-12 medium-11 medium-centered small-11 small-centered columns">
+            <div id='map'></div>
         </div>
-        <!-- LEAFLET SCRIPT -->
-        <script>
-        L.mapbox.accessToken = 'pk.eyJ1Ijoia2hhbW0tZGVudmVycG9zdCIsImEiOiJjaWZoMThvYWxhcHZtc3htN25sZWhnNGkzIn0.xPsTe8f7I19lj2xCFQ1Ciw';
-        // Here we don't use the second argument to map, since that would automatically
-        // load in non-clustered markers from the layer. Instead we add just the
-        // backing tileLayer, and then use the featureLayer only for its data.
-        var map = L.mapbox.map('map', 'mapbox.streets')
-            .setView([39.707083, -104.65684], 9)
-            //.addLayer(L.mapbox.tileLayer('mapbox.streets'))
-            .on('ready', function() {
-                new L.Control.MiniMap(L.mapbox.tileLayer('mapbox.streets'))
-                    .addTo(map);
+    </div>
+    <div class="row">
+        <div class="large-5 columns">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget dui ipsum. Suspendisse maximus lorem leo, hendrerit feugiat tellus sollicitudin a. Vestibulum dapibus mauris consequat ultrices venenatis. In hac habitasse platea dictumst. Curabitur non tincidunt elit. Donec non fringilla justo. Quisque tincidunt ligula a vulputate hendrerit. Nulla at quam consequat, aliquet elit vitae, pellentesque est. Suspendisse rhoncus felis in sodales porta. Vestibulum posuere luctus pretium. Curabitur fermentum arcu et ipsum ornare vehicula. Sed venenatis orci eget erat blandit, efficitur pharetra elit congue.</p>
+            <p>Donec lectus mauris, posuere non tristique ac, tincidunt ut eros. Cras eu blandit metus, sed consectetur metus. Cras scelerisque tellus non est maximus cursus. Duis et ex nisl. Nam viverra fringilla erat, eget interdum mi tristique eget. Praesent interdum turpis libero, rhoncus gravida lorem aliquam ut. Donec accumsan enim nibh, lobortis porttitor magna dictum sit amet. Donec tincidunt rhoncus nisl ultrices rutrum. Maecenas condimentum ex at nunc viverra, ultrices rutrum nibh tincidunt. Aenean eu arcu lorem. Fusce dictum odio vel tellus posuere, quis venenatis nunc posuere.</p>
+        </div>
+        <div class="large-7 columns">
+            <a href="tornadoes_time.png"><img src="tornadoes_time.png"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <!-- <div class="atlas-chart" data-id="HyzP8Qbf" data-width="640" data-height="449"><img src="https://www.theatlas.com/i/atlas_HyzP8Qbf.png" style="max-width: 100%;"></div>
+                <script src="https://www.theatlas.com/javascripts/atlas.js"></script> -->
+            <a href="tornadoes_month.png"><img src="tornadoes_month.png"></a>
+        </div>
+        <div class="large-6 columns">
+            <a href="tornadoes_year.png"><img src="tornadoes_year.png"></a>
+        </div>
+    </div>
+    <!-- LEAFLET SCRIPT -->
+    <script>
+    L.mapbox.accessToken = 'pk.eyJ1Ijoia2hhbW0tZGVudmVycG9zdCIsImEiOiJjaWZoMThvYWxhcHZtc3htN25sZWhnNGkzIn0.xPsTe8f7I19lj2xCFQ1Ciw';
+    // Here we don't use the second argument to map, since that would automatically
+    // load in non-clustered markers from the layer. Instead we add just the
+    // backing tileLayer, and then use the featureLayer only for its data.
+    var map = L.mapbox.map('map', 'mapbox.streets')
+        .setView([39.707083, -104.65684], 9)
+        //.addLayer(L.mapbox.tileLayer('mapbox.streets'))
+        .on('ready', function() {
+            new L.Control.MiniMap(L.mapbox.tileLayer('mapbox.streets'))
+                .addTo(map);
+        });
+
+    // Disable drag and zoom handlers
+    //map.dragging.disable();
+    //map.touchZoom.disable();
+    //map.doubleClickZoom.disable();
+    //map.scrollWheelZoom.disable();
+
+    var overlays = L.layerGroup().addTo(map);
+
+    // we create the 'layers' variable outside of the on('ready' callback
+    // so that it can be accessible in the showStations function. Otherwise,
+    // JavaScript scope would prevent you from accessing it.
+    var layers;
+
+    // Since featureLayer is an asynchronous method, we use the `.on('ready'`
+    // call to only use its marker data once we know it is actually loaded.
+    L.mapbox.featureLayer()
+        //.loadURL('json_test.js')
+        .loadURL('colorado_tornadoes_final_geojson.js')
+        .on('ready', function(e) {
+            layers = e.target;
+            //console.log(e);
+            showTornadoes();
+            this.eachLayer(function(marker) {
+                if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries == 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#4863a1',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries != 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#4863a1',
+                        'marker-symbol': 'star',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries == 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#8648a1',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries != 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#8648a1',
+                        'marker-symbol': 'star',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries == 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#a14863',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries != 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#a14863',
+                        'marker-symbol': 'star',
+                        'marker-size': 'medium'
+                    }))
+                } else {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#000000',
+                        'marker-size': 'medium'
+                    }));
+                };
             });
+        });
+    var filters = document.getElementById('fScaleFilter').filters;
 
-        // Disable drag and zoom handlers
-        //map.dragging.disable();
-        //map.touchZoom.disable();
-        //map.doubleClickZoom.disable();
-        //map.scrollWheelZoom.disable();
-
-        var overlays = L.layerGroup().addTo(map);
-
-        // we create the 'layers' variable outside of the on('ready' callback
-        // so that it can be accessible in the showStations function. Otherwise,
-        // JavaScript scope would prevent you from accessing it.
-        var layers;
-
-        // Since featureLayer is an asynchronous method, we use the `.on('ready'`
-        // call to only use its marker data once we know it is actually loaded.
-        L.mapbox.featureLayer()
-            //.loadURL('json_test.js')
-            .loadURL('colorado_tornadoes_final_geojson.js')
-            .on('ready', function(e) {
-                layers = e.target;
-                //console.log(e);
-                showTornadoes();
-                this.eachLayer(function(marker) {
-                    if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries == 0) {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#4863a1',
-                            'marker-size': 'medium'
-                        }))
-                    } else if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries != 0) {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#4863a1',
-                            'marker-symbol': 'star',
-                            'marker-size': 'medium'
-                        }))
-                    } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries == 0) {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#8648a1',
-                            'marker-size': 'medium'
-                        }))
-                    } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries != 0) {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#8648a1',
-                            'marker-symbol': 'star',
-                            'marker-size': 'medium'
-                        }))
-                    } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries == 0) {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#a14863',
-                            'marker-size': 'medium'
-                        }))
-                    } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries != 0) {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#a14863',
-                            'marker-symbol': 'star',
-                            'marker-size': 'medium'
-                        }))
-                    } else {
-                        marker.setIcon(L.mapbox.marker.icon({
-                            'marker-color': '#000000',
-                            'marker-size': 'medium'
-                        }));
-                    };
-                });
-            });
-        var filters = document.getElementById('fScaleFilter').filters;
-
-        // There are many ways to filter data. Mapbox.js has the .setFilter method,
-        // but it only applies to L.mapbox.featureLayer layers, and that isn't what
-        // we're creating - we're making marker groups in a MarkerClusterGroup layer.
-        // Thus we distill filtering down to its essential part: an 'if' statement
-        // in a loop.
-        function showTornadoes() {
-            // first collect all of the checked boxes and create an array of strings
-            // like ['green', 'blue']
-            var list = [];
-            for (var i = 0; i < filters.length; i++) {
-                if (filters[i].checked) list.push(+filters[i].value);
-                //console.log(i);
+    // There are many ways to filter data. Mapbox.js has the .setFilter method,
+    // but it only applies to L.mapbox.featureLayer layers, and that isn't what
+    // we're creating - we're making marker groups in a MarkerClusterGroup layer.
+    // Thus we distill filtering down to its essential part: an 'if' statement
+    // in a loop.
+    function showTornadoes() {
+        // first collect all of the checked boxes and create an array of strings
+        // like ['green', 'blue']
+        var list = [];
+        for (var i = 0; i < filters.length; i++) {
+            if (filters[i].checked) list.push(+filters[i].value);
+            //console.log(i);
+        }
+        //console.log(list);
+        // then remove any previously-displayed marker groups
+        overlays.clearLayers();
+        // create a new marker group
+        var clusterGroup = new L.MarkerClusterGroup().addTo(overlays);
+        // and add any markers that fit the filtered criteria to that group.
+        layers.eachLayer(function(layer) {
+            if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
+                layer.bindPopup('<strong>' + layer.feature.properties.fullDate + ' &bull; ' + 'F-' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.countyName + ' County<br>' + '</strong><hr class="popup">' + '<br>Injuries: ' + layer.feature.properties.injuries + '<br>Fatalities: ' + layer.feature.properties.fatalities + '<br>Length: ' + layer.feature.properties.lengthMiles + ' miles' + '<br>Width: ' + layer.feature.properties.widthYards + ' yards' + '<br>Time: ' + layer.feature.properties.fullTime);
+                clusterGroup.addLayer(layer);
             }
-            //console.log(list);
-            // then remove any previously-displayed marker groups
-            overlays.clearLayers();
-            // create a new marker group
-            var clusterGroup = new L.MarkerClusterGroup().addTo(overlays);
-            // and add any markers that fit the filtered criteria to that group.
-            layers.eachLayer(function(layer) {
-                if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
-                    layer.bindPopup('<strong>' + layer.feature.properties.fullDate + ' &bull; ' + 'F-' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.countyName + ' County<br>' + '</strong><hr class="popup">' + '<br>Injuries: ' + layer.feature.properties.injuries + '<br>Fatalities: ' + layer.feature.properties.fatalities + '<br>Length: ' + layer.feature.properties.lengthMiles + ' miles' + '<br>Width: ' + layer.feature.properties.widthYards + ' yards' + '<br>Time: ' + layer.feature.properties.fullTime);
-                    clusterGroup.addLayer(layer);
-                }
-                //console.log(layer);
-                //console.log(layer.feature.properties.fScale);
-            });
-        };
-        </script>
+            //console.log(layer);
+            //console.log(layer.feature.properties.fScale);
+        });
+    };
+    </script>
 </body>
 
 </html>
