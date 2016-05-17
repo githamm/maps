@@ -183,7 +183,6 @@
     <div class="row">
         <div class="large-10 large-centered columns">
             <h1>Colorado Tornadoes: By the Numbers</h1>
-            <h3>A breakdown of storms from 1950-2015</h3>
         </div>
     </div>
     <div class="row">
@@ -191,50 +190,56 @@
             <div class="large-5 medium-5 small-12 columns panel right">
                 <h4 style="font-weight: bold; text-align: center;">Fujita Tornado Damage Scale</h4>
                 <p class="f-scale-underline"><strong>F0</strong> &bull; <em>wind speed < 73 mph</em></p>
-                <p>Light damage. Some damage to chimneys; branches broken off trees; shallow-rooted trees pushed over; sign boards damaged.</p>
+                <p class="f-scale-text">Light damage. Some damage to chimneys; branches broken off trees; shallow-rooted trees pushed over; sign boards damaged.</p>
                 <p class="f-scale-underline"><strong>F1</strong> &bull; <em> wind speed 73-112 mph</em></p>
-                <p>Moderate damage. Peels surface off roofs; mobile homes pushed off foundations or overturned; moving autos blown off roads.</p>
+                <p class="f-scale-text">Moderate damage. Peels surface off roofs; mobile homes pushed off foundations or overturned; moving autos blown off roads.</p>
                 <p class="f-scale-underline"><strong>F2</strong> &bull; <em>wind speed 113-157 mph</em></p>
-                <p>Considerable damage. Roofs torn off frame houses; mobile homes demolished; boxcars overturned; large trees snapped or uprooted; light-object missiles generated; cars lifted off ground.</p>
+                <p class="f-scale-text">Considerable damage. Roofs torn off frame houses; mobile homes demolished; boxcars overturned; large trees snapped or uprooted; light-object missiles generated; cars lifted off ground.</p>
                 <p class="f-scale-underline"><strong>F3</strong> &bull; <em>wind speed 158-206 mph</em></p>
-                <p>Severe damage. Roofs and some walls torn off well-constructed houses; trains overturned; most trees in forest uprooted; heavy cars lifted off the ground and thrown.</p>
+                <p class="f-scale-text">Severe damage. Roofs and some walls torn off well-constructed houses; trains overturned; most trees in forest uprooted; heavy cars lifted off the ground and thrown.</p>
                 <p class="f-scale-underline"><strong>F4</strong> &bull; <em>wind speed 207-260 mph</em></p>
-                <p>Devastating damage. Well-constructed houses leveled; structures with weak foundations blown away some distance; cars thrown and large missiles generated.</p>
+                <p class="f-scale-text">Devastating damage. Well-constructed houses leveled; structures with weak foundations blown away some distance; cars thrown and large missiles generated.</p>
                 <p class="f-scale-underline"><strong>F5</strong> &bull; <em>wind speed 261-318 mph</em></p>
-                <p>Incredible damage. Strong frame houses leveled off foundations and swept away; automobile-sized missiles fly through the air in excess of 100 meters (109 yds); trees debarked; incredible phenomena will occur.</p>
+                <p class="f-scale-text">Incredible damage. Strong frame houses leveled off foundations and swept away; automobile-sized missiles fly through the air in excess of 100 meters (109 yds); trees debarked; incredible phenomena will occur.</p>
+                <!-- <a href="tornadoes_scale.png"><img src="tornadoes_scale.png" style="border: 1px solid rgba(0,0,0,.2);"></a> -->
+                <div class="atlas-chart" data-id="HJKlfQWM" data-width="640" data-height="449"><img src="https://www.theatlas.com/i/atlas_HJKlfQWM.png" style="max-width: 100%;"></div><script src="https://www.theatlas.com/javascripts/atlas.js"></script>
             </div>
             <div class="large-7 medium-7 small-12 columns">
+                <h3 style="text-align: center;">A breakdown of storms from 1950-2015</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget dui ipsum. Suspendisse maximus lorem leo, hendrerit feugiat tellus sollicitudin a. Vestibulum dapibus mauris consequat ultrices venenatis. In hac habitasse platea dictumst. Curabitur non tincidunt elit. Donec non fringilla justo. Quisque tincidunt ligula a vulputate hendrerit. Nulla at quam consequat, aliquet elit vitae, pellentesque est. Suspendisse rhoncus felis in sodales porta. Vestibulum posuere luctus pretium. Curabitur fermentum arcu et ipsum ornare vehicula. Sed venenatis orci eget erat blandit, efficitur pharetra elit congue.</p>
                 <p>Donec lectus mauris, posuere non tristique ac, tincidunt ut eros. Cras eu blandit metus, sed consectetur metus. Cras scelerisque tellus non est maximus cursus. Duis et ex nisl. Nam viverra fringilla erat, eget interdum mi tristique eget. Praesent interdum turpis libero, rhoncus gravida lorem aliquam ut. Donec accumsan enim nibh, lobortis porttitor magna dictum sit amet. Donec tincidunt rhoncus nisl ultrices rutrum. Maecenas condimentum ex at nunc viverra, ultrices rutrum nibh tincidunt. Aenean eu arcu lorem. Fusce dictum odio vel tellus posuere, quis venenatis nunc posuere.</p>
-                <a href="tornadoes_scale.png"><img src="tornadoes_scale.png" style="border: 1px solid rgba(0,0,0,.2);"></a>
+                <div class="atlas-chart" data-id="SJgwxJ_M" data-width="640" data-height="449"><img src="https://www.theatlas.com/i/atlas_SJgwxJ_M.png" style="max-width: 100%;"></div><script src="https://www.theatlas.com/javascripts/atlas.js"></script></script>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-12 medium-11 medium-centered small-11 small-centered columns">
             <hr>
+            <h3>Tornado Locations</h3>
+            <p>The map shows the approximate starting location of all tornadoes rated F1 or higher from 1950-2015.
+                <br><em>Click/unclick checkboxes below to show only certain categories; click map markers for details; markers are grouped depending on map zoom level: hover over group marker for area, click to zoom in.</em></p>
             <form id='fScaleFilter'>
                 <div id="legend-container">
                     <p class="legend"><strong>Show only certain categories of storms:</strong>
                         <br><em>&#9733; indicates injuries/fatalities</em></p>
                     <div class="legend" id="f-1">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked>F-1
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked>F1
                         </label>
                     </div>
                     <div class="legend" id="f-2">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="2" checked> F-2
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="2" checked> F2
                         </label>
                     </div>
                     <div class="legend" id="f-3">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="3" checked> F-3
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="3" checked> F3
                         </label>
                     </div>
                     <div class="legend" id="f-4">
                         <label>
-                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="4" checked> F-4
+                            <input type='checkbox' name='filters' onclick='showTornadoes();' value="4" checked> F4
                         </label>
                     </div>
                 </div>
