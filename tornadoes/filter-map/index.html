@@ -48,10 +48,12 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <!-- SCRIPTS -->
-    <script src="http://extras.denverpost.com/foundation/js/vendor/jquery.js"></script>
+    <!-- <script src="http://extras.denverpost.com/foundation/js/vendor/jquery.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+    <script src="tablesorter.js"></script>
     <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
     <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
     <script>
@@ -151,6 +153,47 @@
     (window, document, 'script', 'dataLayer', 'GTM-TLFP4R');
     </script>
     <!-- End Google Tag Manager -->
+    <script>
+    $(document).ready(function() {
+        $.tablesorter.addParser({
+            id: 'thousands',
+            is: function(s) {
+                return false;
+            },
+            format: function(s) {
+                s = s.replace(/\,/g, "");
+                s = parseFloat(s);
+                return s;
+                return s.replace(/\,/g, '');
+            },
+            type: 'numeric'
+        });
+        $("table#injuries").tablesorter({
+            headers: {
+                2: {
+                    sorter: 'thousands'
+                }
+            }
+        });
+        $("table#f-scale").tablesorter({
+            headers: {
+                1: {
+                    sorter: 'thousands'
+                },
+                2: {
+                    sorter: 'thousands'
+                }
+            }
+        });
+        $("table#square-miles").tablesorter({
+            headers: {
+                5: {
+                    sorter: 'thousands'
+                }
+            }
+        })
+    });
+    </script>
     <!-- NAVIGATION BAR -->
     <div id="hide-iframe">
         <div id="top-bar-margin">
@@ -187,28 +230,347 @@
     </div>
     <div class="row">
         <div class="large-12 columns">
-            <div class="large-5 medium-5 small-12 columns panel right">
-                <h4 style="font-weight: bold; text-align: center;">Fujita Tornado Damage Scale</h4>
-                <p class="f-scale-underline"><strong>F0</strong> &bull; <em>wind speed < 73 mph</em></p>
-                <p class="f-scale-text">Light damage. Some damage to chimneys; branches broken off trees; shallow-rooted trees pushed over; sign boards damaged.</p>
-                <p class="f-scale-underline"><strong>F1</strong> &bull; <em> wind speed 73-112 mph</em></p>
-                <p class="f-scale-text">Moderate damage. Peels surface off roofs; mobile homes pushed off foundations or overturned; moving autos blown off roads.</p>
-                <p class="f-scale-underline"><strong>F2</strong> &bull; <em>wind speed 113-157 mph</em></p>
-                <p class="f-scale-text">Considerable damage. Roofs torn off frame houses; mobile homes demolished; boxcars overturned; large trees snapped or uprooted; light-object missiles generated; cars lifted off ground.</p>
-                <p class="f-scale-underline"><strong>F3</strong> &bull; <em>wind speed 158-206 mph</em></p>
-                <p class="f-scale-text">Severe damage. Roofs and some walls torn off well-constructed houses; trains overturned; most trees in forest uprooted; heavy cars lifted off the ground and thrown.</p>
-                <p class="f-scale-underline"><strong>F4</strong> &bull; <em>wind speed 207-260 mph</em></p>
-                <p class="f-scale-text">Devastating damage. Well-constructed houses leveled; structures with weak foundations blown away some distance; cars thrown and large missiles generated.</p>
-                <p class="f-scale-underline"><strong>F5</strong> &bull; <em>wind speed 261-318 mph</em></p>
-                <p class="f-scale-text">Incredible damage. Strong frame houses leveled off foundations and swept away; automobile-sized missiles fly through the air in excess of 100 meters (109 yds); trees debarked; incredible phenomena will occur.</p>
-                <!-- <a href="tornadoes_scale.png"><img src="tornadoes_scale.png" style="border: 1px solid rgba(0,0,0,.2);"></a> -->
-                <div class="atlas-chart" data-id="HJKlfQWM" data-width="640" data-height="449"><img src="https://www.theatlas.com/i/atlas_HJKlfQWM.png" style="max-width: 100%;"></div><script src="https://www.theatlas.com/javascripts/atlas.js"></script>
-            </div>
             <div class="large-7 medium-7 small-12 columns">
                 <h3 style="text-align: center;">A breakdown of storms from 1950-2015</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget dui ipsum. Suspendisse maximus lorem leo, hendrerit feugiat tellus sollicitudin a. Vestibulum dapibus mauris consequat ultrices venenatis. In hac habitasse platea dictumst. Curabitur non tincidunt elit. Donec non fringilla justo. Quisque tincidunt ligula a vulputate hendrerit. Nulla at quam consequat, aliquet elit vitae, pellentesque est. Suspendisse rhoncus felis in sodales porta. Vestibulum posuere luctus pretium. Curabitur fermentum arcu et ipsum ornare vehicula. Sed venenatis orci eget erat blandit, efficitur pharetra elit congue.</p>
                 <p>Donec lectus mauris, posuere non tristique ac, tincidunt ut eros. Cras eu blandit metus, sed consectetur metus. Cras scelerisque tellus non est maximus cursus. Duis et ex nisl. Nam viverra fringilla erat, eget interdum mi tristique eget. Praesent interdum turpis libero, rhoncus gravida lorem aliquam ut. Donec accumsan enim nibh, lobortis porttitor magna dictum sit amet. Donec tincidunt rhoncus nisl ultrices rutrum. Maecenas condimentum ex at nunc viverra, ultrices rutrum nibh tincidunt. Aenean eu arcu lorem. Fusce dictum odio vel tellus posuere, quis venenatis nunc posuere.</p>
-                <div class="atlas-chart" data-id="SJgwxJ_M" data-width="640" data-height="449"><img src="https://www.theatlas.com/i/atlas_SJgwxJ_M.png" style="max-width: 100%;"></div><script src="https://www.theatlas.com/javascripts/atlas.js"></script></script>
+                <!-- <a href="tornadoes_scale.png"><img src="tornadoes_scale.png" style="border: 1px solid rgba(0,0,0,.2);"></a> -->
+                <div class="atlas-chart" data-id="HJKlfQWM" data-width="640" data-height="449"><img src="https://www.theatlas.com/i/atlas_HJKlfQWM.png" style="max-width: 100%;"></div>
+                
+                <h3>Injuries, Fatalities Since 1950</h3>
+                <table class="simple tablesorter" id="injuries">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>State</th>
+                            <th>Injuries</th>
+                            <th>Fatalities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Texas</td>
+                            <td>11,075</td>
+                            <td>634</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Alabama</td>
+                            <td>9,221</td>
+                            <td>789</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td> Mississippi</td>
+                            <td>8,478</td>
+                            <td>666</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td> Oklahoma</td>
+                            <td>6,414</td>
+                            <td>470</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td> Arkansas</td>
+                            <td>5,713</td>
+                            <td>409</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td> Ohio</td>
+                            <td>5,276</td>
+                            <td>260</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td> Indiana</td>
+                            <td>4,985</td>
+                            <td>309</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td> Missouri</td>
+                            <td>4,937</td>
+                            <td>426</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td> Illinois</td>
+                            <td>4,729</td>
+                            <td>228</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td> Tennessee</td>
+                            <td>4,528</td>
+                            <td>371</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td> Colorado</td>
+                            <td>285</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Ranked by injuries</em></p>
+                <table class="simple tablesorter" id="square-miles">
+                    <thead>
+                        <tr>
+                            <th>County</th>
+                            <th>Count</th>
+                            <th>Count per
+                                <br>100 sq mi</th>
+                            <th>Injuries</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Weld</td>
+                            <td>264</td>
+                            <td>6.6</td>
+                            <td>92</td>
+                        </tr>
+                        <tr>
+                            <td>Adams</td>
+                            <td>170</td>
+                            <td>14.6</td>
+                            <td>43</td>
+                        </tr>
+                        <tr>
+                            <td>Washington</td>
+                            <td>147</td>
+                            <td>5.8</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Elbert</td>
+                            <td>122</td>
+                            <td>6.6</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Lincoln</td>
+                            <td>101</td>
+                            <td>3.9</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Kit Carson</td>
+                            <td>99</td>
+                            <td>4.6</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>Arapahoe</td>
+                            <td>89</td>
+                            <td>11.2</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>El Paso</td>
+                            <td>88</td>
+                            <td>4.1</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>Yuma</td>
+                            <td>83</td>
+                            <td>3.5</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>Prowers</td>
+                            <td>82</td>
+                            <td>5.0</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Baca</td>
+                            <td>80</td>
+                            <td>3.1</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Kiowa</td>
+                            <td>80</td>
+                            <td>4.5</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Logan</td>
+                            <td>79</td>
+                            <td>4.3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Cheyenne</td>
+                            <td>73</td>
+                            <td>4.1</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Morgan</td>
+                            <td>71</td>
+                            <td>5.5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Douglas</td>
+                            <td>61</td>
+                            <td>7.3</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Bent</td>
+                            <td>42</td>
+                            <td>2.8</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Phillips</td>
+                            <td>40</td>
+                            <td>5.8</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Sedgwick</td>
+                            <td>32</td>
+                            <td>5.8</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Larimer</td>
+                            <td>30</td>
+                            <td>1.2</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Las Animas</td>
+                            <td>30</td>
+                            <td>0.6</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Otero</td>
+                            <td>24</td>
+                            <td>1.9</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Pueblo</td>
+                            <td>18</td>
+                            <td>0.8</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Alamosa</td>
+                            <td>16</td>
+                            <td>2.2</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Crowley</td>
+                            <td>16</td>
+                            <td>2.0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Denver</td>
+                            <td>16</td>
+                            <td>10.5</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Jefferson</td>
+                            <td>13</td>
+                            <td>1.7</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Boulder</td>
+                            <td>11</td>
+                            <td>1.5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mesa</td>
+                            <td>10</td>
+                            <td>0.3</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="large-5 medium-5 small-12 columns panel right">
+                <h4 style="font-weight: bold; text-align: center;">Fujita Tornado Damage Scale</h4>
+                <p class="f-scale-underline"><strong>F0</strong> &bull; <em>wind speed < 73 mph (65-85 mph)*</em></p>
+                <p class="f-scale-text">Light damage. Some damage to chimneys; branches broken off trees; shallow-rooted trees pushed over; sign boards damaged.</p>
+                <p class="f-scale-underline"><strong>F1</strong> &bull; <em> wind speed 73-112 mph (86-110 mph)</em></p>
+                <p class="f-scale-text">Moderate damage. Peels surface off roofs; mobile homes pushed off foundations or overturned; moving autos blown off roads.</p>
+                <p class="f-scale-underline"><strong>F2</strong> &bull; <em>wind speed 113-157 mph (111-135 mph)</em></p>
+                <p class="f-scale-text">Considerable damage. Roofs torn off frame houses; mobile homes demolished; boxcars overturned; large trees snapped or uprooted; light-object missiles generated; cars lifted off ground.</p>
+                <p class="f-scale-underline"><strong>F3</strong> &bull; <em>wind speed 158-206 mph (136-165 mph)</em></p>
+                <p class="f-scale-text">Severe damage. Roofs and some walls torn off well-constructed houses; trains overturned; most trees in forest uprooted; heavy cars lifted off the ground and thrown.</p>
+                <p class="f-scale-underline"><strong>F4</strong> &bull; <em>wind speed 207-260 mph 166-200 mph</em></p>
+                <p class="f-scale-text">Devastating damage. Well-constructed houses leveled; structures with weak foundations blown away some distance; cars thrown and large missiles generated.</p>
+                <p class="f-scale-underline"><strong>F5</strong> &bull; <em>wind speed 261-318 mph (> 200 mph)</em></p>
+                <p class="f-scale-text">Incredible damage. Strong frame houses leveled off foundations and swept away; automobile-sized missiles fly through the air in excess of 100 meters (109 yds); trees debarked; incredible phenomena will occur.</p>
+                <em>* <a href="http://www.spc.noaa.gov/faq/tornado/ef-scale.html">Enhanced Fujita scale</a> measurement. The Enhanced Fujita scale replaced the Fujita scale in 2007 to survey tornado damage.</em>
+                <hr>
+                <h3>Injuries, Fatalities by Intensity</h3>
+                <p>F4 and F5 tornadoes made up only 1.3 percent of all tornadoes in the United States since 1950, but they account for more than half (54 percent) of the injuries.</p>
+                <table class="simple tablesorter" id="f-scale">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Injuries</th>
+                            <th>Fatalities</th>
+                            <th>Frequency</th>
+                        </tr>
+                        <thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>F4</strong></td>
+                                    <td>41,039</td>
+                                    <td>2,764</td>
+                                    <td>1.2%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F3</strong></td>
+                                    <td>26,087</td>
+                                    <td>1,440</td>
+                                    <td>4.3%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F2</strong></td>
+                                    <td>16,090</td>
+                                    <td>607</td>
+                                    <td>15.0%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F5</strong></td>
+                                    <td>16,009</td>
+                                    <td>1,787</td>
+                                    <td>0.1%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F1</strong></td>
+                                    <td>7,060</td>
+                                    <td>230</td>
+                                    <td>33.5%</td>
+                                </tr>
+                                <td><strong>F0</strong></td>
+                                <td>814</td>
+                                <td>23</td>
+                                <td>45.9%</td>
+                                </tr>
+                            </tbody>
+                </table>
+                <p><em>Ordered by injuries</em></p>
             </div>
         </div>
     </div>
@@ -457,6 +819,11 @@
     if (iframe === 1) {
         $('#hide-iframe, footer').addClass('hide');
     }
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("#myTable").tablesorter();
+    });
     </script>
 </body>
 

@@ -47,8 +47,40 @@ body {
     margin-top: 0;
     padding: 0;
 }
+
 p.f-scale-text {
     font-size: ;
+}
+
+table.simple {
+    width: 100%;
+}
+
+
+/* TABLES */
+
+table.tablesorter thead tr .header {
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(asc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(desc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown,
+table.tablesorter thead tr .headerSortUp {
+    background-color: #8dbdd8;
+}
+
+.simple tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 h1 {
