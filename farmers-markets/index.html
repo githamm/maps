@@ -5,13 +5,87 @@
     <title>Farmer's Market Map</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="http://extras.denverpost.com/charts/sports/rockies/historical-record/index.html" />
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="index, nofollow" />
+    <meta name="title" content="Since 1993, Rockies have worst record against National League West rivals" />
+    <meta name="language" content="en, sv" />
+    <meta name="Copyright" content="Copyright &copy; The Denver Post." />
+    <link rel="author" href="humans.txt" />
+    <meta name="description" content="The Rockies have a .454 winning percentage against their division rivals since 1993.">
+    <meta name="news_keywords" content="Colorado Rockies, baseball, Major League Baseball, National League West, Los Angeles Dodgers, San Francisco Giants, Arizona Diamondbacks, San Diego Padres">
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:url" value="http://extras.denverpost.com/charts/sports/rockies/historical-record/index.html" />
+    <meta name="twitter:title" value="Since 1993, Rockies have worst record against National League West rivals" />
+    <meta name="twitter:description" value="The Rockies have a .454 winning percentage against their division rivals since 1993." />
+    <meta name="twitter:image" value="http://extras.denverpost.com/charts/sports/rockies/historical-record/rockies_record.jpg" />
+    <meta name="twitter:site" value="@denverpost" />
+    <meta name="twitter:domain" value="denverpost.com" />
+    <meta name="twitter:creator" content="@denverpost">
+    <meta name="twitter:app:name:iphone" value="Denver Post">
+    <meta name="twitter:app:name:ipad" value="Denver Post">
+    <meta name="twitter:app:name:googleplay" value="The Denver Post">
+    <meta name="twitter:app:id:iphone" value="id375264133">
+    <meta name="twitter:app:id:ipad" value="id409389010">
+    <meta name="twitter:app:id:googleplay" value="com.ap.denverpost" />
+    <meta property="fb:app_id" content="105517551922" />
+    <meta property="og:title" content="Since 1993, Rockies have worst record against National League West rivals" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://extras.denverpost.com/charts/sports/rockies/historical-record/index.html" />
+    <meta property="og:image" content="http://extras.denverpost.com/charts/sports/rockies/historical-record/rockies_record.jpg" />
+    <meta property="og:site_name" content="The Denver Post" />
+    <meta property="og:description" content="The Rockies have a .454 winning percentage against their division rivals since 1993." />
+    <meta property="article:publisher" content="https://www.facebook.com/denverpost" />
+    <meta name="google-site-verification" content="2bKNvyyGh6DUlOvH1PYsmKN4KRlb-0ZI7TvFtuKLeAc" />
+    <!-- STYLE SHEETS -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="leaflet_awesome_markers.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/normalize.css" />
+    <!-- SCRIPTS -->
+    <script src="farmers_market_json.js" type="text/javascript"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="leaflet_awesome_markers.js"></script>
+    <script src="https://use.fontawesome.com/db6e0cc3a1.js"></script>
+    <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <style>
+    .leaflet-popup-content {
+        font-size: 15px;
+    }
+    
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+    }
+    
+    span.market-name {
+        font-size: 17px;
+        font-weight: bold;
+        color: #8b0000;
+    }
+    
+    #map {
+        width: 100%;
+        height: 700px;
+    }
+    h2.map-title {
+    	font-weight: bold;
+    }
+    hr.market-name {
+margin-top: 2px;
+margin-bottom: 5px;
+    }
+    </style>
 </head>
 
 <body>
-    <div id="map" style="width: 610px; height: 700px"></div>
-    <script src="farmers_market_json.js" type="text/javascript"></script>
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2 class="map-title">Front Range Farmer's Markets</h2>
+            <div id="map"></div>
+        </div>
+    </div>
     <script>
     var map = L.map('map').setView([39.856385, -105.049041], 10);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2hhbW0tZGVudmVycG9zdCIsImEiOiJjaW9kajZ5ejcwMDh1dHhrbTZqZWMwYno1In0.BSpy0RysARZbAyxhcUKJPg', {
@@ -21,12 +95,25 @@
             'Imagery © <a href="http://mapbox.com">Mapbox</a>',
         id: 'mapbox.streets'
     }).addTo(map);
+    // Use Leaflet.awesome-markers https://github.com/lvoogdt/Leaflet.awesome-markers
+    var marketIcon = L.AwesomeMarkers.icon({
+        icon: 'cutlery',
+        markerColor: 'darkred',
+        prefix: 'fa'
+    });
+
     var marketLayer = L.geoJson(farmersMarkets, {
         style: function(feature) {
             return feature.properties.style;
         },
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {
+                icon: marketIcon
+            });
+        },
+
         onEachFeature: function(feature, layer) {
-            layer.bindPopup('<strong>' + feature.properties.name + '</strong><br>' + feature.properties.address + ' &bull; ' + feature.properties.city + ' ' + feature.properties.zip + '<hr>' + feature.properties.allTime);
+            layer.bindPopup('<span class="market-name">' + feature.properties.name + '</span><hr class="market-name">' + '<strong>' + feature.properties.allTime + '</strong><br>' + feature.properties.address + ' &bull; ' + feature.properties.city + ' ' + feature.properties.zip + '<br><a href="https://www.google.com/maps/dir/\'\'/' + feature.properties.address + ',+' + feature.properties.city + ',+' + feature.properties.zip + '">Get directions via Google</a>');
         }
     })
     marketLayer.addTo(map);
