@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <title>Tornadoes in Colorado, 1950-2015</title>
+    <link rel="canonical" href="http://extras.denverpost.com/maps/news/weather/tornadoes/index.html" />
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <!-- STYLE SHEETS -->
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
+    <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/normalize.css" />
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <!-- SCRIPTS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+    <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+</head>
+
+<body>
+    <h1>Colorado Tornadoes, 1950-2015</h1>
+    <p>The map shows the approximate starting location of all tornadoes rated F1 or higher in Colorado from 1950-2015.
+        <br>
+        <em>Click/unclick checkboxes below to show only certain categories; click map markers for details; markers are grouped depending on map zoom level: hover over group marker for area, click to zoom in.</em></p>
+    <form id='fScaleFilter'>
+        <div id="legend-container">
+            <p id="legend-intro">Show only certain categories of storms:</p>
+            <div class="legend" id="f-1">
+                <label>
+                    <input type='checkbox' name='filters' onclick='showTornadoes();' value="1" checked>F1
+                </label>
+            </div>
+            <div class="legend" id="f-2">
+                <label>
+                    <input type='checkbox' name='filters' onclick='showTornadoes();' value="2" checked> F2
+                </label>
+            </div>
+            <div class="legend" id="f-3">
+                <label>
+                    <input type='checkbox' name='filters' onclick='showTornadoes();' value="3" checked> F3
+                </label>
+            </div>
+            <div class="legend" id="f-4">
+                <label>
+                    <input type='checkbox' name='filters' onclick='showTornadoes();' value="4" checked> F4
+                </label>
+            </div>
+        </div>
+    </form>
+    <p><em>&#9733; indicates injuries/fatalities</em></p>
+    <div id='map'></div>
+        <p class="footer">By <a href="https://twitter.com/kevinmhamm">Kevin Hamm</a>, The Denver Post &copy; 2016 &bull; Source: <a href="http://www.spc.noaa.gov/wcm/#data">National Weather Service</a></p>
+    <!-- LEAFLET SCRIPT -->
+    <script>
+    L.mapbox.accessToken = 'pk.eyJ1Ijoia2hhbW0tZGVudmVycG9zdCIsImEiOiJjaWZoMThvYWxhcHZtc3htN25sZWhnNGkzIn0.xPsTe8f7I19lj2xCFQ1Ciw';
+    var map = L.mapbox.map('map', 'mapbox.streets')
+        .setView([39.707083, -104.65684], 9)
+        .on('ready', function() {
+            new L.Control.MiniMap(L.mapbox.tileLayer('mapbox.streets'))
+                .addTo(map);
+        });
+
+    // Disable drag and zoom handlers
+    //map.dragging.disable();
+    //map.touchZoom.disable();
+    //map.doubleClickZoom.disable();
+    //map.scrollWheelZoom.disable();
+
+    var overlays = L.layerGroup().addTo(map);
+    var layers;
+    L.mapbox.featureLayer()
+        .loadURL('colorado_tornadoes_final_geojson.js')
+        .on('ready', function(e) {
+            layers = e.target;
+            //console.log(e);
+            showTornadoes();
+            this.eachLayer(function(marker) {
+                if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries == 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#4863a1',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 1 && marker.toGeoJSON().properties.injuries != 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#4863a1',
+                        'marker-symbol': 'star',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries == 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#8648a1',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 2 && marker.toGeoJSON().properties.injuries != 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#8648a1',
+                        'marker-symbol': 'star',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries == 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#a14863',
+                        'marker-size': 'medium'
+                    }))
+                } else if (marker.toGeoJSON().properties.fScale == 3 && marker.toGeoJSON().properties.injuries != 0) {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#a14863',
+                        'marker-symbol': 'star',
+                        'marker-size': 'medium'
+                    }))
+                } else {
+                    marker.setIcon(L.mapbox.marker.icon({
+                        'marker-color': '#000000',
+                        'marker-size': 'medium'
+                    }));
+                };
+            });
+        });
+    var filters = document.getElementById('fScaleFilter').filters;
+
+    function showTornadoes() {
+        var list = [];
+        for (var i = 0; i < filters.length; i++) {
+            if (filters[i].checked) list.push(+filters[i].value);
+        }
+        overlays.clearLayers();
+        var clusterGroup = new L.MarkerClusterGroup().addTo(overlays);
+        layers.eachLayer(function(layer) {
+            if (list.indexOf(+layer.feature.properties.fScale) !== -1) {
+                layer.bindPopup('<strong>' + layer.feature.properties.fullDate + ' &bull; ' + 'F-' + layer.feature.properties.fScale + '<br>' + layer.feature.properties.countyName + ' County<br>' + '</strong><hr class="popup">' + '<br>Injuries: ' + layer.feature.properties.injuries + '<br>Fatalities: ' + layer.feature.properties.fatalities + '<br>Length: ' + layer.feature.properties.lengthMiles + ' miles' + '<br>Width: ' + layer.feature.properties.widthYards + ' yards' + '<br>Time: ' + layer.feature.properties.fullTime);
+                clusterGroup.addLayer(layer);
+            }
+        });
+    };
+    </script>
+</body>
+
+</html>
