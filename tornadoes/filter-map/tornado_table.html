@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <title>Tornadoes in Colorado, 1950-2015</title>
+    <link rel="canonical" href="http://extras.denverpost.com/charts/sports/rockies/historical-record/index.html" />
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <!-- STYLE SHEETS -->
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
+    <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="http://extras.denverpost.com/foundation/css/normalize.css" />
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <!-- SCRIPTS -->
+    <!-- <script src="http://extras.denverpost.com/foundation/js/vendor/jquery.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+    <script src="tablesorter.js"></script>
+    <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+</head>
+
+<body>
+    <script>
+    $(document).ready(function() {
+        $.tablesorter.addParser({
+            id: 'thousands',
+            is: function(s) {
+                return false;
+            },
+            format: function(s) {
+                s = s.replace(/\,/g, "");
+                s = parseFloat(s);
+                return s;
+                return s.replace(/\,/g, '');
+            },
+            type: 'numeric'
+        });
+        $("table#injuries").tablesorter({
+            headers: {
+                2: {
+                    sorter: 'thousands'
+                }
+            }
+        });
+        $("table#f-scale").tablesorter({
+            headers: {
+                1: {
+                    sorter: 'thousands'
+                },
+                2: {
+                    sorter: 'thousands'
+                }
+            }
+        });
+        $("table#square-miles").tablesorter({
+            headers: {
+                5: {
+                    sorter: 'thousands'
+                }
+            }
+        })
+    });
+    </script>
+    <h3>Injuries, Fatalities Since 1950</h3>
+    <table class="simple tablesorter" id="injuries">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>State</th>
+                <th>Injuries</th>
+                <th>Fatalities</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Texas</td>
+                <td>11,075</td>
+                <td>634</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Alabama</td>
+                <td>9,221</td>
+                <td>789</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td> Mississippi</td>
+                <td>8,478</td>
+                <td>666</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> Oklahoma</td>
+                <td>6,414</td>
+                <td>470</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td> Arkansas</td>
+                <td>5,713</td>
+                <td>409</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td> Ohio</td>
+                <td>5,276</td>
+                <td>260</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td> Indiana</td>
+                <td>4,985</td>
+                <td>309</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td> Missouri</td>
+                <td>4,937</td>
+                <td>426</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td> Illinois</td>
+                <td>4,729</td>
+                <td>228</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td> Tennessee</td>
+                <td>4,528</td>
+                <td>371</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td> Colorado</td>
+                <td>285</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><em>Ranked by injuries</em></p>
+    <table class="simple tablesorter" id="square-miles">
+        <thead>
+            <tr>
+                <th>County</th>
+                <th>Count</th>
+                <th>Count per
+                    <br>100 sq mi</th>
+                <th>Injuries</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Weld</td>
+                <td>264</td>
+                <td>6.6</td>
+                <td>92</td>
+            </tr>
+            <tr>
+                <td>Adams</td>
+                <td>170</td>
+                <td>14.6</td>
+                <td>43</td>
+            </tr>
+            <tr>
+                <td>Washington</td>
+                <td>147</td>
+                <td>5.8</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Elbert</td>
+                <td>122</td>
+                <td>6.6</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Lincoln</td>
+                <td>101</td>
+                <td>3.9</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Kit Carson</td>
+                <td>99</td>
+                <td>4.6</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>Arapahoe</td>
+                <td>89</td>
+                <td>11.2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>El Paso</td>
+                <td>88</td>
+                <td>4.1</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>Yuma</td>
+                <td>83</td>
+                <td>3.5</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>Prowers</td>
+                <td>82</td>
+                <td>5.0</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>Baca</td>
+                <td>80</td>
+                <td>3.1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Kiowa</td>
+                <td>80</td>
+                <td>4.5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Logan</td>
+                <td>79</td>
+                <td>4.3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Cheyenne</td>
+                <td>73</td>
+                <td>4.1</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Morgan</td>
+                <td>71</td>
+                <td>5.5</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Douglas</td>
+                <td>61</td>
+                <td>7.3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Bent</td>
+                <td>42</td>
+                <td>2.8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Phillips</td>
+                <td>40</td>
+                <td>5.8</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Sedgwick</td>
+                <td>32</td>
+                <td>5.8</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Larimer</td>
+                <td>30</td>
+                <td>1.2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Las Animas</td>
+                <td>30</td>
+                <td>0.6</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Otero</td>
+                <td>24</td>
+                <td>1.9</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Pueblo</td>
+                <td>18</td>
+                <td>0.8</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Alamosa</td>
+                <td>16</td>
+                <td>2.2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Crowley</td>
+                <td>16</td>
+                <td>2.0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Denver</td>
+                <td>16</td>
+                <td>10.5</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>Jefferson</td>
+                <td>13</td>
+                <td>1.7</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Boulder</td>
+                <td>11</td>
+                <td>1.5</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Mesa</td>
+                <td>10</td>
+                <td>0.3</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="simple tablesorter" id="f-scale">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Injuries</th>
+                <th>Fatalities</th>
+                <th>Frequency</th>
+            </tr>
+            <thead>
+                <tbody>
+                    <tr>
+                        <td><strong>F4</strong></td>
+                        <td>41,039</td>
+                        <td>2,764</td>
+                        <td>1.2%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F3</strong></td>
+                        <td>26,087</td>
+                        <td>1,440</td>
+                        <td>4.3%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F2</strong></td>
+                        <td>16,090</td>
+                        <td>607</td>
+                        <td>15.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F5</strong></td>
+                        <td>16,009</td>
+                        <td>1,787</td>
+                        <td>0.1%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F1</strong></td>
+                        <td>7,060</td>
+                        <td>230</td>
+                        <td>33.5%</td>
+                    </tr>
+                    <td><strong>F0</strong></td>
+                    <td>814</td>
+                    <td>23</td>
+                    <td>45.9%</td>
+                    </tr>
+                </tbody>
+    </table>
+    <p><em>Ordered by injuries</em></p>
+    <script>
+    $(document).ready(function() {
+        $("#myTable").tablesorter();
+    });
+    </script>
+</body>
+
+</html>
