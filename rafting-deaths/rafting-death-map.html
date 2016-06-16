@@ -14,7 +14,7 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
     <style>
     #rafting-death-map {
-        height: 500px;
+        height: 600px;
         width: 100%;
     }
     
@@ -22,69 +22,168 @@
         text-decoration: underline;
         color: red;
     }
+    
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+        background: rgba(50, 50, 50, .9);
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+        border-radius: 0;
+        color: white;
+    }
+    
+    hr.popup {
+        margin-top: 4px;
+        margin-bottom: 7px;
+    }
+
+    h3.popup {
+    	margin-bottom: -1px;
+    }
     </style>
 </head>
 
 <body>
     <div id="rafting-death-map"></div>
-    <div id="johnson-profile" style="margin-top: 500px;"><a class="go-to-map" id="johnson">Johnson</a>
-    <div id="barkley-profile" ><a class="go-to-map" id="barkley">Barkley</a></div>
-    <div id="durkee-profile" ><a class="go-to-map" id="durkee">Durkee</a></div>
-    <div id="hernandez-profile" ><a class="go-to-map" id="hernandez">Hernandez</a></div>
-    <div id="hodges-profile" ><a class="go-to-map" id="hodges">Hodges</a></div>
+    <div><a class="go-to-map" id="johnson">Johnson</a></div>
+    <div id="barkley-profile"><a class="go-to-map" id="barkley">Barkley</a></div>
+    <div id="durkee-profile"><a class="go-to-map" id="durkee">Durkee</a></div>
+    <div id="hernandez-profile"><a class="go-to-map" id="hernandez">Hernandez</a></div>
+    <div id="hodges-profile"><a class="go-to-map" id="hodges">Hodges</a></div>
+    <div id="sevilla-profile"><a class="go-to-map" id="sevilla">Sevilla</a></div>
+    <div id="sizemore-profile"><a class="go-to-map" id="sizemore">Sizemore</a></div>
+    <div id="soto-profile"><a class="go-to-map" id="soto">Soto</a></div>
+    <div id="palmer-profile"><a class="go-to-map" id="palmer">Palmer</a></div>
+    <div id="luna-profile"><a class="go-to-map" id="luna">Luna</a></div>
+    <div id="cheong-profile"><a class="go-to-map" id="cheong">Cheong</a></div>
+    <div id="math-profile"><a class="go-to-map" id="math">Math</a></div>
     <script>
-    var map = L.map("rafting-death-map");
-    L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
+    var map = L.map('rafting-death-map');
+    //L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
+    //L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
+    L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    }).addTo(map);
 
-    map.setView([51.5, 0], 10);
+    map.setView([39.6, -105.8], 7);
 
-    var johnsonMarker = L.marker([38.9, -106.2]).addTo(map)
-        .bindPopup('test' + '<br>' + '<a href="#johnson-profile">Read narrative</a>').openPopup();
+    var johnsonMarker = L.marker([38.98329, -106.21427]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#johnson-profile">Read narrative</a>');
 
     document.getElementById("johnson").addEventListener("click", function() {
-        map.flyTo([38.9, -106.2], 10, {
+        map.flyTo([38.98329, -106.21427], 15, {
             animate: true,
-            duration: 1 // in seconds
+            duration: 4 // in seconds
         });
     });
 
-    var barkleyMarker = L.marker([39.7, -105.4]).addTo(map)
-        .bindPopup('test' + '<br>' + '<a href="#barkley-profile">Read narrative</a>').openPopup();
+    var barkleyMarker = L.marker([39.74501, -105.43424]).addTo(map)
+        .bindPopup('<h3 class="popup">' + 'Lower Beaver Falls' + '</h3>' + 'Clear Creek near Idaho Springs' + '<br>' + 'Class III-IV rapids' + '<hr class="popup">' + 'Kenneth Barkley, 43' + '<br>' + 'June 7, 2014' + '<br>' + '<a href="#barkley-profile">Read narrative</a>');
 
     document.getElementById("barkley").addEventListener("click", function() {
-        map.flyTo([39.7, -105.4], 10, {
+        map.flyTo([39.74501, -105.43424], 15, {
             animate: true,
-            duration: 1 // in seconds
+            duration: 4 // in seconds
         });
     });
 
-    var durkeeMarker = L.marker([38.7, -106]).addTo(map)
-        .bindPopup('test' + '<br>' + '<a href="#durkee-profile">Read narrative</a>').openPopup();
+    var durkeeMarker = L.marker([38.6839, -106.04364]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#durkee-profile">Read narrative</a>');
 
     document.getElementById("durkee").addEventListener("click", function() {
-        map.flyTo([38.7, -106], 10, {
+        map.flyTo([38.6839, -106.04364], 15, {
             animate: true,
-            duration: 1 // in seconds
+            duration: 4 // in seconds
         });
     });
 
-    var hernandezMarker = L.marker([38.5, -105.5]).addTo(map)
-        .bindPopup('test' + '<br>' + '<a href="#hernandez-profile">Read narrative</a>').openPopup();
+    var hernandezMarker = L.marker([38.4517, -105.51921]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#hernandez-profile">Read narrative</a>');
 
     document.getElementById("hernandez").addEventListener("click", function() {
-        map.flyTo([38.5, -105.5], 10, {
+        map.flyTo([38.4517, -105.51921], 15, {
             animate: true,
-            duration: 1 // in seconds
+            duration: 4 // in seconds
         });
     });
 
-    var hodgesMarker = L.marker([38.5, -105.5]).addTo(map)
-        .bindPopup('test' + '<br>' + '<a href="#hodges-profile">Read narrative</a>').openPopup();
+    var hodgesMarker = L.marker([38.45654, -105.50857]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#hodges-profile">Read narrative</a>');
 
     document.getElementById("hodges").addEventListener("click", function() {
-        map.flyTo([38.5, -105.5], 10, {
+        map.flyTo([38.45654, -105.50857], 15, {
             animate: true,
-            duration: 1 // in seconds
+            duration: 4 // in seconds
+        });
+    });
+
+    var sevillaMarker = L.marker([38.46716, -105.33245]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#sevilla-profile">Read narrative</a>');
+
+    document.getElementById("sevilla").addEventListener("click", function() {
+        map.flyTo([38.46716, -105.33245], 15, {
+            animate: true,
+            duration: 4 // in seconds
+        });
+    });
+
+    var sizemoreMarker = L.marker([39.22989, -106.86465]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#sizemore-profile">Read narrative</a>');
+
+    document.getElementById("sizemore").addEventListener("click", function() {
+        map.flyTo([39.22989, -106.86465], 15, {
+            animate: true,
+            duration: 4 // in seconds
+        });
+    });
+
+    var sotoMarker = L.marker([37.25898, -107.87744]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#soto-profile">Read narrative</a>');
+
+    document.getElementById("soto").addEventListener("click", function() {
+        map.flyTo([37.25898, -107.87744], 15, {
+            animate: true,
+            duration: 4 // in seconds
+        });
+    });
+
+    var palmerMarker = L.marker([40.68714, -105.30069]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#palmer-profile">Read narrative</a>');
+
+    document.getElementById("palmer").addEventListener("click", function() {
+        map.flyTo([40.68714, -105.30069], 15, {
+            animate: true,
+            duration: 4 // in seconds
+        });
+    });
+
+    var lunaMarker = L.marker([39.74494, -105.48909]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#luna-profile">Read narrative</a>');
+
+    document.getElementById("luna").addEventListener("click", function() {
+        map.flyTo([39.74494, -105.48909], 15, {
+            animate: true,
+            duration: 4 // in seconds
+        });
+    });
+
+    var cheongMarker = L.marker([39.73742, -105.4172]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#cheong-profile">Read narrative</a>');
+
+    document.getElementById("cheong").addEventListener("click", function() {
+        map.flyTo([39.73742, -105.4172], 15, {
+            animate: true,
+            duration: 4 // in seconds
+        });
+    });
+
+    var mathMarker = L.marker([39.73936, -105.4148]).addTo(map)
+        .bindPopup('<a href="#math-profile">Read narrative</a>');
+
+    document.getElementById("math").addEventListener("click", function() {
+        map.flyTo([39.73936, -105.4148], 15, {
+            animate: true,
+            duration: 4 // in seconds
         });
     });
     </script>
