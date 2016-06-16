@@ -7,12 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Stable
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-    <link rel="stylesheet" href="L.Control.Sidebar.css" /> -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
     <!-- Beta -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.js"></script>
-    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
     <style>
     #rafting-death-map {
         height: 600px;
@@ -36,16 +34,22 @@
         margin-top: 4px;
         margin-bottom: 7px;
     }
-
+    
     h3.popup {
-    	margin-bottom: -1px;
+        margin-bottom: -1px;
+    }
+    
+    @media (max-width: 500px) {
+        #rafting-death-map {
+            height: 500px;
+        }
     }
     </style>
 </head>
 
 <body>
     <div id="rafting-death-map"></div>
-    <div><a class="go-to-map" id="johnson">Johnson</a></div>
+    <div id="johnson-profile"><a class="go-to-map" id="johnson">Johnson</a></div>
     <div id="barkley-profile"><a class="go-to-map" id="barkley">Barkley</a></div>
     <div id="durkee-profile"><a class="go-to-map" id="durkee">Durkee</a></div>
     <div id="hernandez-profile"><a class="go-to-map" id="hernandez">Hernandez</a></div>
@@ -66,10 +70,10 @@
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     }).addTo(map);
 
-    map.setView([39.6, -105.8], 7);
+    map.setView([39.1, -105.5], 7);
 
     var johnsonMarker = L.marker([38.98329, -106.21427]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Pine Creek Rapid' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV-V rapids' + '<br>' + 'Timberline Tours, Eagle' + '<hr class="popup">' + '<strong>' + 'Mary Johnson' + '</strong>' + ', 57' + '<br>' + 'July 24, 2014' + '<br>' + '<a href="#johnson-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Pine Creek Rapid' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV-V rapids' + '<br>' + 'Guide: Timberline Tours' + '<hr class="popup">' + '<strong>' + 'Mary Johnson' + '</strong>' + ', 57' + '<br>' + 'July 24, 2014' + '<br>' + '<a href="#johnson-profile">Read narrative</a>');
 
     document.getElementById("johnson").addEventListener("click", function() {
         map.flyTo([38.98329, -106.21427], 15, {
@@ -79,7 +83,7 @@
     });
 
     var barkleyMarker = L.marker([39.74501, -105.43424]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Lower Beaver Falls' + '</h3>' + 'Clear Creek' + '<br>' + 'Class III-IV rapids' + '<br>' + 'Highside Adventures, Idaho Springs' + '<hr class="popup">' + '<strong>' + 'Kenneth Barkley' + '</strong>' + ', 43' + '<br>' + 'June 7, 2014' + '<br>' + '<a href="#barkley-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Lower Beaver Falls' + '</h3>' + 'Clear Creek' + '<br>' + 'Class III-IV rapids' + '<br>' + 'Guide: Highside Adventures' + '<hr class="popup">' + '<strong>' + 'Kenneth Barkley' + '</strong>' + ', 43' + '<br>' + 'June 7, 2014' + '<br>' + '<a href="#barkley-profile">Read narrative</a>');
 
     document.getElementById("barkley").addEventListener("click", function() {
         map.flyTo([39.74501, -105.43424], 15, {
@@ -89,7 +93,7 @@
     });
 
     var durkeeMarker = L.marker([38.6839, -106.04364]).addTo(map)
-        .bindPopup('<strong>' + 'Drake Durkee' + '</strong>' + ' &mdash; See main story');
+        .bindPopup('<h3 class="popup">' + 'Big Drop' + '</h3>' + 'Arkansas River' + '<br>' + 'Class III rapids' + '<br>' + '<hr class="popup">' + '<strong>' + 'Drake Durkee' + '</strong>' + ', 11' + '<br>' + 'June 10, 2015' + '<br>' + 'See main story');
 
     document.getElementById("durkee").addEventListener("click", function() {
         map.flyTo([38.6839, -106.04364], 15, {
@@ -99,7 +103,7 @@
     });
 
     var hernandezMarker = L.marker([38.4517, -105.51921]).addTo(map)
-         .bindPopup('<h3 class="popup">' + 'Three Rocks Rapid' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV-V rapids' + '<br>' + 'Whitewater Adventure Outfitters, Ca&ntilde;on City' + '<hr class="popup">' + '<strong>' + 'Eduardo Hernandez' + '</strong>' + ', 52' + '<br>' + 'June 13, 2015' + '<br>' + '<a href="#hernandez-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Three Rocks Rapid' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV-V rapids' + '<br>' + 'Guide: Whitewater Adventure Outfitters' + '<hr class="popup">' + '<strong>' + 'Eduardo Hernandez' + '</strong>' + ', 52' + '<br>' + 'June 13, 2015' + '<br>' + '<a href="#hernandez-profile">Read narrative</a>');
 
     document.getElementById("hernandez").addEventListener("click", function() {
         map.flyTo([38.4517, -105.51921], 15, {
@@ -109,7 +113,7 @@
     });
 
     var hodgesMarker = L.marker([38.45654, -105.50857]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Three Rocks Rapid' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV rapids' + '<br>' + 'Royal Gorge Rafting, Ca&ntilde;on City' + '<hr class="popup">' + '<strong>' + 'Van Hodges' + '</strong>' + ', 48' + '<br>' + 'June 10, 2014' + '<br>' + '<a href="#hodges-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Three Rocks Rapid' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV rapids' + '<br>' + 'Guide: Royal Gorge Rafting' + '<hr class="popup">' + '<strong>' + 'Van Hodges' + '</strong>' + ', 48' + '<br>' + 'June 10, 2014' + '<br>' + '<a href="#hodges-profile">Read narrative</a>');
 
     document.getElementById("hodges").addEventListener("click", function() {
         map.flyTo([38.45654, -105.50857], 15, {
@@ -119,7 +123,7 @@
     });
 
     var sevillaMarker = L.marker([38.46716, -105.33245]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Squeeze Box in the Royal Gorge' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV-V rapids' + '<br>' + 'Raft Masters, Inc., Ca&ntilde;on City' + '<hr class="popup">' + '<strong>' + 'Chris Sevilla' + '</strong>' + ', 45' + '<br>' + 'June 14, 2014' + '<br>' + '<a href="#sevilla-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Squeeze Box in the Royal Gorge' + '</h3>' + 'Arkansas River' + '<br>' + 'Class IV-V rapids' + '<br>' + 'Guide: Raft Masters' + '<hr class="popup">' + '<strong>' + 'Chris Sevilla' + '</strong>' + ', 45' + '<br>' + 'June 14, 2014' + '<br>' + '<a href="#sevilla-profile">Read narrative</a>');
 
     document.getElementById("sevilla").addEventListener("click", function() {
         map.flyTo([38.46716, -105.33245], 15, {
@@ -129,7 +133,7 @@
     });
 
     var sizemoreMarker = L.marker([39.22989, -106.86465]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Hell\'s Half Mile' + '</h3>' + 'Slaughterhouse section of' + '<br>' + 'the Roaring Fork River' + '<br>' + 'Class IV rapids' + '<br>' + 'Blazing Adventures, Aspen' + '<hr class="popup">' + '<strong>' + 'Paul Sizemore' + '</strong>' + ', 45' + '<br>' + 'June 16, 2014' + '<br>' + '<a href="#sizemore-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Hell\'s Half Mile' + '</h3>' + 'Slaughterhouse section of' + '<br>' + 'the Roaring Fork River' + '<br>' + 'Class IV rapids' + '<br>' + 'Guide: Blazing Adventures' + '<hr class="popup">' + '<strong>' + 'Paul Sizemore' + '</strong>' + ', 45' + '<br>' + 'June 16, 2014' + '<br>' + '<a href="#sizemore-profile">Read narrative</a>');
 
     document.getElementById("sizemore").addEventListener("click", function() {
         map.flyTo([39.22989, -106.86465], 15, {
@@ -139,7 +143,7 @@
     });
 
     var sotoMarker = L.marker([37.25898, -107.87744]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Smelter Rapid' + '</h3>' + 'Lower Animas River' + '<br>' + 'Class IV rapids' + '<br>' + 'Mild to Wild, Durango' + '<hr class="popup">' + '<strong>' + 'Jose Soto' + '</strong>' + ', 57' + '<br>' + 'June 16, 2015' + '<br>' + '<a href="#soto-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Smelter Rapid' + '</h3>' + 'Lower Animas River' + '<br>' + 'Class IV rapids' + '<br>' + 'Guide: Mild to Wild' + '<hr class="popup">' + '<strong>' + 'Jose Soto' + '</strong>' + ', 57' + '<br>' + 'June 16, 2015' + '<br>' + '<a href="#soto-profile">Read narrative</a>');
 
     document.getElementById("soto").addEventListener("click", function() {
         map.flyTo([37.25898, -107.87744], 15, {
@@ -149,7 +153,7 @@
     });
 
     var palmerMarker = L.marker([40.68714, -105.30069]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Horseshoe Rapid' + '</h3>' + 'Cache le Poudre River' + '<br>' + 'Class III rapids' + '<br>' + 'A1 Wildwater, Fort Collins' + '<hr class="popup">' + '<strong>' + 'Ronald Palmer' + '</strong>' + ', 77' + '<br>' + 'July 7, 2015' + '<br>' + '<a href="#palmer-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Horseshoe Rapid' + '</h3>' + 'Cache le Poudre River' + '<br>' + 'Class III rapids' + '<br>' + 'Guide: A1 Wildwater' + '<hr class="popup">' + '<strong>' + 'Ronald Palmer' + '</strong>' + ', 77' + '<br>' + 'July 7, 2015' + '<br>' + '<a href="#palmer-profile">Read narrative</a>');
 
     document.getElementById("palmer").addEventListener("click", function() {
         map.flyTo([40.68714, -105.30069], 15, {
@@ -159,7 +163,7 @@
     });
 
     var lunaMarker = L.marker([39.74494, -105.48909]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Dizzy Lizzy Rapid' + '</h3>' + 'Clear Creek' + '<br>' + 'Class III rapids' + '<br>' + 'Mile Hi Rafting, Town Park' + '<hr class="popup">' + '<strong>' + 'Erik Luna' + '</strong>' + ', 36' + '<br>' + 'July 18, 2015' + '<br>' + '<a href="#luna-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Dizzy Lizzy Rapid' + '</h3>' + 'Clear Creek' + '<br>' + 'Class III rapids' + '<br>' + 'Guide: Mile Hi Rafting' + '<hr class="popup">' + '<strong>' + 'Erik Luna' + '</strong>' + ', 36' + '<br>' + 'July 18, 2015' + '<br>' + '<a href="#luna-profile">Read narrative</a>');
 
     document.getElementById("luna").addEventListener("click", function() {
         map.flyTo([39.74494, -105.48909], 15, {
@@ -169,7 +173,7 @@
     });
 
     var cheongMarker = L.marker([39.73742, -105.4172]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Double Knife Rapid' + '</h3>' + 'Clear Creek' + '<br>' + 'Class IV rapids' + '<br>' + 'Mile Hi Rafting, Dumont' + '<hr class="popup">' + '<strong>' + 'Chun Yip \"Daniel\" Cheong' + '</strong>' + ', 21' + '<br>' + 'July 4, 2015' + '<br>' + '<a href="#cheong-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Double Knife Rapid' + '</h3>' + 'Clear Creek' + '<br>' + 'Class IV rapids' + '<br>' + 'Guide: Mile Hi Rafting' + '<hr class="popup">' + '<strong>' + 'Chun Yip \"Daniel\" Cheong' + '</strong>' + ', 21' + '<br>' + 'July 4, 2015' + '<br>' + '<a href="#cheong-profile">Read narrative</a>');
 
     document.getElementById("cheong").addEventListener("click", function() {
         map.flyTo([39.73742, -105.4172], 15, {
@@ -179,7 +183,7 @@
     });
 
     var mathMarker = L.marker([39.73936, -105.4148]).addTo(map)
-        .bindPopup('<h3 class="popup">' + 'Double Knife Rapid' + '</h3>' + 'Clear Creek' + '<br>' + 'Class IV rapids' + '<br>' + 'All American Adventures, Idaho Springs' + '<hr class="popup">' + '<strong>' + 'Michelle Math' + '</strong>' + ', 48' + '<br>' + 'May 22, 2015' + '<br>' + '<a href="#math-profile">Read narrative</a>');
+        .bindPopup('<h3 class="popup">' + 'Double Knife Rapid' + '</h3>' + 'Clear Creek' + '<br>' + 'Class IV rapids' + '<br>' + 'Guide: All American Adventures' + '<hr class="popup">' + '<strong>' + 'Michelle Math' + '</strong>' + ', 48' + '<br>' + 'May 22, 2015' + '<br>' + '<a href="#math-profile">Read narrative</a>');
 
     document.getElementById("math").addEventListener("click", function() {
         map.flyTo([39.73936, -105.4148], 15, {
