@@ -141,7 +141,7 @@ var farmersMarkets = {
             "address": "200 W. Oak St.",
             "city": "Fort Collins",
             "zip": 80524,
-            "allTime": "May 14-Oct. 22: Saturdays, 8 am-2 pm"
+            "allTime": "May 14-Oct. 22: Saturdays, 8 am-noon"
         }
     }, {
         "type": "Feature",
@@ -245,7 +245,7 @@ var farmersMarkets = {
             "address": "902 7th Ave.",
             "city": "Greeley",
             "zip": 80631,
-            "allTime": "May 21-Oct. 29: Saturdays, 7:30 am-noon"
+            "allTime": "May 21-Oct. 29: Saturdays, 7:30 am-noon; July 6-Sept. 28: Wednesdays, 3-6pm"
         }
     }, {
         "type": "Feature",
@@ -258,7 +258,7 @@ var farmersMarkets = {
             "address": "10901 Airport Road",
             "city": "Longmont",
             "zip": 80503,
-            "allTime": "July 15-Oct. 8: Mondays, 3-5 pm; Tuesdays-Fridays, 10 am-1 pm and 3-5:30 pm; Sundays, 3-5:30 pm"
+            "allTime": "July 15-Oct. 8: Mondays, 3-5 pm; Tuesdays-Fridays, 10 am-1 pm and 3-5:30 pm; Saturdays, 10 am-1 pm; Sundays, 11 am-1 pm"
         }
     }]
 }

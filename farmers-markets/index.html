@@ -57,6 +57,7 @@
     
     .leaflet-popup-content-wrapper {
         border-radius: 0;
+        width: 250px !important;
     }
     
     span.market-name {
@@ -69,12 +70,18 @@
         width: 100%;
         height: 700px;
     }
+    
     h2.map-title {
-    	font-weight: bold;
+        font-weight: bold;
     }
+    
     hr.market-name {
-margin-top: 2px;
-margin-bottom: 5px;
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+    
+    body {
+        background-color: #fafafa;
     }
     </style>
 </head>
@@ -96,24 +103,24 @@ margin-bottom: 5px;
         id: 'mapbox.streets'
     }).addTo(map);
     // Use Leaflet.awesome-markers https://github.com/lvoogdt/Leaflet.awesome-markers
-    var marketIcon = L.AwesomeMarkers.icon({
+    /* var marketIcon = L.AwesomeMarkers.icon({
         icon: 'cutlery',
         markerColor: 'darkred',
         prefix: 'fa'
-    });
+    }); */
 
     var marketLayer = L.geoJson(farmersMarkets, {
         style: function(feature) {
             return feature.properties.style;
         },
-        pointToLayer: function(feature, latlng) {
+        /* pointToLayer: function(feature, latlng) {
             return L.marker(latlng, {
                 icon: marketIcon
             });
-        },
+        }, */
 
         onEachFeature: function(feature, layer) {
-            layer.bindPopup('<span class="market-name">' + feature.properties.name + '</span><hr class="market-name">' + '<strong>' + feature.properties.allTime + '</strong><br>' + feature.properties.address + ' &bull; ' + feature.properties.city + ' ' + feature.properties.zip + '<br><a href="https://www.google.com/maps/dir/\'\'/' + feature.properties.address + ',+' + feature.properties.city + ',+' + feature.properties.zip + '">Get directions via Google</a>');
+            layer.bindPopup('<span class="market-name">' + feature.properties.name + '</span><hr class="market-name">' + '<strong>' + feature.properties.allTime + '</strong><br>' + feature.properties.address + ' &bull; ' + feature.properties.city + ' ' + feature.properties.zip + '<br><a href="https://www.google.com/maps/dir/\'\'/' + feature.properties.address + ',+' + feature.properties.city + ',+' + feature.properties.zip + '" target="_top">Get directions via Google</a>');
         }
     })
     marketLayer.addTo(map);

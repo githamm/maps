@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colorado Rafting Deaths</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Stable
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="L.Control.Sidebar.css" /> -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!-- Beta -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.js"></script>
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+    <style>
+    #map {
+        height: 500px;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    #narratives {
+        height: 420px;
+        position: absolute;
+        left: 70%;
+        top: 25px;
+        overflow-y: scroll;
+        margin-right: 25px;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, .6);
+        padding: 25px;
+        color: white;
+    }
+    
+    a:hover.go-to-map {
+        text-decoration: underline;
+        color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <button id="buttonParis">Fly to Paris</button>
+    <button id="buttonLondon">Fly to London</button>
+    <div id="narratives">
+        <h1>Colorado Rafting Deaths</h1>
+        <p>These stories of 11 of the 12 commercial rafting deaths in Colorado in 2014 and 2015 are based on Colorado Parks and Wildlife incident reports, which include sheriffs’ and coroners’ documents. Rapid classifications and water flows are for the incident dates. Mapped incident locations are approximate. Drake Durkee’s story is told in the main story.</p>
+        <div id="barkley-narrative">
+            <p>Lower Beaver Falls, Clear Creek
+                <br><a class="go-to-map" id="barkley">View on map</a>
+                <br>Idaho Springs
+                <br>June 7, 2014
+                <br>Highside Adventures
+                <br>Idaho Springs
+                <br>Rapids: Class III-IV
+                <br>Water flow: high, 950-975 cubic feet per second</p>
+            <p>The final stretch of the Highside Adventures trip over violent class III and IV rapids was wild, with two passenger dumps in the span of a few river bends. The second time Kenneth Barkley, 43, of Brighton, went overboard, he did not survive.</p>
+            <p>Just through Lower Beaver Falls, the raft Barkley rode in struck a bridge support head on, despite the crew’s frantic back paddling. The nose of the raft hit the concrete, the raft turned sideways and instantly flipped, the bottom of the boat now along the bridge support. “Highside left!” the guide had shouted, trying to prevent the flip. But as the boat wrapped around the bridge support, all eight passengers including the guide were dumped into the 40-degree water. </p>
+            <p>The crumpling raft and the ensuing chaos in June 2014 were captured by a passenger’s GoPro helmet camera and posted on YouTube. Most of the eight passengers were able to swim to shore. One grabbed onto a tree limb and waited for a guide. Another was pulled into a boat as she floated downstream.</p>
+            <p>With everyone back in the raft, and the boat heading downstream toward more rapids, the passengers were celebrating -- and ignoring paddle commands. Without paddlers, the raft was spinning when it went, backward, over the top of a barely submerged rock.</p>
+            <p>The jolt of the rock knocked Barkley off balance and out of the back of the raft.</p>
+            <p>As the boat continued over several more rocks, every other passenger but one fell into the river.</p>
+            <p>Barkley floated downstream on his back, head downstream. The guide of his boat, 24-year-old John Myre, tried to reach out a paddle, but Barkley wasn’t close enough to grab it. The guide said he motioned for Barkley to swim toward shore, but he continued to float on his back, arms outstretched. Two other passengers told park rangers they saw Barkley try to swim but he seemed exhausted.</p>
+            <p>With the rest of the passengers and the boat on shore, Myre ran downstream to try to catch up to Barkley, who had far outpaced his raft, trying to reach him before he floated through Class V expert-level rapids downstream. Two other guides later joined the search down the river, one driving Barkley’s wife’s car.</p>
+            <p>They saw him two or three times more, once without a life jacket, and always floating, making no attempt to swim.</p>
+            <p>Barkley’s body was found about a half-hour later, near Highway 6, seven miles from where he fell overboard.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum felis ac ex porta sagittis. Praesent aliquet neque sed nibh dignissim molestie. Nullam mi nibh, eleifend ac ipsum sed, vulputate malesuada ex. Morbi dignissim risus id diam tincidunt ornare a quis metus. Nam finibus semper ligula quis hendrerit. Sed id tortor gravida, sollicitudin libero vel, pulvinar sem. Aenean congue quam sit amet neque dapibus blandit. Nulla facilisi. Morbi eget gravida massa, ac egestas felis. Donec consequat, nibh ut mollis mollis, urna est ornare mi, et suscipit dui lectus at odio. Duis elementum suscipit tellus id lobortis. Donec luctus, sem in pulvinar malesuada, arcu urna dignissim quam, quis viverra orci sapien id leo. Nam ornare vehicula nisl ut molestie.</p>
+        <p>Praesent pellentesque tristique consequat. Morbi lobortis neque erat, ut mollis tellus gravida vitae. Fusce auctor accumsan dignissim. Sed facilisis semper nisi, in pulvinar tellus volutpat vitae. Ut dictum lobortis magna et consectetur. Donec varius dolor at neque vehicula congue. Morbi ultrices laoreet volutpat. Sed consequat venenatis justo ac laoreet. Praesent est nunc, ultrices quis quam et, ornare porttitor neque. Etiam eget laoreet orci. Nulla bibendum ante in arcu elementum auctor. Aliquam ipsum nulla, dignissim id sapien nec, tincidunt ornare nisi. Quisque euismod volutpat ex, nec varius turpis suscipit quis. Quisque non enim eros. Praesent sodales enim in mi aliquam, a ultricies nulla auctor.</p>
+        <p>Cras hendrerit ipsum felis. Nam imperdiet vel sapien in pellentesque. Vestibulum augue arcu, porta at dictum at, placerat sed tortor. Sed elementum risus vel elit sodales, sit amet rutrum est tempus. Curabitur vel mauris non lacus pharetra aliquam vitae in dui. Nulla maximus vehicula eros quis porta. Cras tristique facilisis euismod. Sed mattis est odio, in ullamcorper magna lobortis a. Nunc ac tincidunt massa, non pharetra lectus. Nullam sed elementum diam, non ullamcorper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac vehicula magna. Nam consequat est non nisi lacinia, non efficitur lectus tristique. Donec id consequat eros.</p>
+        <p>Mauris eu felis consequat ligula condimentum pharetra id vitae ante. Vestibulum sagittis metus lacus, a tempus magna commodo ac. Integer non aliquam libero. Sed vehicula neque ac lorem tincidunt luctus in eget nunc. Cras consectetur, turpis eu condimentum gravida, mauris massa gravida sem, non posuere libero orci eu dolor. Maecenas dictum vestibulum lobortis. Sed sit amet magna eget nisl viverra convallis. Donec vehicula risus feugiat, vestibulum nisi non, facilisis urna. Morbi imperdiet nulla metus, pellentesque aliquet arcu condimentum sed. Vivamus mi massa, tempus id libero sit amet, iaculis condimentum felis.</p>
+        <div id="denver">
+            <p>This is Denver donec facilisis ornare magna nec commodo. Vivamus feugiat nisl vel congue lobortis. Duis bibendum ullamcorper felis eget feugiat. Morbi eget augue eu leo congue volutpat a quis magna. Praesent at lectus sed mi bibendum vulputate sit amet interdum nisl. Curabitur ac lacus efficitur, cursus eros non, pretium nisl. Sed ultricies iaculis laoreet. Vestibulum iaculis maximus posuere.</p>
+            <button id="buttonDenver">Fly to Denver</button>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum felis ac ex porta sagittis. Praesent aliquet neque sed nibh dignissim molestie. Nullam mi nibh, eleifend ac ipsum sed, vulputate malesuada ex. Morbi dignissim risus id diam tincidunt ornare a quis metus. Nam finibus semper ligula quis hendrerit. Sed id tortor gravida, sollicitudin libero vel, pulvinar sem. Aenean congue quam sit amet neque dapibus blandit. Nulla facilisi. Morbi eget gravida massa, ac egestas felis. Donec consequat, nibh ut mollis mollis, urna est ornare mi, et suscipit dui lectus at odio. Duis elementum suscipit tellus id lobortis. Donec luctus, sem in pulvinar malesuada, arcu urna dignissim quam, quis viverra orci sapien id leo. Nam ornare vehicula nisl ut molestie.</p>
+        <p>Praesent pellentesque tristique consequat. Morbi lobortis neque erat, ut mollis tellus gravida vitae. Fusce auctor accumsan dignissim. Sed facilisis semper nisi, in pulvinar tellus volutpat vitae. Ut dictum lobortis magna et consectetur. Donec varius dolor at neque vehicula congue. Morbi ultrices laoreet volutpat. Sed consequat venenatis justo ac laoreet. Praesent est nunc, ultrices quis quam et, ornare porttitor neque. Etiam eget laoreet orci. Nulla bibendum ante in arcu elementum auctor. Aliquam ipsum nulla, dignissim id sapien nec, tincidunt ornare nisi. Quisque euismod volutpat ex, nec varius turpis suscipit quis. Quisque non enim eros. Praesent sodales enim in mi aliquam, a ultricies nulla auctor.</p>
+        <p>Cras hendrerit ipsum felis. Nam imperdiet vel sapien in pellentesque. Vestibulum augue arcu, porta at dictum at, placerat sed tortor. Sed elementum risus vel elit sodales, sit amet rutrum est tempus. Curabitur vel mauris non lacus pharetra aliquam vitae in dui. Nulla maximus vehicula eros quis porta. Cras tristique facilisis euismod. Sed mattis est odio, in ullamcorper magna lobortis a. Nunc ac tincidunt massa, non pharetra lectus. Nullam sed elementum diam, non ullamcorper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac vehicula magna. Nam consequat est non nisi lacinia, non efficitur lectus tristique. Donec id consequat eros.</p>
+    </div>
+    <script>
+    var map = L.map("map");
+    L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
+
+    map.setView([51.5, 0], 10);
+
+    var barkleyMarker = L.marker([39.7, -105.4]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#barkley">Read narrative</a>').openPopup();
+
+
+    document.getElementById("buttonParis").addEventListener("click", function() {
+        map.flyTo([48.8, 2.4], 10, {
+            animate: true,
+            duration: 1 // in seconds
+        });
+    });
+
+    document.getElementById("buttonLondon").addEventListener("click", function() {
+        map.flyTo([51.5, 0], 10, {
+            animate: true,
+            duration: 1 // in seconds
+        });
+    });
+
+    document.getElementById("barkley").addEventListener("click", function() {
+        map.flyTo([39.7, -105.4], 10, {
+            animate: true,
+            duration: 1 // in seconds
+        });
+    });
+    </script>
+</body>
+
+</html>
