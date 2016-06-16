@@ -31,6 +31,7 @@
     <div id="barkley-profile" ><a class="go-to-map" id="barkley">Barkley</a></div>
     <div id="durkee-profile" ><a class="go-to-map" id="durkee">Durkee</a></div>
     <div id="hernandez-profile" ><a class="go-to-map" id="hernandez">Hernandez</a></div>
+    <div id="hodges-profile" ><a class="go-to-map" id="hodges">Hodges</a></div>
     <script>
     var map = L.map("rafting-death-map");
     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
@@ -71,6 +72,16 @@
         .bindPopup('test' + '<br>' + '<a href="#hernandez-profile">Read narrative</a>').openPopup();
 
     document.getElementById("hernandez").addEventListener("click", function() {
+        map.flyTo([38.5, -105.5], 10, {
+            animate: true,
+            duration: 1 // in seconds
+        });
+    });
+
+    var hodgesMarker = L.marker([38.5, -105.5]).addTo(map)
+        .bindPopup('test' + '<br>' + '<a href="#hodges-profile">Read narrative</a>').openPopup();
+
+    document.getElementById("hodges").addEventListener("click", function() {
         map.flyTo([38.5, -105.5], 10, {
             animate: true,
             duration: 1 // in seconds
