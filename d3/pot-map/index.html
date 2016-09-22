@@ -7,6 +7,7 @@
     <title>Marijuana Laws in the United States</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="d3tip.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
@@ -55,29 +56,29 @@
     }
     
     .d3-tip {
-        line-height: 1;
-        font-weight: bold;
         padding: 12px;
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
         border-radius: 2px;
-        max-width: 225px;
+        max-width: 215px;
     }
     
     span.tooltip-header {
         font-size: 12px;
         color: gray;
+        font-weight: bold;
     }
     
     p.tooltip-text {
         font-size: 14px;
         color: white;
+        margin-bottom: 3px;
     }
     
     span.state-title {
         font-size: 20px;
         color: #e42217;
-        text-align: center;
+        font-weight: bold;
         text-transform: uppercase;
     }
     
@@ -93,6 +94,22 @@
     p.map-chatter {
         font-family: Helvetica, Arial, sans-serif;
         font-size: 21px;
+    }
+    
+    @media only screen and (max-device-width: 600px) {
+        .d3-tip {
+            padding: 8px;
+            max-width: 175px;
+        }
+        span.tooltip-header {
+            font-size: 10px;
+        }
+        p.tooltip-text {
+            font-size: 10px;
+        }
+        span.state-title {
+            font-size: 16px;
+        }
     }
     </style>
 </head>
@@ -114,7 +131,7 @@
 
     var tip = d3.tip()
         .attr('class', 'd3-tip')
-        .offset([-10, 0])
+        .offset([0, 0])
         .html(function(d) {
             return d.properties.name + " " + d.properties.status;
         });
@@ -165,7 +182,7 @@
         var tip = d3.tip()
             .attr("class", "d3-tip")
             .offset([0, 0])
-            .direction("w")
+            .direction("n")
             .html(function(d, i) {
                 return "<span class='state-title'>" + d.properties.name + "</span>" + "<hr>" + "<span class='tooltip-header'>RECREATIONAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].recreational + "</p>" + "<span class='tooltip-header'>MEDICAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].medical + "</p>" + "<span class='tooltip-header'>2016 BALLOT</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].ballot + "</p>" + "<span class='tooltip-header'>CBD LAW</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].cbd + "</p>" + "<span class='tooltip-header'>DECRIMINALIZED</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].decriminalization + "</p>" + "<span class='tooltip-header'>MANDATORY SENTENCING</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</p>"
             })
@@ -257,10 +274,15 @@
             } */
 
             .on('mouseover', tip.show)
-                .on('mouseout', tip.hide)
-                .attr("class", function(d) {
-                    return newDict[d.id];
-                })
+                .on('mouseout', tip.hide);
+            /* .on("mouseout", function(d) {
+                    div.transition()
+                        .duration(500)
+                        .style("opacity", 0)
+
+                    // .attr("class", function(d) {
+                    //    return newDict[d.id]; */
+
 
             // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
             // http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
