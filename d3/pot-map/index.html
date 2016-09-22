@@ -57,7 +57,7 @@
     .svg-content-responsive {
         display: inline-block;
         position: absolute;
-        top: 10px;
+        top: 100px;
         left: 0;
     }
     
@@ -70,8 +70,23 @@
         border-radius: 2px;
     }
     
-    #container {
-        border: 1px solid black;
+    span.tooltip-header {
+        font-size: 12px;
+        color: gray;
+    }
+    p.tooltip-text {
+        font-size: 14px;
+        color: white;
+    }
+    span.state-title {
+        font-size: 20px;
+        color: #e42217;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    hr {
+        margin-top: 8px;
+        margin-bottom: 10px;
     }
     </style>
 </head>
@@ -81,18 +96,6 @@
         <div class="large-12 columns svg-container" id="map"></div>
     </div>
     <script type="text/javascript">
-    /*  This visualization was made possible by modifying code provided by:
-
-                                                        Scott Murray, Choropleth example from "Interactive Data Visualization for the Web" 
-                                                        https://github.com/alignedleft/d3-book/blob/master/chapter_12/05_choropleth.html   
-                                                                
-                                                        Malcolm Maclean, tooltips example tutorial
-                                                        http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
-
-                                                        Mike Bostock, Pie Chart Legend
-                                                        http://bl.ocks.org/mbostock/3888852  */
-
-
     //Width and height of map
     var width = 200;
     var height = 100;
@@ -152,22 +155,36 @@
             .attr("class", "d3-tip")
             .offset([20, 0])
             .html(function(d, i) {
-                return d.properties.name + " " + newDict[d.id].status + " " + newDict[d.id].notes;
+                return "<span class='state-title'>" + d.properties.name + "</span>" + "<hr>" + "<span class='tooltip-header'>RECREATIONAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].recreational + "</p>" + "<span class='tooltip-header'>MEDICAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].medical + "</p>" + "<span class='tooltip-header'>2016 BALLOT</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].ballot + "</p>" + "<span class='tooltip-header'>CBD LAW</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].cbd + "</p>" + "<span class='tooltip-header'>DECRIMINALIZED</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].decriminalization + "</p>" + "<span class='tooltip-header'>MANDATORY SENTENCING</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</p>"
             })
 
         svg.call(tip);
 
         // Load in my states data!
-        d3.csv("pot-laws-min.csv", function(error, data) {
+        d3.json("pot-laws.js", function(error, data) {
 
             data.forEach(function(d) {
                 d.state = d.state;
                 d.status = +d.status;
-                d.notes = d.notes;
+                d.recreational = d.recreational;
+                d.medical = d.medical;
+                d.ballot = d.ballot;
+                d.cbd = d.cbd;
+                d.hemp = d.hemp;
+                d.decriminalization = d.decriminalization;
+                d.mandatorysentencing = d.mandatorysentencing;
+                d.statelink = d.statelink;
                 newDict[d.id] = {
                     state: d.state,
                     status: d.status,
-                    notes: d.notes
+                    recreational: d.recreational,
+                    medical: d.medical,
+                    ballot: d.ballot,
+                    cbd: d.cbd,
+                    hemp: d.hemp,
+                    decriminalization: d.decriminalization,
+                    mandatorysentencing: d.mandatorysentencing,
+                    statelink: d.statelink
                 };
             });
             console.log(newDict);
@@ -219,8 +236,12 @@
                     }
 
                 })
-
-            .on('mouseover', tip.show)
+                /* .on('click', fmpurl)
+                    function fmpurl() {
+                    var url = "<a href='" + newDict[d.id].statelink + "'>Link</a>";
+                    window.location = url;
+                } */
+                .on('mouseover', tip.show)
                 .on('mouseout', tip.hide)
                 .attr("class", function(d) {
                     return newDict[d.id];
@@ -271,7 +292,6 @@
                     return d;
                 });
         });
-
     });
     </script>
 </body>
