@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Cannabist map</title>
     <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="d3tip.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <style type="text/css">
     /* On mouse hover, lighten state color */
     
@@ -54,27 +60,49 @@
         top: 10px;
         left: 0;
     }
+    
+    .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+    }
+    
+    #container {
+        border: 1px solid black;
+    }
     </style>
 </head>
 
 <body>
-    <div id="map" class="svg-container"></div>
+    <div class="row">
+        <div class="large-12 columns svg-container" id="map"></div>
+    </div>
     <script type="text/javascript">
     /*  This visualization was made possible by modifying code provided by:
 
-                Scott Murray, Choropleth example from "Interactive Data Visualization for the Web" 
-                https://github.com/alignedleft/d3-book/blob/master/chapter_12/05_choropleth.html   
-                		
-                Malcolm Maclean, tooltips example tutorial
-                http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+                                                        Scott Murray, Choropleth example from "Interactive Data Visualization for the Web" 
+                                                        https://github.com/alignedleft/d3-book/blob/master/chapter_12/05_choropleth.html   
+                                                                
+                                                        Malcolm Maclean, tooltips example tutorial
+                                                        http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
 
-                Mike Bostock, Pie Chart Legend
-                http://bl.ocks.org/mbostock/3888852  */
+                                                        Mike Bostock, Pie Chart Legend
+                                                        http://bl.ocks.org/mbostock/3888852  */
 
 
     //Width and height of map
     var width = 200;
     var height = 100;
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return d.properties.name + " " + d.properties.status;
+        });
 
     // D3 Projection
     var projection = d3.geo.albersUsa()
@@ -108,18 +136,41 @@
         //class to make it responsive
         .classed("svg-content-responsive", true);
 
+    //svg.call(tip);
+
     // Append Div for tooltip to SVG
     var div = d3.select("body")
         .append("div")
-        .attr("class", "tooltip")
+        .attr("class", "tip")
         .style("opacity", 0);
 
-    // Load in my states data!
-    d3.csv("pot-laws.csv", function(data) {
-        color.domain([0, 1, 2, 3]); // setting the range of the input data
+    // Load GeoJSON data and merge with states data
+    d3.json("states.json", function(json) {
 
-        // Load GeoJSON data and merge with states data
-        d3.json("us-states.json", function(json) {
+        var newDict = {};
+        var tip = d3.tip()
+            .attr("class", "d3-tip")
+            .offset([20, 0])
+            .html(function(d, i) {
+                return d.properties.name + " " + newDict[d.id].status + " " + newDict[d.id].notes;
+            })
+
+        svg.call(tip);
+
+        // Load in my states data!
+        d3.csv("pot-laws-min.csv", function(error, data) {
+
+            data.forEach(function(d) {
+                d.state = d.state;
+                d.status = +d.status;
+                d.notes = d.notes;
+                newDict[d.id] = {
+                    state: d.state,
+                    status: d.status,
+                    notes: d.notes
+                };
+            });
+            console.log(newDict);
 
             // Loop through each state data value in the .csv file
             for (var i = 0; i < data.length; i++) {
@@ -144,6 +195,8 @@
                 }
             }
 
+            color.domain([0, 1, 2, 3]); // setting the range of the input data
+
             // Bind the data to the SVG and create one path per GeoJSON feature
             svg.selectAll("path")
                 .data(json.features)
@@ -166,9 +219,16 @@
                     }
 
                 })
-                // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-                // http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
-                .on("mouseover", function(d) {
+
+            .on('mouseover', tip.show)
+                .on('mouseout', tip.hide)
+                .attr("class", function(d) {
+                    return newDict[d.id];
+                })
+
+            // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
+            // http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+            /* .on("mouseover", function(d) {
                     div.transition()
                         .duration(200)
                         .style("opacity", .8);
@@ -182,7 +242,7 @@
                 div.transition()
                     .duration(500)
                     .style("opacity", 0);
-            });
+            }); */
 
             // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
             var legend = d3.select(".svg-container").append("svg")
