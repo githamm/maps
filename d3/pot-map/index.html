@@ -4,11 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width">
-    <title>Cannabist map</title>
+    <title>Marijuana Laws in the United States</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="d3tip.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <style type="text/css">
     path:hover {
@@ -29,8 +29,6 @@
         pointer-events: none;
         color: white;
     }
-    /* Legend Font Style */
-    /* Legend Position Style */
     
     .legend {
         position: absolute;
@@ -45,7 +43,6 @@
         position: relative;
         width: 100%;
         padding-bottom: calc(100% * 7 / 8);
-        /* aspect ratio */
         vertical-align: top;
         overflow: hidden;
     }
@@ -88,10 +85,25 @@
         margin-top: 8px;
         margin-bottom: 10px;
     }
+    
+    h1.map-title {
+        font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    }
+    
+    p.map-chatter {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 21px;
+    }
     </style>
 </head>
 
 <body>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1 class="map-title">Marijuana Laws in the United States</h1>
+            <p class="map-chatter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus, dui non dictum condimentum, mauris nibh convallis est, id consectetur risus tortor maximus tellus. Fusce vehicula dignissim ipsum, sit amet consectetur nisi tristique nec. Curabitur at elit mauris. Phasellus porta dictum neque. Curabitur et faucibus sapien, a placerat ipsum. In dignissim eleifend condimentum. Donec interdum ante non felis efficitu r tincidunt.</p>
+        </div>
+    </div>
     <div class="row">
         <div class="large-12 columns svg-container" id="map"></div>
     </div>
@@ -139,7 +151,6 @@
         //class to make it responsive
         .classed("svg-content-responsive", true);
 
-    //svg.call(tip);
 
     // Append Div for tooltip to SVG
     var div = d3.select("body")
@@ -161,7 +172,7 @@
 
         svg.call(tip);
 
-        // Load in my states data!
+        // Load states data
         d3.json("pot-laws.js", function(error, data) {
 
             data.forEach(function(d) {
@@ -193,7 +204,7 @@
             // Loop through each state data value in the .csv file
             for (var i = 0; i < data.length; i++) {
 
-                // Grab State Name
+                // Grab state name
                 var dataState = data[i].state
                     // Grab data value 
                 var dataValue = data[i].status;
@@ -237,12 +248,15 @@
                     }
 
                 })
-                /* .on('click', fmpurl)
-                    function fmpurl() {
-                    var url = "<a href='" + newDict[d.id].statelink + "'>Link</a>";
-                    window.location = url;
-                } */
-                .on('mouseover', tip.show)
+
+            /* NOT WORKING: clicking on state will open Cannabist state web page
+                .on('click', fmpurl)
+                function fmpurl() {
+                var url = "<a href='" + newDict[d.id].statelink + "'>Link</a>";
+                window.location = url;
+            } */
+
+            .on('mouseover', tip.show)
                 .on('mouseout', tip.hide)
                 .attr("class", function(d) {
                     return newDict[d.id];
