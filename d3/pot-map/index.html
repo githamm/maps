@@ -17,7 +17,7 @@
         /* Lighten state color on hover */
     }
     
-    div.tooltip {
+    /* div.tooltip {
         position: absolute;
         text-align: none;
         width: 80px;
@@ -29,7 +29,7 @@
         border-radius: 0px;
         pointer-events: none;
         color: white;
-    }
+    } */
     
     .legend {
         position: absolute;
@@ -70,13 +70,13 @@
     }
     
     p.tooltip-text {
-        font-size: 14px;
+        font-size: 12px;
         color: white;
         margin-bottom: 3px;
     }
     
     span.state-title {
-        font-size: 20px;
+        font-size: 16px;
         color: #e42217;
         font-weight: bold;
         text-transform: uppercase;
@@ -100,15 +100,6 @@
         .d3-tip {
             padding: 8px;
             max-width: 175px;
-        }
-        span.tooltip-header {
-            font-size: 10px;
-        }
-        p.tooltip-text {
-            font-size: 10px;
-        }
-        span.state-title {
-            font-size: 16px;
         }
     }
     </style>
@@ -148,9 +139,9 @@
 
     // Define linear scale for output
     var color = d3.scale.linear()
-        .range(["rgb(213,222,217)", "rgb(69,173,168)", "rgb(84,36,55)", "rgb(217,91,67)"]);
+        .range(["rgb(213,222,217)", "rgb(69,173,168)", "rgb(84,36,55)"]); //"rgb(213,222,217)"
 
-    var legendText = ["Cities Lived", "Retail and medical legal", "Medical legal", "None legal"];
+    var legendText = ["Retail and medical legal", "Medical legal", "None legal"];
 
     //Create SVG element and append map to the SVG
     /* var svg = d3.select("body")
@@ -184,7 +175,7 @@
             .offset([0, 0])
             .direction("n")
             .html(function(d, i) {
-                return "<span class='state-title'>" + d.properties.name + "</span>" + "<hr>" + "<span class='tooltip-header'>RECREATIONAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].recreational + "</p>" + "<span class='tooltip-header'>MEDICAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].medical + "</p>" + "<span class='tooltip-header'>2016 BALLOT</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].ballot + "</p>" + "<span class='tooltip-header'>CBD LAW</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].cbd + "</p>" + "<span class='tooltip-header'>DECRIMINALIZED</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].decriminalization + "</p>" + "<span class='tooltip-header'>MANDATORY SENTENCING</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</p>"
+                return "<span class='state-title'>" + d.properties.name + "</span>" + "<hr>" + "<span class='tooltip-header'>RECREATIONAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].recreational + "</p>" + "<span class='tooltip-header'>MEDICAL</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].medical + "</p>" + "<span class='tooltip-header'>2016 BALLOT ISSUE</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].ballot + "</p>" + "<span class='tooltip-header'>CBD LAW IN PLACE</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].cbd + "</p>" + "<span class='tooltip-header'>DECRIMINALIZED</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].decriminalization + "</p>" + "<span class='tooltip-header'>MANDATORY SENTENCING</span><br>" + "<p class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</p>"
             })
 
         svg.call(tip);
@@ -241,7 +232,7 @@
                 }
             }
 
-            color.domain([0, 1, 2, 3]); // setting the range of the input data
+            color.domain([0, 1, 2]); // setting the range of the input data
 
             // Bind the data to the SVG and create one path per GeoJSON feature
             svg.selectAll("path")
