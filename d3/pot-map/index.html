@@ -102,6 +102,7 @@
         }
     }
     </style>
+    <link rel="stylesheet" type="text/css" href="patternfills.css">
 </head>
 
 <body>
@@ -246,16 +247,18 @@
                 .enter()
                 .append("path")
                 .attr("d", path)
+                .attr("class", "circles-3")
                 .style("stroke", "#fff")
                 .style("stroke-width", ".2")
                 .style("fill", function(d) {
 
                     // Get data value
                     var value = d.properties.status;
+                    console.log();
 
                     if (value) {
                         //If value exists…
-                        return color(value);
+                        return "url(.circles2) " + color(value);
                     } else {
                         //If value is undefined…
                         return "rgb(213,222,217)";
