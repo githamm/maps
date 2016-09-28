@@ -653,6 +653,7 @@
                 //.attr("class", "circles-3")
                 .style("stroke", "#fff")
                 .style("stroke-width", ".2")
+                //.style("fill", "url(#circles-2)")
                 .style("fill", function(d) {
 
                     // Get data value
@@ -661,6 +662,7 @@
 
                     if (value) {
                         //If value exists…
+                        //return color(value);
                         return "url(#circles-2) " + color(value);
                     } else {
                         //If value is undefined…
