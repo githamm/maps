@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width">
@@ -119,6 +118,13 @@
     //Width and height of map
     var width = 200;
     var height = 100;
+    var version = {
+        // New versions go on the end of the array
+        dates: Array(
+            { d: '20160923' }   
+        ),
+    };
+    version.current = version.dates[version.dates.length -1]
 
     var tip = d3.tip()
         .attr('class', 'd3-tip')
@@ -181,7 +187,7 @@
         svg.call(tip);
 
         // Load states data
-        d3.json("pot-laws.js", function(error, data) {
+        d3.json("data/" + version.current.d, function(error, data) {
 
             data.forEach(function(d) {
                 d.state = d.state;
