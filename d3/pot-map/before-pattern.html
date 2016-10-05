@@ -39,7 +39,8 @@
     }
     
     #map {
-        width: 85%;
+        width: 100%;
+        margin-right: -100px;
         float: right;
     }
     
@@ -65,8 +66,8 @@
         /* background: rgba(0, 0, 0, 0.2); */
         color: #fff;
         border-radius: 2px;
-        width: 220px;
-        top: 10% !important;
+        width: 200px;
+        top: 5% !important;
         left: 2% !important;
         /* margin-left: -100px; */
         border-left: 1px solid #812317;
@@ -86,9 +87,13 @@
         font-size: 14px;
         font-weight: normal;
         color: rgba(0, 0, 0, .8);
-        line-height: 0px;
         margin-bottom: 0px;
         /* display: inline-block; */
+    }
+    
+    div.tooltip-line {
+        line-height: 16px;
+        margin-bottom: 7px;
     }
     
     span.link-text {
@@ -107,6 +112,13 @@
         margin-left: -13px;
         margin-top: -10px;
         /* border-bottom: 3px #f75d59 solid; */
+    }
+    
+    p.source {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        text-align: right;
     }
     
     p.dots {
@@ -176,6 +188,9 @@
     #ballot-measure {
         background: rgba(117, 112, 179, 1);
     }
+    #washington-dc {
+        background: rgb(0, 0, 0);
+    }
     
     @media only screen and (max-device-width: 600px) {
         .d3-tip {
@@ -225,7 +240,10 @@
             <li class="legend-item">Marijuana prohibition states</li>
             <div class="legend-circle" id="ballot-measure"></div>
             <li class="legend-item">2016 ballot measure</li>
+            <div class="legend-circle" id="washington-dc"></div><li class="legend-item">Washington, D.C. has legalized recreational marijuana and medical marijuana</li>
         </ul>
+        <p class="source">Sources: National Conference of State Legislatures,
+            <br>National Organization for the Reform of Marijuana Laws</p>
     </div>
     <script type="text/javascript">
     //Width and height of map
@@ -281,7 +299,7 @@
             //.offset([0, 0])
             //.direction("n")
             .html(function(d, i) {
-                return "<p class='state-title'><span style='background: #812317; padding: 5px 10px 5px 10px;'>" + d.properties.name + "</span></p>" + "<span class='tooltip-header'>RECREATIONAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].recreational + "</span><br>" + "<span class='tooltip-header'>MEDICAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].medical + "</span><br>" + "<span class='tooltip-header'>2016 BALLOT ISSUE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].ballot + "</span><br>" + "<span class='tooltip-header'>CBD LAW IN PLACE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].cbd + "</span><br>" + "<span class='tooltip-header'>DECRIMINALIZED : </span>" + "<span class='tooltip-text'>" + newDict[d.id].decriminalization + "</span><br>" + "<span class='tooltip-header'>MANDATORY SENTENCING : </span>" + "<span class='tooltip-text'>" + newDict[d.id].mandatorysentencing
+                return "<p class='state-title'><span style='background: #812317; padding: 5px 10px 5px 10px;'>" + d.properties.name + "</span></p>" + "<div class='tooltip-line'><span class='tooltip-header'>RECREATIONAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].recreational + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MEDICAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].medical + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>2016 BALLOT ISSUE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].ballot + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>CBD LAW IN PLACE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].cbd + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>DECRIMINALIZED : </span>" + "<span class='tooltip-text'>" + newDict[d.id].decriminalization + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MANDATORY SENTENCING : </span>" + "<span class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</span></div>"
             })
 
         svg.call(tip);
@@ -397,6 +415,33 @@
                     .style("pointer-events", "none")
                 console.log(data);
             });
+
+            var coordinates = projection([-77.0369,38.9072]);
+            svg.append("circle")
+                .attr("cx", coordinates[0])
+                .attr("cy", coordinates[1])
+                .attr("r", .75)
+                .style("fill", "rgb(0,0,0)")
+                .style("pointer-events", "none");
+
+            /* d3.json("district-of-columbia.js", function(data) {
+
+                svg.selectAll("circle")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function(d) {
+                        return projection([d.lon, d.lat])[0];
+                    })
+                    .attr("cy", function(d) {
+                        return projection([d.lon, d.lat])[1];
+                    })
+                    .attr("r", "1.5")
+                    .style("fill", "rgb(255,0,0)")
+                    .style("opacity", 1.0)
+                    .style("pointer-events", "none")
+                console.log(data);
+            }); */
 
             // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
             // http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html

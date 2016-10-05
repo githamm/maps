@@ -104,7 +104,7 @@
     "statelink": "http://www.thecannabist.co/tag/delaware/"
   },
   {
-    "state": "District of Columbia",
+    "state": "Washington, DC",
     "id": 11,
     "status": 2,
     "recreational": "Voter approval, 2014",
