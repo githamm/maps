@@ -39,7 +39,8 @@
     }
     
     #map {
-        width: 100%;
+        width: 85%;
+        float: right;
     }
     
     .svg-container {
@@ -130,23 +131,69 @@
         font-size: 21px;
     }
     
+    div#legend-container {}
+    
+    ul#legend {
+        list-style: none;
+    }
+    
+    li.legend-item {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        color: rgba(0, 0, 0, .8);
+        margin-bottom: -3px;
+    }
+    
+    .legend-square {
+        width: 10px;
+        height: 10px;
+        float: left;
+        margin-right: 3px;
+        margin-top: 5px;
+    }
+    
+    #recreational {
+        background: rgb(49, 163, 84);
+    }
+    
+    #medical {
+        background: rgb(161, 217, 155);
+    }
+    
+    #prohibition {
+        background: rgb(213, 222, 217);
+    }
+    
+    .legend-circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        float: left;
+        margin-right: 3px;
+        margin-top: 5px;
+    }
+    
+    #ballot-measure {
+        background: rgba(117, 112, 179, 1);
+    }
+    
     @media only screen and (max-device-width: 600px) {
         .d3-tip {
-        padding: 12px;
-        /* background: rgba(0, 0, 0, 0.2); */
-        color: #fff;
-        border-radius: 2px;
-        width: 220px;
-        top: 10% !important;
-        left: 2% !important;
-        /* margin-left: -100px; */
-        border-left: 3px solid #812317;
-    }
+            padding: 12px;
+            /* background: rgba(0, 0, 0, 0.2); */
+            color: #fff;
+            border-radius: 2px;
+            width: 220px;
+            top: 10% !important;
+            left: 2% !important;
+            /* margin-left: -100px; */
+            border-left: 3px solid #812317;
+        }
         div#map {
             display: none;
         }
     }
-
+    
     @media only screen and (min-device-width: 600px) {
         div#map-mobile {
             display: none;
@@ -163,10 +210,22 @@
         </div>
     </div> -->
     <div class="row">
-        <div style="float: right;" class="large-8 medium-8 columns svg-container" id="map"></div>
+        <div class="large-8 medium-8 columns" id="map"></div>
     </div>
     <div class="row">
         <div style="float: right;" class="large-8 medium-8 columns svg-container" id="map-mobile"></div>
+    </div>
+    <div id="legend-container">
+        <ul id="legend">
+            <div class="legend-square" id="recreational"></div>
+            <li class="legend-item">Recreational marijuana states</li>
+            <div class="legend-square" id="medical"></div>
+            <li class="legend-item">Medical marijuana states</li>
+            <div class="legend-square" id="prohibition"></div>
+            <li class="legend-item">Marijuana prohibition states</li>
+            <div class="legend-circle" id="ballot-measure"></div>
+            <li class="legend-item">2016 ballot measure</li>
+        </ul>
     </div>
     <script type="text/javascript">
     //Width and height of map
@@ -320,7 +379,7 @@
                     // .attr("class", function(d) {
                     //    return newDict[d.id]; */
             // Map the cities I have lived in!
-            d3.csv("2016-ballot-measures.csv", function(data) {
+            d3.json("2016-ballot-measures.js", function(data) {
 
                 svg.selectAll("circle")
                     .data(data)
@@ -332,10 +391,11 @@
                     .attr("cy", function(d) {
                         return projection([d.lon, d.lat])[1];
                     })
-                    .attr("r", "1")
-                    .style("fill", "rgb(0,0,0)")
-                    .style("opacity", 0.85)
+                    .attr("r", "1.5")
+                    .style("fill", "rgb(117,112,179)")
+                    .style("opacity", 1.0)
                     .style("pointer-events", "none")
+                console.log(data);
             });
 
             // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
@@ -357,7 +417,7 @@
             }); */
 
             // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-            var legend = d3.select(".svg-container").append("svg")
+            /* var legend = d3.select(".svg-container").append("svg")
                 .attr("class", "legend")
                 .attr("width", 250)
                 .attr("height", 200)
@@ -381,7 +441,7 @@
                 .attr("dy", ".35em")
                 .text(function(d) {
                     return d;
-                });
+                }); */
         });
     });
 
@@ -562,7 +622,7 @@
                 }); */
 
                 // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-                var legend = d3.select(".svg-container").append("svg")
+                /* var legend = d3.select(".svg-container").append("svg")
                     .attr("class", "legend")
                     .attr("width", 200)
                     .attr("height", 200)
@@ -586,7 +646,7 @@
                     .attr("dy", ".35em")
                     .text(function(d) {
                         return d;
-                    });
+                    }); */
             });
         });
     };
