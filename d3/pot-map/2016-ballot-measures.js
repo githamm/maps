@@ -5,6 +5,11 @@
     "lon": -81.5158
   },
   {
+    "place": "Florida",
+    "lat": 27.6648,
+    "lon": -81.5158
+  },
+  {
     "place": "North Dakota",
     "lat": 47.5515,
     "lon": -101.0020
@@ -18,21 +23,6 @@
     "place": "Arkansas",
     "lat": 34.7465,
     "lon": -92.2896
-  },
-  {
-    "place": "Missouri",
-    "lat": 38.5767,
-    "lon": -92.1735
-  },
-  {
-    "place": "Oklahoma",
-    "lat": 35.0078,
-    "lon": -97.0929
-  },
-  {
-    "place": "Michigan",
-    "lat": 42.7325,
-    "lon": -84.5555
   },
   {
     "place": "Arizona",
