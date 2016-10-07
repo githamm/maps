@@ -25,7 +25,6 @@
     .d3-tip {
         padding: 12px;
         color: #fff;
-        border-radius: 2px;
         width: 200px;
         top: 5% !important;
         left: 2% !important;
@@ -36,10 +35,9 @@
     .d3-tip-mobile {
         padding: 12px;
         color: #fff;
-        border-radius: 2px;
         width: 250px;
         top: 54% !important;
-        left: 5% !important;
+        left: 10% !important;
         border-left: 1px solid #812317;
         border-bottom: 1px solid #812317;
     }
@@ -169,8 +167,9 @@
     #washington-dc {
         background: rgb(0, 0, 0);
     }
+    /* Hide divs on phone portrait view */
     
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 500px) and (orientation: portrait) {
         div#map {
             display: none;
         }
@@ -182,8 +181,9 @@
         }
     }
     /* @media only screen and (min-width: 501px) and (max-width: 799px) */
+    /* Phone landscape view */
     
-    @media only screen and (min-width: 414px) and (max-width: 800px) {
+    @media only screen and (min-width: 450px) and (max-width: 740px) and (orientation: landscape) {
         div#map {
             display: none;
         }
@@ -196,20 +196,70 @@
         .d3-tip-mobile {
             padding: 12px;
             color: #fff;
-            border-radius: 2px;
             width: 190px;
-            top: 32% !important;
-            left: 55% !important;
+            top: 21% !important;
+            left: 65% !important;
             border-left: 1px solid #812317;
             border-bottom: 1px solid #812317;
         }
         div#map-mobile {
-            width: 92%;
-            margin-left: -20px;
+            width: 100%;
+            margin-left: -10px;
         }
     }
+    /* Tablet portrait view */
+    /* @media only screen and (min-width: 700px) and (orientation: portrait) { */
+    /*  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        div#map {
+            display: none;
+        }
+        div#legend-container {
+            display: none;
+        }
+        p.source {
+            display: none;
+        }
+        .d3-tip-mobile {
+            padding: 12px;
+            color: #fff;
+            width: 190px;
+            top: 12% !important;
+            left: 64% !important;
+            border-left: 1px solid #812317;
+            border-bottom: 1px solid #812317;
+        }
+        div#map-mobile {
+            width: 100%;
+            margin-left: -10px;
+        }
+    }
+    /* Tablet landscape view */
+    /* @media only screen and (min-width: 1000px) and (orientation: landscape) {
+        div#map {
+            display: none;
+        }
+        div#legend-container {
+            display: none;
+        }
+        p.source {
+            display: none;
+        }
+        .d3-tip-mobile {
+            padding: 12px;
+            color: #fff;
+            width: 190px;
+            top: 12% !important;
+            left: 64% !important;
+            border-left: 1px solid #812317;
+            border-bottom: 1px solid #812317;
+        }
+        div#map-mobile {
+            width: 100%;
+            margin-left: -10px;
+        }
+    } */
     
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 740px) {
         div#map-mobile {
             display: none;
         }
