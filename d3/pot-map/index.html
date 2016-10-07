@@ -15,12 +15,12 @@
 </head>
 
 <body>
-    <!-- <div class="row">
-        <div class="large-12 columns">
-            <h1 class="map-title">Marijuana Laws in the United States</h1>
-            <p class="map-chatter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus, dui non dictum condimentum, mauris nibh convallis est, id consectetur risus tortor maximus tellus. Fusce vehicula dignissim ipsum, sit amet consectetur nisi tristique nec. Curabitur at elit mauris. Phasellus porta dictum neque. Curabitur et faucibus sapien, a placerat ipsum. In dignissim eleifend condimentum. Donec interdum ante non felis efficitu r tincidunt.</p>
+    <div class="row">
+        <div class="large-12 columns medium-12">
+            <h1 class="map-title">U.S. Cannabis Laws</h1>
+            <!-- <p class="map-chatter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus, dui non dictum condimentum, mauris nibh convallis est, id consectetur risus tortor maximus tellus. Fusce vehicula dignissim ipsum, sit amet consectetur nisi tristique nec. Curabitur at elit mauris. Phasellus porta dictum neque. Curabitur et faucibus sapien, a placerat ipsum. In dignissim eleifend condimentum. Donec interdum ante non felis efficitu r tincidunt.</p> -->
         </div>
-    </div> -->
+    </div>
     <div class="row">
         <div class="large-8 medium-8 columns" id="map"></div>
     </div>
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="large-8 medium-8 columns">
+        <div class="small-12 columns">
             <div id="map-mobile"></div>
         </div>
     </div>
@@ -109,7 +109,7 @@
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", "0 0 200 100")
         //class to make it responsive
-        .classed("svg-content-responsive", true);
+        //.classed("svg-content-responsive", true);
 
     // Load GeoJSON data and merge with states data
     d3.json("data/states.json", function(json) {
@@ -121,7 +121,7 @@
             //.offset([0, 0])
             //.direction("n")
             .html(function(d, i) {
-                return "<p class='state-title'><span style='background: #812317; padding: 5px 10px 5px 10px;'>" + d.properties.name + "</span></p>" + "<div class='tooltip-line'><span class='tooltip-header'>RECREATIONAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].recreational + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MEDICAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].medical + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>CBD LAW IN PLACE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].cbd + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>DECRIMINALIZED : </span>" + "<span class='tooltip-text'>" + newDict[d.id].decriminalization + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MANDATORY SENTENCING : </span>" + "<span class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>BALLOT MEASURE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].ballot + "</span></div>"
+                return "<p class='state-title'><span>" + d.properties.name + "</span></p>" + "<div class='tooltip-line'><span class='tooltip-header'>RECREATIONAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].recreational + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MEDICAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].medical + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>CBD LAW IN PLACE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].cbd + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>DECRIMINALIZED : </span>" + "<span class='tooltip-text'>" + newDict[d.id].decriminalization + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MANDATORY SENTENCING : </span>" + "<span class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>BALLOT MEASURE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].ballot + "</span></div>"
             })
 
         svg.call(tip);
@@ -176,9 +176,10 @@
                 .enter()
                 .append("a")
                 // click state to go to url
-                .attr("xlink:href", function(d) {
+                .attr("xlink:href",function(d) {
                     return newDict[d.id].statelink
                 })
+                .attr("target", "_blank")
                 .append("path")
                 .attr("d", path)
                 .style("stroke", "#fff")
@@ -233,7 +234,7 @@
         });
     });
 
-    // ********** FUNCTION TO SHOW MOBILE MAP **********
+    /* ********** FUNCTION TO SHOW MOBILE MAP ********** */
     function mapMobile() {
         var width = 200;
         var height = 100;
@@ -288,7 +289,7 @@
                 //.offset([0, 0])
                 //.direction("n")
                 .html(function(d, i) {
-                    return "<p class='state-title'><span style='background: #812317; padding: 5px 10px 5px 10px;'>" + d.properties.name + "</span></p>" + "<div class='tooltip-line'><span class='tooltip-header'>RECREATIONAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].recreational + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MEDICAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].medical + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>CBD LAW IN PLACE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].cbd + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>DECRIMINALIZED : </span>" + "<span class='tooltip-text'>" + newDict[d.id].decriminalization + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MANDATORY SENTENCING : </span>" + "<span class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>BALLOT MEASURE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].ballot + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'><a target='_top' href='" + newDict[d.id].statelink + "'>thecannabist.co/" + d.properties.name + "</a></span></div>"
+                    return "<p class='state-title'><span style='background: #812317; padding: 5px 10px 5px 10px;'>" + d.properties.name + "</span></p>" + "<div class='tooltip-line'><span class='tooltip-header'>RECREATIONAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].recreational + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MEDICAL : </span>" + "<span class='tooltip-text'>" + newDict[d.id].medical + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>CBD LAW IN PLACE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].cbd + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>DECRIMINALIZED : </span>" + "<span class='tooltip-text'>" + newDict[d.id].decriminalization + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>MANDATORY SENTENCING : </span>" + "<span class='tooltip-text'>" + newDict[d.id].mandatorysentencing + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'>BALLOT MEASURE : </span>" + "<span class='tooltip-text'>" + newDict[d.id].ballot + "</span></div>" + "<div class='tooltip-line'><span class='tooltip-header'><a target='blank' href='" + newDict[d.id].statelink + "'>thecannabist.co/" + d.properties.name + "</a></span></div>"
                 })
 
             svg.call(tip);

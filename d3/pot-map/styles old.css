@@ -14,8 +14,9 @@
     
     div#map {
         width: 100%;
-        margin-right: -100px;
-        float: right;
+        /* margin-right: -100px;
+        float: right; */
+        margin-left: -100px;
     }
     
     div#map-mobile {
@@ -26,9 +27,10 @@
         padding: 12px;
         color: #fff;
         width: 195px;
-        top: 115px !important;
-        left: 10px !important;
-        position: absolute;
+        /* top: 15% !important;
+        left: 2% !important; */
+        top: 33% !important;
+        left: 70% !important;
         /* border-left: 1px solid #812317;
         border-bottom: 1px solid #812317; */
         border: 1px solid #812317;
@@ -38,8 +40,8 @@
         padding: 12px;
         color: #fff;
         width: 250px;
-        top: 61% !important;
-        left: 11% !important;
+        top: 54% !important;
+        left: 10% !important;
         /* border-left: 1px solid #812317;
         border-bottom: 1px solid #812317; */
         border: 1px solid #812317;
@@ -116,6 +118,7 @@
     
     h1.map-title {
         font-family: 'Oswald', Helvetica, Arial, sans-serif;
+        font-size: 34px;
     }
     
     p.map-chatter {
@@ -206,8 +209,8 @@
             width: 190px;
             top: 21% !important;
             left: 65% !important;
-            border-left: 1px solid #812317;
-            border-bottom: 1px solid #812317;
+            /* border-left: 1px solid #812317;
+            border-bottom: 1px solid #812317; */
         }
         div#map-mobile {
             width: 100%;
