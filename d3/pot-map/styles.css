@@ -1,0 +1,222 @@
+    /* Lighten state color on hover */
+    
+    path:hover {
+        fill-opacity: .7;
+    }
+    
+    .legend {
+        position: absolute;
+        left: -75px;
+        top: 385px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    div#map {
+        width: 100%;
+        margin-right: -100px;
+        float: right;
+    }
+    
+    div#map-mobile {
+        width: 100%;
+    }
+    
+    .d3-tip {
+        padding: 12px;
+        color: #fff;
+        border-radius: 2px;
+        width: 200px;
+        top: 5% !important;
+        left: 2% !important;
+        border-left: 1px solid #812317;
+        border-bottom: 1px solid #812317;
+    }
+    
+    .d3-tip-mobile {
+        padding: 12px;
+        color: #fff;
+        border-radius: 2px;
+        width: 250px;
+        top: 54% !important;
+        left: 5% !important;
+        border-left: 1px solid #812317;
+        border-bottom: 1px solid #812317;
+    }
+    
+    span.tooltip-header {
+        font-family: 'Oswald', Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        color: rgba(129, 35, 23, 1);
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+    
+    span.tooltip-text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        color: rgba(0, 0, 0, .8);
+        margin-bottom: 0px;
+    }
+    
+    div.tooltip-line {
+        line-height: 16px;
+        margin-bottom: 7px;
+    }
+    
+    span.link-text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+    }
+    
+    p.state-title {
+        font-family: 'Oswald', Helvetica, Arial, sans-serif;
+        font-size: 19px;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-left: -13px;
+        margin-top: -10px;
+    }
+    
+    p#source {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        text-align: right;
+    }
+    
+    p#source-mobile {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        text-align: right;
+    }
+    
+    p.dots {
+        color: #b6b6b4;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    hr {
+        color: #b6b6b4;
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+    
+    h1.map-title {
+        font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    }
+    
+    p.map-chatter {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 21px;
+    }
+    
+    div#legend-container {
+        top: 70% !important;
+    }
+    
+    ul#legend {
+        list-style: none;
+    }
+    
+    li.legend-item {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        color: rgba(0, 0, 0, .8);
+        margin-bottom: -3px;
+    }
+    
+    .legend-square {
+        width: 10px;
+        height: 10px;
+        float: left;
+        margin-right: 3px;
+        margin-top: 5px;
+    }
+    
+    #recreational {
+        background: rgb(49, 163, 84);
+    }
+    
+    #medical {
+        background: rgb(161, 217, 155);
+    }
+    
+    #prohibition {
+        background: rgb(213, 222, 217);
+    }
+    
+    .legend-circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        float: left;
+        margin-right: 3px;
+        margin-top: 5px;
+    }
+    
+    #ballot-measure {
+        background: rgba(117, 112, 179, 1);
+    }
+    
+    #washington-dc {
+        background: rgb(0, 0, 0);
+    }
+    
+    @media only screen and (max-width: 500px) {
+        div#map {
+            display: none;
+        }
+        div#legend-container {
+            display: none;
+        }
+        p.source {
+            display: none;
+        }
+    }
+    /* @media only screen and (min-width: 501px) and (max-width: 799px) */
+    
+    @media only screen and (min-width: 414px) and (max-width: 800px) {
+        div#map {
+            display: none;
+        }
+        div#legend-container {
+            display: none;
+        }
+        p.source {
+            display: none;
+        }
+        .d3-tip-mobile {
+            padding: 12px;
+            color: #fff;
+            border-radius: 2px;
+            width: 190px;
+            top: 32% !important;
+            left: 55% !important;
+            border-left: 1px solid #812317;
+            border-bottom: 1px solid #812317;
+        }
+        div#map-mobile {
+            width: 92%;
+            margin-left: -20px;
+        }
+    }
+    
+    @media only screen and (min-width: 800px) {
+        div#map-mobile {
+            display: none;
+        }
+        div#legend-container-mobile {
+            display: none;
+        }
+        p#source-mobile {
+            display: none;
+        }
+    }
