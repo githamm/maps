@@ -1,3 +1,18 @@
+// We define a variable holding the current key to visualize on the map.
+var currentKey = 'urban';
+
+// Listen to changes of the dropdown to select the key to visualize on
+// the map.
+d3.select('#select-key').on('change', function(a) {
+  // Change the current key and call the function to update the colors.
+  currentKey = d3.select(this).property('value');
+  updateMapColors();
+});
+
+// We add a listener to the browser window, calling updateLegend when
+// the window is resized.
+window.onresize = updateLegend;
+
 // We specify the dimensions for the map container. We use the same
 // width and height as specified in the CSS above.
 var width = 900,
@@ -55,7 +70,8 @@ var dataById = d3.map();
 // values are known.
 var quantize = d3.scale.quantize()
     .range(d3.range(9).map(function(i) {
-        return 'q' + i + '-9'; }));
+        return 'q' + i + '-9';
+    }));
 
 // We prepare a number format which will always return 2 decimal places.
 var formatNumber = d3.format('.2f');
@@ -149,9 +165,11 @@ function updateLegend() {
         }))
         .attr("height", 8)
         .attr("x", function(d) {
-            return legendX(d[0]); })
+            return legendX(d[0]);
+        })
         .attr("width", function(d) {
-            return legendX(d[1]) - legendX(d[0]); })
+            return legendX(d[1]) - legendX(d[0]);
+        })
         .attr('class', function(d, i) {
             return quantize.range()[i];
         });
@@ -188,16 +206,17 @@ d3.json('data/states.json', function(error, features) {
         // We store the data object in the variable which is accessible from
         // outside of this function.
         mapData = data;
-        console.log(mapData);
+        console.log(data);
 
         // This maps the data of the CSV so it can be easily accessed by
         // the ID of the municipality, for example: dataById[2196]
         dataById = d3.nest()
             .key(function(d) {
-                return d.stateid;
-                console.log(d.stateid); })
+                return d.state; // d.stateid = Alabama
+            })
             .rollup(function(d) {
-                return d[0]; })
+                return d[0];
+            })
             .map(data);
 
         // We add the features to the <g> element created before.
@@ -217,7 +236,7 @@ d3.json('data/states.json', function(error, features) {
             .on('click', showDetails);
 
         // Call the function to update the map colors.
-        updateMapColors();
+        // updateMapColors();
 
     });
 
@@ -226,15 +245,17 @@ d3.json('data/states.json', function(error, features) {
 /**
  * Update the colors of the features on the map. Each feature is given a
  * CSS class based on its value.
- */
+
 function updateMapColors() {
     // Set the domain of the values (the minimum and maximum values of
     // all values of the current key) to the quantize scale.
     quantize.domain([
         d3.min(mapData, function(d) {
-            return getValueOfData(d); }),
+            return getValueOfData(d);
+        }),
         d3.max(mapData, function(d) {
-            return getValueOfData(d); })
+            return getValueOfData(d);
+        })
     ]);
     // Update the class (determining the color) of the features.
     mapFeatures.selectAll('path')
@@ -246,6 +267,7 @@ function updateMapColors() {
     // We call the function to update the legend.
     updateLegend();
 }
+*/
 
 /**
  * Show the details of a feature in the details <div> container.
@@ -295,20 +317,21 @@ function showTooltip(f) {
     // Get the current mouse position (as integer)
     var mouse = d3.mouse(d3.select('#map').node()).map(
         function(d) {
-            return parseInt(d); }
+            return parseInt(d);
+        }
     );
 
     // Calculate the absolute left and top offsets of the tooltip. If the
     // mouse is close to the right border of the map, show the tooltip on
     // the left.
-    var left = Math.min(width - 4 * d.state.length, mouse[0] + 5);
+    /* var left = Math.min(width - 4 * d.state.length, mouse[0] + 5);
     var top = mouse[1] + 25;
 
     // Show the tooltip (unhide it) and set the name of the data entry.
     // Set the position as calculated before.
     tooltip.classed('hidden', false)
         .attr("style", "left:" + left + "px; top:" + top + "px")
-        .html(d.state);
+        .html(d.state); */
 }
 
 /**
@@ -387,6 +410,5 @@ function getValueOfData(d) {
  * @param {object} f - A GeoJSON Feature object.
  */
 function getIdOfFeature(f) {
-    return f.properties.stateid;
-    console.log(f.propeties.stateid);
+    return f.properties.name;
 }
