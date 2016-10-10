@@ -25,8 +25,9 @@
     .d3-tip {
         padding: 12px;
         color: #fff;
+        background: white;
         width: 195px;
-        top: 115px !important;
+        /* top: 115px !important;
         left: 10px !important;
         position: absolute;
         /* border-left: 1px solid #812317;
