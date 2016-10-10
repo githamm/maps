@@ -201,7 +201,8 @@ d3.json('data/states.json', function(error, features) {
       .translate([width/2, height/2]); */
 
     // Read the data for the cartogram
-    d3.csv('data/result.csv', function(data) {
+    //d3.csv('data/result.csv', function(data) {
+    d3.json('data/20160923.js', function(data) {
 
         // We store the data object in the variable which is accessible from
         // outside of this function.
