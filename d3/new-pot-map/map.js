@@ -4,9 +4,9 @@ var currentKey = 'urban';
 // Listen to changes of the dropdown to select the key to visualize on
 // the map.
 d3.select('#select-key').on('change', function(a) {
-  // Change the current key and call the function to update the colors.
-  currentKey = d3.select(this).property('value');
-  updateMapColors();
+    // Change the current key and call the function to update the colors.
+    currentKey = d3.select(this).property('value');
+    updateMapColors();
 });
 
 // We add a listener to the browser window, calling updateLegend when
@@ -55,7 +55,7 @@ svg.call(zoom);
 // translate parameters will be set once the features are loaded.
 var projection = d3.geo.albersUsa()
     .translate([width / 2, height / 2]) // translate to center of screen
-    .scale([900]); // scale things down so see entire US
+    .scale([1000]); // scale things down so see entire US
 
 // We prepare a path object and apply the projection to it.
 var path = d3.geo.path()
@@ -207,13 +207,13 @@ d3.json('data/states.json', function(error, features) {
         // We store the data object in the variable which is accessible from
         // outside of this function.
         mapData = data;
-        console.log(data);
+        //console.log(data);
 
         // This maps the data of the CSV so it can be easily accessed by
         // the ID of the municipality, for example: dataById[2196]
         dataById = d3.nest()
             .key(function(d) {
-                return d.state; // d.stateid = Alabama
+                return d.state;
             })
             .rollup(function(d) {
                 return d[0];
@@ -226,7 +226,8 @@ d3.json('data/states.json', function(error, features) {
             // ... and then enter the data. For each feature, a <path>
             // element is added.
             .data(features.features)
-            .enter().append('path')
+            .enter()
+            .append('path')
             // As "d" attribute, we set the path of the feature.
             .attr('d', path)
             // When the mouse moves over a feature, show the tooltip.
@@ -237,7 +238,7 @@ d3.json('data/states.json', function(error, features) {
             .on('click', showDetails);
 
         // Call the function to update the map colors.
-        // updateMapColors();
+        //updateMapColors();
 
     });
 
@@ -246,7 +247,7 @@ d3.json('data/states.json', function(error, features) {
 /**
  * Update the colors of the features on the map. Each feature is given a
  * CSS class based on its value.
-
+ 
 function updateMapColors() {
     // Set the domain of the values (the minimum and maximum values of
     // all values of the current key) to the quantize scale.
@@ -267,8 +268,7 @@ function updateMapColors() {
 
     // We call the function to update the legend.
     updateLegend();
-}
-*/
+} **/
 
 /**
  * Show the details of a feature in the details <div> container.
