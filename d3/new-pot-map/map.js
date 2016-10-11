@@ -247,7 +247,7 @@ d3.json('data/states.json', function(error, features) {
 /**
  * Update the colors of the features on the map. Each feature is given a
  * CSS class based on its value.
- 
+ **/
 function updateMapColors() {
     // Set the domain of the values (the minimum and maximum values of
     // all values of the current key) to the quantize scale.
@@ -268,7 +268,7 @@ function updateMapColors() {
 
     // We call the function to update the legend.
     updateLegend();
-} **/
+}
 
 /**
  * Show the details of a feature in the details <div> container.
@@ -411,5 +411,5 @@ function getValueOfData(d) {
  * @param {object} f - A GeoJSON Feature object.
  */
 function getIdOfFeature(f) {
-    return f.properties.name;
+    return f.properties.status;
 }
