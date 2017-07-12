@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created by Wiebevl for Wikipedia, rotated by en:Peterwhy -->
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+ <title>FLUG</title>
+ <g stroke="none" fill="#000000">
+  <polygon points="490,250 450,225 320,225 170,10 140,10 200,225 80,225 30,150 10,150 30,240 30,260 10,350 30,350 80,275 200,275 140,490 170,490 320,275 450,275"/>
+  <ellipse cx="441" cy="250" rx="50" ry="24" stroke="#000000" />
+</g>
+</svg>

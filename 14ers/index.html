@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colorado 14ers Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+    <style>
+    #map {
+        width: 100%px;
+        height: 600px;
+    }
+    
+    div.leaflet-popup-content {
+        font-family: Helvetica;
+    }
+    
+    div.leaflet-popup-content-wrapper {
+        border-radius: 0;
+    }
+    
+    div.leaflet-tooltip {
+        background-color: rgba(255, 255, 255, .7);
+    }
+    </style>
+</head>
+
+<body>
+    <select id="14erDropdown">
+        <option>Zoom to peak</option>
+        <option value='blanca'>Blanca Peak</option>
+        <option value='capitol'>Capitol Peak</option>
+        <option value='castle'>Castle Peak</option>
+        <option value='challenger'>Challenger Point</option>
+        <option value='conundrum'>Conundrum Peak</option>
+        <option value='crestoneNeedle'>Crestone Needle</option>
+        <option value='crestonePeak'>Crestone Peak</option>
+        <option value='culebra'>Culebra Peak</option>
+        <option value='diente'>El Diente Peak</option>
+        <option value='ellingwood'>Ellingwood Point</option>
+        <option value='grays'>Grays Peak</option>
+        <option value='handies'>Handies Peak</option>
+        <option value='humboldt'>Humboldt Peak</option>
+        <option value='huron'>Huron Peak</option>
+        <option value='kitCarson'>Kit Carson Mountain</option>
+        <option value='laPlata'>La Plata Peak</option>
+        <option value='littleBear'>Little Bear Peak</option>
+        <option value='longs'>Longs Peak</option>
+        <option value='maroon'>Maroon Peak</option>
+        <option value='missouri'>Missouri Mountain</option>
+        <option value='antero'>Mt. Antero</option>
+        <option value='belford'>Mt. Belford</option>
+        <option value='bierstadt'>Mt. Bierstadt</option>
+        <option value='bross'>Mt. Bross</option>
+        <option value='cameron'>Mt. Cameron</option>
+        <option value='columbia'>Mt. Columbia</option>
+        <option value='democrat'>Mt. Democrat</option>
+        <option value='elbert'>Mt. Elbert</option>
+        <option value='eolus'>Mt. Eolus</option>
+        <option value='evans'>Mt. Evans</option>
+        <option value='harvard'>Mt. Harvard</option>
+        <option value='lincoln'>Mt. Lincoln</option>
+        <option value='lindsey'>Mt. Lindsey</option>
+        <option value='massive'>Mt. Massive</option>
+        <option value='holyCross'>Mt. of the Holy Cross</option>
+        <option value='oxford'>Mt. Oxford</option>
+        <option value='princeton'>Mt. Princeton</option>
+        <option value='shavano'>Mt. Shavano</option>
+        <option value='sherman'>Mt. Sherman</option>
+        <option value='sneffels'>Mt. Sneffels</option>
+        <option value='wilson'>Mt. Wilson</option>
+        <option value='yale'>Mt. Yale</option>
+        <option value='northEolus'>North Eolus</option>
+        <option value='northMaroon'>North Maroon Peak</option>
+        <option value='pikes'>Pikes Peak</option>
+        <option value='pyramid'>Pyramid Peak</option>
+        <option value='quandary'>Quandary Peak</option>
+        <option value='redcloud'>Redcloud Peak</option>
+        <option value='sanLuis'>San Luis Peak</option>
+        <option value='snowmass'>Snowmass Mountain</option>
+        <option value='sunlight'>Sunlight Peak</option>
+        <option value='sunshine'>Sunshine Peak</option>
+        <option value='tabeguache'>Tabeguache Peak</option>
+        <option value='torreys'>Torreys Peak</option>
+        <option value='uncompahgre'>Uncompahgre Peak</option>
+        <option value='wetterhorn'>Wetterhorn Peak</option>
+        <option value='wilson'>Wilson Peak</option>
+        <option value='windom'>Windom Peak</option>
+    </select>
+    <div>&nbsp;</div>
+    <div id='map'></div>
+    <script src="colorado-14ers-geojson.js" type="text/javascript"></script>
+    <script>
+    var terrain = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+        maxZoom: 16
+    });
+    var satellite = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    var topo = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        maxZoom: 17,
+        attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    });
+    var map = L.map('map', {
+        center: [38.6255, -106.2509﻿],
+        zoom: 7,
+        layers: [terrain, satellite, topo]
+    });
+    var baseMaps = {
+        "Satellite": satellite,
+        "Terrain": terrain,
+        "Topo": topo
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+    // var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    //     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    // }).addTo(map);
+
+    //     var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+    // 	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    // 	maxZoom: 16
+    // }).addTo(map);
+
+    // function onEachFeature(feature, layer) {
+    //     var popupContent = "<p>I started out as a GeoJSON " +
+    //         feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
+
+    //     if (feature.properties && feature.properties.popupContent) {
+    //         popupContent += feature.properties.popupContent;
+    //     }
+
+    //     layer.bindPopup(popupContent);
+    // }
+
+    function onEachFeature(feature, layer) {
+        if (feature.properties.peak) {
+            layer.bindPopup('<span style="font-size: 1.4em; color: #ff7800; font-weight: bold;">' + feature.properties.peak + '</span><br>' + feature.properties.range + '<hr>' + 'Elevation (rank): ' + feature.properties.elevation + ' feet (' + feature.properties.rank + ')<br>Est. annual trips: ' + feature.properties.hikerDays + '<br><a href="' + feature.properties.link + '" target="_blank">Click for details</a>');
+            layer.bindTooltip(feature.properties.peak);
+        }
+    }
+
+    L.geoJSON([fourteeners, map], {
+
+        style: function(feature) {
+            return feature.properties && feature.properties.style;
+        },
+
+        onEachFeature: onEachFeature,
+
+        pointToLayer: function(feature, latlng) {
+            return L.circleMarker(latlng, {
+                radius: 6,
+                fillColor: "red",
+                color: "#fff",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+        }
+    }).addTo(map);
+
+    function updateDropdown() {
+        var e = document.getElementById("14erDropdown");
+        var dropdownSelection = e.options[e.selectedIndex].value;
+        if (dropdownSelection == 'blanca') {
+            map.flyTo([37.5775, -105.4856﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'capitol') {
+            map.flyTo([39.1503, -107.0829﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'castle') {
+            map.flyTo([39.0097, -106.8614﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'challenger') {
+            map.flyTo([37.9804, -105.6066﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'crestoneNeedle') {
+            map.flyTo([37.9647, -105.5766﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'crestonePeak') {
+            map.flyTo([37.9669, -105.5855﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'culebra') {
+            map.flyTo([37.1224, -105.1858﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'ellingwood') {
+            map.flyTo([37.5826, -105.4927﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'grays') {
+            map.flyTo([39.6339, -105.8176﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'handies') {
+            map.flyTo([37.913, -107.5044﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'humboldt') {
+            map.flyTo([37.9762, -105.5552﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'huron') {
+            map.flyTo([38.9455, -106.4381﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'kitCarson') {
+            map.flyTo([37.9797, -105.6026﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'laPlata') {
+            map.flyTo([39.0294, -106.4729﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'littleBear') {
+            map.flyTo([37.5666, -105.4972﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'longs') {
+            map.flyTo([40.255, -105.6151﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'maroon') {
+            map.flyTo([39.0708, -106.9890﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'missouri') {
+            map.flyTo([38.9476, -106.3785﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'antero') {
+            map.flyTo([38.6741, -106.2462﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'belford') {
+            map.flyTo([38.9607, -106.3607﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'bierstadt') {
+            map.flyTo([39.5826, -105.6688﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'bross') {
+            map.flyTo([39.3354, -106.1077﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'columbia') {
+            map.flyTo([38.9039, -106.2975﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'democrat') {
+            map.flyTo([39.3396, -106.1400﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'elbert') {
+            map.flyTo([39.1178, -106.4454﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'eolus') {
+            map.flyTo([37.6218, -107.6227﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'evans') {
+            map.flyTo([39.5883, -105.6438﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'harvard') {
+            map.flyTo([38.9244, -106.3207﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'lincoln') {
+            map.flyTo([39.3515, -106.1116﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'lindsey') {
+            map.flyTo([37.5837, -105.4449﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'massive') {
+            map.flyTo([39.1875, -106.4757﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'holyCross') {
+            map.flyTo([39.4668, -106.4817﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'oxford') {
+            map.flyTo([38.9648, -106.3388﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'princeton') {
+            map.flyTo([38.7492, -106.2424﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'shavano') {
+            map.flyTo([38.6192, -106.2393﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'sherman') {
+            map.flyTo([39.225, -106.1699﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'sneffels') {
+            map.flyTo([38.0038, -107.7923﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'wilson') {
+            map.flyTo([37.8391, -107.9916﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'yale') {
+            map.flyTo([38.8442, -106.3138﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'pikes') {
+            map.flyTo([38.8405, -105.0442﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'pyramid') {
+            map.flyTo([39.0717, -106.9502﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'quandary') {
+            map.flyTo([39.3973, -106.1064﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'redcloud') {
+            map.flyTo([37.941, -107.4219﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'sanLuis') {
+            map.flyTo([37.9868, -106.9313﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'snowmass') {
+            map.flyTo([39.1188, -107.0665﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'sunlight') {
+            map.flyTo([37.6274, -107.5959﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'sunshine') {
+            map.flyTo([37.9228, -107.4256﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'tabeguache') {
+            map.flyTo([38.6255, -106.2509﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'torreys') {
+            map.flyTo([39.6428, -105.8212﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'uncompahgre') {
+            map.flyTo([38.0717, -107.4621﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'wetterhorn') {
+            map.flyTo([38.0607, -107.5109﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'wilson') {
+            map.flyTo([37.8603, -107.9847﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'windom') {
+            map.flyTo([37.6212, -107.5919﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'cameron') {
+            map.flyTo([39.346844, -106.118576], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'diente') {
+            map.flyTo([37.839438, -108.005347﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'conundrum') {
+            map.flyTo([39.01563, -106.86294], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'northEolus') {
+            map.flyTo([37.625416, -107.620995], 12, {
+                animate: true,
+                duration: 3
+            });
+        } else if (dropdownSelection == 'northMaroon') {
+            map.flyTo([39.076077, -106.987267﻿], 12, {
+                animate: true,
+                duration: 3
+            });
+        }
+    }
+    $('#14erDropdown').change(updateDropdown);
+    </script>
+</body>
+
+</html>

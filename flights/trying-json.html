@@ -1,0 +1,274 @@
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    html {
+        height: 100%;
+        width: 100%;
+    }
+    
+    body {
+        height: 100%;
+        width: 100% margin: 0;
+        padding: 0
+    }
+    
+    #map_canvas {
+        height: 100%;
+        width: 100%;
+    }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRx6cfY-o89BfnR8tCYUvkV5Tbo--k5hE&sensor=false&libraries=visualization"></script>
+    <script language="javascript">
+    var line;
+    var lines = [];
+    var myLatlng = new google.maps.LatLng(39.856, -104.674);
+    var marker;
+
+    function initialize() {
+        var styles = [{
+            "featureType": "administrative.country",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "landscape",
+            "stylers": [{
+                "visibility": "on"
+            }, {
+                "color": "#C0C0C0"
+            }]
+        }, {
+            "featureType": "water",
+            "stylers": [{
+                "visibility": "on"
+            }, {
+                "color": "#FFFFFF"
+            }]
+        }, {
+            "featureType": "landscape.man_made",
+            "stylers": [{
+                "visibility": "off"
+            }, {
+                "color": "#efffff"
+            }]
+        }, {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "transit",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }];
+
+        // var symbolOne = {
+        //   strokeColor: '#F00',
+        //   fillColor: '#F00',
+        //   fillOpacity: 1
+        // };
+
+        // var cities = [new google.maps.LatLng(39.856, -104.674)];
+        var cities = [
+            new google.maps.LatLng(36.924, -111.451),
+            new google.maps.LatLng(37.444, -105.865),
+            new google.maps.LatLng(37.303, -108.628),
+            new google.maps.LatLng(38.286, -104.495),
+            new google.maps.LatLng(37.761, -99.964),
+            new google.maps.LatLng(38.854, -99.274),
+            new google.maps.LatLng(37.047, -100.962),
+            new google.maps.LatLng(38.779, -97.640)
+        ];
+        var markers = [];
+
+        var json = [{
+            "city": "Page",
+            "subsidy": 15,
+            "carrier": "Boutique Air",
+            "latitude": 36.924,
+            "longitude": -111.451
+        }, {
+            "city": "Alamosa",
+            "subsidy": 100,
+            "carrier": "Great Lakes",
+            "latitude": 37.444,
+            "longitude": -105.865
+        }]
+
+
+        var cityTitle = [
+            '<strong>Page, Ariz.</strong><hr><br><div style="margin-top: -12px">Subsidy: $2,275,111<br>Carrier: Great Lakes<br>Seats per flight: 19</div>',
+            '<strong>Alamosa, Colo.</strong><hr><br><div style="margin-top: -12px">Subsidy: $2,593,050<br>Carrier: Boutique Air<br>Seats per flight: 8</div>',
+            '<strong>Cortez, Colo.</strong><hr><br><div style="margin-top: -12px">Subsidy: $3,580,480<br>Carrier: Boutique Air<br>Seats per flight: 8</div>',
+            '<strong>Pueblo, Colo.</strong><hr><br><div style="margin-top: -12px">Subsidy: $1,687,626<br>Carrier: Great Lakes<br>Seats per flight: 30</div>',
+            '<strong>Dodge City, Kan.</strong><hr><br><div style="margin-top: -12px">Subsidy: $1,593,702<br>Carrier: PenAir<br>Seats per flight: 33</div>',
+            '<strong>Hayes, Kan.</strong><hr><br><div style="margin-top: -12px">Subsidy: $3,482,353<br>Carrier: Sky West<br>Seats per flight: 50</div>',
+            '<strong>Liberal, Kan./Guymon, Okla.</strong><hr><br><div style="margin-top: -12px">Subsidy: $1,593,702<br>Carrier: PenAir<br>Seats per flight: 33</div>',
+            '<strong>Salina, Kan.</strong><hr><br><div style="margin-top: -12px">Subsidy: $1,999,905<br>Carrier: Great Lakes<br>Seats per flight: 30</div>'
+        ];
+
+        var mapOptions = {
+            zoom: 5,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            opacity: 0.2,
+            disableDefaultUI: true,
+            draggable: false,
+            styles: styles
+        };
+
+        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+        var infowindow = new google.maps.InfoWindow();
+
+
+        var lineCoordinates = [
+            // new google.maps.LatLng(36.924, -111.451),
+            // new google.maps.LatLng(37.444, -105.865)
+            new google.maps.LatLng(39.856, -104.674)
+        ];
+
+        // var lineSymbol = {
+        //     path: google.maps.SymbolPath.CIRCLE                  
+        // };
+        var airplane = {
+            path: 'M480,240l-40-25H310L160,0h-30l60,215H70l-50-75H0l20,90v20L0,340h20l50-75h120l-60,215h30l150-215h130L480,240',
+            strokeColor: '#F00',
+            fillColor: '#F00',
+            fillOpacity: 1,
+            strokeWeight: 1,
+            scale: 0.04,
+            rotation: 270,
+            anchor: new google.maps.Point(240, 240)
+        };
+
+        // var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
+
+
+        // for (i = 0; i < cities.length; i++) {
+        //     markers = new google.maps.Marker({
+        //         position: cities[i],
+        //         icon: {
+        //             path: google.maps.SymbolPath.CIRCLE,
+        //             scale: 4,
+        //             strokeColor: '#F00',
+        //             strokeOpacity: 1,
+        //             strokeWeight: 2
+        //         },
+        //         // title: cityTitle[i],
+
+        //         map: map,
+        //     });
+
+        for (i = 0; i < json.length; i++) {
+            var data = json[i],
+                latLng = new google.maps.LatLng(data.latitude, data.longitude),
+                markers = new google.maps.Marker({
+                    position: latLng,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 4,
+                        strokeColor: '#F00',
+                        strokeOpacity: 1,
+                        strokeWeight: 2
+                    },
+                    // title: cityTitle[i],
+
+                    map: map,
+                });
+
+            google.maps.event.addListener(markers, 'click', (function(markers, i) {
+                return function() {
+                    infowindow.setContent(data.city + data.subsidy);
+                    infowindow.open(map, markers);
+                }
+            })(markers, i));
+
+            line = new google.maps.Polyline({
+                path: [lineCoordinates[0], latLng],
+                strokeOpacity: .4,
+                strokeWeight: 1,
+                strokeColor: '#f00',
+                geodesic: true,
+                icons: [{
+                    // icon: lineSymbol,
+                    icon: airplane,
+                    offset: '0%'
+                        // repeat: '30px'
+                }]
+            });
+
+            var diaMarker = new google.maps.Marker({
+                position: myLatlng,
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 4,
+                    fillColor: '#f00',
+                    fillOpacity: 1,
+                    strokeColor: '#f00',
+                    strokeOpacity: 1,
+                    strokeWeight: 4
+                },
+                map: map,
+                title: 'Denver International Airport'
+            });
+
+
+            // var dia = new google.maps.LatLng(39.856, -104.674);
+            // var marker = new google.maps.Marker({
+            //     position: dia,
+            //     title: "Hello World!",
+            //     icon: {
+            //         path: google.maps.SymbolPath.CIRCLE,
+            //         scale: 20,
+            //         strokeColor: '#000',
+            //         strokeOpacity: 1,
+            //         strokeWeight: 2
+            //     }
+            // });
+
+            // google.maps.event.addListener(marker, 'click', function() {
+            //     infowindow.open(map, marker);
+            // });
+
+            line.setMap(map);
+            lines.push(line);
+        } //end of for loop
+        // alert(lines.length);
+        animate();
+
+    } //end of initialize function
+
+    function animate() {
+        var count = 0;
+        offsetId = window.setInterval(function() {
+            count = (count + 1) % 400;
+            for (var i = 0; i < lines.length; i++) {
+                var icons = lines[i].get('icons');
+                icons[0].offset = (count / 2) + '%';
+                lines[i].set('icons', icons);
+            }
+        }, 20);
+    } // end of animate function
+    </script>
+</head>
+
+<body>
+    <div id="map_canvas" style="width: 100%; height: 100%; "></div>
+    <script>
+    initialize();
+    </script>
+</body>
+
+</html>
