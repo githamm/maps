@@ -6,7 +6,7 @@ body {
     border-radius: 0;
     border: 3px solid rgba(0, 0, 0, .6);
     font-size: 15px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255,255,255,.8);
 }
 
 .leaflet-popup-tip {
@@ -24,12 +24,7 @@ hr {
     margin-bottom: 15px;
 }
 
-#map-container {
-    height: 700px;
-    width: 100%;
-}
-
-#wildfire-map {
+#htmlwidget_container {
     height: 90%;
     border: 2px solid silver;
 }
