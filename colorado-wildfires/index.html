@@ -27,7 +27,7 @@
         maxZoom: 19
     });
 
-    $.getJSON("wildfires.js", function(data) {
+    $.getJSON("wildfires.json", function(data) {
         var geojson = L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
                 var popupOptions = {
