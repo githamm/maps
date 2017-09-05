@@ -1,0 +1,96 @@
+#container {
+    margin: 10px;
+}
+
+#map {
+    height: 550px;
+    width: 100%;
+    border: 1px solid silver;
+}
+
+.leaflet-control-layers-group-name {
+    font-weight: bold;
+    margin-bottom: .2em;
+    display: block;
+}
+
+.leaflet-control-layers-group {
+    margin-bottom: .5em;
+}
+
+.leaflet-control-layers-group label {
+    padding-left: .5em;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: rgba(0, 0, 0, .7);
+}
+
+.leaflet-popup-content {
+    max-width: 200px;
+}
+
+hr.popup {
+    margin: 17px 0px 1px 0px;
+    color: silver;
+}
+
+hr.not-popup {
+    margin-bottom: 18px;
+}
+
+h4.title {
+    color: orange;
+    font-size: 20px;
+    margin-bottom: -14px;
+    line-height: 22px;
+}
+
+span.popup-team {
+    font-size: 17px;
+    color: silver;
+}
+
+p.popup-content {
+    font-size: 15px;
+    color: silver;
+    margin-top: 8px;
+}
+
+a.directions {
+    color: orange;
+    font-size: 15px;
+}
+
+.icon-other {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .6);
+    /*border: 1px solid #ccc;*/
+}
+
+.icon-broncos {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(252, 76, 2, .6);
+    /*border: 1px solid #ccc;*/
+}
+
+.icon-csu {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #28a828/* rgba(64, 113, 87, .9)*/
+    ;
+    /*    border: 1px solid #ccc;*/
+}
+
+.icon-cu {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(207, 184, 124, 1);
+}

@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.962601,
+          39.737002
+        ]
+      },
+      "properties": {
+        "business": "Wyman's",
+        "team": "Chicago",
+        "city": "Denver",
+        "address": "2033 E 13th Ave, Denver, CO 80206",
+        "votes": "1",
+        "nickname": "Bears"
+      }
+    }
+  ]
+}

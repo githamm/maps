@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.992005,
+          39.752991
+        ]
+      },
+      "properties": {
+        "business": "Larimer Beer Hall",
+        "team": "Penn State",
+        "city": "Denver",
+        "address": "2012 Larimer St, Denver, CO 80205",
+        "votes": "1",
+        "nickname": "Nittany Lions"
+      }
+    }
+  ]
+}

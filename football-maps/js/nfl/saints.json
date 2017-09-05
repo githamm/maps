@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.995597,
+          39.746193
+        ]
+      },
+      "properties": {
+        "business": "Sam's No. 3",
+        "team": "New Orleans",
+        "city": "Denver",
+        "address": "1500 Curtis St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Saints"
+      }
+    }
+  ]
+}

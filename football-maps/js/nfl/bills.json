@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+        {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.993571,
+          39.753183
+        ]
+      },
+      "properties": {
+        "business": "Lodo's Bar & Grill",
+        "team": "Buffalo",
+        "city": "Denver",
+        "address": "1946 Market St, Denver, CO 80202",
+        "votes": "2",
+        "nickname": "Bills"
+      }
+    }
+  ]
+}

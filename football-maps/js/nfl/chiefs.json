@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.978185,
+          39.7258
+        ]
+      },
+      "properties": {
+        "business": "Don's Club Tavern",
+        "team": "Kansas City",
+        "city": "Denver",
+        "address": "723 E 6th Ave, Denver, CO 80203",
+        "votes": "2",
+        "nickname": "Chiefs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.980668,
+          39.689869
+        ]
+      },
+      "properties": {
+        "business": "Tavern Platt Park",
+        "team": "New York",
+        "city": "Denver",
+        "address": "1475 S Pearl St, Denver, CO 80210",
+        "votes": "1",
+        "nickname": "Giants"
+      }
+    }
+  ]
+}

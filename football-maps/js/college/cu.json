@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.718952,
+          38.871024
+        ]
+      },
+      "properties": {
+        "business": "Bubba's 33",
+        "team": "CU",
+        "city": "Colorado Springs",
+        "address": "5807 Constitution Ave, Colorado Springs, CO 80915",
+        "votes": "1",
+        "nickname": "Buffs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.986504,
+          39.734231
+        ]
+      },
+      "properties": {
+        "business": "Stoney's Bar & Grill",
+        "team": "CU",
+        "city": "Denver",
+        "address": "1111 Lincoln St, Denver, CO 80203",
+        "votes": "2",
+        "nickname": "Buffs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.255244,
+          39.998979
+        ]
+      },
+      "properties": {
+        "business": "Dark Horse",
+        "team": "CU",
+        "city": "Boulder",
+        "address": "2922 Baseline Rd, Boulder, CO 80303",
+        "votes": "1",
+        "nickname": "Buffs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.257823,
+          40.017745
+        ]
+      },
+      "properties": {
+        "business": "BJ's Restaurant & Brewhouse",
+        "team": "CU",
+        "city": "Boulder",
+        "address": "1690 28th St, Boulder, CO 80301",
+        "votes": "1",
+        "nickname": "Buffs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.945821,
+          39.714897
+        ]
+      },
+      "properties": {
+        "business": "Chopper's Sports Grill",
+        "team": "Baltimore",
+        "city": "Denver",
+        "address": "80 S Madison St, Denver, CO 80209",
+        "votes": "1",
+        "nickname": "Ravens"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.000626,
+          39.748436
+        ]
+      },
+      "properties": {
+        "business": "Rhein Haus Denver",
+        "team": "Seattle",
+        "city": "Denver",
+        "address": "1415 Market St, Denver, CO 80202",
+        "votes": "5",
+        "nickname": "Seahawks"
+      }
+    }
+  ]
+}

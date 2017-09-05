@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.867832,
+          39.687909
+        ]
+      },
+      "properties": {
+        "business": "Gibby's Big Backyard",
+        "team": "Tennessee",
+        "city": "Aurora",
+        "address": "1555 S Havana St, Aurora, CO 80012",
+        "votes": "1",
+        "nickname": "Titans"
+      }
+    }
+  ]
+}

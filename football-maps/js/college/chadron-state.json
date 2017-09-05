@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+        {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.987769,
+          39.716333
+        ]
+      },
+      "properties": {
+        "business": "The Hi Dive",
+        "team": "Chadron State",
+        "city": "Denver",
+        "address": "7 S Broadway, Denver, CO 80223",
+        "votes": "1",
+        "nickname": "Eagles"
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.987196,
+          39.715162
+        ]
+      },
+      "properties": {
+        "business": "Badgers Pub",
+        "team": "Wisconsin",
+        "city": "Denver",
+        "address": "76 S Broadway, Denver, CO 80209",
+        "votes": "1",
+        "nickname": "Badgers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.013319,
+          39.762274
+        ]
+      },
+      "properties": {
+        "business": "Highland Tap & Burger",
+        "team": "Wisconsin",
+        "city": "Denver",
+        "address": "2219 W 32nd Ave, Denver, CO 80211",
+        "votes": "1",
+        "nickname": "Badgers"
+      }
+    }
+  ]
+}

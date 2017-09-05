@@ -1,0 +1,239 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.254812,
+          32.796954
+        ]
+      },
+      "properties": {
+        "business": "Backyard Kitchen & Tap",
+        "team": "Denver  ",
+        "city": "San Diego",
+        "address": "832 Garnet Ave, San Diego, CA 92109",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.257823,
+          40.017745
+        ]
+      },
+      "properties": {
+        "business": "BJ's Restaurant & Brewhouse",
+        "team": "Denver  ",
+        "city": "Boulder",
+        "address": "1690 28th St, Boulder, CO 80301",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.718952,
+          38.871024
+        ]
+      },
+      "properties": {
+        "business": "Bubba's 33",
+        "team": "Denver  ",
+        "city": "Colorado Springs",
+        "address": "5807 Constitution Ave, Colorado Springs, CO 80915",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.673403,
+          40.782805
+        ]
+      },
+      "properties": {
+        "business": "Buffalo Wild Wings",
+        "team": "Denver  ",
+        "city": "Peoria",
+        "address": "5121 W American Prairie Dr, Peoria, IL 61615",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.940152,
+          39.702237
+        ]
+      },
+      "properties": {
+        "business": "Chili's Grill & Bar",
+        "team": "Denver  ",
+        "city": "Glendale",
+        "address": "790 S Colorado Blvd, Glendale, CO 80246",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.769143,
+          39.654795
+        ]
+      },
+      "properties": {
+        "business": "Golden Flame Hot Wings",
+        "team": "Denver  ",
+        "city": "Aurora",
+        "address": "18757 E Hampden Ave, Aurora, CO 80013",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.981977,
+          39.726929
+        ]
+      },
+      "properties": {
+        "business": "Govnr's Park Tavern",
+        "team": "Denver  ",
+        "city": "Denver",
+        "address": "672 Logan St, Denver, CO 80203",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.980605,
+          39.696491
+        ]
+      },
+      "properties": {
+        "business": "Pub on Pearl",
+        "team": "Denver  ",
+        "city": "Denver",
+        "address": "1101 S Pearl St, Denver, CO 80210",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.010521,
+          39.761514
+        ]
+      },
+      "properties": {
+        "business": "Recess Beer Garden",
+        "team": "Denver",
+        "city": "Denver",
+        "address": "2715 17th St, Denver, CO 80211",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.344164,
+          47.683204
+        ]
+      },
+      "properties": {
+        "business": "St. Andrews Bar & Grill",
+        "team": "Denver",
+        "city": "Seattle",
+        "address": "7406 Aurora Ave N, Seattle, WA 98103",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.986504,
+          39.734231
+        ]
+      },
+      "properties": {
+        "business": "Stoney's Bar & Grill",
+        "team": "Denver",
+        "city": "Denver",
+        "address": "1111 Lincoln St, Denver, CO 80203",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.89777,
+          39.637518
+        ]
+      },
+      "properties": {
+        "business": "The Dam Grill",
+        "team": "Denver",
+        "city": "Denver ",
+        "address": "8000 E Quincy Ave, Denver, CO 80237",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.073874,
+          39.483568
+        ]
+      },
+      "properties": {
+        "business": "Waterton Tavern",
+        "team": "Denver",
+        "city": "Littleton",
+        "address": "8361 N Rampart Range Rd, Littleton, CO 80125",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.980688,
+          39.709614
+        ]
+      },
+      "properties": {
+        "business": "Candlelight Tavern",
+        "team": "Detroit",
+        "city": "Denver",
+        "address": "383 S Pearl St, Denver, CO 80209",
+        "votes": "3",
+        "nickname": "Lions"
+      }
+    }
+  ]
+}

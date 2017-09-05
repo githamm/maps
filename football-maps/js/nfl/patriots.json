@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+   {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.929601,
+          39.740348
+        ]
+      },
+      "properties": {
+        "business": "The Elm",
+        "team": "New England",
+        "city": "Denver",
+        "address": "5001 E Colfax Ave, Denver, CO 80220",
+        "votes": "1",
+        "nickname": "Patriots"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.000312,
+          39.748682
+        ]
+      },
+      "properties": {
+        "business": "The Pour House Pub",
+        "team": "New England",
+        "city": "Denver",
+        "address": "1435 Market St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Patriots"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.032029,
+          39.761862
+        ]
+      },
+      "properties": {
+        "business": "Three Dogs Tavern",
+        "team": "New England",
+        "city": "Denver",
+        "address": "3390 W 32nd Ave, Denver, CO 80211",
+        "votes": "1",
+        "nickname": "Patriots"
+      }
+    }
+  ]
+}
