@@ -26,6 +26,46 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -107.374,
+          37.175
+        ]
+      },
+      "properties": {
+        "fireName": "842 Fire",
+        "fireCause": "Lightning",
+        "fireStart": "8/1/2017",
+        "fireStatus": "Active",
+        "fireAcres": "1025",
+        "pctContained": "75",
+        "inciwebLink": "https://inciweb.nwcg.gov/incident/5481/",
+        "fireDetails": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.884,
+          40.925
+        ]
+      },
+      "properties": {
+        "fireName": "Big Red Fire",
+        "fireCause": "Lightning",
+        "fireStart": "8/19/2017",
+        "fireStatus": "Active",
+        "fireAcres": "1405",
+        "pctContained": "",
+        "inciwebLink": "https://inciweb.nwcg.gov/incident/5551/",
+        "fireDetails": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -108.815,
           40.153
         ]
@@ -54,7 +94,7 @@
         "fireName": "Deer Gulch Fire",
         "fireCause": "Unknown",
         "fireStart": "7/8/2017",
-        "fireStatus": "Active",
+        "fireStatus": "Inactive",
         "fireAcres": "43",
         "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5341/",
@@ -214,7 +254,7 @@
         "fireName": "Peekaboo Fire",
         "fireCause": "Lightning",
         "fireStart": "6/27/2017",
-        "fireStatus": "Active",
+        "fireStatus": "Inactive",
         "fireAcres": "12839",
         "pctContained": "95",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5328/",
@@ -234,7 +274,7 @@
         "fireName": "Wilson Fire",
         "fireCause": "Lightning",
         "fireStart": "7/7/2017",
-        "fireStatus": "Active",
+        "fireStatus": "Inactive",
         "fireAcres": "700",
         "pctContained": "90",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5338/",
