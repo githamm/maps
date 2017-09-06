@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.945821,
+          39.714897
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Chopper's Sports Grill",
+        "team": "Texas",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
+        "address": "80 S Madison St, Denver, CO 80209",
         "votes": "2",
-        "nickname": "Sooners"
+        "nickname": "Longhorns"
       }
     }
   ]

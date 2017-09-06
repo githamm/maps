@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.995234,
+          39.754382
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Jackson's Sports Bar",
+        "team": "Florida",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
-        "votes": "2",
-        "nickname": "Sooners"
+        "address": "1520 20th St, Denver, CO 80202",
+        "votes": "3",
+        "nickname": "Gators"
       }
     }
   ]

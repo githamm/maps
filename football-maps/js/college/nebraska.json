@@ -18,6 +18,60 @@
         "votes": "1",
         "nickname": "Cornhuskers"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.773488,
+          39.552054
+        ]
+      },
+      "properties": {
+        "business": "FanDraught Sports Brewery",
+        "team": "Nebraska ",
+        "city": "Parker",
+        "address": "19340 Cottonwood Dr, Parker, CO 80134",
+        "votes": "1",
+        "nickname": "Cornhuskers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.980712,
+          39.736707
+        ]
+      },
+      "properties": {
+        "business": "Pub on Penn",
+        "team": "Nebraska ",
+        "city": "Denver",
+        "address": "1278 Pennsylvania St, Denver, CO 80203",
+        "votes": "1",
+        "nickname": "Cornhuskers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.864199,
+          39.668754
+        ]
+      },
+      "properties": {
+        "business": "The Hideaway Lounge",
+        "team": "Nebraska ",
+        "city": "Aurora",
+        "address": "2627 S Parker Rd, Aurora, CO 80014",
+        "votes": "1",
+        "nickname": "Cornhuskers"
+      }
     }
   ]
 }

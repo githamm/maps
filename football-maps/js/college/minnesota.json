@@ -18,6 +18,24 @@
         "votes": "1",
         "nickname": "Golden Gophers"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.032029,
+          39.761862
+        ]
+      },
+      "properties": {
+        "business": "Three Dogs Tavern",
+        "team": "Minnesota ",
+        "city": "Denver",
+        "address": "3390 W 32nd Ave, Denver, CO 80211",
+        "votes": "1",
+        "nickname": "Golden Gophers"
+      }
     }
   ]
 }

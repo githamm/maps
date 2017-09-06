@@ -36,6 +36,24 @@
         "votes": "1",
         "nickname": "Badgers"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.994602,
+          39.753697
+        ]
+      },
+      "properties": {
+        "business": "Swanky's",
+        "team": "Wisconsin",
+        "city": "Denver",
+        "address": "1938 Blake St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Badgers"
+      }
     }
   ]
 }

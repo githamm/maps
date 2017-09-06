@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.976924,
+          39.773569
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Blue Moon Brewing Company",
+        "team": "Ole Miss",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
-        "votes": "2",
-        "nickname": "Sooners"
+        "address": "3750 Chestnut Pl, Denver, CO 80216",
+        "votes": "1",
+        "nickname": "Rebels"
       }
     }
   ]

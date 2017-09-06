@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.971781,
+          39.740286
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Irish Snug",
+        "team": "Auburn",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
+        "address": "1201 E Colfax Ave, Denver, CO 80218",
         "votes": "2",
-        "nickname": "Sooners"
+        "nickname": "Tigers"
       }
     }
   ]

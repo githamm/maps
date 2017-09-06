@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.994025,
+          39.752897
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Brother's Bar & Grill",
+        "team": "Florida State",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
-        "votes": "2",
-        "nickname": "Sooners"
+        "address": "1920 Market St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Seminoles"
       }
     }
   ]

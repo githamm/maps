@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.987147,
+          39.75202
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Yazoo BBQ Company",
+        "team": "Mississippi State",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
-        "votes": "2",
-        "nickname": "Sooners"
+        "address": "2150 Broadway, Denver, CO 80205",
+        "votes": "1",
+        "nickname": "Bulldogs"
       }
     }
   ]

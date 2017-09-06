@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.99409,
+          39.753557
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Cowboy Lounge",
+        "team": "Clemson",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
-        "votes": "2",
-        "nickname": "Sooners"
+        "address": "1941 Market St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Tigers"
       }
     }
   ]

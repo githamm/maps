@@ -31,6 +31,12 @@
     max-width: 200px;
 }
 
+form.leaflet-control-layers-list {
+    height: 500px;
+    padding-bottom: 5px;
+    overflow-y: auto;
+}
+
 hr.popup {
     margin: 17px 0px 1px 0px;
     color: silver;
@@ -45,6 +51,7 @@ h4.title {
     font-size: 20px;
     margin-bottom: -14px;
     line-height: 22px;
+    font-weight: 500;
 }
 
 span.popup-team {

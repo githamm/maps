@@ -42,9 +42,6 @@
     <link href="css/leaflet.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <!-- http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css -->
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://extras.denverpost.com/transgender/css/foundation.min.css" />
-    <link rel="stylesheet" href="http://extras.denverpost.com/transgender/css/normalize.css" />
     <!-- SCRIPTS -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
     </script>
@@ -73,6 +70,21 @@
     var kansasState = new L.LayerGroup();
     var mizzou = new L.LayerGroup();
     var virginiaTech = new L.LayerGroup();
+    var auburn = new L.LayerGroup();
+    var cal = new L.LayerGroup();
+    var centralFlorida = new L.LayerGroup();
+    var clemson = new L.LayerGroup();
+    var florida = new L.LayerGroup();
+    var floridaState = new L.LayerGroup();
+    var kansas = new L.LayerGroup();
+    var michiganState = new L.LayerGroup();
+    var mississippiState = new L.LayerGroup();
+    var oleMiss = new L.LayerGroup();
+    var purdue = new L.LayerGroup();
+    var texas = new L.LayerGroup();
+    var ucla = new L.LayerGroup();
+    var washington = new L.LayerGroup();
+    var wyoming = new L.LayerGroup();
 
     var openStreetMapTiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -92,23 +104,38 @@
     // grouped layer control from http://bl.ocks.org/ismyrnow/6123517
     var groupedOverlays = {
         "Schools": {
-            "Arizona State": arizonaState,
-            "Chadron State": chadronState,
             "CSU": csu,
             "CU": cu,
+            "Arizona State": arizonaState,
+            "Auburn": auburn,
+            "Cal": cal,
+            "Central Florida": centralFlorida,
+            "Chadron State": chadronState,
+            "Clemson": clemson,
+            "Florida": florida,
+            "Florida State": floridaState,
             "Iowa State": iowaState,
+            "Kansas": kansas,
             "Kansas State": kansasState,
             "Memphis": memphis,
             "Michigan": michigan,
+            "Michigan State": michiganState,
             "Minnesota": minnesota,
+            "Mississippi State": mississippiState,
             "Mizzou": mizzou,
             "Nebraska": nebraska,
             "Ohio State": ohioState,
             "Oklahoma": oklahoma,
+            "Ole Miss": oleMiss,
             "Penn State": pennState,
+            "Purdue": purdue,
+            "Texas": texas,
+            "UCLA": ucla,
             "UConn": uConn,
             "Virginia Tech": virginiaTech,
-            "Wisconsin": wisconsin
+            "Washington": washington,
+            "Wisconsin": wisconsin,
+            "Wyoming": wyoming
         }
     };
 
@@ -411,6 +438,276 @@
                 return marker;
             }
         }).addTo(virginiaTech);
+    });
+
+    $.getJSON("js/college/auburn.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(auburn);
+    });
+
+    $.getJSON("js/college/cal.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(cal);
+    });
+
+    $.getJSON("js/college/central-florida.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(centralFlorida);
+    });
+
+    $.getJSON("js/college/clemson.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(clemson);
+    });
+
+    $.getJSON("js/college/florida.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(florida);
+    });
+
+    $.getJSON("js/college/florida-state.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(floridaState);
+    });
+
+    $.getJSON("js/college/kansas.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(kansas);
+    });
+
+    $.getJSON("js/college/michigan-state.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(michiganState);
+    });
+
+    $.getJSON("js/college/mississippi-state.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(mississippiState);
+    });
+
+    $.getJSON("js/college/ole-miss.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(oleMiss);
+    });
+
+    $.getJSON("js/college/purdue.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(purdue);
+    });
+
+    $.getJSON("js/college/texas.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(texas);
+    });
+
+    $.getJSON("js/college/ucla.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(ucla);
+    });
+
+    $.getJSON("js/college/washington.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(washington);
+    });
+
+    $.getJSON("js/college/wyoming.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(wyoming);
     });
 
     L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);

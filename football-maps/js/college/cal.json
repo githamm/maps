@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.986504,
-          39.734231
+          -104.997425,
+          39.758617
         ]
       },
       "properties": {
-        "business": "Stoney's Bar & Grill",
-        "team": "Oklahoma",
+        "business": "Whiskey Tango Foxtrot",
+        "team": "Cal",
         "city": "Denver",
-        "address": "1111 Lincoln St, Denver, CO 80203",
-        "votes": "2",
-        "nickname": "Sooners"
+        "address": "2907 Huron St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Bears"
       }
     }
   ]
