@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.072785,
+          39.885867
+        ]
+      },
+      "properties": {
+        "business": "Quaker Steak & Lube",
+        "team": "Arizona",
+        "city": "Westminster",
+        "address": "10392 Reed St, Westminster, CO 80021",
+        "votes": "1",
+        "nickname": "Cardinals"
+      }
+    }
+  ]
+}

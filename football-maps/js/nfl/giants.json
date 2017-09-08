@@ -18,6 +18,24 @@
         "votes": "1",
         "nickname": "Giants"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.158562,
+          39.731595
+        ]
+      },
+      "properties": {
+        "business": "Yard House",
+        "team": "New York",
+        "city": "Lakewood",
+        "address": "14500 W Colfax Ave, Lakewood, CO 80401",
+        "votes": "1",
+        "nickname": "Giants"
+      }
     }
   ]
 }

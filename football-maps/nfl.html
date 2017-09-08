@@ -69,6 +69,10 @@
     var seahawks = new L.LayerGroup();
     var titans = new L.LayerGroup();
     var vikings = new L.LayerGroup();
+    var cardinals = new L.LayerGroup();
+    var panthers = new L.LayerGroup();
+    var texans = new L.LayerGroup();
+    var fortyNiners = new L.LayerGroup();
 
     var openStreetMapTiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -89,16 +93,20 @@
     var groupedOverlays = {
         "Teams": {
             "Broncos": broncos,
+            "49ers": fortyNiners,
             "Bears": bears,
             "Bills": bills,
+            "Cardinals": cardinals,
             "Chiefs": chiefs,
             "Giants": giants,
             "Lions": lions,
             "Packers": packers,
+            "Panthers": panthers,
             "Patriots": patriots,
             "Ravens": ravens,
             "Saints": saints,
             "Seahawks": seahawks,
+            "Texans": texans,
             "Titans": titans,
             "Vikings": vikings
         }
@@ -358,7 +366,94 @@
         }).addTo(vikings);
     });
 
-    L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+    $.getJSON("js/nfl/cardinals.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(cardinals);
+    });
+
+    $.getJSON("js/nfl/panthers.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(panthers);
+    });
+
+    $.getJSON("js/nfl/texans.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(texans);
+    });
+
+    $.getJSON("js/nfl/49ers.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(fortyNiners);
+    });
+
+    // L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+    // Below to keep map tiles in place while scrolling through layer control
+    var grouplayercontrol = L.control.groupedLayers(baseLayers, groupedOverlays, { position: 'topright' });
+    map.addControl(grouplayercontrol);
+    if (!L.Browser.touch) {
+        L.DomEvent
+            .disableClickPropagation(grouplayercontrol._container)
+            .disableScrollPropagation(grouplayercontrol._container);
+    } else {
+        L.DomEvent.disableClickPropagation(grouplayercontrol._container);
+    }
     </script>
 </body>
 

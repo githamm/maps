@@ -1,22 +1,22 @@
 {
   "type": "FeatureCollection",
   "features": [
-   {
+    {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.980688,
-          39.709614
+          -104.993899,
+          39.753545
         ]
       },
       "properties": {
-        "business": "Candlelight Tavern",
-        "team": "Detroit",
+        "business": "The Tavern Downtown",
+        "team": "San Francisco",
         "city": "Denver",
-        "address": "383 S Pearl St, Denver, CO 80209",
-        "votes": "4",
-        "nickname": "Lions"
+        "address": "1949 Market St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "49ers"
       }
     }
   ]

@@ -18,6 +18,24 @@
         "votes": "2",
         "nickname": "Bills"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.921701,
+          39.681506
+        ]
+      },
+      "properties": {
+        "business": "Esters Neighborhood Pub",
+        "team": "Buffalo",
+        "city": "Denver",
+        "address": "1950 S Holly St, Denver, CO 80222",
+        "votes": "1",
+        "nickname": "Bills"
+      }
     }
   ]
 }

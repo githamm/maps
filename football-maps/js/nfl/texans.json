@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.962601,
-          39.737002
+          -105.000686,
+          39.748979
         ]
       },
       "properties": {
-        "business": "Wyman's",
-        "team": "Chicago",
+        "business": "Society Sports and Spirits",
+        "team": "Houston",
         "city": "Denver",
-        "address": "2033 E 13th Ave, Denver, CO 80206",
-        "votes": "3",
-        "nickname": "Bears"
+        "address": "1434 Blake St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Texans"
       }
     }
   ]
