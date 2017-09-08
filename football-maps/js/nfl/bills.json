@@ -36,6 +36,24 @@
         "votes": "1",
         "nickname": "Bills"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.070969,
+          39.740459
+        ]
+      },
+      "properties": {
+        "business": "WestFax Brewing Company",
+        "team": "Buffalo",
+        "city": "Lakewood",
+        "address": "6733 W Colfax Ave, Lakewood, CO 80214",
+        "votes": "1",
+        "nickname": "Bills"
+      }
     }
   ]
 }

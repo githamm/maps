@@ -33,8 +33,9 @@
 
 form.leaflet-control-layers-list {
     height: 500px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 hr.popup {
