@@ -55,8 +55,8 @@
         "fireCause": "Lightning",
         "fireStart": "8/19/2017",
         "fireStatus": "Active",
-        "fireAcres": "1405",
-        "pctContained": "",
+        "fireAcres": "2854",
+        "pctContained": "20",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5551/",
         "fireDetails": ""
       }
@@ -78,6 +78,26 @@
         "fireAcres": "17731",
         "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5242/",
+        "fireDetails": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.11,
+          40.599
+        ]
+      },
+      "properties": {
+        "fireName": "Deep Creek Fire",
+        "fireCause": "Unknown",
+        "fireStart": "9/4/2017",
+        "fireStatus": "Active",
+        "fireAcres": "4112",
+        "pctContained": "35",
+        "inciwebLink": "https://inciweb.nwcg.gov/incident/5598/",
         "fireDetails": ""
       }
     },
@@ -138,6 +158,26 @@
         "fireAcres": "976",
         "pctContained": "20",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5305/",
+        "fireDetails": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.276,
+          40.024
+        ]
+      },
+      "properties": {
+        "fireName": "Himes Peak Fire",
+        "fireCause": "Lightning",
+        "fireStart": "9/1/2017",
+        "fireStatus": "Active",
+        "fireAcres": "112",
+        "pctContained": "85",
+        "inciwebLink": "https://inciweb.nwcg.gov/incident/5599/",
         "fireDetails": ""
       }
     },
@@ -258,6 +298,26 @@
         "fireAcres": "12839",
         "pctContained": "95",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5328/",
+        "fireDetails": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.117,
+          40.344
+        ]
+      },
+      "properties": {
+        "fireName": "Pine Tree Fire",
+        "fireCause": "Lightning",
+        "fireStart": "9/9/2017",
+        "fireStatus": "Active",
+        "fireAcres": "3200",
+        "pctContained": "0",
+        "inciwebLink": "https://inciweb.nwcg.gov/incident/5604/",
         "fireDetails": ""
       }
     },
