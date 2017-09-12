@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.886419,
+          39.594242
+        ]
+      },
+      "properties": {
+        "business": "Twin Peaks Restaurant",
+        "team": "Cleveland",
+        "city": "Centennial",
+        "address": "8840 E Arapahoe Rd, Centennial, CO 80112",
+        "votes": "1",
+        "nickname": "Browns"
+      }
+    }
+  ]
+}

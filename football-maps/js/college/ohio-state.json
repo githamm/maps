@@ -15,7 +15,7 @@
         "team": "Ohio State",
         "city": "Denver",
         "address": "1920 Blake St, Denver, CO 80202",
-        "votes": "1",
+        "votes": "2",
         "nickname": "Buckeyes"
       }
     },
@@ -34,6 +34,24 @@
         "city": "Denver",
         "address": "8000 E Quincy Ave, Denver, CO 80237",
         "votes": "3",
+        "nickname": "Buckeyes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.886419,
+          39.594242
+        ]
+      },
+      "properties": {
+        "business": "Twin Peaks Restaurant",
+        "team": "Ohio State",
+        "city": "Centennial",
+        "address": "8840 E Arapahoe Rd, Centennial, CO 80112",
+        "votes": "1",
         "nickname": "Buckeyes"
       }
     }

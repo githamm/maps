@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.994726,
+          39.753603
+        ]
+      },
+      "properties": {
+        "business": "Sports Column",
+        "team": "Tampa Bay",
+        "city": "Denver",
+        "address": "1930 Blake St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Buccaneers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.72129,
+          38.894329
+        ]
+      },
+      "properties": {
+        "business": "Rhino's Sports & Spirits",
+        "team": "Tampa Bay",
+        "city": "Colorado Springs",
+        "address": "4307 Integrity Center Point, Colorado Springs, CO 80917",
+        "votes": "1",
+        "nickname": "Buccaneers"
+      }
+    }
+  ]
+}

@@ -42,9 +42,6 @@
     <link href="css/leaflet.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <!-- http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css -->
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://extras.denverpost.com/transgender/css/foundation.min.css" />
-    <link rel="stylesheet" href="http://extras.denverpost.com/transgender/css/normalize.css" />
     <!-- SCRIPTS -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
     </script>
@@ -73,6 +70,14 @@
     var panthers = new L.LayerGroup();
     var texans = new L.LayerGroup();
     var fortyNiners = new L.LayerGroup();
+    var bengals = new L.LayerGroup();
+    var browns = new L.LayerGroup();
+    var cowboys = new L.LayerGroup();
+    var raiders = new L.LayerGroup();
+    var eagles = new L.LayerGroup();
+    var steelers = new L.LayerGroup();
+    var buccaneers = new L.LayerGroup();
+    var redskins = new L.LayerGroup();
 
     var openStreetMapTiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -95,17 +100,25 @@
             "Broncos": broncos,
             "49ers": fortyNiners,
             "Bears": bears,
+            "Bengals": bengals,
             "Bills": bills,
+            "Browns": browns,
+            "Buccaneers": buccaneers,
             "Cardinals": cardinals,
             "Chiefs": chiefs,
+            "Cowboys": cowboys,
+            "Eagles": eagles,
             "Giants": giants,
             "Lions": lions,
             "Packers": packers,
             "Panthers": panthers,
             "Patriots": patriots,
+            "Raiders": raiders,
             "Ravens": ravens,
+            "Redskins": redskins,
             "Saints": saints,
             "Seahawks": seahawks,
+            "Steelers": steelers,
             "Texans": texans,
             "Titans": titans,
             "Vikings": vikings
@@ -440,6 +453,158 @@
                 return marker;
             }
         }).addTo(fortyNiners);
+    });
+
+    $.getJSON("js/nfl/bengals.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(bengals);
+    });
+
+    $.getJSON("js/nfl/browns.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(browns);
+    });
+
+    $.getJSON("js/nfl/cowboys.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(cowboys);
+    });
+
+    $.getJSON("js/nfl/raiders.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(raiders);
+    });
+
+    $.getJSON("js/nfl/eagles.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(eagles);
+    });
+
+    $.getJSON("js/nfl/steelers.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(steelers);
+    });
+
+    $.getJSON("js/nfl/buccaneers.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(buccaneers);
+    });
+
+    $.getJSON("js/nfl/redskins.json", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
+                );
+                return marker;
+            }
+        }).addTo(redskins);
     });
 
     // L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);

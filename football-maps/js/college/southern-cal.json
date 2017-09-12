@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.927352,
-          39.708499
+          -104.990589,
+          39.757551
         ]
       },
       "properties": {
-        "business": "Inga's Alpine Tavern",
-        "team": "Iowa State",
+        "business": "Blake Street Tavern",
+        "team": "USC",
         "city": "Denver",
-        "address": "5151 Leetsdale Dr, Denver, CO 80246",
-        "votes": "2",
-        "nickname": "Cyclones"
+        "address": "2301 Blake St, Denver, CO 80205",
+        "votes": "1",
+        "nickname": "Trojans"
       }
     }
   ]

@@ -54,7 +54,6 @@
     <div id="map"></div>
     <script>
     var arizonaState = new L.LayerGroup();
-    var chadronState = new L.LayerGroup();
     var csu = new L.LayerGroup();
     var cu = new L.LayerGroup();
     var iowaState = new L.LayerGroup();
@@ -85,6 +84,8 @@
     var ucla = new L.LayerGroup();
     var washington = new L.LayerGroup();
     var wyoming = new L.LayerGroup();
+    var northwestern = new L.LayerGroup();
+    var southernCal = new L.LayerGroup();
 
     var openStreetMapTiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -110,7 +111,6 @@
             "Auburn": auburn,
             "Cal": cal,
             "Central Florida": centralFlorida,
-            "Chadron State": chadronState,
             "Clemson": clemson,
             "Florida": florida,
             "Florida State": floridaState,
@@ -124,6 +124,7 @@
             "Mississippi State": mississippiState,
             "Mizzou": mizzou,
             "Nebraska": nebraska,
+            "Northwestern": northwestern,
             "Ohio State": ohioState,
             "Oklahoma": oklahoma,
             "Ole Miss": oleMiss,
@@ -132,6 +133,7 @@
             "Texas": texas,
             "UCLA": ucla,
             "UConn": uConn,
+            "USC": southernCal,
             "Virginia Tech": virginiaTech,
             "Washington": washington,
             "Wisconsin": wisconsin,
@@ -164,23 +166,7 @@
             }
         }).addTo(arizonaState);
     });
-    $.getJSON("js/college/chadron-state.json", function(data) {
-        var mapIcon = L.divIcon({
-            className: 'icon-other',
-            iconSize: [12, 12]
-        });
-        L.geoJson(data, {
-            pointToLayer: function(feature, latlng) {
-                var marker = L.marker(latlng, {
-                    icon: mapIcon
-                });
-                marker.bindPopup(
-                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>'
-                );
-                return marker;
-            }
-        }).addTo(chadronState);
-    });
+    
     $.getJSON("js/college/csu.json", function(data) {
         var mapIcon = L.divIcon({
             className: 'icon-csu',
@@ -678,6 +664,40 @@
                 return marker;
             }
         }).addTo(wyoming);
+    });
+
+    $.getJSON("js/college/northwestern.json", function(data) {
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(northwestern);
+    });
+
+    $.getJSON("js/college/southern-cal.json", function(data) {
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(southernCal);
     });
 
     // L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);

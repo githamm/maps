@@ -15,7 +15,7 @@
         "team": "Nebraska ",
         "city": "Denver",
         "address": "1247 Bannock St, Denver, CO 80204",
-        "votes": "1",
+        "votes": "2",
         "nickname": "Cornhuskers"
       }
     },
@@ -69,6 +69,24 @@
         "team": "Nebraska ",
         "city": "Aurora",
         "address": "2627 S Parker Rd, Aurora, CO 80014",
+        "votes": "1",
+        "nickname": "Cornhuskers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.996092,
+          39.748451
+        ]
+      },
+      "properties": {
+        "business": "Burnt Barrel Colorado Spirits & Sports",
+        "team": "Nebraska ",
+        "city": "Denver",
+        "address": "1201 16th St, Denver, CO 80202",
         "votes": "1",
         "nickname": "Cornhuskers"
       }

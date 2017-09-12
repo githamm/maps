@@ -18,6 +18,24 @@
         "votes": "3",
         "nickname": "Bears"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.981977,
+          39.726929
+        ]
+      },
+      "properties": {
+        "business": "Govnr's Park Tavern",
+        "team": "Chicago",
+        "city": "Denver",
+        "address": "672 Logan St, Denver, CO 80203",
+        "votes": "1",
+        "nickname": "Bears"
+      }
     }
   ]
 }

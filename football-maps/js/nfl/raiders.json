@@ -1,22 +1,22 @@
 {
   "type": "FeatureCollection",
   "features": [
-        {
+    {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.987769,
-          39.716333
+          -104.996092,
+          39.748451
         ]
       },
       "properties": {
-        "business": "The Hi Dive",
-        "team": "Chadron State",
+        "business": "Burnt Barrel Colorado Spirits & Sports",
+        "team": "Oakland",
         "city": "Denver",
-        "address": "7 S Broadway, Denver, CO 80223",
+        "address": "1201 16th St, Denver, CO 80202",
         "votes": "1",
-        "nickname": "Eagles"
+        "nickname": "Raiders"
       }
     }
   ]

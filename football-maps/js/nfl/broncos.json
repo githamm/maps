@@ -234,6 +234,60 @@
         "votes": "1",
         "nickname": "Broncos"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.913188,
+          39.678785
+        ]
+      },
+      "properties": {
+        "business": "Milo's Sports Tavern",
+        "team": "Denver",
+        "city": "Denver",
+        "address": "6495 E Evans Ave, Denver, CO 80222",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.003877,
+          39.764629
+        ]
+      },
+      "properties": {
+        "business": "Highland Tavern",
+        "team": "Denver",
+        "city": "Denver",
+        "address": "3400 Navajo St, Denver, CO 80211",
+        "votes": "1",
+        "nickname": "Broncos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.996092,
+          39.748451
+        ]
+      },
+      "properties": {
+        "business": "Burnt Barrel Colorado Spirits & Sports",
+        "team": "Denver",
+        "city": "Denver",
+        "address": "1201 16th St, Denver, CO 80202",
+        "votes": "3",
+        "nickname": "Broncos"
+      }
     }
   ]
 }

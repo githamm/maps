@@ -18,6 +18,24 @@
         "votes": "1",
         "nickname": "Saints"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.986504,
+          39.734231
+        ]
+      },
+      "properties": {
+        "business": "Stoney's Bar & Grill",
+        "team": "New Orleans",
+        "city": "Denver",
+        "address": "1111 Lincoln St, Denver, CO 80203",
+        "votes": "1",
+        "nickname": "Saints"
+      }
     }
   ]
 }

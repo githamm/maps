@@ -69,6 +69,7 @@ p.popup-content {
 a.directions {
     color: orange;
     font-size: 15px;
+    text-decoration: none;
 }
 
 .icon-other {

@@ -54,6 +54,42 @@
         "votes": "1",
         "nickname": "Badgers"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.913188,
+          39.678785
+        ]
+      },
+      "properties": {
+        "business": "Milo's Sports Tavern",
+        "team": "Wisconsin",
+        "city": "Denver",
+        "address": "6495 E Evans Ave, Denver, CO 80222",
+        "votes": "1",
+        "nickname": "Badgers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.773488,
+          39.552054
+        ]
+      },
+      "properties": {
+        "business": "FanDraught Sports Brewery",
+        "team": "Wisconsin",
+        "city": "Parker",
+        "address": "19340 Cottonwood Dr, Parker, CO 80134",
+        "votes": "1",
+        "nickname": "Badgers"
+      }
     }
   ]
 }

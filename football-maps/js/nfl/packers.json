@@ -54,6 +54,42 @@
         "votes": "2",
         "nickname": "Packers"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.823587,
+          38.839222
+        ]
+      },
+      "properties": {
+        "business": "Tony's",
+        "team": "Green Bay",
+        "city": "Colorado Springs",
+        "address": "326 N Tejon St, Colorado Springs, CO 80903",
+        "votes": "2",
+        "nickname": "Packers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.987196,
+          39.715162
+        ]
+      },
+      "properties": {
+        "business": "Badgers Pub",
+        "team": "Green Bay",
+        "city": "Denver",
+        "address": "76 S Broadway, Denver, CO 80209",
+        "votes": "2",
+        "nickname": "Packers"
+      }
     }
   ]
 }

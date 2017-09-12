@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.993899,
-          39.753545
+          -104.995234,
+          39.754382
         ]
       },
       "properties": {
-        "business": "The Tavern Downtown",
-        "team": "San Francisco",
+        "business": "Jackson's Sports Bar",
+        "team": "Dallas",
         "city": "Denver",
-        "address": "1949 Market St, Denver, CO 80202",
+        "address": "1520 20th St, Denver, CO 80202",
         "votes": "1",
-        "nickname": "49ers"
+        "nickname": "Cowboys"
       }
     },
     {
@@ -30,11 +30,11 @@
       },
       "properties": {
         "business": "Burnt Barrel Colorado Spirits & Sports",
-        "team": "San Francisco",
+        "team": "Dallas",
         "city": "Denver",
         "address": "1201 16th St, Denver, CO 80202",
-        "votes": "1",
-        "nickname": "49ers"
+        "votes": "2",
+        "nickname": "Cowboys"
       }
     }
   ]

@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.945821,
-          39.714897
+          -105.082179,
+          39.654566
         ]
       },
       "properties": {
-        "business": "Chopper's Sports Grill",
-        "team": "Texas",
+        "business": "The Rusty Bucket",
+        "team": "Pittsburgh",
         "city": "Denver",
-        "address": "80 S Madison St, Denver, CO 80209",
-        "votes": "2",
-        "nickname": "Longhorns"
+        "address": "3355 S Wadsworth Blvd, Lakewood, CO 80227",
+        "votes": "1",
+        "nickname": "Steelers"
       }
     },
     {
@@ -24,17 +24,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.996092,
-          39.748451
+          -104.995234,
+          39.754382
         ]
       },
       "properties": {
-        "business": "Burnt Barrel Colorado Spirits & Sports",
-        "team": "Texas",
+        "business": "Jackson's Sports Bar",
+        "team": "Pittsburgh",
         "city": "Denver",
-        "address": "1201 16th St, Denver, CO 80202",
+        "address": "1520 20th St, Denver, CO 80202",
         "votes": "2",
-        "nickname": "Longhorns"
+        "nickname": "Steelers"
       }
     }
   ]

@@ -6,17 +6,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.927352,
-          39.708499
+          -104.973288,
+          39.711728
         ]
       },
       "properties": {
-        "business": "Inga's Alpine Tavern",
-        "team": "Iowa State",
+        "business": "Wash Park Sports Alley",
+        "team": "Cincinnati",
         "city": "Denver",
-        "address": "5151 Leetsdale Dr, Denver, CO 80246",
-        "votes": "2",
-        "nickname": "Cyclones"
+        "address": "266 S Downing St, Denver, CO 80209",
+        "votes": "1",
+        "nickname": "Bengals"
       }
     }
   ]

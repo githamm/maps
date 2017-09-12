@@ -18,6 +18,42 @@
         "votes": "1",
         "nickname": "Cardinals"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.865443,
+          39.69332
+        ]
+      },
+      "properties": {
+        "business": "Buffalo Wild Wings",
+        "team": "Arizona",
+        "city": "Aurora",
+        "address": "10500 E Garden Dr, Aurora, CO 80012",
+        "votes": "1",
+        "nickname": "Cardinals"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.927352,
+          39.708499
+        ]
+      },
+      "properties": {
+        "business": "Inga's Alpine Tavern",
+        "team": "Arizona",
+        "city": "Denver",
+        "address": "5151 Leetsdale Dr, Denver, CO 80246",
+        "votes": "1",
+        "nickname": "Cardinals"
+      }
     }
   ]
 }
