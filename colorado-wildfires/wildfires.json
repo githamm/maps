@@ -55,8 +55,8 @@
         "fireCause": "Lightning",
         "fireStart": "8/19/2017",
         "fireStatus": "Active",
-        "fireAcres": "2854",
-        "pctContained": "20",
+        "fireAcres": "2931",
+        "pctContained": "15",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5551/",
         "fireDetails": ""
       }
@@ -96,7 +96,7 @@
         "fireStart": "9/4/2017",
         "fireStatus": "Active",
         "fireAcres": "4112",
-        "pctContained": "35",
+        "pctContained": "79",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5598/",
         "fireDetails": ""
       }
@@ -176,7 +176,7 @@
         "fireStart": "9/1/2017",
         "fireStatus": "Active",
         "fireAcres": "112",
-        "pctContained": "85",
+        "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5599/",
         "fireDetails": ""
       }
@@ -315,7 +315,7 @@
         "fireCause": "Lightning",
         "fireStart": "9/9/2017",
         "fireStatus": "Active",
-        "fireAcres": "3200",
+        "fireAcres": "4732",
         "pctContained": "0",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5604/",
         "fireDetails": ""
