@@ -86,6 +86,7 @@
     var wyoming = new L.LayerGroup();
     var northwestern = new L.LayerGroup();
     var southernCal = new L.LayerGroup();
+    var utah = new L.LayerGroup();
 
     var openStreetMapTiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -134,6 +135,7 @@
             "UCLA": ucla,
             "UConn": uConn,
             "USC": southernCal,
+            "Utah": utah,
             "Virginia Tech": virginiaTech,
             "Washington": washington,
             "Wisconsin": wisconsin,
@@ -698,6 +700,23 @@
                 return marker;
             }
         }).addTo(southernCal);
+    });
+
+    $.getJSON("js/college/utah.json", function(data) {
+        var mapIcon = L.divIcon({
+            className: 'icon-other',
+            iconSize: [12, 12]
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+                marker.bindPopup(
+                    '<h4 class="title">' + feature.properties.business + '</h4><hr class="popup"><span class="popup-team">' + feature.properties.team + '&nbsp;' + feature.properties.nickname + '</span><br>' + '<p class="popup-content">' + 'Votes: ' + feature.properties.votes + '<br>' + feature.properties.address + '<br>' + '<a class="directions" href="https://maps.google.com?daddr=' + feature.properties.address + '" target="top">' + 'Get directions</a></p>');
+                return marker;
+            }
+        }).addTo(utah);
     });
 
     // L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
