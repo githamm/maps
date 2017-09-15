@@ -55,7 +55,7 @@
         "fireCause": "Lightning",
         "fireStart": "8/19/2017",
         "fireStatus": "Active",
-        "fireAcres": "2931",
+        "fireAcres": "2940",
         "pctContained": "15",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5551/",
         "fireDetails": ""
@@ -95,8 +95,8 @@
         "fireCause": "Unknown",
         "fireStart": "9/4/2017",
         "fireStatus": "Active",
-        "fireAcres": "4112",
-        "pctContained": "79",
+        "fireAcres": "4161",
+        "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5598/",
         "fireDetails": ""
       }
@@ -234,7 +234,7 @@
         "fireName": "Mill Creek Fire",
         "fireCause": "Human",
         "fireStart": "7/1/2017",
-        "fireStatus": "Active",
+        "fireStatus": "Inactive",
         "fireAcres": "482",
         "pctContained": "80",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5330/",
@@ -315,8 +315,8 @@
         "fireCause": "Lightning",
         "fireStart": "9/9/2017",
         "fireStatus": "Active",
-        "fireAcres": "4732",
-        "pctContained": "0",
+        "fireAcres": "4735",
+        "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5604/",
         "fireDetails": ""
       }
