@@ -174,7 +174,7 @@
         "fireName": "Himes Peak Fire",
         "fireCause": "Lightning",
         "fireStart": "9/1/2017",
-        "fireStatus": "Active",
+        "fireStatus": "Inactive",
         "fireAcres": "112",
         "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5599/",
@@ -318,6 +318,26 @@
         "fireAcres": "4735",
         "pctContained": "100",
         "inciwebLink": "https://inciweb.nwcg.gov/incident/5604/",
+        "fireDetails": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.029252,
+          39.628471
+        ]
+      },
+      "properties": {
+        "fireName": "Tenderfoot II Fire",
+        "fireCause": "Unknown",
+        "fireStart": "9/18/2017",
+        "fireStatus": "Active",
+        "fireAcres": "21",
+        "pctContained": "",
+        "inciwebLink": "https://inciweb.nwcg.gov/incident/5620/",
         "fireDetails": ""
       }
     },
