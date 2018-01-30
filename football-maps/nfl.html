@@ -43,11 +43,11 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <!-- //cdn.leafletjs.com/leaflet-0.7.3/leaflet.css -->
     <!-- SCRIPTS -->
-    <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
-    </script>
+    <!-- <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
+    </script> -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/leaflet.js"></script>
     <script src="js/leaflet-grouped-layer-control.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js">
-    </script>
 </head>
 
 <body>
@@ -133,7 +133,7 @@
     });
 
     $.getJSON("js/nfl/bears.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -152,7 +152,7 @@
     });
 
     $.getJSON("js/nfl/bills.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -171,7 +171,7 @@
     });
 
     $.getJSON("js/nfl/broncos.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-broncos',
             iconSize: [12, 12]
@@ -190,7 +190,7 @@
     });
 
     $.getJSON("js/nfl/chiefs.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -209,7 +209,7 @@
     });
 
     $.getJSON("js/nfl/giants.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -228,7 +228,7 @@
     });
 
     $.getJSON("js/nfl/lions.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -247,7 +247,7 @@
     });
 
     $.getJSON("js/nfl/packers.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -266,7 +266,7 @@
     });
 
     $.getJSON("js/nfl/patriots.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -285,7 +285,7 @@
     });
 
     $.getJSON("js/nfl/ravens.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -304,7 +304,7 @@
     });
 
     $.getJSON("js/nfl/saints.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -323,7 +323,7 @@
     });
 
     $.getJSON("js/nfl/seahawks.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -342,7 +342,7 @@
     });
 
     $.getJSON("js/nfl/titans.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -361,7 +361,7 @@
     });
 
     $.getJSON("js/nfl/vikings.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -380,7 +380,7 @@
     });
 
     $.getJSON("js/nfl/cardinals.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -399,7 +399,7 @@
     });
 
     $.getJSON("js/nfl/panthers.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -418,7 +418,7 @@
     });
 
     $.getJSON("js/nfl/texans.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -437,7 +437,7 @@
     });
 
     $.getJSON("js/nfl/49ers.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -456,7 +456,7 @@
     });
 
     $.getJSON("js/nfl/bengals.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -475,7 +475,7 @@
     });
 
     $.getJSON("js/nfl/browns.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -494,7 +494,7 @@
     });
 
     $.getJSON("js/nfl/cowboys.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -513,7 +513,7 @@
     });
 
     $.getJSON("js/nfl/raiders.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -532,7 +532,7 @@
     });
 
     $.getJSON("js/nfl/eagles.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -551,7 +551,7 @@
     });
 
     $.getJSON("js/nfl/steelers.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -570,7 +570,7 @@
     });
 
     $.getJSON("js/nfl/buccaneers.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
@@ -589,7 +589,7 @@
     });
 
     $.getJSON("js/nfl/redskins.json", function(data) {
-        console.log(data);
+
         var mapIcon = L.divIcon({
             className: 'icon-other',
             iconSize: [12, 12]
