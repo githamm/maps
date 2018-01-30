@@ -5,8 +5,8 @@
     <meta charset='utf-8'>
     <title>Where do you watch college football? | The Denver Post</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <link rel="canonical" href="http://extras.denverpost.com/maps/news/marijuana/licensed-facilities/index.html" />
-    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="//extras.denverpost.com/maps/news/marijuana/licensed-facilities/index.html" />
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <meta name="distribution" content="global" />
     <meta name="robots" content="index, nofollow" />
     <meta name="title" content="Where do you watch college football map" />
@@ -16,10 +16,10 @@
     <meta name="description" content="A map of locations that people watch college football in Colorado">
     <meta name="news_keywords" content="CU Buffs, CSU Rams, college football, bars, restaurants, Colorado, Denver">
     <meta name="twitter:card" value="summary" />
-    <meta name="twitter:url" value="http://extras.denverpost.com/maps/news/football-maps/college.html" />
+    <meta name="twitter:url" value="//extras.denverpost.com/maps/news/football-maps/college.html" />
     <meta name="twitter:title" value="Where do you watch college football map" />
     <meta name="twitter:description" value="A map of locations that people watch college football in Colorado" />
-    <meta name="twitter:image" value="http://www.denverpost.com/wp-content/uploads/2016/11/620946426.jpg" />
+    <meta name="twitter:image" value="//www.denverpost.com/wp-content/uploads/2016/11/620946426.jpg" />
     <meta name="twitter:site" value="@denverpost" />
     <meta name="twitter:domain" value="denverpost.com" />
     <meta name="twitter:creator" content="@denverpost">
@@ -32,8 +32,8 @@
     <meta property="fb:app_id" content="105517551922" />
     <meta property="og:title" content="Where do you watch college football map" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://extras.denverpost.com/maps/news/football-maps/college.html" />
-    <meta property="og:image" content="http://www.denverpost.com/wp-content/uploads/2016/11/620946426.jpg" />
+    <meta property="og:url" content="//extras.denverpost.com/maps/news/football-maps/college.html" />
+    <meta property="og:image" content="//www.denverpost.com/wp-content/uploads/2016/11/620946426.jpg" />
     <meta property="og:site_name" content="The Denver Post" />
     <meta property="og:description" content="A map of locations that people watch college football in Colorado" />
     <meta property="article:publisher" content="https://www.facebook.com/denverpost" />
@@ -41,9 +41,9 @@
     <!-- STYLE SHEETS -->
     <link href="css/leaflet.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <!-- http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css -->
+    <!-- //cdn.leafletjs.com/leaflet-0.7.3/leaflet.css -->
     <!-- SCRIPTS -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
+    <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
     </script>
     <script src="js/leaflet-grouped-layer-control.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js">
@@ -88,12 +88,12 @@
     var southernCal = new L.LayerGroup();
     var utah = new L.LayerGroup();
 
-    var openStreetMapTiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var openStreetMapTiles = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        attribution: '&copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
-    var cartoTiles = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+    var cartoTiles = L.tileLayer('//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="//cartodb.com/attributions">CartoDB</a>',
         subdomains: 'abcd',
         maxZoom: 19
     });
@@ -103,7 +103,7 @@
         "Grayscale": cartoTiles
     };
 
-    // grouped layer control from http://bl.ocks.org/ismyrnow/6123517
+    // grouped layer control from //bl.ocks.org/ismyrnow/6123517
     var groupedOverlays = {
         "Schools": {
             "CSU": csu,
