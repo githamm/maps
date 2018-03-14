@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Denver View Planes</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+    <style>
+    #map {
+        width: 100%px;
+        height: 600px;
+    }
+
+    div.leaflet-popup-content {
+        font-family: Helvetica;
+    }
+
+    div.leaflet-popup-content-wrapper {
+        border-radius: 0;
+    }
+
+    div.leaflet-tooltip {
+        background-color: rgba(255, 255, 255, .7);
+    }
+
+    div.leaflet-control {}
+
+    img {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    h3.location-name {
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #8e1024;
+        margin-bottom: 5px;
+    }
+
+    p.credit {
+        font-family: Helvetica;
+        font-size: 10px;
+        font-style: italic;
+        text-align: right;
+        margin-top: -5px;
+        margin-bottom: 5px;
+    }
+
+    div.directions-center {
+        text-align: center;
+    }
+
+    .leaflet-container a {
+        text-decoration: none;
+    }
+
+    div.leaflet-popup-content {
+        width: 250px !important;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <script src="data.json"></script>
+    <script>
+    var street = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+    });
+    var satellite = L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    var map = L.map('map', {
+        center: [39.720692, -104.975059﻿],
+        zoom: 12,
+        layers: [street, satellite]
+    });
+    var baseMaps = {
+        "Satellite": satellite,
+        "Street": street
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+    console.log(viewPlaneLocations);
+
+
+    function onEachFeature(feature, layer) {
+        if (feature.properties.name) {
+            layer.bindPopup('<h3 class="location-name">' + feature.properties.name + '</h3>' + '<a href="' + feature.properties.imageUrl + '" target="_blank"><img src="' + feature.properties.imageUrl + '"/></a>' + '<p class="credit">Photo by Helen H. Richardson&nbsp;&bull;&nbsp;click image to enlarge</p>' + '<strong>View origin: </strong>' + feature.properties.location + '<hr>' + '<div class="directions-center"><a href="' + feature.properties.documentUrl + '" target="_blank">View plane map</a>' + '&nbsp;&bull;&nbsp;<a href="https://maps.google.com?saddr=Current+Location&daddr=' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_top">Get directions via Google</a></div>');
+            layer.bindTooltip(feature.properties.name);
+        }
+    }
+
+    L.geoJSON([viewPlaneLocations, map], {
+
+        style: function(feature) {
+            return feature.properties && feature.properties.style;
+        },
+
+        onEachFeature: onEachFeature,
+
+        pointToLayer: function(feature, latlng) {
+            return L.circleMarker(latlng, {
+                radius: 6,
+                fillColor: "red",
+                color: "#000",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.9
+            });
+        }
+    }).addTo(map);
+    </script>
+</body>
+
+</html>
