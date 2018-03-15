@@ -14,7 +14,7 @@ var viewPlaneLocations = {
         "name": "Cheesman Park-Botanic Gardens",
         "location": "The flag pole at the Denver Botanic Gardens Overlook",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Cheesman_Botanic.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_2hr5700.jpg?w=795"
       }
     },
     {
@@ -28,9 +28,25 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "City Park-Natural History Museum",
-        "location": "198 feet south and 69 feet west of the northernmost west corner of the Museum of Natural History Building. At the reference point is a standard brass disc set in a concrete walkway, and is three (3.0) feet east of the west edge of said walkway",
+        "location": "198 feet south and 69 feet west of the northernmost west corner of the Museum of Natural History Building; at the reference point is a standard brass disc set in a concrete walkway, and is 3 feet east of the west edge of said walkway",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/City_Park.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views2hr5193.jpg?w=795"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.988796,
+          39.739225
+        ]
+      },
+      "properties": {
+        "name": "Civic Center",
+        "location": "n/a",
+        "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/CIVIC_CENTER_height_restrictions.pdf",
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_2hr6256.jpg?w=795"
       }
     },
     {
@@ -46,7 +62,7 @@ var viewPlaneLocations = {
         "name": "Coors Field",
         "location": "On the centerline of the current camera platform below current Section 323",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Coors_Field.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/sp21bbnrockies_1jl4555x.jpg?w=795"
       }
     },
     {
@@ -62,7 +78,7 @@ var viewPlaneLocations = {
         "name": "Cranmer Park",
         "location": "A cross set in the top step of the mountain view indicator",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Cranmer_Park.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_1hr3354.jpg?w=795"
       }
     },
     {
@@ -76,9 +92,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Hirshorn Park",
-        "location": "A point located in Hirshorn Park two hundred thirty (230) feet northeast of the centerline of 16th Street and one hundred fifty (150) feet northwest of the centerline of Boulder Street.",
+        "location": "A point located in Hirshorn Park 230 feet northeast of the centerline of 16th Street and 150 feet northwest of the centerline of Boulder Street",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Hirshorn_Park.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_1hr4079.jpg?w=795"
       }
     },
     {
@@ -92,9 +108,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Old City Hall",
-        "location": "Brass cap located approximately fifty (50) feet southwest of the center line of 14th Street and fifty (50) feet northwest of the center line of Larimer Street",
+        "location": "A brass cap located approximately 50 feet southwest of the center line of 14th Street and 50 feet northwest of the center line of Larimer Street",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Old_City_Hall.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_1hr4205.jpg?w=795"
       }
     },
     {
@@ -108,9 +124,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Park at 51st & Zuni",
-        "location": "A point located in the park at 51st Avenue and Zuni Street one hundred sixty-seven and a half (167.5) feet east of the centerline at Zuni Street and two hundred sixty-five (265) feet south of the centerline of 52nd Avenue on which is a bronze locator set in concrete.",
+        "location": "A point located in the park at 51st Avenue and Zuni Street 167.5 feet east of the centerline at Zuni Street and 265 feet south of the centerline of 52nd Avenue on which is a bronze locator set in concrete",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/51st_Zuni.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_2hr6589.jpg?w=795"
       }
     },
     {
@@ -124,9 +140,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Ruby Hill Park",
-        "location": "Steel rod set in concrete in northeast corner of park",
+        "location": "A steel rod set in concrete in northeast corner of park",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Ruby_Hill.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_1hr3311.jpg?w=795"
       }
     },
     {
@@ -140,9 +156,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Sloan's Lake Park",
-        "location": "A point located in Sloan Lake Park one hundred twenty-five (125) feet east of the intersection of the center lines of Sheridan Boulevard and West 20th Avenue, on which is located a bronze marker set in concrete.",
+        "location": "A point located in Sloan Lake Park 125 feet east of the intersection of the center lines of Sheridan Boulevard and West 20th Avenue, on which is located a bronze marker set in concrete",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Sloan_Lake.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_2hr6427.jpg?w=795"
       }
     },
     {
@@ -156,9 +172,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Southmoor Park",
-        "location": "Bronze marker set in concrete in the vicinity of Southmoor Park sign set in concrete",
+        "location": "A bronze marker set in concrete in the vicinity of Southmoor Park sign set in concrete",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Southmoor.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_2hr5292.jpg?w=795"
       }
     },
     {
@@ -172,9 +188,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "State Capitol",
-        "location": "Reference point is a point having an elevation of five thousand two hundred eighty-six (5,286) feet above mean sea level, which point is located at the midpoint of the top step on the westerly exposure of the capitol of the state.",
+        "location": "Reference point is a point having an elevation of 5,286 feet above mean sea level, which point is located at the midpoint of the top step on the westerly exposure of the capitol of the state",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/StateCapitol.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_1hr4006.jpg?w=795"
       }
     },
     {
@@ -188,9 +204,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "State Home Park",
-        "location": "Brass cap located approximately six hundred seventy (670) feet east of the center line of South Logan Street and five hundred thirty (530) feet south of East Iliff Avenue",
+        "location": "A brass cap located approximately 670 feet east of the center line of South Logan Street and 530 feet south of East Iliff Avenue",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/State_Home.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_2hr5538.jpg?w=795"
       }
     },
     {
@@ -204,9 +220,9 @@ var viewPlaneLocations = {
       },
       "properties": {
         "name": "Washington Park",
-        "location": "Brass cap located one hundred thirty (130) feet north and one hundred thirty (130) feet west of the intersection of the center lines of South Franklin Street and East Arizona Avenue",
+        "location": "A brass cap located 130 feet north and 130 feet west of the intersection of the center lines of South Franklin Street and East Arizona Avenue",
         "documentUrl": "https://www.denvergov.org/content/dam/denvergov/Portals/646/documents/Zoning/other_regulations/View_Plane/Wash_Park.pdf",
-        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/columbine_gun_violence_rj_1515.jpg?w=620"
+        "imageUrl": "https://www.denverpost.com/wp-content/uploads/2018/03/denver_views_1hr3575.jpg?w=795"
       }
     }
   ]
