@@ -92,7 +92,7 @@
 
     function onEachFeature(feature, layer) {
         if (feature.properties.name) {
-            layer.bindPopup('<h3 class="location-name">' + feature.properties.name + '</h3>' + '<a href="' + feature.properties.imageUrl + '" target="_blank"><img src="' + feature.properties.imageUrl + '"/></a>' + '<p class="credit">Photo by Helen H. Richardson&nbsp;&bull;&nbsp;click image to enlarge</p>' + '<strong>View origin: </strong>' + feature.properties.location + '<hr>' + '<div class="directions-center"><a href="' + feature.properties.documentUrl + '" target="_blank">View plane map</a>' + '&nbsp;&bull;&nbsp;<a href="https://maps.google.com?saddr=Current+Location&daddr=' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="blank">Get directions via Google</a></div>');
+            layer.bindPopup('<h3 class="location-name">' + feature.properties.name + '</h3>' + '<a href="' + feature.properties.imageUrl + '" target="_blank"><img src="' + feature.properties.imageUrl + '"/></a>' + '<p class="credit">Click image to enlarge</p>' + '<strong>View origin: </strong>' + feature.properties.location + '<hr>' + '<div class="directions-center"><a href="' + feature.properties.documentUrl + '" target="_blank">View plane map</a>' + '&nbsp;&bull;&nbsp;<a href="https://maps.google.com?saddr=Current+Location&daddr=' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="blank">Get directions via Google</a></div>');
             layer.bindTooltip(feature.properties.name);
         }
     }
