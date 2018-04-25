@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Denver Post | Rockies' Favorite, Least Favorite Ballparks</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        font: Helvetica;
+    }
+
+    #map {
+        width: 100%;
+        height: 500px;
+    }
+
+    .good {
+        border-radius: 50%;
+        border: solid 4px green;
+    }
+
+    .bad {
+        border-radius: 50%;
+        border: solid 4px red;
+    }
+
+    .player-name {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .stat {
+        color: #990012;
+        font-weight: bold;
+    }
+
+    hr {
+        margin: 2px 0 -10px 0;
+    }
+
+    .leaflet-popup-content {
+    	width: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <script>
+    var map = L.map('map').setView([37.8, -98.6], 4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var badHead = L.Icon.extend({
+        options: {
+            iconSize: [35, 35],
+            // iconAnchor: [10, -10],
+            popupAnchor: [-5, -10],
+            className: 'bad'
+        }
+    });
+
+    var goodHead = L.Icon.extend({
+        options: {
+            iconSize: [35, 35],
+            // iconAnchor: [0, 0],
+            popupAnchor: [-5, -10],
+            className: 'good'
+        }
+    });
+
+    var ianettaBad = new badHead({ iconUrl: 'ianetta.jpg' });
+    var ianettaGood = new goodHead({ iconUrl: 'ianetta.jpg' });
+    var desmondBad = new badHead({ iconUrl: 'desmond.jpg' });
+    var desmondGood = new goodHead({ iconUrl: 'desmond.jpg' });
+    var lemahieuBad = new badHead({ iconUrl: 'lemahieu.jpg' });
+    var lemahieuGood = new goodHead({ iconUrl: 'lemahieu.jpg' });
+    var storyBad = new badHead({ iconUrl: 'story.jpg' });
+    var storyGood = new goodHead({ iconUrl: 'story.jpg' });
+    var arenadoBad = new badHead({ iconUrl: 'arenado.jpg' });
+    var arenadoGood = new goodHead({ iconUrl: 'arenado.jpg' });
+    var parraBad = new badHead({ iconUrl: 'parra.jpg' });
+    var parraGood = new goodHead({ iconUrl: 'parra.jpg' });
+    var blackmonBad = new badHead({ iconUrl: 'blackmon.jpg' });
+    var blackmonGood = new goodHead({ iconUrl: 'blackmon.jpg' });
+    var cargoBad = new badHead({ iconUrl: 'cargo.jpg' });
+    var cargoGood = new goodHead({ iconUrl: 'cargo.jpg' });
+
+    L.marker([37.8, -122.4], { icon: ianettaGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Chris Ianetta</span><br>Catcher<hr><p>Ianetta likes AT&amp;T Park in San Francisco where he hits <span class='stat'>.333</span> and has a <span class='stat'>1.057 OPS</span></p>");
+    L.marker([38.9, -77.0], { icon: ianettaBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Chris Ianetta</span><br>Catcher<hr><p>Ianetta doesn't like Nationals Park in Washington, DC, where he hits <span class='stat'>.109</span> and has a <span class='stat'>.566 OPS</span></p>");
+    L.marker([37.8, -120.5], { icon: desmondGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Ian Desmond</span><br>First baseman<hr><p>Desmond likes AT&amp;T Park in San Francisco where he hits <span class='stat'>.353</span> and has a <span class='stat'>.833 OPS</span></p>");
+    L.marker([34.1, -118.2], { icon: desmondBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Ian Desmond</span><br>First baseman<hr><p>Desmond doesn't like Dodger Stadium in Los Angeles where he hits <span class='stat'>.193</span> and has a <span class='stat'>.583 OPS</span></p>");
+    L.marker([38.9, -78.8], { icon: lemahieuGood }).addTo(map)
+        .bindPopup("<span class='player-name'>DJ LeMahieu</span><br>Second baseman<hr><p>LeMahieu likes Nationals Park in Washington, DC, where he hits <span class='stat'>.343</span> and has a <span class='stat'>.842 OPS</span></p>");
+    L.marker([25.8, -80.2], { icon: lemahieuBad }).addTo(map)
+        .bindPopup("<span class='player-name'>DJ LeMahieu</span><br>Second baseman<hr><p>LeMahieu doesn't like Marlins Park in Miami where he hits <span class='stat'>.193</span> and has a <span class='stat'>.583 OPS</span></p>");
+    L.marker([33.4, -112.1], { icon: storyGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Trevor Story</span><br>Shortstop<hr><p>Story likes Chase Field in Phoenix where he hits <span class='stat'>.253</span> and has a <span class='stat'>.962 OPS</span></p>");
+    L.marker([39.3, -121.3], { icon: storyBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Trevor Story</span><br>Shortstop<hr><p>Story doesn't like AT&amp;T Park in San Francisco where he hits <span class='stat'>.188</span> and has a <span class='stat'>.554 OPS</span></p>");
+    L.marker([43.0, -88.0], { icon: arenadoGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Nolan Arenado</span><br>Third baseman<hr><p>Arenado likes Miller Park in Milwaukee where he hits <span class='stat'>.436</span> and has a <span class='stat'>1.372 OPS</span></p>");
+    L.marker([25.8, -82.0], { icon: arenadoBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Nolan Arenado</span><br>Third baseman<hr><p>Arenado doesn't like Marlins Park in Miami where he hits <span class='stat'>.197</span> and has a <span class='stat'>.576 OPS</span></p>");
+    L.marker([41.5, -87.7], { icon: parraGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Gerardo Parra</span><br>Left fielder<hr><p>Parra likes Wrigley Field in Chicago where he hits <span class='stat'>.351</span> and has a <span class='stat'>.863 OPS</span></p>");
+    L.marker([38.6, -90.2], { icon: parraBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Gerardo Parra</span><br>Left fielder<hr><p>Parra doesn't like Busch Stadium in St. Louis where he hits <span class='stat'>.238</span> and has a <span class='stat'>.644 OPS</span></p>");
+    L.marker([39.9, -75.2], { icon: blackmonGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Charlie Blackmon</span><br>Center fielder<hr><p>Blackmon likes Citizens Bank Park in Philadelphia where he hits <span class='stat'>.339</span> and has a <span class='stat'>1.190 OPS</span></p>");
+    L.marker([43.0, -89.5], { icon: blackmonBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Charlie Blackmon</span><br>Center fielder<hr><p>Blackmon doesn't like Miller Park in Milwaukee where he hits <span class='stat'>.153</span> and has a <span class='stat'>.363 OPS</span></p>");
+    L.marker([39.9, -73.5], { icon: cargoGood }).addTo(map)
+        .bindPopup("<span class='player-name'>Carlos Gonzalez</span><br>Right fielder<hr><p>Gonzalez likes Citizens Bank Park in Philadelphia where he hits <span class='stat'>.341</span> and has a <span class='stat'>.848 OPS</span></p>");
+    L.marker([47.6, -122.3], { icon: cargoBad }).addTo(map)
+        .bindPopup("<span class='player-name'>Carlos Gonzalez</span><br>Right fielder<hr><p>Gonzalez doesn't like Safeco Field in Seattle where he hits <span class='stat'>.132</span> and has a <span class='stat'>.364 OPS</span></p>");
+    </script>
+</body>
+
+</html>
