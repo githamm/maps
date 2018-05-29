@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Denver Homicide Report | The Denver Post</title>
+    <!-- STYLE SHEETS -->
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="//extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <link rel="stylesheet" href="//extras.denverpost.com/libraries/foundation/foundation-min.css" />
+    <link rel="stylesheet" type="text/css" href="//extras.denverpost.com/libraries/datatables/DataTables-1.10.16/css/dataTables.foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="//extras.denverpost.com/libraries/datatables/Responsive-2.2.1/css/responsive.foundation.min.css" />
+</head>
+
+<body>
+    <div id="content-wrapper">
+        <!-- ///// CHARTS ///// -->
+        <div class="row">
+            <div class="large-12 columns">
+                <h1 class="page-title">Denver Homicide Report</h1>
+                <p class="update">Last updated May 3, 2018</p>
+                <p class="intro">The charts, map and table track homicides in the City and County of Denver. Information is collected from news reports, the coroner at Denver’s Office of the Medical Examiner and the Denver Police Department. Initial information may be incomplete and will be updated as it becomes available.</p>
+                <hr style="border-width: 2px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 medium-6 columns">
+                <h3 class="chart-title">Homicides by month</h3>
+                <p class="chart-chatter-year">2010-2018</p>
+                <p class="chart-chatter" style="text-align: center;">Hover over chart to see totals;
+                    <br>hover over year at bottom to highlight</p>
+                <div id="homicide-chart"></div>
+            </div>
+            <div class="large-6 medium-6 columns">
+                <!-- <hr> -->
+                <h3 class="chart-title">Homicides by neighborhood</h3>
+                <p class="chart-chatter-year">2015-2018</p>
+                <div id="homicide-neighborhoods"></div>
+                <p class="chart-chatter">The neighborhoods with the five highest homicide totals are broken out.</p>
+            </div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="large-6 medium-6 columns">
+                <h3 class="chart-title">Homicides by sex</h3>
+                <p class="chart-chatter-year">2015-2018</p>
+                <div id="homicide-sex"></div>
+            </div>
+            <div class="large-6 medium-6 columns panel">
+                <div id="coverage-box-container">
+                    <div id="more-coverage-box">
+                        <!-- <span class="label related">MORE COVERAGE</span> -->
+                        <h3 class="chart-title">More coverage</h3>
+                        <ul class="more-coverage">
+                            <li><span class="list-year">2017</span> <a href="https://www.denverpost.com/2018/02/09/denver-2018-homicide-pace/" target="_blank">2017 tied for Denver’s deadliest year in a decade — and the 13 homicides since Jan. 1 have the city on a record pace</a></li>
+                            <li><span class="list-year">2016</span> <a href="https://www.denverpost.com/2017/02/15/denver-homicides-2016/" target="_blank">Denver’s homicides hit a 10-year high in 2016 after domestic violence killings spiked</a></li>
+                            <li><span class="list-year">2015</span> <a href="//extras.denverpost.com/homicides/2015/" target="_blank">Homicides in Denver hit 9-year high with 50 people killed in 2015</a></li>
+                            <li><span class="list-year">Stats</span> <a href="https://crime.denverpost.com/" target="_blank">Denver crime statistics</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ///// MAP ///// -->
+        <div id="container">
+            <div class="row">
+                <div class="large-12 columns">
+                    <p class="graphic-divider"><span class="graphic-divider">MAP</span></p>
+                    <p class="intro">The map shows the approximate location of all homicides in Denver from 2015 to the present. Darkly shaded neighborhoods inidicate a higher number of homicides. Click a map marker or neighborhood for details. Click the red square in the top right corner of the map to filter markers by year. Some map markers overlap.</p>
+                </div>
+            </div>
+            <div class="row" id="legend-container">
+                <div class="large-4 medium-5 columns legend-spacing">
+                    <div id="dot-legend">
+                        <p class="legend-title">HOMICIDES</p>
+                        <div id="icon-current-year-legend"></div><span class="legend-text">Current year</span>
+                        <div id="icon-previous-year-legend"></div><span class="legend-text">Previous years</span>
+                    </div>
+                </div>
+                <div class="large-7 medium-7 columns legend-spacing">
+                    <div id="facilities-number">
+                        <p class="legend-title">HOMICIDES BY NEIGHBORHOOD 2015-2018</p>
+                        <ul class="legend">
+                            <li><span class="step-0">0</span></li>
+                            <li><span class="step-1"></span></li>
+                            <li><span class="step-2"></span></li>
+                            <li><span class="step-3"></span></li>
+                            <li><span class="step-4"></span></li>
+                            <li><span class="step-5"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+        <!-- ///// TABLE ///// -->
+        <!-- <form> -->
+        <div class="row">
+            <div class="large-12 columns">
+                <p class="graphic-divider"><span class="graphic-divider">LIST</span></p>
+                <p class="intro">The table shows details for all homicides from 2015 to the present. Use the dropdown filters to isolate homicides by neighborhood and/or year. Use the search box for keyword searches.</p>
+            </div>
+            <div class="large-6 medium-6 small-6 columns">
+                <label><strong>Neighborhood</strong></label>
+                <!-- <input type='text' value='' class='filter' data-column-index='1'> -->
+                <select id="neighborhood-filter" class="filter" data-column-index='11'>
+                    <option value=" ">All</option>
+                    <option value="Athmar Park">Athmar Park</option>
+                    <option value="Auraria">Auraria</option>
+                    <option value="Baker">Baker</option>
+                    <option value="Barnum">Barnum</option>
+                    <option value="Barnum West">Barnum West</option>
+                    <option value="Bear Valley">Bear Valley</option>
+                    <option value="Belcaro">Belcaro</option>
+                    <option value="Berkeley">Berkeley</option>
+                    <option value="Capitol Hill">Capitol Hill</option>
+                    <option value="Central Business District">Central Business District</option>
+                    <option value="Chaffee Park">Chaffee Park</option>
+                    <option value="Cheesman Park">Cheesman Park</option>
+                    <option value="Cherry Creek">Cherry Creek</option>
+                    <option value="City Park">City Park</option>
+                    <option value="City Park West">City Park West</option>
+                    <option value="Civic Center">Civic Center</option>
+                    <option value="Clayton">Clayton</option>
+                    <option value="Cole">Cole</option>
+                    <option value="College View-South Platte">College View-South Platte</option>
+                    <option value="Congress Park">Congress Park</option>
+                    <option value="Cory-Merrill">Cory-Merrill</option>
+                    <option value="Country Club">Country Club</option>
+                    <option value="DIA">DIA</option>
+                    <option value="East Colfax">East Colfax</option>
+                    <option value="Elyria Swansea">Elyria Swansea</option>
+                    <option value="Five Points">Five Points</option>
+                    <option value="Fort Logan">Fort Logan</option>
+                    <option value="Gateway-Green Valley Ranch">Gateway-Green Valley Ranch</option>
+                    <option value="Globeville">Globeville</option>
+                    <option value="Goldsmith">Goldsmith</option>
+                    <option value="Hale">Hale</option>
+                    <option value="Hampden">Hampden</option>
+                    <option value="Hampden South">Hampden South</option>
+                    <option value="Harvey Park">Harvey Park</option>
+                    <option value="Harvey Park South">Harvey Park South</option>
+                    <option value="Highland">Highland</option>
+                    <option value="Hilltop">Hilltop</option>
+                    <option value="Indian Creek">Indian Creek</option>
+                    <option value="Jefferson Park">Jefferson Park</option>
+                    <option value="Kennedy">Kennedy</option>
+                    <option value="Lincoln Park">Lincoln Park</option>
+                    <option value="Lowry">Lowry</option>
+                    <option value="Mar Lee">Mar Lee</option>
+                    <option value="Marston">Marston</option>
+                    <option value="Montbello">Montbello</option>
+                    <option value="Montclair">Montclair</option>
+                    <option value="North Capitol Hill">North Capitol Hill</option>
+                    <option value="North Park Hill">North Park Hill</option>
+                    <option value="Northeast Park Hill">Northeast Park Hill</option>
+                    <option value="Overland">Overland</option>
+                    <option value="Park Hill">Park Hill</option>
+                    <option value="Platt Park">Platt Park</option>
+                    <option value="Regis">Regis</option>
+                    <option value="Rosedale">Rosedale</option>
+                    <option value="Ruby Hill">Ruby Hill</option>
+                    <option value="Skyland">Skyland</option>
+                    <option value="Sloan Lake">Sloan Lake</option>
+                    <option value="South Park Hill">South Park Hill</option>
+                    <option value="Southmoor Park">Southmoor Park</option>
+                    <option value="Speer">Speer</option>
+                    <option value="Stapleton">Stapleton</option>
+                    <option value="Sun Valley">Sun Valley</option>
+                    <option value="Sunnyside">Sunnyside</option>
+                    <option value="Union Station">Union Station</option>
+                    <option value="University">University</option>
+                    <option value="University Hills">University Hills</option>
+                    <option value="University Park">University Park</option>
+                    <option value="Valverde">Valverde</option>
+                    <option value="Villa Park">Villa Park</option>
+                    <option value="Virginia Village">Virginia Village</option>
+                    <option value="Washington Park">Washington Park</option>
+                    <option value="Washington Park West">Washington Park West</option>
+                    <option value="Washington Virginia Vale">Washington Virginia Vale</option>
+                    <option value="Wellshire">Wellshire</option>
+                    <option value="West Colfax">West Colfax</option>
+                    <option value="West Highland">West Highland</option>
+                    <option value="Westwood">Westwood</option>
+                    <option value="Whittier">Whittier</option>
+                    <option value="Windsor">Windsor</option>
+                </select>
+            </div>
+            <div class="large-6 medium-6 small-6 columns">
+                <label><strong>Year</strong></label>
+                <select id="year-filter" class="filter" data-column-index='4'>
+                    <option value=" ">All</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                </select>
+            </div>
+        </div>
+        <div class="row button-show">
+            <div class="large-12 columns">
+                <a href="#" class="button expand filter-button">Search</a>
+            </div>
+        </div>
+        <!-- </form> -->
+        <div class="row">
+            <div class="large-12 columns">
+                <table id="homicide-table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="never">Index</th>
+                            <th data-priority="2">Date</th>
+                            <th class="never">Month</th>
+                            <th class="never">Year</th>
+                            <th data-priority="1">Name</th>
+                            <th data-priority="4">Age</th>
+                            <th data-priority="5">Sex</th>
+                            <th class="never">Race</th>
+                            <th data-priority="6">Cause</th>
+                            <th data-priority="7">Address</th>
+                            <th data-priority="3">Neighborhood</th>
+                            <th class="never">Latitude</th>
+                            <th class="never">Longitude</th>
+                            <th data-priority="8">Link</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <!-- jquery -->
+    <script src="//extras.denverpost.com/libraries/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+    <!-- foundation -->
+    <script src="//extras.denverpost.com/foundation/js/foundation.min.js"></script>
+    <!-- c3 -->
+    <script src="js/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <!-- leaflet -->
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">
+    </script> -->
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-grouped-layer-control.js"></script>
+    <!-- datatables -->
+    <script src="//extras.denverpost.com/libraries/datatables/DataTables-1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="//extras.denverpost.com/libraries/datatables/DataTables-1.10.16/js/dataTables.foundation.min.js"></script>
+    <script src="//extras.denverpost.com/libraries/datatables/Responsive-2.2.1/js/dataTables.responsive.min.js"></script>
+    <script src="//extras.denverpost.com/libraries/datatables/Responsive-2.2.1/js/responsive.foundation.min.js"></script>
+    <!-- page scripts -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
