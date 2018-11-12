@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colorado Oil and Gas Permits Map | The Denver Post</title>
+    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.css" />
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.js"></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+
+    .icon {
+        background-color: red;
+        border-radius: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+    var permits = new L.LayerGroup();
+    var neighborhoods = new L.LayerGroup();
+
+    var streetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+        maxZoom: 16
+    });
+
+    var stamenMap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+    });
+
+    var baseLayers = {
+        "Monochrome map": stamenMap,
+        "Street map": streetMap
+        // "Satellite map": satellite
+    };
+
+    // grouped layer control from http://bl.ocks.org/ismyrnow/6123517
+    var groupedOverlays = {
+        "Background": {
+            "Neighborhoods": neighborhoods
+            // "Income levels": census
+        },
+        "Permits": {
+            "Permits": permits
+        }
+    };
+
+    // map from http://bl.ocks.org/awoodruff/3ce5d735126a56dfff94
+    // initialize the map
+    var map = L.map('map', {
+        center: [40.11, -104.94],
+        zoom: 9,
+        scrollWheelZoom: true,
+        // touchZoom: true,
+        keyboard: false,
+        layers: [stamenMap, neighborhoods, permits]
+    });
+
+    $.getJSON("pending-permits-111218-modified.geojson", function(data) {
+        console.log(data);
+        var mapIcon = L.divIcon({
+            //iconUrl: 'images/circle-red.png',
+            className: 'icon',
+            iconSize: [5, 5],
+            //iconAnchor: [6, 3],
+            //popupAnchor: [-1, -5]
+            // icons from https://www.iconfinder.com/icons/73019/ball_base_chartreuse_map_marker_right_tv_icon#size=32
+        });
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+
+                marker.bindPopup(
+                    '<h4 class="name-header">' + feature.properties.Oper_Name + '</h4>' + '<a href="https://cogcc.state.co.us/publicComment/?doc_num=' + feature.properties.Doc_Num + '" target="_blank">Info</a>');
+                return marker;
+            }
+        }).addTo(permits);
+    });
+
+    L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+    </script>
+</body>
+
+</html>
