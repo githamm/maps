@@ -2,17 +2,12 @@
 <html>
 <meta charset="utf-8">
 <style>
-.counties {
-    fill: none;
-}
-
-.states {
-    fill: none;
-    stroke: #fff;
-    stroke-linejoin: round;
+#map {
+    width: 600px;
+    height: 600px;
 }
 </style>
-<svg width="960" height="600"></svg>
+<!-- <svg width="960" height="600"></svg> -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
@@ -20,14 +15,20 @@
 <script src="colorado-school-district-boundaries-geojson.json"></script>
 
 <body>
+    <div id="map"></div>
     <script>
+    var margin = { top: 10, left: 10, bottom: 10, right: 10 },
+        width = parseInt(d3.select('#map').style('width')),
+        width = width - margin.left - margin.right,
+        mapRatio = 1,
+        height = width * mapRatio;
     // From http://duspviz.mit.edu/d3-workshop/mapping-data-with-d3/
     // Width and Height of the whole visualization
-    var width = 800;
-    var height = 800;
+    // var width = 800;
+    // var height = 800;
 
     // Create SVG
-    var svg = d3.select("body")
+    var svg = d3.select("div#map")
         .append("svg")
         .attr("width", width)
         .attr("height", height);
@@ -38,16 +39,25 @@
 
     // Width and Height of the whole visualization
     // Set Projection Parameters
-    var albersProjection = d3.geoAlbers()
-        .scale(7500)
+    // var albersProjection = d3.geoAlbers()
+    //     .scale(7500)
+    //     .rotate([104.7821, 0])
+    //     .center([0, 39.5501])
+    //     .translate([width / 2, height / 2]);
+
+    var projection = d3.geoAlbers()
+        .scale(width)
         .rotate([104.7821, 0])
         .center([0, 39.5501])
         .translate([width / 2, height / 2]);
 
     // Create GeoPath function that uses built-in D3 functionality to turn
     // lat/lon coordinates into screen coordinates
+    // var geoPath = d3.geoPath()
+    //     .projection(albersProjection);
+
     var geoPath = d3.geoPath()
-        .projection(albersProjection);
+        .projection(projection);
 
     // Classic D3... Select non-existent elements, bind the data, append the elements, and apply attributes
     g.selectAll("path")

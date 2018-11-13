@@ -1368,6 +1368,18 @@
     //     }
     // });
 
+    // var expected_result = geojson.features.map(function(el) {
+    //     //return el.properties.GEOID10;
+    //     return el.properties;
+    // });
+
+    var again = data.features.map(function(el) {
+        //return el.properties.GEOID10;
+        return el.properties;
+    });
+
+    console.log(again);
+
     function onEachFeature(feature, layer) {
         var popupContent = "<p>I started out as a GeoJSON " + feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
 

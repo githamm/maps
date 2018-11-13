@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Colorado Oil and Gas Permits Map | The Denver Post</title>
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.css" />
-    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet-control-geocoder@latest/dist/Control.Geocoder.css" />
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.js"></script>
+    <!-- Geocoder: https://github.com/perliedman/leaflet-control-geocoder
+    <script src="//unpkg.com/leaflet-control-geocoder@latest/dist/Control.Geocoder.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.js"></script>
+    <script src="http://stevenlevithan.com/assets/misc/date.format.js"></script>
     <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
     html,
     body {
         height: 100%;
         margin: 0;
         padding: 0;
         width: 100%;
+        background-color: #fafafa;
     }
 
     #map {
@@ -27,6 +34,21 @@
     .icon {
         background-color: red;
         border-radius: 50%;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+    }
+
+    h4.company-name {
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 8px;
+    }
+
+    .tooltip-text {
+        font-size: 1.1em;
     }
     </style>
 </head>
@@ -83,7 +105,7 @@
         var mapIcon = L.divIcon({
             //iconUrl: 'images/circle-red.png',
             className: 'icon',
-            iconSize: [5, 5],
+            iconSize: [6, 6],
             //iconAnchor: [6, 3],
             //popupAnchor: [-1, -5]
             // icons from https://www.iconfinder.com/icons/73019/ball_base_chartreuse_map_marker_right_tv_icon#size=32
@@ -94,8 +116,10 @@
                     icon: mapIcon
                 });
 
+                var tweakDate = dateFormat(feature.properties.Recv_Date, "mmm d, yyyy");
+
                 marker.bindPopup(
-                    '<h4 class="name-header">' + feature.properties.Oper_Name + '</h4>' + '<a href="https://cogcc.state.co.us/publicComment/?doc_num=' + feature.properties.Doc_Num + '" target="_blank">Info</a>');
+                    '<h4 class="company-name">' + feature.properties.Oper_Name + '</h4>' + '<span class="tooltip-text">Application: ' + tweakDate + '<br>Document No. ' + '<a href="https://cogcc.state.co.us/publicComment/?doc_num=' + feature.properties.Doc_Num + '" target="_blank">' + feature.properties.Doc_Num + '</a></span>');
                 return marker;
             }
         }).addTo(permits);
