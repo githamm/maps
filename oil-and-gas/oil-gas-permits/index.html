@@ -15,6 +15,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.js"></script>
     <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js" integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g==" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
+    <script src="http://ivansanchez.gitlab.io/Leaflet.TileLayer.HERE/leaflet-tilelayer-here.js"></script>
     <script src="http://stevenlevithan.com/assets/misc/date.format.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -26,6 +27,7 @@
         padding: 0;
         width: 100%;
         background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
     }
 
     #map {
@@ -47,6 +49,10 @@
         border-radius: 0;
         background-color: #fafafa;
         max-width: 200px;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
     }
 
     h4.company-name {
@@ -89,56 +95,39 @@
     //     ext: 'png'
     // });
 
-    var streetMap = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    // ***GOOGLE MAPS
+    // var streetMap = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+    //     maxZoom: 20,
+    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    // });
+
+    // var hybridMap = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+    //     maxZoom: 20,
+    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    // });
+
+    // var terrainMap = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+    //     maxZoom: 20,
+    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    // });
+
+    // var satelliteMap = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+    //     maxZoom: 20,
+    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    // });
+
+    var cartoPositron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
     });
 
-    var hybridMap = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-
-    var terrainMap = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-
-    var satelliteMap = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-
-
-    /************************************************************ 
-     ** Create individual components of imagery + labels basemap 
-     ** 1. Imagery
-     ** 2. Transportation Labels
-     ** 3. Place Reference Labels
-     ***************************************************************/
-
-    // 1. ESRI Imagery
-    var esriImagery = L.esri.basemapLayer('Imagery');
-
-    // 2. ESRI Transportation Labels
-    var esriTransportationLabels = L.esri.basemapLayer('ImageryTransportation');
-
-    // 3. ESRI Places Labels
-    var esriLabels = L.esri.basemapLayer('ImageryLabels');
-
-    // Create a Leaflet Feature Group to create a basemap containing imagery and labels
-    var esriImageryLabels = L.featureGroup([esriImagery, esriTransportationLabels, esriLabels]);
-
-    // Add the basemap to the map
-    //esriImageryLabels.addTo(map);
+    var hereAerial = L.tileLayer('https://2.aerial.maps.api.here.com/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?app_id=CSmJ9kJYWVIKMg4JoTHp&app_code=hgJzqCB7Zlf7U7iJmdr23w');
 
     var baseLayers = {
         //"Monochrome map": stamenMap,
-        "Street map": streetMap,
-        "Hybrid map": hybridMap,
-        "terrainMap": terrainMap,
-        "Satellite map": satelliteMap,
-        "Esri": esriImageryLabels
+        "Road": cartoPositron,
+        "Satellite": hereAerial
     };
 
     // grouped layer control from http://bl.ocks.org/ismyrnow/6123517
@@ -158,10 +147,10 @@
     var map = L.map('map', {
         center: [40.11, -104.94],
         zoom: 9,
-        scrollWheelZoom: false,
+        scrollWheelZoom: true,
         // touchZoom: true,
         keyboard: false,
-        layers: [streetMap, neighborhoods, pendingPermits]
+        layers: [cartoPositron, neighborhoods, pendingPermits]
     });
 
     var pendingMarkerOptions = {
