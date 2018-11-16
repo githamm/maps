@@ -14,6 +14,7 @@
     <script src="//unpkg.com/leaflet-control-geocoder@latest/dist/Control.Geocoder.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.js"></script>
     <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js" integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g==" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
     <script src="http://stevenlevithan.com/assets/misc/date.format.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -108,12 +109,36 @@
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
 
+
+    /************************************************************ 
+     ** Create individual components of imagery + labels basemap 
+     ** 1. Imagery
+     ** 2. Transportation Labels
+     ** 3. Place Reference Labels
+     ***************************************************************/
+
+    // 1. ESRI Imagery
+    var esriImagery = L.esri.basemapLayer('Imagery');
+
+    // 2. ESRI Transportation Labels
+    var esriTransportationLabels = L.esri.basemapLayer('ImageryTransportation');
+
+    // 3. ESRI Places Labels
+    var esriLabels = L.esri.basemapLayer('ImageryLabels');
+
+    // Create a Leaflet Feature Group to create a basemap containing imagery and labels
+    var esriImageryLabels = L.featureGroup([esriImagery, esriTransportationLabels, esriLabels]);
+
+    // Add the basemap to the map
+    //esriImageryLabels.addTo(map);
+
     var baseLayers = {
         //"Monochrome map": stamenMap,
         "Street map": streetMap,
         "Hybrid map": hybridMap,
         "terrainMap": terrainMap,
-        "Satellite map": satelliteMap
+        "Satellite map": satelliteMap,
+        "Esri": esriImageryLabels
     };
 
     // grouped layer control from http://bl.ocks.org/ismyrnow/6123517
