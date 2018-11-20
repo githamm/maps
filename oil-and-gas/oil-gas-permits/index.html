@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Colorado Oil and Gas Permits Map | The Denver Post</title>
     <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Roboto+Mono" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.css" />
@@ -116,14 +115,6 @@
 <body>
     <div class="row">
         <div class="large-12 columns">
-            <form id="lat-long-fields">
-                <input type="text" name="lat" id="lat" size=12 value="">
-                <input type="text" name="lon" id="lon" size=12 value="">
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
             <b>Zoom to address</b>
         </div>
     </div>
@@ -133,7 +124,7 @@
                 <input type="text" name="addr" value="" id="addr" size="58" />
             </div>
             <div class="large-2 medium-2 small-3 columns">
-                <button class="button" type="button" onclick="addr_search();">Search</button>
+                <button id="search-button" class="button" type="button" onclick="addressSearch();">Search</button>
             </div>
         </div>
     </div>
@@ -146,6 +137,15 @@
         <div class="large-12 columns">
             <p class="legend-text"><span style="border-top:6px solid #e6550d">Pending</span>&nbsp;&nbsp;&nbsp;<span style="border-top:6px solid #000">Approved</span></p>
             <div id="map"></div>
+        </div>
+    </div>
+    <!-- Chunk below is display:none -->
+    <div class="row">
+        <div class="large-12 columns">
+            <form id="lat-long-fields">
+                <input type="text" name="lat" id="lat" size=12 value="">
+                <input type="text" name="lon" id="lon" size=12 value="">
+            </form>
         </div>
     </div>
     <script>
@@ -189,7 +189,7 @@
     //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     // });
 
-    var cartoPositron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+    var cartoVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
@@ -198,8 +198,7 @@
     var hereAerial = L.tileLayer('https://2.aerial.maps.api.here.com/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?app_id=CSmJ9kJYWVIKMg4JoTHp&app_code=hgJzqCB7Zlf7U7iJmdr23w');
 
     var baseLayers = {
-        //"Monochrome map": stamenMap,
-        "Road": cartoPositron,
+        "Road map": cartoVoyager,
         "Satellite": hereAerial
     };
 
@@ -226,15 +225,13 @@
     document.getElementById('lat').value = startlat;
     document.getElementById('lon').value = startlon;
 
-    // map from http://bl.ocks.org/awoodruff/3ce5d735126a56dfff94
-    // initialize the map
     var map = L.map('map', {
         center: [40.11, -104.54],
         zoom: 9,
-        scrollWheelZoom: true,
-        // touchZoom: true,
+        scrollWheelZoom: false,
+        touchZoom: true,
         keyboard: true,
-        layers: [cartoPositron, neighborhoods, pendingPermits]
+        layers: [cartoVoyager, neighborhoods, pendingPermits]
     });
 
     var pendingMarkerOptions = {
@@ -256,8 +253,10 @@
     };
 
     /*****PENDING PERMTIS*****/
-    $.getJSON("pending-permits-111218-modified.geojson", function(data) {
-        //console.log(data);
+    // Mapshaper command: mapshaper Permits_Pending.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/pending-permits-11192018.geojson
+
+    $.getJSON("pending-permits-11192018.geojson", function(data) {
+        console.log(data);
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
                 var tweakDate = dateFormat(feature.properties.Recv_Date, "mmm d, yyyy");
@@ -269,7 +268,9 @@
     });
 
     /*****APPROVED PERMTIS*****/
-    $.getJSON("approved-permits-modified.geojson", function(data) {
+    // Mapshaper command: mapshaper Permits.shp -proj wgs84 -filter-fields Perm_Appr,Perm_Exp,Operator,API -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/approved-permits-11192018.geojson
+
+    $.getJSON("approved-permits-11192018.geojson", function(data) {
         console.log(data);
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
@@ -325,7 +326,7 @@
     }
 
     //Nominatim TOS: https://operations.osmfoundation.org/policies/nominatim/
-    function addr_search() {
+    function addressSearch() {
         var inp = document.getElementById("addr");
         var xmlhttp = new XMLHttpRequest();
         var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + inp.value;
@@ -338,6 +339,12 @@
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
     }
+
+    $('#addr').keyup(function(event) {
+        if (event.keyCode == 13) {
+            $('#search-button').click();
+        }
+    })
     </script>
 </body>
 
