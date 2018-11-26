@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.css" />
-    <!-- <link rel="stylesheet" href="./css/auto-complete.css" /> -->
     <style>
         @import url('//fonts.googleapis.com/css?family=Roboto');
 
@@ -147,15 +146,6 @@
             <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a></p>
         </div>
     </div>
-    <!-- Chunk below is display:none -->
-    <div class="row">
-        <div class="large-12 columns">
-            <form id="lat-long-fields">
-                <input type="text" name="lat" id="lat" size=12 value="">
-                <input type="text" name="lon" id="lon" size=12 value="">
-            </form>
-        </div>
-    </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
     <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
@@ -166,43 +156,6 @@
     <script>
     var pendingPermits = new L.LayerGroup();
     var approvedPermits = new L.LayerGroup();
-    var neighborhoods = new L.LayerGroup();
-
-    //Google maps info: https://stackoverflow.com/questions/9394190/leaflet-map-api-with-google-satellite-layer//
-
-    // var streetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-    //     attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-    //     maxZoom: 16
-    // });
-
-    // var stamenMap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
-    //     attribution: 'Map tiles by <a href="//stamen.com">stamen Design</a>, <a href="//creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    //     subdomains: 'abcd',
-    //     minZoom: 0,
-    //     maxZoom: 20,
-    //     ext: 'png'
-    // });
-
-    // ***GOOGLE MAPS
-    // var streetMap = L.tileLayer('//{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-    //     maxZoom: 20,
-    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    // });
-
-    // var hybridMap = L.tileLayer('//{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-    //     maxZoom: 20,
-    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    // });
-
-    // var terrainMap = L.tileLayer('//{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
-    //     maxZoom: 20,
-    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    // });
-
-    // var satelliteMap = L.tileLayer('//{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-    //     maxZoom: 20,
-    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    // });
 
     var cartoVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -219,10 +172,6 @@
 
     // grouped layer control from //bl.ocks.org/ismyrnow/6123517
     var groupedOverlays = {
-        //"Background": {
-        //"Neighborhoods": neighborhoods
-        //"Income levels": census
-        //},
         "Permits": {
             "Pending permits": pendingPermits,
             "Approved permits": approvedPermits
@@ -232,21 +181,13 @@
     var startlat = 1;
     var startlon = 1;
 
-    // var options = {
-    //     center: [startlat, startlon],
-    //     zoom: 9
-    // }
-
-    document.getElementById('lat').value = startlat;
-    document.getElementById('lon').value = startlon;
-
     var map = L.map('map', {
         center: [40.11, -104.54],
         zoom: 9,
         scrollWheelZoom: false,
         touchZoom: true,
         keyboard: true,
-        layers: [cartoVoyager, neighborhoods, pendingPermits]
+        layers: [cartoVoyager, pendingPermits]
     });
 
     var pendingMarkerOptions = {
@@ -302,17 +243,7 @@
 
     // Geolocation from: https://stackoverflow.com/questions/15919227/get-latitude-longitude-as-per-address-given-for-leaflet
 
-    var myMarker = L.marker([startlat, startlon], { title: "Coordinates", alt: "Coordinates", draggable: true }).addTo(map).on('dragend', function() {
-        var lat = myMarker.getLatLng().lat.toFixed(8);
-        var lon = myMarker.getLatLng().lng.toFixed(8);
-        var czoom = map.getZoom();
-        if (czoom < 18) { nzoom = czoom + 2; }
-        if (nzoom > 18) { nzoom = 18; }
-        if (czoom != 18) { map.setView([lat, lon], nzoom); } else { map.setView([lat, lon]); }
-        document.getElementById('lat').value = lat;
-        document.getElementById('lon').value = lon;
-        //myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
-    });
+    var myMarker = L.marker([startlat, startlon]).addTo(map);
 
     function chooseAddr(lat1, lng1) {
         myMarker.closePopup();
@@ -320,9 +251,6 @@
         myMarker.setLatLng([lat1, lng1]);
         lat = lat1.toFixed(8);
         lon = lng1.toFixed(8);
-        document.getElementById('lat').value = lat;
-        document.getElementById('lon').value = lon;
-        //myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
     }
 
     //check for enter key inside input field
@@ -349,7 +277,6 @@
                     console.log('invalid address');
                     $(".addressError").html('Sorry &mdash; that address can\'t be found in Colorado. Please try again.');
                 } else {
-                    console.log(response.Response.View[0].Result[0].Location.DisplayPosition);
                     var lat1 = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
                     var lng1 = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
                     chooseAddr(lat1, lng1);
@@ -362,46 +289,6 @@
             }
         });
     }
-
-    /*
-    //old auto complete code.
-    function myFunction(arr) {
-        var out = "<br />";
-        var i;
-
-        if (arr.length > 0) {
-            for (i = 0; i < arr.length; i++) {
-                out += "<span class='address' title='Click to go to location' onclick='chooseAddr(" + arr[i].lat + ", " + arr[i].lon + ");return false;'><a>" + arr[i].display_name + "</a></span><br>";
-            }
-            document.getElementById('results').innerHTML = out;
-        } else {
-            document.getElementById('results').innerHTML = "Sorry, no results...";
-        }
-
-    }
-//    //autocomplete.geocoder.api.here.com/6.2/suggest.json?query=&app_id=CSmJ9kJYWVIKMg4JoTHp&app_code=hgJzqCB7Zlf7U7iJmdr23w'
-    //Nominatim TOS: https://operations.osmfoundation.org/policies/nominatim/
-    // API request limit to restrictive going with another service, left this here for posterity
-
-    function addressSearch() {
-        var inp = document.getElementById("addr");
-        var xmlhttp = new XMLHttpRequest();
-        var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + inp.value;
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myArr = JSON.parse(this.responseText);
-                myFunction(myArr);
-            }
-        };
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-    }
-
-    $('#addr').keyup(function(event) {
-        if (event.keyCode == 13) {
-            $('#search-button').click();
-        }
-    })*/
     </script>
 </body>
 
