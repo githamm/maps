@@ -118,7 +118,8 @@
 <body>
     <div class="row">
         <div class="large-12 columns">
-            <p>The map shows pending and approved permits for oil and gas wells. Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map. (A useful feature in Google maps is the ability to measure the distance between two points: Right-click on one point, choose "Measure distance" then click the other point.) To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map. Use the search bar to zoom to an address. The map will be updated weekly.</p>
+            <p>The map shows pending and approved permits for oil and gas wells. Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map*. To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map. Use the search bar to zoom to an address. The map will be updated weekly.</p>
+            <p><em>*A useful feature in Google maps is the ability to measure the distance between two points: Right-click on one point, choose "Measure distance" then click the other point.</em></p>
         </div>
     </div>
     <div class="row">
@@ -143,8 +144,13 @@
         </div>
     </div>
     <div class="row">
+        <div class="large-12 columns" style="text-align:center;">
+            <div><img style="padding-bottom:18px;" src="pending-splotch.png"><span class="legend-text" style="margin-left:-4px;margin-right:10px;">Pending permits</span><img style="padding-bottom:18px;" src="approved-splotch.png"><span style="margin-left:-4px;" class="legend-text">Approved permits</span></div>
+        </div>
+    </div>
+    <div class="row">
         <div class="large-12 columns">
-            <p class="legend-text"><span style="border-top:6px solid #ff0000">Pending</span>&nbsp;&nbsp;&nbsp;<span style="border-top:6px solid #000">Approved</span></p>
+            <!-- <p class="legend-text"><span style="border-top:6px solid #ff0000">Pending</span>&nbsp;&nbsp;&nbsp;<span style="border-top:6px solid #000">Approved</span></p> -->
             <div id="map"></div>
             <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a></p>
         </div>
