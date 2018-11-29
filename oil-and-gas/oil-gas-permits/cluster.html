@@ -44,7 +44,7 @@
         .leaflet-popup-content-wrapper {
             border-radius: 0;
             background-color: #fafafa;
-            max-width: 200px;
+            max-width: 250px;
         }
 
         .leaflet-container {
@@ -86,7 +86,8 @@
 
         .details {
             font-style: italic;
-            text-align: right;
+            text-align: left;
+            margin-top: 5px;
         }
 
         #results {
@@ -118,6 +119,7 @@
     <div class="row">
         <div class="large-12 columns">
             <p>The map shows pending and approved permits for oil and gas well drilling. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website. To see approved permits or change to a satellite background, click the map layers icon in the upper right corner of the map. Use the search bar to zoom to an address. The map will be updated weekly.</p>
+            <p>***ADD SOMETHING ABOUT HOW TO MEASURE DISTANCE IN GOOGLE MAPS***</p>
         </div>
     </div>
     <div class="row">
@@ -158,7 +160,6 @@
     <script src="//stevenlevithan.com/assets/misc/date.format.js"></script>
     <!-- <script src="./js/auto-complete.min.js"></script> -->
     <script>
-
     var pendingPermits = new L.LayerGroup();
     var approvedPermits = new L.LayerGroup();
 
@@ -195,27 +196,10 @@
         layers: [cartoVoyager, pendingPermits]
     });
 
-    var pendingMarkerOptions = {
-        radius: 5,
-        fillColor: '#e6550d',
-        color: '#bbb',
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 1
-    };
-
-    var approvedMarkerOptions = {
-        radius: 5,
-        fillColor: '#000',
-        color: '#bbb',
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 1
-    };
-
     // Icons from https://mapicons.mapsmarker.com/markers/industry/oil-and-gas-well/
     var pendingIcon = new L.Icon({
-        iconUrl: 'pending-splotch.png'
+        iconUrl: 'pending-splotch.png',
+        popupAnchor: [15, 15] // adjust popup position
     });
 
     var approvedIcon = new L.Icon({
@@ -227,13 +211,13 @@
     /*****PENDING PERMTIS*****/
     // Mapshaper command: mapshaper Permits_Pending.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/pending-permits-11192018.geojson
 
-    // Add layer for markercluster
-    // var markers = L.markerClusterGroup();
-
-    // Use jQuery to load date from GeoJSON file
     $.getJSON('pending-permits-11192018.geojson', function(data) {
+        console.log(data);
         var geoJsonLayer = L.geoJson(data, {
             onEachFeature: function(feature, layer) {
+                var tweakDate = dateFormat(feature.properties.Recv_Date, "mmm d, yyyy");
+                var popupContent = '<h4 class="company-name">' + feature.properties.Oper_Name + '</h4>' + '<span class="tooltip-text">Application: ' + tweakDate + '<br><div class="details">' + '&bull;&nbsp;<a href="https://cogcc.state.co.us/publicComment/?doc_num=' + feature.properties.Doc_Num + '" target="_blank">' + 'Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?t=k&q=loc:' + feature.geometry.coordinates[1] + '+' + feature.geometry.coordinates[0] + '" target="blank">Open in Google maps</a></div></span>';
+                layer.bindPopup(popupContent);
                 layer.setIcon(pendingIcon);
             }
         });
@@ -249,6 +233,10 @@
     $.getJSON("approved-permits-11192018.geojson", function(data) {
         var geoJsonLayer = L.geoJson(data, {
             onEachFeature: function(feature, layer) {
+                var tweakApproveDate = dateFormat(feature.properties.Perm_Appr, "mmm d, yyyy");
+                var tweakExpireDate = dateFormat(feature.properties.Perm_Exp, "mmm d, yyyy");
+                var popupContent = '<h4 class="company-name">' + feature.properties.Operator + '</h4>' + '<span class="tooltip-text">Approved: ' + tweakApproveDate + '<br>Expires: ' + tweakExpireDate + '<br><div class="details">' + '<a href="//cogcc.state.co.us/cogis/FacilityDetail.asp?facid=' + feature.properties.API + '&type=WELL" target="_blank">' + 'Click for details</a></div></span>';
+                layer.bindPopup(popupContent);
                 layer.setIcon(approvedIcon);
             }
         });
