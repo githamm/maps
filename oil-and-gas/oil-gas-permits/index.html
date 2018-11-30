@@ -118,7 +118,7 @@
 <body>
     <div class="row">
         <div class="large-12 columns">
-            <p>The map shows pending and approved permits for oil and gas wells. Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map*. To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map. Use the search bar to zoom to an address. The map will be updated weekly.</p>
+            <p>The map shows pending and approved permits for oil and gas wells (and schools <img style="width:1.3em;" src="school.png">, which will show up when zoomed in). Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map*. <strong>To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map.</strong> Use the search bar to zoom to an address. The map will be updated weekly.</p>
             <p><em>*A useful feature in Google maps is the ability to measure the distance between two points: Right-click on one point, choose "Measure distance" then click the other point.</em></p>
         </div>
     </div>
@@ -166,6 +166,7 @@
     <script>
     var pendingPermits = new L.LayerGroup();
     var approvedPermits = new L.LayerGroup();
+    var schools = new L.LayerGroup();
 
     var cartoVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -173,11 +174,13 @@
         maxZoom: 19
     });
 
-    var hereAerial = L.tileLayer('https://2.aerial.maps.api.here.com/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?app_id=CSmJ9kJYWVIKMg4JoTHp&app_code=hgJzqCB7Zlf7U7iJmdr23w');
+    var hereAerial = L.tileLayer('https://2.aerial.maps.api.here.com/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?app_id=CSmJ9kJYWVIKMg4JoTHp&app_code=hgJzqCB7Zlf7U7iJmdr23w', {
+        maxZoom: 19
+    });
 
     var baseMaps = {
         "Road map": cartoVoyager,
-        "Satellite": hereAerial
+        "Satellite map": hereAerial
     };
 
     var startlat = 1;
@@ -186,7 +189,7 @@
     var map = L.map('map', {
         center: [40.11, -104.54],
         zoom: 9,
-        scrollWheelZoom: false,
+        scrollWheelZoom: true,
         touchZoom: true,
         keyboard: true,
         layers: [cartoVoyager, pendingPermits]
@@ -254,17 +257,50 @@
         });
     });
 
+    var schoolIcon = new L.Icon({
+        iconUrl: 'school.png',
+        popupAnchor: [15, 15] // adjust popup position
+    });
+
+    var schoolOptions = {
+        pointToLayer: function(feature, latlng) {
+            var marker = L.marker(latlng, {
+                icon: schoolIcon
+            });
+            marker.bindPopup('<h4 class="company-name">' + feature.properties.School_Nam + '</h4>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
+            return marker;
+        }
+    }
+
+    var schoolMarker = L.geoJson(null, schoolOptions);
+
+    $.getJSON("colorado-school-locations.geojson", function(data) {
+        schoolMarker.addData(data); // GeoJSON conversion.
+        // Then transfer all features into the corresponding sub-group.
+        schoolMarker.eachLayer(function(layer) {
+            map.on('zoomend', function() {
+                if (map.getZoom() < 13) {
+                    map.removeLayer(schoolMarker);
+                } else {
+                    map.addLayer(schoolMarker);
+                }
+            })
+        })
+    });
+
     // Create a normal Marker Cluster Group.
     var mcg = L.markerClusterGroup().addTo(map);
 
     // Create SubGroups.
     var pendingMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
     var approvedMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
+    //var schoolMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
 
     // For Layers Control.
     var overlayMaps = {
         "Pending permits": pendingMarkerSub,
-        "Approved permits": approvedMarkerSub
+        "Approved permits": approvedMarkerSub,
+        //"Schools": schoolMarkerSub
     };
 
     L.control.layers(baseMaps, overlayMaps).addTo(map);
