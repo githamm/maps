@@ -118,7 +118,7 @@
 <body>
     <div class="row">
         <div class="large-12 columns">
-            <p>The map shows pending and approved permits for oil and gas wells (and schools <img style="width:1.3em;" src="school.png">, which will show up when zoomed in). Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map*. <strong>To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map.</strong> Use the search bar to zoom to an address. The map will be updated weekly.</p>
+            <p>The map shows locations of pending and approved permits for oil and gas wells (and schools <img style="width:1.3em;" src="images/school.png">, which will show up when zoomed in). Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map*. <strong>To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map.</strong> Use the search bar to zoom to an address. The map will be updated weekly.</p>
             <p><em>*A useful feature in Google maps is the ability to measure the distance between two points: Right-click on one point, choose "Measure distance" then click the other point.</em></p>
         </div>
     </div>
@@ -145,24 +145,22 @@
     </div>
     <div class="row">
         <div class="large-12 columns" style="text-align:center;">
-            <div><img style="padding-bottom:18px;" src="pending-splotch.png"><span class="legend-text" style="margin-left:-4px;margin-right:10px;">Pending permits</span><img style="padding-bottom:18px;" src="approved-splotch.png"><span style="margin-left:-4px;" class="legend-text">Approved permits</span></div>
+            <div><img style="padding-bottom:18px;" src="images/pending-splotch.png"><span class="legend-text" style="margin-left:-4px;margin-right:10px;">Pending permits</span><img style="padding-bottom:18px;" src="images/approved-splotch.png"><span style="margin-left:-4px;" class="legend-text">Approved permits</span></div>
         </div>
     </div>
     <div class="row">
         <div class="large-12 columns">
-            <!-- <p class="legend-text"><span style="border-top:6px solid #ff0000">Pending</span>&nbsp;&nbsp;&nbsp;<span style="border-top:6px solid #000">Approved</span></p> -->
             <div id="map"></div>
             <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a></p>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
     <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
-    <script src="leaflet.featuregroup.subgroup.js"></script>
-    <script src="//stevenlevithan.com/assets/misc/date.format.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="js/leaflet.featuregroup.subgroup.js"></script>
+    <script src="js/date.format.js"></script>
     <script>
     var pendingPermits = new L.LayerGroup();
     var approvedPermits = new L.LayerGroup();
@@ -195,9 +193,10 @@
         layers: [cartoVoyager, pendingPermits]
     });
 
+    //*****PENDING PERMITS*****//
     // Icons from https://mapicons.mapsmarker.com/markers/industry/oil-and-gas-well/
     var pendingIcon = new L.Icon({
-        iconUrl: 'pending-splotch.png',
+        iconUrl: 'images/pending-splotch.png',
         popupAnchor: [15, 15] // adjust popup position
     });
 
@@ -214,10 +213,9 @@
 
     var pendingMarker = L.geoJson(null, pendingOptions); // DO NOT add to map.
 
-    /*****PENDING PERMTIS*****/
     // Mapshaper command: mapshaper Permits_Pending.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/pending-permits-11192018.geojson
 
-    $.getJSON('pending-permits.geojson', function(data) {
+    $.getJSON('geojson/pending-permits.geojson', function(data) {
         console.log("Pending permits: ", data);
         pendingMarker.addData(data); // GeoJSON conversion.
         // Then transfer all features into the corresponding sub-group.
@@ -226,8 +224,9 @@
         });
     });
 
+    //*****APPROVED PERMITS*****//
     var approvedIcon = new L.Icon({
-        iconUrl: 'approved-splotch.png',
+        iconUrl: 'images/approved-splotch.png',
         popupAnchor: [15, 15] // adjust popup position
     });
 
@@ -245,10 +244,9 @@
 
     var approvedMarker = L.geoJson(null, approvedOptions);
 
-    /*****APPROVED PERMTIS*****/
     // Mapshaper command: mapshaper Permits.shp -proj wgs84 -filter-fields Perm_Appr,Perm_Exp,Operator,API -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/approved-permits-11192018.geojson
 
-    $.getJSON("approved-permits.geojson", function(data) {
+    $.getJSON("geojson/approved-permits.geojson", function(data) {
         console.log("Approved permits: ", data);
         approvedMarker.addData(data); // GeoJSON conversion.
         // Then transfer all features into the corresponding sub-group.
@@ -257,9 +255,10 @@
         });
     });
 
+    //*****SCHOOL LOCATIONS*****//
     var schoolIcon = new L.Icon({
-        iconUrl: 'school.png',
-        popupAnchor: [15, 15] // adjust popup position
+        iconUrl: 'images/school.png',
+        popupAnchor: [15, 0] // adjust popup position
     });
 
     var schoolOptions = {
@@ -274,9 +273,9 @@
 
     var schoolMarker = L.geoJson(null, schoolOptions);
 
-    $.getJSON("colorado-school-locations.geojson", function(data) {
-        schoolMarker.addData(data); // GeoJSON conversion.
-        // Then transfer all features into the corresponding sub-group.
+    $.getJSON("geojson/colorado-school-locations.geojson", function(data) {
+        schoolMarker.addData(data); // GeoJSON conversion
+        // Then transfer all features into the corresponding sub-group
         schoolMarker.eachLayer(function(layer) {
             map.on('zoomend', function() {
                 if (map.getZoom() < 13) {
@@ -288,7 +287,7 @@
         })
     });
 
-    // Create a normal Marker Cluster Group.
+    // Create a normal Marker Cluster Group
     var mcg = L.markerClusterGroup().addTo(map);
 
     // Create SubGroups.
@@ -296,7 +295,7 @@
     var approvedMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
     //var schoolMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
 
-    // For Layers Control.
+    // For Layers Control
     var overlayMaps = {
         "Pending permits": pendingMarkerSub,
         "Approved permits": approvedMarkerSub,
