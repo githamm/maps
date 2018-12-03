@@ -213,7 +213,7 @@
 
     var pendingMarker = L.geoJson(null, pendingOptions); // DO NOT add to map.
 
-    // Mapshaper command: mapshaper Permits_Pending.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/pending-permits-11192018.geojson
+    // Mapshaper command: mapshaper Permits_Pending.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/pending-permits.geojson
 
     $.getJSON('geojson/pending-permits.geojson', function(data) {
         console.log("Pending permits: ", data);
@@ -244,7 +244,7 @@
 
     var approvedMarker = L.geoJson(null, approvedOptions);
 
-    // Mapshaper command: mapshaper Permits.shp -proj wgs84 -filter-fields Perm_Appr,Perm_Exp,Operator,API -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/approved-permits-11192018.geojson
+    // Mapshaper command: mapshaper Permits.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/approved-permits.geojson
 
     $.getJSON("geojson/approved-permits.geojson", function(data) {
         console.log("Approved permits: ", data);
