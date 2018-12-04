@@ -263,7 +263,8 @@
     //     }).addTo(census);
     // });
 
-    $.getJSON("denver-election-precincts.geojson", function(data) {
+    $.getJSON("mashed.geojson", function(data) {
+        console.log(data);
         L.geoJson(data, {
             style: function(feature) {
                 return {
@@ -275,7 +276,7 @@
             },
             onEachFeature: function(feature, layer) {
                 layer.bindPopup(
-                    '<h4 class="neighborhood-header">' + feature.properties.PRECINCT_N + '</h4>'
+                    'Precinct no: ' + feature.properties.PRECINCT + '<br>' + 'Eligible voters: ' + feature.properties.eligibleVoters
                 )
             }
         }).addTo(precincts);
