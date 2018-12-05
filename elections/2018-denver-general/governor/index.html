@@ -208,9 +208,9 @@
             style: function(feature) {
                 return {
                     color: 'black',
-                    weight: 4,
-                    fillColor: '#ddd',
-                    fillOpacity: .5
+                    weight: 8
+                    //fillColor: '#ddd',
+                    //fillOpacity: .5
                 }
             },
             // style: function(feature) {
@@ -266,18 +266,54 @@
     $.getJSON("mashed.geojson", function(data) {
         console.log(data);
         L.geoJson(data, {
+            // style: function(feature) {
+            //     return {
+            //         color: 'red',
+            //         weight: 1,
+            //         fillColor: '#eee',
+            //         fillOpacity: .2
+            //     }
+            // },
             style: function(feature) {
+                var fillColor,
+                    density = feature.properties.votesDemPct;
+                if (density > 90) fillColor = "#08519c";
+                else if (density > 80) fillColor = "#3182bd";
+                else if (density > 70) fillColor = "#6baed6";
+                else if (density > 60) fillColor = "#bdd7e7";
+                else if (density > 50) fillColor = "#eff3ff";
+                else if (density > 40) fillColor = "#fee5d9";
+                else if (density > 30) fillColor = "#fcae91";
+                else if (density > 20) fillColor = "#fb6a4a";
+                else if (density > 10) fillColor = "#de2d26";
+                else if (density > 0) fillColor = "#a50f15";
+                else fillColor = "rgba(0,0,0,0)"; // no data
                 return {
-                    color: 'red',
+                    color: "#000",
                     weight: 1,
-                    fillColor: '#eee',
-                    fillOpacity: .2
-                }
+                    fillColor: fillColor,
+                    fillOpacity: .6
+                };
             },
             onEachFeature: function(feature, layer) {
                 layer.bindPopup(
-                    'Precinct no: ' + feature.properties.PRECINCT + '<br>' + 'Eligible voters: ' + feature.properties.eligibleVoters
+                    'Precinct no: ' + feature.properties.PRECINCT + '<br>' + 'Dem pct: ' + feature.properties.votesDemPct + '<br>' + 'Eligible voters: ' + feature.properties.eligibleVoters
                 )
+
+                // layer.on('mouseover', function() {
+                //     this.setStyle({
+                //         'fillColor': '#ffff00',
+                //         fillOpacity: 1
+                //     })
+                // })
+                // layer.on('mouseout', function() {
+                //     this.setStyle({
+                //         color: 'red',
+                //         weight: 1,
+                //         fillColor: '#eee',
+                //         fillOpacity: .2
+                //     })
+                // })
             }
         }).addTo(precincts);
     });
