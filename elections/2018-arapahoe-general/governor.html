@@ -42,7 +42,7 @@
     .leaflet-popup-content-wrapper {
         border-radius: 0;
         background-color: #fafafa;
-        max-width: 250px;
+        /*max-width: 250px;*/
     }
 
     .leaflet-container {
@@ -113,11 +113,11 @@
     }
 
     h4 {
-    	font-weight: 700;
-    	font-size: 1.3em;
-    	text-transform: uppercase;
-  		color: #8e1024;
-  		margin-bottom: 0;
+        font-weight: 700;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        /*color: #8e1024;*/
+        margin-bottom: 0;
     }
 
     table {
@@ -130,14 +130,15 @@
     }
 
     table thead th {
-    	border-bottom: 2px solid silver;
-    	padding-bottom: 0;
-    	color: #acacac;
-    	font-weight: normal;
+        border-bottom: 2px solid silver;
+        padding-bottom: 0;
+        color: #acacac;
+        font-weight: normal;
     }
 
     table tbody td {
-    	padding: 4px 8px 4px 8px;
+        padding: 4px 8px 4px 8px;
+        font-size: 1.2em;
     }
 
     table tr {
@@ -158,37 +159,39 @@
     table tbody tr:nth-child(1n) {
         background-color: #fafafa;
     }
+
+    .dem-diff {
+        color: #0000a0;
+    }
+
+    .rep-diff {
+        color: #a10000;
+    }
+
+    .dem-circle,
+    .rep-circle,
+    .other-circle {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        margin-right: -5px;
+    }
+
+    .dem-circle {
+        background-color: #5050f0;
+    }
+
+    .rep-circle {
+        background-color: #f15050;
+    }
+
+    .other-circle {
+        background-color: #fafafa;
+    }
     </style>
 </head>
 
 <body>
-    <div class="row">
-        <div class="large-12 columns">
-            <p>The map shows locations of pending and approved permits for oil and gas wells (and schools <img style="width:1.3em;" src="images/school.png">, which will show up when zoomed in). Map markers are clustered and show the number of permits; click a cluster to zoom. Click a marker for details, including a link to public comments and other information on the Colorado Oil and Gas Conservation Commission's website, and a link to view the location in a Google map*. <strong>To toggle between pending and approved permits, or change to a satellite background, click the map layers icon in the upper right corner of the map.</strong> Use the search bar to zoom to an address. The map will be updated weekly.</p>
-            <p><em>*A useful feature in Google maps is the ability to measure the distance between two points: Right-click on one point, choose "Measure distance" then click the other point.</em></p>
-        </div>
-    </div>
-    <!-- <div class="row">
-        <div class="large-12 columns">
-            <b>Zoom to address</b>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <div class="large-10 medium-10 small-9 columns" id="search">
-                <input type="text" name="addr" value="" id="addr" name="addressBar" size="58" />
-                <div class="addressError"></div>
-            </div>
-            <div class="large-2 medium-2 small-3 columns">
-                <button id="search-button" class="button" type="button" onclick="addressSearch();">Search</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <div id="results"></div>
-        </div>
-    </div> -->
     <div class="row">
         <div class="large-12 columns" style="text-align:center;">
             <div><img style="padding-bottom:18px;" src="images/pending-splotch.png"><span class="legend-text" style="margin-left:-4px;margin-right:10px;">Pending permits</span><img style="padding-bottom:18px;" src="images/approved-splotch.png"><span style="margin-left:-4px;" class="legend-text">Approved permits</span></div>
@@ -197,7 +200,7 @@
     <div class="row">
         <div class="large-12 columns">
             <div id="map"></div>
-            <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a></p>
+            <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://www.arapahoevotes.com/file-library" target="_blank">Arapahoe County</a></p>
         </div>
     </div>
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -262,12 +265,12 @@
             },
             // style: function(feature) {
             //     var fillColor,
-            //         density = feature.properties.homicides;
-            //     if (density > 12) fillColor = "#08306b";
-            //     else if (density > 9) fillColor = "#08519c";
-            //     else if (density > 6) fillColor = "#2171b5";
-            //     else if (density > 3) fillColor = "#4292c6";
-            //     else if (density > 0) fillColor = "#6baed6";
+            //         pctDem = feature.properties.homicides;
+            //     if (pctDem > 12) fillColor = "#08306b";
+            //     else if (pctDem > 9) fillColor = "#08519c";
+            //     else if (pctDem > 6) fillColor = "#2171b5";
+            //     else if (pctDem > 3) fillColor = "#4292c6";
+            //     else if (pctDem > 0) fillColor = "#6baed6";
             //     else fillColor = "rgba(255,255,0,.3)"; // no data
             //     return {
             //         color: "#000",
@@ -288,12 +291,12 @@
     //     L.geoJson(data, {
     //         style: function(feature) {
     //             var fillColor,
-    //                 density = feature.properties.med_hh_inc;
-    //             if (density > 100000) fillColor = "#54278f";
-    //             else if (density > 75000) fillColor = "#756bb1";
-    //             else if (density > 50000) fillColor = "#9e9ac8";
-    //             else if (density > 25000) fillColor = "#cbc9e2";
-    //             else if (density > 0) fillColor = "#f2f0f7";
+    //                 pctDem = feature.properties.med_hh_inc;
+    //             if (pctDem > 100000) fillColor = "#54278f";
+    //             else if (pctDem > 75000) fillColor = "#756bb1";
+    //             else if (pctDem > 50000) fillColor = "#9e9ac8";
+    //             else if (pctDem > 25000) fillColor = "#cbc9e2";
+    //             else if (pctDem > 0) fillColor = "#f2f0f7";
     //             else fillColor = "rgba(0,0,0,0)"; // no data
     //             return {
     //                 color: "#000",
@@ -322,29 +325,28 @@
             //     }
             // },
             style: function(feature) {
-                var pctDem = ((feature.properties.demVotes / feature.properties.totalVotes) * 100);
-                //console.log(pctDem);
-                var fillColor,
-                    density = pctDem;
-                // if (density > 90) fillColor = "#08519c";
-                // else if (density > 80) fillColor = "#3182bd";
-                // else if (density > 70) fillColor = "#6baed6";
-                // else if (density > 60) fillColor = "#bdd7e7";
-                // else if (density > 50) fillColor = "#eff3ff";
-                // else if (density > 40) fillColor = "#fee5d9";
-                // else if (density > 30) fillColor = "#fcae91";
-                // else if (density > 20) fillColor = "#fb6a4a";
-                // else if (density > 10) fillColor = "#de2d26";
-                // else if (density > 0) fillColor = "#a50f15";
-                if (density > 75) fillColor = "#0074d9";
-                else if (density > 53) fillColor = "#7fdbff";
-                else if (density > 47) fillColor = "#b10dc9";
-                else if (density > 25) fillColor = "#ff4136";
-                else if (density > 0) fillColor = "#af0000";
-                else fillColor = "#ccc"; // no data
+                var demVotes = feature.properties.demVotes;
+                var repVotes = feature.properties.repVotes;
+                var totalVotes = feature.properties.totalVotes;
+                var otherVotes = (feature.properties.totalVotes - (demVotes + repVotes));
+                var pctDem = ((demVotes / totalVotes) * 100).toFixed(1);
+                var pctRep = ((repVotes / totalVotes) * 100).toFixed(1);
+                var fillColor;
+                // if (pctDem > 75) fillColor = "#0074d9";
+                // else if (pctDem > 53) fillColor = "#7fdbff";
+                // else if (pctDem > 47) fillColor = "#b10dc9";
+                // else if (pctDem > 25) fillColor = "#ff4136";
+                // else if (pctDem > 0) fillColor = "#af0000";
+                // else fillColor = "#ccc"; // no data
+                if (Math.abs(pctDem - pctRep) <= 5) fillColor = "purple";
+                //else if (Math.abs(repVotes - demVotes) <=5.0) fillColor = "purple";
+                else if ((pctDem - pctRep) >= 25) fillColor = "#0000a0";
+                else if ((pctDem - pctRep) >= 5) fillColor = "#5050f0";
+                else if ((pctRep - pctDem) >= 25) fillColor = "#a10000";
+                else if ((pctRep - pctDem) >= 5) fillColor = "#f15050";
                 return {
                     color: "#000",
-                    weight: 1,
+                    weight: 3,
                     fillColor: fillColor,
                     fillOpacity: .6
                 };
@@ -356,9 +358,53 @@
                 var otherVotes = (feature.properties.totalVotes - (demVotes + repVotes));
                 var pctDem = ((demVotes / totalVotes) * 100).toFixed(1);
                 var pctRep = ((repVotes / totalVotes) * 100).toFixed(1);;
-                var pctOther = ((otherVotes / totalVotes) * 100).toFixed(1);;
+                var pctOther = ((otherVotes / totalVotes) * 100).toFixed(1);
+
+                function checkDem(pctDem) {
+                    if (isNaN(pctDem)) {
+                        return 'n/a'
+                    } else {
+                        return pctDem + '%'
+                    }
+                };
+
+                function checkRep(pctRep) {
+                    if (isNaN(pctRep)) {
+                        return 'n/a'
+                    } else {
+                        return pctRep + '%'
+                    }
+                };
+
+                function checkOther(pctOther) {
+                    if (isNaN(pctOther)) {
+                        return 'n/a'
+                    } else {
+                        return pctOther + '%'
+                    }
+                };
+                var demDiff;
+                var repDiff;
+
+                function getDemDiff() {
+                    if (pctDem > pctRep) {
+                        var demDiff = (pctDem - pctRep);
+                        return '<span class="dem-diff">+' + Math.round(demDiff) + '</span>';
+                    } else {
+                        return ''
+                    }
+                }
+
+                function getRepDiff() {
+                    if (pctRep > pctDem) {
+                        var repDiff = (pctRep - pctDem);
+                        return '<span class="rep-diff">+' + Math.round(repDiff) + '</span>';
+                    } else {
+                        return ''
+                    }
+                }
                 layer.bindPopup(
-                    '<h4>Precinct ' + feature.properties.PRECINCT + '</h4>' + '<table><thead><tr><th></th><th>pct</th><th>votes</th></tr></thead><tr><td>Polis (D)</td><td>' + pctDem + '%</td><td>' + demVotes + '</td></tr>' + '<tr><td>Stapleton (R)</td><td>' + pctRep + '%</td><td>' + repVotes + '</td></tr>' + '<tr><td>Other</td><td>' + pctOther + '%</td><td>' + otherVotes + '</td></tr></table>'
+                    '<h4>Precinct ' + feature.properties.PRECINCT + '</h4>' + '<table><thead><tr><th></th><th></th><th>pct</th><th>votes</th></tr></thead><tr><td>' + getDemDiff(demDiff) + '</td><td>Polis</td><td>' + checkDem(pctDem) + '</td><td>' + demVotes + '</td></tr>' + '<tr><td>' + getRepDiff(repDiff) + '</td><td>Stapleton</td><td>' + checkRep(pctRep) + '</td><td>' + repVotes + '</td></tr>' + '<tr><td><div class="other-circle"></div></td><td>Other</td><td>' + checkOther(pctOther) + '</td><td>' + otherVotes + '</td></tr></table>'
                 )
 
                 // layer.on('mouseover', function() {

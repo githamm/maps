@@ -263,7 +263,7 @@
     //     }).addTo(census);
     // });
 
-    $.getJSON("mashed.geojson", function(data) {
+    $.getJSON("prop-112.geojson", function(data) {
         console.log(data);
         L.geoJson(data, {
             // style: function(feature) {
@@ -276,7 +276,7 @@
             // },
             style: function(feature) {
                 var fillColor,
-                    density = feature.properties.votesDemPct;
+                    density = feature.properties.votesCastPct;
                 if (density > 90) fillColor = "#08519c";
                 else if (density > 80) fillColor = "#3182bd";
                 else if (density > 70) fillColor = "#6baed6";
@@ -290,14 +290,14 @@
                 else fillColor = "rgba(0,0,0,0)"; // no data
                 return {
                     color: "#000",
-                    weight: 1,
+                    weight: 1.5,
                     fillColor: fillColor,
                     fillOpacity: .6
                 };
             },
             onEachFeature: function(feature, layer) {
                 layer.bindPopup(
-                    'Precinct no: ' + feature.properties.PRECINCT + '<br>' + 'Dem pct: ' + feature.properties.votesDemPct + '<br>' + 'Eligible voters: ' + feature.properties.eligibleVoters
+                    'Precinct no: ' + feature.properties.PRECINCT + '<br>' + 'Dem pct: ' + feature.properties.votesCastPct + '<br>' + 'Eligible voters: ' + feature.properties.eligibleVoters
                 )
 
                 // layer.on('mouseover', function() {
