@@ -51,12 +51,21 @@
         letter-spacing: .2px;
     }
 
+    .map-hed {
+    	font-weight: 700;
+    	line-height: 100%;
+    }
+
+    .map-chatter {
+    	line-height: 125%;
+    }
+
     .city-name {
         color: #8e1024;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 1.0em;
-        margin: 0 0 3px -10px;
+        margin: 0 0 7px -10px;
     }
 
     .intro-headline {
@@ -84,10 +93,12 @@
 </head>
 
 <body>
+    <h2 class="map-hed">A deeper look at 7 cities and towns across Colorado</h2>
+    <p class="map-chatter">From the smallest hamlets to Colorado's capital, dozens of communities have allowed sales of recreational marijuana since legalization took effect. Click on the locators to see how several have spent the resulting tax money.</p>
     <div id='map'></div>
     <script>
     var map = L.map('map', {
-        center: [39.05, -105.78],
+        center: [39.15, -105.78],
         zoom: 7,
         scrollWheelZoom: true,
         // touchZoom: true,
@@ -111,23 +122,23 @@
     var LeafIcon = L.Icon.extend({
         options: {
             //shadowUrl: 'text.png',
-            //iconSize: [40, 50],
+            iconSize: [52, 52],
             //shadowSize: [50, 64],
-            iconAnchor: [17, 40],
+            iconAnchor: [30, 50],
             //shadowAnchor: [4, 62],
-            popupAnchor: [0, -40]
+            popupAnchor: [-5, -50]
         }
     });
 
-    var mapIcon = new LeafIcon({ iconUrl: 'text.png' });
+    var mapIcon = new LeafIcon({ iconUrl: 'marker.png' });
 
-    L.marker([39.739235, -104.990250], { icon: mapIcon }).bindPopup('<h4 class="city-name">Denver</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-headline">Headline goes here and here and here</p><p class="intro-blurb">Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
-    L.marker([39.712929, -104.819359], { icon: mapIcon }).bindPopup('<h4 class="city-name">Aurora</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-headline">Headline goes here and here and here</p><p class="intro-blurb">Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
-    L.marker([37.075900, -106.008780], { icon: mapIcon }).bindPopup('<h4 class="city-name">Antonito</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-headline">Headline goes here and here and here</p><p class="intro-blurb">Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
-    L.marker([39.452010, -108.052640], { icon: mapIcon }).bindPopup('<h4 class="city-name">Parachute</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-headline">Headline goes here and here and here</p><p class="intro-blurb">Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
-    L.marker([38.151710, -107.748580], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ridgway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here</strong> &bull; Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</span></p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
-    L.marker([40.933130, -102.525920], { icon: mapIcon }).bindPopup('<h4 class="city-name">Sedgwick</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-headline">Headline goes here and here and here</p><p class="intro-blurb">Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
-    L.marker([38.216330, -103.752770], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ordway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-headline">Headline goes here and here and here</p><p class="intro-blurb">Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
+    L.marker([39.739235, -104.990250], { icon: mapIcon }).bindPopup('<h4 class="city-name">Denver</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CDxxPOTNEIGHBORHOODS_BL26502xx.jpg?w=796"><p class="intro-blurb"><strong>Denver, Colorado’s biggest city, sees most money from marijuana &bull; </strong>Denver is the granddaddy of Colorado’s marijuana industry, and it shows in the roughly $180 million in taxes and fees the city will end up collecting in the first five years of recreational sales.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/denver-benefits-colorado-marijuana-taxes-fees/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([39.712929, -104.819359], { icon: mapIcon }).bindPopup('<h4 class="city-name">Aurora</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here &bull; </strong>Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
+    L.marker([37.075900, -106.008780], { icon: mapIcon }).bindPopup('<h4 class="city-name">Antonito</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here &bull; </strong>Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
+    L.marker([39.452010, -108.052640], { icon: mapIcon }).bindPopup('<h4 class="city-name">Parachute</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here &bull; </strong>Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
+    L.marker([38.151710, -107.748580], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ridgway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here &bull; </strong>Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</span></p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
+    L.marker([40.933130, -102.525920], { icon: mapIcon }).bindPopup('<h4 class="city-name">Sedgwick</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here &bull; </strong>Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
+    L.marker([38.216330, -103.752770], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ordway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/COLUMBINE-MS-12-18-2018-JA-2770a.jpg?w=810f"><p class="intro-blurb"><strong>Headline goes here and here and here &bull; </strong>Intro blurb goes here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here and here.</p><p class="link"><a href="#">Read story &rarr;</a>').addTo(map);
     </script>
 </body>
 
