@@ -38,7 +38,8 @@
     .leaflet-popup-content-wrapper {
         border-radius: 0;
         background-color: #fafafa;
-        width: 250px;
+        width: 275px;
+        height: 425px;
         line-height: 100%;
     }
 
@@ -87,15 +88,15 @@
     }
 
     .photo {
-        width: 225px;
+        width: 250px;
         margin-bottom: -10px;
     }
 
     @media only screen and (max-device-width: 450px) {
-    	.map-hed {
-    		font-size: 1.75em;
-    	}
-    } 
+        .map-hed {
+            font-size: 1.75em;
+        }
+    }
     </style>
 </head>
 
@@ -109,7 +110,8 @@
         zoom: 7,
         scrollWheelZoom: true,
         // touchZoom: true,
-        keyboard: false
+        keyboard: false,
+        autoPan: true
     });
 
     // L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
@@ -120,7 +122,7 @@
     //     ext: 'png'
     // }).addTo(map);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
@@ -139,13 +141,13 @@
 
     var mapIcon = new LeafIcon({ iconUrl: 'marker.png' });
 
-    L.marker([39.739235, -104.990250], { icon: mapIcon }).bindPopup('<h4 class="city-name">Denver</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CDxxPOTNEIGHBORHOODS_BL26502xx.jpg?w=796"><p class="intro-blurb"><strong>Denver, Colorado’s biggest city, sees most money from marijuana &bull; </strong>Denver is the granddaddy of Colorado’s marijuana industry, and it shows in the roughly $180 million in taxes and fees the city will end up collecting in the first five years of recreational sales.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/denver-benefits-colorado-marijuana-taxes-fees/" target="_blank">Read the story &rarr;</a>').addTo(map);
-    L.marker([39.712929, -104.819359], { icon: mapIcon }).bindPopup('<h4 class="city-name">Aurora</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CENTRAL-RECREATION-12-14-2018-JA-12159a.jpg?w=810"><p class="intro-blurb"><strong>Cautious approach on marijuana legalization has reaped millions to aid Aurora’s homeless &bull; </strong>Aurora city leaders have put their share of pot money toward homeless programs, road and transportation projects, and the financing of two new recreation centers in growing parts of the suburban city.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/aurora-marijuana-taxes-benefits-homeless/">Read the story &rarr;</a>').addTo(map);
-    L.marker([37.075900, -106.008780], { icon: mapIcon }).bindPopup('<h4 class="city-name">Antonito</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/ANTONITO-05-31-2018-JA-_JA10195a.jpg?w=810"><p class="intro-blurb"><strong>Once a pass-through town, legal marijuana put Antonito on the map &bull; </strong>When legal weed came to Colorado, the town quickly voted to approve local shops — by a margin of five votes. And suddenly, Antonito\'s diminutive downtown was bustling.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/antonito-marijuana-taxes-benefits/">Read the story &rarr;</a>').addTo(map);
-    L.marker([39.452010, -108.052640], { icon: mapIcon }).bindPopup('<h4 class="city-name">Parachute</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/PARACHUTE-12-01-2018-JA-6685aa.jpg?w=810"><p class="intro-blurb"><strong>Pot took Parachute from bust to boom, but competition is coming &bull; </strong>After voting down legal pot sales in 2013, Parachute’s town council revisited the issue two years later. The resulting approval provided a needed jolt to its economy.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/parachute-marijuana-taxes-benefits-economy/">Read the story &rarr;</a>').addTo(map);
-    L.marker([38.151710, -107.748580], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ridgway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/RIDGWAY-11-29-2018-JA-4905a.jpg?w=810"><p class="intro-blurb"><strong>Ridgway: The (cleaner) Gateway to the San Juans, thanks to marijuana &bull; </strong>Rather than hunker down with a specific plan on how to spend the extra dollars, Ridgway has funded a variety of small projects to keep up the town\'s appearance.</span></p><p class="link"><a href="https://www.denverpost.com/2018/12/28/ridgway-marijuana-taxes-benefits/">Read the story &rarr;</a>').addTo(map);
-    L.marker([40.933130, -102.525920], { icon: mapIcon }).bindPopup('<h4 class="city-name">Sedgwick</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CD28SEDGWICKSHERIFFRJ2_6482.jpg?w=795"><p class="intro-blurb"><strong>Cornering marijuana market brings new park, museum to Sedgwick &bull; </strong>Five years ago is when legal cannabis sales in Colorado began, and in that time, Sedgwick has been the only town in the far northeast corner of the state to allow commerce in the once-illegal drug.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/sedgwick-marijuana-taxes-benefits/">Read the story &rarr;</a>').addTo(map);
-    L.marker([38.216330, -103.752770], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ordway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/ORDWAY-12-12-2018-JA-10574a.jpg?w=795"><p class="intro-blurb"><strong>Dramatic changes expected in former marijuana “desert” &bull; </strong>A wasteland for weed is beginning to transform into a cannabis marketplace of sorts five years after the state’s first marijuana dispensaries opened for business.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/ordway-marijuana-taxes-benefits/">Read the story &rarr;</a>').addTo(map);
+    L.marker([39.739235, -105.090250], { icon: mapIcon }).bindPopup('<h4 class="city-name">Denver</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CDxxPOTNEIGHBORHOODS_BL26502xx.jpg?w=796"><p class="intro-blurb"><strong>Denver, Colorado’s biggest city, sees most money from marijuana &bull; </strong>Denver is the granddaddy of Colorado’s marijuana industry, and it shows in the roughly $180 million in taxes and fees the city will end up collecting in the first five years of recreational sales.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/denver-benefits-colorado-marijuana-taxes-fees/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([39.712929, -104.819359], { icon: mapIcon }).bindPopup('<h4 class="city-name">Aurora</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CENTRAL-RECREATION-12-14-2018-JA-12159a.jpg?w=810"><p class="intro-blurb"><strong>Cautious approach on marijuana legalization has reaped millions to aid Aurora’s homeless &bull; </strong>Aurora city leaders have put their share of pot money toward homeless programs, road and transportation projects, and the financing of two new recreation centers in growing parts of the suburban city.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/aurora-marijuana-taxes-benefits-homeless/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([37.075900, -106.008780], { icon: mapIcon }).bindPopup('<h4 class="city-name">Antonito</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/ANTONITO-05-31-2018-JA-_JA10195a.jpg?w=810"><p class="intro-blurb"><strong>Once a pass-through town, legal marijuana put Antonito on the map &bull; </strong>When legal weed came to Colorado, the town quickly voted to approve local shops — by a margin of five votes. And suddenly, Antonito\'s diminutive downtown was bustling.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/antonito-marijuana-taxes-benefits/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([39.452010, -108.052640], { icon: mapIcon }).bindPopup('<h4 class="city-name">Parachute</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/PARACHUTE-12-01-2018-JA-6685aa.jpg?w=810"><p class="intro-blurb"><strong>Pot took Parachute from bust to boom, but competition is coming &bull; </strong>After voting down legal pot sales in 2013, Parachute’s town council revisited the issue two years later. The resulting approval provided a needed jolt to its economy.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/parachute-marijuana-taxes-benefits-economy/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([38.151710, -107.748580], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ridgway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/RIDGWAY-11-29-2018-JA-4905a.jpg?w=810"><p class="intro-blurb"><strong>Ridgway: The (cleaner) Gateway to the San Juans, thanks to marijuana &bull; </strong>Rather than hunker down with a specific plan on how to spend the extra dollars, Ridgway has funded a variety of small projects to keep up the town\'s appearance.</span></p><p class="link"><a href="https://www.denverpost.com/2018/12/28/ridgway-marijuana-taxes-benefits/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([40.933130, -102.525920], { icon: mapIcon }).bindPopup('<h4 class="city-name">Sedgwick</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/CD28SEDGWICKSHERIFFRJ2_6482.jpg?w=795"><p class="intro-blurb"><strong>Cornering marijuana market brings new park, museum to Sedgwick &bull; </strong>Five years ago is when legal cannabis sales in Colorado began, and in that time, Sedgwick has been the only town in the far northeast corner of the state to allow commerce in the once-illegal drug.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/sedgwick-marijuana-taxes-benefits/" target="_blank">Read the story &rarr;</a>').addTo(map);
+    L.marker([38.216330, -103.752770], { icon: mapIcon }).bindPopup('<h4 class="city-name">Ordway</h4><img class="photo" src="https://www.denverpost.com/wp-content/uploads/2018/12/ORDWAY-12-12-2018-JA-10574a.jpg?w=795"><p class="intro-blurb"><strong>Dramatic changes expected in former marijuana “desert” &bull; </strong>A wasteland for weed is beginning to transform into a cannabis marketplace of sorts five years after the state’s first marijuana dispensaries opened for business.</p><p class="link"><a href="https://www.denverpost.com/2018/12/28/ordway-marijuana-taxes-benefits/" target="_blank">Read the story &rarr;</a>').addTo(map);
     </script>
 </body>
 
