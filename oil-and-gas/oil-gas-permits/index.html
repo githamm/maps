@@ -151,7 +151,7 @@
     <div class="row">
         <div class="large-12 columns">
             <div id="map"></div>
-            <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a> &bull; School map markers from <a hre"https://mapicons.mapsmarker.com">Maps Icons Collection</a></p>
+            <p style="font-size:.8em;font-style:italic;text-align:right;">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a> &bull; Map markers from <a hre"https://mapicons.mapsmarker.com">Maps Icons Collection</a></p>
         </div>
     </div>
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -163,8 +163,8 @@
     <script src="js/date.format.js"></script>
     <script>
     var pendingPermits = new L.LayerGroup();
-    var approvedPermits = new L.LayerGroup();
-    var schools = new L.LayerGroup();
+    // var approvedPermits = new L.LayerGroup();
+    // var schools = new L.LayerGroup();
 
     var cartoVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -193,29 +193,34 @@
         layers: [cartoVoyager, pendingPermits]
     });
 
-    //*****PENDING PERMITS*****//
     // Icons from https://mapicons.mapsmarker.com/markers/industry/oil-and-gas-well/
     var pendingIcon = new L.Icon({
         iconUrl: 'images/pending-splotch.png',
         popupAnchor: [15, 15] // adjust popup position
     });
 
-    var pendingOptions = {
-        pointToLayer: function(feature, latlng) {
-            var tweakDate = dateFormat(feature.properties.Recv_Date, "mmm d, yyyy");
-            var marker = L.marker(latlng, {
-                icon: pendingIcon
-            });
-            marker.bindPopup('<h4 class="company-name">' + feature.properties.Oper_Name + '</h4>' + '<span class="tooltip-text">Application: ' + tweakDate + '<br><div class="details">' + '&bull;&nbsp;<a href="https://cogcc.state.co.us/publicComment/?doc_num=' + feature.properties.Doc_Num + '" target="_blank">' + 'Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
-            return marker;
-        }
-    }
+    var approvedIcon = new L.Icon({
+        iconUrl: 'images/approved-splotch.png',
+        popupAnchor: [15, 15]
+    });
 
-    var pendingMarker = L.geoJson(null, pendingOptions); // DO NOT add to map.
-
+    //*****PENDING PERMITS*****//
+    
     // Mapshaper command: mapshaper Permits_Pending.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/pending-permits.geojson
 
     $.getJSON('geojson/pending-permits.geojson', function(data) {
+        var pendingOptions = {
+            pointToLayer: function(feature, latlng) {
+                var tweakDate = dateFormat(feature.properties.Recv_Date, "mmm d, yyyy");
+                var marker = L.marker(latlng, {
+                    icon: pendingIcon
+                });
+                marker.bindPopup('<h4 class="company-name">' + feature.properties.Oper_Name + '</h4>' + '<span class="tooltip-text">Application: ' + tweakDate + '<br><div class="details">' + '&bull;&nbsp;<a href="https://cogcc.state.co.us/publicComment/?doc_num=' + feature.properties.Doc_Num + '" target="_blank">' + 'Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
+                return marker;
+            }
+        }
+
+        var pendingMarker = L.geoJson(null, pendingOptions); // DO NOT add to map.
         console.log("Pending permits: ", data);
         pendingMarker.addData(data); // GeoJSON conversion.
         // Then transfer all features into the corresponding sub-group.
@@ -225,33 +230,61 @@
     });
 
     //*****APPROVED PERMITS*****//
-    var approvedIcon = new L.Icon({
-        iconUrl: 'images/approved-splotch.png',
-        popupAnchor: [15, 15] // adjust popup position
-    });
-
-    var approvedOptions = {
-        pointToLayer: function(feature, latlng) {
-            var tweakApproveDate = dateFormat(feature.properties.Perm_Appr, "mmm d, yyyy");
-            var tweakExpireDate = dateFormat(feature.properties.Perm_Exp, "mmm d, yyyy");
-            var marker = L.marker(latlng, {
-                icon: approvedIcon
-            });
-            marker.bindPopup('<h4 class="company-name">' + feature.properties.Operator + '</h4>' + '<span class="tooltip-text">Approved: ' + tweakApproveDate + '<br>Expires: ' + tweakExpireDate + '<br><div class="details">' + '<a href="//cogcc.state.co.us/cogis/FacilityDetail.asp?facid=' + feature.properties.API + '&type=WELL" target="_blank">' + '&bull;&nbsp;Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
-            return marker;
-        }
-    }
-
-    var approvedMarker = L.geoJson(null, approvedOptions);
 
     // Mapshaper command: mapshaper Permits.shp -proj wgs84 -filter-fields Recv_Date,Oper_Name,Doc_Num -o format=geojson /c/MAMP/htdocs/repos/maps/oil-and-gas/oil-gas-permits/approved-permits.geojson
 
     $.getJSON("geojson/approved-permits.geojson", function(data) {
+        var dateArray = [];
+        for(var i = 0; i < data.features.length; i++){
+                    dateArray.push(Date.parse(data.features[i].properties.Perm_Appr))
+                }
+
+        var numberApprovedPermits = data.features.length;
+        var approvedOptions = {
+            pointToLayer: function(feature, latlng) {
+                var tweakApproveDate = dateFormat(feature.properties.Perm_Appr, "mmm d, yyyy");
+                var tweakExpireDate = dateFormat(feature.properties.Perm_Exp, "mmm d, yyyy");
+                var marker = L.marker(latlng, {
+                    icon: approvedIcon
+                });
+                
+                marker.bindPopup('<h4 class="company-name">' + feature.properties.Operator + '</h4>' + '<span class="tooltip-text">Approved: ' + tweakApproveDate + '<br>Expires: ' + tweakExpireDate + '<br><div class="details">' + '<a href="//cogcc.state.co.us/cogis/FacilityDetail.asp?facid=' + feature.properties.API + '&type=WELL" target="_blank">' + '&bull;&nbsp;Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
+                return marker;
+            }
+        }
+
+        var approvedMarker = L.geoJson(null, approvedOptions);
         console.log("Approved permits: ", data);
         approvedMarker.addData(data); // GeoJSON conversion.
         // Then transfer all features into the corresponding sub-group.
         approvedMarker.eachLayer(function(layer) {
             layer.addTo(approvedMarkerSub);
+        });
+
+        //*****RECENT APPROVED PERMITS*****//
+        var recentApprovedOptions = {
+            pointToLayer: function(feature, latlng) {
+                var tweakApproveDate = dateFormat(feature.properties.Perm_Appr, "mmm d, yyyy");
+                var tweakExpireDate = dateFormat(feature.properties.Perm_Exp, "mmm d, yyyy");
+                var marker = L.marker(latlng, {
+                    icon: approvedIcon
+                });
+                var permitApprovedDate = Date.parse(feature.properties.Perm_Appr);
+                var lastDate = Math.max.apply(false, dateArray);
+                var recentDateCutoff = lastDate - (7 /* days */ * 24 * 60 * 60 * 1000);
+
+                if (permitApprovedDate > recentDateCutoff) {
+                    marker.bindPopup('<h4 class="company-name">' + feature.properties.Operator + '</h4>' + '<span class="tooltip-text">Approved: ' + tweakApproveDate + '<br>Expires: ' + tweakExpireDate + '<br><div class="details">' + '<a href="//cogcc.state.co.us/cogis/FacilityDetail.asp?facid=' + feature.properties.API + '&type=WELL" target="_blank">' + '&bull;&nbsp;Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
+                    return marker;
+                }
+            }
+        }
+
+        var recentApprovedMarker = L.geoJson(null, recentApprovedOptions);
+        recentApprovedMarker.addData(data); // GeoJSON conversion.
+        // Then transfer all features into the corresponding sub-group.
+        recentApprovedMarker.eachLayer(function(layer) {  
+            layer.addTo(recentApprovedMarkerSub);
         });
     });
 
@@ -293,12 +326,14 @@
     // Create SubGroups.
     var pendingMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
     var approvedMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
+    var recentApprovedMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
     //var schoolMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
 
     // For Layers Control
     var overlayMaps = {
         "Pending permits": pendingMarkerSub,
         "Approved permits": approvedMarkerSub,
+        "Recent approved": recentApprovedMarkerSub
         //"Schools": schoolMarkerSub
     };
 
