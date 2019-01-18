@@ -26,6 +26,11 @@
         font-family: 'Roboto', sans-serif;
     }
 
+    /*#content-container {
+    	width: 883px;
+    	margin: 0 auto;
+    }*/
+
     #map {
         height: 600px;
         width: 100%;
@@ -125,6 +130,10 @@
         background-color: rgba(142,16,36,.7);
     }
 
+    table {
+    	margin-bottom: -10px;
+    }
+
     table tbody tr:nth-child(2n) {
         background-color: #fafafa;
     }
@@ -142,49 +151,50 @@
     }
 
     hr {
-        margin: 6px 0 6px 0;
+        margin: -15px 0 10px 0;
+    }
+
+    .square-miles {
+    	font-size: .8em;
+    	font-style: italic;
+    	color: #aaa;
+    	margin-top: 7px !important;
     }
     </style>
 </head>
 
 <body>
     <div id="content-container">
-        <h2>Colorado school district funding discrepancies</h2>
-        <p>The voter-approved Taxpayer's Bill of Rights (TABOR) pushed tax rates lower in school districts during economic booms that never were restored when the economy cooled. As a result, school district property tax rates for minimum per-pupil funding in Colorado range from a low of 1.68 mills* to a high of 27 mills (June 2017 to July 2018). The state also requires a minimum level of funding to educate each student, with variations built into that formula to account for such factors as the size of a school district or the cost of living. When property taxes aren't sufficient to meet the mandated minimum per-pupil cost, the state backfills and provides funding to make up the difference. The system results in instances where wealthy districts get their education funding subsidized by the state while poorer areas with higher property rates struggle to raise enough money to pay for basic education costs. <em>*The mill levy is the tax rate that is applied to the assessed value of a property. One mill is $1 per $1,000 dollars of assessed value.</em></p>
+        <h2>The paving of America</h2>
+        <p>Across the country, as cities grow more and more of their surface area becomes "impervious" as roads, parking lots and buildings replace green space. From 1974 to 2012, the Denver metro's impervious surface area increased by 65 percent &mdash; nearly 32 percent of its surface area was impervious in 2012 compared with 19 percent in 1974. <strong>The map colors more than 3,500 municipalities by their change in impervious surfaces.</strong></p>
         <div style="float:left">
-            <p><em>Click a district for details.</em></p>
+            <p><em>Zoom the map and click a city for details.</em></p>
         </div>
         <div style="margin: 10px 0 10px 0;overflow:hidden;float:right;" id="legend">
-            <div style="text-align:center;font-weight:bold;font-size:.9em;margin-bottom:2px;">Per-pupil mill levy</div>
-            <!-- <div class="legend" style="background-color:#969696;">
-                    <p class="legend-text" style="color:#000;">0</p>
-                </div> -->
-            <div class="legend" style="background-color:#ffffd9;">
+            <div style="text-align:center;font-weight:bold;font-size:.9em;margin-bottom:2px;">Change 1974-2012</div>
+            <div class="legend" style="background-color:#2c7bb6;">
                 <p class="legend-text" style="color:#000;">
-                    &lt;5</p>
+                    &lt;25%</p>
             </div>
-            <div class="legend" style="background-color:#c7e9b4;">
+            <div class="legend" style="background-color:#abd9e9;">
                 <p class="legend-text" style="color:#000;">
-                    &lt;10</p>
+                    &lt;50%</p>
             </div>
-            <div class="legend" style="background-color:#41b6c4;">
+            <div class="legend" style="background-color:#ffffbf;">
                 <p class="legend-text" style="color:#000;">
-                    &lt;15</p>
+                    &lt;75%</p>
             </div>
-            <div class="legend" style="background-color:#225ea8;">
+            <div class="legend" style="background-color:#fdae61;">
                 <p class="legend-text" style="color:#fff;">
-                    &lt;20</p>
+                    &lt;100%</p>
             </div>
-            <div class="legend" style="background-color:#081d58;">
-                <p class="legend-text" style="color:#fff;">&lt;25</p>
-            </div>
-            <div class="legend" style="background-color:#8e1024;">
-                <p class="legend-text" style="color:#fff;">&gt;25</p>
+            <div class="legend" style="background-color:#d7191c;">
+                <p class="legend-text" style="color:#fff;">&gt;100%</p>
             </div>
         </div>
         <div id="map"></div>
         <p class="byline">By Kevin Hamm, The Denver Post</p>
-        <p class="source">Source: Colorado school funding data analyzed by The Denver Post</p>
+        <p class="source">Source: <a href="https://www.sciencebase.gov/catalog/item/58701618e4b01a71ba0c5fe6">U.S. Geological Survey</a></p>
     </div>
     <script>
     var map = L.map('map', {
@@ -206,7 +216,7 @@
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
-        maxZoom: 19
+        maxZoom: 11
     }).addTo(map);
 
     $.getJSON("us-cities-merge.geojson", function(data) {
@@ -243,8 +253,9 @@
                 //         return feature.properties.requestYears
                 //     }
                 // }
+                var squareMiles = Math.round(feature.properties.square_kilometers / 2.59);
                 layer.bindPopup(
-                    '<h4>' + feature.properties.NAME10 + '</h4>' + '</strong><br>Change 1974-2012: <strong>' + feature.properties.pct_change_1974_to_2012 + '%</strong><hr>' + '<em>Percent of city\'s area that was impervious in:</em><br>' + '<table><tr><td style="width:6%;">2012</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["2012_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["2012_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">2002</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["2002_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["2002_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">1992</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["1992_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["1992_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">1982</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["1982_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["1982_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">1974</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["1974_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["1974_1"] + '%;">' + '&nbsp;</div></div></div></td></tr></table>'
+                    '<h4>' + feature.properties.NAME10 + '</h4><p class="square-miles">' + squareMiles.toLocaleString() + ' square miles*</p><hr>Change 1974-2012: <strong>' + feature.properties.pct_change_1974_to_2012 + '%</strong><br><span style="text-align:center;display:block;margin-bottom:-20px;">&bull; &bull; &bull;</span><br>' + '<em>Percent of metro area that was impervious in:</em><br>' + '<table><tr><td style="width:6%;">2012</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["2012_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["2012_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">2002</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["2002_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["2002_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">1992</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["1992_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["1992_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">1982</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["1982_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["1982_1"] + '%;">' + '&nbsp;</div></div></div></td></tr><tr><td style="width:6%;">1974</td><td><div id="container" style="width:94%"><div class="chart-bar-background"><span class="chart-bar-number">' + feature.properties["1974_1"] + '%</span><div class="chart-bar-colored" style="width:' + feature.properties["1974_1"] + '%;">' + '&nbsp;</div></div></div></td></tr></table><br><span style="font-size:.8em;font-style:italic;color:#aaa;">*Metro area</span>'
                 )
             }
         }).addTo(map);
