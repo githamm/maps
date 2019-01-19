@@ -13,11 +13,16 @@
 
     body {
         font-family: 'Roboto', sans-serif;
+        background-color: #fafafa;
+        width: 900px;
+        height: 100%;
+        margin: 0 auto;
     }
 
     #map {
         width: 100%;
         height: 500px;
+        border: 2px solid silver;
     }
 
     h3 {
@@ -38,7 +43,7 @@
     }
 
     .leaflet-popup-content {
-        max-width: 250px;
+        max-width: 225px;
     }
 
     .leaflet-popup-content-wrapper {
@@ -49,9 +54,9 @@
 </head>
 
 <body>
-    <p>There have been <span id="incident-count"></span> officer-involved shootings in Colorado in 2019. The last incident occurred on <span id="last-date"></span> in <span id="last-city"></span>.</p>
+    <p>There have been <span id="incident-count"></span> officer-involved shootings in Colorado in 2019 &mdash; <span id="killed-count"></span> people have been killed and <span id="injured-count"></span> people have been injured in the incidents. The last incident occurred <span id="last-date"></span> in <span id="last-city"></span>.</p>
     <p><em>Zoom the map and click markers for details</em>
-        <p class="legend-text"><span style="border-top:4px solid #000">Injured</span> &bull; <span style="border-top:4px solid red">Killed</span></p>
+        <p class="legend-text"><span style="border-top:4px solid #000">Injured</span> &bull; <span style="border-top:4px solid red">Killed</span> &bull; <span style="border-top:4px solid blue">Unknown</span></p>
         <div id="map"></div>
         <script>
         var map;
@@ -98,12 +103,20 @@
             Tabletop.init({
                 key: code,
                 callback: function(sheet, tabletop) {
-                	var incidentCount = sheet.length;
-                	var lastDate = sheet[(incidentCount - 1)].date;
-                	var lastCity = sheet[(incidentCount - 1)].city;
+                	console.log(sheet);
+                	// var incidentCount = sheet.length;
+                	// var lastDate = sheet[(incidentCount - 1)].date;
+                	// var lastCity = sheet[(incidentCount - 1)].city;
+                	var incidentCount = sheet[0].incidenttotal;
+                	var injuredCount = sheet[0].injuredtotal;
+                	var killedCount = sheet[0].killedtotal;
+                	var lastDate = sheet[1].date;
+                	var lastCity = sheet[1].city;
                 	document.getElementById('incident-count').innerHTML = incidentCount;
                 	document.getElementById('last-date').innerHTML = lastDate;
                 	document.getElementById('last-city').innerHTML = lastCity;
+                	document.getElementById('injured-count').innerHTML = injuredCount;
+                	document.getElementById('killed-count').innerHTML = killedCount;
 
                     for (var i in sheet) {
                         var place = sheet[i];
@@ -114,7 +127,7 @@
                         } else {
                             iconColor = unknownIcon
                         }
-                        L.marker([place.latitude, place.longitude], { icon: iconColor })
+                        L.marker([place.lat, place.lng], { icon: iconColor })
                             .addTo(map)
                             .bindPopup('<h3>' + place.city + ' &bull; ' + place.date + '</h3><hr><p class="popup-text" style="margin-top:5px;"><strong>Agency: </strong>' + place.agency + '</p><p class="popup-text" ><strong>Location: </strong>' + place.address + '</p><p  class="popup-text" style="text-align:center;">&bull; &bull; &bull;</p><p class="popup-text" >' + place.description + '</p><p class="popup-text" style="margin-bottom: 8px !important;text-align:right;"><a href="' + place.storylink + '" target="_blank">Read the story</a></p>')
                     }
