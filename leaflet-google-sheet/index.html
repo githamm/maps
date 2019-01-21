@@ -1,9 +1,11 @@
 <html>
 
 <head>
-    <title>Officer-involved Shootings | The Denver Post</title>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer-involved Shootings | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
@@ -54,18 +56,20 @@
 </head>
 
 <body>
+    <h2>Colorado officer-involved shootings</h2>
     <p>There have been <span id="incident-count"></span> officer-involved shootings in Colorado in 2019 &mdash; <span id="killed-count"></span> people have been killed and <span id="injured-count"></span> people have been injured in the incidents. The last incident occurred <span id="last-date"></span> in <span id="last-city"></span>.</p>
     <p><em>Zoom the map and click markers for details</em>
-        <p class="legend-text"><span style="border-top:4px solid #000">Injured</span> &bull; <span style="border-top:4px solid red">Killed</span> &bull; <span style="border-top:4px solid blue">Unknown</span></p>
+        <p class="legend-text"><span style="border-top:4px solid #4c4c4c">Injured</span> &bull; <span style="border-top:4px solid #cb364a">Killed</span> &bull; <span style="border-top:4px solid #3689ca">Unknown</span></p>
         <div id="map"></div>
         <script>
         var map;
         var code = "13hPoaY5et0sYWvsqH3fcuBQUsMbflDJziRxatgWLyX8";
         //https://docs.google.com/spreadsheets/d/13hPoaY5et0sYWvsqH3fcuBQUsMbflDJziRxatgWLyX8/edit#gid=0
 
+        // Markers from https://github.com/pointhi/leaflet-color-markers
         var unknownIcon = new L.Icon({
-            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconUrl: 'marker-blue.png',
+            //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [1, -34],
@@ -73,8 +77,8 @@
         });
 
         var killedIcon = new L.Icon({
-            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconUrl: 'marker-red.png',
+            //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [1, -34],
@@ -82,8 +86,8 @@
         });
 
         var injuredIcon = new L.Icon({
-            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconUrl: 'marker-black.png',
+            //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [1, -34],
@@ -103,33 +107,33 @@
             Tabletop.init({
                 key: code,
                 callback: function(sheet, tabletop) {
-                	console.log(sheet);
-                	// var incidentCount = sheet.length;
-                	// var lastDate = sheet[(incidentCount - 1)].date;
-                	// var lastCity = sheet[(incidentCount - 1)].city;
-                	var incidentCount = sheet[0].incidenttotal;
-                	var injuredCount = sheet[0].injuredtotal;
-                	var killedCount = sheet[0].killedtotal;
-                	var lastDate = sheet[1].date;
-                	var lastCity = sheet[1].city;
-                	document.getElementById('incident-count').innerHTML = incidentCount;
-                	document.getElementById('last-date').innerHTML = lastDate;
-                	document.getElementById('last-city').innerHTML = lastCity;
-                	document.getElementById('injured-count').innerHTML = injuredCount;
-                	document.getElementById('killed-count').innerHTML = killedCount;
+                    //console.log(sheet);
+                    // var incidentCount = sheet.length;
+                    // var lastDate = sheet[(incidentCount - 1)].date;
+                    // var lastCity = sheet[(incidentCount - 1)].city;
+                    var incidentCount = sheet[0].incidenttotal;
+                    var injuredCount = sheet[0].injuredtotal;
+                    var killedCount = sheet[0].killedtotal;
+                    var lastDate = sheet[1].date;
+                    var lastCity = sheet[1].city;
+                    document.getElementById('incident-count').innerHTML = incidentCount;
+                    document.getElementById('last-date').innerHTML = lastDate;
+                    document.getElementById('last-city').innerHTML = lastCity;
+                    document.getElementById('injured-count').innerHTML = injuredCount;
+                    document.getElementById('killed-count').innerHTML = killedCount;
 
                     for (var i in sheet) {
-                        var place = sheet[i];
-                        if (place.victimstatus == 'Injured') {
+                        var incident = sheet[i];
+                        if (incident.victimstatus == 'Injured') {
                             iconColor = injuredIcon
-                        } else if (place.victimstatus == 'Killed') {
+                        } else if (incident.victimstatus == 'Killed') {
                             iconColor = killedIcon
                         } else {
                             iconColor = unknownIcon
                         }
-                        L.marker([place.lat, place.lng], { icon: iconColor })
+                        L.marker([incident.lat, incident.lng], { icon: iconColor })
                             .addTo(map)
-                            .bindPopup('<h3>' + place.city + ' &bull; ' + place.date + '</h3><hr><p class="popup-text" style="margin-top:5px;"><strong>Agency: </strong>' + place.agency + '</p><p class="popup-text" ><strong>Location: </strong>' + place.address + '</p><p  class="popup-text" style="text-align:center;">&bull; &bull; &bull;</p><p class="popup-text" >' + place.description + '</p><p class="popup-text" style="margin-bottom: 8px !important;text-align:right;"><a href="' + place.storylink + '" target="_blank">Read the story</a></p>')
+                            .bindPopup('<h3>' + incident.city + ' &bull; ' + incident.date + '</h3><hr><p class="popup-text" style="margin-top:5px;"><strong>Agency: </strong>' + incident.agency + '</p><p class="popup-text" ><strong>Location: </strong>' + incident.address + '</p><p  class="popup-text" style="text-align:center;">&bull; &bull; &bull;</p><p class="popup-text" >' + incident.description + '</p><p class="popup-text" style="margin-bottom: 8px !important;text-align:right;"><a href="' + incident.storylink + '" target="_blank">Read the story</a></p>')
                     }
                 },
                 simpleSheet: true
