@@ -271,7 +271,7 @@
                 });
                 var permitApprovedDate = Date.parse(feature.properties.Perm_Appr);
                 var lastDate = Math.max.apply(false, dateArray);
-                var recentDateCutoff = lastDate - (7 /* days */ * 24 * 60 * 60 * 1000);
+                var recentDateCutoff = lastDate - (14 /* days */ * 24 * 60 * 60 * 1000);
 
                 if (permitApprovedDate > recentDateCutoff) {
                     marker.bindPopup('<h4 class="company-name">' + feature.properties.Operator + '</h4>' + '<span class="tooltip-text">Approved: ' + tweakApproveDate + '<br>Expires: ' + tweakExpireDate + '<br><div class="details">' + '<a href="//cogcc.state.co.us/cogis/FacilityDetail.asp?facid=' + feature.properties.API + '&type=WELL" target="_blank">' + '&bull;&nbsp;Click for permit details</a><br>' + '&bull;&nbsp;<a href="https://www.google.com/maps?q=loc:' + feature.geometry.coordinates[1] + ',+' + feature.geometry.coordinates[0] + '&t=h" target="blank">Open in Google maps</a></div></span>');
