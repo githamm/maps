@@ -91,9 +91,8 @@
         margin: 3px 0 5px 0;
     }
 
-    .byline {
+    .note {
         font-size: .85em;
-        text-align: right;
         font-style: italic;
     }
 
@@ -201,6 +200,7 @@
         <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Click map markers for details &bull; click neighborhood for homicide totals &bull; hover over red icon in the top right corner of the map to toggle map layers, including years and neighborhood outlines.</em></strong></p>
         <div id="map"></div>
         <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Aurora Police Department</p>
+        <p class="note">Note: Some map markers may overlap.</p>
     </div>
     <script>
     var neighborhoods = new L.LayerGroup();
@@ -272,7 +272,7 @@
     $.getJSON("aurora-homicides-2018.geojson", function(data) {
         var mapIcon = L.divIcon({
             className: 'icon-2018',
-            iconSize: [17, 17]
+            iconSize: [13, 13]
         });
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
@@ -288,7 +288,7 @@
     $.getJSON("aurora-homicides-2017.geojson", function(data) {
         var mapIcon = L.divIcon({
             className: 'icon-2017',
-            iconSize: [17, 17]
+            iconSize: [13, 13]
         });
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
@@ -304,7 +304,7 @@
     $.getJSON("aurora-homicides-2016.geojson", function(data) {
         var mapIcon = L.divIcon({
             className: 'icon-2016',
-            iconSize: [17, 17]
+            iconSize: [13, 13]
         });
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
@@ -320,7 +320,7 @@
     $.getJSON("aurora-homicides-2015.geojson", function(data) {
         var mapIcon = L.divIcon({
             className: 'icon-2015',
-            iconSize: [17, 17]
+            iconSize: [13, 13]
         });
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
@@ -336,7 +336,7 @@
     $.getJSON("aurora-homicides-2014.geojson", function(data) {
         var mapIcon = L.divIcon({
             className: 'icon-2014',
-            iconSize: [17, 17]
+            iconSize: [13, 13]
         });
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) {
