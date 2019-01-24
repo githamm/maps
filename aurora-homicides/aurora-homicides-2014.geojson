@@ -1,0 +1,280 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.820628,
+          39.717139
+        ]
+      },
+      "properties": {
+        "date": "1/11/2014",
+        "year": "2014",
+        "caseNumber": "1280",
+        "victim": "Arguelles-Chavez, Arturo",
+        "dob": "3/16/1991",
+        "age": "22",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "14204 E 1st Dr",
+        "location_geocode": "14204 E 1st Dr Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8629387,
+          39.7191635
+        ]
+      },
+      "properties": {
+        "date": "7/17/2014",
+        "year": "2014",
+        "caseNumber": "27167",
+        "victim": "Atencio, Chadwick",
+        "dob": "5/17/1984",
+        "age": "30",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "233 N Kenton St",
+        "location_geocode": "233 N Kenton St Aurora, CO",
+        "family": "",
+        "weapon": "Gun",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7718719,
+          39.6518133
+        ]
+      },
+      "properties": {
+        "date": "6/3/2014",
+        "year": "2014",
+        "caseNumber": "20852",
+        "victim": "Chalfant, Mark",
+        "dob": "4/20/1995",
+        "age": "19",
+        "age_groupings": "11-20",
+        "race": "White",
+        "location": "3554 S Tower Rd",
+        "location_geocode": "3554 S Tower Rd Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8780489,
+          39.7471916
+        ]
+      },
+      "properties": {
+        "date": "11/24/2014",
+        "year": "2014",
+        "caseNumber": "45143",
+        "victim": "Cinto, Andres",
+        "dob": "9/8/1989",
+        "age": "25",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "9496 E Montview Blvd",
+        "location_geocode": "9496 E Montview Blvd Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8309976,
+          39.7446777
+        ]
+      },
+      "properties": {
+        "date": "2/26/2014",
+        "year": "2014",
+        "caseNumber": "7461",
+        "victim": "Ephriam, Terrell",
+        "dob": "6/7/1993",
+        "age": "20",
+        "age_groupings": "11-20",
+        "race": "Black",
+        "location": "28th Ave @ N Wheeling St",
+        "location_geocode": "28th Ave @ N Wheeling St Aurora, CO",
+        "family": "",
+        "weapon": "Knife",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8566598,
+          39.7390414
+        ]
+      },
+      "properties": {
+        "date": "9/16/2014",
+        "year": "2014",
+        "caseNumber": "36090",
+        "victim": "Griego, Danielle",
+        "dob": "9/28/1989",
+        "age": "24",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "1439 Lima St",
+        "location_geocode": "1439 Lima St Aurora, CO",
+        "family": "Yes",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8282598,
+          39.7338925
+        ]
+      },
+      "properties": {
+        "date": "8/18/2014",
+        "year": "2014",
+        "caseNumber": "31856",
+        "victim": "Hines, Ny'Ari",
+        "dob": "8/14/2012",
+        "age": "2",
+        "age_groupings": "0-10",
+        "race": "Black",
+        "location": "552 N Potomac St",
+        "location_geocode": "552 N Potomac St Aurora, CO",
+        "family": "",
+        "weapon": "Hands",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8306269,
+          39.7380175
+        ]
+      },
+      "properties": {
+        "date": "7/9/2014",
+        "year": "2014",
+        "caseNumber": "26129",
+        "victim": "Moorehead, Larry",
+        "dob": "8/9/1981",
+        "age": "32",
+        "age_groupings": "31-40",
+        "race": "Black",
+        "location": "1364 Xanadu St",
+        "location_geocode": "1364 Xanadu St Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8109439,
+          39.6332928
+        ]
+      },
+      "properties": {
+        "date": "2/23/2014",
+        "year": "2014",
+        "caseNumber": "7111",
+        "victim": "Thompson, Ryan",
+        "dob": "11/11/1991",
+        "age": "22",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "15275 E Smoky Hill Rd",
+        "location_geocode": "15275 E Smoky Hill Rd Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8772735,
+          39.7459931
+        ]
+      },
+      "properties": {
+        "date": "8/25/2014",
+        "year": "2014",
+        "caseNumber": "32899",
+        "victim": "Turner, Pierce",
+        "dob": "2/22/1973",
+        "age": "41",
+        "age_groupings": "41-50",
+        "race": "Black",
+        "location": "1908 N Clinton St #103",
+        "location_geocode": "1908 N Clinton St #103 Aurora, CO",
+        "family": "",
+        "weapon": "Gun",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8076231,
+          39.7357746
+        ]
+      },
+      "properties": {
+        "date": "2/1/2014",
+        "year": "2014",
+        "caseNumber": "4071",
+        "victim": "Williams, Korin",
+        "dob": "5/23/1995",
+        "age": "18",
+        "age_groupings": "11-20",
+        "race": "Black",
+        "location": "15570 E 12th Ave",
+        "location_geocode": "15570 E 12th Ave Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.884298,
+          39.7336519
+        ]
+      },
+      "properties": {
+        "date": "5/23/2016",
+        "year": "2016",
+        "caseNumber": "20552",
+        "victim": "Castellano-Savillon, Melvi",
+        "dob": "4/11/1984",
+        "age": "32",
+        "age_groupings": "31-40",
+        "race": "White",
+        "location": "1130 N. Yosemite St.",
+        "location_geocode": "1130 N. Yosemite St. Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.862776,
+          39.703423
+        ]
+      },
+      "properties": {
+        "date": "7/18/2016",
+        "year": "2016",
+        "caseNumber": "28499",
+        "victim": "Ealy, Michael",
+        "dob": "4/20/1986",
+        "age": "30",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "10782 E ExpositionAve",
+        "location_geocode": "10782 E ExpositionAve Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8642745,
+          39.7491473
+        ]
+      },
+      "properties": {
+        "date": "9/28/2016",
+        "year": "2016",
+        "caseNumber": "38976",
+        "victim": "Freye-Vieweg, Miguel",
+        "dob": "9/27/1994",
+        "age": "22",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "2072 N Iola St",
+        "location_geocode": "2072 N Iola St Aurora, CO",
+        "family": "",
+        "weapon": "Gun",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8224339,
+          39.7251091
+        ]
+      },
+      "properties": {
+        "date": "11/24/2016",
+        "year": "2016",
+        "caseNumber": "47098",
+        "victim": "Hernandez-Zuniga, Eduardo",
+        "dob": "7/8/1971",
+        "age": "45",
+        "age_groupings": "41-50",
+        "race": "Hispanic",
+        "location": "14200 E 6th Ave",
+        "location_geocode": "14200 E 6th Ave Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8491176,
+          39.713904
+        ]
+      },
+      "properties": {
+        "date": "5/16/2016",
+        "year": "2016",
+        "caseNumber": "19612",
+        "victim": "Hernandez, Andres A",
+        "dob": "11/5/1996",
+        "age": "19",
+        "age_groupings": "11-20",
+        "race": "White",
+        "location": "11913 E. Maple Ave #E4",
+        "location_geocode": "11913 E. Maple Ave #E4 Aurora, CO",
+        "family": "",
+        "weapon": "Blunt & Hands",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.844418,
+          39.7281584
+        ]
+      },
+      "properties": {
+        "date": "11/8/2016",
+        "year": "2016",
+        "caseNumber": "44914",
+        "victim": "Howard, Antonio R",
+        "dob": "6/8/1981",
+        "age": "35",
+        "age_groupings": "31-40",
+        "race": "White",
+        "location": "142 N Del Mar",
+        "location_geocode": "142 N Del Mar Aurora, CO",
+        "family": "Yes",
+        "weapon": "Gun",
+        "clearance": "Death of Offender"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8605935,
+          39.6937507
+        ]
+      },
+      "properties": {
+        "date": "7/21/2016",
+        "year": "2016",
+        "caseNumber": "28897",
+        "victim": "Johnson, Alexander",
+        "dob": "5/4/1995",
+        "age": "21",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "1276 S Joliet Ct",
+        "location_geocode": "1276 S Joliet Ct Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.847871,
+          39.6996589
+        ]
+      },
+      "properties": {
+        "date": "1/17/2016",
+        "year": "2016",
+        "caseNumber": "2320",
+        "victim": "Leckman, Jahmar",
+        "dob": "1/11/1992",
+        "age": "24",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "12022 E Ford Cir",
+        "location_geocode": "12022 E Ford Cir Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8333989,
+          39.6588717
+        ]
+      },
+      "properties": {
+        "date": "1/24/2016",
+        "year": "2016",
+        "caseNumber": "3272",
+        "victim": "Markell, Robert",
+        "dob": "10/18/1936",
+        "age": "79",
+        "age_groupings": "71-80",
+        "race": "White",
+        "location": "13601 E Marina Dr #110",
+        "location_geocode": "13601 E Marina Dr #110 Aurora, CO",
+        "family": "",
+        "weapon": "Asphyxia",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8479017,
+          39.7446255
+        ]
+      },
+      "properties": {
+        "date": "12/10/2016",
+        "year": "2016",
+        "caseNumber": "49332",
+        "victim": "Marroqin-Castillo, Julio",
+        "dob": "10/5/1966",
+        "age": "50",
+        "age_groupings": "41-50",
+        "race": "Hispanic",
+        "location": "1734 North Paris Street #2",
+        "location_geocode": "1734 North Paris Street #2 Aurora, CO",
+        "family": "",
+        "weapon": "Asphyxia",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7664283,
+          39.6389675
+        ]
+      },
+      "properties": {
+        "date": "6/18/2016",
+        "year": "2016",
+        "caseNumber": "24359",
+        "victim": "Mason, Travis",
+        "dob": "5/2/1992",
+        "age": "24",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "19005 E. Quincy Ave",
+        "location_geocode": "19005 E. Quincy Ave Aurora, CO",
+        "family": "",
+        "weapon": "Gun",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.777164,
+          39.694861
+        ]
+      },
+      "properties": {
+        "date": "8/16/2016",
+        "year": "2016",
+        "caseNumber": "32798",
+        "victim": "Plata-Ledezma, Jessica",
+        "dob": "9/20/1993",
+        "age": "22",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "1179 S Waco St #D",
+        "location_geocode": "1179 S Waco St #D Aurora, CO",
+        "family": "No",
+        "weapon": "Gun & Knife",
+        "clearance": "Warrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.821472,
+          39.717804
+        ]
+      },
+      "properties": {
+        "date": "2/9/2016",
+        "year": "2016",
+        "caseNumber": "5565",
+        "victim": "Reese, Jessica",
+        "dob": "4/27/1986",
+        "age": "29",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "14434 E 1st Dr #C-1",
+        "location_geocode": "14434 E 1st Dr #C-1 Aurora, CO",
+        "family": "Yes",
+        "weapon": "Knife",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.799748,
+          39.7094751
+        ]
+      },
+      "properties": {
+        "date": "9/10/2016",
+        "year": "2016",
+        "caseNumber": "36285",
+        "victim": "Ross, Ashley",
+        "dob": "12/19/1986",
+        "age": "29",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "407 S Memphis Way #300",
+        "location_geocode": "407 S Memphis Way #300 Aurora, CO",
+        "family": "Yes",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.855609,
+          39.7386571
+        ]
+      },
+      "properties": {
+        "date": "5/16/2016",
+        "year": "2016",
+        "caseNumber": "19599",
+        "victim": "Sarki, Kali",
+        "dob": "1/1/1960",
+        "age": "56",
+        "age_groupings": "51-60",
+        "race": "Nativa American",
+        "location": "1429 N. Macon St. #3",
+        "location_geocode": "1429 N. Macon St. #3 Aurora, CO",
+        "family": "No",
+        "weapon": "Blunt",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8540584,
+          39.6983082
+        ]
+      },
+      "properties": {
+        "date": "9/2/2016",
+        "year": "2016",
+        "caseNumber": "35249",
+        "victim": "Silcott, Taichan",
+        "dob": "1/24/1996",
+        "age": "20",
+        "age_groupings": "11-20",
+        "race": "Black",
+        "location": "1009 S Newark St",
+        "location_geocode": "1009 S Newark St Aurora, CO",
+        "family": "No",
+        "weapon": "Knife",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8500972,
+          39.6769942
+        ]
+      },
+      "properties": {
+        "date": "1/6/2016",
+        "year": "2016",
+        "caseNumber": "15-50746",
+        "victim": "Von Bommel, Frans",
+        "dob": "10/4/1931",
+        "age": "84",
+        "age_groupings": "81-90",
+        "race": "White",
+        "location": "2282 S Oakland St",
+        "location_geocode": "2282 S Oakland St Aurora, CO",
+        "family": "No",
+        "weapon": "Hands",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8107149,
+          39.7356688
+        ]
+      },
+      "properties": {
+        "date": "5/23/2016",
+        "year": "2016",
+        "caseNumber": "20542",
+        "victim": "Williams, Aaron Gaytan, Javier (27-Aug-79)",
+        "dob": "1/28/1981",
+        "age": "35",
+        "age_groupings": "31-40",
+        "race": "Black, White",
+        "location": "15573 E. 13th Ave #10",
+        "location_geocode": "15573 E. 13th Ave #10 Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8266744,
+          39.6944032
+        ]
+      },
+      "properties": {
+        "date": "5/15/2016",
+        "year": "2016",
+        "caseNumber": "19507",
+        "victim": "Yaser, Chelsea",
+        "dob": "8/18/1994",
+        "age": "21",
+        "age_groupings": "21-30",
+        "race": "White",
+        "location": "1200 S Abilene St",
+        "location_geocode": "1200 S Abilene St Aurora, CO",
+        "family": "",
+        "weapon": "Knife",
+        "clearance": "Open"
+      }
+    }
+  ]
+}

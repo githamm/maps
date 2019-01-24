@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7524109,
+          39.7421761
+        ]
+      },
+      "properties": {
+        "date": "1/3/2018",
+        "year": "2018",
+        "caseNumber": "311",
+        "victim": "Baker, Erik",
+        "dob": "10/26/1973",
+        "age": "44",
+        "age_groupings": "41-50",
+        "race": "White",
+        "location": "2600 Blk of N Himalaya St",
+        "location_geocode": "2600 Blk of N Himalaya St Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8568632,
+          39.7398921
+        ]
+      },
+      "properties": {
+        "date": "4/7/2018",
+        "year": "2018",
+        "caseNumber": "13891",
+        "victim": "Bowie, Jamari",
+        "dob": "12/10/2015",
+        "age": "2",
+        "age_groupings": "0-10",
+        "race": "White",
+        "location": "11220 E Colfax Ave",
+        "location_geocode": "11220 E Colfax Ave Aurora, CO",
+        "family": "No",
+        "weapon": "Assault",
+        "clearance": "Warrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8691306,
+          39.6964652
+        ]
+      },
+      "properties": {
+        "date": "4/8/2018",
+        "year": "2018",
+        "caseNumber": "13940",
+        "victim": "Bunicelli-Stenson, Aliyah",
+        "dob": "8/24/1994",
+        "age": "23",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "1100 S Galena St",
+        "location_geocode": "1100 S Galena St Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8247304,
+          39.7474268
+        ]
+      },
+      "properties": {
+        "date": "10/31/2018",
+        "year": "2018",
+        "caseNumber": "43500",
+        "victim": "Clymer, Jacob",
+        "dob": "8/8/1986",
+        "age": "32",
+        "age_groupings": "31-40",
+        "race": "White",
+        "location": "2000 Blk of N Billings St",
+        "location_geocode": "2000 Blk of N Billings St Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8279877,
+          39.7208776
+        ]
+      },
+      "properties": {
+        "date": "9/14/2018",
+        "year": "2018",
+        "caseNumber": "36731",
+        "victim": "Durrah, Melissa",
+        "dob": "4/17/1974",
+        "age": "44",
+        "age_groupings": "41-50",
+        "race": "Black",
+        "location": "339 N Potomac St",
+        "location_geocode": "339 N Potomac St Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Death of Offender"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8194701,
+          39.6233042
+        ]
+      },
+      "properties": {
+        "date": "6/5/2018",
+        "year": "2018",
+        "caseNumber": "22172",
+        "victim": "Grow, Nancy",
+        "dob": "3/11/2021",
+        "age": "bad data",
+        "age_groupings": "",
+        "race": "Unknown",
+        "location": "14500 E Belleview Ave",
+        "location_geocode": "14500 E Belleview Ave Aurora, CO",
+        "family": "",
+        "weapon": "Hands",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8287158,
+          39.7106384
+        ]
+      },
+      "properties": {
+        "date": "9/2/2018",
+        "year": "2018",
+        "caseNumber": "34934",
+        "victim": "Henry, Carlos",
+        "dob": "9/18/1988",
+        "age": "29",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "13690 E Alameda Ave",
+        "location_geocode": "13690 E Alameda Ave Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8477421,
+          39.697101
+        ]
+      },
+      "properties": {
+        "date": "12/29/2018",
+        "year": "2018",
+        "caseNumber": "51558",
+        "victim": "Hernandez, Jorge A",
+        "dob": "5/13/1986",
+        "age": "32",
+        "age_groupings": "31-40",
+        "race": "White",
+        "location": "12051 E Mississippi Ave",
+        "location_geocode": "12051 E Mississippi Ave Aurora, CO",
+        "family": "",
+        "weapon": "Gun",
+        "clearance": "Open"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.864416,
+          39.699378
+        ]
+      },
+      "properties": {
+        "date": "4/14/2018",
+        "year": "2018",
+        "caseNumber": "14758",
+        "victim": "Livingston, Kiara",
+        "dob": "6/29/1989",
+        "age": "28",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "940 S Iola St",
+        "location_geocode": "940 S Iola St Aurora, CO",
+        "family": "Yes",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8140514,
+          39.6967925
+        ]
+      },
+      "properties": {
+        "date": "3/20/2018",
+        "year": "2018",
+        "caseNumber": "11231",
+        "victim": "Mabany, Potros D",
+        "dob": "7/17/1995",
+        "age": "22",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "1097 S Evanston Way",
+        "location_geocode": "1097 S Evanston Way Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8655849,
+          39.6836249
+        ]
+      },
+      "properties": {
+        "date": "3/24/2018",
+        "year": "2018",
+        "caseNumber": "11918",
+        "victim": "Pappas, George",
+        "dob": "9/11/1956",
+        "age": "61",
+        "age_groupings": "61-70",
+        "race": "White",
+        "location": "1802 S Havana St",
+        "location_geocode": "1802 S Havana St Aurora, CO",
+        "family": "No",
+        "weapon": "Hands & Feet",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8309867,
+          39.6826616
+        ]
+      },
+      "properties": {
+        "date": "2/5/2018",
+        "year": "2018",
+        "caseNumber": "17-47738",
+        "victim": "Portz, Marie",
+        "dob": "9/25/2022",
+        "age": "bad data",
+        "age_groupings": "",
+        "race": "White",
+        "location": "1860 S Potomac St",
+        "location_geocode": "1860 S Potomac St Aurora, CO",
+        "family": "No",
+        "weapon": "Hands",
+        "clearance": "Exceptionally Cleared"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8474229,
+          39.7465196
+        ]
+      },
+      "properties": {
+        "date": "8/31/2018",
+        "year": "2018",
+        "caseNumber": "34705",
+        "victim": "Readus, Anthony Carter, Wayne (10-Dec-98)",
+        "dob": "9/8/1992",
+        "age": "25",
+        "age_groupings": "21-30",
+        "race": "Black, Black",
+        "location": "1945 N Peoria St",
+        "location_geocode": "1945 N Peoria St Aurora, CO",
+        "family": "Yes",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8479041,
+          39.6785218
+        ]
+      },
+      "properties": {
+        "date": "6/25/2018",
+        "year": "2018",
+        "caseNumber": "24980",
+        "victim": "Robinson, Zachary",
+        "dob": "9/22/1995",
+        "age": "22",
+        "age_groupings": "21-30",
+        "race": "Black",
+        "location": "2095 S Paris Way",
+        "location_geocode": "2095 S Paris Way Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8195189,
+          39.7209433
+        ]
+      },
+      "properties": {
+        "date": "3/16/2018",
+        "year": "2018",
+        "caseNumber": "10754",
+        "victim": "Washington, David",
+        "dob": "5/28/1982",
+        "age": "35",
+        "age_groupings": "31-40",
+        "race": "Black",
+        "location": "1323 N Sable Blvd",
+        "location_geocode": "1323 N Sable Blvd Aurora, CO",
+        "family": "No",
+        "weapon": "Gun",
+        "clearance": "Arrest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8084819,
+          39.7259773
+        ]
+      },
+      "properties": {
+        "date": "5/27/2018",
+        "year": "2018",
+        "caseNumber": "20891",
+        "victim": "Williams, Dejon",
+        "dob": "11/10/1980",
+        "age": "37",
+        "age_groupings": "31-40",
+        "race": "Black",
+        "location": "15405 E 6th Ave",
+        "location_geocode": "15405 E 6th Ave Aurora, CO",
+        "family": "",
+        "weapon": "Gun",
+        "clearance": "Open"
+      }
+    }
+  ]
+}
