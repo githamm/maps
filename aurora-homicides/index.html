@@ -78,13 +78,17 @@
         line-height: 100%
     }
 
-    h4 {
+    .popup-header {
         font-weight: 700;
         font-size: 1.1em;
         /*letter-spacing: .5px;*/
-        text-transform: uppercase;
-        color: #8e1024;
+        /*text-transform: uppercase;*/
+        color: #000;
         margin-bottom: 0;
+    }
+
+    hr {
+        margin: 3px 0 5px 0;
     }
 
     .byline {
@@ -96,6 +100,7 @@
     .source {
         font-size: .9em;
         font-style: italic;
+        text-align: right;
     }
 
     .legend {
@@ -193,8 +198,9 @@
 <body>
     <div id="container">
         <h2>Title and title and title</h2>
-        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Click map markers for details &bull; click neighborhood for homicide totals &bull; hover over red icon in the top right corner of the map to toggle map layers.</em></strong></p>
+        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Click map markers for details &bull; click neighborhood for homicide totals &bull; hover over red icon in the top right corner of the map to toggle map layers, including years and neighborhood outlines.</em></strong></p>
         <div id="map"></div>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Aurora Police Department</p>
     </div>
     <script>
     var neighborhoods = new L.LayerGroup();
@@ -257,7 +263,7 @@
             },
             onEachFeature: function(feature, layer) {
                 layer.bindPopup(
-                    '<h4 class="neighborhood-header">' + feature.properties.NAME + '</h4><br>' + feature.properties.NUMPOINTS
+                    '<h4 class="popup-header">' + feature.properties.NAME + '</h4><hr><strong> ' + feature.properties.NUMPOINTS + '</strong> homicide(s) between 2014 and 2018.'
                 )
             }
         }).addTo(neighborhoods);
@@ -273,7 +279,7 @@
                 var marker = L.marker(latlng, {
                     icon: mapIcon
                 });
-                marker.bindPopup(feature.properties.victim + ', ' + feature.properties.age + '<br>' + feature.properties.date + '<br>' + feature.properties.location + '<br>Weapon: ' + feature.properties.weapon + '<br>Clearance: ' + feature.properties.clearance);
+                marker.bindPopup('<h4 class="popup-header">' + feature.properties.victim + ' &bull; ' + feature.properties.age + '</h4><em>' + feature.properties.location + '</em><hr>Date: <strong>' + feature.properties.date + '</strong><br>Weapon: <strong>' + feature.properties.weapon + '</strong><br>Clearance: <strong>' + feature.properties.clearance + '</strong>');
                 return marker;
             }
         }).addTo(homicides2018);
@@ -289,7 +295,7 @@
                 var marker = L.marker(latlng, {
                     icon: mapIcon
                 });
-                marker.bindPopup(feature.properties.victim + ', ' + feature.properties.age + '<br>' + feature.properties.date + '<br>' + feature.properties.location + '<br>Weapon: ' + feature.properties.weapon + '<br>Clearance: ' + feature.properties.clearance);
+                marker.bindPopup('<h4 class="popup-header">' + feature.properties.victim + ' &bull; ' + feature.properties.age + '</h4><em>' + feature.properties.location + '</em><hr>Date: <strong>' + feature.properties.date + '</strong><br>Weapon: <strong>' + feature.properties.weapon + '</strong><br>Clearance: <strong>' + feature.properties.clearance + '</strong>');
                 return marker;
             }
         }).addTo(homicides2017);
@@ -305,7 +311,7 @@
                 var marker = L.marker(latlng, {
                     icon: mapIcon
                 });
-                marker.bindPopup(feature.properties.victim + ', ' + feature.properties.age + '<br>' + feature.properties.date + '<br>' + feature.properties.location + '<br>Weapon: ' + feature.properties.weapon + '<br>Clearance: ' + feature.properties.clearance);
+                marker.bindPopup('<h4 class="popup-header">' + feature.properties.victim + ' &bull; ' + feature.properties.age + '</h4><em>' + feature.properties.location + '</em><hr>Date: <strong>' + feature.properties.date + '</strong><br>Weapon: <strong>' + feature.properties.weapon + '</strong><br>Clearance: <strong>' + feature.properties.clearance + '</strong>');
                 return marker;
             }
         }).addTo(homicides2016);
@@ -321,7 +327,7 @@
                 var marker = L.marker(latlng, {
                     icon: mapIcon
                 });
-                marker.bindPopup(feature.properties.victim + ', ' + feature.properties.age + '<br>' + feature.properties.date + '<br>' + feature.properties.location + '<br>Weapon: ' + feature.properties.weapon + '<br>Clearance: ' + feature.properties.clearance);
+                marker.bindPopup('<h4 class="popup-header">' + feature.properties.victim + ' &bull; ' + feature.properties.age + '</h4><em>' + feature.properties.location + '</em><hr>Date: <strong>' + feature.properties.date + '</strong><br>Weapon: <strong>' + feature.properties.weapon + '</strong><br>Clearance: <strong>' + feature.properties.clearance + '</strong>');
                 return marker;
             }
         }).addTo(homicides2015);
@@ -337,7 +343,7 @@
                 var marker = L.marker(latlng, {
                     icon: mapIcon
                 });
-                marker.bindPopup(feature.properties.victim + ', ' + feature.properties.age + '<br>' + feature.properties.date + '<br>' + feature.properties.location + '<br>Weapon: ' + feature.properties.weapon + '<br>Clearance: ' + feature.properties.clearance);
+                marker.bindPopup('<h4 class="popup-header">' + feature.properties.victim + ' &bull; ' + feature.properties.age + '</h4><em>' + feature.properties.location + '</em><hr>Date: <strong>' + feature.properties.date + '</strong><br>Weapon: <strong>' + feature.properties.weapon + '</strong><br>Clearance: <strong>' + feature.properties.clearance + '</strong>');
                 return marker;
             }
         }).addTo(homicides2014);
