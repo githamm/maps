@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurora Homicides | The Denver Post</title>
+    <title>Denver Residential Development | The Denver Post</title>
     <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
@@ -34,7 +34,7 @@
     }
 
     #map {
-        height: 100%;
+        height: 600px;
         width: 100%;
         /*width: 893px;
         height: 600px;
@@ -78,6 +78,22 @@
         line-height: 100%
     }
 
+    .neighborhood {
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: -19px;
+    }
+
+    .address {
+        font-style: italic;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .popup-text {
+        margin-bottom: -17px !important;
+        color: rgba(0, 0, 0, .8);
+    }
+
     .popup-header {
         font-weight: 700;
         font-size: 1.1em;
@@ -88,7 +104,7 @@
     }
 
     hr {
-        margin: 3px 0 5px 0;
+        margin: -12px 0 -8px 0;
     }
 
     .note {
@@ -115,6 +131,7 @@
         text-align: center;
         margin-top: 7px;
         letter-spacing: 1px;
+        line-height: 22px;
     }
 
     input.leaflet-control-layers-selector {
@@ -197,9 +214,12 @@
 <body>
     <div id="container">
         <h2>Title and title and title</h2>
-        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Click map markers for details &bull; click neighborhood for homicide totals &bull; hover over red icon in the top right corner of the map to toggle map layers, including years and neighborhood outlines.</em></strong></p>
+        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Zoom and click map markers for details. Neighborhood boundaries are shown in gray &mdash; click for name.</em></strong></p>
+        <div style="margin-bottom:15px;" class="legend-text">
+            <span style="border-top: 3px solid #ccc">Single family dwelling</span> &bull; <span style="border-top: 3px solid #4f9da6">Two family dwelling</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhome</span> &bull; <span style="border-top: 3px solid #ff5959">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Multi-use w/residential</span>
+        </div>
         <div id="map"></div>
-        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Aurora Police Department</p>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Source?</p>
         <p class="note">Note: Some map markers may overlap.</p>
     </div>
     <script>
@@ -240,39 +260,37 @@
         layers: [streetMap, neighborhoods, homicides2018, homicides2017, homicides2016, homicides2015, homicides2014]
     });
 
-    var myRenderer = L.canvas({ padding: 0.5 });
-
-    // $.getJSON("aurora-homicides-neighborhoods.geojson", function(data) {
-    //     L.geoJson(data, {
-    //         // style: function(feature) {
-    //         //     var fillColor,
-    //         //         density = feature.properties.NUMPOINTS;
-    //         //     if (density > 10) fillColor = "rgba(128,0,128,1)";
-    //         //     else if (density > 7) fillColor = "rgba(128,0,128,.8)";
-    //         //     else if (density > 4) fillColor = "rgba(128,0,128,.6)";
-    //         //     else if (density > 1) fillColor = "rgba(128,0,128,.4)";
-    //         //     else if (density > 0) fillColor = "rgba(128,0,128,.2)";
-    //         //     else fillColor = "rgba(0,0,0,0"; // no data
-    //         //     return {
-    //         //         color: "#000",
-    //         //         weight: 3,
-    //         //         fillColor: fillColor,
-    //         //         fillOpacity: .8
-    //         //     };
-    //         // },
-    //         style: {
-    //             color: "#000",
-    //             weight: 3,
-    //             fillColor: "#000",
-    //             fillOpacity: .2
-    //         },
-    //         onEachFeature: function(feature, layer) {
-    //             layer.bindPopup(
-    //                 '<h4 class="popup-header">' + feature.properties.NAME + '</h4><hr><strong> ' + feature.properties.NUMPOINTS + '</strong> homicide(s) between 2014 and 2018.'
-    //             )
-    //         }
-    //     }).addTo(neighborhoods);
-    // });
+    $.getJSON("denver-neighborhoods-simple.geojson", function(data) {
+        L.geoJson(data, {
+            // style: function(feature) {
+            //     var fillColor,
+            //         density = feature.properties.NUMPOINTS;
+            //     if (density > 10) fillColor = "rgba(128,0,128,1)";
+            //     else if (density > 7) fillColor = "rgba(128,0,128,.8)";
+            //     else if (density > 4) fillColor = "rgba(128,0,128,.6)";
+            //     else if (density > 1) fillColor = "rgba(128,0,128,.4)";
+            //     else if (density > 0) fillColor = "rgba(128,0,128,.2)";
+            //     else fillColor = "rgba(0,0,0,0"; // no data
+            //     return {
+            //         color: "#000",
+            //         weight: 3,
+            //         fillColor: fillColor,
+            //         fillOpacity: .8
+            //     };
+            // },
+            style: {
+                color: "silver",
+                weight: 2,
+                fillColor: "#000",
+                fillOpacity: 0
+            },
+            onEachFeature: function(feature, layer) {
+                layer.bindPopup(
+                    '<h4 class="popup-header">' + feature.properties.NBHD_NAME + '</h4>'
+                )
+            }
+        }).addTo(neighborhoods);
+    });
 
     $.getJSON("denver-permits.geojson", function(data) {
         // var mapIcon = L.divIcon({
@@ -297,46 +315,74 @@
                     color: "#aaa",
                     weight: 0,
                     opacity: 0,
-                    fillOpacity: .5
+                    fillOpacity: .6
                 };
 
                 var twoFamily = {
                     radius: circleRadius,
-                    fillColor: "#FFD300",
+                    fillColor: "#4f9da6",
                     color: "#aaa",
                     weight: 0,
                     opacity: 0,
-                    fillOpacity: .5
+                    fillOpacity: .6
                 };
 
                 var oneFamilyAttached = {
                     radius: circleRadius,
-                    fillColor: "#3914AF",
+                    fillColor: "#ffad5a",
                     color: "#aaa",
                     weight: 0,
                     opacity: 0,
-                    fillOpacity: .5
+                    fillOpacity: .6
                 };
 
                 var multiUnit = {
                     radius: circleRadius,
-                    fillColor: "#FF0000",
+                    fillColor: "#ff5959",
                     color: "#aaa",
                     weight: 0,
                     opacity: 0,
-                    fillOpacity: .5
+                    fillOpacity: .6
                 };
 
                 var mixedUse = {
                     radius: circleRadius,
-                    fillColor: "#00CC00",
+                    fillColor: "#1a0841",
                     color: "#aaa",
                     weight: 0,
                     opacity: 0,
-                    fillOpacity: .5
+                    fillOpacity: .6
                 };
 
-                var tooltipText = feature.properties.dwellingType + '<br>' + feature.properties.recordID + '<br>' + feature.properties.dateIssued + '<br>' + feature.properties.permitType + '<br>' + feature.properties.permitValuation + '<br>' + feature.properties.units + '<br>' + feature.properties.address + '<br>' + feature.properties.contractor + '<br>' + feature.properties.statCode + '<br>' + feature.properties.neighborhood + '<br>' + feature.properties.postal;
+                var permitValueFormat = feature.properties.permitValuation;
+
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                var dwellingDesc;
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+
+                // var sunnyside = 'Sunnyside';
+
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
 
                 if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
                     return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
@@ -417,7 +463,7 @@
     //     }).addTo(homicides2014);
     // });
 
-    L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+    // L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
     </script>
 </body>
 
