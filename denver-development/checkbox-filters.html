@@ -230,26 +230,24 @@
         <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Source?</p>
         <p class="note">Note: Some map markers may overlap.</p>
         <div class="inputs" id="event-types">
-            <input type="checkbox" class="event-type" name="Highland" value="Highland" checked="true">
-            <label for="Highland">Highland</label>
-            <!-- <input type="checkbox" class="event-type" name="trade" value="80205" checked="true">
-            <label for="trade">Trade demonstration</label>
-            <input type="checkbox" class="event-type" name="free-exhibition" value="free-exhibition" checked="true">
-            <label for="free-exhibition">Free exhibition</label>
-            <input type="checkbox" class="event-type" name="paying-exhibition" value="paying-exhibition" checked="true">
-            <label for="exhibition">Paying exhibition</label>
-            <input type="checkbox" class="event-type" name="paying-demonstration" value="paying-demonstration" checked="true">
-            <label for="paying-demonstration">Paying demonstration</label>
-            <input type="checkbox" class="event-type" name="unknown" value="unknown" checked="true">
-            <label for="unknown">Unknown</label> -->
+            <input type="checkbox" class="event-type" name="one-family" value="001 - One Family Dwellings, detached" checked="true">
+            <label for="one-family">One family</label>
+            <input type="checkbox" class="event-type" name="two-family" value="002 - Two Family Dwellings" checked="true">
+            <label for="two-family">Two family</label>
+            <input type="checkbox" class="event-type" name="townhome" value="023 - One family attached (Townhome 3 + units)" checked="true">
+            <label for="townhome">Townhome</label>
+            <input type="checkbox" class="event-type" name="apartment" value="024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units" checked="true">
+            <label for="apartment">Apartments</label>
+            <input type="checkbox" class="event-type" name="mixed-use" value="025 - New mixed use with residential (any non-residential building containing living units)" checked="true">
+            <label for="mixed-use">Mixed use</label>
         </div>
         <div class="inputs" id="years">
-            <input type="checkbox" class="year" name="80211" value="80211" checked="true">
-            <label for="80211">80211</label>
-            <!-- <input type="checkbox" class="year" value="1892" checked="true">
-            <label for="1892">1892</label>
-            <input type="checkbox" class="year" value="1893" checked="true">
-            <label for="1893">1893</label> -->
+            <input type="checkbox" class="year" name="multi" value="Multi" checked="true">
+            <label for="multi">Multi</label>
+            <input type="checkbox" class="year" name="single" value="Single" checked="true">
+            <label for="single">Single</label>
+            <!-- <input type="checkbox" class="year" value="1893" checked="true">
+            <label for="1893">1893</label> !-->
         </div>
     </div>
     <script src="denver-permits.js"></script>
@@ -330,10 +328,92 @@
 
     const geojsonLayer = L.geoJSON(null, {
         filter: (feature) => {
-            const isYearChecked = checkboxStates.years.includes(feature.properties.postal)
-            const isEventTypeChecked = checkboxStates.eventTypes.includes(feature.properties.neighborhood)
+            const isYearChecked = checkboxStates.years.includes(feature.properties.dwellingType)
+            const isEventTypeChecked = checkboxStates.eventTypes.includes(feature.properties.statCode)
             return isYearChecked && isEventTypeChecked //only true if both are true
-        }
+        },
+            pointToLayer: function(feature, latlng) {
+                var circleRadius;
+                if (feature.properties.units > 10) {
+                    circleRadius = Math.sqrt(feature.properties.units)
+                } else {
+                    circleRadius = 3
+                };
+                var oneFamilyDetached = {
+                    radius: circleRadius,
+                    fillColor: "gray",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+                var twoFamily = {
+                    radius: circleRadius,
+                    fillColor: "#4f9da6",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+                var oneFamilyAttached = {
+                    radius: circleRadius,
+                    fillColor: "#ffad5a",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+                var multiUnit = {
+                    radius: circleRadius,
+                    fillColor: "#ff5959",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+                var mixedUse = {
+                    radius: circleRadius,
+                    fillColor: "#1a0841",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+                var permitValueFormat = feature.properties.permitValuation;
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+                var dwellingDesc;
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+                // var sunnyside = 'Sunnyside';
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+                } else {
+                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+                }
+            }
     }).addTo(map)
 
     function updateCheckboxStates() {
