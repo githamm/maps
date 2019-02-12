@@ -216,10 +216,10 @@
         <h2>Title and title and title</h2>
         <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Zoom and click map markers for details. Neighborhood boundaries are shown in gray &mdash; click for name.</em></strong></p>
         <div style="margin-bottom:15px;" class="legend-text">
-            <span style="border-top: 3px solid #ccc">Single family dwelling</span> &bull; <span style="border-top: 3px solid #4f9da6">Two family dwelling</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhome</span> &bull; <span style="border-top: 3px solid #ff5959">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Multi-use w/residential</span>
+            <span style="border-top: 3px solid #ccc">Single family dwelling</span> &bull; <span style="border-top: 3px solid #4f9da6">Two family dwelling</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhome</span> &bull; <span style="border-top: 3px solid #ff5959" id="layerApartments">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Multi-use w/residential</span>
         </div>
         <div class="button-group">
-            <button type="button" id="allPermits" class="button">Show all years</button>
+            <button type="button" id="allPermits" class="button">Reset filters</button>
             <button type="button" id="layer2018" class="button">2018</button>
             <button type="button" id="layer2017" class="button">2017</button>
             <button type="button" id="layer2016" class="button">2016</button>
@@ -632,26 +632,550 @@
                 }
             }
         });
+
+var layerSingleFamily = L.geoJson(data, {
+            filter: function(feature, layer) {
+                var string = feature.properties.statCode;
+                var substring = '001 - One Family Dwellings, detached';
+                return string.includes(substring);
+            },
+            pointToLayer: function(feature, latlng) {
+                var circleRadius;
+
+                if (feature.properties.units > 10) {
+                    circleRadius = Math.sqrt(feature.properties.units)
+                } else {
+                    circleRadius = 3
+                };
+
+                var oneFamilyDetached = {
+                    radius: circleRadius,
+                    fillColor: "gray",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var twoFamily = {
+                    radius: circleRadius,
+                    fillColor: "#4f9da6",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var oneFamilyAttached = {
+                    radius: circleRadius,
+                    fillColor: "#ffad5a",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var multiUnit = {
+                    radius: circleRadius,
+                    fillColor: "#ff5959",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var mixedUse = {
+                    radius: circleRadius,
+                    fillColor: "#1a0841",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var permitValueFormat = feature.properties.permitValuation;
+
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                var dwellingDesc;
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+
+                // var sunnyside = 'Sunnyside';
+
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+                } else {
+                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+                }
+            }
+        });
+
+        var layerTwoFamily = L.geoJson(data, {
+            filter: function(feature, layer) {
+                var string = feature.properties.statCode;
+                var substring = '002 - Two Family Dwellings';
+                return string.includes(substring);
+            },
+            pointToLayer: function(feature, latlng) {
+                var circleRadius;
+
+                if (feature.properties.units > 10) {
+                    circleRadius = Math.sqrt(feature.properties.units)
+                } else {
+                    circleRadius = 3
+                };
+
+                var oneFamilyDetached = {
+                    radius: circleRadius,
+                    fillColor: "gray",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var twoFamily = {
+                    radius: circleRadius,
+                    fillColor: "#4f9da6",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var oneFamilyAttached = {
+                    radius: circleRadius,
+                    fillColor: "#ffad5a",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var multiUnit = {
+                    radius: circleRadius,
+                    fillColor: "#ff5959",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var mixedUse = {
+                    radius: circleRadius,
+                    fillColor: "#1a0841",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var permitValueFormat = feature.properties.permitValuation;
+
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                var dwellingDesc;
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+
+                // var sunnyside = 'Sunnyside';
+
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+                } else {
+                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+                }
+            }
+        });
+
+        var layerTownhomes = L.geoJson(data, {
+            filter: function(feature, layer) {
+                var string = feature.properties.statCode;
+                var substring = '023 - One family attached (Townhome 3 + units)';
+                return string.includes(substring);
+            },
+            pointToLayer: function(feature, latlng) {
+                var circleRadius;
+
+                if (feature.properties.units > 10) {
+                    circleRadius = Math.sqrt(feature.properties.units)
+                } else {
+                    circleRadius = 3
+                };
+
+                var oneFamilyDetached = {
+                    radius: circleRadius,
+                    fillColor: "gray",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var twoFamily = {
+                    radius: circleRadius,
+                    fillColor: "#4f9da6",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var oneFamilyAttached = {
+                    radius: circleRadius,
+                    fillColor: "#ffad5a",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var multiUnit = {
+                    radius: circleRadius,
+                    fillColor: "#ff5959",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var mixedUse = {
+                    radius: circleRadius,
+                    fillColor: "#1a0841",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var permitValueFormat = feature.properties.permitValuation;
+
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                var dwellingDesc;
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+
+                // var sunnyside = 'Sunnyside';
+
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+                } else {
+                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+                }
+            }
+        });
+
+        var layerApartments = L.geoJson(data, {
+            filter: function(feature, layer) {
+                var string = feature.properties.statCode;
+                var substring = '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units';
+                return string.includes(substring);
+            },
+            pointToLayer: function(feature, latlng) {
+                var circleRadius;
+
+                if (feature.properties.units > 10) {
+                    circleRadius = Math.sqrt(feature.properties.units)
+                } else {
+                    circleRadius = 3
+                };
+
+                var oneFamilyDetached = {
+                    radius: circleRadius,
+                    fillColor: "gray",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var twoFamily = {
+                    radius: circleRadius,
+                    fillColor: "#4f9da6",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var oneFamilyAttached = {
+                    radius: circleRadius,
+                    fillColor: "#ffad5a",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var multiUnit = {
+                    radius: circleRadius,
+                    fillColor: "#ff5959",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var mixedUse = {
+                    radius: circleRadius,
+                    fillColor: "#1a0841",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var permitValueFormat = feature.properties.permitValuation;
+
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                var dwellingDesc;
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+
+                // var sunnyside = 'Sunnyside';
+
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+                } else {
+                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+                }
+            }
+        });
+
+        var layerMixedUse = L.geoJson(data, {
+            filter: function(feature, layer) {
+                var string = feature.properties.statCode;
+                var substring = '025 - New mixed use with residential (any non-residential building containing living units)';
+                return string.includes(substring);
+            },
+            pointToLayer: function(feature, latlng) {
+                var circleRadius;
+
+                if (feature.properties.units > 10) {
+                    circleRadius = Math.sqrt(feature.properties.units)
+                } else {
+                    circleRadius = 3
+                };
+
+                var oneFamilyDetached = {
+                    radius: circleRadius,
+                    fillColor: "gray",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var twoFamily = {
+                    radius: circleRadius,
+                    fillColor: "#4f9da6",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var oneFamilyAttached = {
+                    radius: circleRadius,
+                    fillColor: "#ffad5a",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var multiUnit = {
+                    radius: circleRadius,
+                    fillColor: "#ff5959",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var mixedUse = {
+                    radius: circleRadius,
+                    fillColor: "#1a0841",
+                    color: "#aaa",
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .6
+                };
+
+                var permitValueFormat = feature.properties.permitValuation;
+
+                function numberWithCommas(permitValueFormat) {
+                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                var dwellingDesc;
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    dwellingDesc = 'Single family dwelling'
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    dwellingDesc = 'Two family dwelling'
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    dwellingDesc = 'Townhome'
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    dwellingDesc = 'Apartments/condos'
+                } else {
+                    dwellingDesc = 'Mixed use w/ residential'
+                }
+
+                // var sunnyside = 'Sunnyside';
+
+                // if (feature.properties.neighborhood === 'Sunny Side') {
+                //     return sunnyside
+                // } else {
+                //     return feature.properties.neighborhood
+                // }
+
+                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+
+                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+                } else {
+                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+                }
+            }
+        });
         // map.fitBounds(allPermits.getBounds(), {
         //     padding: [50, 50]
         // });
         layer2016.addTo(map)
         layer2017.addTo(map)
         layer2018.addTo(map)
+        // layerSingleFamily.addTo(map)
+        // layerTwoFamily.addTo(map)
+        // layerTownhomes.addTo(map)
+        // layerApartments.addTo(map)
+        // layerMixedUse.addTo(map)
 
-        // The JavaScript below is new
         $("#layer2018").click(function() {
-            map.addLayer(layer2018)
+            //map.addLayer(layer2018)
             map.removeLayer(layer2017)
             map.removeLayer(layer2016)
         });
         $("#layer2017").click(function() {
-            map.addLayer(layer2017)
+            //map.addLayer(layer2017)
             map.removeLayer(layer2018)
             map.removeLayer(layer2016)
         });
         $("#layer2016").click(function() {
-            map.addLayer(layer2016)
+            //map.addLayer(layer2016)
             map.removeLayer(layer2018)
             map.removeLayer(layer2017)
         });
@@ -659,6 +1183,16 @@
             map.addLayer(layer2016)
             map.addLayer(layer2017)
             map.addLayer(layer2018)
+        });
+        $("#layerApartments").click(function() {
+            map.addLayer(layerApartments)
+            map.removeLayer(layerSingleFamily)
+            map.removeLayer(layerTwoFamily)
+            map.removeLayer(layerTownhomes)
+            map.removeLayer(layerMixedUse)
+            map.removeLayer(layer2018)
+            map.removeLayer(layer2017)
+            map.removeLayer(layer2016)
         });
     });
 
