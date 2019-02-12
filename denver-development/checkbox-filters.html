@@ -242,14 +242,14 @@
             <label for="mixed-use">Mixed use</label>
         </div>
         <div class="inputs" id="years">
-            <input type="checkbox" class="year" name="2016" value="2016" checked="true">
-            <label for="2016">2016</label>
-            <input type="checkbox" class="year" name="2017" value="2017" checked="true">
-            <label for="2017">2017</label>
-            <input type="checkbox" class="year" name="2018" value="2018" checked="true">
-            <label for="2018">2018</label>
-            <input type="checkbox" class="year" name="2019" value="2019" checked="true">
-            <label for="2019">2019</label>
+            <input type="checkbox" class="year" name="year2016" value="2016" checked="true">
+            <label for="year2016">2016</label>
+            <input type="checkbox" class="year" name="year2017" value="2017" checked="true">
+            <label for="year2017">2017</label>
+            <input type="checkbox" class="year" name="year2018" value="2018" checked="true">
+            <label for="year2018">2018</label>
+            <input type="checkbox" class="year" name="year2019" value="2019" checked="true">
+            <label for="year2019">2019</label>
         </div>
     </div>
     <script src="denver-permits.js"></script>
@@ -330,11 +330,8 @@
 
     const geojsonLayer = L.geoJSON(null, {
         filter: (feature) => {
-            // var allYears = (new Date(feature.properties.dateIssued)).getFullYear();
-            // console.log(allYears);
-
-            const isYearChecked = checkboxStates.years.includes(new Date(parseInt(feature.properties.dateIssued).substr))
-            // console.log(checkboxStates.years);
+            var allYears = ((new Date(feature.properties.dateIssued)).getFullYear()).toString();
+            const isYearChecked = checkboxStates.years.includes(allYears)
             const isEventTypeChecked = checkboxStates.eventTypes.includes(feature.properties.statCode)
             return isYearChecked && isEventTypeChecked //only true if both are true
         },
