@@ -304,7 +304,6 @@
         zoom: 13,
         minZoom: 11,
         preferCanvas: true
-        //layers: [streetMap, neighborhoods, homicides2018, homicides2017, homicides2016, homicides2015, homicides2014]
     }).addLayer(cartoTiles);
 
     const geojsonLayer = L.geoJSON(null, {
@@ -397,7 +396,44 @@
                 return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
             }
         }
-    }).addTo(map)
+    }).addTo(map);
+
+    $.getJSON("denver-neighborhoods-simple.geojson", function(data) {
+        L.geoJson(data, {
+            // style: function(feature) {
+            //     var fillColor,
+            //         density = feature.properties.NUMPOINTS;
+            //     if (density > 10) fillColor = "rgba(128,0,128,1)";
+            //     else if (density > 7) fillColor = "rgba(128,0,128,.8)";
+            //     else if (density > 4) fillColor = "rgba(128,0,128,.6)";
+            //     else if (density > 1) fillColor = "rgba(128,0,128,.4)";
+            //     else if (density > 0) fillColor = "rgba(128,0,128,.2)";
+            //     else fillColor = "rgba(0,0,0,0"; // no data
+            //     return {
+            //         color: "#000",
+            //         weight: 3,
+            //         fillColor: fillColor,
+            //         fillOpacity: .8
+            //     };
+            // },
+            style: {
+                color: "silver",
+                weight: 2,
+                fillColor: "#000",
+                fillOpacity: 0
+            },
+            onEachFeature: function(feature, layer) {
+                layer.bindPopup(
+                        '<h4 class="popup-header">' + feature.properties.NBHD_NAME + '</h4>'
+                    ),
+                    layer.on({
+                        'add': function() {
+                            layer.bringToBack()
+                        }
+                    })
+            }
+        }).addTo(map);
+    });
 
     function updateCheckboxStates() {
         checkboxStates = {
