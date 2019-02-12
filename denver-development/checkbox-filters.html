@@ -72,6 +72,19 @@
         margin-bottom: 3px;
     }
 
+    .legend-container {
+        width: 100%;
+        clear: both;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    #years {
+        display: inline-block;
+    }
+
     h2 {
         font-family: 'Roboto', sans-serif;
         font-size: 2em;
@@ -120,29 +133,35 @@
         text-align: right;
     }
 
-    .legend {
+    /*.legend {
         width: 60px;
         height: 30px;
         opacity: .6;
         float: left;
-    }
+    }*/
 
-    .legend-text {
+    label, .legend-text {
         font-size: .7em;
         font-weight: bold;
         text-align: center;
         margin-top: 7px;
         letter-spacing: 1px;
         line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    .fieldset {
+        padding: .75rem;
     }
 
     input.leaflet-control-layers-selector {
         margin: 0;
     }
 
-    label {
+    /*label {
         line-height: 1.45;
-    }
+    }*/
 
     .icon-2018 {
         border-radius: 50%;
@@ -217,108 +236,68 @@
     <div id="container">
         <h2>Title and title and title</h2>
         <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Zoom and click map markers for details. Neighborhood boundaries are shown in gray &mdash; click for name.</em></strong></p>
-        <div style="margin-bottom:15px;" class="legend-text">
-            <span style="border-top: 3px solid #ccc">Single family dwelling</span> &bull; <span style="border-top: 3px solid #4f9da6">Two family dwelling</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhome</span> &bull; <span style="border-top: 3px solid #ff5959" id="layerApartments">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Multi-use w/residential</span>
-        </div>
+        <!-- 
         <div class="button-group">
             <button type="button" id="allPermits" class="button">Reset filters</button>
             <button type="button" id="layer2018" class="button">2018</button>
             <button type="button" id="layer2017" class="button">2017</button>
             <button type="button" id="layer2016" class="button">2016</button>
-        </div>
+        </div> -->
+        <fieldset class="fieldset">
+            <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
+            <div class="legend-container">
+                <div class="inputs" id="dwelling-types">
+                    <div class="legend-item">
+                        <input type="checkbox" class="dwelling-type" id="one-family" name="one-family" value="001 - One Family Dwellings, detached" checked="true">
+                        <label for="one-family"><span style="border-top: 3px solid #ccc">Single-family home</span></label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" class="dwelling-type" id="two-family" name="two-family" value="002 - Two Family Dwellings" checked="true">
+                        <label for="two-family"><span style="border-top: 3px solid #4f9da6">Duplex</span></label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" class="dwelling-type" id="townhome" name="townhome" value="023 - One family attached (Townhome 3 + units)" checked="true">
+                        <label for="townhome"><span style="border-top: 3px solid #ffad5a">Townhome</span></label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" class="dwelling-type" id="apartment" name="apartment" value="024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units" checked="true">
+                        <label for="apartment"><span style="border-top: 3px solid #ff5959">Apartments/condos</span></label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" class="dwelling-type" id="mixed-use" name="mixed-use" value="025 - New mixed use with residential (any non-residential building containing living units)" checked="true">
+                        <label for="mixed-use"><span style="border-top: 3px solid #1a0841">Mixed use w/residential</span></label>
+                    </div>
+                </div>
+                <div class="inputs" id="years">
+                    <input type="checkbox" class="year" id="year2016" name="year2016" value="2016" checked="true">
+                    <label for="year2016">2016</label>
+                    <input type="checkbox" class="year" id="year2017" name="year2017" value="2017" checked="true">
+                    <label for="year2017">2017</label>
+                    <input type="checkbox" class="year" id="year2018" name="year2018" value="2018" checked="true">
+                    <label for="year2018">2018</label>
+                    <input type="checkbox" class="year" id="year2019" name="year2019" value="2019" checked="true">
+                    <label for="year2019">2019</label>
+                </div>
+            </div>
+        </fieldset>
+        <!-- <div style="margin-bottom:15px;" class="legend-text">
+            <span style="border-top: 3px solid #ccc">Single-family home</span> &bull; <span style="border-top: 3px solid #4f9da6">Duplex</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhomes</span> &bull; <span style="border-top: 3px solid #ff5959" id="layerApartments">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Mixed-use w/residential</span>
+        </div> -->
         <div id="map"></div>
         <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Source?</p>
         <p class="note">Note: Some map markers may overlap.</p>
-        <div class="inputs" id="event-types">
-            <input type="checkbox" class="event-type" name="one-family" value="001 - One Family Dwellings, detached" checked="true">
-            <label for="one-family">One family</label>
-            <input type="checkbox" class="event-type" name="two-family" value="002 - Two Family Dwellings" checked="true">
-            <label for="two-family">Two family</label>
-            <input type="checkbox" class="event-type" name="townhome" value="023 - One family attached (Townhome 3 + units)" checked="true">
-            <label for="townhome">Townhome</label>
-            <input type="checkbox" class="event-type" name="apartment" value="024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units" checked="true">
-            <label for="apartment">Apartments</label>
-            <input type="checkbox" class="event-type" name="mixed-use" value="025 - New mixed use with residential (any non-residential building containing living units)" checked="true">
-            <label for="mixed-use">Mixed use</label>
-        </div>
-        <div class="inputs" id="years">
-            <input type="checkbox" class="year" name="year2016" value="2016" checked="true">
-            <label for="year2016">2016</label>
-            <input type="checkbox" class="year" name="year2017" value="2017" checked="true">
-            <label for="year2017">2017</label>
-            <input type="checkbox" class="year" name="year2018" value="2018" checked="true">
-            <label for="year2018">2018</label>
-            <input type="checkbox" class="year" name="year2019" value="2019" checked="true">
-            <label for="year2019">2019</label>
-        </div>
-    </div>
+    </div> <!-- End "container" -->
     <script src="denver-permits.js"></script>
     <script>
-        // From https://gis.stackexchange.com/questions/307985/multiple-on-the-fly-filtering-based-on-markers-features-on-leaflet
+    // From https://gis.stackexchange.com/questions/307985/multiple-on-the-fly-filtering-based-on-markers-features-on-leaflet
 
     let checkboxStates
-
-  //   const jsontest = {
-  // "type": "FeatureCollection",
-  // "features": [
-  //   {
-  //     "type": "Feature",
-  //     "geometry": {
-  //       "type": "Point",
-  //       "coordinates": [
-  //         -104.9992,
-  //         39.76867
-  //       ]
-  //     },
-  //     "properties": {
-  //       "dwellingType": "Multi",
-  //       "recordID": "2015-RESCON-0001818",
-  //       "dateIssued": "1/4/2016",
-  //       "permitType": "Residential Construction",
-  //       "permitValuation": "184900",
-  //       "units": "1",
-  //       "address": "3728 N Jason St",
-  //       "contractor": "Gallup Development LLC",
-  //       "statCode": "002 - Two Family Dwellings",
-  //       "neighborhood": "Highland",
-  //       "postal": "80211",
-  //       "confidence": "9"
-  //     }
-  //   },
-  //   {
-  //     "type": "Feature",
-  //     "geometry": {
-  //       "type": "Point",
-  //       "coordinates": [
-  //         -104.9992,
-  //         39.76848
-  //       ]
-  //     },
-  //     "properties": {
-  //       "dwellingType": "Multi",
-  //       "recordID": "2015-RESCON-0001810",
-  //       "dateIssued": "1/4/2016",
-  //       "permitType": "Residential Construction",
-  //       "permitValuation": "184900",
-  //       "units": "1",
-  //       "address": "3722 N Jason St",
-  //       "contractor": "Gallup Development LLC",
-  //       "statCode": "002 - Two Family Dwellings",
-  //       "neighborhood": "Highland",
-  //       "postal": "80211",
-  //       "confidence": "9"
-  //     }
-  //   }
-  //   ]};
 
     var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     });
-    // var map = L.map('map')
-    //     .addLayer(cartoTiles)
-    //     .setView([42.444508, -76.499491], 12);
 
     var map = L.map('map', {
         center: [39.7392, -104.9903],
@@ -335,88 +314,89 @@
             const isEventTypeChecked = checkboxStates.eventTypes.includes(feature.properties.statCode)
             return isYearChecked && isEventTypeChecked //only true if both are true
         },
-            pointToLayer: function(feature, latlng) {
-                var circleRadius;
-                if (feature.properties.units > 10) {
-                    circleRadius = Math.sqrt(feature.properties.units)
-                } else {
-                    circleRadius = 3
-                };
-                var oneFamilyDetached = {
-                    radius: circleRadius,
-                    fillColor: "gray",
-                    color: "#aaa",
-                    weight: 0,
-                    opacity: 0,
-                    fillOpacity: .6
-                };
-                var twoFamily = {
-                    radius: circleRadius,
-                    fillColor: "#4f9da6",
-                    color: "#aaa",
-                    weight: 0,
-                    opacity: 0,
-                    fillOpacity: .6
-                };
-                var oneFamilyAttached = {
-                    radius: circleRadius,
-                    fillColor: "#ffad5a",
-                    color: "#aaa",
-                    weight: 0,
-                    opacity: 0,
-                    fillOpacity: .6
-                };
-                var multiUnit = {
-                    radius: circleRadius,
-                    fillColor: "#ff5959",
-                    color: "#aaa",
-                    weight: 0,
-                    opacity: 0,
-                    fillOpacity: .6
-                };
-                var mixedUse = {
-                    radius: circleRadius,
-                    fillColor: "#1a0841",
-                    color: "#aaa",
-                    weight: 0,
-                    opacity: 0,
-                    fillOpacity: .6
-                };
-                var permitValueFormat = feature.properties.permitValuation;
-                function numberWithCommas(permitValueFormat) {
-                    return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                }
-                var dwellingDesc;
-                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
-                    dwellingDesc = 'Single family dwelling'
-                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
-                    dwellingDesc = 'Two family dwelling'
-                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
-                    dwellingDesc = 'Townhome'
-                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
-                    dwellingDesc = 'Apartments/condos'
-                } else {
-                    dwellingDesc = 'Mixed use w/ residential'
-                }
-                // var sunnyside = 'Sunnyside';
-                // if (feature.properties.neighborhood === 'Sunny Side') {
-                //     return sunnyside
-                // } else {
-                //     return feature.properties.neighborhood
-                // }
-                var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
-                if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
-                    return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
-                } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
-                    return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
-                } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
-                    return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
-                } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
-                    return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
-                } else {
-                    return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
-                }
+        pointToLayer: function(feature, latlng) {
+            var circleRadius;
+            if (feature.properties.units > 10) {
+                circleRadius = Math.sqrt(feature.properties.units)
+            } else {
+                circleRadius = 3
+            };
+            var oneFamilyDetached = {
+                radius: circleRadius,
+                fillColor: "gray",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .6
+            };
+            var twoFamily = {
+                radius: circleRadius,
+                fillColor: "#4f9da6",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .6
+            };
+            var oneFamilyAttached = {
+                radius: circleRadius,
+                fillColor: "#ffad5a",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .6
+            };
+            var multiUnit = {
+                radius: circleRadius,
+                fillColor: "#ff5959",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .6
+            };
+            var mixedUse = {
+                radius: circleRadius,
+                fillColor: "#1a0841",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .6
+            };
+            var permitValueFormat = feature.properties.permitValuation;
+
+            function numberWithCommas(permitValueFormat) {
+                return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
+            var dwellingDesc;
+            if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                dwellingDesc = 'Single family dwelling'
+            } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                dwellingDesc = 'Two family dwelling'
+            } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                dwellingDesc = 'Townhome'
+            } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                dwellingDesc = 'Apartments/condos'
+            } else {
+                dwellingDesc = 'Mixed use w/ residential'
+            }
+            // var sunnyside = 'Sunnyside';
+            // if (feature.properties.neighborhood === 'Sunny Side') {
+            //     return sunnyside
+            // } else {
+            //     return feature.properties.neighborhood
+            // }
+            var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+            if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
+                return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
+            } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
+                return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
+            } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
+                return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
+            } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
+                return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
+            } else {
+                return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
+            }
+        }
     }).addTo(map)
 
     function updateCheckboxStates() {
@@ -428,7 +408,7 @@
         for (let input of document.querySelectorAll('input')) {
             if (input.checked) {
                 switch (input.className) {
-                    case 'event-type':
+                    case 'dwelling-type':
                         checkboxStates.eventTypes.push(input.value);
                         break
                     case 'year':
@@ -439,7 +419,6 @@
         }
     }
 
-
     for (let input of document.querySelectorAll('input')) {
         //Listen to 'change' event of all inputs
         input.onchange = (e) => {
@@ -448,7 +427,6 @@
             geojsonLayer.addData(jsontest)
         }
     }
-
 
     /****** INIT ******/
     updateCheckboxStates()
