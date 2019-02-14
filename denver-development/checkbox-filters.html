@@ -287,7 +287,7 @@
         <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Source?</p>
         <p class="note">Note: Some map markers may overlap.</p>
     </div> <!-- End "container" -->
-    <script src="denver-permits.js"></script>
+    <script src="denver-permits-final.js"></script>
     <script>
     // From https://gis.stackexchange.com/questions/307985/multiple-on-the-fly-filtering-based-on-markers-features-on-leaflet
 
@@ -460,13 +460,13 @@
         input.onchange = (e) => {
             geojsonLayer.clearLayers()
             updateCheckboxStates()
-            geojsonLayer.addData(jsontest)
+            geojsonLayer.addData(jsonData)
         }
     }
 
     /****** INIT ******/
     updateCheckboxStates()
-    geojsonLayer.addData(jsontest)
+    geojsonLayer.addData(jsonData)
     </script>
 </body>
 
