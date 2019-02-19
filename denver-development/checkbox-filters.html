@@ -246,7 +246,7 @@
         <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter.</p>
         <div class="row">
             <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
-                <p class="instructions">Zoom map and click circles for details &bull; dark colors indicate completed projects &bull; circle size represents number of units &bull; neighborhood boundaries are shown in gray &mdash; click for name</p>
+                <p class="instructions">Zoom map and click circles for details &bull; darker colors indicate completed projects &bull; circle size represents number of units &bull; neighborhood boundaries are shown in gray &mdash; click for name</p>
             </div>
         </div>
         <fieldset class="fieldset">
@@ -286,7 +286,7 @@
                     <div class="legend-item">
                         <div class="legend-item" style="color:#737373;font-weight:bold;margin:4px 20px 0 0;">//</div>
                     </div>
-                    <div class="legend-item"><input type="checkbox" class="permit-status" id="finaled" name="finaled" value="Permit Finaled" checked="true">
+                    <div class="legend-item"><input type="checkbox" class="permit-status" id="finaled" name="finaled" value="Finaled" checked="true">
                         <label for="finaled">Project complete</label></div>
                     <div class="legend-item"><input type="checkbox" class="permit-status" id="issued" name="issued" value="Issued" checked="true">
                         <label for="issued">Permit issued</label></div>
@@ -434,27 +434,27 @@
                 dwellingDesc = 'Mixed use w/ residential'
             }
 
-            var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class="popup-text">Permit status: <strong>' + feature.properties.permitStatus + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
+            var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class="popup-text">Permit status: <strong>' + feature.properties.permitStatus + ' ' + feature.properties.permitStatus2 + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
 
-            if (feature.properties.statCode == '001 - One Family Dwellings, detached' && feature.properties.permitStatus == 'Permit Finaled') {
+            if (feature.properties.statCode == '001 - One Family Dwellings, detached' && feature.properties.permitStatus == 'Finaled') {
                 return L.circleMarker(latlng, oneFamilyDetachedComplete).bindPopup(tooltipText)
             } else if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
                 return L.circleMarker(latlng, oneFamilyDetached).bindPopup(tooltipText)
-            } else if (feature.properties.statCode == '002 - Two Family Dwellings' && feature.properties.permitStatus == 'Permit Finaled') {
+            } else if (feature.properties.statCode == '002 - Two Family Dwellings' && feature.properties.permitStatus == 'Finaled') {
                 return L.circleMarker(latlng, twoFamilyComplete).bindPopup(tooltipText)
             } else if (feature.properties.statCode == '002 - Two Family Dwellings') {
                 return L.circleMarker(latlng, twoFamily).bindPopup(tooltipText)
-            } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)' && feature.properties.permitStatus == 'Permit Finaled') {
+            } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)' && feature.properties.permitStatus == 'Finaled') {
                 return L.circleMarker(latlng, oneFamilyAttachedComplete).bindPopup(tooltipText)
             } else if (feature.properties.statCode == '023 - One family attached (Townhome 3 + units)') {
                 return L.circleMarker(latlng, oneFamilyAttached).bindPopup(tooltipText)
-            } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units' && feature.properties.permitStatus == 'Permit Finaled') {
+            } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units' && feature.properties.permitStatus == 'Finaled') {
                 return L.circleMarker(latlng, multiUnitComplete).bindPopup(tooltipText)
             } else if (feature.properties.statCode == '024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units') {
                 return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
-            } else if (feature.properties.statCode == '025 - New mixed use with residential (any non-residential building containing living units)' && feature.properties.permitStatus == 'Permit Finaled') {
+            } else if (feature.properties.statCode == '025 - New mixed use with residential (any non-residential building containing living units)' && feature.properties.permitStatus == 'Finaled') {
                 return L.circleMarker(latlng, mixedUseComplete).bindPopup(tooltipText)
-            } else if (feature.properties.statCode == '025 - New mixed use with residential (any non-residential building containing living units)' && feature.properties.permitStatus == 'Permit Reopened') {
+            } else {
                 return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
             }
         }
