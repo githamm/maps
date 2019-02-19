@@ -284,7 +284,7 @@
                     <div class="legend-item"><input type="checkbox" class="year" id="year2019" name="year2019" value="2019" checked="true">
                         <label for="year2019">2019</label></div>
                     <div class="legend-item">
-                        <div class="legend-item" style="height:10px;width:10px;background-color:#a5a5a5;border-radius:50%;margin:12px 20px 0 0;">&nbsp;</div>
+                        <div class="legend-item" style="color:#737373;font-weight:bold;margin:4px 20px 0 0;">//</div>
                     </div>
                     <div class="legend-item"><input type="checkbox" class="permit-status" id="finaled" name="finaled" value="Permit Finaled" checked="true">
                         <label for="finaled">Project complete</label></div>
@@ -297,8 +297,8 @@
             <span style="border-top: 3px solid #ccc">Single-family home</span> &bull; <span style="border-top: 3px solid #4f9da6">Duplex</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhomes</span> &bull; <span style="border-top: 3px solid #ff5959" id="layerApartments">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Mixed-use w/residential</span>
         </div> -->
         <div id="map"></div>
-        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Source?</p>
-        <p class="note">Note: Some map markers may overlap.</p>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Community Planning and Development</p>
+        <p class="note">Note: Some map markers may overlap; locations are approximate</p>
     </div> <!-- End "container" -->
     <script src="denver-permits-final.js"></script>
     <script>
@@ -322,6 +322,7 @@
     const geojsonLayer = L.geoJSON(null, {
         filter: (feature) => {
             var allYears = ((new Date(feature.properties.dateIssued)).getFullYear()).toString();
+            
             const isYearChecked = checkboxStates.years.includes(allYears)
             const isDwellingTypeChecked = checkboxStates.dwellingTypes.includes(feature.properties.statCode)
             const isPermitStatusChecked = checkboxStates.permitStatus.includes(feature.properties.permitStatus)
@@ -419,6 +420,7 @@
             function numberWithCommas(permitValueFormat) {
                 return permitValueFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
+
             var dwellingDesc;
             if (feature.properties.statCode == '001 - One Family Dwellings, detached') {
                 dwellingDesc = 'Single family dwelling'
@@ -431,12 +433,7 @@
             } else {
                 dwellingDesc = 'Mixed use w/ residential'
             }
-            // var sunnyside = 'Sunnyside';
-            // if (feature.properties.neighborhood === 'Sunny Side') {
-            //     return sunnyside
-            // } else {
-            //     return feature.properties.neighborhood
-            // }
+
             var tooltipText = '<h4 class="neighborhood">' + feature.properties.neighborhood + ' &bull; ' + feature.properties.units + ' unit(s)</h4><p class="address">' + feature.properties.address + ' &bull; ' + dwellingDesc + '</p><hr><p class="popup-text">Permit issued: <strong>' + feature.properties.dateIssued + '</strong></p><p class="popup-text">Permit valuation: <strong>$' + numberWithCommas(permitValueFormat) + '</strong></p><p class="popup-text">Permit status: <strong>' + feature.properties.permitStatus + '</strong></p><p class=popup-text">Contractor: <strong>' + feature.properties.contractor + '</strong></p>'
 
             if (feature.properties.statCode == '001 - One Family Dwellings, detached' && feature.properties.permitStatus == 'Permit Finaled') {
@@ -457,7 +454,7 @@
                 return L.circleMarker(latlng, multiUnit).bindPopup(tooltipText)
             } else if (feature.properties.statCode == '025 - New mixed use with residential (any non-residential building containing living units)' && feature.properties.permitStatus == 'Permit Finaled') {
                 return L.circleMarker(latlng, mixedUseComplete).bindPopup(tooltipText)
-            } else {
+            } else if (feature.properties.statCode == '025 - New mixed use with residential (any non-residential building containing living units)' && feature.properties.permitStatus == 'Permit Reopened') {
                 return L.circleMarker(latlng, mixedUse).bindPopup(tooltipText)
             }
         }
