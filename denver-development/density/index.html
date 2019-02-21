@@ -484,15 +484,14 @@
                 var rentPct2017 = ((feature.properties.tract_2017renterOccupied / feature.properties.tract_2017totalHousing) * 100);
                 var rentPct2011 = ((feature.properties.tract_2011renterOccupied / feature.properties.tract_2011totalHousing) * 100);
                 var rentChange = (rentPct2017 - rentPct2011);
-                console.log(rentChange);
 
                 var fillColor,
                     density = rentPct2017;
-                if (density > 80) fillColor = "#a63603";
-                else if (density > 60) fillColor = "#e6550d";
-                else if (density > 40) fillColor = "#fd8d3c";
-                else if (density > 20) fillColor = "#fdbe85";
-                else if (density > 0) fillColor = "#feedde";
+                if (density > 80) fillColor = "#253494";
+                else if (density > 60) fillColor = "#2c7fb8";
+                else if (density > 40) fillColor = "#41b6c4";
+                else if (density > 20) fillColor = "#a1dab4";
+                else if (density > 0) fillColor = "#ffffcc";
                 else fillColor = "rgba(0,0,0,0"; // no data
                 return {
                     color: "#000",
@@ -508,7 +507,7 @@
                 var rentRawChange = (feature.properties.tract_2017renterOccupied - feature.properties.tract_2011renterOccupied).toLocaleString();
                 var rentRaw2017 = (feature.properties.tract_2017renterOccupied).toLocaleString();
                 var rentRaw2011 = (feature.properties.tract_2011renterOccupied).toLocaleString();
-                
+
                 var rentChange = Math.round(((feature.properties.tract_2017renterOccupied - feature.properties.tract_2011renterOccupied) / feature.properties.tract_2011renterOccupied) * 100);
                 var ownPct2017 = Math.round((feature.properties.tract_2017ownerOccupied / feature.properties.tract_2017totalHousing) * 100);
                 var ownPct2011 = Math.round((feature.properties.tract_2011ownerOccupied / feature.properties.tract_2011totalHousing) * 100);
@@ -521,6 +520,14 @@
                 var totalRaw2011 = (feature.properties.tract_2011totalHousing).toLocaleString();
                 var totalRawChange = (feature.properties.tract_2017totalHousing - feature.properties.tract_2011totalHousing).toLocaleString();
                 var totalChange = Math.round(((feature.properties.tract_2017totalHousing - feature.properties.tract_2011totalHousing) / feature.properties.tract_2011totalHousing) * 100);
+
+                function nanTest(x) {
+                    if (isNaN(x)) {
+                        return 0
+                    } else {
+                        return x
+                    }
+                };
 
                 var ownChangeColor;
                 if (ownChange < 0) {
@@ -545,7 +552,7 @@
 
                 layer.bindPopup(
                     // '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + rentChange + '%<br>2017: ' + rentPct2017 + '%<br>2011: ' + rentPct2011 + '%'
-                    '<h4 class="neighborhood">' + feature.properties.tract_neighborhood + '</h4><p class="address">' + feature.properties.tract_name + '</p><hr><table><thead><th></th><th>2017</th><th>2011</th><th>Change*</th></thead><tbody><tr><td>Renter<br>occupied</td><td>' + rentPct2017 + '%<br><span class="raw">' + rentRaw2017 + '</span></td><td>' + rentPct2011 + '%<br><span class="raw">' + rentRaw2011 + '</span></td><td><span <span style="color:' + rentChangeColor + '">' + rentChange + '%</span><br><span class="raw">' + rentRawChange + '</span></td></tr><tr><td>Owner<br>occupied</td><td>' + ownPct2017 + '%<br><span class="raw">' + ownRaw2017 + '</span></td><td>' + ownPct2011 + '%<br><span class="raw">' + ownRaw2011 + '</span></td><td><span style="color:' + ownChangeColor + '">' + ownChange + '%</span><br><span class="raw">' + ownRawChange + '</span></td></tr><tr><td>Total</td><td>&nbsp;<br><span class="raw">' + totalRaw2017 + '</span></td><td>&nbsp;<br><span class="raw">' + totalRaw2011 + '</span></td><td><span style="color:' + totalChangeColor + '">' + totalChange + '%</span><br><span class="raw">' + totalRawChange + '</span></td></tr></tbody></table><p class="tooltip-note">*Change in renter and owner occupied units from 2011-2017</p>'
+                    '<h4 class="neighborhood">' + feature.properties.tract_neighborhood + '</h4><p class="address">' + feature.properties.tract_name + '</p><hr><table><thead><th></th><th>2017</th><th>2011</th><th>Change*</th></thead><tbody><tr><td>Renter<br>occupied</td><td>' + nanTest(rentPct2017) + '%<br><span class="raw">' + rentRaw2017 + '</span></td><td>' + nanTest(rentPct2011) + '%<br><span class="raw">' + rentRaw2011 + '</span></td><td><span <span style="color:' + rentChangeColor + '">' + nanTest(rentChange) + '%</span><br><span class="raw">' + rentRawChange + '</span></td></tr><tr><td>Owner<br>occupied</td><td>' + nanTest(ownPct2017) + '%<br><span class="raw">' + ownRaw2017 + '</span></td><td>' + nanTest(ownPct2011) + '%<br><span class="raw">' + ownRaw2011 + '</span></td><td><span style="color:' + ownChangeColor + '">' + nanTest(ownChange) + '%</span><br><span class="raw">' + ownRawChange + '</span></td></tr><tr><td>Total</td><td>&nbsp;<br><span class="raw">' + totalRaw2017 + '</span></td><td>&nbsp;<br><span class="raw">' + totalRaw2011 + '</span></td><td><span style="color:' + totalChangeColor + '">' + nanTest(totalChange) + '%</span><br><span class="raw">' + totalRawChange + '</span></td></tr></tbody></table><p class="tooltip-note">*Change in renter- and owner-occupied housing units from 2011-2017</p>'
                 )
             }
         }).addTo(populationPct2011);
