@@ -36,7 +36,7 @@
     }
 
     #map {
-        height: 600px;
+        height: 800px;
         width: 100%;
         /*width: 893px;
         height: 600px;
@@ -263,6 +263,68 @@
         display: inline-block;
         margin-left: 20px;
     }
+
+    .leaflet-control-layers-base {
+        display: none;
+    }
+
+    .leaflet-control-layers-separator {
+        display: none;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table thead {
+        background-color: #fafafa;
+        padding-bottom: 0;
+    }
+
+    table thead th {
+        border-bottom: 2px solid silver;
+        padding-bottom: 0;
+        color: rgba(0, 0, 0, .6);
+        font-weight: normal;
+    }
+
+    table tbody td {
+        padding: 2px 0 4px 12px;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    table tr {
+        border-bottom: 1px solid silver;
+        border-top: 1px solid #fafafa;
+        border-left: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+    }
+
+    table tr:last-child {
+        border: 1px solid #fafafa;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background-color: #fafafa;
+    }
+
+    table tbody tr:nth-child(1n) {
+        background-color: #fafafa;
+    }
+
+    .tooltip-note {
+        font-size: .9em;
+        font-style: italic;
+        margin-top: -5px !important;
+        color: rgba(0, 0, 0, .6);
+    }
+
+    .raw {
+        font-size: .75rem;
+        color: rgba(0, 0, 0, .4);
+        font-style: italic;
+    }
     </style>
 </head>
 
@@ -351,23 +413,22 @@
 
     // Overlay layers are grouped
     var groupedOverlays = {
-        "Landmarks": {
-            "2017 population": populationPct2017,
-            "2011 population": populationPct2011
-        },
-        "Random": {}
+        "Choose map": {
+            "Population change": populationPct2017,
+            "Pct Renter Occupied": populationPct2011
+        }
     };
 
     var options = {
         // Make the "Landmarks" group exclusive (use radio inputs)
-        exclusiveGroups: ["Landmarks"]
+        exclusiveGroups: ["Choose map"]
         // Show a checkbox next to non-exclusive group labels for toggling all
         //groupCheckboxes: true
     };
 
 
     var map = L.map('map', {
-        center: [39.7392, -104.9903],
+        center: [39.7142, -104.9603],
         zoom: 12,
         minZoom: 11,
         layers: [basemaps.One, populationPct2017]
@@ -377,54 +438,114 @@
     $.getJSON("denver-neighborhood-census-tract-data.geojson", function(data) {
         L.geoJson(data, {
             style: function(feature) {
+                var pctChange = parseFloat((((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100));
                 var fillColor,
-                    density = feature.properties.tract_popPct2017;
-                if (density > .015) fillColor = "rgba(128,0,128,1)";
-                else if (density > .011) fillColor = "rgba(128,0,128,.8)";
-                else if (density > .007) fillColor = "rgba(128,0,128,.6)";
-                else if (density > .003) fillColor = "rgba(128,0,128,.4)";
-                else if (density > 0) fillColor = "rgba(128,0,128,.2)";
+                    density = pctChange;
+                if (density > 100) fillColor = "#4d9221";
+                else if (density > 50) fillColor = "#7fbc41";
+                else if (density > 25) fillColor = "#b8e186";
+                else if (density > 0) fillColor = "#e6f5d0";
+                else if (density > -10) fillColor = "#fde0ef";
+                else if (density < -10) fillColor = "#de77ae";
                 else fillColor = "rgba(0,0,0,0"; // no data
                 return {
                     color: "#000",
-                    weight: .5,
+                    weight: .3,
                     fillColor: fillColor,
-                    fillOpacity: .6
+                    fillOpacity: .7
                 };
+
+                // var fillColor,
+                //     density = feature.properties.tract_popPct2017;
+                // if (density > .015) fillColor = "rgba(128,0,128,1)";
+                // else if (density > .011) fillColor = "rgba(128,0,128,.8)";
+                // else if (density > .007) fillColor = "rgba(128,0,128,.6)";
+                // else if (density > .003) fillColor = "rgba(128,0,128,.4)";
+                // else if (density > 0) fillColor = "rgba(128,0,128,.2)";
+                // else fillColor = "rgba(0,0,0,0"; // no data
+                // return {
+                //     color: "#000",
+                //     weight: .5,
+                //     fillColor: fillColor,
+                //     fillOpacity: .6
+                // };
             },
             onEachFeature: function(feature, layer) {
-
+                var pctChange = (((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100).toLocaleString();
                 var popPct2017 = (feature.properties.tract_popPct2017 * 100).toLocaleString();
-
                 layer.bindPopup(
-                    '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + popPct2017 + '%'
+                    '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + pctChange + '%<br>2017: ' + feature.properties.tract_pop2017 + '<br>2011: ' + feature.properties.tract_pop2011
                 )
             }
         }).addTo(populationPct2017);
 
         L.geoJson(data, {
             style: function(feature) {
+                var rentPct2017 = ((feature.properties.tract_2017renterOccupied / feature.properties.tract_2017totalHousing) * 100);
+                var rentPct2011 = ((feature.properties.tract_2011renterOccupied / feature.properties.tract_2011totalHousing) * 100);
+                var rentChange = (rentPct2017 - rentPct2011);
+                console.log(rentChange);
+
                 var fillColor,
-                    density = feature.properties.tract_popPct2011;
-                if (density > .015) fillColor = "rgba(128,0,128,1)";
-                else if (density > .011) fillColor = "rgba(128,0,128,.8)";
-                else if (density > .007) fillColor = "rgba(128,0,128,.6)";
-                else if (density > .003) fillColor = "rgba(128,0,128,.4)";
-                else if (density > 0) fillColor = "rgba(128,0,128,.2)";
+                    density = rentPct2017;
+                if (density > 80) fillColor = "#a63603";
+                else if (density > 60) fillColor = "#e6550d";
+                else if (density > 40) fillColor = "#fd8d3c";
+                else if (density > 20) fillColor = "#fdbe85";
+                else if (density > 0) fillColor = "#feedde";
                 else fillColor = "rgba(0,0,0,0"; // no data
                 return {
                     color: "#000",
-                    weight: .5,
+                    weight: .3,
                     fillColor: fillColor,
                     fillOpacity: .6
                 };
             },
             onEachFeature: function(feature, layer) {
+                var rentPct2017 = Math.round((feature.properties.tract_2017renterOccupied / feature.properties.tract_2017totalHousing) * 100);
+                var rentPct2011 = Math.round((feature.properties.tract_2011renterOccupied / feature.properties.tract_2011totalHousing) * 100);
+                // var rentChange = Math.round(rentPct2017 - rentPct2011);
+                var rentRawChange = (feature.properties.tract_2017renterOccupied - feature.properties.tract_2011renterOccupied).toLocaleString();
+                var rentRaw2017 = (feature.properties.tract_2017renterOccupied).toLocaleString();
+                var rentRaw2011 = (feature.properties.tract_2011renterOccupied).toLocaleString();
+                
+                var rentChange = Math.round(((feature.properties.tract_2017renterOccupied - feature.properties.tract_2011renterOccupied) / feature.properties.tract_2011renterOccupied) * 100);
+                var ownPct2017 = Math.round((feature.properties.tract_2017ownerOccupied / feature.properties.tract_2017totalHousing) * 100);
+                var ownPct2011 = Math.round((feature.properties.tract_2011ownerOccupied / feature.properties.tract_2011totalHousing) * 100);
+                // var ownChange = Math.round(ownPct2017 - ownPct2011);
+                var ownChange = Math.round(((feature.properties.tract_2017ownerOccupied - feature.properties.tract_2011ownerOccupied) / feature.properties.tract_2011ownerOccupied) * 100);
+                var ownRaw2017 = (feature.properties.tract_2017ownerOccupied).toLocaleString();
+                var ownRaw2011 = (feature.properties.tract_2011ownerOccupied).toLocaleString();
+                var ownRawChange = (feature.properties.tract_2017ownerOccupied - feature.properties.tract_2011ownerOccupied);
+                var totalRaw2017 = (feature.properties.tract_2017totalHousing).toLocaleString();
+                var totalRaw2011 = (feature.properties.tract_2011totalHousing).toLocaleString();
+                var totalRawChange = (feature.properties.tract_2017totalHousing - feature.properties.tract_2011totalHousing).toLocaleString();
+                var totalChange = Math.round(((feature.properties.tract_2017totalHousing - feature.properties.tract_2011totalHousing) / feature.properties.tract_2011totalHousing) * 100);
 
-                var popPct2011 = (feature.properties.tract_popPct2011 * 100).toLocaleString();
+                var ownChangeColor;
+                if (ownChange < 0) {
+                    ownChangeColor = 'red'
+                } else {
+                    ownChangeColor = 'green'
+                };
+
+                var rentChangeColor;
+                if (rentChange < 0) {
+                    rentChangeColor = 'red'
+                } else {
+                    rentChangeColor = 'green'
+                };
+
+                var totalChangeColor;
+                if (totalChange < 0) {
+                    totalChangeColor = 'red'
+                } else {
+                    totalChangeColor = 'green'
+                };
 
                 layer.bindPopup(
-                    '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + popPct2011 + '%'
+                    // '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + rentChange + '%<br>2017: ' + rentPct2017 + '%<br>2011: ' + rentPct2011 + '%'
+                    '<h4 class="neighborhood">' + feature.properties.tract_neighborhood + '</h4><p class="address">' + feature.properties.tract_name + '</p><hr><table><thead><th></th><th>2017</th><th>2011</th><th>Change*</th></thead><tbody><tr><td>Renter<br>occupied</td><td>' + rentPct2017 + '%<br><span class="raw">' + rentRaw2017 + '</span></td><td>' + rentPct2011 + '%<br><span class="raw">' + rentRaw2011 + '</span></td><td><span <span style="color:' + rentChangeColor + '">' + rentChange + '%</span><br><span class="raw">' + rentRawChange + '</span></td></tr><tr><td>Owner<br>occupied</td><td>' + ownPct2017 + '%<br><span class="raw">' + ownRaw2017 + '</span></td><td>' + ownPct2011 + '%<br><span class="raw">' + ownRaw2011 + '</span></td><td><span style="color:' + ownChangeColor + '">' + ownChange + '%</span><br><span class="raw">' + ownRawChange + '</span></td></tr><tr><td>Total</td><td>&nbsp;<br><span class="raw">' + totalRaw2017 + '</span></td><td>&nbsp;<br><span class="raw">' + totalRaw2011 + '</span></td><td><span style="color:' + totalChangeColor + '">' + totalChange + '%</span><br><span class="raw">' + totalRawChange + '</span></td></tr></tbody></table><p class="tooltip-note">*Change in renter and owner occupied units from 2011-2017</p>'
                 )
             }
         }).addTo(populationPct2011);
