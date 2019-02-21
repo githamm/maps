@@ -141,12 +141,12 @@
         text-align: right;
     }
 
-    /*.legend {
+    .legend {
         width: 60px;
-        height: 30px;
+        /*height: 30px;*/
         opacity: .6;
         float: left;
-    }*/
+    }
 
     label,
     .legend-text {
@@ -341,6 +341,15 @@
             <legend><strong><em>Choose a map</em></strong></legend>
             <div id="layer-control"></div>
         </fieldset>
+        <!-- <div style="margin: 10px 0 10px 0;overflow:hidden;" id="legend">
+            <p>Population change</p>
+            <div class="legend" style="background-color:#de77ae;">
+                <p class="legend-text" style="color:#000;">-14%</p>
+            </div>
+            <div class="legend" style="background-color:#4d9221;">
+                <p class="legend-text" style="color:#000;">178%</p>
+            </div>
+        </div> -->
         <div id="map"></div>
         <p class="source">By Kevin Hamm, The Denver Post &bull; Source: U.S. Census Bureau</p>
         <p class="note">Note: Census tract 43.06 is split between the Lowry and Hilltop neighborhoods</p>
@@ -366,8 +375,9 @@
     // Overlay layers are grouped
     var groupedOverlays = {
         "Map:": {
-            "Population change": populationChange,
-            "Pct Renter Occupied": renterPct
+            // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": populationChange,
+            "Population change <span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": populationChange,
+            "Pct Renter Occupied  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": renterPct
         }
     };
 
