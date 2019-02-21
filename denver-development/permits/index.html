@@ -242,8 +242,8 @@
 
 <body>
     <div id="container">
-        <h2>Title and title and title</h2>
-        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter.</p>
+        <h2>Residential development in Denver since 2016</h2>
+        <p>Denver's growth spurt is one of the biggest questions in Mayor Michael Hancock's election. The Denver Post used city data to map apartments, houses, duplexes and townhomes built or authorized from Jan. 1, 2016 through Jan. 29, 2019. The results show intense apartment construction in downtown and along Interstate 25, a wave of lower-scale multifamily through northwest Denver, and more.</p>
         <div class="row">
             <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
                 <p class="instructions">Zoom map and click circles for details &bull; darker colors indicate completed projects &bull; circle size represents number of units &bull; neighborhood boundaries are shown in gray &mdash; click for name</p>
@@ -322,7 +322,7 @@
     const geojsonLayer = L.geoJSON(null, {
         filter: (feature) => {
             var allYears = ((new Date(feature.properties.dateIssued)).getFullYear()).toString();
-            
+
             const isYearChecked = checkboxStates.years.includes(allYears)
             const isDwellingTypeChecked = checkboxStates.dwellingTypes.includes(feature.properties.statCode)
             const isPermitStatusChecked = checkboxStates.permitStatus.includes(feature.properties.permitStatus)
