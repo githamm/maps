@@ -141,12 +141,12 @@
         text-align: right;
     }
 
-    /*.legend {
+    .legend {
         width: 60px;
-        height: 30px;
+        /*height: 30px;*/
         opacity: .6;
         float: left;
-    }*/
+    }
 
     label,
     .legend-text {
@@ -337,66 +337,27 @@
                 <p class="instructions">Zoom map and click circles for details &bull; darker colors indicate completed projects &bull; circle size represents number of units &bull; neighborhood boundaries are shown in gray &mdash; click for name</p>
             </div>
         </div>
-        <!-- <fieldset class="fieldset">
-            <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
-            <div class="legend-container">
-                <div class="inputs" id="dwelling-types">
-                    <div class="legend-item">
-                        <input type="checkbox" class="dwelling-type" id="one-family" name="one-family" value="001 - One Family Dwellings, detached" checked="true">
-                        <label for="one-family"><span style="border-top: 3px solid #ccc">Single-family home</span></label>
-                    </div>
-                    <div class="legend-item">
-                        <input type="checkbox" class="dwelling-type" id="two-family" name="two-family" value="002 - Two Family Dwellings" checked="true">
-                        <label for="two-family"><span style="border-top: 3px solid #4f9da6">Duplex</span></label>
-                    </div>
-                    <div class="legend-item">
-                        <input type="checkbox" class="dwelling-type" id="townhome" name="townhome" value="023 - One family attached (Townhome 3 + units)" checked="true">
-                        <label for="townhome"><span style="border-top: 3px solid #ffad5a">Townhome</span></label>
-                    </div>
-                    <div class="legend-item">
-                        <input type="checkbox" class="dwelling-type" id="apartment" name="apartment" value="024 - Multi-unit structure on one parcel (Apts/Condos)> 2 units" checked="true">
-                        <label for="apartment"><span style="border-top: 3px solid #ff5959">Apartments/condos</span></label>
-                    </div>
-                    <div class="legend-item">
-                        <input type="checkbox" class="dwelling-type" id="mixed-use" name="mixed-use" value="025 - New mixed use with residential (any non-residential building containing living units)" checked="true">
-                        <label for="mixed-use"><span style="border-top: 3px solid #1a0841">Mixed use w/residential</span></label>
-                    </div>
-                </div>
-                <div class="inputs" id="years">
-                    <div class="legend-item"><input type="checkbox" class="year" id="year2016" name="year2016" value="2016" checked="true">
-                        <label for="year2016">2016</label></div>
-                    <div class="legend-item"><input type="checkbox" class="year" id="year2017" name="year2017" value="2017" checked="true">
-                        <label for="year2017">2017</label></div>
-                    <div class="legend-item"><input type="checkbox" class="year" id="year2018" name="year2018" value="2018" checked="true">
-                        <label for="year2018">2018</label></div>
-                    <div class="legend-item"><input type="checkbox" class="year" id="year2019" name="year2019" value="2019" checked="true">
-                        <label for="year2019">2019</label></div>
-                    <div class="legend-item">
-                        <div class="legend-item" style="color:#737373;font-weight:bold;margin:4px 20px 0 0;">//</div>
-                    </div>
-                    <div class="legend-item"><input type="checkbox" class="permit-status" id="finaled" name="finaled" value="Finaled" checked="true">
-                        <label for="finaled">Project complete</label></div>
-                    <div class="legend-item"><input type="checkbox" class="permit-status" id="issued" name="issued" value="Issued" checked="true">
-                        <label for="issued">Permit issued</label></div>
-                </div>
-            </div>
-        </fieldset> -->
-        <!-- <div style="margin-bottom:15px;" class="legend-text">
-            <span style="border-top: 3px solid #ccc">Single-family home</span> &bull; <span style="border-top: 3px solid #4f9da6">Duplex</span> &bull; <span style="border-top: 3px solid #ffad5a">Townhomes</span> &bull; <span style="border-top: 3px solid #ff5959" id="layerApartments">Apartments/condos</span> &bull; <span style="border-top: 3px solid #1a0841">Mixed-use w/residential</span>
-        </div> -->
         <fieldset class="fieldset">
-            <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
+            <legend><strong><em>Choose a map</em></strong></legend>
             <div id="layer-control"></div>
         </fieldset>
+        <!-- <div style="margin: 10px 0 10px 0;overflow:hidden;" id="legend">
+            <p>Population change</p>
+            <div class="legend" style="background-color:#de77ae;">
+                <p class="legend-text" style="color:#000;">-14%</p>
+            </div>
+            <div class="legend" style="background-color:#4d9221;">
+                <p class="legend-text" style="color:#000;">178%</p>
+            </div>
+        </div> -->
         <div id="map"></div>
-        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Community Planning and Development</p>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: U.S. Census Bureau</p>
         <p class="note">Note: Census tract 43.06 is split between the Lowry and Hilltop neighborhoods</p>
     </div> <!-- End "container" -->
-    <script src="denver-permits-final.js"></script>
     <script>
     var neighborhoods = new L.LayerGroup();
-    var populationPct2017 = new L.LayerGroup();
-    var populationPct2011 = new L.LayerGroup();
+    var populationChange = new L.LayerGroup();
+    var renterPct = new L.LayerGroup();
 
     var basemaps = {
         One: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -413,15 +374,16 @@
 
     // Overlay layers are grouped
     var groupedOverlays = {
-        "Choose map": {
-            "Population change": populationPct2017,
-            "Pct Renter Occupied": populationPct2011
+        "Map:": {
+            // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": populationChange,
+            "Population change <span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": populationChange,
+            "Pct Renter Occupied  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": renterPct
         }
     };
 
     var options = {
         // Make the "Landmarks" group exclusive (use radio inputs)
-        exclusiveGroups: ["Choose map"]
+        exclusiveGroups: ["Map:"]
         // Show a checkbox next to non-exclusive group labels for toggling all
         //groupCheckboxes: true
     };
@@ -431,14 +393,16 @@
         center: [39.7142, -104.9603],
         zoom: 12,
         minZoom: 11,
-        layers: [basemaps.One, populationPct2017]
+        layers: [basemaps.One, populationChange]
         //preferCanvas: true
     }); //.addLayer(cartoTiles);
 
     $.getJSON("denver-neighborhood-census-tract-data.geojson", function(data) {
+
+        /***** POPULATION CHANGE MAP *****/
         L.geoJson(data, {
             style: function(feature) {
-                var pctChange = parseFloat((((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100));
+                var pctChange = parseFloat(((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100);
                 var fillColor,
                     density = pctChange;
                 if (density > 100) fillColor = "#4d9221";
@@ -454,45 +418,47 @@
                     fillColor: fillColor,
                     fillOpacity: .7
                 };
-
-                // var fillColor,
-                //     density = feature.properties.tract_popPct2017;
-                // if (density > .015) fillColor = "rgba(128,0,128,1)";
-                // else if (density > .011) fillColor = "rgba(128,0,128,.8)";
-                // else if (density > .007) fillColor = "rgba(128,0,128,.6)";
-                // else if (density > .003) fillColor = "rgba(128,0,128,.4)";
-                // else if (density > 0) fillColor = "rgba(128,0,128,.2)";
-                // else fillColor = "rgba(0,0,0,0"; // no data
-                // return {
-                //     color: "#000",
-                //     weight: .5,
-                //     fillColor: fillColor,
-                //     fillOpacity: .6
-                // };
             },
             onEachFeature: function(feature, layer) {
-                var pctChange = (((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100).toLocaleString();
-                var popPct2017 = (feature.properties.tract_popPct2017 * 100).toLocaleString();
+                var pctChange = (((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100);
+                var popChange = (feature.properties.tract_pop2017 - feature.properties.tract_pop2011);
+                var popPct2017 = (feature.properties.tract_popPct2017 * 100);
+                var popPct2011 = (feature.properties.tract_popPct2011 * 100);
+                var popPctChange = (popPct2017 - popPct2011);
+
+                var popChangeColor;
+                if (pctChange < 0) {
+                    popChangeColor = 'red'
+                } else {
+                    popChangeColor = 'green'
+                };
+                var popPctChangeColor;
+                if (popPctChange < 0) {
+                    popPctChangeColor = 'red'
+                } else {
+                    popPctChangeColor = 'green'
+                };
+
                 layer.bindPopup(
-                    '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + pctChange + '%<br>2017: ' + feature.properties.tract_pop2017 + '<br>2011: ' + feature.properties.tract_pop2011
+                    '<h4 class="neighborhood">' + feature.properties.tract_neighborhood + '</h4><p class="address">' + feature.properties.tract_name + '</p><hr><table><thead><th></th><th>2017</th><th>2011</th><th>Change</th></thead><tbody><tr><td>Population</td><td>' + feature.properties.tract_pop2017.toLocaleString() + '</td><td>' + feature.properties.tract_pop2011.toLocaleString() + '</td><td><span style="color:' + popChangeColor + '">' + Math.round(pctChange) + '%</span><br><span class="raw">' + popChange + '</span></td></tr><tr><td>Population<br>share*</td><td>' + popPct2017.toFixed(2) + '%</td><td>' + popPct2011.toFixed(2) + '%</td><td><span style="color:' + popPctChangeColor + '">' + popPctChange.toFixed(2) + '%</span></td></tr></tbody></table><p class="tooltip-note">*The percentage of overall Denver population in a census tract.</p>'
                 )
             }
-        }).addTo(populationPct2017);
+        }).addTo(populationChange);
 
+        /***** RENTER PCT MAP *****/
         L.geoJson(data, {
             style: function(feature) {
                 var rentPct2017 = ((feature.properties.tract_2017renterOccupied / feature.properties.tract_2017totalHousing) * 100);
                 var rentPct2011 = ((feature.properties.tract_2011renterOccupied / feature.properties.tract_2011totalHousing) * 100);
                 var rentChange = (rentPct2017 - rentPct2011);
-                console.log(rentChange);
 
                 var fillColor,
                     density = rentPct2017;
-                if (density > 80) fillColor = "#a63603";
-                else if (density > 60) fillColor = "#e6550d";
-                else if (density > 40) fillColor = "#fd8d3c";
-                else if (density > 20) fillColor = "#fdbe85";
-                else if (density > 0) fillColor = "#feedde";
+                if (density > 80) fillColor = "#253494";
+                else if (density > 60) fillColor = "#2c7fb8";
+                else if (density > 40) fillColor = "#41b6c4";
+                else if (density > 20) fillColor = "#a1dab4";
+                else if (density > 0) fillColor = "#ffffcc";
                 else fillColor = "rgba(0,0,0,0"; // no data
                 return {
                     color: "#000",
@@ -508,7 +474,7 @@
                 var rentRawChange = (feature.properties.tract_2017renterOccupied - feature.properties.tract_2011renterOccupied).toLocaleString();
                 var rentRaw2017 = (feature.properties.tract_2017renterOccupied).toLocaleString();
                 var rentRaw2011 = (feature.properties.tract_2011renterOccupied).toLocaleString();
-                
+
                 var rentChange = Math.round(((feature.properties.tract_2017renterOccupied - feature.properties.tract_2011renterOccupied) / feature.properties.tract_2011renterOccupied) * 100);
                 var ownPct2017 = Math.round((feature.properties.tract_2017ownerOccupied / feature.properties.tract_2017totalHousing) * 100);
                 var ownPct2011 = Math.round((feature.properties.tract_2011ownerOccupied / feature.properties.tract_2011totalHousing) * 100);
@@ -521,6 +487,14 @@
                 var totalRaw2011 = (feature.properties.tract_2011totalHousing).toLocaleString();
                 var totalRawChange = (feature.properties.tract_2017totalHousing - feature.properties.tract_2011totalHousing).toLocaleString();
                 var totalChange = Math.round(((feature.properties.tract_2017totalHousing - feature.properties.tract_2011totalHousing) / feature.properties.tract_2011totalHousing) * 100);
+
+                function nanTest(x) {
+                    if (isNaN(x)) {
+                        return 0
+                    } else {
+                        return x
+                    }
+                };
 
                 var ownChangeColor;
                 if (ownChange < 0) {
@@ -545,10 +519,10 @@
 
                 layer.bindPopup(
                     // '<h4 class="popup-header">' + feature.properties.tract_neighborhood + '</h4>' + feature.properties.tract_name + '<br>' + rentChange + '%<br>2017: ' + rentPct2017 + '%<br>2011: ' + rentPct2011 + '%'
-                    '<h4 class="neighborhood">' + feature.properties.tract_neighborhood + '</h4><p class="address">' + feature.properties.tract_name + '</p><hr><table><thead><th></th><th>2017</th><th>2011</th><th>Change*</th></thead><tbody><tr><td>Renter<br>occupied</td><td>' + rentPct2017 + '%<br><span class="raw">' + rentRaw2017 + '</span></td><td>' + rentPct2011 + '%<br><span class="raw">' + rentRaw2011 + '</span></td><td><span <span style="color:' + rentChangeColor + '">' + rentChange + '%</span><br><span class="raw">' + rentRawChange + '</span></td></tr><tr><td>Owner<br>occupied</td><td>' + ownPct2017 + '%<br><span class="raw">' + ownRaw2017 + '</span></td><td>' + ownPct2011 + '%<br><span class="raw">' + ownRaw2011 + '</span></td><td><span style="color:' + ownChangeColor + '">' + ownChange + '%</span><br><span class="raw">' + ownRawChange + '</span></td></tr><tr><td>Total</td><td>&nbsp;<br><span class="raw">' + totalRaw2017 + '</span></td><td>&nbsp;<br><span class="raw">' + totalRaw2011 + '</span></td><td><span style="color:' + totalChangeColor + '">' + totalChange + '%</span><br><span class="raw">' + totalRawChange + '</span></td></tr></tbody></table><p class="tooltip-note">*Change in renter and owner occupied units from 2011-2017</p>'
+                    '<h4 class="neighborhood">' + feature.properties.tract_neighborhood + '</h4><p class="address">' + feature.properties.tract_name + '</p><hr><table><thead><th></th><th>2017</th><th>2011</th><th>Change*</th></thead><tbody><tr><td>Renter<br>occupied</td><td>' + nanTest(rentPct2017) + '%<br><span class="raw">' + rentRaw2017 + '</span></td><td>' + nanTest(rentPct2011) + '%<br><span class="raw">' + rentRaw2011 + '</span></td><td><span <span style="color:' + rentChangeColor + '">' + nanTest(rentChange) + '%</span><br><span class="raw">' + rentRawChange + '</span></td></tr><tr><td>Owner<br>occupied</td><td>' + nanTest(ownPct2017) + '%<br><span class="raw">' + ownRaw2017 + '</span></td><td>' + nanTest(ownPct2011) + '%<br><span class="raw">' + ownRaw2011 + '</span></td><td><span style="color:' + ownChangeColor + '">' + nanTest(ownChange) + '%</span><br><span class="raw">' + ownRawChange + '</span></td></tr><tr><td>Total</td><td>&nbsp;<br><span class="raw">' + totalRaw2017 + '</span></td><td>&nbsp;<br><span class="raw">' + totalRaw2011 + '</span></td><td><span style="color:' + totalChangeColor + '">' + nanTest(totalChange) + '%</span><br><span class="raw">' + totalRawChange + '</span></td></tr></tbody></table><p class="tooltip-note">*Change in renter- and owner-occupied housing units from 2011-2017</p>'
                 )
             }
-        }).addTo(populationPct2011);
+        }).addTo(renterPct);
     });
 
     $.getJSON("denver-neighborhoods-simple.geojson", function(data) {
