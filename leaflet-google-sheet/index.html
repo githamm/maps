@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Officer-involved Shootings | The Denver Post</title>
+    <title>Law-enforcement officer-involved deaths | The Denver Post</title>
     <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -29,7 +29,7 @@
 
     h2 {
         font-family: 'Roboto', sans-serif;
-        font-size: 1.9em;
+        font-size: 1.6em;
         line-height: 100%;
         margin-bottom: 0;
     }
@@ -72,10 +72,10 @@
 </head>
 
 <body>
-    <h2>Colorado officer-involved shootings</h2>
-    <p style="line-height:125%">There have been <strong><span id="incident-count"></span> officer-involved shootings*</strong> in Colorado in 2019 &mdash; <strong><span id="killed-count"></span> people have been killed and <span id="wounded-count"></span> people have been wounded</strong> in the incidents. The last incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
-    <p style="font-size:.85em"><em>*Incidents in which police are involved in shootings and someone is wounded or killed. Information will be updated as it becomes available.</em></p>
-    <p class="legend-text"><span style="border-top:4px solid #4c4c4c">Wounded</span> &bull; <span style="border-top:4px solid #cb364a">Killed</span> &bull; <span style="border-top:4px solid #3689ca">Unknown</span></p>
+    <h2>Colorado officer-involved shootings, other deaths</h2>
+    <p style="line-height:125%">There have been <strong><span id="incident-count"></span> incidents</strong> in which a person has been killed or wounded in an altercation with law-enforcement officers* in Colorado in 2019 &mdash; <strong><span id="killed-count"></span> people have died and <span id="wounded-count"></span> people have been wounded in officer-involved shootings; <span id="killed-count-other"></span> person has died by other means</strong>. The last incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
+    <p style="font-size:.85em"><em>*Incidents in which law-enforcement officers are involved in an altercation in which someone is wounded or killed. Information will be updated as it becomes available.</em></p>
+    <p class="legend-text"><span style="border-top:4px solid #cb364a">Killed</span> &bull; <span style="border-top:4px solid #4c4c4c">Wounded</span> &bull; <span style="border-top:4px solid #3689ca">Other death</span></p>
     <div id="map"></div>
     <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Post research</p>
     <script>
@@ -84,7 +84,7 @@
     //https://docs.google.com/spreadsheets/d/13hPoaY5et0sYWvsqH3fcuBQUsMbflDJziRxatgWLyX8/edit#gid=0
 
     // Markers from https://github.com/pointhi/leaflet-color-markers
-    var unknownIcon = new L.Icon({
+    var otherIcon = new L.Icon({
         iconUrl: 'marker-blue.png',
         //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
@@ -131,6 +131,7 @@
                 var incidentCount = sheet[0].incidenttotal;
                 var woundedCount = sheet[0].woundedtotal;
                 var killedCount = sheet[0].killedtotal;
+                var killedCountOther = sheet[0].killedtotalother;
                 var lastDate = sheet[1].date;
                 var lastCity = sheet[1].city;
                 document.getElementById('incident-count').innerHTML = incidentCount;
@@ -138,6 +139,7 @@
                 document.getElementById('last-city').innerHTML = lastCity;
                 document.getElementById('wounded-count').innerHTML = woundedCount;
                 document.getElementById('killed-count').innerHTML = killedCount;
+                document.getElementById('killed-count-other').innerHTML = killedCountOther;
 
                 for (var i in sheet) {
                     var incident = sheet[i];
@@ -146,7 +148,7 @@
                     } else if (incident.victimstatus == 'Killed') {
                         iconColor = killedIcon
                     } else {
-                        iconColor = unknownIcon
+                        iconColor = otherIcon
                     }
                     L.marker([incident.lat, incident.lng], { icon: iconColor })
                         .addTo(map)
