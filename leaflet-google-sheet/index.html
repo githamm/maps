@@ -65,7 +65,7 @@
     .source {
         font-size: .85em;
         font-style: italic;
-        color: rgba(0,0,0,.6);
+        color: rgba(0, 0, 0, .6);
         text-align: right;
     }
     </style>
@@ -75,7 +75,7 @@
     <h2>Colorado officer-involved shootings, other deaths</h2>
     <p style="line-height:125%">There have been <strong><span id="incident-count"></span> incidents</strong> in which a person has been killed or wounded in an altercation with law-enforcement officers* in Colorado in 2019 &mdash; <strong><span id="killed-count"></span> people have died and <span id="wounded-count"></span> people have been wounded in officer-involved shootings; <span id="killed-count-other"></span> person has died by other means</strong>. The last incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
     <p style="font-size:.85em"><em>*Incidents in which law-enforcement officers are involved in an altercation in which someone is wounded or killed. Information will be updated as it becomes available.</em></p>
-    <p class="legend-text"><span style="border-top:4px solid #cb364a">Killed</span> &bull; <span style="border-top:4px solid #4c4c4c">Wounded</span> &bull; <span style="border-top:4px solid #3689ca">Other death</span></p>
+    <p class="legend-text"><span style="border-top:4px solid #cb364a">Killed</span> &bull; <span style="border-top:4px solid #4c4c4c">Wounded</span> &bull; <span style="border-top:4px solid #aaa">TBD</span> &bull; <span style="border-top:4px solid #3689ca">Other death</span></p>
     <div id="map"></div>
     <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Post research</p>
     <script>
@@ -104,6 +104,15 @@
 
     var woundedIcon = new L.Icon({
         iconUrl: 'marker-black.png',
+        //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
+    var tbdIcon = new L.Icon({
+        iconUrl: 'marker-gray.png',
         //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
@@ -147,9 +156,12 @@
                         iconColor = woundedIcon
                     } else if (incident.victimstatus == 'Killed') {
                         iconColor = killedIcon
-                    } else {
+                    } else if (incident.victimstatus == 'Other death') {
                         iconColor = otherIcon
+                    } else {
+                        iconColor = tbdIcon
                     }
+
                     L.marker([incident.lat, incident.lng], { icon: iconColor })
                         .addTo(map)
                         .bindPopup('<h3>' + incident.city + ' &bull; ' + incident.date + '</h3><hr><p class="popup-text" style="margin-top:5px;"><strong>Agency: </strong>' + incident.agency + '</p><p class="popup-text" ><strong>Location: </strong>' + incident.address + '</p><p  class="popup-text" style="text-align:center;">&bull; &bull; &bull;</p><p class="popup-text" >' + incident.description + '</p><p class="popup-text" style="margin-bottom: 8px !important;text-align:right;"><a href="' + incident.storylink + '" target="_blank">Read the story</a></p>')
