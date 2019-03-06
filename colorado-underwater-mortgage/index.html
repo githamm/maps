@@ -100,9 +100,12 @@
     }
 
     .neighborhood {
-        font-size: 1.2em;
+        font-size: 1.3em;
         font-weight: 700;
-        margin-bottom: -8px;
+        margin-bottom: -4px;
+        text-align: left;
+        padding-left: 13px;
+        color: #7F462C;
     }
 
     .address {
@@ -352,18 +355,19 @@
         <p class="source">By Kevin Hamm, The Denver Post &bull; Source: ???</p>
     </div> <!-- End "container" -->
     <script>
-    var underwater = new L.LayerGroup();
-    var populationChange = new L.LayerGroup();
-    var renterPct = new L.LayerGroup();
+    //var underwater = new L.LayerGroup();
+    var underwaterPct = new L.LayerGroup();
+    var equityRichPct = new L.LayerGroup();
+    var underwaterEquityDiff = new L.LayerGroup();
 
     var basemaps = {
         One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
-attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-subdomains: 'abcd',
-minZoom: 0,
-maxZoom: 20,
-ext: 'png'
-}),
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 20,
+            ext: 'png'
+        }),
         Two: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
@@ -374,9 +378,10 @@ ext: 'png'
     // Overlay layers are grouped
     var groupedOverlays = {
         "Map:": {
-            // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": populationChange,
-            "Population change <span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwater,
-            "Pct Renter Occupied  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": renterPct
+            // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": underwaterPct,
+            "Pct under water<br><span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwaterPct,
+            "Pct equity rich  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": equityRichPct,
+            "Under water-equity rich difference <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": underwaterEquityDiff
         }
     };
 
@@ -392,13 +397,13 @@ ext: 'png'
         center: [39.00, -105.53],
         zoom: 7,
         //minZoom: 11,
-        layers: [basemaps.One, populationChange]
+        layers: [basemaps.One, underwaterPct]
         //preferCanvas: true
     }); //.addLayer(cartoTiles);
 
     $.getJSON("underwater-mortgages.geojson", function(data) {
 
-        /***** POPULATION CHANGE MAP *****/
+        /***** UNDERWATER PCT MAP *****/
         L.geoJson(data, {
             style: function(feature) {
                 var zipCode = feature.properties.GEOID10,
@@ -468,56 +473,153 @@ ext: 'png'
                     tooltipData
                 )
             }
-        }).addTo(populationChange);
+        }).addTo(underwaterPct);
 
-        /***** RENTER PCT MAP *****/
+        /***** EQUITY RICH PCT MAP *****/
         L.geoJson(data, {
             style: function(feature) {
-                var rentPct2017 = ((feature.properties.tract_2017renterOccupied / feature.properties.tract_2017totalHousing) * 100);
-                var rentPct2011 = ((feature.properties.tract_2011renterOccupied / feature.properties.tract_2011totalHousing) * 100);
-                var rentChange = (rentPct2017 - rentPct2011);
+                var zipCode = feature.properties.GEOID10,
+                    city = feature.properties.city,
+                    equity2018 = feature.properties.equityRichQ42018,
+                    equity2017 = feature.properties.equityRichQ42017,
+                    equityPct2018 = (feature.properties.equityRichQ42018Pct * 100),
+                    equityPct2017 = (feature.properties.equityRichQ42017Pct * 100),
+                    underwater2018 = feature.properties.underwaterQ42018,
+                    underwater2017 = feature.properties.underwaterQ42017,
+                    underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
+                    underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
+                    housingUnits = feature.properties.housingUnits,
+                    population = feature.properties.population;
+
+                var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
+                    equityChange = (((equity2018 - equity2017) / equity2017) * 100);
 
                 var fillColor,
-                    density = feature.properties.housingUnits;
-                if (density > 100) fillColor = "red";
-                else if (density > 50) fillColor = "#7fbc41";
-                else if (density > 25) fillColor = "#b8e186";
-                else if (density > 0) fillColor = "#e6f5d0";
-                else if (density > -10) fillColor = "#fde0ef";
-                else if (density < -10) fillColor = "#de77ae";
-                else fillColor = "rgba(0,0,0,0"; // no data
+                    equityPct = equityPct2018;
+                if (equityPct > 40) fillColor = "#5e3c99";
+                else if (equityPct > 30) fillColor = "#b2abd2";
+                else if (equityPct > 20) fillColor = "#b2b2b2";
+                else if (equityPct > 10) fillColor = "#fdb863";
+                else if (equityPct > 0) fillColor = "#e66101";
+                else fillColor = "rgba(0,0,0,.01)"; // no data
                 return {
                     color: "#000",
-                    weight: .3,
+                    weight: .5,
                     fillColor: fillColor,
                     fillOpacity: .7
                 };
             },
             onEachFeature: function(feature, layer) {
-                var pctChange = (((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100);
-                var popChange = (feature.properties.tract_pop2017 - feature.properties.tract_pop2011);
-                var popPct2017 = (feature.properties.tract_popPct2017 * 100);
-                var popPct2011 = (feature.properties.tract_popPct2011 * 100);
-                var popPctChange = (popPct2017 - popPct2011);
+                var zipCode = feature.properties.GEOID10,
+                    city = feature.properties.city,
+                    equity2018 = feature.properties.equityRichQ42018,
+                    equity2017 = feature.properties.equityRichQ42017,
+                    equityPct2018 = (feature.properties.equityRichQ42018Pct * 100),
+                    equityPct2017 = (feature.properties.equityRichQ42017Pct * 100),
+                    underwater2018 = feature.properties.underwaterQ42018,
+                    underwater2017 = feature.properties.underwaterQ42017,
+                    underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
+                    underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
+                    housingUnits = feature.properties.housingUnits,
+                    population = feature.properties.population;
 
-                var popChangeColor;
-                if (pctChange < 0) {
-                    popChangeColor = 'red'
+                var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
+                    equityChange = (((equity2018 - equity2017) / equity2017) * 100);
+
+                function changeColor(x) {
+                    if (x < 0) {
+                        return 'red'
+                    } else {
+                        return 'green'
+                    }
+                }
+
+                var tooltipData;
+                if (city != null) {
+                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Under water</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
                 } else {
-                    popChangeColor = 'green'
-                };
-                var popPctChangeColor;
-                if (popPctChange < 0) {
-                    popPctChangeColor = 'red'
-                } else {
-                    popPctChangeColor = 'green'
-                };
+                    tooltipData = 'No data'
+                }
 
                 layer.bindPopup(
-                    '<h4 class="neighborhood">' + feature.properties.GEOID10
+                    tooltipData
                 )
             }
-        }).addTo(renterPct);
+        }).addTo(equityRichPct);
+
+        /***** UNDERWATER-EQUITY RICH DIFFERENCE MAP *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var zipCode = feature.properties.GEOID10,
+                    city = feature.properties.city,
+                    equity2018 = feature.properties.equityRichQ42018,
+                    equity2017 = feature.properties.equityRichQ42017,
+                    equityPct2018 = (feature.properties.equityRichQ42018Pct * 100),
+                    equityPct2017 = (feature.properties.equityRichQ42017Pct * 100),
+                    underwater2018 = feature.properties.underwaterQ42018,
+                    underwater2017 = feature.properties.underwaterQ42017,
+                    underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
+                    underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
+                    housingUnits = feature.properties.housingUnits,
+                    population = feature.properties.population;
+
+                var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
+                    equityChange = (((equity2018 - equity2017) / equity2017) * 100);
+
+                var underwaterEquityDiff = (equityPct2018 - underwaterPct2018);
+
+                var fillColor,
+                    underwaterEquity = underwaterEquityDiff;
+                if (underwaterEquity > 40) fillColor = "#5e3c99";
+                else if (underwaterEquity > 30) fillColor = "#b2abd2";
+                else if (underwaterEquity > 20) fillColor = "#b2b2b2";
+                else if (underwaterEquity > 10) fillColor = "#fdb863";
+                else if (underwaterEquity > 0) fillColor = "#e66101";
+                else fillColor = "rgba(0,0,0,.01)"; // no data
+                return {
+                    color: "#000",
+                    weight: .5,
+                    fillColor: fillColor,
+                    fillOpacity: .7
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var zipCode = feature.properties.GEOID10,
+                    city = feature.properties.city,
+                    equity2018 = feature.properties.equityRichQ42018,
+                    equity2017 = feature.properties.equityRichQ42017,
+                    equityPct2018 = (feature.properties.equityRichQ42018Pct * 100),
+                    equityPct2017 = (feature.properties.equityRichQ42017Pct * 100),
+                    underwater2018 = feature.properties.underwaterQ42018,
+                    underwater2017 = feature.properties.underwaterQ42017,
+                    underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
+                    underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
+                    housingUnits = feature.properties.housingUnits,
+                    population = feature.properties.population;
+
+                var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
+                    equityChange = (((equity2018 - equity2017) / equity2017) * 100);
+
+                function changeColor(x) {
+                    if (x < 0) {
+                        return 'red'
+                    } else {
+                        return 'green'
+                    }
+                }
+
+                var tooltipData;
+                if (city != null) {
+                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Under water</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
+                } else {
+                    tooltipData = 'No data'
+                }
+
+                layer.bindPopup(
+                    tooltipData
+                )
+            }
+        }).addTo(underwaterEquityDiff);
     });
 
     // $.getJSON("denver-neighborhoods-simple.geojson", function(data) {

@@ -334,7 +334,7 @@
         <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter.</p>
         <div class="row">
             <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
-                <p class="instructions">Zoom map and click circles for details &bull; darker colors indicate completed projects &bull; circle size represents number of units &bull; neighborhood boundaries are shown in gray &mdash; click for name</p>
+                <p class="instructions">Zoom map and click census tracts for details &bull; neighborhood boundaries are shown in black; census tract boundaries are gray</p>
             </div>
         </div>
         <fieldset class="fieldset">
@@ -376,8 +376,8 @@
     var groupedOverlays = {
         "Map:": {
             // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": populationChange,
-            "Population change <span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": populationChange,
-            "Pct Renter Occupied  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": renterPct
+            "Population change <span style='background-color:#de77ae;opacity:.5;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.5;padding:5px;color:#000'>+178%</span>": populationChange,
+            "Pct Renter Occupied  <span style='background-color:#ffffcc;opacity:.5;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.5;padding:5px;color:#000'>100%</span>": renterPct
         }
     };
 
@@ -414,9 +414,9 @@
                 else fillColor = "rgba(0,0,0,0"; // no data
                 return {
                     color: "#000",
-                    weight: .3,
+                    weight: .2,
                     fillColor: fillColor,
-                    fillOpacity: .7
+                    fillOpacity: .5
                 };
             },
             onEachFeature: function(feature, layer) {
@@ -462,9 +462,9 @@
                 else fillColor = "rgba(0,0,0,0"; // no data
                 return {
                     color: "#000",
-                    weight: .3,
+                    weight: .2,
                     fillColor: fillColor,
-                    fillOpacity: .6
+                    fillOpacity: .5
                 };
             },
             onEachFeature: function(feature, layer) {
@@ -529,7 +529,7 @@
         L.geoJson(data, {
             style: {
                 color: "#000",
-                weight: 3,
+                weight: 2,
                 fillColor: "#000",
                 fillOpacity: 0
             },
