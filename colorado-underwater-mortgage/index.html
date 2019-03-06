@@ -379,9 +379,9 @@
     var groupedOverlays = {
         "Map:": {
             // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": underwaterPct,
-            "Pct under water<br><span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwaterPct,
+            "Pct underwater<br><span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwaterPct,
             "Pct equity rich  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": equityRichPct,
-            "Under water-equity rich difference <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": underwaterEquityDiff
+            "Underwater-equity rich difference <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": underwaterEquityDiff
         }
     };
 
@@ -464,7 +464,7 @@
 
                 var tooltipData;
                 if (city != null) {
-                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Under water</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
+                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
                 } else {
                     tooltipData = 'No data'
                 }
@@ -536,7 +536,7 @@
 
                 var tooltipData;
                 if (city != null) {
-                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Under water</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
+                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
                 } else {
                     tooltipData = 'No data'
                 }
@@ -600,6 +600,8 @@
                 var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
                     equityChange = (((equity2018 - equity2017) / equity2017) * 100);
 
+                var underwaterEquityDiff = (equityPct2018 - underwaterPct2018);
+
                 function changeColor(x) {
                     if (x < 0) {
                         return 'red'
@@ -610,7 +612,7 @@
 
                 var tooltipData;
                 if (city != null) {
-                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Under water</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
+                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div style="border: 1px solid #aaa;padding:8px;width:100%;text-align:center;font-style:italic;color:rgba(0,0,0,.6);font-size:.8rem;"><div style="float:left;width:33%;">Population<br>' + population.toLocaleString() + '</div><div style="float:left;width:33%;">Housing units<br>' + housingUnits.toLocaleString() + '</div><div style="float:left;width:33%;margin-bottom:10px;">Equity spread*<br>' + underwaterEquityDiff.toFixed(1) + '</div><span style="font-style:italic;font-size:.7rem;color:rgba(0,0,0,.6);text-align:right;">*Equity spread is the difference between the percent of homeowners who are equity rich and those who are underwater in 2018</span></div>'
                 } else {
                     tooltipData = 'No data'
                 }
