@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorado underwater mortgages and equity-rich properties map | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <style>
+    @import url('//fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1%;
+    }
+
+    #container {
+        height: 600px;
+        width: 893px;
+        margin: 0 auto;
+    }
+
+    #map {
+        height: 600px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        /*max-width: 200px;*/
+        line-height: 100%;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .leaflet-popup-content {
+        font-size: 1.2em;
+        letter-spacing: .2px;
+    }
+
+    /*#content-container {
+        padding: 15px;
+    }*/
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .legend-container {
+        width: 100%;
+        clear: both;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #ff5959;
+        opacity: .8;
+    }
+
+    #years {
+        display: inline-block;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 100%
+    }
+
+    .neighborhood {
+        font-size: 1.2em;
+        font-weight: 700;
+        margin-bottom: -8px;
+    }
+
+    .address {
+        font-style: italic;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .popup-text {
+        margin-bottom: -17px !important;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .popup-header {
+        font-weight: 700;
+        font-size: 1.1em;
+        /*letter-spacing: .5px;*/
+        /*text-transform: uppercase;*/
+        color: #000;
+        margin-bottom: 0;
+    }
+
+    hr {
+        margin: -12px 0 -8px 0;
+    }
+
+    .note {
+        font-size: .85em;
+        font-style: italic;
+    }
+
+    .source {
+        font-size: .9em;
+        font-style: italic;
+        text-align: right;
+    }
+
+    .legend {
+        width: 60px;
+        /*height: 30px;*/
+        opacity: .6;
+        float: left;
+    }
+
+    label,
+    .legend-text {
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 7px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    .fieldset {
+        padding: .75rem;
+    }
+
+    input.leaflet-control-layers-selector {
+        margin: 0;
+    }
+
+    /*label {
+        line-height: 1.45;
+    }*/
+
+    .icon-2018 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #ca0020;
+    }
+
+    .icon-2017 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #f4a582;
+    }
+
+    .icon-2016 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #f7f7f7;
+    }
+
+    .icon-2015 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #92c5de;
+    }
+
+    .icon-2014 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #0571b0;
+    }
+
+    .selector-2018,
+    .selector-2017,
+    .selector-2016,
+    .selector-2015,
+    .selector-2014 {
+        height: 12px;
+        width: 12px;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .5);
+        margin: 0 0 0 3px;
+    }
+
+    .selector-2018 {
+        background: #ca0020;
+    }
+
+    .selector-2017 {
+        background: #f4a582;
+    }
+
+    .selector-2016 {
+        background: #f7f7f7;
+    }
+
+    .selector-2015 {
+        background: #92c5de;
+    }
+
+    .selector-2014 {
+        background: #0571b0;
+    }
+
+    a.leaflet-control-layers-toggle {
+        background-color: red;
+    }
+
+    .leaflet-control-layers .leaflet-control-layers-list {
+        display: inline-block;
+    }
+
+    .leaflet-control-layers {
+        box-shadow: none;
+        background: #fafafa;
+        border-radius: 0;
+    }
+
+    .leaflet-control-layers-toggle {
+        /*width: 0;
+        height: 0;*/
+        display: none;
+    }
+
+    .leaflet-control-layers-expanded {
+        padding: 0;
+    }
+
+    .leaflet-control-layers label {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .leaflet-control-layers-base {
+        display: none;
+    }
+
+    .leaflet-control-layers-separator {
+        display: none;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table thead {
+        background-color: #fafafa;
+        padding-bottom: 0;
+    }
+
+    table thead th {
+        border-bottom: 2px solid silver;
+        padding-bottom: 0;
+        color: rgba(0, 0, 0, .6);
+        font-weight: normal;
+    }
+
+    table tbody td {
+        padding: 2px 0 4px 12px;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    table tr {
+        border-bottom: 1px solid silver;
+        border-top: 1px solid #fafafa;
+        border-left: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+    }
+
+    table tr:last-child {
+        border: 1px solid #fafafa;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background-color: #fafafa;
+    }
+
+    table tbody tr:nth-child(1n) {
+        background-color: #fafafa;
+    }
+
+    .tooltip-note {
+        font-size: .9em;
+        font-style: italic;
+        margin-top: -5px !important;
+        color: rgba(0, 0, 0, .6);
+    }
+
+    .raw {
+        font-size: .75rem;
+        color: rgba(0, 0, 0, .4);
+        font-style: italic;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Title and title and title</h2>
+        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter.</p>
+        <div class="row">
+            <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
+                <p class="instructions">Zoom map and click ZIP codes for details &bull; darker colors indicate completed projects &bull; circle size represents number of units &bull; neighborhood boundaries are shown in gray &mdash; click for name</p>
+            </div>
+        </div>
+        <fieldset class="fieldset">
+            <legend><strong><em>Choose a map</em></strong></legend>
+            <div id="layer-control"></div>
+        </fieldset>
+        <!-- <div style="margin: 10px 0 10px 0;overflow:hidden;" id="legend">
+            <p>Population change</p>
+            <div class="legend" style="background-color:#de77ae;">
+                <p class="legend-text" style="color:#000;">-14%</p>
+            </div>
+            <div class="legend" style="background-color:#4d9221;">
+                <p class="legend-text" style="color:#000;">178%</p>
+            </div>
+        </div> -->
+        <div id="map"></div>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: ???</p>
+    </div> <!-- End "container" -->
+    <script>
+    var underwater = new L.LayerGroup();
+    var populationChange = new L.LayerGroup();
+    var renterPct = new L.LayerGroup();
+
+    var basemaps = {
+        One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+subdomains: 'abcd',
+minZoom: 0,
+maxZoom: 20,
+ext: 'png'
+}),
+        Two: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        })
+    };
+
+    // Overlay layers are grouped
+    var groupedOverlays = {
+        "Map:": {
+            // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": populationChange,
+            "Population change <span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwater,
+            "Pct Renter Occupied  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": renterPct
+        }
+    };
+
+    var options = {
+        // Make the "Landmarks" group exclusive (use radio inputs)
+        exclusiveGroups: ["Map:"]
+        // Show a checkbox next to non-exclusive group labels for toggling all
+        //groupCheckboxes: true
+    };
+
+
+    var map = L.map('map', {
+        center: [39.00, -105.53],
+        zoom: 7,
+        //minZoom: 11,
+        layers: [basemaps.One, populationChange]
+        //preferCanvas: true
+    }); //.addLayer(cartoTiles);
+
+    $.getJSON("underwater-mortgages.geojson", function(data) {
+
+        /***** POPULATION CHANGE MAP *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var zipCode = feature.properties.GEOID10,
+                    city = feature.properties.city,
+                    equity2018 = feature.properties.equityRichQ42018,
+                    equity2017 = feature.properties.equityRichQ42017,
+                    equityPct2018 = (feature.properties.equityRichQ42018Pct * 100),
+                    equityPct2017 = (feature.properties.equityRichQ42017Pct * 100),
+                    underwater2018 = feature.properties.underwaterQ42018,
+                    underwater2017 = feature.properties.underwaterQ42017,
+                    underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
+                    underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
+                    housingUnits = feature.properties.housingUnits,
+                    population = feature.properties.population;
+
+                var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
+                    equityChange = (((equity2018 - equity2017) / equity2017) * 100);
+
+                var fillColor,
+                    underwaterPct = underwaterPct2018;
+                if (underwaterPct > 10) fillColor = "#e66101";
+                else if (underwaterPct > 6) fillColor = "#fdb863";
+                else if (underwaterPct > 4) fillColor = "#b2b2b2";
+                else if (underwaterPct > 2) fillColor = "#b2abd2";
+                else if (underwaterPct > 0) fillColor = "#5e3c99";
+                else fillColor = "rgba(0,0,0,.01)"; // no data
+                return {
+                    color: "#000",
+                    weight: .5,
+                    fillColor: fillColor,
+                    fillOpacity: .7
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var zipCode = feature.properties.GEOID10,
+                    city = feature.properties.city,
+                    equity2018 = feature.properties.equityRichQ42018,
+                    equity2017 = feature.properties.equityRichQ42017,
+                    equityPct2018 = (feature.properties.equityRichQ42018Pct * 100),
+                    equityPct2017 = (feature.properties.equityRichQ42017Pct * 100),
+                    underwater2018 = feature.properties.underwaterQ42018,
+                    underwater2017 = feature.properties.underwaterQ42017,
+                    underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
+                    underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
+                    housingUnits = feature.properties.housingUnits,
+                    population = feature.properties.population;
+
+                var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
+                    equityChange = (((equity2018 - equity2017) / equity2017) * 100);
+
+                function changeColor(x) {
+                    if (x < 0) {
+                        return 'red'
+                    } else {
+                        return 'green'
+                    }
+                }
+
+                var tooltipData;
+                if (city != null) {
+                    tooltipData = '<h4 class="neighborhood">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Under water</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table>'
+                } else {
+                    tooltipData = 'No data'
+                }
+
+                layer.bindPopup(
+                    tooltipData
+                )
+            }
+        }).addTo(populationChange);
+
+        /***** RENTER PCT MAP *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var rentPct2017 = ((feature.properties.tract_2017renterOccupied / feature.properties.tract_2017totalHousing) * 100);
+                var rentPct2011 = ((feature.properties.tract_2011renterOccupied / feature.properties.tract_2011totalHousing) * 100);
+                var rentChange = (rentPct2017 - rentPct2011);
+
+                var fillColor,
+                    density = feature.properties.housingUnits;
+                if (density > 100) fillColor = "red";
+                else if (density > 50) fillColor = "#7fbc41";
+                else if (density > 25) fillColor = "#b8e186";
+                else if (density > 0) fillColor = "#e6f5d0";
+                else if (density > -10) fillColor = "#fde0ef";
+                else if (density < -10) fillColor = "#de77ae";
+                else fillColor = "rgba(0,0,0,0"; // no data
+                return {
+                    color: "#000",
+                    weight: .3,
+                    fillColor: fillColor,
+                    fillOpacity: .7
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var pctChange = (((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100);
+                var popChange = (feature.properties.tract_pop2017 - feature.properties.tract_pop2011);
+                var popPct2017 = (feature.properties.tract_popPct2017 * 100);
+                var popPct2011 = (feature.properties.tract_popPct2011 * 100);
+                var popPctChange = (popPct2017 - popPct2011);
+
+                var popChangeColor;
+                if (pctChange < 0) {
+                    popChangeColor = 'red'
+                } else {
+                    popChangeColor = 'green'
+                };
+                var popPctChangeColor;
+                if (popPctChange < 0) {
+                    popPctChangeColor = 'red'
+                } else {
+                    popPctChangeColor = 'green'
+                };
+
+                layer.bindPopup(
+                    '<h4 class="neighborhood">' + feature.properties.GEOID10
+                )
+            }
+        }).addTo(renterPct);
+    });
+
+    // $.getJSON("denver-neighborhoods-simple.geojson", function(data) {
+    //     L.geoJson(data, {
+    //         style: {
+    //             color: "#000",
+    //             weight: 3,
+    //             fillColor: "#000",
+    //             fillOpacity: 0
+    //         },
+    //         onEachFeature: function(feature, layer) {
+    //             layer.bindPopup(
+    //                     '<h4 class="popup-header">' + feature.properties.NBHD_NAME
+    //                 ),
+    //                 layer.on({
+    //                     'add': function() {
+    //                         layer.bringToBack()
+    //                     }
+    //                 })
+    //         }
+    //     }).addTo(map);
+    // });
+
+    //L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+    var layerControl = L.control.groupedLayers(basemaps, groupedOverlays, options);
+    map.addControl(layerControl);
+
+    // Call the getContainer routine.
+    var htmlObject = layerControl.getContainer();
+    // Get the desired parent node.
+    var a = document.getElementById('layer-control');
+
+    // Finally append that node to the new parent.
+    function setParent(el, newParent) {
+        newParent.appendChild(el);
+    }
+    setParent(htmlObject, a);
+    </script>
+</body>
+
+</html>
