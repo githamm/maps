@@ -397,17 +397,20 @@
 
     // Overlay layers are grouped
     var groupedOverlays = {
-        "Map:": {
+        "": {
             // "Population change<div style='margin: 10px 0 10px 0;overflow:hidden;'><div class='legend' style='background-color:#de77ae;'><p class='legend-text' style='color:#000;'>-14%</p></div><div class='legend' style='background-color:#4d9221;'><p class='legend-text' style='color:#000;'>178%</p></div></div>": underwaterPct,
-            "Pct underwater<br><span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwaterPct,
-            "Pct equity rich  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": equityRichPct,
-            "Underwater-equity rich difference <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": underwaterEquityDiff
+            // "Pct underwater<br><span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwaterPct,
+            // "Pct equity rich  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": equityRichPct,
+            // "Underwater-equity rich difference <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": underwaterEquityDiff
+            'Pct underwater<br><span style="background-color:#5e3c99;opacity:.6;padding:5px 10px 5px 11px;color:#000;">-14%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">2-6%</span><span style="background-color:#e66101;opacity:.6;padding:5px;color:#000">+178%</span>': underwaterPct,
+            'Pct equity rich<br><span style="background-color:#e66101;opacity:.6;padding:5px 10px 5px 11px;color:#000;">-14%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">20-30%</span><span style="background-color:#5e3c99;opacity:.6;padding:5px;color:#000">+178%</span>': equityRichPct,
+            'Equity spread<br><span style="background-color:#e66101;opacity:.6;padding:5px 10px 5px 11px;color:#000;">-14%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">20-30</span><span style="background-color:#5e3c99;opacity:.6;padding:5px;color:#000">+178%</span>': underwaterEquityDiff
         }
     };
 
     var options = {
         // Make the "Landmarks" group exclusive (use radio inputs)
-        exclusiveGroups: ["Map:"]
+        exclusiveGroups: [""]
         // Show a checkbox next to non-exclusive group labels for toggling all
         //groupCheckboxes: true
     };
