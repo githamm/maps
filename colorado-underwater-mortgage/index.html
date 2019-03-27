@@ -329,12 +329,12 @@
         font-size: .7rem;
         color: rgba(0, 0, 0, .6);
         text-align: left;
-        margin-bottom: 0 !important;
+        margin: 50px 0 0 0 !important;
     }
 
     .tooltip-div {
         float: left;
-        width: 33%;
+        width: 50%;
     }
 
     .tooltip-div-container {
@@ -402,9 +402,9 @@
             // "Pct underwater<br><span style='background-color:#de77ae;opacity:.6;padding:5px 10px 5px 11px;color:#000;'>-14%</span><span style='background-color:#4d9221;opacity:.6;padding:5px;color:#000'>+178%</span>": underwaterPct,
             // "Pct equity rich  <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": equityRichPct,
             // "Underwater-equity rich difference <span style='background-color:#ffffcc;opacity:.6;padding:5px 15px 5px 15px;color:#000;'>8%</span><span style='background-color:#253494;opacity:.6;padding:5px;color:#000'>100%</span>": underwaterEquityDiff
-            'Pct underwater<br><span style="background-color:#5e3c99;opacity:.6;padding:5px 10px 5px 11px;color:#000;">1%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">2-6%</span><span style="background-color:#e66101;opacity:.6;padding:5px;color:#000">20%</span>': underwaterPct,
-            'Pct equity rich<br><span style="background-color:#e66101;opacity:.6;padding:5px 10px 5px 11px;color:#000;">6%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">20-30%</span><span style="background-color:#5e3c99;opacity:.6;padding:5px;color:#000">59%</span>': equityRichPct,
-            'Equity spread<br><span style="background-color:#e66101;opacity:.6;padding:5px 10px 5px 11px;color:#000;">4%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">20-30%</span><span style="background-color:#5e3c99;opacity:.6;padding:5px;color:#000">58%</span>': underwaterEquityDiff
+            'Pct underwater<br><span style="background-color:#5e3c99;opacity:.6;padding:5px 10px 5px 11px;color:#000;">&lt;2%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">4-6%</span><span style="background-color:#e66101;opacity:.6;padding:5px;color:#000">10-23%</span>': underwaterPct,
+            'Pct equity rich<br><span style="background-color:#e66101;opacity:.6;padding:5px 10px 5px 11px;color:#000;">&lt;10%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">20-30%</span><span style="background-color:#5e3c99;opacity:.6;padding:5px;color:#000">40-59%</span>': equityRichPct,
+            'Equity spread<br><span style="background-color:#e66101;opacity:.6;padding:5px 10px 5px 11px;color:#000;">&lt;10%</span><span style="background-color:#b2b2b2;opacity:.6;padding:5px 10px 5px 11px;color:#000;">20-30%</span><span style="background-color:#5e3c99;opacity:.6;padding:5px;color:#000">40-58%</span>': underwaterEquityDiff
         }
     };
 
@@ -424,7 +424,7 @@
         //preferCanvas: true
     }); //.addLayer(cartoTiles);
 
-    $.getJSON("underwater-mortgages.geojson", function(data) {
+    $.getJSON("underwater-mortgages-updated.geojson", function(data) {
 
         /***** UNDERWATER PCT MAP *****/
         L.geoJson(data, {
@@ -474,7 +474,7 @@
                     underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
                     underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
                     housingUnits = feature.properties.housingUnits,
-                    loans2018 = feature.properties.totalLoansQ42018,
+                    //loans2018 = feature.properties.totalLoansQ42018,
                     population = feature.properties.population;
 
                 var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
@@ -492,7 +492,7 @@
                 
                 var tooltipData;
                 if (city != null) {
-                    tooltipData = '<h4 class="tooltip-header">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div class="tooltip-div-container">' + '<div><strong>Equity spread*: ' + underwaterEquityDiff.toFixed(1) + '</strong></div><hr style="margin:8px 0 8px 0"><div class="tooltip-div">Population<br>' + population.toLocaleString() + '</div><div class="tooltip-div">Housing units<br>' + housingUnits.toLocaleString() + '</div><div class="tooltip-div" style="margin-bottom:10px">Loans<br>' + loans2018.toLocaleString() + '</div><p class="equity-spread-note">*Equity spread is the difference between the percentage of homeowners who are equity rich and those who are underwater in 2018</p></div>'
+                    tooltipData = '<h4 class="tooltip-header">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div class="tooltip-div-container">' + '<div><strong>Equity spread*: ' + underwaterEquityDiff.toFixed(1) + '</strong></div><hr style="margin:8px 0 8px 0"><div class="tooltip-div">Population<br>' + population.toLocaleString() + '</div><div class="tooltip-div">Housing units<br>' + housingUnits.toLocaleString() + '</div><p class="equity-spread-note">*Equity spread is the difference between the percentage of homeowners who are equity rich and those who are underwater in 2018</p></div>'
                 } else {
                     tooltipData = 'No data'
                 }
@@ -551,7 +551,7 @@
                     underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
                     underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
                     housingUnits = feature.properties.housingUnits,
-                    loans2018 = feature.properties.totalLoansQ42018,
+                    //loans2018 = feature.properties.totalLoansQ42018,
                     population = feature.properties.population;
 
                 var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
@@ -569,7 +569,7 @@
                 
                 var tooltipData;
                 if (city != null) {
-                    tooltipData = '<h4 class="tooltip-header">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div class="tooltip-div-container">' + '<div><strong>Equity spread*: ' + underwaterEquityDiff.toFixed(1) + '</strong></div><hr style="margin:8px 0 8px 0"><div class="tooltip-div">Population<br>' + population.toLocaleString() + '</div><div class="tooltip-div">Housing units<br>' + housingUnits.toLocaleString() + '</div><div class="tooltip-div" style="margin-bottom:10px">Loans<br>' + loans2018.toLocaleString() + '</div><p class="equity-spread-note">*Equity spread is the difference between the percentage of homeowners who are equity rich and those who are underwater in 2018</p></div>'
+                    tooltipData = '<h4 class="tooltip-header">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div class="tooltip-div-container">' + '<div><strong>Equity spread*: ' + underwaterEquityDiff.toFixed(1) + '</strong></div><hr style="margin:8px 0 8px 0"><div class="tooltip-div">Population<br>' + population.toLocaleString() + '</div><div class="tooltip-div">Housing units<br>' + housingUnits.toLocaleString() + '</div><p class="equity-spread-note">*Equity spread is the difference between the percentage of homeowners who are equity rich and those who are underwater in 2018</p></div>'
                 } else {
                     tooltipData = 'No data'
                 }
@@ -608,6 +608,7 @@
                 else if (underwaterEquity > 20) fillColor = "#b2b2b2";
                 else if (underwaterEquity > 10) fillColor = "#fdb863";
                 else if (underwaterEquity > 0) fillColor = "#e66101";
+                else if (underwaterEquity < 0) fillColor = "#e66101";
                 else fillColor = "rgba(0,0,0,.01)"; // no data
                 return {
                     color: "#000",
@@ -628,7 +629,7 @@
                     underwaterPct2018 = (feature.properties.underwaterQ42018Pct * 100),
                     underwaterPct2017 = (feature.properties.underwaterQ42017Pct * 100),
                     housingUnits = feature.properties.housingUnits,
-                    loans2018 = feature.properties.totalLoansQ42018,
+                    //loans2018 = feature.properties.totalLoansQ42018,
                     population = feature.properties.population;
 
                 var underwaterChange = (((underwater2018 - underwater2017) / underwater2017) * 100),
@@ -646,7 +647,7 @@
                 
                 var tooltipData;
                 if (city != null) {
-                    tooltipData = '<h4 class="tooltip-header">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div class="tooltip-div-container">' + '<div><strong>Equity spread*: ' + underwaterEquityDiff.toFixed(1) + '</strong></div><hr style="margin:8px 0 8px 0"><div class="tooltip-div">Population<br>' + population.toLocaleString() + '</div><div class="tooltip-div">Housing units<br>' + housingUnits.toLocaleString() + '</div><div class="tooltip-div" style="margin-bottom:10px">Loans<br>' + loans2018.toLocaleString() + '</div><p class="equity-spread-note">*Equity spread is the difference between the percentage of homeowners who are equity rich and those who are underwater in 2018</p></div>'
+                    tooltipData = '<h4 class="tooltip-header">' + city + ' ' + zipCode + '</h4><table><thead><th></th><th>2017</th><th>2018</th><th>Change</thead>' + '<tr><td style="font-weight:normal">Underwater</td><td>' + underwaterPct2017.toLocaleString() + '%<br><span class="raw">' + underwater2017.toLocaleString() + '</span></td><td>' + underwaterPct2018.toFixed(1) + '%<br><span class="raw">' + underwater2018.toLocaleString() + '</span></td><td style="color:' + changeColor(underwaterChange) + '">' + Math.round(underwaterChange) + '%</td></tr><tr><td style="font-weight:normal">Equity rich</td><td>' + equityPct2017.toFixed(1) + '%<br><span class="raw">' + equity2017.toLocaleString() + '</span></td><td>' + equityPct2018.toFixed(1) + '%<br><span class="raw">' + equity2018.toLocaleString() + '</span></td><td style="color:' + changeColor(equityChange) + '">' + Math.round(equityChange) + '%</td></tr></table><div class="tooltip-div-container">' + '<div><strong>Equity spread*: ' + underwaterEquityDiff.toFixed(1) + '</strong></div><hr style="margin:8px 0 8px 0"><div class="tooltip-div">Population<br>' + population.toLocaleString() + '</div><div class="tooltip-div">Housing units<br>' + housingUnits.toLocaleString() + '</div><p class="equity-spread-note">*Equity spread is the difference between the percentage of homeowners who are equity rich and those who are underwater in 2018</p></div>'
                 } else {
                     tooltipData = 'No data'
                 }
