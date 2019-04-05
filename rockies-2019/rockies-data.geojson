@@ -172,7 +172,11 @@
         "twitter": "@ddahl21",
         "mlbDebut": "Jul 25, 2016",
         "college": "n/a",
+<<<<<<< HEAD
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/dahl-crop.jpg"
+=======
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/wade-davis.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -341,12 +345,21 @@
         "statUrl": "https://www.mlb.com/player/pat-valaika-642162",
         "hometown": "Valencia, California",
         "country": "USA",
+<<<<<<< HEAD
         "nickname": "Barrels",
         "draft": "2013, 9th round (Rockies)",
         "twitter": "n/a",
         "mlbDebut": "Sep 6, 2016",
         "college": "UCLA",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/valaika-crop.jpg"
+=======
+        "nickname": "",
+        "draft": "2015, 15th round (Rockies)",
+        "twitter": "@samhilliard25",
+        "mlbDebut": "n/a",
+        "college": "Wichita State",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126325880.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -362,6 +375,7 @@
         "number": "55",
         "name": "Jon Gray",
         "batThrow": "R/R",
+<<<<<<< HEAD
         "height": "6'4\"",
         "weight": "235",
         "birthDate": "Nov 5, 1991",
@@ -376,6 +390,22 @@
         "mlbDebut": "Aug 4, 2015",
         "college": "Oklahoma",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/gray-crop.jpg"
+=======
+        "height": "6'2\"",
+        "weight": "190",
+        "birthDate": "Feb 28, 1994",
+        "age": "25",
+        "position": "Outfield",
+        "statUrl": "https://www.mlb.com/player/yonathan-daza-602074",
+        "hometown": "Maracay, Venezuela",
+        "country": "Venezuela",
+        "nickname": "",
+        "draft": "2010, free agent (Rockies)",
+        "twitter": "@yonathandaza94",
+        "mlbDebut": "n/a",
+        "college": "n/a",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329256.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -404,7 +434,11 @@
         "twitter": "@Tstory2",
         "mlbDebut": "Apr 4, 2016",
         "college": "n/a",
+<<<<<<< HEAD
         "image": "https://www.denverpost.com/wp-content/uploads/2019/03/rox-portraits_JAC6053x_1.jpg"
+=======
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/raimel-tapia.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -421,6 +455,7 @@
         "name": "Kyle Freeland",
         "batThrow": "L/L",
         "height": "6'3\"",
+<<<<<<< HEAD
         "weight": "170",
         "birthDate": "May 14, 1993",
         "age": "25",
@@ -434,6 +469,21 @@
         "mlbDebut": "Apr 7, 2017",
         "college": "Evansville",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/03/rox-portraits_JAC6085x.jpg"
+=======
+        "weight": "175",
+        "birthDate": "Oct 18, 1990",
+        "age": "28",
+        "position": "Pitcher",
+        "statUrl": "https://www.mlb.com/player/rayan-gonzalez-543234",
+        "hometown": "Arecibo, Puerto Rico",
+        "country": "Puerto Rico",
+        "nickname": "",
+        "draft": "2012, 21st round (Rockies)",
+        "twitter": "@Gonzo_Rayan",
+        "mlbDebut": "n/a",
+        "college": "Bethune-Cookman",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-645348286.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -460,9 +510,15 @@
         "nickname": "The Stone Buddha/Final Boss",
         "draft": "2005, 2nd round (Samsung Lions)",
         "twitter": "n/a",
+<<<<<<< HEAD
         "mlbDebut": "Apr 3, 2016",
         "college": "Dankook University",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/oh-crop.jpg"
+=======
+        "mlbDebut": "n/a",
+        "college": "Daytona JC",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329284.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -486,12 +542,21 @@
         "statUrl": "https://www.mlb.com/player/jeff-hoffman-656546",
         "hometown": "Latham, New York",
         "country": "USA",
+<<<<<<< HEAD
         "nickname": "Hoff",
         "draft": "2014, 1st round (Blue Jays)",
         "twitter": "@hoff_23",
         "mlbDebut": "Aug 20, 2016",
         "college": "East Carolina",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/hoffman-crop.jpg"
+=======
+        "nickname": "Showtime",
+        "draft": "2012, 17th round (Dodgers)",
+        "twitter": "@showtimealmonte",
+        "mlbDebut": "Jun 21, 2018",
+        "college": "n/a",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329327.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -515,12 +580,21 @@
         "statUrl": "https://www.mlb.com/player/charlie-blackmon-453568",
         "hometown": "Dallas, Texas",
         "country": "USA",
+<<<<<<< HEAD
         "nickname": "Chuck Nazty",
         "draft": "2008, 2nd round (Rockies)",
         "twitter": "@Chuck_Nazty",
         "mlbDebut": "Jun 7, 2011",
         "college": "Georgia Tech",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/blackmon-crop.jpg"
+=======
+        "nickname": "",
+        "draft": "2014, 2nd round (Rockies)",
+        "twitter": "n/a",
+        "mlbDebut": "n/a",
+        "college": "n/a",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329218.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -549,7 +623,11 @@
         "twitter": "n/a",
         "mlbDebut": "Apr 28, 2013",
         "college": "n/a",
+<<<<<<< HEAD
         "image": "https://www.denverpost.com/wp-content/uploads/2019/03/rox-portraits_JAC6194x_1.jpg"
+=======
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329273.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -624,6 +702,7 @@
         "name": "DJ Johnson",
         "batThrow": "L/R",
         "height": "6'4\"",
+<<<<<<< HEAD
         "weight": "235",
         "birthDate": "Aug 30, 1989",
         "age": "29",
@@ -637,6 +716,21 @@
         "mlbDebut": "Sep 9, 2018",
         "college": "Western Oregon",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/dj-johnson.jpg"
+=======
+        "weight": "210",
+        "birthDate": "Dec 28, 1992",
+        "age": "26",
+        "position": "Pitchers",
+        "statUrl": "https://www.mlb.com/player/carlos-estevez-608032",
+        "hometown": "Santo Domingo, Dominican Republic",
+        "country": "Dominican Republic",
+        "nickname": "Este",
+        "draft": "2011, free agent (Rockies)",
+        "twitter": "@carlosestevez28",
+        "mlbDebut": "Apr 23, 2016",
+        "college": "n/a",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329549.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -689,12 +783,21 @@
         "statUrl": "https://www.mlb.com/player/sam-hilliard-656541?stats=career-r-hitting-minors&year=2019",
         "hometown": "Mansfield, Texas",
         "country": "USA",
+<<<<<<< HEAD
         "nickname": "",
         "draft": "2015, 15th round (Rockies)",
         "twitter": "@samhilliard25",
         "mlbDebut": "n/a",
         "college": "Wichita State",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126325880.jpg"
+=======
+        "nickname": "Obie",
+        "draft": "2012, 15th round (Rockies)",
+        "twitter": "n/a",
+        "mlbDebut": "Apr 14, 2015",
+        "college": "Connecticut",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/scott-oberg.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -765,6 +868,7 @@
         ]
       },
       "properties": {
+<<<<<<< HEAD
         "number": "32",
         "name": "Jesus Tinoco",
         "batThrow": "R/R",
@@ -782,6 +886,25 @@
         "mlbDebut": "n/a",
         "college": "n/a",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329273.jpg"
+=======
+        "number": "52",
+        "name": "Chris Rusin",
+        "batThrow": "L/L",
+        "height": "6'2\"",
+        "weight": "195",
+        "birthDate": "Oct 22, 1986",
+        "age": "32",
+        "position": "Relief pitcher",
+        "statUrl": "https://www.mlb.com/player/chris-rusin-543734",
+        "hometown": "Detroit, Michigan",
+        "country": "USA",
+        "nickname": "Russ",
+        "draft": "2009, 4th round (Cubs)",
+        "twitter": "@C_RusIn",
+        "mlbDebut": "Aug 21, 2012",
+        "college": "Kentucky",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/chris-rusin.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -799,6 +922,7 @@
         "batThrow": "R/R",
         "height": "6'3\"",
         "weight": "220",
+<<<<<<< HEAD
         "birthDate": "Nov 25, 1994",
         "age": "24",
         "position": "Pitcher",
@@ -811,6 +935,20 @@
         "mlbDebut": "n/a",
         "college": "Daytona JC",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329284.jpg"
+=======
+        "birthDate": "Nov 8, 1987",
+        "age": "31",
+        "position": "Relief pitcher",
+        "statUrl": "https://www.mlb.com/player/bryan-shaw-543766",
+        "hometown": "Livermore, California",
+        "country": "USA",
+        "nickname": "Geek",
+        "draft": "2008, 2nd round (Diamondbacks)",
+        "twitter": "@BryanShaw37",
+        "mlbDebut": "Jun 10, 2011",
+        "college": "Long Beach State",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/bryan-shaw.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -840,6 +978,38 @@
         "mlbDebut": "Apr 23, 2018",
         "college": "West Virginia",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329313.jpg"
+<<<<<<< HEAD
+=======
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.801331,
+          45.4888
+        ]
+      },
+      "properties": {
+        "number": "63",
+        "name": "DJ Johnson",
+        "batThrow": "L/R",
+        "height": "6'4\"",
+        "weight": "235",
+        "birthDate": "Aug 30, 1989",
+        "age": "29",
+        "position": "Relief pitcher",
+        "statUrl": "https://www.mlb.com/player/dj-johnson-597113",
+        "hometown": "Beaverton, Oregon",
+        "country": "USA",
+        "nickname": "",
+        "draft": "2010, free agent (Rays)",
+        "twitter": "n/a",
+        "mlbDebut": "Sep 9, 2018",
+        "college": "Western Oregon",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/dj-johnson.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -868,7 +1038,11 @@
         "twitter": "@showtimealmonte",
         "mlbDebut": "Jun 21, 2018",
         "college": "n/a",
+<<<<<<< HEAD
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1126329327.jpg"
+=======
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/GettyImages-1132310275.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {
@@ -1072,6 +1246,96 @@
         "mlbDebut": "Jun 12, 2016",
         "college": "Oregon",
         "image": "https://www.denverpost.com/wp-content/uploads/2019/04/tyler-anderson.jpg"
+<<<<<<< HEAD
+=======
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.85511,
+          33.58358
+        ]
+      },
+      "properties": {
+        "number": "35",
+        "name": "Chad Bettis",
+        "batThrow": "R/R",
+        "height": "6'1\"",
+        "weight": "200",
+        "birthDate": "Apr 26, 1989",
+        "age": "29",
+        "position": "Starting pitcher",
+        "statUrl": "https://www.mlb.com/player/chad-bettis-518452",
+        "hometown": "Lubbock, Texas",
+        "country": "USA",
+        "nickname": "Lettuce",
+        "draft": "2010, 2nd round (Rockies)",
+        "twitter": "@cbettis35",
+        "mlbDebut": "Aug 1, 2013",
+        "college": "Texas Tech",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/03/rox-portraits_JAC5725x.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.65541,
+          9.9573
+        ]
+      },
+      "properties": {
+        "number": "48",
+        "name": "German Marquez",
+        "batThrow": "R/R",
+        "height": "6'1\"",
+        "weight": "185",
+        "birthDate": "Feb 22, 1995",
+        "age": "24",
+        "position": "Starting pitcher",
+        "statUrl": "https://www.mlb.com/player/german-marquez-608566",
+        "hometown": "San Felix, Venezuela",
+        "country": "Venezuela",
+        "nickname": "Marquee",
+        "draft": "2011, free agent (Rays)",
+        "twitter": "@germanmarquez5",
+        "mlbDebut": "Sep 8, 2016",
+        "college": "n/a",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/03/rox-portraits_JAC5978x_1.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.586168,
+          36.531544
+        ]
+      },
+      "properties": {
+        "number": "68",
+        "name": "Josh Fuentes",
+        "batThrow": "R/R",
+        "height": "6'2\"",
+        "weight": "215",
+        "birthDate": "Feb 19, 1993",
+        "age": "26",
+        "position": "Third base",
+        "statUrl": "https://www.mlb.com/player/josh-fuentes-658069?stats=career-r-hitting-minors&year=2018",
+        "hometown": "Rancho Santo Margarita, California",
+        "country": "USA",
+        "nickname": "",
+        "draft": "2014, free agent (Rockies)",
+        "twitter": "n/a",
+        "mlbDebut": "n/a",
+        "college": "Missouri Baptist",
+        "image": "https://www.denverpost.com/wp-content/uploads/2019/04/josh-fuentes.jpg"
+>>>>>>> 9d34f4bcc10a823253603b8d697ee0768d15f503
       }
     },
     {

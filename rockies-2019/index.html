@@ -29,13 +29,13 @@
     }
 
     #container {
-        height: 600px;
+        /*height: 600px;
         width: 893px;
-        margin: 0 auto;
+        margin: 0 auto;*/
     }
 
     #map {
-        height: 600px;
+        height: 650px;
         width: 100%;
         /*width: 893px;
         height: 600px;
@@ -73,7 +73,7 @@
     }
 
     .photo {
-        border: 1px solid rgba(0,0,0,.5);
+        border: 1px solid rgba(0, 0, 0, .5);
     }
 
     h2 {
@@ -104,22 +104,22 @@
     }
 
     .bio-stats {
-      color: rgba(0,0,0,.6);
-      font-size: .7rem;
-      text-align: center;
+        color: rgba(0, 0, 0, .6);
+        font-size: .7rem;
+        text-align: center;
     }
 
     .stat-info {
-      font-size: .8rem;
-      line-height: 145%;
+        font-size: .8rem;
+        line-height: 145%;
     }
 
     .more-stats {
-      font-size: .7rem;
-      font-style: italic;
-      text-transform: uppercase;
-      text-align: right;
-      margin-top: -6px !important;
+        font-size: .7rem;
+        font-style: italic;
+        text-transform: uppercase;
+        text-align: right;
+        margin-top: -6px !important;
     }
 
     .neighborhood {
@@ -298,14 +298,10 @@
 
 <body>
     <div id="container">
-        <h2>Title and title and title</h2>
-        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <strong><em>Zoom and click map markers for details.</em></strong></p>
         <div id="map"></div>
         <script>
-        // initialize the map
         var map = L.map('map').setView([29.8283, -93.5795], 4);
 
-        // load a tile layer
         L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
             attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             subdomains: 'abcd',
@@ -314,7 +310,6 @@
             ext: 'png'
         }).addTo(map);
 
-        // load GeoJSON from an external file
         $.getJSON("rockies-data.geojson", function(data) {
             var mapIcon = L.icon({
                 iconUrl: 'https://img.icons8.com/color/48/000000/marker.png',
@@ -322,7 +317,7 @@
             });
             L.geoJson(data, {
                 pointToLayer: function(feature, latlng) {
-                    var popupText = '<h2 class="nickname">' + feature.properties.nickname + '</h2><img class="photo" src="' + feature.properties.image + '?w=250">' + '<p class="name">#' + feature.properties.number + ' ' + feature.properties.name + '</p><p class="position">' + feature.properties.position + '</p><hr><p class="bio-stats">' + feature.properties.height + ' &bull; ' + feature.properties.weight + ' lbs &bull; ' + feature.properties.age + ' yrs old</p><p class="stat-info">Drafted: <strong>' + feature.properties.draft + '</strong><br>MLB debut: <strong>' + feature.properties.mlbDebut + '</strong><br>Hometown: <strong>' + feature.properties.hometown + '</strong><br>Twitter: <a href="https://twitter.com/' + feature.properties.twitter + '" target="_blank">' + feature.properties.twitter + '</a></p><p class="more-stats"><a href="' + feature.properties.statUrl + '" target="_blank">more stats</a></p>';
+                    var popupText = '<h2 class="nickname">' + feature.properties.nickname + '</h2><img class="photo" src="' + feature.properties.image + '?w=250">' + '<p class="name">#' + feature.properties.number + ' ' + feature.properties.name + '</p><p class="position">' + feature.properties.position + '</p><hr><p class="bio-stats">' + feature.properties.height + ' &bull; ' + feature.properties.weight + ' lbs &bull; ' + feature.properties.age + ' yrs old</p><p class="stat-info">Drafted: <strong>' + feature.properties.draft + '</strong><br>MLB debut: <strong>' + feature.properties.mlbDebut + '</strong><br>College: <strong>' + feature.properties.college + '</strong><br>Hometown: <strong>' + feature.properties.hometown + '</strong><br>Twitter: <a href="https://twitter.com/' + feature.properties.twitter + '" target="_blank">' + feature.properties.twitter + '</a></p><p class="more-stats"><a href="' + feature.properties.statUrl + '" target="_blank">more stats</a></p>';
                     var marker = L.marker(latlng, { icon: mapIcon });
                     marker.bindPopup(popupText);
                     return marker;
