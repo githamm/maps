@@ -126,12 +126,12 @@
         info.update();
     }
 
-    function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
-    }
+    // function zoomToFeature(e) {
+    //     map.fitBounds(e.target.getBounds());
+    // }
 
     function openUrl(e) {
-        window.open(e.target.feature.properties.url);
+        window.open('https://www.denverpost.com/2019/04/12/denver-city-council-district-' + e.target.feature.properties.DIST_NUM + '-candidate-questionnaire/');
     }
 
     function onEachFeature(feature, layer) {
