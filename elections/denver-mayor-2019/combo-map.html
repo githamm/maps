@@ -85,6 +85,7 @@
         font-style: italic;
         color: #ff5959;
         opacity: .8;
+        margin: -3px 0 -7px 0;
     }
 
     h2 {
@@ -273,7 +274,7 @@
             <div id="layer-control"></div>
         </fieldset>
         <div id="map"></div>
-        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: City and County of</p>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: City and County of Denver</p>
     </div> <!-- End "container" -->
     <script>
     var electionResults = new L.LayerGroup();
@@ -299,7 +300,7 @@
     // Overlay layers are grouped
     var groupedOverlays = {
         "": {
-            'Precinct winner<br><span style="background-color:#7b3294;opacity:.5;padding:5px;color:#000;">HANCOCK</span><span style="background-color:#008837;opacity:.5;padding:5px;color:#000;">GIELLIS</span><span style="background-color:#324b94;opacity:.5;padding:5px;color:#000;text-transform:uppercase">Calderón</span><span style="background-color:#947b32;opacity:.5;padding:5px;color:#000">TATE</span>': electionResults,
+            'Precinct winner<br><span style="background-color:#6a51a3;opacity:.5;padding:5px;color:#000;">HANCOCK</span><span style="background-color:#238b45;opacity:.5;padding:5px;color:#000;">GIELLIS</span><span style="background-color:#f5f500;opacity:.5;padding:5px;color:#000;text-transform:uppercase">Calderón</span><span style="background-color:#00f5f5;opacity:.5;padding:5px;color:#000">TATE</span>': electionResults,
             'Hancock strength<br><span style="background-color:#000;opacity:.6;padding:5px;color:#fff;">&lt;20%</span><span style="background-color:#ca0020;opacity:.6;padding:5px;color:#000;">20%</span><span style="background-color:#f4a582;opacity:.6;padding:5px;color:#000">30%</span><span style="background-color:#92c5de;opacity:.6;padding:5px;color:#000">40%</span><span style="background-color:#0571b0;opacity:.6;padding:5px;color:#000">&gt;50%</span>': hancockStrength,
             'Giellis strength<br><span style="background-color:#000;opacity:.6;padding:5px;color:#fff;">&lt;20%</span><span style="background-color:#ca0020;opacity:.6;padding:5px;color:#000;">20%</span><span style="background-color:#f4a582;opacity:.6;padding:5px;color:#000">30%</span><span style="background-color:#92c5de;opacity:.6;padding:5px;color:#000">40%</span><span style="background-color:#0571b0;opacity:.6;padding:5px;color:#000">&gt;50%</span>': giellisStrength,
             'Hancock-Giellis difference<br><span style="background-color:#6a51a3;opacity:.6;padding:5px;color:#000;">+50</span><span style="background-color:#9e9ac8;opacity:.6;padding:5px;color:#000;">+25</span><span style="background-color:#cbc9e2;opacity:.6;padding:5px;color:#000">+2.5</span><span style="background-color:#000;opacity:.6;padding:5px;color:#fff">+/-2.5</span><span style="background-color:#bae4b3;opacity:.6;padding:5px;color:#000">2.5+</span><span style="background-color:#74c476;opacity:.6;padding:5px;color:#000;">+25</span><span style="background-color:#238b45;opacity:.6;padding:5px;color:#000;">+50</span>': hancockGiellisDiff
@@ -319,8 +320,8 @@
         zoom: 12,
         minZoom: 11,
         maxZoom: 16,
-        layers: [basemaps.One, electionResults]
-        //preferCanvas: true
+        layers: [basemaps.One, electionResults],
+        preferCanvas: true
     }); //.addLayer(cartoTiles);
 
     $.getJSON("denver-election-results.geojson", function(data) {
@@ -484,10 +485,10 @@
                 var fillColor;
                 var fillOpacity;
 
-                if (precinctLeader == 'Michael B. Hancock') fillColor = '#7b3294';
-                else if (precinctLeader == 'Jamie Giellis') fillColor = '#008837';
-                else if (precinctLeader == 'Lisa Calderón') fillColor = '#324b94';
-                else if (precinctLeader == 'Penfield Tate') fillColor = '#947b32';
+                if (precinctLeader == 'Michael B. Hancock') fillColor = '#6a51a3';
+                else if (precinctLeader == 'Jamie Giellis') fillColor = '#238b45';
+                else if (precinctLeader == 'Lisa Calderón') fillColor = '#f5f500';
+                else if (precinctLeader == 'Penfield Tate') fillColor = '#00f5f5';
                 return {
                     color: '#000',
                     weight: 1,
