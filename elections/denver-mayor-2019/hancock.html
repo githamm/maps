@@ -118,25 +118,38 @@
 </head>
 
 <body>
-    <!-- <div style="margin: 10px 0 10px 0;overflow:hidden;float:right;" id="legend">
-        <div style="width:60px;height:30px;background-color:#0000a0;opacity:.6;float:left;">
-            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">DEM</p>
+    <div class="row">
+        <div class="large-8 large-centered columns">
+            <h2>Hancock map</h2>
         </div>
-        <div style="width:60px;height:30px;background-color:#5050f0;opacity:.6;float:left;"></div>
-        <div style="width:60px;height:30px;background-color:purple;opacity:.6;float:left;">
-            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">+/- 5%</p>
+    </div>
+    <div class="row">
+        <div class="large-8 large-centered columns">
+    <div style="margin: 10px 0 10px 0;overflow:hidden;float:right;" id="legend">
+        <div style="width:60px;height:30px;background-color:#000;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;"><20%</p>
         </div>
-        <div style="width:60px;height:30px;background-color:#f15050;opacity:.6;float:left;"></div>
-        <div style="width:60px;height:30px;background-color:#a10000;opacity:.6;float:left;">
-            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">REP</p>
+        <div style="width:60px;height:30px;background-color:#ca0020;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">20%</p>
         </div>
-    </div> -->
+        <div style="width:60px;height:30px;background-color:#f4a582;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">30%</p>
+        </div>
+        <div style="width:60px;height:30px;background-color:#92c5de;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">40%</p>
+        </div>
+        <div style="width:60px;height:30px;background-color:#0571b0;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">>50%</p>
+        </div>
+    </div>
     <div id="map"></div>
     <p class="source">Source: <a href="https://www.denvergov.org/electionresults#/results/20190507" target="_blank">City and County of Denver</a></p>
+</div>
+</div>
     <script>
     var map = L.map('map', {
-        center: [39.74, -104.89],
-        zoom: 11,
+        center: [39.71, -104.97],
+        zoom: 12,
         scrollWheelZoom: true,
         // touchZoom: true,
         keyboard: false
@@ -159,41 +172,39 @@
                 var fillColor;
                 var fillOpacity;
 
-                if (precinctLeader == 'Michael B. Hancock') fillColor = '#7b3294';
-                else if (precinctLeader == 'Jamie Giellis') fillColor = '#008837';
-                else if (precinctLeader == 'Lisa Calderón') fillColor = '#324b94';
-                else if (precinctLeader == 'Penfield Tate') fillColor = '#947b32';
+                // if (precinctLeader == 'Michael B. Hancock') fillColor = '#7b3294';
+                // else if (precinctLeader == 'Jamie Giellis') fillColor = '#008837';
+                // else if (precinctLeader == 'Lisa Calderón') fillColor = '#324b94';
+                // else if (precinctLeader == 'Penfield Tate') fillColor = '#947b32';
+                // return {
+                //     color: '#000',
+                //     weight: 1,
+                //     fillColor: fillColor,
+                //     fillOpacity: .6
+                // };
+
+                if (feature.properties.hancock > .5) fillColor = "#0571b0";
+                else if (feature.properties.hancock > .4) fillColor = "#92c5de";
+                else if (feature.properties.hancock > .3) fillColor = "#f4a582";
+                else if (feature.properties.hancock > .2) fillColor = "#ca0020";
                 return {
-                    color: '#000',
+                    color: "#000",
                     weight: 1,
                     fillColor: fillColor,
                     fillOpacity: .6
                 };
-
-                // if (Math.abs(pctDem - pctRep) <= 5) fillColor = "purple";
-                // //else if (Math.abs(repVotes - demVotes) <=5.0) fillColor = "purple";
-                // else if ((pctDem - pctRep) >= 25) fillColor = "#0000a0";
-                // else if ((pctDem - pctRep) >= 5) fillColor = "#5050f0";
-                // else if ((pctRep - pctDem) >= 25) fillColor = "#a10000";
-                // else if ((pctRep - pctDem) >= 5) fillColor = "#f15050";
-                // return {
-                //     color: "#000",
-                //     weight: 3,
-                //     fillColor: fillColor,
-                //     fillOpacity: .6
-                // };
             },
             onEachFeature: function(feature, layer) {
                 //console.log(feature);
 
-                voteArray = [];
+                // voteArray = [];
 
-                var test;
-                if (feature.properties.calderon) {
-                    test = 'Calderon: ' + feature.properties.calderon
-                };
+                // var test;
+                // if (feature.properties.calderon) {
+                //     test = 'Calderon: ' + feature.properties.calderon
+                // };
 
-                console.log(test);
+                // console.log(test);
 
 
                 //var names = Object.keys(feature.properties);
@@ -303,8 +314,21 @@
                 var tatePct = (feature.properties.tate * 100).toFixed(1);
                 var evansPct = (feature.properties.evans * 100).toFixed(1);
                 var precinct = feature.properties.precinct;
+                var writeInPct = ((feature.properties.simpson + feature.properties.scott + feature.properties.giavanni + feature.properties.fiorino) * 100).toFixed(1);
+                var winnerString;
+
+                if (feature.properties.precinctLeader == 'Jamie Giellis') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (feature.properties.precinctLeader == 'Lisa Calderón') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (feature.properties.precinctLeader == 'Penfield Tate') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr style="font-weight:bold"><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (precinct == '914') {
+                    winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+
                 layer.bindPopup(
-                    '<h4>Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>pct</th><th>rank</th></tr></thead><tr><td>Calderon</td><td>' + calderonPct + ' :: ' + test + '</td><td></td></tr>' + '<tr><td>Evans</td><td>' + evansPct + '</td><td></td></tr>' + '<tr><td>Fiorino</td><td>' + fiorinoPct + '</td><td></td></tr><tr><td>Giavanni</td><td>' + giavanniPct + '</td><td></td></tr><tr><td>Giellis</td><td>' + giellisPct + '</td><td></td></tr><tr><td>Hancock</td><td>' + hancockPct + '</td><td></td></tr><tr><td>Heffernan</td><td>' + heffernanPct + '</td><td></td></tr><tr><td>Scott</td><td>' + scottPct + '</td><td></td></tr><tr><td>Simpson</td><td>' + simpsonPct + '</td><td></td></tr><tr><td>Tate</td><td>' + tatePct + '</td><td></td></tr></table>'
+                    '<h4>Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>vote</th></tr></thead>' + winnerString + '</tr><tr><td>Heffernan</td><td>' + heffernanPct + '%</td></tr><tr><td>Evans</td><td>' + evansPct + '%</td></tr><tr><td>Write-in</td><td>' + writeInPct + '%</td></tr></table>'
                 )
             }
         }).addTo(map);
