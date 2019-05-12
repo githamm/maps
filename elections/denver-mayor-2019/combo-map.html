@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denver mayoral election 2019 | The Denver Post</title>
+    <title>Denver Mayoral Election 2019 | The Denver Post</title>
     <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
@@ -28,9 +28,9 @@
     }
 
     #container {
-        height: 600px;
+        /*height: 600px;
         width: 893px;
-        margin: 0 auto;
+        margin: 0 auto;*/
     }
 
     #map {
@@ -262,7 +262,7 @@
 <body>
     <div id="container">
         <h2>Mayoral election results by precinct</h2>
-        <p>Mayor Michael Hancock got the most votes Denver's May 7 election, but it wasn't enough to avoid a runoff. He and the second-place finisher, Jamie Giellis, will meet again on June 4. Hancock took first-place in most of the city's precincts, but Giellis took territory in east and south Denver. <em>Choose map to show where Hancock and Giellis showed strength and the margin between them.</em></p>
+        <p>Mayor Michael Hancock got the most votes Denver's May 7 election, but it wasn't enough to avoid a runoff. He and the second-place finisher, Jamie Giellis, will meet again on June 4. Hancock took first-place in most of the city's precincts, but Giellis took territory in east and south Denver. <em>Switch maps to show where Hancock and Giellis showed strength and the margin between them.</em></p>
         <div class="row">
             <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
                 <p class="instructions">Zoom map and click precincts for details; use radio buttons to switch maps</p>
@@ -273,15 +273,16 @@
             <div id="layer-control"></div>
         </fieldset>
         <div id="map"></div>
-        <p class="source">By Kevin Hamm, The Denver Post</p>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: City and County of</p>
     </div> <!-- End "container" -->
     <script>
+    var electionResults = new L.LayerGroup();
     var hancockStrength = new L.LayerGroup();
     var giellisStrength = new L.LayerGroup();
     var hancockGiellisDiff = new L.LayerGroup();
 
     var basemaps = {
-        One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+        One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
             attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             subdomains: 'abcd',
             minZoom: 0,
@@ -298,9 +299,10 @@
     // Overlay layers are grouped
     var groupedOverlays = {
         "": {
+            'Precinct winner<br><span style="background-color:#7b3294;opacity:.5;padding:5px;color:#000;">HANCOCK</span><span style="background-color:#008837;opacity:.5;padding:5px;color:#000;">GIELLIS</span><span style="background-color:#324b94;opacity:.5;padding:5px;color:#000;text-transform:uppercase">Calderón</span><span style="background-color:#947b32;opacity:.5;padding:5px;color:#000">TATE</span>': electionResults,
             'Hancock strength<br><span style="background-color:#000;opacity:.6;padding:5px;color:#fff;">&lt;20%</span><span style="background-color:#ca0020;opacity:.6;padding:5px;color:#000;">20%</span><span style="background-color:#f4a582;opacity:.6;padding:5px;color:#000">30%</span><span style="background-color:#92c5de;opacity:.6;padding:5px;color:#000">40%</span><span style="background-color:#0571b0;opacity:.6;padding:5px;color:#000">&gt;50%</span>': hancockStrength,
             'Giellis strength<br><span style="background-color:#000;opacity:.6;padding:5px;color:#fff;">&lt;20%</span><span style="background-color:#ca0020;opacity:.6;padding:5px;color:#000;">20%</span><span style="background-color:#f4a582;opacity:.6;padding:5px;color:#000">30%</span><span style="background-color:#92c5de;opacity:.6;padding:5px;color:#000">40%</span><span style="background-color:#0571b0;opacity:.6;padding:5px;color:#000">&gt;50%</span>': giellisStrength,
-            'Hancock-Giellis difference<br><span style="background-color:#6a51a3;opacity:.6;padding:5px;color:#000;">+50</span><span style="background-color:#9e9ac8;opacity:.6;padding:5px;color:#000;">+25</span><span style="background-color:#cbc9e2;opacity:.6;padding:5px;color:#000">+2.5</span><span style="background-color:#000;opacity:.6;padding:5px;color:#fff">+/-2.5</span><span style="background-color:#bae4b3;opacity:.6;padding:5px;color:#000">2.5+</span><span style="background-color:#74c476;opacity:.6;padding:5px;color:#000;">+25</span><span style="background-color:#238b45;opacity:.6;padding:5px;color:#000;">+50</span>': hancockGiellisDiff,            
+            'Hancock-Giellis difference<br><span style="background-color:#6a51a3;opacity:.6;padding:5px;color:#000;">+50</span><span style="background-color:#9e9ac8;opacity:.6;padding:5px;color:#000;">+25</span><span style="background-color:#cbc9e2;opacity:.6;padding:5px;color:#000">+2.5</span><span style="background-color:#000;opacity:.6;padding:5px;color:#fff">+/-2.5</span><span style="background-color:#bae4b3;opacity:.6;padding:5px;color:#000">2.5+</span><span style="background-color:#74c476;opacity:.6;padding:5px;color:#000;">+25</span><span style="background-color:#238b45;opacity:.6;padding:5px;color:#000;">+50</span>': hancockGiellisDiff
         }
     };
 
@@ -313,10 +315,11 @@
 
 
     var map = L.map('map', {
-        center: [39.71, -104.97],
+        center: [39.72, -104.97],
         zoom: 12,
-        //minZoom: 11,
-        layers: [basemaps.One, hancockStrength]
+        minZoom: 11,
+        maxZoom: 16,
+        layers: [basemaps.One, electionResults]
         //preferCanvas: true
     }); //.addLayer(cartoTiles);
 
@@ -473,6 +476,55 @@
                 )
             }
         }).addTo(hancockGiellisDiff);
+
+        /***** ELECTION RESULTS MAP *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var precinctLeader = feature.properties.precinctLeader;
+                var fillColor;
+                var fillOpacity;
+
+                if (precinctLeader == 'Michael B. Hancock') fillColor = '#7b3294';
+                else if (precinctLeader == 'Jamie Giellis') fillColor = '#008837';
+                else if (precinctLeader == 'Lisa Calderón') fillColor = '#324b94';
+                else if (precinctLeader == 'Penfield Tate') fillColor = '#947b32';
+                return {
+                    color: '#000',
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .5
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var giellisPct = (feature.properties.giellis * 100).toFixed(1);
+                var heffernanPct = (feature.properties.heffernan * 100).toFixed(1);
+                var simpsonPct = (feature.properties.simpson * 100).toFixed(1);
+                var scottPct = (feature.properties.scott * 100).toFixed(1);
+                var calderonPct = (feature.properties.calderon * 100).toFixed(1);
+                var giavanniPct = (feature.properties.giavanni * 100).toFixed(1);
+                var hancockPct = (feature.properties.hancock * 100).toFixed(1);
+                var fiorinoPct = (feature.properties.fiorino * 100).toFixed(1);
+                var tatePct = (feature.properties.tate * 100).toFixed(1);
+                var evansPct = (feature.properties.evans * 100).toFixed(1);
+                var precinct = feature.properties.precinct;
+                var writeInPct = ((feature.properties.simpson + feature.properties.scott + feature.properties.giavanni + feature.properties.fiorino) * 100).toFixed(1);
+                var winnerString;
+
+                if (feature.properties.precinctLeader == 'Jamie Giellis') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (feature.properties.precinctLeader == 'Lisa Calderón') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (feature.properties.precinctLeader == 'Penfield Tate') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr style="font-weight:bold"><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (precinct == '914') {
+                    winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+
+                layer.bindPopup(
+                    '<h4 class="diff-precinct">Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>vote</th></tr></thead>' + winnerString + '</tr><tr><td>Heffernan</td><td>' + heffernanPct + '%</td></tr><tr><td>Evans</td><td>' + evansPct + '%</td></tr><tr><td>Write-in</td><td>' + writeInPct + '%</td></tr></table>'
+                )
+            }
+        }).addTo(electionResults);
     });
 
     var layerControl = L.control.groupedLayers(basemaps, groupedOverlays, options);
