@@ -1,0 +1,309 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.800781,
+          39.781633
+        ]
+      },
+      "properties": {
+        "name": "Denver Connection",
+        "units": "654",
+        "status": "Active",
+        "builtOut": "24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.780074,
+          39.795302
+        ]
+      },
+      "properties": {
+        "name": "First Creek",
+        "units": "380",
+        "status": "Active",
+        "builtOut": "52"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.745642,
+          39.805405
+        ]
+      },
+      "properties": {
+        "name": "Painted Prairie",
+        "units": "3076",
+        "status": "Moving dirt",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.753398,
+          39.818996
+        ]
+      },
+      "properties": {
+        "name": "High Point",
+        "units": "1574",
+        "status": "Active",
+        "builtOut": "32"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.69498,
+          39.791356
+        ]
+      },
+      "properties": {
+        "name": "Windler Homestead",
+        "units": "1450",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.669387,
+          39.786198
+        ]
+      },
+      "properties": {
+        "name": "Sagebrush Farms",
+        "units": "1101",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.686629,
+          39.767607
+        ]
+      },
+      "properties": {
+        "name": "Aurora Highlands",
+        "units": "11700",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.621611,
+          39.710399
+        ]
+      },
+      "properties": {
+        "name": "Prosper",
+        "units": "8999",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.668633,
+          39.703506
+        ]
+      },
+      "properties": {
+        "name": "Harmony Arapahoe",
+        "units": "3008",
+        "status": "Moving dirt",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.678472,
+          39.694484
+        ]
+      },
+      "properties": {
+        "name": "Eastern Hills",
+        "units": "1740",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.706119,
+          39.689471
+        ]
+      },
+      "properties": {
+        "name": "Murphy Creek",
+        "units": "1836",
+        "status": "Active",
+        "builtOut": "65"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.701918,
+          39.700951
+        ]
+      },
+      "properties": {
+        "name": "Waterstone",
+        "units": "752",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.692261,
+          39.718795
+        ]
+      },
+      "properties": {
+        "name": "Traditions",
+        "units": "935",
+        "status": "Active",
+        "builtOut": "91"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.705073,
+          39.721283
+        ]
+      },
+      "properties": {
+        "name": "Cross Creek",
+        "units": "602",
+        "status": "Active",
+        "builtOut": "83"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.726255,
+          39.732926
+        ]
+      },
+      "properties": {
+        "name": "Horizon Uptown",
+        "units": "3530",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.725021,
+          39.776703
+        ]
+      },
+      "properties": {
+        "name": "Green Valley Ranch East",
+        "units": "9617",
+        "status": "Future",
+        "builtOut": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.753048,
+          39.783553
+        ]
+      },
+      "properties": {
+        "name": "Green Valley Ranch",
+        "units": "7148",
+        "status": "Active",
+        "builtOut": "89"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.683357,
+          39.718987
+        ]
+      },
+      "properties": {
+        "name": "Adonea",
+        "units": "1026",
+        "status": "Active",
+        "builtOut": "46"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.653206,
+          39.710448
+        ]
+      },
+      "properties": {
+        "name": "Sky Ranch",
+        "units": "4304",
+        "status": "Moving dirt",
+        "builtOut": ""
+      }
+    }
+  ]
+}

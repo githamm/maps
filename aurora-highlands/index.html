@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Highlands Map | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <script src="leaflet.browser.print.min.js"></script>
+    <style>
+    @import url('//fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1%;
+    }
+
+    #container {
+        /*height: 600px;
+        width: 893px;
+        margin: 0 auto;*/
+    }
+
+    #map {
+        height: 900px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        /*max-width: 200px;*/
+        line-height: 100%;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*.leaflet-popup-content {
+        font-size: 1.2em;
+        letter-spacing: .2px;
+    }*/
+
+    /*#content-container {
+        padding: 15px;
+    }*/
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .legend-container {
+        width: 100%;
+        clear: both;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #ff5959;
+        opacity: .8;
+        margin: -3px 0 -7px 0;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 100%
+    }
+
+    /*.tooltip-header {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-align: left;
+        text-transform: uppercase;
+        padding-left: 13px;
+        color: #7F462C;
+    }*/
+
+    /*.popup-text {
+        margin-bottom: -17px !important;
+        color: rgba(0, 0, 0, .8);
+    }*/
+
+    /*.popup-header {
+        font-weight: 700;
+        font-size: 1.1em;
+        letter-spacing: .5px;
+        /*text-transform: uppercase;
+        color: #000;
+        margin-bottom: 0;
+    }*/
+
+    .note {
+        font-size: .85em;
+        font-style: italic;
+    }
+
+    .legend {
+        width: 60px;
+        /*height: 30px;*/
+        opacity: .6;
+        float: left;
+    }
+
+    label,
+    .legend-text {
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 7px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    .fieldset {
+        padding: .75rem;
+    }
+
+    input.leaflet-control-layers-selector {
+        margin: 0;
+    }
+
+    a.leaflet-control-layers-toggle {
+        background-color: red;
+    }
+
+    .leaflet-control-layers .leaflet-control-layers-list {
+        display: inline-block;
+    }
+
+    .leaflet-control-layers {
+        box-shadow: none;
+        background: #fafafa;
+        border-radius: 0;
+    }
+
+    .leaflet-control-layers-toggle {
+        /*width: 0;
+        height: 0;*/
+        display: none;
+    }
+
+    .leaflet-control-layers-expanded {
+        padding: 0;
+    }
+
+    .leaflet-control-layers label {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .leaflet-control-layers-base {
+        display: none;
+    }
+
+    .leaflet-control-layers-separator {
+        display: none;
+    }
+
+    h4 {
+        font-weight: 700;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        /*color: #8e1024;*/
+        margin-bottom: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table thead {
+        background-color: #fafafa;
+        padding-bottom: 0;
+    }
+
+    table thead th {
+        border-bottom: 2px solid silver;
+        padding-bottom: 0;
+        color: #acacac;
+        font-weight: normal;
+    }
+
+    table tbody td {
+        padding: 4px 8px 4px 8px;
+        font-size: 1em;
+    }
+
+    table tr {
+        border-bottom: 1px solid silver;
+        border-top: 1px solid #fafafa;
+        border-left: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+    }
+
+    table tr:last-child {
+        border: 1px solid #fafafa;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background-color: #fafafa;
+    }
+
+    table tbody tr:nth-child(1n) {
+        background-color: #fafafa;
+    }
+
+    .source {
+        font-size: .85em;
+        text-align: right;
+        font-style: italic;
+    }
+
+    .difference {
+        margin: -13px 0 -5px 0 !important;
+        font-size: 1.08rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .diff-precinct {
+        font-weight: normal;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        /* color: #8e1024; */
+        margin-bottom: -5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Aurora Highlands</h2>
+        <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter.</p>
+        <div class="row">
+            <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
+                <p class="instructions">Zoom map and click precincts for details; use radio buttons to switch maps</p>
+            </div>
+        </div>
+        <fieldset class="fieldset">
+            <legend><strong><em>Choose a map</em></strong></legend>
+            <div id="layer-control"></div>
+        </fieldset>
+        <div id="map"></div>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: GEOMAC</p>
+    </div> <!-- End "container" -->
+    <script>
+    var map = L.map('map').setView([39.740154, -104.718815], 12);
+
+    // load a tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    L.control.browserPrint().addTo(map);
+
+    $.getJSON("aurora-highlands-data.geojson", function(data) {
+        L.geoJson(data, {
+            //onEachFeature: function(feature, layer) {
+            pointToLayer: function(feature, latlng) {
+
+                var circleRadius,
+                    circleColor;
+                var numberUnits = parseInt(feature.properties.units);
+
+                if (numberUnits > 1000) {
+                    circleRadius = (Math.sqrt(numberUnits) / 4.1)
+                } else {
+                    circleRadius = 5
+                };
+
+                if (feature.properties.status == 'Active') {
+                    circleColor = 'green'
+                } else if (feature.properties.status == 'Moving dirt') {
+                    circleColor = 'brown'
+                } else circleColor = 'blue';
+
+                var auroraCircle = {
+                    radius: circleRadius,
+                    fillColor: circleColor,
+                    color: 'red',
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: 1
+                };
+
+                var tooltipText = feature.properties.name + '<br>Units: ' + numberUnits;
+
+                return L.circleMarker(latlng, auroraCircle).bindPopup(tooltipText)
+
+                // layer.bindPopup(
+                //     feature.properties.incidentname + '<br>' + feature.properties.acres + ' acres'
+                // )
+            }
+        }).addTo(map);
+    });
+    </script>
+</body>
+
+</html>
