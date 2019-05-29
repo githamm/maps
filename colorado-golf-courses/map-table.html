@@ -395,7 +395,7 @@
                 {
                     data: 'properties.street1',
                     render: function(data, type, row) {
-                        return '<a href="https://www.google.com/maps/dir//' + data + '+' + row.properties.city + '+CO+' + row.properties.zip + '" target="_blank">' + data + '</a>'
+                        return '<a href="https://www.google.com/maps/dir//' + row.properties.club_name + '+' + data + '+' + row.properties.city + '+CO+' + row.properties.zip + '" target="_blank">' + data + '</a>'
                     }
                 },
                 { data: 'properties.year_founded' },
