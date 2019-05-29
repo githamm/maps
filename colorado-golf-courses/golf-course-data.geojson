@@ -1,0 +1,1861 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9255162,
+          40.1254938
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Saddleback Golf Club",
+        "number": "303-833-5000",
+        "street1": "8631 Frontier Street",
+        "street2": "",
+        "street3": "",
+        "city": "Firestone",
+        "state": "CO",
+        "address": "8631 Frontier Street Firestone CO 80504",
+        "zip": "80504",
+        "long": "",
+        "type": "Public",
+        "architect": "Andy Johnson",
+        "year_founded": "2001",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "www.saddlebackgolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7210312,
+          39.5692053
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Heritage Eagle Bend Golf Club",
+        "number": "303-400-6700",
+        "street1": "23155 E. Heritage Parkway",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "23155 E. Heritage Parkway Aurora CO 80016",
+        "zip": "80016",
+        "long": "",
+        "type": "Semi-Private",
+        "architect": "Arthur Hills",
+        "year_founded": "2000",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "heritageeaglebend.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0356964,
+          39.8923582
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Legacy Ridge Golf Course",
+        "number": "303-438-8997",
+        "street1": "10801 Legacy Ridge Parkway",
+        "street2": "",
+        "street3": "",
+        "city": "Westminster",
+        "state": "CO",
+        "address": "10801 Legacy Ridge Parkway Westminster CO 80031",
+        "zip": "80031",
+        "long": "",
+        "type": "Public",
+        "architect": "Arthur Hills",
+        "year_founded": "1994",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "www.cityofwestminster.us/ParksRecreation/GolfWestminster/LegacyRidgeGolfCourse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8906158,
+          39.9731174
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Todd Creek Golf Club",
+        "number": "303-655-1779",
+        "street1": "8455 Heritage Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Thornton",
+        "state": "CO",
+        "address": "8455 Heritage Drive Thornton CO 80602",
+        "zip": "80602",
+        "long": "",
+        "type": "Public",
+        "architect": "Arthur Hills",
+        "year_founded": "2007",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "toddcreekgolfclub.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.3372296,
+          39.6320939
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Evergreen Golf Course",
+        "number": "303-674-6351",
+        "street1": "29614 Upper Bear Creek Road",
+        "street2": "",
+        "street3": "",
+        "city": "Evergreen",
+        "state": "CO",
+        "address": "29614 Upper Bear Creek Road Evergreen CO 80439",
+        "zip": "80439",
+        "long": "",
+        "type": "Public",
+        "architect": "Charles \"Babe\" Lind",
+        "year_founded": "1923",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "cityofdenvergolf.com/evergreen/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9777507,
+          39.6748188
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Harvard Gulch Golf Course",
+        "number": "303-698-4078",
+        "street1": "660 E. Iliff Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "660 E. Iliff Avenue Denver CO 80210",
+        "zip": "80210",
+        "long": "",
+        "type": "Public",
+        "architect": "Charles \"Babe\" Lind",
+        "year_founded": "1982",
+        "number_of_holes": "9H Par 3",
+        "holes_normalized": "9",
+        "website_url": "cityofdenvergolf.com/harvard_gulch/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9385772,
+          39.7660765
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Park Hill Golf Club",
+        "number": "303-333-5411",
+        "street1": "4141 E. 35th Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "4141 E. 35th Avenue Denver CO 80207",
+        "zip": "80207",
+        "long": "",
+        "type": "Public",
+        "architect": "Clark Hamilton",
+        "year_founded": "1931",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "parkhillgc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.910095,
+          39.267065
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Golf Club At Bear Dance",
+        "number": "303-681-4653",
+        "street1": "6630 Bear Dance Road",
+        "street2": "",
+        "street3": "",
+        "city": "Larkspur",
+        "state": "CO",
+        "address": "6630 Bear Dance Road Larkspur CO 80118",
+        "zip": "80118",
+        "long": "",
+        "type": "Public",
+        "architect": "Corey Aurand, Stuart Bruening, Dennis Hogan",
+        "year_founded": "2002",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "beardancegolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1332532,
+          39.9215985
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Omni Interlocken Resort Golf Club",
+        "number": "303-464-9000",
+        "street1": "800 Eldorado Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Broomfield",
+        "state": "CO",
+        "address": "800 Eldorado Boulevard Broomfield CO 80021",
+        "zip": "80021",
+        "long": "",
+        "type": "Resort",
+        "architect": "David Graham",
+        "year_founded": "1999",
+        "number_of_holes": "27H Regulation",
+        "holes_normalized": "27",
+        "website_url": "omnihotels.com/hotels/denver-interlocken/golf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1260239,
+          39.6522553
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Homestead Golf Course",
+        "number": "720-963-5181",
+        "street1": "11500 W. Hampden Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Lakewood",
+        "state": "CO",
+        "address": "11500 W. Hampden Avenue Lakewood CO 80227",
+        "zip": "80227",
+        "long": "",
+        "type": "Public",
+        "architect": "Denis Griffiths",
+        "year_founded": "2002",
+        "number_of_holes": "18H Executive",
+        "holes_normalized": "18",
+        "website_url": "lakewood.org/Homestead/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.133266,
+          39.661065
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Fox Hollow Golf Course",
+        "number": "303-986-7888",
+        "street1": "13410 W. Morrison Road",
+        "street2": "",
+        "street3": "",
+        "city": "Lakewood",
+        "state": "CO",
+        "address": "13410 Morrison Road Lakewood CO 80228",
+        "zip": "80228",
+        "long": "",
+        "type": "Public",
+        "architect": "Denis Griffiths",
+        "year_founded": "1993",
+        "number_of_holes": "27H Regulation",
+        "holes_normalized": "27",
+        "website_url": "lakewood.org/Foxhollow/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0264282,
+          39.6137333
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Littleton Golf & Tennis Club",
+        "number": "303-794-5838",
+        "street1": "5800 S. Federal Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Littleton",
+        "state": "CO",
+        "address": "5800 S. Federal Boulevard Littleton CO 80123",
+        "zip": "80123",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1986",
+        "number_of_holes": "18H Executive",
+        "holes_normalized": "18",
+        "website_url": "golf.ssprd.org/Littleton-Golf-and-Tennis-Club"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7815462,
+          39.7234467
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Springhill Golf Course",
+        "number": "303-739-6854",
+        "street1": "800 N. Telluride Street",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "800 N. Telluride Street Aurora CO 80011",
+        "zip": "80011",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1973",
+        "number_of_holes": "18H Executive",
+        "holes_normalized": "18",
+        "website_url": "auroragov.org/things_to_do/golf/golf_courses/springhill/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.92147,
+          39.5546592
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "The Links Golf Course",
+        "number": "303-470-9292",
+        "street1": "5815 E. Gleneagles Village Parkway",
+        "street2": "",
+        "street3": "",
+        "city": "Highlands Ranch",
+        "state": "CO",
+        "address": "5815 E. Gleneagles Village Parkway Highlands Ranch CO 80130",
+        "zip": "80130",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1985",
+        "number_of_holes": "18H Executive",
+        "holes_normalized": "18",
+        "website_url": "thelinksgolfcourse.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.152082,
+          39.9584813
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Coal Creek Golf Course",
+        "number": "303-666-7888",
+        "street1": "585 W. Dillon Road",
+        "street2": "",
+        "street3": "",
+        "city": "Louisville",
+        "state": "CO",
+        "address": "585 W. Dillon Road Louisville CO 80027",
+        "zip": "80027",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1989",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "coalcreekgolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.066411,
+          39.9344889
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Eagle Trace Golf Club",
+        "number": "303-466-3322",
+        "street1": "1200 Clubhouse Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Broomfield",
+        "state": "CO",
+        "address": "1200 Clubhouse Drive Broomfield CO 80020",
+        "zip": "80020",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1963",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "eagletracegolfclub.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0769641,
+          39.6130842
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Raccoon Creek Golf Course",
+        "number": "303-932-0199",
+        "street1": "7301 W. Bowles Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Littleton",
+        "state": "CO",
+        "address": "7301 W. Bowles Avenue Littleton CO 80123",
+        "zip": "80123",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1983",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "raccooncreek.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7361887,
+          39.5958324
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Saddle Rock Golf Course",
+        "number": "303-699-3939",
+        "street1": "21705 E. Arapahoe Road",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "21705 E. Arapahoe Road Aurora CO 80016",
+        "zip": "80016",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1997",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "auroragov.org/things_to_do/golf/golf_courses/saddle_rock/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8336967,
+          39.6755871
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "The Golf Club At Heather Ridge",
+        "number": "303-755-3550",
+        "street1": "13521 E. Iliff Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "13521 E. Iliff Avenue Aurora CO 80014",
+        "zip": "80014",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1973",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "golfclubatheatherridge.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9393404,
+          39.5746432
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "South Suburban Golf Course",
+        "number": "303-770-5508",
+        "street1": "7900 S. Colorado Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Centennial",
+        "state": "CO",
+        "address": "7900 S. Colorado Boulevard Centennial CO 80122",
+        "zip": "80122",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1973",
+        "number_of_holes": "18H Regulation, 9 H par 3",
+        "holes_normalized": "18+",
+        "website_url": "golf.ssprd.org/South-Suburban-Golf-Course"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0822056,
+          39.8328629
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Indian Tree Golf Course",
+        "number": "303-403-2542",
+        "street1": "7555 Wadsworth Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Arvada",
+        "state": "CO",
+        "address": "7555 Wadsworth Boulevard Arvada CO 80003",
+        "zip": "80003",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1970",
+        "number_of_holes": "18H Regulation, 9H Par 3",
+        "holes_normalized": "18+",
+        "website_url": "indiantree.apexprd.org/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0918995,
+          39.6456218
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Foothills Golf Course",
+        "number": "303-409-2400",
+        "street1": "3901 S. Carr Street",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "3901 S. Carr Street Denver CO 80235",
+        "zip": "80235",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1971",
+        "number_of_holes": "18H Regulation, Exec 9, Par 3",
+        "holes_normalized": "18+",
+        "website_url": "foothillsgolf.org"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1854312,
+          39.8165172
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "West Woods Golf Club",
+        "number": "720-898-7370",
+        "street1": "6655 Quaker Street",
+        "street2": "",
+        "street3": "",
+        "city": "Arvada",
+        "state": "CO",
+        "address": "6655 Quaker Street Arvada CO 80007",
+        "zip": "80007",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1994",
+        "number_of_holes": "27H Regulation",
+        "holes_normalized": "27",
+        "website_url": "westwoodsgolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8676769,
+          39.6529026
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Kennedy Golf Course",
+        "number": "720-865-0720",
+        "street1": "10500 E. Hampden Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "10500 E. Hampden Avenue Denver CO 80014",
+        "zip": "80014",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1965",
+        "number_of_holes": "27H Regulation, Par 3",
+        "holes_normalized": "27+",
+        "website_url": "cityofdenvergolf.com/kennedy/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.831326,
+          39.6634131
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Heather Gardens Golf Course",
+        "number": "303-751-2390",
+        "street1": "2888 S. Heather Gardens Way",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "2888 S. Heather Gardens Way Aurora CO 80014",
+        "zip": "80014",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1973",
+        "number_of_holes": "9H Executive",
+        "holes_normalized": "9",
+        "website_url": "heathergardens.org/page/13855~140547/Executive-9-hole-Golf-Course"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2218107,
+          40.1081116
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Haystack Mountain Golf Course",
+        "number": "303-530-1400",
+        "street1": "5877 Niwot Road",
+        "street2": "",
+        "street3": "",
+        "city": "Niwot",
+        "state": "CO",
+        "address": "5877 Niwot Road Niwot CO 80503",
+        "zip": "80503",
+        "long": "",
+        "type": "Public",
+        "architect": "Ebel Family",
+        "year_founded": "1966",
+        "number_of_holes": "9H Executive",
+        "holes_normalized": "9",
+        "website_url": "golfhaystack.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0463098,
+          39.786039
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Willis Case Golf Course",
+        "number": "720-865-0700",
+        "street1": "4999 Vrain Street",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "4999 Vrain Street Denver CO 80212",
+        "zip": "80212",
+        "long": "",
+        "type": "Public",
+        "architect": "El Jebel/City of Denver",
+        "year_founded": "1928",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "cityofdenvergolf.com/willis_case/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9795235,
+          39.9420173
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Thorncreek Golf Club",
+        "number": "303-450-7055",
+        "street1": "13555 Washington Street",
+        "street2": "",
+        "street3": "",
+        "city": "Thornton",
+        "state": "CO",
+        "address": "13555 Washington Street Thornton CO 80241",
+        "zip": "80241",
+        "long": "",
+        "type": "Public",
+        "architect": "Finger/Spann/Dye",
+        "year_founded": "1992",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "thorncreekgc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0805533,
+          39.8544983
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Lake Arbor Golf Club",
+        "number": "720-898-7360",
+        "street1": "8600 Wadsworth Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Arvada",
+        "state": "CO",
+        "address": "8600 Wadsworth Boulevard Arvada CO 80003",
+        "zip": "80003",
+        "long": "",
+        "type": "Public",
+        "architect": "Gordon Reusink",
+        "year_founded": "1973",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "lakearborgolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0146559,
+          39.5531245
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "University of Denver at Highlands Ranch",
+        "number": "303-471-0000",
+        "street1": "9000 Creekside Way",
+        "street2": "",
+        "street3": "",
+        "city": "Highlands Ranch",
+        "state": "CO",
+        "address": "9000 Creekside Way Highlands Ranch CO 80129",
+        "zip": "80129",
+        "long": "",
+        "type": "Public",
+        "architect": "Hale Irwin",
+        "year_founded": "1998",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "highlandsranchgolf.du.edu"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1239312,
+          40.0026761
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Indian Peaks Golf Course",
+        "number": "303-666-4706",
+        "street1": "2300 Indian Peaks Trail",
+        "street2": "",
+        "street3": "",
+        "city": "Lafayette",
+        "state": "CO",
+        "address": "2300 Indian Peaks Trail Lafayette CO 80026",
+        "zip": "80026",
+        "long": "",
+        "type": "Public",
+        "architect": "Hale Irwin/Dick Phelps",
+        "year_founded": "1993",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "indianpeaksgolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8775609,
+          39.7063193
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Emerald Greens Golf Club",
+        "number": "303-366-3133",
+        "street1": "595 S. Clinton Street",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "595 S. Clinton Street Denver CO 80247",
+        "zip": "80247",
+        "long": "",
+        "type": "Public",
+        "architect": "Henry Hughes",
+        "year_founded": "1965",
+        "number_of_holes": "9H Par 3",
+        "holes_normalized": "9",
+        "website_url": "emeraldgreensdenver.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8418593,
+          39.7159598
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Aurora Hills Golf Course",
+        "number": "303-739-1550",
+        "street1": "50 S. Peoria Street",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "50 S. Peoria Street Aurora CO 80012",
+        "zip": "80012",
+        "long": "",
+        "type": "Public",
+        "architect": "Henry Hughes",
+        "year_founded": "1969",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "auroragov.org/things_to_do/golf/golf_courses/aurora_hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.819776,
+          39.650523
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Meadow Hills Golf Course",
+        "number": "303-326-8450",
+        "street1": "3609 S. Dawson Street",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "3609 S. Dawson Street Aurora CO 80014",
+        "zip": "80014",
+        "long": "",
+        "type": "Public",
+        "architect": "Henry Hughes",
+        "year_founded": "1957",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "auroragov.org/things_to_do/golf/golf_courses/meadow_hills/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0507186,
+          39.8702201
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "The Greg Mastriona Golf Courses At Hyland Hills",
+        "number": "303-428-6526",
+        "street1": "9650 N. Sheridan Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Westminster",
+        "state": "CO",
+        "address": "9650 N. Sheridan Boulevard Westminster CO 80031",
+        "zip": "80031",
+        "long": "",
+        "type": "Public",
+        "architect": "Hughes/Hummel",
+        "year_founded": "1963",
+        "number_of_holes": "18H Regulation, 9H Regulation, 2 9H Par 3s",
+        "holes_normalized": "18+",
+        "website_url": "golfhylandhills.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2116648,
+          39.7374986
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Fossil Trace Golf Club",
+        "number": "303-277-8750",
+        "street1": "3050 Illinois Street",
+        "street2": "",
+        "street3": "",
+        "city": "Golden",
+        "state": "CO",
+        "address": "3050 Illinois Street Golden CO 80401",
+        "zip": "80401",
+        "long": "",
+        "type": "Public",
+        "architect": "James J. Engh",
+        "year_founded": "2003",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "fossiltrace.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8860326,
+          39.387753
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Red Hawk Ridge Golf Course",
+        "number": "720-733-3500",
+        "street1": "2156 Red Hawk Ridge Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Castle Rock",
+        "state": "CO",
+        "address": "2156 Red Hawk Ridge Drive Castle Rock CO 80109",
+        "zip": "80109",
+        "long": "",
+        "type": "Public",
+        "architect": "James J. Engh",
+        "year_founded": "1999",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "redhawkridge.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.025926,
+          40.0054047
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Colorado National Golf Club",
+        "number": "303-926-1723",
+        "street1": "2700 Vista Parkway",
+        "street2": "",
+        "street3": "",
+        "city": "Erie",
+        "state": "CO",
+        "address": "2700 Vista Parkway Erie CO 80516",
+        "zip": "80516",
+        "long": "",
+        "type": "Public",
+        "architect": "Jay Morrish",
+        "year_founded": "2003",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "coloradonationalgolfclub.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8039227,
+          39.8991753
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Buffalo Run Golf Course",
+        "number": "303-289-1500",
+        "street1": "15700 E. 112th Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Commerce City",
+        "state": "CO",
+        "address": "15700 E. 112th Avenue Commerce City CO 80022",
+        "zip": "80022",
+        "long": "",
+        "type": "Public",
+        "architect": "Keith Foster",
+        "year_founded": "1996",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "buffalorungolfcourse.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7076683,
+          39.6854763
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Murphy Creek Golf Course",
+        "number": "303-739-1560",
+        "street1": "1700 S. Old Tom Morris Road",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "1700 S. Old Tom Morris Road Aurora CO 80018",
+        "zip": "80018",
+        "long": "",
+        "type": "Public",
+        "architect": "Ken Kavanaugh",
+        "year_founded": "2000",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "auroragov.org/things_to_do/golf/golf_courses/murphy_creek/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.791003,
+          40.081423
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Coyote Creek Golf Course",
+        "number": "303-857-6152",
+        "street1": "222 Clubhouse Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Fort Lupton",
+        "state": "CO",
+        "address": "222 Clubhouse Drive Fort Lupton CO 80621",
+        "zip": "80621",
+        "long": "",
+        "type": "Public",
+        "architect": "Matt Eccles",
+        "year_founded": "1999",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "coyotecreekgc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1162637,
+          39.8997952
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Walnut Creek Golf Preserve",
+        "number": "303-469-2974",
+        "street1": "10555 Westmoor Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Westminster",
+        "state": "CO",
+        "address": "10555 Westmoor Drive Westminster CO 80021",
+        "zip": "80021",
+        "long": "",
+        "type": "Public",
+        "architect": "Michael Hurdzan",
+        "year_founded": "1999",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "golfwestminster.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8964548,
+          39.5387071
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Lone Tree Golf Club & Hotel",
+        "number": "303-799-9940",
+        "street1": "9808 Sunningdale Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Lone Tree",
+        "state": "CO",
+        "address": "9808 Sunningdale Boulevard Lone Tree CO 80124",
+        "zip": "80124",
+        "long": "",
+        "type": "Public",
+        "architect": "Palmer/Seay",
+        "year_founded": "1985",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "golf.ssprd.org/Lone-Tree-Golf-Club-Hotel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7547089,
+          39.7863154
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Green Valley Ranch Golf Club",
+        "number": "303-371-3131",
+        "street1": "4900 Himalaya Road",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "4900 Himalaya Road Denver CO 80249",
+        "zip": "80249",
+        "long": "",
+        "type": "Public",
+        "architect": "Perry Dye",
+        "year_founded": "2001",
+        "number_of_holes": "18H Regulation, 9H Par 3",
+        "holes_normalized": "18+",
+        "website_url": "gvrgolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8756543,
+          39.9362925
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Riverdale Golf Courses",
+        "number": "303-659-6700",
+        "street1": "13300 Riverdale Road",
+        "street2": "",
+        "street3": "",
+        "city": "Brighton",
+        "state": "CO",
+        "address": "13300 Riverdale Road Brighton CO 80601",
+        "zip": "80601",
+        "long": "",
+        "type": "Public",
+        "architect": "Pete & Perry Dye",
+        "year_founded": "1985",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "riverdalegolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.862637,
+          39.345701
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Plum Creek Golf Club",
+        "number": "303-660-2200",
+        "street1": "331 Players Club Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Castle Rock",
+        "state": "CO",
+        "address": "331 Players Club Drive Castle Rock CO 80104",
+        "zip": "80104",
+        "long": "",
+        "type": "Public",
+        "architect": "Pete Dye",
+        "year_founded": "1984",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "golfplumcreek.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.130816,
+          39.591206
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "The Meadows Golf Club",
+        "number": "303-409-2250",
+        "street1": "7007 Meadows Golf Club Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Littleton",
+        "state": "CO",
+        "address": "7007 Meadows Golf Club Drive Littleton CO 80127",
+        "zip": "80127",
+        "long": "",
+        "type": "Public",
+        "architect": "Phelps/Benz",
+        "year_founded": "1984",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "foothillsgolf.org"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.012721,
+          39.642809
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Broken Tee Golf Course",
+        "number": "303-762-2670",
+        "street1": "2101 W. Oxford Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Englewood",
+        "state": "CO",
+        "address": "2101 W. Oxford Avenue Englewood CO 80110",
+        "zip": "80110",
+        "long": "",
+        "type": "Public",
+        "architect": "Phelps/Dye Design",
+        "year_founded": "1977",
+        "number_of_holes": "18H Regulation, Par 3",
+        "holes_normalized": "18+",
+        "website_url": "brokenteegolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1572827,
+          39.7626193
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Applewood Golf Course",
+        "number": "303-279-3003",
+        "street1": "14001 W. 32nd Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Golden",
+        "state": "CO",
+        "address": "14001 W. 32nd Avenue Golden CO 80401",
+        "zip": "80401",
+        "long": "",
+        "type": "Public",
+        "architect": "Press Maxwell",
+        "year_founded": "1961",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "applewoodgc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8676268,
+          39.5696512
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Inverness Golf Club",
+        "number": "303-397-7878",
+        "street1": "200 Inverness Drive West",
+        "street2": "",
+        "street3": "",
+        "city": "Englewood",
+        "state": "CO",
+        "address": "200 Inverness Drive West Englewood CO 80112",
+        "zip": "80112",
+        "long": "",
+        "type": "Resort",
+        "architect": "Press Maxwell",
+        "year_founded": "1974",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "theclubatinverness.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0403536,
+          39.9565912
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Broadlands Golf Course",
+        "number": "303-466-8285",
+        "street1": "4380 W. 144th Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Broomfield",
+        "state": "CO",
+        "address": "4380 W. 144th Avenue Broomfield CO 80020",
+        "zip": "80020",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1999",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "thebroadlandsgc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8488768,
+          39.5920798
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "South Suburban Family Sports Center",
+        "number": "303-649-1115",
+        "street1": "6901 S. Peoria Street",
+        "street2": "",
+        "street3": "",
+        "city": "Centennial",
+        "state": "CO",
+        "address": "6901 S. Peoria Street Centennial CO 80112",
+        "zip": "80112",
+        "long": "",
+        "type": "Public",
+        "architect": "Dick Phelps",
+        "year_founded": "1998",
+        "number_of_holes": "9H Executive",
+        "holes_normalized": "9",
+        "website_url": "golf.ssprd.org/Family-Sports-Golf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0817179,
+          39.4533162
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Arrowhead Golf Club",
+        "number": "303-973-9614",
+        "street1": "10850 W. Sundown Trail",
+        "street2": "",
+        "street3": "",
+        "city": "Littleton",
+        "state": "CO",
+        "address": "10850 W. Sundown Trail Littleton CO 80125",
+        "zip": "80125",
+        "long": "",
+        "type": "Public",
+        "architect": "Robert Trent Jones Jr.",
+        "year_founded": "1972",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "arrowheadcolorado.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.5894975,
+          39.3578148
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Spring Valley Golf Club",
+        "number": "303-646-4240",
+        "street1": "42350 County Road 17-21",
+        "street2": "",
+        "street3": "",
+        "city": "Elizabeth",
+        "state": "CO",
+        "address": "42350 County Road 17-21 Elizabeth CO 80107",
+        "zip": "80107",
+        "long": "",
+        "type": "Public",
+        "architect": "Ross Graves",
+        "year_founded": "1997",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "springvalleygolf.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9412125,
+          39.6582695
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Wellshire Golf Course",
+        "number": "720-865-0443",
+        "street1": "3333 S. Colorado Boulevard",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "3333 S. Colorado Boulevard Denver CO 80222",
+        "zip": "80222",
+        "long": "",
+        "type": "Public",
+        "architect": "Ross/Hughes",
+        "year_founded": "1926",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "cityofdenvergolf.com/wellshire/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1274427,
+          39.5675775
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Deer Creek Golf Club At Meadow Ranch",
+        "number": "303-978-1800",
+        "street1": "8135 Shaffer Parkway",
+        "street2": "",
+        "street3": "",
+        "city": "Littleton",
+        "state": "CO",
+        "address": "8135 Shaffer Parkway Littleton CO 80127",
+        "zip": "80127",
+        "long": "",
+        "type": "Public",
+        "architect": "Scott Miller",
+        "year_founded": "2000",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "playdeercreek.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1551469,
+          39.87148
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Stoney Creek Golf Course",
+        "number": "303-431-9268",
+        "street1": "13939 W. 96th Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Arvada",
+        "state": "CO",
+        "address": "13939 W. 96th Avenue Arvada CO 80005",
+        "zip": "80005",
+        "long": "",
+        "type": "Public",
+        "architect": "Tim Root",
+        "year_founded": "1998",
+        "number_of_holes": "9H Executive",
+        "holes_normalized": "9",
+        "website_url": "stoneycreekgolfcourse.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9589883,
+          39.7537849
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "City Park Golf Course",
+        "number": "720-865-3410",
+        "street1": "2500 York Street",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "2500 York Street Denver CO 80205",
+        "zip": "80205",
+        "long": "",
+        "type": "Public",
+        "architect": "Tom Bendelow",
+        "year_founded": "1912",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "cityofdenvergolf.com/city_park/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8817009,
+          39.7232219
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "CommonGround Golf Course",
+        "number": "303-340-1520",
+        "street1": "10300 E. Golfer's Way",
+        "street2": "",
+        "street3": "",
+        "city": "Aurora",
+        "state": "CO",
+        "address": "10300 E. Golfer's Way Aurora CO 80010",
+        "zip": "80010",
+        "long": "",
+        "type": "Public",
+        "architect": "Tom Doak",
+        "year_founded": "2009",
+        "number_of_holes": "18H Regulation, 9H Par 3",
+        "holes_normalized": "18+",
+        "website_url": "commongroundgc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9096146,
+          39.46942
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "The Ridge At Castle Pines North",
+        "number": "303-688-0100",
+        "street1": "1414 Castle Pines Parkway",
+        "street2": "",
+        "street3": "",
+        "city": "Castle Rock",
+        "state": "CO",
+        "address": "1414 Castle Pines Parkway Castle Rock CO 80108",
+        "zip": "80108",
+        "long": "",
+        "type": "Public",
+        "architect": "Tom Weiskopf",
+        "year_founded": "1997",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "playtheridge.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.067707,
+          39.910267
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Greenway Park Golf Course",
+        "number": "303-466-3729",
+        "street1": "110 Greenway Drive",
+        "street2": "",
+        "street3": "",
+        "city": "Broomfield",
+        "state": "CO",
+        "address": "110 Greenway Drive Broomfield CO 80020",
+        "zip": "80020",
+        "long": "",
+        "type": "Public",
+        "architect": "Unknown",
+        "year_founded": "1971",
+        "number_of_holes": "9H Par 3",
+        "holes_normalized": "9",
+        "website_url": "gwphoa.org"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.971917,
+          39.589318
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Southglenn Country Club",
+        "number": "303-798-1656",
+        "street1": "1489 E. Easter Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Centennial",
+        "state": "CO",
+        "address": "Po Box 2623 Centennial CO 80161",
+        "zip": "80122",
+        "long": "",
+        "type": "Public",
+        "architect": "Unknown",
+        "year_founded": "1965",
+        "number_of_holes": "9H Par 3",
+        "holes_normalized": "9",
+        "website_url": "southglenncc.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.997531,
+          39.6830413
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Overland Park Golf Course",
+        "number": "720-865-0430",
+        "street1": "1801 S. Huron",
+        "street2": "",
+        "street3": "",
+        "city": "Denver",
+        "state": "CO",
+        "address": "1801 S. Huron Denver CO 80223",
+        "zip": "80223",
+        "long": "",
+        "type": "Public",
+        "architect": "William H. Tucker/William F. Bell",
+        "year_founded": "1895",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "cityofdenvergolf.com/overland_park/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2206426,
+          40.0114098
+        ]
+      },
+      "properties": {
+        "button": "",
+				"club_name": "Flatirons Golf Course",
+        "number": "303-442-7851",
+        "street1": "5706 Arapahoe Avenue",
+        "street2": "",
+        "street3": "",
+        "city": "Boulder",
+        "state": "CO",
+        "address": "5706 Arapahoe Avenue Boulder CO 80303",
+        "zip": "80303",
+        "long": "",
+        "type": "Public",
+        "architect": "William H. Tucker",
+        "year_founded": "1938",
+        "number_of_holes": "18H Regulation",
+        "holes_normalized": "18",
+        "website_url": "flatironsgolf.com"
+      }
+    }
+  ]
+}

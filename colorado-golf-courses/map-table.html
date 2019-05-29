@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Colorado Golf Courses | The Denver Post</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.foundation.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.1/css/responsive.foundation.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.foundation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.16/dataRender/datetime.js"></script>
+    <script src="//cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+    <script src="//cdn.datatables.net/responsive/2.2.1/js/responsive.foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yadcf/0.9.2/jquery.dataTables.yadcf.js"></script>
+    <!-- <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <style>
+    /* TABLE */
+    body {
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*#main-container {
+            width: 900px;
+            margin: 0 auto;
+        }*/
+
+    .table-title {
+        font-size: 2.3rem;
+        line-height: 35px;
+        font-weight: 700;
+    }
+
+    .instructions-text {
+        color: #cb181d;
+        font-size: .8em;
+        font-style: italic;
+        text-align: center;
+    }
+
+    #filters {
+        font-size: .85rem;
+    }
+
+    #golf-course-table {
+        font-size: .85rem;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    button.yadcf-filter-reset-button {
+        color: #cb181d;
+        margin-left: 10px;
+    }
+
+    select {
+        margin-top: 7px;
+        margin-bottom: 0;
+        font-size: .85rem;
+    }
+
+    .yadcf-filter-range {
+        height: 2.9em;
+        border: 1px solid silver;
+    }
+
+    .filter-text {
+        font-weight: bold;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+    .filter-description {
+        font-style: italic;
+        display: inline-block;
+        line-height: 16px;
+    }
+
+    thead {
+        line-height: 18px;
+        font-size: .85rem;
+    }
+
+    /*MAP*/
+    #map {
+        height: 500px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        max-width: 275px;
+        line-height: 100%;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*.leaflet-popup-content {
+        font-size: 1.2em;
+        letter-spacing: .2px;
+    }*/
+
+    /*#content-container {
+        padding: 15px;
+    }*/
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    #legend-container {
+        /*width: 100%;
+        clear: both;*/
+        margin-bottom: 10px;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #cb181d;
+        opacity: .8;
+        margin: -10px 0 15px 0;
+    }
+
+    /*.tooltip-header {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-align: left;
+        text-transform: uppercase;
+        padding-left: 13px;
+        color: #7F462C;
+    }*/
+
+    .popup-text {
+        margin-top: -7px !important;
+        font-size: .85rem;
+    }
+
+    /*.popup-header {
+        font-weight: 700;
+        font-size: 1.1em;
+        letter-spacing: .5px;
+        /*text-transform: uppercase;
+        color: #000;
+        margin-bottom: 0;
+    }*/
+
+    .legend {
+        width: 60px;
+        /*height: 30px;*/
+        opacity: .6;
+        float: left;
+    }
+
+    label,
+    .legend-text {
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 7px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    h4 {
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 2px;
+        line-height: 18px;
+    }
+
+    .source {
+        font-size: .85em;
+        text-align: right;
+        font-style: italic;
+    }
+
+    .address {
+        margin-top: 3px !important;
+        margin-bottom: -12px !important;
+        font-size: .75rem;
+        font-style: italic;
+        line-height: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- MAP -->
+    <div id="map-container">
+        <div class="row">
+            <div class="large-12 columns">
+                <h2 class="table-title">Denver-area golf courses</h2>
+                <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
+                <p class="instructions">Zoom map and click circles for details</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns" id="legend-container">
+                <strong><span style="border-top: 4px solid black">18 holes</span> &bull; <span style="border-top: 4px solid purple">18+ holes</span> &bull; <span style="border-top: 4px solid blue">27 holes</span> &bull; <span style="border-top: 4px solid green">27+ holes</span> &bull; <span style="border-top: 4px solid red">9 holes</span></strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <div id="map"></div>
+                <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Colorado Golf Association</p>
+            </div>
+        </div>
+    </div>
+    <!-- TABLE -->
+    <div id="golf-course-table-container">
+        <div class="row">
+            <div class="large-12 columns">
+                <hr>
+                <p class="instructions">Use dropdown menus or keyword search to filter table &bull; click column headers to sort</p>
+            </div>
+        </div>
+        <div id="filters">
+            <div class="row">
+                <div class="large-4 medium-4 columns">
+                    <span id="filter-1"></span>
+                </div>
+                <div class="large-4 medium-4 columns">
+                    <span id="filter-2"></span>
+                </div>
+                <div class="large-4 medium-4 columns">
+                    <span id="filter-3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <table id="golf-course-table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th data-priority="1">Name</th>
+                            <th data-priority="2">City</th>
+                            <th data-priority="4">Type</th>
+                            <th data-priority="3">Holes</th>
+                            <th data-priority="5">Architect</th>
+                            <th class="none">Phone</th>
+                            <th class="none">Website</th>
+                            <th class="none">Directions</th>
+                            <th data-priority="6">Founded</th>
+                            <th class="none">Zip</th>
+                            <th class="none">Holes normalized</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <p class="source">Source: Colorado Golf Association</p>
+        </div>
+    </div>
+    </div>
+    <script>
+    // MAP //
+    var map = L.map('map').setView([39.74, -104.99], 9);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    //L.control.browserPrint().addTo(map);
+
+    $.getJSON("golf-course-data.geojson", function(data) {
+        L.geoJson(data, {
+            //onEachFeature: function(feature, layer) {
+            pointToLayer: function(feature, latlng) {
+
+                var circleColor;
+                var holesNumber = feature.properties.holes_normalized;
+
+                if (holesNumber == '18') {
+                    circleColor = 'black'
+                } else if (holesNumber == '18+') {
+                    circleColor = 'purple'
+                } else if (holesNumber == '27') {
+                    circleColor = 'blue'
+                } else if (holesNumber == '27+') {
+                    circleColor = 'green'
+                } else circleColor = 'red';
+
+                var auroraCircle = {
+                    radius: 5.5,
+                    fillColor: circleColor,
+                    color: '',
+                    weight: 0,
+                    opacity: 0,
+                    fillOpacity: .75
+                };
+
+                var tooltipText = '<h4>' + feature.properties.club_name + '</h4>' + '<p class="address">' + feature.properties.street1 + ' &bull; ' + feature.properties.city + ' &bull; ' + feature.properties.zip + ' &bull; ' + feature.properties.number + '</p><hr><p class="popup-text">Holes: <strong>' + feature.properties.number_of_holes + '</strong><br>Designed by: <strong>' + feature.properties.architect + '</strong><br>Founded: <strong>' + feature.properties.year_founded + '</strong><br>Course type: <strong>' + feature.properties.type + '</strong><br><span style="font-style:italic"><a href="//' + feature.properties.website_url + '" target="_blank">Website</a> &bull; <a href="https://www.google.com/maps/dir//' + feature.properties.club_name + '+' + feature.properties.street1 + '+' + feature.properties.city + '+CO+' + feature.properties.zip + '" target="_blank">Directions</a></span>';
+
+                return L.circleMarker(latlng, auroraCircle).bindPopup(tooltipText)
+            }
+        }).addTo(map);
+    });
+
+    // TABLE //
+    var dataFile = 'golf-course-data.geojson'
+
+    $(document).ready(function() {
+        // function disableDependentFilter(level, inuse) {
+        //     if (level < 4) {
+        //         filter = $('#yadcf-filter' + level);
+        //         yadcf.exResetFilters(golfCourseTable, [level]);
+        //         filter.prop('disabled', !inuse);
+
+        //         disableDependentFilter(level + 1, false);
+        //     }
+        // }
+
+        var golfCourseTable = $('#golf-course-table').DataTable({
+            ajax: {
+                'url': dataFile,
+                'dataSrc': 'features'
+            },
+            responsive: {
+                details: {
+                    type: 'column'
+                }
+            },
+            scrollY: "600px",
+            scrollCollapse: true,
+            paging: false,
+            dom: '<if<t>lp>',
+            columnDefs: [{
+                className: 'control',
+                orderable: false,
+                targets: 0
+            }],
+            order: [
+                [1, 'asc']
+            ],
+            columns: [
+                { data: 'properties.button' },
+                { data: 'properties.club_name' },
+                { data: 'properties.city' },
+                { data: 'properties.type' },
+                { data: 'properties.number_of_holes' },
+                { data: 'properties.architect' },
+                { data: 'properties.number' },
+                {
+                    data: 'properties.website_url',
+                    render: function(data, type, row) {
+                        return '<a href="//' + data + '" target="_blank">' + data + '</a>'
+                    }
+                },
+                {
+                    data: 'properties.street1',
+                    render: function(data, type, row) {
+                        return '<a href="https://www.google.com/maps/dir//' + data + '+' + row.properties.city + '+CO+' + row.properties.zip + '" target="_blank">' + data + '</a>'
+                    }
+                },
+                { data: 'properties.year_founded' },
+                {
+                    data: 'properties.zip',
+                    visible: false
+                },
+                {
+                    data: 'properties.holes_normalized',
+                    visible: false
+                }
+            ],
+
+            initComplete: function() {
+                yadcf.init(golfCourseTable, [{
+                        column_number: 2,
+                        filter_container_id: 'filter-1',
+                        filter_default_label: 'Choose city'
+                    }, {
+                        column_number: 11,
+                        filter_container_id: 'filter-2',
+                        filter_default_label: 'Choose number of holes'
+                    },
+                    {
+                        column_number: 5,
+                        filter_container_id: 'filter-3',
+                        filter_default_label: 'Choose course architect'
+                        //column_data_type: 'rendered_html'
+                    }
+                ], {
+                    cumulative_filtering: true,
+                    filter_reset_button_text: 'Reset filter'
+                });
+
+                // get it started
+                // disableDependentFilter(1, true);
+
+                $('.yadcf-filter-reset-button').on('click', function() {
+                    level = parseInt(this.id.split('-')[4]);
+                    // disableDependentFilter(level, true);
+                });
+
+                $('.yadcf-filter').on('change', function() {
+                    level = parseInt(this.id.slice(-1));
+                    inuse = $(this).hasClass('inuse');
+                    // disableDependentFilter(level + 1, inuse);
+                });
+            }
+        });
+        //  var filteredData = lockdownTable
+        //  .column(17)
+        //  .data()
+        //  .filter(function(value, index) {
+        //  return value == 'Not complete' ? true : false;
+        // });
+    });
+    </script>
+</body>
+
+</html>
