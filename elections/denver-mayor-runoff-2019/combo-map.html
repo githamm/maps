@@ -255,7 +255,7 @@
         font-size: 1.2em;
         text-transform: uppercase;
         /* color: #8e1024; */
-        margin-bottom: -5px;
+        margin-bottom: -10px;
     }
     </style>
 </head>
@@ -265,12 +265,12 @@
         <div class="row">
             <div class="large-12 columns">
                 <h2>Mayoral runoff election results by precinct</h2>
-                <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <em>Switch maps to show where Hancock and Giellis showed strength and the margin between them.</em></p>
+                <p>Mayor Michael Hancock won far more precincts -- 272 to 81 -- than his opponent, Jamie Giellis, during Tuesday's runoff election. And in many of the precincts he won, he did so by far wider margins than Giellis did in her areas of success. Hancock also prevailed in the majority of precincts won by Giellis allies Penfield Tate and Lisa Calderón during last month's regular municipal election.<em>Use radio buttons to toggle maps.</em></p>
             </div>
         </div>
         <div class="row">
             <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
-                <p class="instructions">Zoom map and click precincts for details; use radio buttons to switch maps</p>
+                <p class="instructions">Zoom map and click precincts for details; use radio buttons to toggle maps</p>
             </div>
         </div>
         <div class="row">
@@ -291,6 +291,7 @@
     <script>
     var runoffResults = new L.LayerGroup();
     var electionResults = new L.LayerGroup();
+    var runoffFlip = new L.LayerGroup();
     // var hancockStrength = new L.LayerGroup();
     // var giellisStrength = new L.LayerGroup();
     // var hancockGiellisDiff = new L.LayerGroup();
@@ -313,6 +314,7 @@
     // Overlay layers are grouped
     var groupedOverlays = {
         "": {
+            'Flipped precincts regular &rarr; runoff<br><span style="background-color:#6a51a3;opacity:.3;padding:5px;color:#000;">HANCOCK</span><span style="background-color:#6a51a3;opacity:.8;padding:5px;color:#000;">FLIP</span><span style="background-color:#238b45;opacity:.3;padding:5px;color:#000;">GIELLIS</span><span style="background-color:#238b45;opacity:.8;padding:5px;color:#000;">FLIP</span><span style="background-color:#000;opacity:.8;padding:5px;color:#fff;">HANCOCK</span><span style="background-color:#000;opacity:.3;padding:5px;color:#fff;">GIELLIS</span>': runoffFlip,
             'Runoff election<br><span style="background-color:#6a51a3;opacity:.5;padding:5px;color:#000;">HANCOCK</span><span style="background-color:#238b45;opacity:.5;padding:5px;color:#000;">GIELLIS</span>': runoffResults,
             'Regular election<br><span style="background-color:#6a51a3;opacity:.5;padding:5px;color:#000;">HANCOCK</span><span style="background-color:#238b45;opacity:.5;padding:5px;color:#000;">GIELLIS</span><span style="background-color:#f5f500;opacity:.5;padding:5px;color:#000;text-transform:uppercase">Calderón</span><span style="background-color:#00f5f5;opacity:.5;padding:5px;color:#000">TATE</span>': electionResults
             // ,
@@ -335,165 +337,12 @@
         zoom: 12,
         minZoom: 11,
         maxZoom: 16,
-        layers: [basemaps.One, runoffResults],
+        layers: [basemaps.One, runoffFlip],
         preferCanvas: true
     }); //.addLayer(cartoTiles);
 
     $.getJSON("denver-mayor-runoff.geojson", function(data) {
-
-        /***** GIELLIS MAP *****/
-        // L.geoJson(data, {
-        //     style: function(feature) {
-        //         var precinctWinner = feature.properties.precinctWinner;
-        //         var fillColor;
-        //         var fillOpacity;
-
-        //         if (feature.properties.giellis > .5) fillColor = "#0571b0";
-        //         else if (feature.properties.giellis > .4) fillColor = "#92c5de";
-        //         else if (feature.properties.giellis > .3) fillColor = "#f4a582";
-        //         else if (feature.properties.giellis > .2) fillColor = "#ca0020";
-        //         return {
-        //             color: "#000",
-        //             weight: 1,
-        //             fillColor: fillColor,
-        //             fillOpacity: .6
-        //         };
-        //     },
-        //     onEachFeature: function(feature, layer) {
-        //         var giellisPct = (feature.properties.giellis * 100).toFixed(1);
-        //         var heffernanPct = (feature.properties.heffernan * 100).toFixed(1);
-        //         var simpsonPct = (feature.properties.simpson * 100).toFixed(1);
-        //         var scottPct = (feature.properties.scott * 100).toFixed(1);
-        //         var calderonPct = (feature.properties.calderon * 100).toFixed(1);
-        //         var giavanniPct = (feature.properties.giavanni * 100).toFixed(1);
-        //         var hancockPct = (feature.properties.hancock * 100).toFixed(1);
-        //         var fiorinoPct = (feature.properties.fiorino * 100).toFixed(1);
-        //         var tatePct = (feature.properties.tate * 100).toFixed(1);
-        //         var evansPct = (feature.properties.evans * 100).toFixed(1);
-        //         var precinct = feature.properties.precinct;
-        //         var writeInPct = ((feature.properties.simpson + feature.properties.scott + feature.properties.giavanni + feature.properties.fiorino) * 100).toFixed(1);
-        //         var winnerString;
-
-        //         if (feature.properties.precinctWinner == 'Jamie Giellis') {
-        //             winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else if (feature.properties.precinctWinner == 'Lisa Calderón') {
-        //             winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else if (feature.properties.precinctWinner == 'Penfield Tate') {
-        //             winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr style="font-weight:bold"><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else if (precinct == '914') {
-        //             winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-
-        //         layer.bindPopup(
-        //             '<h4 class="diff-precinct">Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>vote</th></tr></thead>' + winnerString + '</tr><tr><td>Heffernan</td><td>' + heffernanPct + '%</td></tr><tr><td>Evans</td><td>' + evansPct + '%</td></tr><tr><td>Write-in</td><td>' + writeInPct + '%</td></tr></table>'
-        //         )
-        //     }
-        // }).addTo(giellisStrength);
-
-        /***** HANCOCK PCT MAP *****/
-        // L.geoJson(data, {
-        //     style: function(feature) {
-        //         //console.log(feature.properties.calderon);
-        //         var precinctWinner = feature.properties.precinctWinner;
-        //         var fillColor;
-        //         var fillOpacity;
-
-        //         if (feature.properties.hancock > .5) fillColor = "#0571b0";
-        //         else if (feature.properties.hancock > .4) fillColor = "#92c5de";
-        //         else if (feature.properties.hancock > .3) fillColor = "#f4a582";
-        //         else if (feature.properties.hancock > .2) fillColor = "#ca0020";
-        //         return {
-        //             color: "#000",
-        //             weight: 1,
-        //             fillColor: fillColor,
-        //             fillOpacity: .6
-        //         };
-        //     },
-        //     onEachFeature: function(feature, layer) {
-        //         var giellisPct = (feature.properties.giellis * 100).toFixed(1);
-        //         var heffernanPct = (feature.properties.heffernan * 100).toFixed(1);
-        //         var simpsonPct = (feature.properties.simpson * 100).toFixed(1);
-        //         var scottPct = (feature.properties.scott * 100).toFixed(1);
-        //         var calderonPct = (feature.properties.calderon * 100).toFixed(1);
-        //         var giavanniPct = (feature.properties.giavanni * 100).toFixed(1);
-        //         var hancockPct = (feature.properties.hancock * 100).toFixed(1);
-        //         var fiorinoPct = (feature.properties.fiorino * 100).toFixed(1);
-        //         var tatePct = (feature.properties.tate * 100).toFixed(1);
-        //         var evansPct = (feature.properties.evans * 100).toFixed(1);
-        //         var precinct = feature.properties.precinct;
-        //         var writeInPct = ((feature.properties.simpson + feature.properties.scott + feature.properties.giavanni + feature.properties.fiorino) * 100).toFixed(1);
-        //         var winnerString;
-
-        //         if (feature.properties.precinctWinner == 'Jamie Giellis') {
-        //             winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else if (feature.properties.precinctWinner == 'Lisa Calderón') {
-        //             winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else if (feature.properties.precinctWinner == 'Penfield Tate') {
-        //             winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr style="font-weight:bold"><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else if (precinct == '914') {
-        //             winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-        //         } else winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
-
-        //         layer.bindPopup(
-        //             '<h4 class="diff-precinct">Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>vote</th></tr></thead>' + winnerString + '</tr><tr><td>Heffernan</td><td>' + heffernanPct + '%</td></tr><tr><td>Evans</td><td>' + evansPct + '%</td></tr><tr><td>Write-in</td><td>' + writeInPct + '%</td></tr></table>'
-        //         )
-        //     }
-        // }).addTo(hancockStrength);
-
-        /***** HANCOCK-GIELLIS DIFFERENCE MAP *****/
-        // L.geoJson(data, {
-        //     style: function(feature) {
-        //         var precinctWinner = feature.properties.precinctWinner;
-        //         var fillColor;
-        //         var fillOpacity;
-
-        //         var difference = (feature.properties.hancock - feature.properties.giellis);
-
-        //         if (difference > .5) fillColor = "#6a51a3";
-        //         else if (difference > .25) fillColor = "#9e9ac8";
-        //         else if (difference > .025) fillColor = "#cbc9e2";
-        //         //else if (difference > .05) fillColor = "#cbc9e2";
-        //         else if (difference < -.025) fillColor = "#bae4b3";
-        //         else if (difference < -.25) fillColor = "#74c476";
-        //         else if (difference < -.5) fillColor = "#238b45";
-        //         return {
-        //             color: "#000",
-        //             weight: 1,
-        //             fillColor: fillColor,
-        //             fillOpacity: .8
-        //         };
-        //     },
-        //     onEachFeature: function(feature, layer) {
-        //         var giellisPct = (feature.properties.giellis * 100).toFixed(1);
-        //         var heffernanPct = (feature.properties.heffernan * 100).toFixed(1);
-        //         var simpsonPct = (feature.properties.simpson * 100).toFixed(1);
-        //         var scottPct = (feature.properties.scott * 100).toFixed(1);
-        //         var calderonPct = (feature.properties.calderon * 100).toFixed(1);
-        //         var giavanniPct = (feature.properties.giavanni * 100).toFixed(1);
-        //         var hancockPct = (feature.properties.hancock * 100).toFixed(1);
-        //         var fiorinoPct = (feature.properties.fiorino * 100).toFixed(1);
-        //         var tatePct = (feature.properties.tate * 100).toFixed(1);
-        //         var evansPct = (feature.properties.evans * 100).toFixed(1);
-        //         var precinct = feature.properties.precinct;
-        //         var margin = Math.abs(hancockPct - giellisPct).toFixed(1);
-        //         var winner;
-
-        //         if (feature.properties.hancock > feature.properties.giellis) {
-        //             winner = 'Hancock +' + margin
-        //         } else if (feature.properties.giellis > feature.properties.hancock) {
-        //             winner = 'Giellis +' + margin
-        //         } else {
-        //             winner = 'Tied +' + margin
-        //         };
-
-
-        //         layer.bindPopup(
-        //             '<h4 class="diff-precinct">Precinct ' + precinct + '</h4><hr><p class="difference">' + winner + '</p><table><thead><tr><th></th><th></th></tr></thead><tr><td>Hancock</td><td>' + hancockPct + '%</td></tr><tr><td>Giellis</td><td>' + giellisPct + '%</td></tr></table>'
-        //         )
-        //     }
-        // }).addTo(hancockGiellisDiff);
-
-        /***** ELECTION RESULTS MAP *****/
+        /***** RUNOFF RESULTS MAP *****/
         L.geoJson(data, {
             style: function(feature) {
                 var precinctWinner = feature.properties.precinctWinner;
@@ -526,6 +375,7 @@
         }).addTo(runoffResults);
     });
 
+    /*****ELECTION RESULTS MAP*****/
     $.getJSON("denver-election-results.geojson", function(data) {
         L.geoJson(data, {
             style: function(feature) {
@@ -574,6 +424,83 @@
                 )
             }
         }).addTo(electionResults);
+    });
+
+    /*****FLIP MAP*****/
+    $.getJSON("flip.geojson", function(data) {
+        L.geoJson(data, {
+            style: function(feature) {
+                var precinctWinner = feature.properties.precinctWinner;
+                var flip = feature.properties.flip;
+                var fillColor;
+                var fillOpacity;
+
+                if (flip === 'hancock') {
+                    [fillColor = '#6a51a3', fillOpacity = .3]
+                } else if (flip === 'giellis') {
+                    [fillColor = '#238b45', fillOpacity = .3]
+                } else if (flip === 'hancockgiellis') {
+                    [fillColor = '#238b45', fillOpacity = .8]
+                } else if (flip === 'giellishancock') {
+                    [fillColor = '#6a51a3', fillOpacity = .8]
+                } else if (flip === 'calderonhancock') {
+                    [fillColor = '#000', fillOpacity = .8]
+                } else if (flip === 'tatehancock') {
+                    [fillColor = '#000', fillOpacity = .8]
+                } else if (flip === 'calderongiellis') {
+                    [fillColor = '#000', fillOpacity = .5]
+                } else if (flip === 'tategiellis') {
+                    [fillColor = '#000', fillOpacity = .5]
+                } else fillColor = 'white';
+
+                return {
+                    color: '#000',
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: fillOpacity
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                // var giellisPct = (feature.properties.giellisPct * 100).toFixed(1);
+                // var hancockPct = (feature.properties.hancockPct * 100).toFixed(1);
+                // var winnerString;
+                // var precinct = feature.properties.PRECINCT;
+
+                // if (feature.properties.precinctWinner == 'Jamie Giellis') {
+                //     winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td>'
+                // } else winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td>'
+
+                // layer.bindPopup(
+                //     '<h4 class="diff-precinct">Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>vote</th></tr></thead>' + winnerString + '</tr></table>'
+                // )
+
+                var flipNames = feature.properties.flip;
+                var flipTooltip;
+
+                if (flipNames === 'hancock') {
+                    flipTooltip = 'Hancock &rarr; Hancock'
+                } else if (flipNames === 'giellis') {
+                    flipTooltip = 'Giellis &rarr; Giellis'
+                } else if (flipNames === 'giellishancock') {
+                    flipTooltip = 'Giellis &rarr; Hancock'
+                } else if (flipNames === 'hancockgiellis') {
+                    flipTooltip = 'Hancock &rarr; Giellis'
+                } else if (flipNames === 'calderonhancock') {
+                    flipTooltip = 'Calderon &rarr; Hancock'
+                } else if (flipNames === 'calderongiellis') {
+                    flipTooltip = 'Calderon &rarr; Giellis'
+                } else if (flipNames === 'tatehancock') {
+                    flipTooltip = 'Tate &rarr; Hancock'
+                } else if (flipNames === 'tategiellis') {
+                    flipTooltip = 'Tate &rarr; Giellis'
+                } else if (flipNames === 'hancocktie') {
+                    flipTooltip = 'Hancock &rarr; tie'
+                } else flipTooltip = 'Tie &rarr; Hancock'
+
+
+                layer.bindPopup('<h4 class="diff-precinct">Precinct ' + feature.properties.PRECINCT + '</h4><hr><p style="margin-top:-10px;font-size:1rem"><em>Regular winner &rarr; runoff winner</em><br><strong>' + flipTooltip + '</strong></p>')
+            }
+        }).addTo(runoffFlip);
     });
 
     var layerControl = L.control.groupedLayers(basemaps, groupedOverlays, options);
