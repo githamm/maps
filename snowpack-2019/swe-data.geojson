@@ -1,0 +1,2760 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6833333,40.5333333 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":825,
+    "stationName":"Tower",
+    "stationElevation":10500,
+    "sweCurrent":53.2,
+    "swe2018":10.2,
+    "sweMedian":32.7,
+    "swePct2018":522,
+    "swePctMedian":163,
+    "swe2018PctMedian":31
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6833333,40.5333333 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":825,
+    "stationName":"Tower",
+    "stationElevation":10500,
+    "sweCurrent":53.2,
+    "swe2018":10.2,
+    "sweMedian":32.7,
+    "swePct2018":522,
+    "swePctMedian":163,
+    "swe2018PctMedian":31
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.1833333,37.7833333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":1185,
+    "stationName":"Black Mesa",
+    "stationElevation":11580,
+    "sweCurrent":39.7,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.8,37.4833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":874,
+    "stationName":"Wolf Creek Summit",
+    "stationElevation":11000,
+    "sweCurrent":38.8,
+    "swe2018":0,
+    "sweMedian":15.3,
+    "swePct2018":null,
+    "swePctMedian":254,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.8,37.4833333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":874,
+    "stationName":"Wolf Creek Summit",
+    "stationElevation":11000,
+    "sweCurrent":38.8,
+    "swe2018":0,
+    "sweMedian":15.3,
+    "swePct2018":null,
+    "swePctMedian":254,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.9666667,41.15 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":673,
+    "stationName":"Old Battle",
+    "stationElevation":10000,
+    "sweCurrent":38.6,
+    "swe2018":2.1,
+    "sweMedian":17.9,
+    "swePct2018":1838,
+    "swePctMedian":216,
+    "swe2018PctMedian":12
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.05,39.0166667 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":737,
+    "stationName":"Schofield Pass",
+    "stationElevation":10700,
+    "sweCurrent":37.4,
+    "swe2018":0,
+    "sweMedian":1.9,
+    "swePct2018":null,
+    "swePctMedian":1968,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.05,39.0166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":737,
+    "stationName":"Schofield Pass",
+    "stationElevation":10700,
+    "sweCurrent":37.4,
+    "swe2018":0,
+    "sweMedian":1.9,
+    "swePct2018":null,
+    "swePctMedian":1968,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.8666667,39.05 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":682,
+    "stationName":"Park Reservoir",
+    "stationElevation":9960,
+    "sweCurrent":37.2,
+    "swe2018":0,
+    "sweMedian":4.8,
+    "swePct2018":null,
+    "swePctMedian":775,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.35,39.7666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":345,
+    "stationName":"Bison Lake",
+    "stationElevation":10880,
+    "sweCurrent":32.6,
+    "swe2018":0.8,
+    "sweMedian":15.3,
+    "swePct2018":4075,
+    "swePctMedian":213,
+    "swe2018PctMedian":5
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.35,39.7666667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":345,
+    "stationName":"Bison Lake",
+    "stationElevation":10880,
+    "sweCurrent":32.6,
+    "swe2018":0.8,
+    "sweMedian":15.3,
+    "swePct2018":4075,
+    "swePctMedian":213,
+    "swe2018PctMedian":5
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.7833333,37.7 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":780,
+    "stationName":"Spud Mountain",
+    "stationElevation":10660,
+    "sweCurrent":29.7,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.3,40.1 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":717,
+    "stationName":"Ripple Creek",
+    "stationElevation":10340,
+    "sweCurrent":29.2,
+    "swe2018":0,
+    "sweMedian":3.7,
+    "swePct2018":null,
+    "swePctMedian":789,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.7166667,37.9 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":713,
+    "stationName":"Red Mountain Pass",
+    "stationElevation":11200,
+    "sweCurrent":28.9,
+    "swe2018":0,
+    "sweMedian":0.6,
+    "swePct2018":null,
+    "swePctMedian":4817,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.7166667,37.9 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":713,
+    "stationName":"Red Mountain Pass",
+    "stationElevation":11200,
+    "sweCurrent":28.9,
+    "swe2018":0,
+    "sweMedian":0.6,
+    "swePct2018":null,
+    "swePctMedian":4817,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.2,39.3833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":485,
+    "stationName":"Fremont Pass",
+    "stationElevation":11400,
+    "sweCurrent":26.6,
+    "swe2018":5,
+    "sweMedian":10.7,
+    "swePct2018":532,
+    "swePctMedian":249,
+    "swe2018PctMedian":47
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.2,39.3833333 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":485,
+    "stationName":"Fremont Pass",
+    "stationElevation":11400,
+    "sweCurrent":26.6,
+    "swe2018":5,
+    "sweMedian":10.7,
+    "swePct2018":532,
+    "swePctMedian":249,
+    "swe2018PctMedian":47
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.5166667,37.7166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":327,
+    "stationName":"Beartown",
+    "stationElevation":11600,
+    "sweCurrent":26.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.5166667,37.7166667 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":327,
+    "stationName":"Beartown",
+    "stationElevation":11600,
+    "sweCurrent":26.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3833333,40.35 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1030,
+    "stationName":"Arapaho Ridge",
+    "stationElevation":10960,
+    "sweCurrent":23.9,
+    "swe2018":0,
+    "sweMedian":4.2,
+    "swePct2018":null,
+    "swePctMedian":569,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3833333,40.35 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":1030,
+    "stationName":"Arapaho Ridge",
+    "stationElevation":10960,
+    "sweCurrent":23.9,
+    "swe2018":0,
+    "sweMedian":4.2,
+    "swePct2018":null,
+    "swePctMedian":569,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.8333333,37.4833333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":840,
+    "stationName":"Upper San Juan",
+    "stationElevation":10200,
+    "sweCurrent":23.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.5833333,40.1333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":1251,
+    "stationName":"Sawtooth",
+    "stationElevation":9620,
+    "sweCurrent":23,
+    "swe2018":0.2,
+    "sweMedian":-998,
+    "swePct2018":11500,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.95,40.4 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":1031,
+    "stationName":"Never Summer",
+    "stationElevation":10280,
+    "sweCurrent":22.1,
+    "swe2018":1.9,
+    "sweMedian":13,
+    "swePct2018":1163,
+    "swePctMedian":170,
+    "swe2018PctMedian":15
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.0333333,37.6166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":624,
+    "stationName":"Middle Creek",
+    "stationElevation":11250,
+    "sweCurrent":21.8,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.9,39.6666667 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":602,
+    "stationName":"Loveland Basin",
+    "stationElevation":11400,
+    "sweCurrent":21.4,
+    "swe2018":0,
+    "sweMedian":3.2,
+    "swePct2018":null,
+    "swePctMedian":669,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8666667,39.8666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1186,
+    "stationName":"Fool Creek",
+    "stationElevation":11150,
+    "sweCurrent":21.1,
+    "swe2018":0.6,
+    "sweMedian":-998,
+    "swePct2018":3517,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.4166667,39.8666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1120,
+    "stationName":"Elliot Ridge",
+    "stationElevation":10520,
+    "sweCurrent":20.3,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8833333,40.5333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":551,
+    "stationName":"Joe Wright",
+    "stationElevation":10120,
+    "sweCurrent":19.4,
+    "swe2018":0,
+    "sweMedian":11.1,
+    "swePct2018":null,
+    "swePctMedian":175,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8833333,40.5333333 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":551,
+    "stationName":"Joe Wright",
+    "stationElevation":10120,
+    "sweCurrent":19.4,
+    "swe2018":0,
+    "sweMedian":11.1,
+    "swePct2018":null,
+    "swePctMedian":175,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.0666667,39.3666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":531,
+    "stationName":"Hoosier Pass",
+    "stationElevation":11400,
+    "sweCurrent":18.7,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.0666667,39.3666667 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":531,
+    "stationName":"Hoosier Pass",
+    "stationElevation":11400,
+    "sweCurrent":18.7,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.6333333,37.4833333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":797,
+    "stationName":"Stump Lakes",
+    "stationElevation":11200,
+    "sweCurrent":17.9,
+    "swe2018":0,
+    "sweMedian":0.7,
+    "swePct2018":null,
+    "swePctMedian":2557,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8166667,40.4166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":565,
+    "stationName":"Lake Irene",
+    "stationElevation":10700,
+    "sweCurrent":17.2,
+    "swe2018":0,
+    "sweMedian":5.6,
+    "swePct2018":null,
+    "swePctMedian":307,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8166667,40.4166667 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":565,
+    "stationName":"Lake Irene",
+    "stationElevation":10700,
+    "sweCurrent":17.2,
+    "swe2018":0,
+    "sweMedian":5.6,
+    "swePct2018":null,
+    "swePctMedian":307,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.6833333,37.75 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":632,
+    "stationName":"Molas Lake",
+    "stationElevation":10500,
+    "sweCurrent":16.8,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.1166667,39.3 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":938,
+    "stationName":"Buckskin Joe",
+    "stationElevation":11150,
+    "sweCurrent":16.5,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.1666667,39.4833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":415,
+    "stationName":"Copper Mountain",
+    "stationElevation":10550,
+    "sweCurrent":16.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.45,37.0166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":431,
+    "stationName":"Cumbres Trestle",
+    "stationElevation":10040,
+    "sweCurrent":15.5,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.5833333,40.0333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":838,
+    "stationName":"University Camp",
+    "stationElevation":10300,
+    "sweCurrent":15.2,
+    "swe2018":0.9,
+    "sweMedian":5.6,
+    "swePct2018":1689,
+    "swePctMedian":271,
+    "swe2018PctMedian":16
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.7333333,40.4333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":870,
+    "stationName":"Willow Park",
+    "stationElevation":10700,
+    "sweCurrent":15.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.7833333,39.8 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":335,
+    "stationName":"Berthoud Summit",
+    "stationElevation":11300,
+    "sweCurrent":15,
+    "swe2018":0,
+    "sweMedian":3,
+    "swePct2018":null,
+    "swePctMedian":500,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.7833333,39.8 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":335,
+    "stationName":"Berthoud Summit",
+    "stationElevation":11300,
+    "sweCurrent":15,
+    "swe2018":0,
+    "sweMedian":3,
+    "swePct2018":null,
+    "swePctMedian":500,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.55,39.3 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":547,
+    "stationName":"Ivanhoe",
+    "stationElevation":10400,
+    "sweCurrent":15,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8666667,39.65 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":505,
+    "stationName":"Grizzly Peak",
+    "stationElevation":11100,
+    "sweCurrent":14.5,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3333333,38.4833333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":701,
+    "stationName":"Porphyry Creek",
+    "stationElevation":10760,
+    "sweCurrent":14.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3333333,38.4833333 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":701,
+    "stationName":"Porphyry Creek",
+    "stationElevation":10760,
+    "sweCurrent":14.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.3166667,37.5166667 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":1160,
+    "stationName":"Weminuche Creek",
+    "stationElevation":10740,
+    "sweCurrent":14.2,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.8,39.5666667 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":935,
+    "stationName":"Jackwhacker Gulch",
+    "stationElevation":10960,
+    "sweCurrent":13.9,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.1166667,37.5 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":1060,
+    "stationName":"Sharkstooth",
+    "stationElevation":10720,
+    "sweCurrent":13.9,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.75,40.0333333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1187,
+    "stationName":"High Lonesome",
+    "stationElevation":10620,
+    "sweCurrent":13.8,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.0666667,39.05 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":622,
+    "stationName":"Mesa Lakes",
+    "stationElevation":10000,
+    "sweCurrent":13.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.0666667,39.05 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":622,
+    "stationName":"Mesa Lakes",
+    "stationElevation":10000,
+    "sweCurrent":13.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.5,37.4833333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":843,
+    "stationName":"Vallecito",
+    "stationElevation":10880,
+    "sweCurrent":13.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.9166667,41 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":859,
+    "stationName":"Whiskey Park",
+    "stationElevation":8950,
+    "sweCurrent":12.4,
+    "swe2018":0,
+    "sweMedian":0.8,
+    "swePct2018":null,
+    "swePctMedian":1550,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.9166667,41 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":859,
+    "stationName":"Whiskey Park",
+    "stationElevation":8950,
+    "sweCurrent":12.4,
+    "swe2018":0,
+    "sweMedian":0.8,
+    "swePct2018":null,
+    "swePctMedian":1550,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.7666667,40.8 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":438,
+    "stationName":"Deadman Hill",
+    "stationElevation":10220,
+    "sweCurrent":12.3,
+    "swe2018":0,
+    "sweMedian":2.8,
+    "swePct2018":null,
+    "swePctMedian":439,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.7666667,40.8 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":438,
+    "stationName":"Deadman Hill",
+    "stationElevation":10220,
+    "sweCurrent":12.3,
+    "swe2018":0,
+    "sweMedian":2.8,
+    "swePct2018":null,
+    "swePctMedian":439,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.9,39.7666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":970,
+    "stationName":"Jones Pass",
+    "stationElevation":10400,
+    "sweCurrent":12,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.95,41.0666667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":1047,
+    "stationName":"Little Snake River",
+    "stationElevation":8915,
+    "sweCurrent":10.9,
+    "swe2018":0,
+    "sweMedian":0.5,
+    "swePct2018":null,
+    "swePctMedian":2180,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.7333333,40.3666667 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":709,
+    "stationName":"Rabbit Ears",
+    "stationElevation":9400,
+    "sweCurrent":10.7,
+    "swe2018":0,
+    "sweMedian":0.4,
+    "swePct2018":null,
+    "swePctMedian":2675,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.7333333,40.3666667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":709,
+    "stationName":"Rabbit Ears",
+    "stationElevation":9400,
+    "sweCurrent":10.7,
+    "swe2018":0,
+    "sweMedian":0.4,
+    "swePct2018":null,
+    "swePctMedian":2675,
+    "swe2018PctMedian":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.5333333,37.9666667 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":773,
+    "stationName":"South Colony",
+    "stationElevation":10800,
+    "sweCurrent":9.5,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.9166667,37.8 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":586,
+    "stationName":"Lizard Head Pass",
+    "stationElevation":10200,
+    "sweCurrent":9.3,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.2,37.9833333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":762,
+    "stationName":"Slumgullion",
+    "stationElevation":11560,
+    "sweCurrent":9.3,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.0166667,37.7833333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":465,
+    "stationName":"El Diente Peak",
+    "stationElevation":10000,
+    "sweCurrent":9.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.9166667,39.4333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":937,
+    "stationName":"Michigan Creek",
+    "stationElevation":10600,
+    "sweCurrent":8.9,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.75,38.9833333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":1141,
+    "stationName":"Upper Taylor",
+    "stationElevation":10640,
+    "sweCurrent":8,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.7333333,37.85 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":629,
+    "stationName":"Mineral Creek",
+    "stationElevation":10040,
+    "sweCurrent":7.9,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.7666667,40.5166667 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":1123,
+    "stationName":"Long Draw Resv",
+    "stationElevation":9980,
+    "sweCurrent":7.8,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6166667,39.0833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":542,
+    "stationName":"Independence Pass",
+    "stationElevation":10600,
+    "sweCurrent":7.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3833333,39.6166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":842,
+    "stationName":"Vail Mountain",
+    "stationElevation":10300,
+    "sweCurrent":7,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.85,38.3 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":1102,
+    "stationName":"Hayden Pass",
+    "stationElevation":10720,
+    "sweCurrent":6.9,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.85,38.3 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1102,
+    "stationName":"Hayden Pass",
+    "stationElevation":10720,
+    "sweCurrent":6.9,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3666667,38.2833333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":1128,
+    "stationName":"Sargents Mesa",
+    "stationElevation":11530,
+    "sweCurrent":6.4,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3666667,38.2833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1128,
+    "stationName":"Sargents Mesa",
+    "stationElevation":11530,
+    "sweCurrent":6.4,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.1,40.35 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":869,
+    "stationName":"Willow Creek Pass",
+    "stationElevation":9540,
+    "sweCurrent":6.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.1,40.35 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":869,
+    "stationName":"Willow Creek Pass",
+    "stationElevation":9540,
+    "sweCurrent":6.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.75,40.8166667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":940,
+    "stationName":"Lost Dog",
+    "stationElevation":9320,
+    "sweCurrent":6.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.65,40.3166667 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":322,
+    "stationName":"Bear Lake",
+    "stationElevation":9500,
+    "sweCurrent":5.5,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.6,39.65 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":936,
+    "stationName":"Echo Lake",
+    "stationElevation":10600,
+    "sweCurrent":4.7,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.6,40.2 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":1042,
+    "stationName":"Wild Basin",
+    "stationElevation":9560,
+    "sweCurrent":4.6,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.05,40.8833333 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":718,
+    "stationName":"Roach",
+    "stationElevation":9700,
+    "sweCurrent":4.5,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.55,39.0833333 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":369,
+    "stationName":"Brumley",
+    "stationElevation":10600,
+    "sweCurrent":3.8,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.95,38.9 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":380,
+    "stationName":"Butte",
+    "stationElevation":10160,
+    "sweCurrent":3.7,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.55,37.3833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":580,
+    "stationName":"Lily Pond",
+    "stationElevation":11000,
+    "sweCurrent":3.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.0166667,40.0666667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":1061,
+    "stationName":"Bear River",
+    "stationElevation":9080,
+    "sweCurrent":2.8,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.3666667,38.7 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":1100,
+    "stationName":"Saint Elmo",
+    "stationElevation":10540,
+    "sweCurrent":2.2,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.1666667,37.4333333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":905,
+    "stationName":"Mancos",
+    "stationElevation":10000,
+    "sweCurrent":2.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.55,40.0333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":663,
+    "stationName":"Niwot",
+    "stationElevation":9910,
+    "sweCurrent":1.9,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.6333333,39.0833333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":675,
+    "stationName":"Overland Res.",
+    "stationElevation":9840,
+    "sweCurrent":1.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.0833333,39.0333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":939,
+    "stationName":"Rough And Tumble",
+    "stationElevation":10360,
+    "sweCurrent":1.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.3833333,38.4166667 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":409,
+    "stationName":"Columbine Pass",
+    "stationElevation":9400,
+    "sweCurrent":0.6,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.2,37.9 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":589,
+    "stationName":"Lone Cone",
+    "stationElevation":9600,
+    "sweCurrent":0.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6666667,40.0833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":607,
+    "stationName":"Lynx Pass",
+    "stationElevation":8880,
+    "sweCurrent":0.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6666667,40.0833333 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":607,
+    "stationName":"Lynx Pass",
+    "stationElevation":8880,
+    "sweCurrent":0.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.2666667,37.7166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":839,
+    "stationName":"Upper Rio Grande",
+    "stationElevation":9400,
+    "sweCurrent":0.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.5333333,39.6 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1040,
+    "stationName":"Mccoy Park",
+    "stationElevation":9480,
+    "sweCurrent":0.4,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.3666667,37.8833333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":1188,
+    "stationName":"Wager Gulch",
+    "stationElevation":11100,
+    "sweCurrent":0.3,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.3666667,37.8833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1188,
+    "stationName":"Wager Gulch",
+    "stationElevation":11100,
+    "sweCurrent":0.3,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.5666667,40.2 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":412,
+    "stationName":"Copeland Lake",
+    "stationElevation":8600,
+    "sweCurrent":0.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6166667,39.3166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":556,
+    "stationName":"Kiln",
+    "stationElevation":9600,
+    "sweCurrent":0.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.2333333,37.35 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":829,
+    "stationName":"Trinchera",
+    "stationElevation":10860,
+    "sweCurrent":0.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.1166667,37.2166667 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":857,
+    "stationName":"Whiskey Ck",
+    "stationElevation":10220,
+    "sweCurrent":0.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,38.1666667 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":1059,
+    "stationName":"Cochetopa Pass",
+    "stationElevation":10020,
+    "sweCurrent":0.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,38.1666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1059,
+    "stationName":"Cochetopa Pass",
+    "stationElevation":10020,
+    "sweCurrent":0.2,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.6,39.8833333 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":378,
+    "stationName":"Burro Mountain",
+    "stationElevation":9400,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.05,40.1666667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":426,
+    "stationName":"Crosho",
+    "stationElevation":9100,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.7833333,40.5333333 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":457,
+    "stationName":"Dry Lake",
+    "stationElevation":8400,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.5833333,39.9333333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":564,
+    "stationName":"Lake Eldora",
+    "stationElevation":9700,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.2833333,39.1333333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":618,
+    "stationName":"Mc Clure Pass",
+    "stationElevation":9500,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.2833333,39.1333333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":618,
+    "stationName":"Mc Clure Pass",
+    "stationElevation":9500,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,39.3 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":658,
+    "stationName":"Nast Lake",
+    "stationElevation":8700,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.15,39.0833333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":669,
+    "stationName":"North Lost Trail",
+    "stationElevation":9200,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.4333333,37.85 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":914,
+    "stationName":"Medano Pass",
+    "stationElevation":9649,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106,40.7 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":1032,
+    "stationName":"Rawah",
+    "stationElevation":9020,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.6333333,40.5833333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":1122,
+    "stationName":"Hourglass Lake",
+    "stationElevation":9380,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.5666667,37.9666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1124,
+    "stationName":"Moon Pass",
+    "stationElevation":11140,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.6666667,40.8833333 ]
+    },
+    "properties": {
+    "basinName":"SOUTH PLATTE RIVER BASIN",
+    "stationId":1161,
+    "stationName":"Black Mountain",
+    "stationElevation":8920,
+    "sweCurrent":0.1,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.2666667,41.05 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":317,
+    "stationName":"Battle Mountain",
+    "stationElevation":7440,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.2,37.2166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":430,
+    "stationName":"Culebra #2",
+    "stationElevation":10500,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.15,41.3 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":449,
+    "stationName":"Divide Peak",
+    "stationElevation":8880,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.9666667,40.85 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":467,
+    "stationName":"Elk River",
+    "stationElevation":8700,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.6833333,37.9333333 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":538,
+    "stationName":"Idarado",
+    "stationElevation":9800,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.5833333,38.8166667 ]
+    },
+    "properties": {
+    "basinName":"GUNNISON RIVER BASIN",
+    "stationId":680,
+    "stationName":"Park Cone",
+    "stationElevation":9600,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.85,40.4 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":688,
+    "stationName":"Phantom Valley",
+    "stationElevation":9030,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108,37.65 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":739,
+    "stationName":"Scotch Creek",
+    "stationElevation":9100,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.9166667,40.2333333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":793,
+    "stationName":"Stillwater Creek",
+    "stationElevation":8720,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.15,39.7166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":802,
+    "stationName":"Summit Ranch",
+    "stationElevation":9400,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.2333333,40 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":827,
+    "stationName":"Trapper Lake",
+    "stationElevation":9700,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.3666667,37.6166667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1005,
+    "stationName":"Ute Creek",
+    "stationElevation":10650,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.0333333,39.8 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1014,
+    "stationName":"Middle Fork Camp",
+    "stationElevation":8940,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.5166667,39.6 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1041,
+    "stationName":"Beaver Ck Village",
+    "stationElevation":8500,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.5333333,37.4666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER RIO GRANDE BASIN",
+    "stationId":1058,
+    "stationName":"Grayback",
+    "stationElevation":11620,
+    "sweCurrent":0,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0666667,37.3333333 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":303,
+    "stationName":"Apishapa",
+    "stationElevation":10000,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.8,37.65 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":386,
+    "stationName":"Cascade",
+    "stationElevation":8880,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,40.4 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":408,
+    "stationName":"Columbine",
+    "stationElevation":9160,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,40.4 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":408,
+    "stationName":"Columbine",
+    "stationElevation":9160,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.1666667,41.1166667 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":732,
+    "stationName":"Sandstone RS",
+    "stationElevation":8150,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.0166667,37.4333333 ]
+    },
+    "properties": {
+    "basinName":"SAN MIGUEL, DOLORES, ANIMAS AND SAN JUAN RIVER BASINS",
+    "stationId":904,
+    "stationName":"Columbus Basin",
+    "stationElevation":10785,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,40.2333333 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":913,
+    "stationName":"Buffalo Park",
+    "stationElevation":9240,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,40.2333333 ]
+    },
+    "properties": {
+    "basinName":"YAMPA AND WHITE RIVER BASINS",
+    "stationId":913,
+    "stationName":"Buffalo Park",
+    "stationElevation":9240,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6,40.8 ]
+    },
+    "properties": {
+    "basinName":"LARAMIE AND NORTH PLATTE RIVER BASINS",
+    "stationId":1033,
+    "stationName":"Zirkel",
+    "stationElevation":9340,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0666667,38.8833333 ]
+    },
+    "properties": {
+    "basinName":"ARKANSAS RIVER BASIN",
+    "stationId":1057,
+    "stationName":"Glen Cove",
+    "stationElevation":11460,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":0,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.6333333,39.2666667 ]
+    },
+    "properties": {
+    "basinName":"UPPER COLORADO RIVER BASIN",
+    "stationId":1101,
+    "stationName":"Chapman Tunnel",
+    "stationElevation":10110,
+    "sweCurrent":-999,
+    "swe2018":0,
+    "sweMedian":-998,
+    "swePct2018":null,
+    "swePctMedian":null,
+    "swe2018PctMedian":null
+    }
+  }
+]
+}
