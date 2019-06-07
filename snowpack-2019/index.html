@@ -368,7 +368,9 @@
                     snowpackMedian = feature.properties.sweMedian + ' in.'
                 } else snowpackMedian = 'No data';
 
-                var tooltipText = '<h4>' + feature.properties.stationName + '</h4><br>' + feature.properties.basinName + '<hr><p class="popup-text">Current snow water<br>equivalent: <strong>' + snowpackNow + ' in.</strong><br>Last year: <strong>' + feature.properties.swe2018 + ' in.</strong><br>Median: <strong>' + snowpackMedian + '</strong><br>Pct of median: <strong>' + snowpackPct + '</strong></p>';
+                var stationElevation = (feature.properties.stationElevation).toLocaleString();
+
+                var tooltipText = '<h4>' + feature.properties.stationName + '</h4><br>' + feature.properties.basinName + '<br><span style="margin-top:3px;display:block;text-align:center;font-style:italic">Elevation: ' + stationElevation + ' feet</span><hr><p class="popup-text">Current snow water<br>equivalent: <strong>' + snowpackNow + ' in.</strong><br>Last year: <strong>' + feature.properties.swe2018 + ' in.</strong><br>Median: <strong>' + snowpackMedian + '</strong><br>Pct of median: <strong>' + snowpackPct + '</strong></p>';
 
                 if (snowpackNow > 0) {
                     return L.circleMarker(latlng, mapMarker).bindPopup(tooltipText)
