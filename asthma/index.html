@@ -313,9 +313,9 @@
                     <div class="legend-container">
                     <p class="legend-description"><strong>Rate:</strong> lower than state average&nbsp;&nbsp;&#9679;&nbsp;&nbsp;higher&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
                     <div class="legend-container">
-                    <div class="legend-box" style="background-color:#efedf5"></div>
-                    <div class="legend-box" style="background-color:#4a1486"></div>
-                    <div class="legend-box" style="background-color:#000"></div>
+                    <div class="legend-box" style="background-color:#4393c3;opacity:.75"></div>
+                    <div class="legend-box" style="background-color:#b2182b;opacity:.75"></div>
+                    <div class="legend-box" style="background-color:#000;opacity:.75"></div>
                     <p class="legend-description" style="margin-top:30px"><strong>Rate change:</strong> improved&nbsp;&nbsp;&#9679;&nbsp;&nbsp;worsened&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
                 </div>
                 </fieldset>
@@ -394,15 +394,15 @@
                 var fillColor;
                 var borderColor;
 
-                if (rate2006 > 1800) fillColor = '#4a1486';
-                else if (rate2006 > 1200) fillColor = '#807dba';
-                else if (rate2006 > 636.4) fillColor = '#bcbddc';
-                else if (rate2006 > 0) fillColor = '#efedf5';
+                if (rate2006 > 1800) fillColor = '#b2182b';
+                else if (rate2006 > 1200) fillColor = '#d6604d';
+                else if (rate2006 > 636.4) fillColor = '#f4a582';
+                else if (rate2006 > 0) fillColor = '#4393c3';
                 return {
                     color: '#000',
                     weight: 3,
                     fillColor: fillColor,
-                    fillOpacity: .85
+                    fillOpacity: .75
                 };
             },
             onEachFeature: function(feature, layer) {
@@ -434,15 +434,15 @@
                 var fillColor;
                 var fillOpacity;
 
-                if (rate2013 > 1800) fillColor = '#4a1486';
-                else if (rate2013 > 1200) fillColor = '#807dba';
-                else if (rate2013 > 637.8) fillColor = '#bcbddc';
-                else if (rate2013 > 0) fillColor = '#efedf5';
+                if (rate2013 > 1800) fillColor = '#b2182b';
+                else if (rate2013 > 1200) fillColor = '#d6604d';
+                else if (rate2013 > 637.8) fillColor = '#f4a582';
+                else if (rate2013 > 0) fillColor = '#4393c3';
                 return {
                     color: '#000',
                     weight: 3,
                     fillColor: fillColor,
-                    fillOpacity: .85
+                    fillOpacity: .75
                 };
             },
             onEachFeature: function(feature, layer) {
@@ -474,15 +474,15 @@
                 var fillColor;
                 var fillOpacity;
 
-                if (rateChange > 100) fillColor = '#4a1486';
-                else if (rateChange > 50) fillColor = '#807dba';
-                else if (rateChange > 0) fillColor = '#bcbddc';
-                else if (rateChange < 0) fillColor = '#efedf5';
+                if (rateChange > 50) fillColor = '#b2182b';
+                else if (rateChange > 25) fillColor = '#d6604d';
+                else if (rateChange > 0) fillColor = '#f4a582';
+                else if (rateChange < 0) fillColor = '#4393c3';
                 return {
                     color: '#000',
                     weight: 3,
                     fillColor: fillColor,
-                    fillOpacity: .85
+                    fillOpacity: .75
                 };
             },
             onEachFeature: function(feature, layer) {
