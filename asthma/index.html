@@ -288,6 +288,10 @@
         color: rgba(0, 0, 0, .4);
         font-style: italic;
     }
+
+    .no-data {
+        margin: -12px 0 -12px 0;
+    }
     </style>
 </head>
 
@@ -423,6 +427,7 @@
                 };
             },
             onEachFeature: function(feature, layer) {
+<<<<<<< HEAD
                 var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
                 var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
                 var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
@@ -436,6 +441,21 @@
                 if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
                     tooltipText = 'No data'
                 } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+=======
+            	var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
+            	var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
+            	var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
+
+            	var changeColor;
+            	if (rateChange < 0) {
+            		changeColor = 'green'
+            	} else changeColor = 'red';
+
+            	var tooltipText;
+            	if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
+            		tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><div class="no-data"><hr></div>NO DATA'
+            	} else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006-10</th><th>2013-17</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+>>>>>>> 5703620b05cfd954d32a6c6c779aa3929d0e396a
 
                 layer.bindPopup(
                     tooltipText
@@ -474,8 +494,8 @@
 
                 var tooltipText;
                 if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-                    tooltipText = 'No data'
-                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+                    tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><div class="no-data"><hr></div>NO DATA'
+                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006-10</th><th>2013-17</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
 
                 layer.bindPopup(
                     tooltipText
@@ -514,8 +534,8 @@
 
                 var tooltipText;
                 if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-                    tooltipText = 'No data'
-                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+                    tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><div class="no-data"><hr></div>NO DATA'
+                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006-10</th><th>2013-17</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
 
                 layer.bindPopup(
                     tooltipText
