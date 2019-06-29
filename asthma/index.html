@@ -85,15 +85,15 @@
         font-style: italic;
         color: #ff5959;
         opacity: .8;
-        margin: -3px 0 -7px 0;
+        margin: -3px 0 15px 0;
+        line-height: 17px;
     }
 
     h2 {
         font-family: 'Roboto', sans-serif;
-        font-size: 2em;
+        font-size: 2.3rem;
         font-weight: 700;
-        letter-spacing: 0px;
-        line-height: 100%
+        line-height: 35px;
     }
 
     /*.tooltip-header {
@@ -178,7 +178,6 @@
 
     .leaflet-control-layers label {
         display: inline-block;
-        margin-left: 20px;
     }
 
     .leaflet-control-layers-base {
@@ -209,7 +208,7 @@
     table thead th {
         border-bottom: 2px solid silver;
         padding-bottom: 0;
-        color: rgba(0,0,0,.4);
+        color: rgba(0, 0, 0, .4);
         font-weight: normal;
         text-transform: uppercase;
     }
@@ -259,7 +258,7 @@
     }
 
     .legend-container {
-    	width: auto;
+        width: auto;
         float: right;
         padding-bottom: 15px;
     }
@@ -272,11 +271,11 @@
     }
 
     .legend-description {
-    	font-style: italic;
-    	font-size: .72rem;
-    	text-transform: uppercase;
-    	text-align: center;
-    	margin-bottom: 3px;
+        font-style: italic;
+        font-size: .72rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 3px;
     }
 
     .subtitle {
@@ -286,7 +285,7 @@
     }
 
     .sub-data {
-        color: rgba(0,0,0,.4);
+        color: rgba(0, 0, 0, .4);
         font-style: italic;
     }
     </style>
@@ -297,28 +296,42 @@
         <div class="row">
             <div class="large-12 columns">
                 <h2>Asthma in Denver</h2>
-                <p>Chatter and chatter and chatter and chatter and chatter and chatter. <em>The maps show asthma rates by census tract for two time periods, 2013-17 and 2006-10, and the percentage change in the rate. Use radio buttons to toggle maps.</em></p>
+                <p>The maps show asthma rates by census tract for two time periods, 2013-17 and 2006-10, and the percentage change in the rate. <span style="color:#b2182b; font-style:italic;">Use radio buttons to toggle maps; click census tract for details</span>.</p>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
                 <p class="instructions">Zoom map and click census tracts for details; use radio buttons to toggle maps</p>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
             <div class="large-12 columns">
                 <fieldset class="fieldset">
                     <legend><strong><em>Choose a map</em></strong></legend>
                     <div id="layer-control"></div>
-                    <div class="legend-container">
+                </fieldset>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="large-12 medium-11 medium-centered small-11 small-centered columns">
+                <div class="legend-container">
                     <p class="legend-description"><strong>Rate:</strong> lower than state average&nbsp;&nbsp;&#9679;&nbsp;&nbsp;higher&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
                     <div class="legend-container">
-                    <div class="legend-box" style="background-color:#4393c3;opacity:.75"></div>
-                    <div class="legend-box" style="background-color:#b2182b;opacity:.75"></div>
-                    <div class="legend-box" style="background-color:#000;opacity:.75"></div>
-                    <p class="legend-description" style="margin-top:30px"><strong>Rate change:</strong> improved&nbsp;&nbsp;&#9679;&nbsp;&nbsp;worsened&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
+                        <div class="legend-box" style="background-color:#4393c3;opacity:.75"></div>
+                        <div class="legend-box" style="background-color:#b2182b;opacity:.75"></div>
+                        <div class="legend-box" style="background-color:#000;opacity:.75"></div>
+                        <p class="legend-description" style="margin-top:30px"><strong>Rate change:</strong> improved&nbsp;&nbsp;&#9679;&nbsp;&nbsp;worsened&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
+                    </div>
                 </div>
-                </fieldset>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <!-- <fieldset class="fieldset"> -->
+                    <!-- <div style="border: 1px solid silver;margin:10px !important;padding:10px;">
+                        	<legend><strong><em>Choose a map</em></strong></legend> -->
+                    <!-- <div id="layer-control"></div> -->
+                </div>
+                <!-- </fieldset> -->
             </div>
         </div>
         <!-- <div class="row">
@@ -334,7 +347,11 @@
             </div>
         </div> -->
         <div class="row">
-            <div class="large-12 columns">
+            <div class="large-12 medium-11 medium-centered small-11 small-centered columns">
+                <div style="margin: -20px 0 35px 0">
+                    <p style="margin-bottom: -5px;font-weight:bold;text-transform: uppercase;font-size:.9rem;color:#b2182b">Choose a map</p>
+                    <div id="layer-control"></div>
+                </div>
                 <div id="map"></div>
                 <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Colorado Department of Public Health and Environment</p>
             </div>
@@ -363,8 +380,8 @@
     // Overlay layers are grouped
     var groupedOverlays = {
         "": {
-            'rate 2013-17': asthma2013,
-            'rate 2006-10': asthma2006,
+            '<span style="display:inline-block;margin-right:8px">rate 2013-17</span>': asthma2013,
+            '<span style="display:inline-block;margin-right:8px">rate 2006-10</span>': asthma2006,
             'rate Change': asthmaChange
         }
     };
@@ -406,19 +423,19 @@
                 };
             },
             onEachFeature: function(feature, layer) {
-            	var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
-            	var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
-            	var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
+                var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
+                var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
+                var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
 
-            	var changeColor;
-            	if (rateChange < 0) {
-            		changeColor = 'green'
-            	} else changeColor = 'red';
+                var changeColor;
+                if (rateChange < 0) {
+                    changeColor = 'green'
+                } else changeColor = 'red';
 
-            	var tooltipText;
-            	if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-            		tooltipText = 'No data'
-            	} else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+                var tooltipText;
+                if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
+                    tooltipText = 'No data'
+                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
 
                 layer.bindPopup(
                     tooltipText
