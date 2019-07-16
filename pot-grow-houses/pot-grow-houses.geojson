@@ -31,7 +31,7 @@
       "properties": {
         "date": "11/28/2018",
         "multipleAddress": "",
-        "address": "10069 Granby Drive",
+        "address": "10000 block of Granby Drive",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "unavailable"
@@ -67,7 +67,7 @@
       "properties": {
         "date": "6/13/2017",
         "multipleAddress": "",
-        "address": "10741 Xanadu Street",
+        "address": "10700 block of Xanadu Street",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "unavailable"
@@ -157,7 +157,7 @@
       "properties": {
         "date": "5/22/2018",
         "multipleAddress": "",
-        "address": "11097 Newark Street",
+        "address": "11000 block of Newark Street",
         "city": "Commerce City",
         "zip": "80640",
         "plants": "unavailable"
@@ -211,7 +211,7 @@
       "properties": {
         "date": "5/30/2019",
         "multipleAddress": "",
-        "address": "11332 Lansing Street",
+        "address": "11300 block of Lansing Street",
         "city": "Commerce City",
         "zip": "80640",
         "plants": "403"
@@ -229,7 +229,7 @@
       "properties": {
         "date": "4/4/2019",
         "multipleAddress": "",
-        "address": "11340 Nome Street",
+        "address": "11300 block of Nome Street",
         "city": "Commerce City",
         "zip": "80640",
         "plants": "764"
@@ -247,7 +247,7 @@
       "properties": {
         "date": "5/24/2018",
         "multipleAddress": "",
-        "address": "11341 Oswego Street",
+        "address": "11300 block of Oswego Street",
         "city": "Commerce City",
         "zip": "80640",
         "plants": "384"
@@ -265,7 +265,7 @@
       "properties": {
         "date": "2/19/2019",
         "multipleAddress": "",
-        "address": "11368 Newark Street",
+        "address": "11300 block of Newark Street",
         "city": "Commerce City",
         "zip": "80640",
         "plants": "578"
@@ -301,7 +301,7 @@
       "properties": {
         "date": "11/7/2018",
         "multipleAddress": "",
-        "address": "11402 Chambers Drive",
+        "address": "11400 block of Chambers Drive",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "unavailable"
@@ -319,7 +319,7 @@
       "properties": {
         "date": "1/31/2019",
         "multipleAddress": "",
-        "address": "11481 Chambers Drive",
+        "address": "11400 block of Chambers Drive",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "663"
@@ -355,7 +355,7 @@
       "properties": {
         "date": "4/25/2019",
         "multipleAddress": "",
-        "address": "11763 Memphis Street",
+        "address": "11700 block of Memphis Street",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "206"
@@ -373,7 +373,7 @@
       "properties": {
         "date": "7/25/2018",
         "multipleAddress": "",
-        "address": "11787 Pleasant View Ridge",
+        "address": "11700 block of Pleasant View Ridge",
         "city": "Longmont",
         "zip": "80504",
         "plants": "unavailable"
@@ -553,7 +553,7 @@
       "properties": {
         "date": "11/2/2017",
         "multipleAddress": "",
-        "address": "12934 W. Iliff Avenue",
+        "address": "12900 block of W. Iliff Avenue",
         "city": "Lakewood",
         "zip": "80228",
         "plants": "unavailable"
@@ -715,7 +715,7 @@
       "properties": {
         "date": "6/13/2017",
         "multipleAddress": "",
-        "address": "14358 Glenayre Circle",
+        "address": "14300 block of Glenayre Circle",
         "city": "Parker",
         "zip": "80134",
         "plants": "unavailable"
@@ -751,7 +751,7 @@
       "properties": {
         "date": "4/26/2018",
         "multipleAddress": "",
-        "address": "15525 E. 115th Avenue",
+        "address": "15500 block of E. 115th Avenue",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "unavailable"
@@ -769,7 +769,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "1556 Goldbug Circle",
+        "address": "1500 block of Goldbug Circle",
         "city": "Aurora",
         "zip": "80018",
         "plants": "656"
@@ -787,7 +787,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "1570 S. De Gaulle Circle",
+        "address": "1500 block of S. De Gaulle Circle",
         "city": "Aurora",
         "zip": "80018",
         "plants": "567"
@@ -841,7 +841,7 @@
       "properties": {
         "date": "1/2/2019",
         "multipleAddress": "",
-        "address": "16041 Oakland Court",
+        "address": "16000 block of Oakland Court",
         "city": "Brighton",
         "zip": "80602",
         "plants": "unavailable"
@@ -859,7 +859,7 @@
       "properties": {
         "date": "10/31/2017",
         "multipleAddress": "",
-        "address": "16650 Shadow Wood Court",
+        "address": "16600 block of Shadow Wood Court",
         "city": "Brighton",
         "zip": "80642",
         "plants": "unavailable"
@@ -877,7 +877,7 @@
       "properties": {
         "date": "11/28/2017",
         "multipleAddress": "",
-        "address": "16675 Shadow Wood Court",
+        "address": "16600 block of Shadow Wood Court",
         "city": "Commerce City",
         "zip": "80642",
         "plants": "unavailable"
@@ -931,7 +931,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "16898 E. Napa Drive",
+        "address": "16800 block of E. Napa Drive",
         "city": "Aurora",
         "zip": "80013",
         "plants": "426"
@@ -949,7 +949,7 @@
       "properties": {
         "date": "5/2/2019",
         "multipleAddress": "",
-        "address": "17290 E. 107th Avenue",
+        "address": "17200 block of E. 107th Avenue",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "515"
@@ -1039,7 +1039,7 @@
       "properties": {
         "date": "",
         "multipleAddress": "",
-        "address": "19110 E. Pacific Place",
+        "address": "19100 block of E. Pacific Place",
         "city": "Aurora",
         "zip": "80013",
         "plants": "743"
@@ -1057,7 +1057,7 @@
       "properties": {
         "date": "11/2/2017",
         "multipleAddress": "",
-        "address": "19733 E. Ida Circle",
+        "address": "19700 block of E. Ida Circle",
         "city": "Aurora",
         "zip": "80015",
         "plants": "unavailable"
@@ -1093,7 +1093,7 @@
       "properties": {
         "date": "1/2/2019",
         "multipleAddress": "",
-        "address": "2022 Coyote Valley Court",
+        "address": "2000 block of Coyote Valley Court",
         "city": "Monument",
         "zip": "80132",
         "plants": "unavailable"
@@ -1111,7 +1111,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "20509 E. Hamilton Circle",
+        "address": "20500 block of E. Hamilton Circle",
         "city": "Aurora",
         "zip": "80013",
         "plants": "363"
@@ -1165,7 +1165,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "21297 E. Eastman Drive",
+        "address": "21200 block of E. Eastman Drive",
         "city": "Aurora",
         "zip": "80013",
         "plants": "466"
@@ -1201,7 +1201,7 @@
       "properties": {
         "date": "11/2/2017",
         "multipleAddress": "",
-        "address": "22683 E. Alamo Place",
+        "address": "22600 block of E. Alamo Place",
         "city": "Aurora",
         "zip": "80015",
         "plants": "unavailable"
@@ -1255,7 +1255,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "23113 E. Alamo Place",
+        "address": "23100 block of E. Alamo Place",
         "city": "Aurora",
         "zip": "80015",
         "plants": "599"
@@ -1273,7 +1273,7 @@
       "properties": {
         "date": "1/18/2018",
         "multipleAddress": "",
-        "address": "2346 Genoa Street",
+        "address": "2300 block of Genoa Street",
         "city": "Aurora",
         "zip": "80013",
         "plants": "424"
@@ -1363,7 +1363,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "24720 E. Berry Place",
+        "address": "24700 block of E. Berry Place",
         "city": "Aurora",
         "zip": "80016",
         "plants": "715"
@@ -1381,7 +1381,7 @@
       "properties": {
         "date": "2/27/2018",
         "multipleAddress": "",
-        "address": "2541 W. Holden Place",
+        "address": "2500 block of W. Holden Place",
         "city": "Denver",
         "zip": "80204",
         "plants": "unavailable"
@@ -1417,7 +1417,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "25839 E. Bayaud Avenue",
+        "address": "25800 block of E. Bayaud Avenue",
         "city": "Aurora",
         "zip": "80018",
         "plants": "151"
@@ -1453,7 +1453,7 @@
       "properties": {
         "date": "9/24/2018",
         "multipleAddress": "",
-        "address": "2971 S. Jericho Way",
+        "address": "2900 block of S. Jericho Way",
         "city": "Aurora",
         "zip": "80013",
         "plants": "486"
@@ -1471,7 +1471,7 @@
       "properties": {
         "date": "8/10/2018",
         "multipleAddress": "",
-        "address": "318 Mt. Wilson Street",
+        "address": "300 block of Mt. Wilson Street",
         "city": "Brighton",
         "zip": "80601",
         "plants": "498"
@@ -1489,7 +1489,7 @@
       "properties": {
         "date": "9/24/2018",
         "multipleAddress": "",
-        "address": "3217 S. Nepal Way",
+        "address": "3200 block of S. Nepal Way",
         "city": "Aurora",
         "zip": "80013",
         "plants": "unavailable"
@@ -1507,7 +1507,7 @@
       "properties": {
         "date": "1/18/2018",
         "multipleAddress": "",
-        "address": "3352 S. Irving Street",
+        "address": "3300 block of S. Irving Street",
         "city": "Englewood",
         "zip": "80110",
         "plants": "78"
@@ -1525,7 +1525,7 @@
       "properties": {
         "date": "8/9/2018",
         "multipleAddress": "",
-        "address": "3400 block of E. 123 Avenue",
+        "address": "3400 block of E. 123rd Avenue",
         "city": "Thornton",
         "zip": "80241",
         "plants": "Between 150 and 250"
@@ -1543,7 +1543,7 @@
       "properties": {
         "date": "1/3/2019",
         "multipleAddress": "",
-        "address": "342 Las Lomas Street",
+        "address": "300 block of Las Lomas Street",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1561,7 +1561,7 @@
       "properties": {
         "date": "1/10/2018",
         "multipleAddress": "",
-        "address": "3428 Purcell Street",
+        "address": "3400 block of Purcell Street",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1579,7 +1579,7 @@
       "properties": {
         "date": "1/2/2019",
         "multipleAddress": "",
-        "address": "370 Clubhouse Drive",
+        "address": "300 block of Clubhouse Drive",
         "city": "Fort Lupton",
         "zip": "80621",
         "plants": "unavailable"
@@ -1597,7 +1597,7 @@
       "properties": {
         "date": "1/8/2019",
         "multipleAddress": "",
-        "address": "37820 E. 147th Place",
+        "address": "37800 block of E. 147th Place",
         "city": "Keenesburg",
         "zip": "80643",
         "plants": "unavailable"
@@ -1633,7 +1633,7 @@
       "properties": {
         "date": "1/31/2019",
         "multipleAddress": "",
-        "address": "385 Matsuno Street",
+        "address": "300 block of Matsuno Street",
         "city": "Brighton",
         "zip": "80601",
         "plants": "368"
@@ -1687,7 +1687,7 @@
       "properties": {
         "date": "8/16/2019",
         "multipleAddress": "",
-        "address": "4221 E. 144th Avenue",
+        "address": "4200 block of E. 144th Avenue",
         "city": "Brighton",
         "zip": "80602",
         "plants": "1,000"
@@ -1705,7 +1705,7 @@
       "properties": {
         "date": "11/9/2017",
         "multipleAddress": "",
-        "address": "4309 Tumbleweed Drive",
+        "address": "4300 block of Tumbleweed Drive",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1723,7 +1723,7 @@
       "properties": {
         "date": "1/14/2019",
         "multipleAddress": "",
-        "address": "4619 Midland Street",
+        "address": "4600 block of Midland Street",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1741,7 +1741,7 @@
       "properties": {
         "date": "1/31/2019",
         "multipleAddress": "",
-        "address": "4644 Haystack Lane",
+        "address": "4600 block of Haystack Lane",
         "city": "Brighton",
         "zip": "80601",
         "plants": "662"
@@ -1759,7 +1759,7 @@
       "properties": {
         "date": "10/10/2018",
         "multipleAddress": "",
-        "address": "4780 S. Catawba Street",
+        "address": "4700 block of S. Catawba Street",
         "city": "Aurora",
         "zip": "80016",
         "plants": "656"
@@ -1777,7 +1777,7 @@
       "properties": {
         "date": "10/10/2019",
         "multipleAddress": "",
-        "address": "4815 E. 143rd Avenue",
+        "address": "4800 block of E. 143rd Avenue",
         "city": "Thornton",
         "zip": "80602",
         "plants": "unavailable"
@@ -1867,7 +1867,7 @@
       "properties": {
         "date": "1/14/2019",
         "multipleAddress": "",
-        "address": "522 Daylight Court",
+        "address": "500 block of Daylight Court",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1885,7 +1885,7 @@
       "properties": {
         "date": "11/6/2017",
         "multipleAddress": "",
-        "address": "532 Park Place Drive",
+        "address": "500 block of Park Place Drive",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1903,7 +1903,7 @@
       "properties": {
         "date": "9/24/2018",
         "multipleAddress": "",
-        "address": "5337 S. Elk Way",
+        "address": "5300 block of S. Elk Way",
         "city": "Aurora",
         "zip": "80016",
         "plants": "unavailable"
@@ -1921,7 +1921,7 @@
       "properties": {
         "date": "1/18/2018",
         "multipleAddress": "",
-        "address": "539 Gray Court",
+        "address": "500 block of Gray Court",
         "city": "Lakewood",
         "zip": "80226",
         "plants": "611"
@@ -1939,7 +1939,7 @@
       "properties": {
         "date": "1/17/2019",
         "multipleAddress": "",
-        "address": "5557 Royal Pine Street",
+        "address": "5500 block of Royal Pine Street",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -1975,7 +1975,7 @@
       "properties": {
         "date": "7/25/2018",
         "multipleAddress": "",
-        "address": "5808 W. Conservation Drive",
+        "address": "5800 block of W. Conservation Drive",
         "city": "Frederick",
         "zip": "80504",
         "plants": "unavailable"
@@ -2011,7 +2011,7 @@
       "properties": {
         "date": "1/2/2019",
         "multipleAddress": "",
-        "address": "630 Hayloft Way",
+        "address": "600 block of Hayloft Way",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -2047,7 +2047,7 @@
       "properties": {
         "date": "1/31/2019",
         "multipleAddress": "",
-        "address": "674 Windrower Court",
+        "address": "600 block of Windrower Court",
         "city": "Brighton",
         "zip": "80601",
         "plants": "309"
@@ -2173,7 +2173,7 @@
       "properties": {
         "date": "3/18/2019",
         "multipleAddress": "",
-        "address": "8500 E. Mississippi Avenue",
+        "address": "8500 block of E. Mississippi Avenue",
         "city": "Denver",
         "zip": "80247",
         "plants": "unavailable"
@@ -2191,7 +2191,7 @@
       "properties": {
         "date": "12/18/2018",
         "multipleAddress": "",
-        "address": "8820 Sassafras Street",
+        "address": "8800 block of Sassafras Street",
         "city": "Parker",
         "zip": "80134",
         "plants": "unavailable"
@@ -2209,7 +2209,7 @@
       "properties": {
         "date": "12/18/2018",
         "multipleAddress": "",
-        "address": "8872 Colorado Road 57",
+        "address": "8800 block of Colorado Road 57",
         "city": "Keenesburg",
         "zip": "80643",
         "plants": "unavailable"
@@ -2263,7 +2263,7 @@
       "properties": {
         "date": "7/25/2018",
         "multipleAddress": "",
-        "address": "9032 Shenandoah Avenue",
+        "address": "9000 block of Shenandoah Avenue",
         "city": "Firestone",
         "zip": "80504",
         "plants": "unavailable"
@@ -2281,7 +2281,7 @@
       "properties": {
         "date": "12/20/2018",
         "multipleAddress": "",
-        "address": "97 N. 45th Avenue",
+        "address": "00 block of N. 45th Avenue",
         "city": "Brighton",
         "zip": "80601",
         "plants": "unavailable"
@@ -2299,7 +2299,7 @@
       "properties": {
         "date": "11/9/2017",
         "multipleAddress": "",
-        "address": "9828 Olathe Street",
+        "address": "9800 block of Olathe Street",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "unavailable"
@@ -2317,7 +2317,7 @@
       "properties": {
         "date": "11/2/2017",
         "multipleAddress": "",
-        "address": "9879 Jasper Street",
+        "address": "9800 block of Jasper Street",
         "city": "Commerce City",
         "zip": "80022",
         "plants": "unavailable"

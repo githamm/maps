@@ -274,8 +274,8 @@
     <div id="map-container">
         <div class="row">
             <div class="large-12 columns">
-                <h2>Title and title and title</h2>
-                <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <em>Locations are approximate.</em></p>
+                <h2>Illegal grow houses in metro Denver</h2>
+                <p>Federal drug investigators recently concluded a two-year investigation into illegal marijuana cultivation in Colorado &mdash; deemed the largest bust in state history. Court documents unsealed in May show how a collection of Chinese drug trafficking organizations set up shop in suburban homes around the metro area (shown on the map) to illegally grow thousands of marijuana plants. The information is based on a Denver Post review of federal, state and local arrest affidavits, search warrants and forfeiture filings. The map does not include every house raided during the investigation as some court documents remain sealed.  <em>Locations are approximate.</em></p>
             </div>
         </div>
         <div class="row">
@@ -291,12 +291,17 @@
         <div class="row">
             <div class="large-12 columns">
                 <div id="map"></div>
-                <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Post research</p>
+                <p class="source">By The Denver Post &bull; Source: Denver Post research</p>
             </div>
         </div>
     </div> <!-- End "container" -->
     <script>
-    var map = L.map('map').setView([39.84, -104.84], 9);
+    var map = L.map('map', {
+        center: [39.84, -104.84],
+        zoom: 9,
+        maxZoom: 14,
+        minZoom: 9
+    });
 
     // load a tile layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
