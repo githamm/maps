@@ -296,7 +296,11 @@
         </div>
     </div> <!-- End "container" -->
     <script>
-    var map = L.map('map').setView([39.84, -104.84], 9);
+    var map = L.map('map', {
+    	center: [39.84, -104.84],
+    	zoom: 9,
+    	maxZoom: 13 
+    });
 
     // load a tile layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
