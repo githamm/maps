@@ -414,7 +414,8 @@
                 var fillColor;
                 var borderColor;
 
-                if (feature.properties.ZONE_DESCR == 'Single Unit  (SU)') fillColor = 'red';
+                if (feature.properties.ZONE_USE_F == 'SU') fillColor = 'red';
+                else if (feature.properties.ZONE_DISTR == 'OS') fillColor = 'green';
                 else fillColor = 'gray';
                 return {
                     color: '#000',
