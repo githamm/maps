@@ -6,24 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -105.0199101,
-          39.886814
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "10000 block of Dale Circle",
-        "city": "Westminster",
-        "zip": "80234",
-        "plants": "Between 200 and 300"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.8101004,
           39.8794467
         ]
@@ -114,24 +96,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.8575541,
-          39.9929797
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "1100 block of E. 163rd Court",
-        "city": "Brighton",
-        "zip": "80602",
-        "plants": "Between 0 and 100"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -105.0000957,
           39.8843009
         ]
@@ -179,24 +143,6 @@
         "city": "Lakewood",
         "zip": "80226",
         "plants": "unavailable"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9178766,
-          39.9018391
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "11300 block of Leyden Street",
-        "city": "Thornton",
-        "zip": "80233",
-        "plants": "Between 100 and 200"
       }
     },
     {
@@ -384,78 +330,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.946627,
-          39.9185329
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018 (2 houses)",
-        "multipleAddress": "TRUE",
-        "address": "12100 block of Adams Street",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 0 and 100 at one house, between 300 and 400 at the other"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.946627,
-          39.9185329
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018 (2 houses)",
-        "multipleAddress": "TRUE",
-        "address": "12100 block of Adams Street",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 0 and 100 at one house, between 300 and 400 at the other"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9490851,
-          39.91792
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "12200 block of Adams Street",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 550 and 650"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9242563,
-          39.9175372
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "12200 block of Glencoe Street",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 1,270 and 1,750"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -105.1346129,
           39.6889635
         ]
@@ -480,25 +354,7 @@
       },
       "properties": {
         "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "12800 block of Clarkson Circle",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 100 and 200"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9746821,
-          39.9295537
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
+        "multipleAddress": "FALSE",
         "address": "12800 block of Clarkson Circle",
         "city": "Thornton",
         "zip": "80241",
@@ -564,107 +420,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.9713132,
-          39.8715576
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "1300 block of E. 96th Drive",
-        "city": "Thornton",
-        "zip": "80229",
-        "plants": "Between 550 and 650"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9713132,
-          39.8715576
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "1300 block of E. 96th Drive",
-        "city": "Thornton",
-        "zip": "80229",
-        "plants": "Between 550 and 650"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.9364119,
           39.9337275
         ]
       },
       "properties": {
         "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
+        "multipleAddress": "FALSE",
         "address": "13100 block of Bellaire Drive",
         "city": "Thornton",
         "zip": "80241",
         "plants": "Between 100 and 200"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9364119,
-          39.9337275
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "13100 block of Bellaire Drive",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 100 and 200"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9680028,
-          39.9369442
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "13300 block of Humboldt Drive",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 400 and 500"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9496861,
-          39.9210999
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "13600 block of Steele Street",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 320 and 340"
       }
     },
     {
@@ -678,25 +444,7 @@
       },
       "properties": {
         "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "13800 block of Milwaukee Street",
-        "city": "Thornton",
-        "zip": "80602",
-        "plants": "Between 550 and 650"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9510359,
-          39.9466221
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
+        "multipleAddress": "FALSE",
         "address": "13800 block of Milwaukee Street",
         "city": "Thornton",
         "zip": "80602",
@@ -798,24 +546,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.9583729,
-          39.9812092
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "15700 block of Josephine Street",
-        "city": "Thornton",
-        "zip": "80602",
-        "plants": "Between 50 and 150"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.8007541,
           39.6465145
         ]
@@ -906,24 +636,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.9648938,
-          39.9980037
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "16700 block of Williams Street",
-        "city": "Thornton",
-        "zip": "80602",
-        "plants": "Between 250 and 350"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.7923657,
           39.6427492
         ]
@@ -978,49 +690,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.769739,
-          39.6101696
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "18800 block of E. Ida Avenue",
-        "city": "Aurora",
-        "zip": "80015",
-        "plants": "Between 300 and 400"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -105.0353398,
           39.6822094
         ]
       },
       "properties": {
         "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "1900 block of S. Michigan Way",
-        "city": "Denver",
-        "zip": "80219",
-        "plants": "Between 150 and 250"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.0353398,
-          39.6822094
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
+        "multipleAddress": "FALSE",
         "address": "1900 block of S. Michigan Way",
         "city": "Denver",
         "zip": "80219",
@@ -1176,24 +852,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.9608033,
-          39.9603587
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "2200 block of E. 145th Place",
-        "city": "Thornton",
-        "zip": "80602",
-        "plants": "Between 50 and 150"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.7244545,
           39.6118624
         ]
@@ -1218,26 +876,8 @@
       },
       "properties": {
         "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "2300 block W. 74th Avenue",
-        "city": "Denver",
-        "zip": "80221",
-        "plants": "Between 50 and 150"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.0143872,
-          39.8306167
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "2300 block W. 74th Avenue",
+        "multipleAddress": "FALSE",
+        "address": "2300 block of W. 74th Avenue",
         "city": "Denver",
         "zip": "80221",
         "plants": "Between 50 and 150"
@@ -1428,24 +1068,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.9544232,
-          39.9348976
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "2700 block of E. 132nd Place",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 350 and 450"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.7521623,
           39.6633471
         ]
@@ -1511,24 +1133,6 @@
         "city": "Englewood",
         "zip": "80110",
         "plants": "78"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9466364,
-          39.9187448
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "3400 block of E. 123rd Avenue",
-        "city": "Thornton",
-        "zip": "80241",
-        "plants": "Between 150 and 250"
       }
     },
     {
@@ -1637,24 +1241,6 @@
         "city": "Brighton",
         "zip": "80601",
         "plants": "368"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.8272807,
-          39.9795996
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "400 block of Birch Avenue",
-        "city": "Brighton",
-        "zip": "80601",
-        "plants": "Between 100 and 200"
       }
     },
     {
@@ -2022,24 +1608,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -105.0991843,
-          39.5966147
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018",
-        "multipleAddress": "",
-        "address": "6600 block of S. Field Court",
-        "city": "Littleton",
-        "zip": "80123",
-        "plants": "Between 200 and 300"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.7576999,
           39.9999729
         ]
@@ -2082,47 +1650,11 @@
       },
       "properties": {
         "date": "8/9/2018 (2 houses), 10/10/2018",
-        "multipleAddress": "TRUE",
+        "multipleAddress": "FALSE",
         "address": "7800 block of Vallejo Street",
         "city": "Denver",
         "zip": "80221",
-        "plants": "Between 100 and 200 at each of 2 houses"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.0132795,
-          39.8380697
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018 (2 houses), 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "7800 block of Vallejo Street",
-        "city": "Denver",
-        "zip": "80221",
-        "plants": "Between 100 and 200 at each of 2 houses"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.0132795,
-          39.8380697
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018 (2 houses), 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "7800 block of Vallejo Street",
-        "city": "Denver",
-        "zip": "80221",
-        "plants": "Between 100 and 200 at each of 2 houses"
+        "plants": "Between 100 and 200"
       }
     },
     {
@@ -2226,25 +1758,7 @@
       },
       "properties": {
         "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
-        "address": "8900 block of W. Cooper Avenue",
-        "city": "Littleton",
-        "zip": "80128",
-        "plants": "Between 100 and 200"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.0974466,
-          39.594425
-        ]
-      },
-      "properties": {
-        "date": "8/9/2018, 10/10/2018",
-        "multipleAddress": "TRUE",
+        "multipleAddress": "FALSE",
         "address": "8900 block of W. Cooper Avenue",
         "city": "Littleton",
         "zip": "80128",
