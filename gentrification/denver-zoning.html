@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asthma in Denver | The Denver Post</title>
+    <title>Denver Zoning Map | The Denver Post</title>
     <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
@@ -289,6 +288,10 @@
         color: rgba(0, 0, 0, .4);
         font-style: italic;
     }
+
+    .no-data {
+        margin: -12px 0 -12px 0;
+    }
     </style>
 </head>
 
@@ -296,8 +299,8 @@
     <div id="container">
         <div class="row">
             <div class="large-12 columns">
-                <h2>Asthma in Denver</h2>
-                <p>The maps show asthma rates by census tract for two time periods, 2013-17 and 2006-10, and the percentage change in the rate. <span style="color:#b2182b; font-style:italic;">Use radio buttons to toggle maps; click census tract for details</span>.</p>
+                <h2>Title and title</h2>
+                <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <span style="color:#b2182b; font-style:italic;">Use radio buttons to toggle maps; click census tract for details</span>.</p>
             </div>
         </div>
         <!-- <div class="row">
@@ -329,7 +332,7 @@
                 <div class="large-12 columns">
                     <!-- <fieldset class="fieldset"> -->
                     <!-- <div style="border: 1px solid silver;margin:10px !important;padding:10px;">
-                            <legend><strong><em>Choose a map</em></strong></legend> -->
+                        	<legend><strong><em>Choose a map</em></strong></legend> -->
                     <!-- <div id="layer-control"></div> -->
                 </div>
                 <!-- </fieldset> -->
@@ -338,8 +341,8 @@
         <!-- <div class="row">
             <div class="large-12 columns">
                 <div class="legend-container">
-                    <p class="legend-description"><strong>Rate:</strong> lower than state average&nbsp;&nbsp;&#9679;&nbsp;&nbsp;higher&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
-                    <div class="legend-container">
+                	<p class="legend-description"><strong>Rate:</strong> lower than state average&nbsp;&nbsp;&#9679;&nbsp;&nbsp;higher&nbsp;&nbsp;&#9679;&nbsp;&nbsp;no data</p>
+                	<div class="legend-container">
                     <div class="legend-box" style="background-color:#efedf5"></div>
                     <div class="legend-box" style="background-color:#4a1486"></div>
                     <div class="legend-box" style="background-color:#000"></div>
@@ -354,14 +357,14 @@
                     <div id="layer-control"></div>
                 </div>
                 <div id="map"></div>
-                <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Colorado Department of Public Health and Environment</p>
+                <p class="source">By Kevin Hamm, The Denver Post &bull; Source: </p>
             </div>
         </div>
     </div> <!-- End "container" -->
     <script>
-    var asthma2006 = new L.LayerGroup();
-    var asthma2013 = new L.LayerGroup();
-    var asthmaChange = new L.LayerGroup();
+    var denverZoning = new L.LayerGroup();
+    // var asthma2013 = new L.LayerGroup();
+    // var asthmaChange = new L.LayerGroup();
 
     var basemaps = {
         One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
@@ -381,9 +384,9 @@
     // Overlay layers are grouped
     var groupedOverlays = {
         "": {
-            '<span style="display:inline-block;margin-right:8px">rate 2013-17</span>': asthma2013,
-            '<span style="display:inline-block;margin-right:8px">rate 2006-10</span>': asthma2006,
-            'rate Change': asthmaChange
+            // '<span style="display:inline-block;margin-right:8px">rate 2013-17</span>': asthma2013,
+            '<span style="display:inline-block;margin-right:8px">rate 2006-10</span>': denverZoning
+            // 'rate Change': asthmaChange
         }
     };
 
@@ -400,143 +403,117 @@
         zoom: 12,
         minZoom: 11,
         maxZoom: 16,
-        layers: [basemaps.One, asthma2013],
+        layers: [basemaps.One, denverZoning],
         preferCanvas: true
     }); //.addLayer(cartoTiles);
 
-    $.getJSON("denver-asthma-data.geojson", function(data) {
+    $.getJSON("denver-zoning-simplified.geojson", function(data) {
         L.geoJson(data, {
             style: function(feature) {
                 console.log(feature);
-                var rate2006 = feature.properties.rate2006;
                 var fillColor;
                 var borderColor;
 
-                if (rate2006 > 1800) fillColor = '#b2182b';
-                else if (rate2006 > 1200) fillColor = '#d6604d';
-                else if (rate2006 > 636.4) fillColor = '#f4a582';
-                else if (rate2006 > 0) fillColor = '#4393c3';
+                if (feature.properties.ZONE_USE_F == 'SU') fillColor = 'red';
+                else if (feature.properties.ZONE_DISTR == 'OS') fillColor = 'green';
+                else fillColor = 'gray';
                 return {
                     color: '#000',
-                    weight: 3,
+                    weight: 1,
                     fillColor: fillColor,
                     fillOpacity: .75
                 };
             },
             onEachFeature: function(feature, layer) {
-                var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
-                var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
-                var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
-
-                var changeColor;
-                if (rateChange < 0) {
-                    changeColor = 'green'
-                } else changeColor = 'red';
-
                 var tooltipText;
-                if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-                    tooltipText = 'No data'
-                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
-            	var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
-            	var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
-            	var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
-
-            	var changeColor;
-            	if (rateChange < 0) {
-            		changeColor = 'green'
-            	} else changeColor = 'red';
-
-            	var tooltipText;
-            	if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-            		tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><div class="no-data"><hr></div>NO DATA'
-            	} else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006-10</th><th>2013-17</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+                tooltipText = feature.properties.ZONE_DESCR + '<br>' + feature.properties.ORD_YEAR;
 
                 layer.bindPopup(
                     tooltipText
                 )
             }
-        }).addTo(asthma2006);
+        }).addTo(denverZoning);
     });
 
-    $.getJSON("denver-asthma-data.geojson", function(data) {
-        L.geoJson(data, {
-            style: function(feature) {
-                var rate2013 = feature.properties.rate2013;
-                var fillColor;
-                var fillOpacity;
+    // $.getJSON("denver-asthma-data.geojson", function(data) {
+    //     L.geoJson(data, {
+    //         style: function(feature) {
+    //             var rate2013 = feature.properties.rate2013;
+    //             var fillColor;
+    //             var fillOpacity;
 
-                if (rate2013 > 1800) fillColor = '#b2182b';
-                else if (rate2013 > 1200) fillColor = '#d6604d';
-                else if (rate2013 > 637.8) fillColor = '#f4a582';
-                else if (rate2013 > 0) fillColor = '#4393c3';
-                return {
-                    color: '#000',
-                    weight: 3,
-                    fillColor: fillColor,
-                    fillOpacity: .75
-                };
-            },
-            onEachFeature: function(feature, layer) {
-                var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
-                var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
-                var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
+    //             if (rate2013 > 1800) fillColor = '#b2182b';
+    //             else if (rate2013 > 1200) fillColor = '#d6604d';
+    //             else if (rate2013 > 637.8) fillColor = '#f4a582';
+    //             else if (rate2013 > 0) fillColor = '#4393c3';
+    //             return {
+    //                 color: '#000',
+    //                 weight: 3,
+    //                 fillColor: fillColor,
+    //                 fillOpacity: .75
+    //             };
+    //         },
+    //         onEachFeature: function(feature, layer) {
+    //             var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
+    //             var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
+    //             var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
 
-                var changeColor;
-                if (rateChange < 0) {
-                    changeColor = 'green'
-                } else changeColor = 'red';
+    //             var changeColor;
+    //             if (rateChange < 0) {
+    //                 changeColor = 'green'
+    //             } else changeColor = 'red';
 
-                var tooltipText;
-                if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-                    tooltipText = 'No data'
-                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+    //             var tooltipText;
+    //             if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
+    //                 tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><div class="no-data"><hr></div>NO DATA'
+    //             } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006-10</th><th>2013-17</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
 
-                layer.bindPopup(
-                    tooltipText
-                )
-            }
-        }).addTo(asthma2013);
-    });
+    //             layer.bindPopup(
+    //                 tooltipText
+    //             )
+    //         }
+    //     }).addTo(asthma2013);
+    // });
 
-    $.getJSON("denver-asthma-data.geojson", function(data) {
-        L.geoJson(data, {
-            style: function(feature) {
-                var rateChange = feature.properties.change;
-                var fillColor;
-                var fillOpacity;
+    // $.getJSON("denver-asthma-data.geojson", function(data) {
+    //     L.geoJson(data, {
+    //         style: function(feature) {
+    //             var rateChange = feature.properties.change;
+    //             var fillColor;
+    //             var fillOpacity;
 
-                if (rateChange > 50) fillColor = '#b2182b';
-                else if (rateChange > 25) fillColor = '#d6604d';
-                else if (rateChange > 0) fillColor = '#f4a582';
-                else if (rateChange < 0) fillColor = '#4393c3';
-                return {
-                    color: '#000',
-                    weight: 3,
-                    fillColor: fillColor,
-                    fillOpacity: .75
-                };
-            },
-            onEachFeature: function(feature, layer) {
-                var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
-                var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
-                var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
+    //             if (rateChange > 50) fillColor = '#b2182b';
+    //             else if (rateChange > 25) fillColor = '#d6604d';
+    //             else if (rateChange > 0) fillColor = '#f4a582';
+    //             else if (rateChange < 0) fillColor = '#4393c3';
+    //             return {
+    //                 color: '#000',
+    //                 weight: 3,
+    //                 fillColor: fillColor,
+    //                 fillOpacity: .75
+    //             };
+    //         },
+    //         onEachFeature: function(feature, layer) {
+    //             var stateAvgDiff2006 = Math.round(((feature.properties.rate2006 - feature.properties.rateCO2006) / feature.properties.rateCO2006) * 100);
+    //             var stateAvgDiff2013 = Math.round(((feature.properties.rate2013 - feature.properties.rateCO2013) / feature.properties.rateCO2013) * 100);
+    //             var rateChange = Math.round(((feature.properties.rate2013 - feature.properties.rate2006) / feature.properties.rate2006) * 100);
 
-                var changeColor;
-                if (rateChange < 0) {
-                    changeColor = 'green'
-                } else changeColor = 'red';
+    //             var changeColor;
+    //             if (rateChange < 0) {
+    //                 changeColor = 'green'
+    //             } else changeColor = 'red';
 
-                var tooltipText;
-                if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
-                    tooltipText = 'No data'
-                } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006</th><th>2013</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
+    //             var tooltipText;
+    //             if (feature.properties.rate2006 == null || feature.properties.rate2013 == null) {
+    //                 tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><div class="no-data"><hr></div>NO DATA'
+    //             } else tooltipText = '<h4>' + feature.properties.neighborhood + '</h4><p class="subtitle">' + feature.properties.TRACT_NAME + '</p><table><thead><tr><th></th><th>2006-10</th><th>2013-17</th><th>Change</th></tr></thead><tr><td>Rate*</td><td>' + feature.properties.rate2006 + '</td><td>' + feature.properties.rate2013 + '</td><td style="color:' + changeColor + '">' + rateChange + '%</td></tr><tr><td>Difference from<br>state average</td><td>' + stateAvgDiff2006 + '%<br><span class="sub-data">' + feature.properties.rateCO2006 + '</td><td>' + stateAvgDiff2013 + '%<br><span class="sub-data">' + feature.properties.rateCO2013 + '</td><td></td><tr><td colspan="4" style="text-align:right;font-style:italic">*Hospitalizations per 100,000 people</td></tr></table>';
 
-                layer.bindPopup(
-                    tooltipText
-                )
-            }
-        }).addTo(asthmaChange);
-    });
+    //             layer.bindPopup(
+    //                 tooltipText
+    //             )
+    //         }
+    //     }).addTo(asthmaChange);
+    // });
 
     var layerControl = L.control.groupedLayers(basemaps, groupedOverlays, options);
     map.addControl(layerControl);

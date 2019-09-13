@@ -1,0 +1,853 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9700539,
+          39.8088786
+        ]
+      },
+      "properties": {
+        "location": "1450 E. 62nd Ave., Denver, CO 80216",
+        "name": "Adams Transitional Center",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0293045,
+          39.6557534
+        ]
+      },
+      "properties": {
+        "location": "3265 Girard Ave, Englewood, CO 80110",
+        "name": "Arapahoe Community Treatment",
+        "company": "CoreCivic",
+        "purpose": "Treatment center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.2055794,
+          38.0651921
+        ]
+      },
+      "properties": {
+        "location": "11560 Road FF.75, Las Animas, CO 81054-9598",
+        "name": "Bent County Correctional Facility",
+        "company": "CoreCivic",
+        "purpose": "Prison"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2674454,
+          40.0170138
+        ]
+      },
+      "properties": {
+        "location": "1770 21st Street, Boulder, CO 80302",
+        "name": "Boulder Community Treatment center",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8208836,
+          39.588256
+        ]
+      },
+      "properties": {
+        "location": "14485 E. Fremont Ave., Englewood, CO 80112",
+        "name": "Centennial Community Transition Center",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9568161,
+          39.7761511
+        ]
+      },
+      "properties": {
+        "location": "4280 Columbine St., Denver, CO 80216",
+        "name": "Columbine Facility",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9170755,
+          39.7860462
+        ]
+      },
+      "properties": {
+        "location": "4901 Krameria Street, Commerce City, CO 80022",
+        "name": "Commerce Transitional Center",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.9585378,
+          38.1620506
+        ]
+      },
+      "properties": {
+        "location": "6564 Highway 96, Olney Springs, CO 81062",
+        "name": "Crowley County Correctional Facility",
+        "company": "CoreCivic",
+        "purpose": "Prison"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.934733,
+          39.7809372
+        ]
+      },
+      "properties": {
+        "location": "4511 E. 46th Ave., Denver, CO 80216",
+        "name": "Dahlia Facility",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9944727,
+          39.7761949
+        ]
+      },
+      "properties": {
+        "location": "570 W. 44th Ave., Denver, CO 80216",
+        "name": "Fox Facility",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9944727,
+          39.7761949
+        ]
+      },
+      "properties": {
+        "location": "570 W. 44th Ave., Denver, CO 80216",
+        "name": "Headquarters",
+        "company": "CoreCivic",
+        "purpose": "Headquarters"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9293033,
+          39.8423505
+        ]
+      },
+      "properties": {
+        "location": "8031 I-76 Service Road, Henderson, CO 80640",
+        "name": "Henderson Transitional Center",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7592266,
+          37.626059
+        ]
+      },
+      "properties": {
+        "location": "304 Ray Sandoval Street, Walsenburg, CO 81089",
+        "name": "Huerfano County Correctional Center",
+        "company": "CoreCivic",
+        "purpose": "Prison (closed)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.2443597,
+          39.3030697
+        ]
+      },
+      "properties": {
+        "location": "49777 County Road V, Burlington, CO 80807",
+        "name": "Kit Carson Correctional Center",
+        "company": "CoreCivic",
+        "purpose": "Prison (closed)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1020964,
+          40.163251
+        ]
+      },
+      "properties": {
+        "location": "236 Main Street, Longmont, CO 80501",
+        "name": "Longmont Community Treatment center",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.866599,
+          37.469066
+        ]
+      },
+      "properties": {
+        "location": "626 4th St., Alamosa, CO 81101",
+        "name": "RMOMS Alamosa",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.822238,
+          39.722767
+        ]
+      },
+      "properties": {
+        "location": "14291 E 4th Ave., Aurora, CO 80011",
+        "name": "RMOMS-Aurora",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7812198,
+          39.9842837
+        ]
+      },
+      "properties": {
+        "location": "191 S Telluride St. Unit 6, Brighton, CO 80601",
+        "name": "RMOMS Brighton",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2402998,
+          38.4398791
+        ]
+      },
+      "properties": {
+        "location": "119 S. 5th St., Canon City, CO 81212",
+        "name": "RMOMS Canon City",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8603065,
+          39.3760923
+        ]
+      },
+      "properties": {
+        "location": "619 Wilcox St., Castle Rock, CO 80104",
+        "name": "RMOMS Castle Rock",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8208836,
+          39.588256
+        ]
+      },
+      "properties": {
+        "location": "14485 E Fremont Ave, Englewood, CO 80112",
+        "name": "RMOMS Centennial",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.843894,
+          38.897241
+        ]
+      },
+      "properties": {
+        "location": "888 W Garden of the Gods Rd. Suite 150, Colorado Springs, CO 80907",
+        "name": "RMOMS Colorado Springs",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.843894,
+          38.897241
+        ]
+      },
+      "properties": {
+        "location": "888 W Garden of the Gods Rd. Suite 150, Colorado Springs, CO 80907",
+        "name": "RMOMS Cortez",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9852981,
+          39.7281495
+        ]
+      },
+      "properties": {
+        "location": "745 Sherman St., Denver, CO 80203",
+        "name": "RMOMS Denver",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.8804696,
+          37.2755103
+        ]
+      },
+      "properties": {
+        "location": "101 W 11th St. Suite 105, Durango, CO 81301",
+        "name": "RMOMS Durango",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9413494,
+          39.672723
+        ]
+      },
+      "properties": {
+        "location": "2425 S Colorado Blvd., Denver, CO 80222",
+        "name": "RMOMS Englewood",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0764796,
+          40.5468751
+        ]
+      },
+      "properties": {
+        "location": "3000 S College #104, Fort Collins, CO 80525",
+        "name": "RMOMS Fort Collins",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.7933267,
+          40.2544412
+        ]
+      },
+      "properties": {
+        "location": "614 Grant St., Fort Morgan, CO 80701",
+        "name": "RMOMS Fort Morgan",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.5832598,
+          39.0855904
+        ]
+      },
+      "properties": {
+        "location": "2531 W. Pinyon Ave Grand Junction, Grand Junction, CO 81505",
+        "name": "RMOMS Grand Junction",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7332721,
+          40.4069663
+        ]
+      },
+      "properties": {
+        "location": "3257 W. 20th St., Greeley, CO 80634",
+        "name": "RMOMS Greeley",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0830505,
+          39.6974008
+        ]
+      },
+      "properties": {
+        "location": "1075 S Yukon St. Suite 100, Lakewood, CO 80226",
+        "name": "RMOMS Lakewood",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1013656,
+          40.1873463
+        ]
+      },
+      "properties": {
+        "location": "1630 N Main St. Suite 202, Longmont, CO 80501",
+        "name": "RMOMS Longmont",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.070802,
+          40.407616
+        ]
+      },
+      "properties": {
+        "location": "437 E Eisenhower, Loveland, CO 80537",
+        "name": "RMOMS Loveland",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.8648602,
+          38.4516238
+        ]
+      },
+      "properties": {
+        "location": "1543 Ogden, Montrose, CO 81401",
+        "name": "RMOMS Montrose",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6225753,
+          38.312177
+        ]
+      },
+      "properties": {
+        "location": "1300 Fortino Blvd. Suite C, Pueblo, CO 81008",
+        "name": "RMOMS Pueblo",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.783585,
+          39.5321109
+        ]
+      },
+      "properties": {
+        "location": "325 Railroad Ave., Rifle, CO 81650",
+        "name": "RMOMS Rifle",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.2079458,
+          40.6251078
+        ]
+      },
+      "properties": {
+        "location": "301 Poplar St., Sterling, CO 80751",
+        "name": "RMOMS Sterling",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0524994,
+          39.8542279
+        ]
+      },
+      "properties": {
+        "location": "8787 Turnpike Dr. #120, Westminster, CO 80031",
+        "name": "RMOMS Westminster",
+        "company": "CoreCivic",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.894402,
+          39.7721269
+        ]
+      },
+      "properties": {
+        "location": "3955 Ulster St., Denver, CO 80207",
+        "name": "Ulster Facility",
+        "company": "CoreCivic",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.5526649,
+          40.5128394
+        ]
+      },
+      "properties": {
+        "location": "445 Ranney Street, Craig CO 816625",
+        "name": "Correctional Alternative Placement Services",
+        "company": "GEO Group",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.8268436,
+          39.6579355
+        ]
+      },
+      "properties": {
+        "location": "50 Chambers Ave Unit M, Eagle, CO 81631",
+        "name": "Eagle Day Reporting Center/Electronic Monitoring",
+        "company": "GEO Group",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.0933658,
+          39.5839248
+        ]
+      },
+      "properties": {
+        "location": "699 Summit, Unit K, P.O. Box 5466, Frisco, CO 80443-5466",
+        "name": "Frisco Day Reporting Center/Electronic Monitoring",
+        "company": "GEO Group",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.152041,
+          38.460768
+        ]
+      },
+      "properties": {
+        "location": "700 Four Mile Pkwy, Canon City, CO 81212",
+        "name": "Southern Peaks Regional Treatment center",
+        "company": "GEO Group",
+        "purpose": "Treatment center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7746558,
+          38.7821395
+        ]
+      },
+      "properties": {
+        "location": "2945 E. Las Vegas St. Colorado Springs, CO 80906",
+        "name": "Community Alternatives Of El Paso County",
+        "company": "GEO Group",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6917171,
+          40.4235763
+        ]
+      },
+      "properties": {
+        "location": "810 9th Street, #100, Greeley, CO 80631-1147",
+        "name": "Greeley Day Reporting Center/Electronic Monitoring",
+        "company": "GEO Group",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9800596,
+          39.9029146
+        ]
+      },
+      "properties": {
+        "location": "506 Malley Drive, Northglenn, CO 80233",
+        "name": "Northglenn Day Reporting Center/Electronic Monitoring",
+        "company": "GEO Group",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0136452,
+          39.6282003
+        ]
+      },
+      "properties": {
+        "location": "2135 W. Chenango Ave. Littleton, CO 80120",
+        "name": "Arapahoe County Residential Center",
+        "company": "GEO Group",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9918709,
+          39.7404382
+        ]
+      },
+      "properties": {
+        "location": "1359 Court Place, Denver CO, 80204",
+        "name": "Denver Day Reporting Center/Electronic Monitoring",
+        "company": "GEO Group",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9662887,
+          39.7444529
+        ]
+      },
+      "properties": {
+        "location": "1763 Williams St. Denver CO, 80218",
+        "name": "Williams Street Center",
+        "company": "GEO Group",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9170959,
+          39.7762837
+        ]
+      },
+      "properties": {
+        "location": "4280 Kearney Street Denver, CO 80216",
+        "name": "Tooley Hall",
+        "company": "GEO Group",
+        "purpose": "Community corrections"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8493419,
+          39.7607286
+        ]
+      },
+      "properties": {
+        "location": "3130 North Oakland Street, Aurora, CO 80010",
+        "name": "Aurora ICE Processing Center",
+        "company": "GEO Group",
+        "purpose": "Immigration detention facility"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8111263,
+          39.7250819
+        ]
+      },
+      "properties": {
+        "location": "15290 E. 6th Avenue, Suite 160, Aurora, CO 80011",
+        "name": "Aurora Day Reporting Center/Electronic Monitoring",
+        "company": "GEO Group",
+        "purpose": "Monitoring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7753137,
+          38.7828701
+        ]
+      },
+      "properties": {
+        "location": "2925 East Las Vegas St. Colorado Springs, CO 80906",
+        "name": "Cheyenne Mountain Reentry Center",
+        "company": "GEO Group",
+        "purpose": "Prison"
+      }
+    }
+  ]
+}

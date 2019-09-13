@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Denver Short-Term Rentals | The Denver Post</title>
+    <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="https://extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1%;
+    }
+
+    #container {
+        /*height: 600px;
+        width: 893px;
+        margin: 0 auto;*/
+    }
+
+    #map {
+        height: 600px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        max-width: 200px;
+        line-height: 100%;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*.legend-container {
+        width: 100%;
+        clear: both;
+    }*/
+
+    .legend-item {
+        float: left;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #ff5959;
+        opacity: .8;
+        margin: -3px 0 15px 0;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 100%
+    }
+
+    .note {
+        font-size: .85em;
+        font-style: italic;
+    }
+
+    .legend {
+        width: 60px;
+        /*height: 30px;*/
+        opacity: .6;
+        float: left;
+    }
+
+    .legend-text {
+        font-size: .9rem;
+        text-align: center;
+    }
+
+    .legend-chatter {
+        text-transform: uppercase;
+        font-size: .8rem;
+        margin-bottom: 0;
+    }
+
+    .source {
+        font-size: .85em;
+        text-align: right;
+        font-style: italic;
+    }
+
+    .legend-container {
+        width: auto;
+        float: right;
+        padding-bottom: 15px;
+    }
+
+    .legend-box {
+        width: 70px;
+        height: 25px;
+        border: 1px solid #aaa;
+        float: left;
+    }
+
+    .legend-description {
+        font-style: italic;
+        font-size: .72rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .rental-number {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="large-12 columns">
+                <h2>Short-term rentals in Denver</h2>
+                <p>Denver first began requiring a license to operate short-term rentals on Jan. 1, 2017. The city only allows primary residences to be used as short-term rentals. The map shows the number of licensed short-term rental properties in Denver by ZIP code as of Aug. 22, 2019.</em></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
+                <p class="instructions">Zoom map and click ZIP code for details</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="legend-container">
+                    <div class="legend-container">
+                        <p class="legend-chatter">Number licensed short-term rentals</p>
+                        <div class="legend-box" style="background-color:#c6c6c6">
+                            <p class="legend-text">0</p>
+                        </div>
+                        <div class="legend-box" style="background-color:#bae4b3">
+                            <p class="legend-text">1-50</p>
+                        </div>
+                        <div class="legend-box" style="background-color:#74c476">
+                            <p class="legend-text">51-100</p>
+                        </div>
+                        <div class="legend-box" style="background-color:#31a354">
+                            <p class="legend-text">101-200</p>
+                        </div>
+                        <div class="legend-box" style="background-color:#006d2c">
+                            <p class="legend-text">201+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <div id="map"></div>
+                <p class="source">Source: City and County of Denver &bull; Kevin Hamm, The Denver Post</p>
+            </div>
+        </div>
+    <script>
+    var rentalCount = new L.LayerGroup();
+
+    var basemaps = {
+        One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 20,
+            ext: 'png'
+        }),
+        Two: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        })
+    };
+
+    var groupedOverlays = {
+        "": {
+            'Length of residence': rentalCount
+        }
+    };
+
+    var map = L.map('map', {
+        center: [39.72, -104.97],
+        zoom: 11,
+        minZoom: 11,
+        maxZoom: 16,
+        layers: [basemaps.One, rentalCount],
+        preferCanvas: true
+    });
+
+    $.getJSON("rentals.geojson", function(data) {
+        L.geoJson(data, {
+            style: function(feature) {
+                var rentalNumber = feature.properties.rental_count;
+                var fillColor;
+                if (rentalNumber > 200) fillColor = '#006d2c';
+                else if (rentalNumber > 100) fillColor = '#31a354';
+                else if (rentalNumber > 50) fillColor = '#74c476';
+                else if (rentalNumber > 0) fillColor = '#bae4b3';
+                else fillColor = '#c6c6c6';
+                return {
+                    color: '#000',
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .85
+                };
+            },
+            onEachFeature: function(feature, layer) {
+
+                var tooltipText;
+                tooltipText = '<p>There are <span class="rental-number">' + feature.properties.rental_count + '</span> licensed short-term rental properties in the <span class="rental-number">' + feature.properties.GEOID10 + '</span> ZIP code.</p>';
+
+                layer.bindPopup(
+                    tooltipText
+                )
+            }
+        }).addTo(rentalCount);
+    });
+    </script>
+</body>
+
+</html>

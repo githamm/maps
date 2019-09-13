@@ -1,0 +1,1841 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8101004,
+          39.8794467
+        ]
+      },
+      "properties": {
+        "date": "11/28/2018",
+        "multipleAddress": "",
+        "address": "10000 block of Granby Drive",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0199101,
+          39.886814
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "10400 block of Dale Circle",
+        "city": "Westminster",
+        "zip": "80234",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8288404,
+          39.8912356
+        ]
+      },
+      "properties": {
+        "date": "6/13/2017",
+        "multipleAddress": "",
+        "address": "10700 block of Xanadu Street",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7803374,
+          39.8956721
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019 (2 houses)",
+        "multipleAddress": "TRUE",
+        "address": "10900 block of Unity Lane",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7803374,
+          39.8956721
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019 (2 houses)",
+        "multipleAddress": "TRUE",
+        "address": "10900 block of Unity Lane",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0000957,
+          39.8843009
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "1100 block of Spangler Drive",
+        "city": "Northglenn",
+        "zip": "80260",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.852713,
+          39.8980061
+        ]
+      },
+      "properties": {
+        "date": "5/22/2018",
+        "multipleAddress": "",
+        "address": "11000 block of Newark Street",
+        "city": "Commerce City",
+        "zip": "80640",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1196458,
+          39.6968787
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "11100 block of W. Tennessee Court",
+        "city": "Lakewood",
+        "zip": "80226",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8567264,
+          39.9021187
+        ]
+      },
+      "properties": {
+        "date": "5/30/2019",
+        "multipleAddress": "",
+        "address": "11300 block of Lansing Street",
+        "city": "Commerce City",
+        "zip": "80640",
+        "plants": "403"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8513221,
+          39.90194
+        ]
+      },
+      "properties": {
+        "date": "4/4/2019",
+        "multipleAddress": "",
+        "address": "11300 block of Nome Street",
+        "city": "Commerce City",
+        "zip": "80640",
+        "plants": "764"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8493611,
+          39.9019208
+        ]
+      },
+      "properties": {
+        "date": "5/24/2018",
+        "multipleAddress": "",
+        "address": "11300 block of Oswego Street",
+        "city": "Commerce City",
+        "zip": "80640",
+        "plants": "384"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8522798,
+          39.9024437
+        ]
+      },
+      "properties": {
+        "date": "2/19/2019",
+        "multipleAddress": "",
+        "address": "11300 block of Newark Street",
+        "city": "Commerce City",
+        "zip": "80640",
+        "plants": "578"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.80618,
+          39.9035384
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "11400 block of Helena Street",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8080032,
+          39.9037727
+        ]
+      },
+      "properties": {
+        "date": "11/7/2018",
+        "multipleAddress": "",
+        "address": "11400 block of Chambers Drive",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.808581,
+          39.905293
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "11400 block of Chambers Drive",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "663"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.808286,
+          39.905442
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "11500 block of Chambers Drive",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7980187,
+          39.9106116
+        ]
+      },
+      "properties": {
+        "date": "4/25/2019",
+        "multipleAddress": "",
+        "address": "11700 block of Memphis Street",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "206"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.011317,
+          40.1745062
+        ]
+      },
+      "properties": {
+        "date": "7/25/2018",
+        "multipleAddress": "",
+        "address": "11700 block of Pleasant View Ridge",
+        "city": "Longmont",
+        "zip": "80504",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1346129,
+          39.6889635
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "12300 block of W. Iowa Drive",
+        "city": "Lakewood",
+        "zip": "80228",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9746821,
+          39.9295537
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018, 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "12800 block of Clarkson Circle",
+        "city": "Thornton",
+        "zip": "80241",
+        "plants": "Between 100 and 200"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8419185,
+          39.7094643
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "12800 block of E. Nevada Avenue",
+        "city": "Aurora",
+        "zip": "80012",
+        "plants": "302"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9772519,
+          39.930316
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "12900 block of Clarkson Circle",
+        "city": "Thornton",
+        "zip": "80241",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1423194,
+          39.6758442
+        ]
+      },
+      "properties": {
+        "date": "11/2/2017",
+        "multipleAddress": "",
+        "address": "12900 block of W. Iliff Avenue",
+        "city": "Lakewood",
+        "zip": "80228",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9364119,
+          39.9337275
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018, 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "13100 block of Bellaire Drive",
+        "city": "Thornton",
+        "zip": "80241",
+        "plants": "Between 100 and 200"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9510359,
+          39.9466221
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018, 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "13800 block of Milwaukee Street",
+        "city": "Thornton",
+        "zip": "80602",
+        "plants": "Between 550 and 650"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.823569,
+          39.531767
+        ]
+      },
+      "properties": {
+        "date": "6/13/2017",
+        "multipleAddress": "",
+        "address": "14300 block of Glenayre Circle",
+        "city": "Parker",
+        "zip": "80134",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9639777,
+          39.9599229
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "14500 block of High Street",
+        "city": "Thornton",
+        "zip": "80602",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8062707,
+          39.905727
+        ]
+      },
+      "properties": {
+        "date": "4/26/2018",
+        "multipleAddress": "",
+        "address": "15500 block of E. 115th Avenue",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7010115,
+          39.6887122
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "1500 block of Goldbug Circle",
+        "city": "Aurora",
+        "zip": "80018",
+        "plants": "656"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7056588,
+          39.6884285
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "1500 block of S. De Gaulle Circle",
+        "city": "Aurora",
+        "zip": "80018",
+        "plants": "567"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8007541,
+          39.6465145
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "16000 block of E. Milan Drive",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8500907,
+          39.9882444
+        ]
+      },
+      "properties": {
+        "date": "1/2/2019",
+        "multipleAddress": "",
+        "address": "16000 block of Oakland Court",
+        "city": "Brighton",
+        "zip": "80602",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6144698,
+          39.9978912
+        ]
+      },
+      "properties": {
+        "date": "10/31/2017",
+        "multipleAddress": "",
+        "address": "16600 block of Shadow Wood Court",
+        "city": "Brighton",
+        "zip": "80642",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6152895,
+          39.9983356
+        ]
+      },
+      "properties": {
+        "date": "11/28/2017",
+        "multipleAddress": "",
+        "address": "16600 block of Shadow Wood Court",
+        "city": "Commerce City",
+        "zip": "80642",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7951954,
+          39.6488602
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "16700 block of E. Kent Drive",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "580"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7923657,
+          39.6427492
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "16800 block of E. Napa Drive",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "426"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7854365,
+          39.8886668
+        ]
+      },
+      "properties": {
+        "date": "5/2/2019",
+        "multipleAddress": "",
+        "address": "17200 block of E. 107th Avenue",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.772445,
+          39.6117383
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "18600 block of E. Ida Avenue",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0353398,
+          39.6822094
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018, 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "1900 block of S. Michigan Way",
+        "city": "Denver",
+        "zip": "80219",
+        "plants": "Between 150 and 250"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7651081,
+          39.6801573
+        ]
+      },
+      "properties": {
+        "date": "",
+        "multipleAddress": "",
+        "address": "19100 block of E. Pacific Place",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "743"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7583608,
+          39.6098893
+        ]
+      },
+      "properties": {
+        "date": "11/2/2017",
+        "multipleAddress": "",
+        "address": "19700 block of E. Ida Circle",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7510557,
+          39.657527
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "20000 block of E. Doane Drive",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "305"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.864913,
+          39.0733506
+        ]
+      },
+      "properties": {
+        "date": "1/2/2019",
+        "multipleAddress": "",
+        "address": "2000 block of Coyote Valley Court",
+        "city": "Monument",
+        "zip": "80132",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.749291,
+          39.6539723
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "20500 block of E. Hamilton Circle",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "363"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7482575,
+          39.6255873
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "20600 block of E. Grand Place",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "401"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.741081,
+          39.6504664
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "21100 block of E. Hampden Place",
+        "city": "Aurora",
+        "zip": "80014",
+        "plants": "201"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7398344,
+          39.6593187
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "21200 block of E. Eastman Drive",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "466"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7244545,
+          39.6118624
+        ]
+      },
+      "properties": {
+        "date": "11/2/2017",
+        "multipleAddress": "",
+        "address": "22600 block of E. Alamo Place",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0143872,
+          39.8306167
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018, 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "2300 block of W. 74th Avenue",
+        "city": "Denver",
+        "zip": "80221",
+        "plants": "Between 50 and 150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7196015,
+          39.6100599
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "23100 block of E. Alamo Place",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "599"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7564921,
+          39.6753323
+        ]
+      },
+      "properties": {
+        "date": "1/18/2018",
+        "multipleAddress": "",
+        "address": "2300 block of Genoa Street",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "424"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7127987,
+          39.6255924
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "23600 block of E. Grand Place",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "164"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.781186,
+          39.6269691
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "23600 block of E. Whitaker Drive",
+        "city": "Aurora",
+        "zip": "80015",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7092573,
+          39.6307325
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "23900 block of E. Wagontrail Avenue",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7080851,
+          39.6307252
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "24000 block of E. Wagontrail Avenue",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "324"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6996447,
+          39.6168985
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "24700 block of E. Berry Place",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "715"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0193632,
+          39.7357621
+        ]
+      },
+      "properties": {
+        "date": "2/27/2018",
+        "multipleAddress": "",
+        "address": "2500 block of W. Holden Place",
+        "city": "Denver",
+        "zip": "80204",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6870859,
+          39.7139425
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "25800 block of E. Maple Place",
+        "city": "Aurora",
+        "zip": "80018",
+        "plants": "289"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.68463,
+          39.7149431
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "25800 block of E. Bayaud Avenue",
+        "city": "Aurora",
+        "zip": "80018",
+        "plants": "151"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7521623,
+          39.6633471
+        ]
+      },
+      "properties": {
+        "date": "9/24/2018",
+        "multipleAddress": "",
+        "address": "2900 block of S. Jericho Way",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "486"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7594319,
+          39.9827948
+        ]
+      },
+      "properties": {
+        "date": "8/10/2018",
+        "multipleAddress": "",
+        "address": "300 block of Mt. Wilson Street",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "498"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7403813,
+          39.6599583
+        ]
+      },
+      "properties": {
+        "date": "9/24/2018",
+        "multipleAddress": "",
+        "address": "3200 block of S. Nepal Way",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0294643,
+          39.6566588
+        ]
+      },
+      "properties": {
+        "date": "1/18/2018",
+        "multipleAddress": "",
+        "address": "3300 block of S. Irving Street",
+        "city": "Englewood",
+        "zip": "80110",
+        "plants": "78"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7747242,
+          39.9809476
+        ]
+      },
+      "properties": {
+        "date": "1/3/2019",
+        "multipleAddress": "",
+        "address": "300 block of Las Lomas Street",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7852541,
+          39.977264
+        ]
+      },
+      "properties": {
+        "date": "1/10/2018",
+        "multipleAddress": "",
+        "address": "3400 block of Purcell Street",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7931863,
+          40.0831338
+        ]
+      },
+      "properties": {
+        "date": "1/2/2019",
+        "multipleAddress": "",
+        "address": "300 block of Clubhouse Drive",
+        "city": "Fort Lupton",
+        "zip": "80621",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.544793,
+          39.960718
+        ]
+      },
+      "properties": {
+        "date": "1/8/2019",
+        "multipleAddress": "",
+        "address": "37800 block of E. 147th Place",
+        "city": "Keenesburg",
+        "zip": "80643",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8038104,
+          39.6562283
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "3800 block of S. Joplin Court",
+        "city": "Aurora",
+        "zip": "80013",
+        "plants": "167"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7770261,
+          39.9932266
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "300 block of Matsuno Street",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "368"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9395547,
+          39.9334864
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "4000 block of E. 130th Way",
+        "city": "Thornton",
+        "zip": "80241",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9376761,
+          39.9578621
+        ]
+      },
+      "properties": {
+        "date": "8/16/2019",
+        "multipleAddress": "",
+        "address": "4200 block of E. 144th Avenue",
+        "city": "Brighton",
+        "zip": "80602",
+        "plants": "1,000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7655395,
+          39.9993482
+        ]
+      },
+      "properties": {
+        "date": "11/9/2017",
+        "multipleAddress": "",
+        "address": "4300 block of Tumbleweed Drive",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7601611,
+          39.996593
+        ]
+      },
+      "properties": {
+        "date": "1/14/2019",
+        "multipleAddress": "",
+        "address": "4600 block of Midland Street",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7594319,
+          39.9991989
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "4600 block of Haystack Lane",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "662"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.709395,
+          39.6296198
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "4700 block of S. Catawba Street",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "656"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9306265,
+          39.9561386
+        ]
+      },
+      "properties": {
+        "date": "10/10/2019",
+        "multipleAddress": "",
+        "address": "4800 block of E. 143rd Avenue",
+        "city": "Thornton",
+        "zip": "80602",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7005102,
+          39.6276961
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "4900 block of S. Gold Bug Way",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "647"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7075041,
+          39.6258166
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "5000 block of Duquesne Street",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "312"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.698307,
+          39.6242015
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "5100 block of S Haleyville Street",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "256"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6901556,
+          38.9076416
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "5200 block of Gentle Wind Road",
+        "city": "Colorado Springs",
+        "zip": "80922",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7624401,
+          39.9967682
+        ]
+      },
+      "properties": {
+        "date": "1/14/2019",
+        "multipleAddress": "",
+        "address": "500 block of Daylight Court",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7971753,
+          39.9781281
+        ]
+      },
+      "properties": {
+        "date": "11/6/2017",
+        "multipleAddress": "",
+        "address": "500 block of Park Place Drive",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7059549,
+          39.619738
+        ]
+      },
+      "properties": {
+        "date": "9/24/2018",
+        "multipleAddress": "",
+        "address": "5300 block of S. Elk Way",
+        "city": "Aurora",
+        "zip": "80016",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0619061,
+          39.7245805
+        ]
+      },
+      "properties": {
+        "date": "1/18/2018",
+        "multipleAddress": "",
+        "address": "500 block of Gray Court",
+        "city": "Lakewood",
+        "zip": "80226",
+        "plants": "611"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7424297,
+          39.9894243
+        ]
+      },
+      "properties": {
+        "date": "1/17/2019",
+        "multipleAddress": "",
+        "address": "5500 block of Royal Pine Street",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0592947,
+          39.7197452
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "5700 block of W. 2nd Avenue",
+        "city": "Lakewood",
+        "zip": "80226",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.944247,
+          40.1332653
+        ]
+      },
+      "properties": {
+        "date": "7/25/2018",
+        "multipleAddress": "",
+        "address": "5800 block of W. Conservation Drive",
+        "city": "Frederick",
+        "zip": "80504",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.994313,
+          39.851397
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "600 block of Leo Lane",
+        "city": "Thornton",
+        "zip": "80260",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7662916,
+          39.9992702
+        ]
+      },
+      "properties": {
+        "date": "1/2/2019",
+        "multipleAddress": "",
+        "address": "600 block of Hayloft Way",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7576999,
+          39.9999729
+        ]
+      },
+      "properties": {
+        "date": "1/31/2019",
+        "multipleAddress": "",
+        "address": "600 block of Windrower Court",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "309"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9953601,
+          39.8526397
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "700 block of Milky Way",
+        "city": "Thornton",
+        "zip": "80260",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0132795,
+          39.8380697
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018 (2 houses), 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "7800 block of Vallejo Street",
+        "city": "Denver",
+        "zip": "80221",
+        "plants": "Between 100 and 200"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.68495,
+          38.9067537
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "7900 block of Kettle Drum Street",
+        "city": "Colorado Springs",
+        "zip": "80922",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9772358,
+          39.9303157
+        ]
+      },
+      "properties": {
+        "date": "10/10/2018",
+        "multipleAddress": "",
+        "address": "800 block of E. 129th Avenue",
+        "city": "Thornton",
+        "zip": "80241",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8897373,
+          39.696106
+        ]
+      },
+      "properties": {
+        "date": "3/18/2019",
+        "multipleAddress": "",
+        "address": "8500 block of E. Mississippi Avenue",
+        "city": "Denver",
+        "zip": "80247",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.79896,
+          39.556247
+        ]
+      },
+      "properties": {
+        "date": "12/18/2018",
+        "multipleAddress": "",
+        "address": "8800 block of Sassafras Street",
+        "city": "Parker",
+        "zip": "80134",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.5280774,
+          40.1311698
+        ]
+      },
+      "properties": {
+        "date": "12/18/2018",
+        "multipleAddress": "",
+        "address": "8800 block of Colorado Road 57",
+        "city": "Keenesburg",
+        "zip": "80643",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0974466,
+          39.594425
+        ]
+      },
+      "properties": {
+        "date": "8/9/2018, 10/10/2018",
+        "multipleAddress": "FALSE",
+        "address": "8900 block of W. Cooper Avenue",
+        "city": "Littleton",
+        "zip": "80128",
+        "plants": "Between 100 and 200"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9527119,
+          40.1346755
+        ]
+      },
+      "properties": {
+        "date": "7/25/2018",
+        "multipleAddress": "",
+        "address": "9000 block of Shenandoah Avenue",
+        "city": "Firestone",
+        "zip": "80504",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7620754,
+          39.9885745
+        ]
+      },
+      "properties": {
+        "date": "12/20/2018",
+        "multipleAddress": "",
+        "address": "00 block of N. 45th Avenue",
+        "city": "Brighton",
+        "zip": "80601",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.794443,
+          39.8749896
+        ]
+      },
+      "properties": {
+        "date": "11/9/2017",
+        "multipleAddress": "",
+        "address": "9800 block of Olathe Street",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8049029,
+          39.875877
+        ]
+      },
+      "properties": {
+        "date": "11/2/2017",
+        "multipleAddress": "",
+        "address": "9800 block of Jasper Street",
+        "city": "Commerce City",
+        "zip": "80022",
+        "plants": "unavailable"
+      }
+    }
+  ]
+}
