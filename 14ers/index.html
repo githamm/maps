@@ -112,9 +112,9 @@
         layers: [terrain, satellite, topo]
     });
     var baseMaps = {
+        "Topo": topo,
         "Satellite": satellite,
-        "Terrain": terrain,
-        "Topo": topo
+        "Terrain": terrain
     };
 
     L.control.layers(baseMaps).addTo(map);
