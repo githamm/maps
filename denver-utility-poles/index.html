@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <title>Denver Cell Phone Poles</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h2, p {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .credit {
+      font-size: .8em;
+      font-style: italic;
+      text-align: right;
+    }
+
+    #map {
+        height: 600px;
+        width: 100%;
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content {
+        font-family: 'Roboto';
+        font-size: 1.2em;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+    }
+
+    .proposed-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #e41a1c;
+        /*border: 1px solid #ccc;*/
+    }
+
+    .unknown-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #377eb8;
+        /*border: 1px solid #ccc;*/
+    }
+
+    .existing-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #4daf4a;
+        /*border: 1px solid #ccc;*/
+    }
+
+    .future-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #984ea3;
+        /*border: 1px solid #ccc;*/
+    }
+
+    .legend-text {
+        font-weight: 700;
+        margin-top: 30px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Planned cell poles in Denver</h2>
+            <p>Cellular communications companies are racing to install "small cell" sites around Denver's dense urban neighborhoods. This map shows where companies have requested permits for freestanding "cell poles." Some have been built, but some aren't yet approved. <em>Zoom map and click markers for details &bull; Source: <a href="https://www.denvergov.org/content/denvergov/en/right-of-way-services/permits/small-cell.html" target="_blank">City and County of Denver</a></em></p>
+        </div>
+        <p class="legend-text"><span style="border-top:4px solid #4daf4a">Existing</span> &bull; <span style="border-top:4px solid #e41a1c">Proposed</span> &bull; <span style="border-top:4px solid #984ea3">Planned</span> &bull; <span style="border-top:4px solid #377eb8">Unknown</span></p>
+        <div id="map"></div>
+        <p class="credit">By Kevin Hamm, The Denver Post</p>
+    </div>
+    <script>
+    // initialize the map
+    var map = L.map('map', {
+        center: [39.7292, -104.9753],
+        zoom: 12,
+        minZoom: 11
+    });
+
+    // load a tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    // load GeoJSON from an external file
+    $.getJSON("denver-poles-type4.geojson", function(data) {
+
+        var proposed = L.divIcon({
+            className: 'proposed-icon',
+            iconSize: [7, 7]
+        });
+        var unknown = L.divIcon({
+            className: 'unknown-icon',
+            iconSize: [7, 7]
+        });
+        var existing = L.divIcon({
+            className: 'existing-icon',
+            iconSize: [7, 7]
+        });
+        var future = L.divIcon({
+            className: 'future-icon',
+            iconSize: [7, 7]
+        });
+
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+
+                var status;
+
+                if (feature.properties.STATUS == null) {
+                    status = 'Unknown'
+                } else status = feature.properties.STATUS;
+
+                if (feature.properties.STATUS === 'Proposed') {
+                    mapIcon = proposed
+                } else if (feature.properties.STATUS == null) {
+                    mapIcon = unknown
+                } else if (feature.properties.STATUS === 'Existing') {
+                    mapIcon = existing
+                } else if (feature.properties.STATUS === 'Future Planned 1-2 year') {
+                    mapIcon = future
+                }
+
+                var marker = L.marker(latlng, {
+                    icon: mapIcon
+                });
+
+                marker.bindPopup(
+                    '<p>Owner: <strong>' + feature.properties.OWNERNAME + '</strong><br>Status: <strong>' + status + '</strong></p>'
+                );
+                return marker;
+            }
+        }).addTo(map);
+    });
+    </script>
+</body>
+
+</html>
