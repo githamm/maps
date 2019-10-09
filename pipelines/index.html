@@ -1,0 +1,190 @@
+<html>
+
+<head>
+    <title>Colorado Pipeline Incidents</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h2,
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .credit {
+        font-size: .8em;
+        font-style: italic;
+        text-align: right;
+    }
+
+    #map {
+        height: 600px;
+        width: 90%;
+        margin: 0 auto;
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content {
+        font-family: 'Roboto';
+        font-size: 1.2em;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        width: 300px;
+        height: 350px;
+        overflow: auto;
+    }
+
+    .leaflet-container a.leaflet-popup-close-button {
+        padding: 4px 35px 0 0;
+    }
+
+    .popup-header {
+        font-size: 1.1em;
+        line-height: 1.1;
+        color: #525252;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin: 25px 0 -15px 0;
+    }
+
+    .popup-subheader {
+        font-size: .85em;
+        font-style: italic;
+        color: #525252;
+    }
+
+    .narrative {
+        font-size: .9em;
+    }
+
+    hr {
+        margin: 10px 0 7px 0;
+    }
+
+    .legend-text {
+        font-weight: 700;
+        margin-top: 30px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Pipeline incidents</h2>
+            <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <em>Zoom map and click markers for details &bull; Source: <a href="#" target="_blank">???</a></em></p>
+        </div>
+        <p class="legend-text"><span style="border-top:4px solid #4daf4a">Gas transmission</span> &bull; <span style="border-top:4px solid #e41a1c">Hazardous liquid</span> &bull; <span style="border-top:4px solid #377eb8">Gas distribution</span></p>
+        <div id="map"></div>
+        <p class="credit">By Kevin Hamm, The Denver Post</p>
+    </div>
+    <script>
+    // initialize the map
+    var map = L.map('map', {
+        center: [39.0501, -105.3821],
+        zoom: 7,
+        // minZoom: 11
+    });
+
+    // load a tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    // load GeoJSON from an external file
+    $.getJSON("pipeline-data.geojson", function(data) {
+        // var future = L.divIcon({
+        //     className: 'future-icon',
+        //     iconSize: [7, 7]
+        // });
+
+        // var mapIcon = L.divIcon({
+        //     className: 'future-icon',
+        //     iconSize: [7,7]
+        // })
+
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+
+                var circleRadius;
+                if (feature.properties.total_cost > 50000) {
+                    //circleRadius = (feature.properties.incidentCount * 1.5)
+                    circleRadius = (Math.sqrt(feature.properties.total_cost) / 45)
+                } else {
+                    circleRadius = 5
+                };
+
+                var circleBorder;
+                if (feature.properties.ignite === 'Yes') {
+                    circleBorder = 3
+                } else circleBorder = 0;
+
+                var gasTransmissionCircle = {
+                    radius: circleRadius,
+                    fillColor: '#4daf4a',
+                    color: '#525252',
+                    weight: circleBorder,
+                    opacity: 1,
+                    fillOpacity: .6
+                };
+
+                var hazardousLiquidCircle = {
+                    radius: circleRadius,
+                    fillColor: '#e41a1c',
+                    color: '#525252',
+                    weight: circleBorder,
+                    opacity: 1,
+                    fillOpacity: .6
+                };
+
+                var gasDistributionCircle = {
+                    radius: circleRadius,
+                    fillColor: '#377eb8',
+                    color: '#525252',
+                    weight: circleBorder,
+                    opacity: 1,
+                    fillOpacity: .6
+                };
+
+                var tooltipText = '<h4 class="popup-header">' + feature.properties.operator + '</h4><br><span class="popup-subheader">' + feature.properties.incident_date + ' &bull; ' + feature.properties.county + ' County &bull; '  + feature.properties.pipeline_type + ' pipeline</span><hr>Leak type: <strong>' + feature.properties.leak_type + '</strong><br>Injuries: <strong>' + feature.properties.injuries + '</strong><br>Fatalities: <strong>' + feature.properties.fatalities + '</strong><br>Evacuated: <strong>' + feature.properties.number_evacuated + '</strong><br>Total cost: <strong>$' + parseInt(feature.properties.total_cost).toLocaleString() + '</strong><br>Leak amount*: <strong>' + parseInt(feature.properties.net_release).toLocaleString() + '</strong><br><br><span class="narrative">' + feature.properties.narrative + '</span><br><em>*Natural gas reported in MCF (thousand cubic feet), liquids reported in barrels</em>';
+
+                if (feature.properties.pipeline_type === 'Gas transmission/gathering') {
+                    return L.circleMarker(latlng, gasTransmissionCircle).bindPopup(tooltipText)
+                } else if (feature.properties.pipeline_type === 'Hazardous liquid') {
+                    return L.circleMarker(latlng, hazardousLiquidCircle).bindPopup(tooltipText)
+                } else if (feature.properties.pipeline_type === 'Gas distribution') {
+                    return L.circleMarker(latlng, gasDistributionCircle).bindPopup(tooltipText)
+                }
+            }
+        }).addTo(map);
+    });
+    </script>
+</body>
+
+</html>

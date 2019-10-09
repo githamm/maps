@@ -1,0 +1,985 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.031261,
+          40.057931
+        ]
+      },
+      "properties": {
+        "index": "7",
+        "incident_date": "5/12/2017",
+        "pipeline_type": "Gas distribution",
+        "operator": "Black Hills Energy",
+        "leak_type": "Natural gas",
+        "unintentional_release": "3390",
+        "net_release": "3390",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Weld",
+        "environmental_cost": "",
+        "total_cost": "31095",
+        "narrative": "Contractor was digging a sewer line. The back hoe slid off of the spoil pile of dirt into the 4-inch high pressure gas pipeline damaging the main. Locates were marked properly."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.10621,
+          38.52153
+        ]
+      },
+      "properties": {
+        "index": "28",
+        "incident_date": "4/10/2018",
+        "pipeline_type": "Gas distribution",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "85",
+        "net_release": "85",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "2",
+        "county": "Chaffee",
+        "environmental_cost": "",
+        "total_cost": "325103",
+        "narrative": "On 4/10/18 during the annual valve inspection of HFV-40247 the operator found natural gas readings in the valve box. During repair efforts the threaded service pipe failed at the inlet to the valve. Based on metallurgical and failure analysis by third party laboratory, the failure surface exhibits signs consistent with a brittle fracture. Dynamic loading is suspected as a possible cause, but is not conclusive. However, based on preliminary investigation the failure is not believed to be a result of direct contact with excavation equipment. Installation stress may be a contributing factor, as the connection failed when soil was removed from around the valve and service line and could have resulted in sudden movement."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.349158,
+          39.221466
+        ]
+      },
+      "properties": {
+        "index": "29",
+        "incident_date": "6/21/2017",
+        "pipeline_type": "Gas distribution",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "10",
+        "net_release": "10",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Lake",
+        "environmental_cost": "",
+        "total_cost": "230027",
+        "narrative": "Driver lost control of vehicle and damaged regulator station, but was not injured. Station was shut-in, which caused customer outage. Incident was telephonically reported once it became evident that costs of response, repair, and restoration would exceed incident criteria."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.974903,
+          40.146025
+        ]
+      },
+      "properties": {
+        "index": "34",
+        "incident_date": "5/24/2019",
+        "pipeline_type": "Gas distribution",
+        "operator": "Black Hills Energy",
+        "leak_type": "Natural gas",
+        "unintentional_release": "9762",
+        "net_release": "9762",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Weld",
+        "environmental_cost": "",
+        "total_cost": "80111",
+        "narrative": "14:50 field resource center (FRC) received call from damaging party. -14:53 FRC dispatched operations tech #1 -15:09 operations tech #1 arrived on scene and communicated with FD/PD and assessed the situation. -15:14 Operations tech #1 called in code 2, requesting bhe personnel to assist. -BHE operations techs #2 & #3 arrive to assist.  -Operations used mapping and locating equipment to determine the 6\" high pressure was the main damaged, not the 2\" PE. -Operations supervisor contacted contract welder to mobilize for shut down and repair. -Operations supervisor/manager determined that the venting gas could safely continue to vent to atmosphere and did not present a hazard to the public or property. -Approximately two miles of line pack began to be reduced down to 100 psi to safely perform stoppling procedure. -2:30 Leak was stopped and repairs began. -5:30 Pressure was restored. -Commercial customer's service was restored on the morning of may 28, 2019."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.7453,
+          37.7507
+        ]
+      },
+      "properties": {
+        "index": "1",
+        "incident_date": "5/1/2017",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Colorado Interstate Gas Co.",
+        "leak_type": "Natural gas",
+        "unintentional_release": "21047",
+        "net_release": "21047",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Prowers",
+        "environmental_cost": "0",
+        "total_cost": "67750",
+        "narrative": "On Monday, May 1, 2017, Colorado Interstate Gas (CIG) personnel arrived at the springfield (CO) compressor station and found natural gas venting to atmosphere from the first cut fuel gas relief valve. The first cut fuel gas pressure regulator had failed due to a failure of its internal soft goods (rubber boot). The venting gas was stopped by closing isolation valves and the failed regulator was repaired. It was returned to service Monday, May 1, 2017, at 3:00 pm MDT. Scada information revealed that the regulator had failed at this unmanned station on april 29, 2017, at approximately 7:00 pm mdt.  However, this fuel gas SCADA data is not part of the information delivered to CIG's gas control. It was determined that a volume of 21,047 mcf of natural gas had been released, thus meeting phmsa incident reporting criteria."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.7007,
+          39.6983
+        ]
+      },
+      "properties": {
+        "index": "2",
+        "incident_date": "11/20/2018",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Colorado Interstate Gas Co.",
+        "leak_type": "Natural gas",
+        "unintentional_release": "5962",
+        "net_release": "5962",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Arapahoe",
+        "environmental_cost": "0",
+        "total_cost": "64252",
+        "narrative": "On November 20, 2018 at 3:13 pm MST Colorado Intrastate Gas Company (CIG) gas control received a call from a third-party contractor indicating that while grading they the third-party contractor had hit and punctured a natural gas pipeline. CIG personnel arrived at the location of the line strike at 3:43 pm MST and confirmed that it was on the CIG pipeline. The third-party contractor struck the CIG 9A pipeline while grading the area for a new housing development. There was an open one call ticket and CIG damage prevention personnel had marked the line. The contractor had previously agreed orally and in writing to CIG's request that a CIG representative be onsite for any work within 25 feet of our pipeline assets. Further, the contractor told CIG a few days before the incident that no work would be performed within 25 feet of the pipeline on the day of the line strike. Despite the pipeline markings and the prior agreements, the third-party contractor proceeded with grading over the pipeline without notifying CIG. Post confirmation by CIG field personnel that our pipeline had been struck, they proceeded to isolate the pipeline between MLV 11 and 11.9. CIG then implemented a blow down process for this segment. Once the leak site was declared safe and free of gas vapors CIG proceeded to make repairs. The repairs consisted of replacing sixty feet of pretested twenty inch pipe. The repairs were completed on November 21, 2018. Upon completing the repairs CIG implemented a purge and pack process for this segment. Once the purge process was confirmed to be completed the segment pressure was allowed to equalize. The segment was then returned to gas control for normal operations and was back in service at 7:42 pm MST on November 21, 2018."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.853577,
+          40.170355
+        ]
+      },
+      "properties": {
+        "index": "3",
+        "incident_date": "5/5/2017",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Colorado Interstate Gas Co.",
+        "leak_type": "Natural gas",
+        "unintentional_release": "4600",
+        "net_release": "4600",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Morgan",
+        "environmental_cost": "400",
+        "total_cost": "55512",
+        "narrative": "Colorado Interstate Gas (CIG) transmission personnel, while installing pipeline markers, discovered an area of dead vegetation and discolored soil in the vicinity of its 16\" 52A pipeline in Morgan County, Colorado. Leak detection equipment confirmed a natural gas leak. Excavation revealed a very small crack in the pipe's long seam to be the source of the leak, attributable to a lack of weld fusion in the long seam. The anomaly was cut out and replaced with a new cylinder of pipe. The pipeline was then placed back into operation."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.703687,
+          39.638281
+        ]
+      },
+      "properties": {
+        "index": "4",
+        "incident_date": "5/29/2017",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Colorado Interstate Gas Co.",
+        "leak_type": "Natural gas",
+        "unintentional_release": "6456",
+        "net_release": "6456",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Araphahoe",
+        "environmental_cost": "1000",
+        "total_cost": "53850",
+        "narrative": "Original NRC report number 1179650; 9:59 am, LDC called CIG to report dead vegetation, possible leak site 25 feet south of quincy avenue, pipeline row, in a wheat field; 11:00 am, CIG employees on scene and confirmed pipeline leak; 12:00 pm, CIG employees began lowering the pipeline operating pressure; excavation found buried flanges with leaking gasket material; 05/31/2017, 8:00 am, CIG employees began pipeline valve section isolation and pipeline valve section blow down to cut out flanged connection and install line pipe; MLV 10.1 is manually operated; MLV 11 is remote control by gas control; 06/02/2017, 12:00 pm, project is complete and pipeline valve section has been returned to service. Note: NRC update report number 1179812, 05/31/2017, 9:00 am; note: PIR of 554 feet includes 40 foot buffer. No additional information change; submitting final report 07/21/2017."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.941814,
+          40.292071
+        ]
+      },
+      "properties": {
+        "index": "5",
+        "incident_date": "4/2/2019",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "DCP Midstream",
+        "leak_type": "Natural gas",
+        "unintentional_release": "533",
+        "net_release": "533",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "2",
+        "county": "Weld",
+        "environmental_cost": "50",
+        "total_cost": "52480",
+        "narrative": "DCP gas control received a call from a property owner on April 2, 2019 at approximately 10:00 am MST reporting a suspected gas release. DCP personnel arrived on site at approximately 10:15 am MST and confirmed a gas release and isolated the line. DCP personnel blew down remaining pressure in the line. Initial investigation indicated a crack in the pipe at approximately the 6-o'clock position immediately adjacent to a girth weld to be the source of the release. Excavation and investigation of the release site is ongoing to determine the full cause of the release. The line segment remains isolated and will be abandoned per 49 CFR 192.727."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.013249,
+          37.8832
+        ]
+      },
+      "properties": {
+        "index": "6",
+        "incident_date": "6/23/2017",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Northwest Pipeline LLC",
+        "leak_type": "Natural gas",
+        "unintentional_release": "11327",
+        "net_release": "11327",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "San Miguel",
+        "environmental_cost": "0",
+        "total_cost": "33415",
+        "narrative": "8:55 pm 6-23-17 a landowner called notifying gas control that there was a blowing gas sound compared to a jet engine. Gas control notified field operations. Operations responded within one hour and found relief valve blowing as designed. Field operator shut in both regulators causing relief valves to stop blowing at 10:15 pm. Field operators discovered that both mooney regulators onsite had tears in the diaphragm causing them to fail and let gas pressure past them. Field operators replaced the diaphragms and double checked delivery pressure. Pressure showed 295 psi. Relief valves were set at 319 and 321 psi. Nucla lateral operates at 300 psi MAOP. Employees verified deliver pressure was current and all valves at station were left in normal operating position. Line put back in service at 11:20 pm 6-23-17. Initial calculations of gas volumes released using time gas control was notified as event start were under the 3,000 mcf reporting criteria so an NRC notification was not made. On 6-27-17 it was confirmed with the landowner that gas was blowing at the location from approximately 10:00 am 6-23-17 until the regulators were shut in at 10:15 pm. With this additional information the 3,000 mcf reporting criteria was exceeded by gas escaping the relief valve as designed. At 12:32 pm 6-27-17 an initial NRC notification, # 1182427, was made, at 10:02 am 6-28-17 a follow up NRC notification, # 1182511, was made."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6089491,
+          40.117346
+        ]
+      },
+      "properties": {
+        "index": "8",
+        "incident_date": "1/18/2019",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Colorado Interstate Gas Co.",
+        "leak_type": "Natural gas",
+        "unintentional_release": "3282",
+        "net_release": "3282",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Weld",
+        "environmental_cost": "500",
+        "total_cost": "18053",
+        "narrative": "On January 17, 2019 at approximately 11:55 pm local time, Colorado Interstate Gas (CIG) gas control received a telephone call from a third-party oil and gas operator reporting a sound of gas releasing from our pipeline facility at the l250a pig launcher and pig receiving facility in Weld County, Colorado. Upon receiving the third-party report, gas  control called the CIG area supervisor and dispatched him to the location. He arrived on site at 1:18 am local time on January 18, 2019 and verified that the gas leak was in fact on the CIG l250 pipeline pig trap facility. At 1:50 am local time on January 18, 2019, CIG initiated an internal emergency-response-line (ERL) telephone call to discuss the available information regarding the gas leak to determine whether discovery of a reportable event occurred.    Since the 250A segment impacted by the leak could not be immediately isolated until alternative gas supplies for CIG's customers served from that segment could be arranged, CIG decided to assume the release volumes would exceed the reportable threshold and decided to notify the National Response Center (NRC) of the event prior to establishing the actual volumes released. It was not until the affected segment containing the leak could be isolated at 4:17 am on January 18, 2019, that CIG was able to estimate the actual release volume. During the initial investigation, CIG calculated the total release volume (3,282 mcf) and determined it had met the reporting requirement for the event at 3:55 am on January 18, 2019. The NRC was notified at 2:04 am local time on January 18, 2019 (NRC no. 1235460) Of the gas release with an estimate to be greater than 3,000 mcf and resulting in a reportable event. The NRC logged receipt of the report at 2:09 am local time. A courtesy notification to the PHMSA incident investigation team was provided at 2:38 am local time that day. At 3:06 pm local time on January 18, 2019, all repairs to the facilities were complete and returned to service. At 3:54  pm local time on January 18, 2019, a 48-hour update report was called into the NRC (report no. 1235523) Providing the total volume of the release (3,282 mcf) with confirmation that there were no customer impacts due to the incident. The NRC logged the receipt of the report at 14:02 local time. The 1\" blow-off valve assembly that failed was sent for a complete metallurgical analysis to determine the root cause of the failure. From the metallurgical analysis, it was determined the root cause of the butt weld failure was caused by high-cycle, low nominal stress, unidirectional-bending fatigue. Operations field personnel observed that the 1\" blow-off valve assembly was found approximately 25 feet from the welded coupling located on the 250A pipeline following the event. The threaded nipple end of the assembly was located approximately 6-12 inches from the rest of the vent valve assembly. The valve was found in the closed position. Based on these observations, it was concluded that the welded end failed first and the threaded nipple separated from the vent valve after the entire 1\" blow-off valve assembly was ejected and impacted with the ground. The metallurgical analysis did not identify any material composition deficiencies of the assembly. In addition no evidence of excessive torque was identified. CIG concluded the root cause of the threaded-end of the nipple blow-off valve assembly failure resulted from the assembly impacting the ground surface. The root cause of the weld failure is associated with a vibration caused from an 8-inch flow control valve at the regulator station at gate 6. CIG finalized a vibration study on April 24, 2019. Results of the study identified facility modifications will be necessary to help reduce vibration and until these changes can be completed, CIG will implement operating changes as needed to help lower vibration levels."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.22107,
+          40.96661
+        ]
+      },
+      "properties": {
+        "index": "24",
+        "incident_date": "5/25/2017",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "East Cheyenne Gas Storage, LLC",
+        "leak_type": "Natural gas",
+        "unintentional_release": "91000",
+        "net_release": "91000",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "16",
+        "county": "Logan",
+        "environmental_cost": "300000",
+        "total_cost": "2418000",
+        "narrative": "While performing maintenance activities on the WP-D005-1 injection/withdrawal well the well kicked and control of well was lost. Well was isolated from surface facility system at time of incident. Control of well was regained within 44 hours of start of incident."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.8131069,
+          40.22766054
+        ]
+      },
+      "properties": {
+        "index": "32",
+        "incident_date": "5/2/2019",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Colorado Interstate Gas Co.",
+        "leak_type": "Natural gas",
+        "unintentional_release": "12626",
+        "net_release": "12626",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Morgan",
+        "environmental_cost": "2500",
+        "total_cost": "108084",
+        "narrative": "Late night May 2, 2019, a farmer was running a tractor planter in a circular pattern, planting a field of corn. The tractor planter ran through a steel barricade and over Colorado Interstate Gas (CIG) transmission's line 4B aboveground valve stem/operator.  This caused the valve flange to pull apart belowground and release natural gas.  The farmer shut down the tractor and removed himself from the scene. CIG operations personnel secured the site and determined that there was no threat to the general public since the occurrence was in the middle of a field, away from any populated areas. The need to maintain service to customers resulted in allowing the gas to continue to release until a bypass could be constructed and installed. Following this, isolation valves were closed and the pipeline was blown down to allow removal of the tractor planter and repair of the facility. The facility was restored to service May 15, 2019. The necessary 48-hour update was provided to the NRC May 4, 2019 at 13:06 MDT and was assigned report number 1244639."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.53275,
+          37.48479
+        ]
+      },
+      "properties": {
+        "index": "33",
+        "incident_date": "8/17/2017",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "2951",
+        "net_release": "2951",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Rio Grande",
+        "environmental_cost": "5000",
+        "total_cost": "105250",
+        "narrative": "On 8/17/17, a second party mechanical contractor struck the Xcel/PSCO 8in Ignacio to Del Norte transmission gas line approximately 16 miles southwest of Del Norte, Colorado. While excavating a trench intended for electrical conduit for a new remote-controlled valve, the equipment operator struck a 2in T.D. Williamson thread-o-ring fitting at the 12:00 position on the 8in pipeline. As a result of the impact, the 8in pipeline failed, opening a 2.5in diameter hole in the top of the pipe. The incident location is a remote area without cellular phone service. The incident was initially discovered by the gas controller on duty by way of scada alarms and was immediately reported to operating personnel. The damaged pipeline segment was isolated by closing the manually operated upstream and downstream mainline valves. Upon completion of the electrical work, the final grade of the location will be raised to reach a minimum of 36in of cover. The initial NRC number is #1187585 and the 48-hr follow up number is #1187701."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.79166,
+          37.471
+        ]
+      },
+      "properties": {
+        "index": "9",
+        "incident_date": "3/17/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Kinder Morgan CO2 Co. LP",
+        "leak_type": "Carbon dioxide",
+        "unintentional_release": "6.6",
+        "net_release": "6.6",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Montezuma",
+        "environmental_cost": "0",
+        "total_cost": "5017",
+        "narrative": "On 3/17/17, a Kinder Morgan technician reported a leak at the Yellow Jacket Loop Line pig launcher. The local operations supervisor responded to the leak and isolated the launcher. The launcher was then blow down for investigation and repair. It was determined that the o-ring on the launcher door failed. The o-ring was sent to a lab for material analysis. The lab analysis results indicate the rubber material and hardness of the o-ring did not meet requirements for CO2 service."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.032446,
+          40.651683
+        ]
+      },
+      "properties": {
+        "index": "10",
+        "incident_date": "1/19/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Tallgrass Pony Express Pipeline, LLC",
+        "leak_type": "Crude oil",
+        "unintentional_release": "10009",
+        "net_release": "927",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Logan",
+        "environmental_cost": "103700",
+        "total_cost": "351733",
+        "narrative": "Incident summary: At 07:14 local time operators arrived on site at the sterling tank terminal and found oil exiting the tank through an open roof drain valve. Emergency procedures were immediately enacted. Oil spill response organizations were notified while the surrounding area was being monitored for hazardous volatile constituents. Once it was deemed safe to enter secondary containment area operations personnel entered and closed the roof drain valve, stopping the release. Hazardous volatile constituents continued to be monitored in the surrounding area while clean-up efforts took place. Environmental release: Approximately 10,009 barrels of BLS crude oil was released over a 16-hour period through the roof drain valve into the storm water basin. Root cause(s): The roof drain valve was normally left in the open position, following our standard operating procedure. Roof drain hose split at the top fitting at the location next to the compression fitting at the flange. Inspection and destructive testing of the failed hose was completed by a third party; the report of findings concluded \"the root cause of the failure of the crude oil tank roof drain line was more than likely a manufacturing defect in the hose.\" Action items taken to prevent recurrence: - new sop was created - roof drain valves (operated in the closed position) - a workbook based dynamic material balance tracking / leak detection application for the sterling terminal tanks was created and implemented."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.607818,
+          40.200319
+        ]
+      },
+      "properties": {
+        "index": "11",
+        "incident_date": "11/21/2018",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Crude oil",
+        "unintentional_release": "23.8",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Weld",
+        "environmental_cost": "0",
+        "total_cost": "67000",
+        "narrative": "During a facility inspection, a technician observed product on the ground near the mainline scraper trap. Operations control was notified and pipeline shutdown procedures were implemented. Cleanup activities were initiated. Impacted soil was removed and properly disposed of. Investigation determined the leak originated from the DRA injection line. A faulty check valve on the injection line allowed crude from the mainline to flow into the injection line to the release point. A mixture of DRA and crude was released. The DRA injection line was isolated from the mainline. The affected section of the line was removed and sent in for failure analysis. Above-grade piping was installed to allow DRA operations to resume. Results of the metallurgical analysis indicate the leak was attributed to internal microbiologically-influenced corrosion (MIC). The formation of acid-producing bacteria (APB) increased while in contact with the carbon steel pipe and resulted in the pitting attack and eventual perforation of the steel wall. Stainless steel pipe was used for the above-ground replacement section and the faulty check valve was replaced with two check valves to provide redundancy. 48-Hr NRC update: #1231304, 11:43 11/26/18  supplemental/final (04/30/2019): part G1 and part H."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.033495,
+          40.649498
+        ]
+      },
+      "properties": {
+        "index": "12",
+        "incident_date": "1/7/2019",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Tallgrass Pony Express Pipeline, LLC",
+        "leak_type": "Crude oil",
+        "unintentional_release": "80",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Logan",
+        "environmental_cost": "0",
+        "total_cost": "61300",
+        "narrative": "At 09:49 a.m. MST company personnel identified crude oil pooling on top of the floating roof of tank 5255 at the Sterling terminal. Product appeared to be exiting the tank from the roof drain line. Emergency procedures were immediately enacted; tank was shut down and subsequently drained. All of the oil that accumulated on the tank roof was recovered and returned to the tank. Leak was contained solely to the tank roof; no oil reached the surface of the ground or any other structure on site. Root cause investigation determined that water in the internal roof drain line froze and expanded causing the paper gaskets on the internal drain line piping to push out against the flange bolts and rupture. Repairs were completed which included replacing the paper gaskets with flexitallic gaskets."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.94451,
+          40.78062
+        ]
+      },
+      "properties": {
+        "index": "13",
+        "incident_date": "3/13/2019",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Whiting Petroleum Corp.",
+        "leak_type": "Crude oil",
+        "unintentional_release": "0.4",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Weld",
+        "environmental_cost": "0",
+        "total_cost": "1025",
+        "narrative": "During routine inspection of pipeline facilities on March 13, 2019, pipeline operations found a leaking gasket at the Pawnee crude oil terminal interconnect. At 6:30am, the control room was informed on the leaking equipment and shutdown at 6:34am. The leak was from a gasket in an isolation point on the live side of a 3\" line used to transfer product back into the process from the breakout tanks. The leak was isolated and preparations for repairs began at 7:05am with a call for the parts and request for more personnel. The fluid was pulled down on the isolated segment and the gasket and valve were replaced with new. Control center was notified that the repairs were made and that they could return to service. At 9:35am the pipeline was back on line and repairs were confirmed. At the time of the incident there was heavy rain and sleet with high winds. Oil absorbing pads were placed around the edges of the water puddles in order to stop the spread of the sheen. Due to the accumulated rain water, the sheen spread out to cover an area approx. 25' Long by 2' to 3' wide being roughly 1/4\" deep. The environmental regulatory group estimated volume was 0.41 barrels or 17.2 gallons. The pipeline compliance group was notified and the volume was verified. The weather also delayed the clean up response, contract personnel were on site and the clean up was underway at 8:15am. Root cause: After seeing oil leaking from the gasket we disassembled the valve setting and the cork gasket was found to be pinched almost in two at the point of the leak. For a gasket to be pinched in one location like this one was found, it indicates over tightening of stud bolts at installation.  When we reinstalled the valve with new valve and gasket, we brought the bolts to proper Ft. Lbs. Of 110 and tightened bolts in proper pattern."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.608058,
+          40.200501
+        ]
+      },
+      "properties": {
+        "index": "14",
+        "incident_date": "6/7/2018",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Crude oil",
+        "unintentional_release": "0.36",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Weld",
+        "environmental_cost": "0",
+        "total_cost": "525",
+        "narrative": "During morning facility inspection, operator observed product on the concrete containment floor originating from the bottom of the flange in the transfer manifold area.  The line was not running at the time. Clean up activities were commenced by using diapers and solvents. Further investigation identified a thermal PSV on the line segment was isolated. Due to the PSV being isolated, it is believed the line became pressurized due to thermal pressure and likely exceeded MOP, resulting in the release at the flange. The flange gasket and bolts were replaced and the transfer manifold visually inspected. A safety meeting was conducted and duties of daily facility and equipment inspections were re-enforced along with a review of the PSV inspection procedure"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.81334,
+          39.757676
+        ]
+      },
+      "properties": {
+        "index": "15",
+        "incident_date": "12/29/2018",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Diesel, fuel oil, kerosene, jet fuel",
+        "unintentional_release": "294",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "0",
+        "total_cost": "128150",
+        "narrative": "During a facility inspection, the local operations personnel observed product on the ground near the prover. There was not an active pipeline movement but operations control was notified to prevent any future startup activities. Isolation valves were closed to isolate the prover and cleanup activities were initiated. Free product was recovered and impacted soils were properly disposed of. The release originated from a cracked 2\" ball valve which served as the low point drain valve for the prover.  This valve was winterized in October but based on the failure, it is believed free water product was received from the third party pipeline associated with this prover.  Freezing temperatures and water accumulation after the winterization caused the ball valve to crack resulting in the release. The valve was replaced with a new valve and other low point components within this affected section were inspected. A task was created to perform monthly winterization on assets associated with movements from this third party pipeline. Operations procedures are being modified to review valve position/plug installation to alleviate the potential for frozen valves and components.   Analytical results from a subsurface investigation have been submitted to the Colorado Department of Public Health and Environment (CDPHE).  The CDPHE has released the incident with no additional investigation/cleanup required. 48-Hr NRC update:  #1235062, 1/11/19 14:44 supplemental (05/03/2019): updated part A9, A11, part H narrative supplemental/final (06/12/2019): updated part D8d, part H narrative."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943911,
+          39.796206
+        ]
+      },
+      "properties": {
+        "index": "16",
+        "incident_date": "1/3/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Phillips 66 Pipeline LLC",
+        "leak_type": "Diesel, fuel oil, kerosene, jet fuel",
+        "unintentional_release": "0.19",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "2000",
+        "total_cost": "4010",
+        "narrative": "During rounds, terminal operator discovered diesel stain on the ground under a 2 inch drain valve off the DE-03 line. The line was not operating at the time, and was blocked in after notifying the control center and 3rd party shipper. The spill was estimated to be 8 gallons. It appears that water was in the drain leg to a 2 inch valve off the DE-03 line. The water likely froze which pushed the plug out of the valve threads and released the diesel. The 2 inch valve was replaced and a new plug installed. Investigation revealed this valve was not on the winterization list to be checked for water before winter starts. Corrective action is to tag the valve and add to the winterization list to be checked and purged every fall to remove any accumulated water and prevent freezing."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.813266,
+          39.758951
+        ]
+      },
+      "properties": {
+        "index": "17",
+        "incident_date": "8/8/2018",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Sinclair Transportation Co.",
+        "leak_type": "Gasoline (non-ethanol)",
+        "unintentional_release": "20",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "424500",
+        "total_cost": "458180",
+        "narrative": "At 08:13 on 8/8 the Magellan control center notified the Sinclair control center to shut down its pump at the Chase terminal for an specified reason. At 08:52 the Magellan terminal manager contacted the Sinclair local area operator and informed him that there had been a release out of the Sinclair pump seal. Sinclair's Chase pump is a Gould model 3196 I-frame pump. In this application a 50 hp motor drives the pump. The pump is located within the Magellan terminal. Sinclair takes refined product deliveries at this location and ships them to Sinclair's Denver product terminal via the 15 mile long Chase connection pipeline. Sinclair's and Magellan initial response was initiated and, since the release happened within Magellan's property, Magellan took responsibility for the product recovery and clean-up (at Sinclair's expense).     The subsequent investigation revealed that the outboard/thrust bearing had failed allowing the impeller shaft to travel forward far enough that the faces of the seal parted allowing the release of gasoline. Due to the wear on the impeller it is apparent that over an unknown period of time the outboard/thrust bearing had begun to fail (chronic condition). Eventually the outboard/thrust bearing cages wore enough that the impeller shaft had sufficient lateral travel to allow the seal to separate. The lab analysis of the bearing oil revealed that the oil had been contaminated with water and the oil had been degraded. This contributing factor may have led to the bearing failure."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.81468,
+          39.75829
+        ]
+      },
+      "properties": {
+        "index": "18",
+        "incident_date": "1/12/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Gasoline (non-ethanol)",
+        "unintentional_release": "0.48",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "0",
+        "total_cost": "65050",
+        "narrative": "Tank 108 roof drain was opened to drain water from the roof. The operation was checked throughout the shift, but a small amount of gasoline was observed coming from the valve with the final check of the day. The valve was closed and absorbents used to collect gasoline that was released inside the tank containment. Impacted absorbents were properly contained for disposal. Minor amounts of surface soil collected and placed in drums for disposal. Once the tank was removed from service and cleaned it was determined that the roof drain system had accumulated ice. The flexible joint connection internal to the tank had been damaged which allowed product to enter the roof drain system. This style flexible joint connection for internal roof drain system on external floating roofs (EFR) is no longer an approved installation. Magellan has also prepared a lesson learned bulletin (LLB) to be distributed across operations for proper winterization of EFR roof drains. The LLB will provide guidance to modify site specific winterization procedures. Approximately 20 cubic yards of soil was remediated supplemental update: part H narrative."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.914925,
+          39.845144
+        ]
+      },
+      "properties": {
+        "index": "19",
+        "incident_date": "3/21/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Gasoline (non-ethanol)",
+        "unintentional_release": "15",
+        "net_release": "0.1",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "0",
+        "total_cost": "50900",
+        "narrative": "At 6:15 am RMT Magellan operations discovered a pump seal failure while conducting the morning facility inspection. The mainline pump was shut down upon discovery of the release. A vac truck was mobilized to recover product that collected in concrete containment and impacted soil was disposed of. A new seal was installed to replace the seal and a seal leak detection system was installed on the pump. Approximately four cubic yards of soil was remediated supplemental update: part A 18b, part C 5 and part H narrative marked as final."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.911757,
+          39.84655
+        ]
+      },
+      "properties": {
+        "index": "20",
+        "incident_date": "1/21/2019",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Gasoline (non-ethanol)",
+        "unintentional_release": "0.6",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "0",
+        "total_cost": "12050",
+        "narrative": "During a facility inspection, the operator discovered a seal failure on the booster pump to tank 65-4. Operations control was notified and pipeline movements from this tank were shut down. Valves were closed to isolate tank 65-4 from facility operations and pipeline movements resumed originating from another tank. Impacted soil was excavated, sampled, and disposed of properly. The release was caused by a pump seal failure due to normal wear. The pump was removed and replaced. Magellan acquired the facility from a previous operator in 2013 and the date of pump installation and pump seal maintenance are unknown. The pump seal had not been replaced during Magellan's ownership."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.915381,
+          39.844973
+        ]
+      },
+      "properties": {
+        "index": "21",
+        "incident_date": "12/7/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Magellan Pipeline Company, LP",
+        "leak_type": "Gasoline (non-ethanol)",
+        "unintentional_release": "1.19",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "0",
+        "total_cost": "10200",
+        "narrative": "While completing the facility inspection at the end of the shift, operations discovered a leak on the mainline surge relief valve for the Cheyenne to Dupont 8\" line. The operator isolated the surge relief line by closing valves thus stopping the release. After isolation, the relief valve was removed from service. Following the release, Magellan validated that an MSR is not required on this line segment and the mainline was returned to service. An internal component of the relief valve failed, allowing product outside of valve body and into the pilot area. This allowed product to be released through a vent in the valve pilot. This pipeline system was acquired from a previous operator. Magellan reviewed the MSR valves on the rest of this system and did not find additional valves of the same manufacture as the one that failed during this event. Approximately 30 cubic yards of soil was remediated."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.940679,
+          39.7962
+        ]
+      },
+      "properties": {
+        "index": "22",
+        "incident_date": "8/3/2017",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Phillips 66 Pipeline LLC",
+        "leak_type": "Gasoline (non-ethanol)",
+        "unintentional_release": "0.26",
+        "net_release": "0",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Adams",
+        "environmental_cost": "1000",
+        "total_cost": "1010",
+        "narrative": "While sampling product receipts on the DE-03 pipeline, a Phillips 66 operator at the Denver terminal was purging the sample system into a five gallon bucket and left the area while leaving the sample valve open and purging. Upon returning to the area, the bucket had overfilled and spilled approximately 0.26 barrels of gasoline on to a curbed concrete area. The operator shut the valve and reported the incident to his supervisor. The employee was taken for a drug and alcohol test, which was negative. In addition, the employee was re-qualified on the safe sampling OQ task."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.78501,
+          39.68194
+        ]
+      },
+      "properties": {
+        "index": "23",
+        "incident_date": "5/29/2019",
+        "pipeline_type": "Hazardous liquid",
+        "operator": "Phillips 66 Pipeline LLC",
+        "leak_type": "Liquefied petroleum gas/natural gas liquid",
+        "unintentional_release": "0.98",
+        "net_release": "0.98",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "No",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Arapahoe",
+        "environmental_cost": "0",
+        "total_cost": "145060",
+        "narrative": "On Wednesday, May 29, 2019 at approximately 8:45 am during a routine anamoly dig, the crew was removing coating and wrap and heard a hissing noise coming from a pin hole leak near a stopple fitting on the PR-01 pipeline. The crew exited the ditch and made notifications. The line was immediately shut down and isolated and the leak area was monitored. To repair the leak, the pipeline was purged with nitrogen purge and the section of the pipeline with the leak was replaced. The pipeline restarted at approximately 6 pm on Sunday, June 2, 2019. The total leak volume was estimated at 0.98 barrels. The section of pipe that was removed has been sent to a lab for metallurgical analysis to determine the cause of the pinhole. This report will be finalized following obtaining the results of the analysis."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.1009,
+          37.2831
+        ]
+      },
+      "properties": {
+        "index": "27",
+        "incident_date": "3/2/2017",
+        "pipeline_type": "Gas distribution",
+        "operator": "Black Hills Energy",
+        "leak_type": "Natural gas",
+        "unintentional_release": "1",
+        "net_release": "1",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "Yes",
+        "explode": "No",
+        "number_evacuated": "0",
+        "county": "Archuleta",
+        "environmental_cost": "",
+        "total_cost": "385911",
+        "narrative": "At approximately 4:30 am on March 2, 2017 a fire occurred at the residence of Samuel Sitton at 97 Sumac Court, Pagosa Springs, Colorado. Gas leaked from a cracked section of jurisdictional pipe above the riser and next to the gas meter. This gas migrated into the residence, where it was ignited. There was no explosion, but a sustained fire caused substantial damage to the residence. No one was injured. Black Hills was notified at 4:45 a.m. And responded to the scene at 4:55 a.m. It was confirmed that gas service to the residence was off. Investigation revealed that the homeowner negative negligently allowed a large accumulation of snow, up to the eave level, to develop over the gas meter and piping. The gas pipe developed a crack as a result of the downward force of the accumulated snow. There were no repairs undertaken, as the homeowner decided to tear down the house and construct a new house at this location. Black Hills reestablished natural gas service to the new house. The original service line and meter were not used. A new service line and meter were installed once the new house was constructed. In order to prevent a recurrence, the new gas meter was located on the gable end of the house."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8264,
+          39.66669
+        ]
+      },
+      "properties": {
+        "index": "25",
+        "incident_date": "11/16/2018",
+        "pipeline_type": "Gas distribution",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "6",
+        "net_release": "6",
+        "fatalities": "1",
+        "injuries": "2",
+        "ignite": "Yes",
+        "explode": "Yes",
+        "number_evacuated": "230",
+        "county": "Arapahoe",
+        "environmental_cost": "",
+        "total_cost": "935018",
+        "narrative": "A third party excavator damaged the PE main during directional boring activities. No locate request was received for the excavation. The leaking gas appears to have entered an adjacent residential structure and exploded, and this caused the fatality, injuries, and property damage. Note: Response C5 is for the largest hole size, but there were two smaller holes in the damaged main."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.25469,
+          39.69741
+        ]
+      },
+      "properties": {
+        "index": "30",
+        "incident_date": "4/30/2019",
+        "pipeline_type": "Gas distribution",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "47",
+        "net_release": "47",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "Yes",
+        "explode": "Yes",
+        "number_evacuated": "6",
+        "county": "Jefferson",
+        "environmental_cost": "",
+        "total_cost": "160265",
+        "narrative": "The local fire department notified our dispatch of a gas leak. The company responder had just arrived when the explosion occurred. The fire department had already evacuated occupants and no injuries were suffered. The gas leak was caused by a third party excavator installing an electric ground rod. Please note response to A13b indicates that service to structure was initially squeezed off and then permanently cut-off. If and when service is resumed to this address, a new service will be installed. Please note original NRC report number is 1244219.  Report was corrected to a pipeline incident and issued NRC number 1244222."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.924223,
+          39.822591
+        ]
+      },
+      "properties": {
+        "index": "31",
+        "incident_date": "5/23/2017",
+        "pipeline_type": "Gas distribution",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "1",
+        "net_release": "1",
+        "fatalities": "0",
+        "injuries": "2",
+        "ignite": "Yes",
+        "explode": "Yes",
+        "number_evacuated": "2",
+        "county": "Adams",
+        "environmental_cost": "",
+        "total_cost": "109004",
+        "narrative": "Incident is still under investigation. Delay in notice due to original belief that gas source was biogenic and not natural gas. March 19, 2008 supplemental report: After site investigation and laboratory investigation, depth of cover, leak description, and apparent cause were completed. There was extensive tree root growth around the 2\" steel main. A tree root directly under the threaded coupling appears to have caused bending stresses and the gas leak."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.04119,
+          39.48781
+        ]
+      },
+      "properties": {
+        "index": "35",
+        "incident_date": "4/3/2019",
+        "pipeline_type": "Gas distribution",
+        "operator": "Public Service Co. of Colorado",
+        "leak_type": "Natural gas",
+        "unintentional_release": "30",
+        "net_release": "30",
+        "fatalities": "0",
+        "injuries": "1",
+        "ignite": "Yes",
+        "explode": "Yes",
+        "number_evacuated": "0",
+        "county": "Summit",
+        "environmental_cost": "",
+        "total_cost": "72062",
+        "narrative": "On April 3, 2019, an explosion occurred at a residence in Breckenridge, CO. The gas meter set sustained significant damage, and it is not known if the damage and gas release occurred before or after the explosion. The cause of the incident is still under investigation."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.396406,
+          39.309031
+        ]
+      },
+      "properties": {
+        "index": "26",
+        "incident_date": "4/7/2019",
+        "pipeline_type": "Gas transmission/gathering",
+        "operator": "Rocky Mountain Natural Gas LLC",
+        "leak_type": "Natural gas",
+        "unintentional_release": "800",
+        "net_release": "800",
+        "fatalities": "0",
+        "injuries": "0",
+        "ignite": "Yes",
+        "explode": "Yes",
+        "number_evacuated": "0",
+        "county": "Pitkin",
+        "environmental_cost": "2500",
+        "total_cost": "505700",
+        "narrative": "4/6/19 at 10:30pm MT- Denver gas contol received a chain of alarms resulting in an emegency shut down and isolation of the Wolf Creek well #71. On-call operations personnel were notified and dispatched to the site. Gas control utilized automatic isolation valves  and shut in the entire storage field. Company personnel shut manual isolation valves along 3-inch pipeline while traveling to the well location. Upon arrival (1:00 am MT on 4-7-19) to well location company personnel observed a small fire buring from 1-inch glycol piping off of the gas/glycol heat exchanger on the dehydration unit house within the process building. A small fire was observed from  residual gas burning off from process plumbing. Personnel also witnessed evidence of small secondary fires inside the process  building that were still smoldering. All triethylene glycol was contained within the secondary containment of the process building or was consumed during the fire. Personnel left the well site and evaluated all other well locations within the storage field. No issues were observed at any other locations. Personnel returned back to well #71 location to evaluate overall site conditions. They verified slam valves, vent valve and sub-surface safety valve were in the correct emergency shut position and isolated manual block valves on the flow line and pipeline. Personnel evaluated wellhead housed in wellhead building; no issues were observed, shut master and wing valves on tree all OK. Company personnel left site to communicate findings with management. Mangement was notified at 6:30 am MT (4-7-19) of site findings. No injuries occured during incident. No breach of secondary containment of any stored or released liguids (triethylene glycol). Follow-up 48 hour NRC #1242266. Through internal and external investigation the root cause was caused by a failed 1-inch nipple on glycol gas heat exchanger on the dehydration unit. Ignition source was determined to be unknown at the time of the incident. It is known that the process building contained an atomized glycol and gas mixture resulting in a explosion and fire. Lessons learned: Operator is using internal and external engineering to review the use of high pressure threaded connections on auxiliary lines on dehydration units."
+      }
+    }
+  ]
+}
