@@ -96,9 +96,9 @@
     <div class="row">
         <div class="large-12 columns">
             <h2>Pipeline incidents</h2>
-            <p>Chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter and chatter. <em>Zoom map and click markers for details &bull; Source: <a href="#" target="_blank">???</a></em></p>
+            <p>Unlike oil and gas flowlines and transmission lines around oil and gas drilling sites, other pipelines, such as interstate transmission lines, are regulated and inspected at the federal and state levels. The map shows incidents involving a release of hazardous material between 2017 and 2019. <em>Black border indicates a fire or explosion took place &bull; zoom map and click markers for details. Source: <a href="https://www.phmsa.dot.gov/data-and-statistics/pipeline/data-and-statistics-overview" target="_blank">Pipeline and Hazardous Materials Safety Administration</a></em></p>
         </div>
-        <p class="legend-text"><span style="border-top:4px solid #4daf4a">Gas transmission</span> &bull; <span style="border-top:4px solid #e41a1c">Hazardous liquid</span> &bull; <span style="border-top:4px solid #377eb8">Gas distribution</span></p>
+        <p class="legend-text"><span style="border-top:4px solid #4daf4a">Gas transmission</span> &bull; <span style="border-top:4px solid #377eb8">Gas distribution</span> &bull; <span style="border-top:4px solid #e41a1c">Hazardous liquid</span></p>
         <div id="map"></div>
         <p class="credit">By Kevin Hamm, The Denver Post</p>
     </div>
@@ -107,7 +107,7 @@
     var map = L.map('map', {
         center: [39.0501, -105.3821],
         zoom: 7,
-        // minZoom: 11
+        //minZoom: 15
     });
 
     // load a tile layer
@@ -172,7 +172,7 @@
                     fillOpacity: .6
                 };
 
-                var tooltipText = '<h4 class="popup-header">' + feature.properties.operator + '</h4><br><span class="popup-subheader">' + feature.properties.incident_date + ' &bull; ' + feature.properties.county + ' County &bull; '  + feature.properties.pipeline_type + ' pipeline</span><hr>Leak type: <strong>' + feature.properties.leak_type + '</strong><br>Injuries: <strong>' + feature.properties.injuries + '</strong><br>Fatalities: <strong>' + feature.properties.fatalities + '</strong><br>Evacuated: <strong>' + feature.properties.number_evacuated + '</strong><br>Total cost: <strong>$' + parseInt(feature.properties.total_cost).toLocaleString() + '</strong><br>Leak amount*: <strong>' + parseInt(feature.properties.net_release).toLocaleString() + '</strong><br><br><span class="narrative">' + feature.properties.narrative + '</span><br><em>*Natural gas reported in MCF (thousand cubic feet), liquids reported in barrels</em>';
+                var tooltipText = '<h4 class="popup-header">' + feature.properties.operator + '</h4><br><span class="popup-subheader">' + feature.properties.incident_date + ' &bull; ' + feature.properties.county + ' County &bull; '  + feature.properties.pipeline_type + ' pipeline</span><hr>Leak type: <strong>' + feature.properties.leak_type + '</strong><br>Injuries: <strong>' + feature.properties.injuries + '</strong><br>Fatalities: <strong>' + feature.properties.fatalities + '</strong><br>Evacuated: <strong>' + feature.properties.number_evacuated + '</strong><br>Total cost: <strong>$' + parseInt(feature.properties.total_cost).toLocaleString() + '</strong><br>Leak amount*: <strong>' + parseInt(feature.properties.net_release).toLocaleString() + '</strong><br><br><span class="narrative">' + feature.properties.narrative + '</span><br><br><em>*Natural gas reported in MCF (thousand cubic feet), liquids reported in barrels</em>';
 
                 if (feature.properties.pipeline_type === 'Gas transmission/gathering') {
                     return L.circleMarker(latlng, gasTransmissionCircle).bindPopup(tooltipText)
