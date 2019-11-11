@@ -183,12 +183,6 @@
         tr {
             border-bottom: 1px solid rgba(0,0,0,.1);
         }
-
-        /* Below for horizontal scroll bar on chart; also need to set chart width in chart js */
-        /*#chart-container {
-        	overflow-x: auto;
-        	overflow-y: hidden;
-        }*/
     </style>
 </head>
 
@@ -198,7 +192,8 @@
             <p class="updated">Data updated on <span id="last-date"><span style="color:#aaa">... loading data</span></span></p>
             <hr>
             <p>The chart shows the number of pending and approved oil and gas well permits, according to the <a href="http://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a>. The data will be updated weekly.</p>
-            <!-- <table>
+            <div class="large-3 medium-5 columns">
+            <table>
                 <tr>
                     <th></th>
                     <th>Permits</th>
@@ -215,9 +210,9 @@
                     <td id="approved-change"></td>
                 </tr>
             </table>
-            <p class="note">*Change from previous week</p> -->
+            <p class="note">*Change from previous week</p>
         </div>
-        <div id="chart-container" class="large-12 medium-12 small-12 columns">
+        <div id="chart-container" class="large-9 medium-7 columns">
             <div id="permit-chart"></div>
         </div>
     </div>
@@ -558,10 +553,10 @@
                 var approvedChange = lastRow.approvedChange;
                 // Bind to html
                 document.getElementById('last-date').innerHTML = lastDate;
-                // document.getElementById('pending-permits').innerHTML = lastPending;
-                // document.getElementById('approved-permits').innerHTML = lastApproved;
-                // document.getElementById('pending-change').innerHTML = pendingChange;
-                // document.getElementById('approved-change').innerHTML = approvedChange;
+                document.getElementById('pending-permits').innerHTML = lastPending;
+                document.getElementById('approved-permits').innerHTML = lastApproved;
+                document.getElementById('pending-change').innerHTML = pendingChange;
+                document.getElementById('approved-change').innerHTML = approvedChange;
 
                 // Chart starts here
                 var permitChart = c3.generate({
