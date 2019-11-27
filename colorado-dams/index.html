@@ -1,23 +1,117 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- http://lyzidiamond.com/posts/external-geojson-and-leaflet-the-other-way -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <title>Colorado High Hazard Dams</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <style>
+    body {
+        background-color: #fafafa !important;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        /*border: 1px solid silver;*/
+        font-size: 15px;
+        /*background-color: rgba(255, 255, 255, .8);*/
+    }
+
+    /*.leaflet-popup-tip {
+    width: 0px;
+    height: 0px;
+}*/
+
+    .tooltip-header {
+        color: #662506;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .tooltip-subhead {
+        color: #969696;
+        font-style: italic;
+    }
+
+    .tooltip-label {
+        color: #969696;
+        font-weight: bold;
+    }
+
+    #map-container {
+        height: 600px;
+        width: 100%;
+    }
+
+    #dam-map {
+        height: 90%;
+        border: 2px solid silver;
+    }
+
+    #active {
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background-color: rgba(255, 0, 0, .3);
+        border: 1px solid red;
+        float: left;
+        margin-right: 3px;
+        margin-left: 10px;
+    }
+
+    #inactive {
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background-color: rgba(0, 0, 255, .3);
+        border: 1px solid blue;
+        float: left;
+        margin-right: 3px;
+    }
+
+    #legend {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .legend-text {
+        float: left;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .source {
+        float: right;
+        font-style: italic;
+        font-family: Helvetica;
+        font-size: 15px;
+        margin-right: 25px;
+    }
+    </style>
 </head>
 
 <body>
-    <div id="map-container">
-        <div id="wildfire-map"></div>
-        <div id="legend">
-            <div id="active"></div>
-            <div class="legend-text">Active</div>
-            <div id="inactive"></div>
-            <div class="legend-text">Inactive</div>
-            <div class="source">Source: <a href="https://inciweb.nwcg.gov" target="_blank">InciWeb</a></div>
+    <div id="row">
+        <div id="map-container" class="large-12 columns">
+            <div id="dam-map"></div>
+            <div id="legend">
+                <div id="active"></div>
+                <div class="legend-text">Active</div>
+                <div id="inactive"></div>
+                <div class="legend-text">Inactive</div>
+                <div class="source">Source: <a href="https://inciweb.nwcg.gov" target="_blank">InciWeb</a></div>
+            </div>
         </div>
     </div>
     <script>
@@ -78,7 +172,7 @@
 
             }
         });
-        var map = L.map('wildfire-map', {
+        var map = L.map('dam-map', {
             minZoom: 7,
             maxZoom: 16
         }).fitBounds(geojson.getBounds());
