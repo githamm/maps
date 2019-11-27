@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- http://lyzidiamond.com/posts/external-geojson-and-leaflet-the-other-way -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+</head>
+
+<body>
+    <div id="map-container">
+        <div id="wildfire-map"></div>
+        <div id="legend">
+            <div id="active"></div>
+            <div class="legend-text">Active</div>
+            <div id="inactive"></div>
+            <div class="legend-text">Inactive</div>
+            <div class="source">Source: <a href="https://inciweb.nwcg.gov" target="_blank">InciWeb</a></div>
+        </div>
+    </div>
+    <script>
+    var mapTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    });
+
+    $.getJSON("colorado_dams.geojson", function(data) {
+        var geojson = L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var popupOptions = {
+                    maxWidth: 200
+                };
+                var storageString = Number(feature.properties.normal_storage).toLocaleString();
+                var popupContent = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + feature.properties.age + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+
+                function getOptions(properties) {
+                    var normalStorage = Number(properties.normal_storage);
+                    var circleSize;
+                    // if (properties.normal_storage > 999) {
+                    //     circleSize = Math.sqrt(properties.normal_storage) * .075
+                    // } else {
+                    //     circleSize = 4
+                    // };
+                    if (normalStorage < 1000) {
+                        circleSize = 5
+                    } else if (normalStorage >= 1000 && normalStorage < 10000) {
+                        circleSize = 10
+                    } else if (normalStorage >= 10000 && normalStorage < 50000) {
+                        circleSize = 15
+                    } else circleSize = 20;
+
+
+                    var damAge = Number(properties.age);
+                    if (damAge <= 60) {
+                        return {
+                            radius: circleSize,
+                            color: '#fe9929',
+                            fillColor: '#fe9929'
+                        }
+                    } else if (damAge > 60 && damAge <= 100) {
+                        return {
+                            radius: circleSize,
+                            color: '#662506',
+                            fillColor: '#662506'
+                        }
+                    } else {
+                        return {
+                            radius: circleSize,
+                            color: '#000',
+                            fillColor: '#000'
+                        }
+                    }
+                }
+                return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
+
+            }
+        });
+        var map = L.map('wildfire-map', {
+            minZoom: 7,
+            maxZoom: 16
+        }).fitBounds(geojson.getBounds());
+        mapTiles.addTo(map);
+        geojson.addTo(map);
+
+    });
+    </script>
+</body>
+
+</html>

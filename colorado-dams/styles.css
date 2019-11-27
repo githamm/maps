@@ -1,0 +1,83 @@
+body {
+    background-color: #fafafa !important;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 0;
+    /*border: 1px solid silver;*/
+    font-size: 15px;
+    /*background-color: rgba(255, 255, 255, .8);*/
+}
+
+/*.leaflet-popup-tip {
+    width: 0px;
+    height: 0px;
+}*/
+
+.tooltip-header {
+    color: #662506;
+    font-size: 22px;
+    margin: 0;
+}
+
+.tooltip-subhead {
+    color: #969696;
+    font-style: italic;
+}
+
+.tooltip-label {
+    color: #969696;
+    font-weight: bold;
+}
+
+#map-container {
+    height: 600px;
+    width: 100%;
+}
+
+#wildfire-map {
+    height: 90%;
+    border: 2px solid silver;
+}
+
+#active {
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    background-color: rgba(255, 0, 0, .3);
+    border: 1px solid red;
+    float: left;
+    margin-right: 3px;
+    margin-left: 10px;
+}
+
+#inactive {
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    background-color: rgba(0, 0, 255, .3);
+    border: 1px solid blue;
+    float: left;
+    margin-right: 3px;
+}
+
+#legend {
+    width: 100%;
+    margin: 5px;
+}
+
+.legend-text {
+    float: left;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.source {
+    float: right;
+    font-style: italic;
+    font-family: Helvetica;
+    font-size: 15px;
+    margin-right: 25px;
+}

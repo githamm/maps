@@ -1,0 +1,599 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.410642,
+          37.113873
+        ]
+      },
+      "properties": {
+        "size_order": "1",
+        "dam_name": "Sanchez",
+        "year_completed": "1911",
+        "age": "108",
+        "normal_storage": "103114",
+        "county": "Costilla",
+        "stream": "Ventero Creek",
+        "downstream_town": "San Luis",
+        "town_distance": "7",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/240106"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.370571,
+          40.430011
+        ]
+      },
+      "properties": {
+        "size_order": "2",
+        "dam_name": "Prewitt",
+        "year_completed": "1912",
+        "age": "107",
+        "normal_storage": "28840",
+        "county": "Washington",
+        "stream": "South Platte River",
+        "downstream_town": "Merino",
+        "town_distance": "8",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/640108"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.632121,
+          40.938905
+        ]
+      },
+      "properties": {
+        "size_order": "3",
+        "dam_name": "Julesburg #4",
+        "year_completed": "1910",
+        "age": "109",
+        "normal_storage": "27186",
+        "county": "Sedgwick",
+        "stream": "South Platte River",
+        "downstream_town": "Sedgwick",
+        "town_distance": "7",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/640104"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.538116,
+          37.635929
+        ]
+      },
+      "properties": {
+        "size_order": "4",
+        "dam_name": "Two Buttes",
+        "year_completed": "1908",
+        "age": "111",
+        "normal_storage": "22165",
+        "county": "Baca",
+        "stream": "Two Butte Creek",
+        "downstream_town": "Holly",
+        "town_distance": "58",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/670236"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.250571,
+          38.035009
+        ]
+      },
+      "properties": {
+        "size_order": "5",
+        "dam_name": "Gurley",
+        "year_completed": "1961",
+        "age": "58",
+        "normal_storage": "9000",
+        "county": "San Miguel",
+        "stream": "Gurley Canyon",
+        "downstream_town": "Norwood",
+        "town_distance": "12",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/600108"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.120567,
+          40.030006
+        ]
+      },
+      "properties": {
+        "size_order": "6",
+        "dam_name": "Stillwater #1",
+        "year_completed": "1939",
+        "age": "80",
+        "normal_storage": "6088",
+        "county": "Garfield",
+        "stream": "Bear River",
+        "downstream_town": "Yampa",
+        "town_distance": "15",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/580135"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.3879,
+          37.422529
+        ]
+      },
+      "properties": {
+        "size_order": "7",
+        "dam_name": "Summit - Main Dam",
+        "year_completed": "1905",
+        "age": "114",
+        "normal_storage": "5954",
+        "county": "Montezuma",
+        "stream": "Lost Canyon Creek",
+        "downstream_town": "Dolores",
+        "town_distance": "9",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/340203"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.660573,
+          39.606674
+        ]
+      },
+      "properties": {
+        "size_order": "8",
+        "dam_name": "Grass Valley",
+        "year_completed": "1892",
+        "age": "127",
+        "normal_storage": "5060",
+        "county": "Garfield",
+        "stream": "Harvey Gap",
+        "downstream_town": "Silt",
+        "town_distance": "4",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/390108"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.534699,
+          37.360846
+        ]
+      },
+      "properties": {
+        "size_order": "9",
+        "dam_name": "Totten",
+        "year_completed": "1965",
+        "age": "54",
+        "normal_storage": "3302",
+        "county": "Montezuma",
+        "stream": "Simon Draw",
+        "downstream_town": "Cortez",
+        "town_distance": "2",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/320107"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.607233,
+          39.223338
+        ]
+      },
+      "properties": {
+        "size_order": "10",
+        "dam_name": "Tarryall",
+        "year_completed": "1929",
+        "age": "90",
+        "normal_storage": "1963",
+        "county": "Park",
+        "stream": "Tarryall Creek",
+        "downstream_town": "Deckers",
+        "town_distance": "20",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/230208"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.985218,
+          39.034276
+        ]
+      },
+      "properties": {
+        "size_order": "11",
+        "dam_name": "Ward Lake",
+        "year_completed": "1958",
+        "age": "61",
+        "normal_storage": "1710",
+        "county": "Delta",
+        "stream": "Ward Creek",
+        "downstream_town": "Cedaredge",
+        "town_distance": "7",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/400533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.23565,
+          39.822846
+        ]
+      },
+      "properties": {
+        "size_order": "12",
+        "dam_name": "Upper Long Lake",
+        "year_completed": "1939",
+        "age": "80",
+        "normal_storage": "1500",
+        "county": "Jefferson",
+        "stream": "Ralston Creek",
+        "downstream_town": "Arvada",
+        "town_distance": "2",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/070114"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.833905,
+          38.450002
+        ]
+      },
+      "properties": {
+        "size_order": "13",
+        "dam_name": "Teller",
+        "year_completed": "1910",
+        "age": "109",
+        "normal_storage": "1290",
+        "county": "El Paso",
+        "stream": "Turkey Creek",
+        "downstream_town": "Pueblo",
+        "town_distance": "19",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/100440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.137233,
+          40.148892
+        ]
+      },
+      "properties": {
+        "size_order": "14",
+        "dam_name": "Sheriff",
+        "year_completed": "1955",
+        "age": "64",
+        "normal_storage": "987",
+        "county": "Rio Blanco",
+        "stream": "Trout Creek",
+        "downstream_town": "Milner",
+        "town_distance": "25",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/570129"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.663902,
+          38.355003
+        ]
+      },
+      "properties": {
+        "size_order": "15",
+        "dam_name": "Vouga",
+        "year_completed": "1978",
+        "age": "41",
+        "normal_storage": "920",
+        "county": "Saguache",
+        "stream": "Razor Creek",
+        "downstream_town": "Gunnison",
+        "town_distance": "24",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/280109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.032226,
+          39.455008
+        ]
+      },
+      "properties": {
+        "size_order": "16",
+        "dam_name": "Goose Pasture Tarn",
+        "year_completed": "1965",
+        "age": "54",
+        "normal_storage": "812",
+        "county": "Summit",
+        "stream": "Blue River",
+        "downstream_town": "Breckenridge",
+        "town_distance": "2",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/360105"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.052231,
+          38.995001
+        ]
+      },
+      "properties": {
+        "size_order": "17",
+        "dam_name": "Big Battlement",
+        "year_completed": "1949",
+        "age": "70",
+        "normal_storage": "780",
+        "county": "Delta",
+        "stream": "Dirty George Creek",
+        "downstream_town": "Cedaredge",
+        "town_distance": "12",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/400112"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.159858,
+          39.806577
+        ]
+      },
+      "properties": {
+        "size_order": "18",
+        "dam_name": "Hyatt",
+        "year_completed": "1863",
+        "age": "156",
+        "normal_storage": "760",
+        "county": "Jefferson",
+        "stream": "Van Bibber Creek",
+        "downstream_town": "Arvada",
+        "town_distance": "0.1",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/070136"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.113423,
+          39.686778
+        ]
+      },
+      "properties": {
+        "size_order": "19",
+        "dam_name": "Smith",
+        "year_completed": "1908",
+        "age": "111",
+        "normal_storage": "638",
+        "county": "Jefferson",
+        "stream": "Bear Creek",
+        "downstream_town": "Lakewood",
+        "town_distance": "0",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/075311"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.138149,
+          39.605676
+        ]
+      },
+      "properties": {
+        "size_order": "20",
+        "dam_name": "Polly A. Deane",
+        "year_completed": "1908",
+        "age": "111",
+        "normal_storage": "512",
+        "county": "Jefferson",
+        "stream": "Dutch Creek",
+        "downstream_town": "Littleton",
+        "town_distance": "0.1",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/090131"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.226734,
+          39.819386
+        ]
+      },
+      "properties": {
+        "size_order": "21",
+        "dam_name": "Lower Long Lake",
+        "year_completed": "1939",
+        "age": "80",
+        "normal_storage": "292",
+        "county": "Jefferson",
+        "stream": "Ralston Creek",
+        "downstream_town": "Arvada",
+        "town_distance": "2",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/070115"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.770567,
+          37.335008
+        ]
+      },
+      "properties": {
+        "size_order": "22",
+        "dam_name": "Apishapa",
+        "year_completed": "1892",
+        "age": "127",
+        "normal_storage": "209",
+        "county": "Las Animas",
+        "stream": "Apishapa River",
+        "downstream_town": "Aguilar",
+        "town_distance": "10",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/180206"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943893,
+          39.656671
+        ]
+      },
+      "properties": {
+        "size_order": "23",
+        "dam_name": "Skeel",
+        "year_completed": "1900",
+        "age": "119",
+        "normal_storage": "205",
+        "county": "Denver",
+        "stream": "South Platte River",
+        "downstream_town": "Denver",
+        "town_distance": "0.1",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/080327"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.875014,
+          38.872503
+        ]
+      },
+      "properties": {
+        "size_order": "24",
+        "dam_name": "Valley No. 1",
+        "year_completed": "1901",
+        "age": "118",
+        "normal_storage": "137",
+        "county": "El Paso",
+        "stream": "Camp Creek",
+        "downstream_town": "Colorado Springs",
+        "town_distance": "0",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/100309"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.880296,
+          38.864723
+        ]
+      },
+      "properties": {
+        "size_order": "25",
+        "dam_name": "Valley No. 2",
+        "year_completed": "1906",
+        "age": "113",
+        "normal_storage": "126",
+        "county": "El Paso",
+        "stream": "Camp Creek",
+        "downstream_town": "Colorado Springs",
+        "town_distance": "0",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/100402"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.893902,
+          39.186675
+        ]
+      },
+      "properties": {
+        "size_order": "26",
+        "dam_name": "Y T Ranch",
+        "year_completed": "1911",
+        "age": "108",
+        "normal_storage": "125",
+        "county": "Mesa",
+        "stream": "Grove Creek",
+        "downstream_town": "Collbran",
+        "town_distance": "5",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/720237"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.180502,
+          39.619142
+        ]
+      },
+      "properties": {
+        "size_order": "27",
+        "dam_name": "Willow Springs #1",
+        "year_completed": "1963",
+        "age": "56",
+        "normal_storage": "108",
+        "county": "Jefferson",
+        "stream": "Turkey Creek",
+        "downstream_town": "Lakewood",
+        "town_distance": "5",
+        "details": "https://dwr.state.co.us/Tools/DamSafety/Dams/090204"
+      }
+    }
+  ]
+}
