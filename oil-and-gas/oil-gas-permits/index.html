@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="js/leaflet.featuregroup.subgroup.js"></script>
+    <script src="js/date.format.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+    <script src="https://extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto');
 
@@ -173,12 +183,6 @@
         tr {
             border-bottom: 1px solid rgba(0,0,0,.1);
         }
-
-        /* Below for horizontal scroll bar on chart; also need to set chart width in chart js */
-        /*#chart-container {
-        	overflow-x: auto;
-        	overflow-y: hidden;
-        }*/
     </style>
 </head>
 
@@ -188,7 +192,8 @@
             <p class="updated">Data updated on <span id="last-date"><span style="color:#aaa">... loading data</span></span></p>
             <hr>
             <p>The chart shows the number of pending and approved oil and gas well permits, according to the <a href="http://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a>. The data will be updated weekly.</p>
-            <!-- <table>
+            <div class="large-3 medium-5 columns">
+            <table>
                 <tr>
                     <th></th>
                     <th>Permits</th>
@@ -205,9 +210,9 @@
                     <td id="approved-change"></td>
                 </tr>
             </table>
-            <p class="note">*Change from previous week</p> -->
+            <p class="note">*Change from previous week</p>
         </div>
-        <div id="chart-container" class="large-12 medium-12 small-12 columns">
+        <div id="chart-container" class="large-9 medium-7 columns">
             <div id="permit-chart"></div>
         </div>
     </div>
@@ -250,16 +255,6 @@
             <p class="source">Source: <a href="https://cogcc.state.co.us/#/home" target="_blank">Colorado Oil and Gas Conservation Commission</a> &bull; Map markers from <a href="https://mapicons.mapsmarker.com">Maps Icons Collection</a></p>
         </div>
     </div>
-    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
-    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
-    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
-    <script src="js/leaflet.featuregroup.subgroup.js"></script>
-    <script src="js/date.format.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-    <script src="//extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
     <script>
     //////////MAP//////////
     var pendingPermits = new L.LayerGroup();
@@ -558,10 +553,10 @@
                 var approvedChange = lastRow.approvedChange;
                 // Bind to html
                 document.getElementById('last-date').innerHTML = lastDate;
-                // document.getElementById('pending-permits').innerHTML = lastPending;
-                // document.getElementById('approved-permits').innerHTML = lastApproved;
-                // document.getElementById('pending-change').innerHTML = pendingChange;
-                // document.getElementById('approved-change').innerHTML = approvedChange;
+                document.getElementById('pending-permits').innerHTML = lastPending;
+                document.getElementById('approved-permits').innerHTML = lastApproved;
+                document.getElementById('pending-change').innerHTML = pendingChange;
+                document.getElementById('approved-change').innerHTML = approvedChange;
 
                 // Chart starts here
                 var permitChart = c3.generate({
@@ -591,7 +586,8 @@
                             type: 'category',
                             tick: {
                                 rotate: 75,
-                                multiline: false
+                                multiline: false,
+                                culling: true
                             }
                         },
                         y: {
@@ -613,7 +609,7 @@
                         }
                     },
                     point: {
-                        r: 2.5
+                        r: 0
                     }
                 });
             },
