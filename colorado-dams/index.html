@@ -7,13 +7,14 @@
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://extras.denverpost.com/transgender/css/normalize.css" />
-    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
     <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="https://extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
     <style>
     body {
         background-color: #fafafa !important;
@@ -104,7 +105,32 @@
 <body>
     <div id="row">
         <div id="map-container" class="large-12 columns">
-            <div id="dam-map"></div>
+        	<p class="instructions">Zoom map and click circles for details &bull; circle size represents number of incidents &bull; to see individual incidents, go to the table at the bottom of the page</p>
+                <fieldset class="fieldset">
+                    <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
+                    <div class="legend-container">
+                        <div class="inputs" id="incidents">
+                            <div class="legend-item">
+                                <input type="checkbox" class="incident-type" id="lockdown-box" name="lockdown-box" value="Lockdown" checked="true">
+                                <label for="lockdown-box"><span style="border-top: 3px solid  rgba(255,0,0,.5)">Lockdown</span> (18)</label>
+                            </div>
+                            <div class="legend-item">
+                                <input type="checkbox" class="incident-type" id="lockout-box" name="lockout-box" value="Lockout" checked="true">
+                                <label for="lockout-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">Lockout</span> (466)</label>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-circle-small"><span class="circle-number" style="margin:0 0 0 9px">1</span></div>
+                            </div>
+                            <div class="legend-item">
+                                <span style="margin: 0 5px 0 5px">&xrarr;</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-circle-large"><span class="circle-number" style="margin:17px 0 0 18px">32</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            <div id="map"></div>
             <div id="legend">
                 <div id="active"></div>
                 <div class="legend-text">Active</div>
@@ -114,72 +140,162 @@
             </div>
         </div>
     </div>
+    <script src="all_colorado_high_hazard_dams_cut.js"></script>
     <script>
-    var mapTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    // var mapTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    //     subdomains: 'abcd',
+    //     maxZoom: 19
+    // });
+
+    // $.getJSON("colorado_dams.geojson", function(data) {
+    //     var geojson = L.geoJson(data, {
+    //         pointToLayer: function(feature, latlng) {
+    //             var popupOptions = {
+    //                 maxWidth: 200
+    //             };
+    //             var storageString = Number(feature.properties.normal_storage).toLocaleString();
+    //             var popupContent = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + feature.properties.age + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+
+    //             function getOptions(properties) {
+    //                 var normalStorage = Number(properties.normal_storage);
+    //                 var circleSize;
+    //                 // if (properties.normal_storage > 999) {
+    //                 //     circleSize = Math.sqrt(properties.normal_storage) * .075
+    //                 // } else {
+    //                 //     circleSize = 4
+    //                 // };
+    //                 if (normalStorage < 1000) {
+    //                     circleSize = 5
+    //                 } else if (normalStorage >= 1000 && normalStorage < 10000) {
+    //                     circleSize = 10
+    //                 } else if (normalStorage >= 10000 && normalStorage < 50000) {
+    //                     circleSize = 15
+    //                 } else circleSize = 20;
+
+
+    //                 var damAge = Number(properties.age);
+    //                 if (damAge <= 60) {
+    //                     return {
+    //                         radius: circleSize,
+    //                         color: '#fe9929',
+    //                         fillColor: '#fe9929'
+    //                     }
+    //                 } else if (damAge > 60 && damAge <= 100) {
+    //                     return {
+    //                         radius: circleSize,
+    //                         color: '#662506',
+    //                         fillColor: '#662506'
+    //                     }
+    //                 } else {
+    //                     return {
+    //                         radius: circleSize,
+    //                         color: '#000',
+    //                         fillColor: '#000'
+    //                     }
+    //                 }
+    //             }
+    //             return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
+
+    //         }
+    //     });
+    //     var map = L.map('dam-map', {
+    //         minZoom: 7,
+    //         maxZoom: 16
+    //     }).fitBounds(geojson.getBounds());
+    //     mapTiles.addTo(map);
+    //     geojson.addTo(map);
+
+    // });
+
+        let checkboxStates
+
+    var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     });
 
-    $.getJSON("colorado_dams.geojson", function(data) {
-        var geojson = L.geoJson(data, {
-            pointToLayer: function(feature, latlng) {
-                var popupOptions = {
-                    maxWidth: 200
-                };
-                var storageString = Number(feature.properties.normal_storage).toLocaleString();
-                var popupContent = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + feature.properties.age + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+    var map = L.map('map', {
+        center: [39.113, -105.359],
+        zoom: 12,
+        //minZoom: 11,
+        preferCanvas: true
+    }).addLayer(cartoTiles);
 
-                function getOptions(properties) {
-                    var normalStorage = Number(properties.normal_storage);
-                    var circleSize;
-                    // if (properties.normal_storage > 999) {
-                    //     circleSize = Math.sqrt(properties.normal_storage) * .075
-                    // } else {
-                    //     circleSize = 4
-                    // };
-                    if (normalStorage < 1000) {
-                        circleSize = 5
-                    } else if (normalStorage >= 1000 && normalStorage < 10000) {
-                        circleSize = 10
-                    } else if (normalStorage >= 10000 && normalStorage < 50000) {
-                        circleSize = 15
-                    } else circleSize = 20;
+    const geojsonLayer = L.geoJSON(null, {
+        filter: (feature) => {
+            const isIncidentChecked = checkboxStates.incidentType.includes(feature.properties.county)
+            //const isYearChecked = checkboxStates.schoolYear.includes(feature.properties.schoolYear)
+            return isIncidentChecked // && isYearChecked //only true if all are true
+        },
+        pointToLayer: function(feature, latlng) {
+            var circleRadius;
+            if (feature.properties.county == 'WELD') {
+                //circleRadius = (feature.properties.incidentCount * 1.5)
+                circleRadius = 5
+            } else {
+                circleRadius = 5
+            };
+            var lockdownCircle = {
+                radius: circleRadius,
+                fillColor: "red",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .5
+            };
+            var lockoutCircle = {
+                radius: circleRadius,
+                fillColor: "blue",
+                color: "#aaa",
+                weight: 0,
+                opacity: 0,
+                fillOpacity: .5
+            };
 
+            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + feature.properties.age + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
 
-                    var damAge = Number(properties.age);
-                    if (damAge <= 60) {
-                        return {
-                            radius: circleSize,
-                            color: '#fe9929',
-                            fillColor: '#fe9929'
-                        }
-                    } else if (damAge > 60 && damAge <= 100) {
-                        return {
-                            radius: circleSize,
-                            color: '#662506',
-                            fillColor: '#662506'
-                        }
-                    } else {
-                        return {
-                            radius: circleSize,
-                            color: '#000',
-                            fillColor: '#000'
-                        }
-                    }
-                }
-                return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
-
+            if (feature.properties.county == 'WELD') {
+                return L.circleMarker(latlng, lockdownCircle).bindPopup(tooltipText)
+            } else {
+                return L.circleMarker(latlng, lockoutCircle).bindPopup(tooltipText)
             }
-        });
-        var map = L.map('dam-map', {
-            minZoom: 7,
-            maxZoom: 16
-        }).fitBounds(geojson.getBounds());
-        mapTiles.addTo(map);
-        geojson.addTo(map);
+        }
+    }).addTo(map);
 
-    });
+    function updateCheckboxStates() {
+        checkboxStates = {
+            incidentType: [],
+            schoolYear: []
+        }
+
+        for (let input of document.querySelectorAll('input')) {
+            if (input.checked) {
+                switch (input.className) {
+                    case 'incident-type':
+                        checkboxStates.incidentType.push(input.value);
+                        break
+                        // case 'school-year':
+                        //     checkboxStates.schoolYear.push(input.value);
+                        //     break
+                }
+            }
+        }
+    }
+
+    for (let input of document.querySelectorAll('input')) {
+        //Listen to 'change' event of all inputs
+        input.onchange = (e) => {
+            geojsonLayer.clearLayers()
+            updateCheckboxStates()
+            geojsonLayer.addData(jsonData)
+        }
+    }
+
+    /****** INIT ******/
+    updateCheckboxStates()
+    geojsonLayer.addData(jsonData)
     </script>
 </body>
 
