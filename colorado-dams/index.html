@@ -2,19 +2,21 @@
 <html lang="en">
 
 <head>
-    <title>Colorado High Hazard Dams</title>
     <meta charset="utf-8">
     <meta name="robots" content="noindex,follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams 12 School District Lockdowns and Lockouts | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
-    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-    <script src="https://extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
     <style>
     body {
         background-color: #fafafa !important;
@@ -99,6 +101,258 @@
         font-size: 15px;
         margin-right: 25px;
     }
+
+    /* CHANGE HERE */
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1%;
+    }
+
+    #container {
+        /*height: 600px;*/
+        /*width: 893px;
+        margin: 0 auto;*/
+    }
+
+    #map {
+        height: 600px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        /*max-width: 200px;*/
+        line-height: 100%;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .leaflet-popup-content {
+        font-size: 1.2em;
+        letter-spacing: .2px;
+    }
+
+    /*#content-container {
+        padding: 15px;
+    }*/
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .legend-container {
+        width: 100%;
+        clear: both;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #ff5959;
+        opacity: .8;
+    }
+
+    #years {
+        display: inline-block;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 100%
+    }
+
+    h3.chart-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .neighborhood {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: -16px;
+        line-height: 22px;
+    }
+
+    .address {
+        font-style: italic;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .popup-text {
+        margin-bottom: -12px !important;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .popup-header {
+        font-weight: 700;
+        font-size: 1.1em;
+        /*letter-spacing: .5px;*/
+        /*text-transform: uppercase;*/
+        color: #000;
+        margin-bottom: 0;
+    }
+
+    hr {
+        margin: -12px 0 -8px 0;
+    }
+
+    .note {
+        font-size: .85em;
+        font-style: italic;
+        color: #808080;
+    }
+
+    .source {
+        font-size: .9em;
+        font-style: italic;
+        text-align: right;
+    }
+
+    /*.legend {
+        width: 60px;
+        height: 30px;
+        opacity: .6;
+        float: left;
+    }*/
+
+    label, .legend-text {
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 7px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    .fieldset {
+        padding: .75rem;
+    }
+
+    input.leaflet-control-layers-selector {
+        margin: 0;
+    }
+
+    /*label {
+        line-height: 1.45;
+    }*/
+
+    .icon-2018 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #ca0020;
+    }
+
+    .icon-2017 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #f4a582;
+    }
+
+    .icon-2016 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #f7f7f7;
+    }
+
+    .icon-2015 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #92c5de;
+    }
+
+    .icon-2014 {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, .5);
+        background: #0571b0;
+    }
+
+    .selector-2018,
+    .selector-2017,
+    .selector-2016,
+    .selector-2015,
+    .selector-2014 {
+        height: 12px;
+        width: 12px;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .5);
+        margin: 0 0 0 3px;
+    }
+
+    .selector-2018 {
+        background: #ca0020;
+    }
+
+    .selector-2017 {
+        background: #f4a582;
+    }
+
+    .selector-2016 {
+        background: #f7f7f7;
+    }
+
+    .selector-2015 {
+        background: #92c5de;
+    }
+
+    .selector-2014 {
+        background: #0571b0;
+    }
+
+    a.leaflet-control-layers-toggle {
+        background-color: red;
+    }
+
+    div.legend-circle-small {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: rgba(0,0,255,.1);
+        margin-top: 0px;
+    }
+
+    div.legend-circle-large {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: rgba(0,0,255,.1);
+        margin-top: -13px;
+    }
+
+    span.circle-number {
+        font-size: .7rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        color: #737373;
+        display: inline-block;
+    }
     </style>
 </head>
 
@@ -111,11 +365,11 @@
                     <div class="legend-container">
                         <div class="inputs" id="incidents">
                             <div class="legend-item">
-                                <input type="checkbox" class="incident-type" id="lockdown-box" name="lockdown-box" value="Lockdown" checked="true">
+                                <input type="checkbox" class="incident-type" id="lockdown-box" name="lockdown-box" value="TRUE" checked="true">
                                 <label for="lockdown-box"><span style="border-top: 3px solid  rgba(255,0,0,.5)">Lockdown</span> (18)</label>
                             </div>
                             <div class="legend-item">
-                                <input type="checkbox" class="incident-type" id="lockout-box" name="lockout-box" value="Lockout" checked="true">
+                                <input type="checkbox" class="incident-type" id="lockout-box" name="lockout-box" value="FALSE" checked="true">
                                 <label for="lockout-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">Lockout</span> (466)</label>
                             </div>
                             <div class="legend-item">
@@ -130,13 +384,8 @@
                         </div>
                     </div>
                 </fieldset>
-            <div id="map"></div>
-            <div id="legend">
-                <div id="active"></div>
-                <div class="legend-text">Active</div>
-                <div id="inactive"></div>
-                <div class="legend-text">Inactive</div>
-                <div class="source">Source: <a href="https://inciweb.nwcg.gov" target="_blank">InciWeb</a></div>
+                <div id="map"></div>
+                <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Adams 12 Five Star Schools</p>
             </div>
         </div>
     </div>
@@ -208,7 +457,7 @@
 
     // });
 
-        let checkboxStates
+   let checkboxStates
 
     var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -217,23 +466,23 @@
     });
 
     var map = L.map('map', {
-        center: [39.113, -105.359],
-        zoom: 12,
+        center: [39.918559, -104.987851],
+        zoom: 7,
         //minZoom: 11,
         preferCanvas: true
     }).addLayer(cartoTiles);
 
     const geojsonLayer = L.geoJSON(null, {
         filter: (feature) => {
-            const isIncidentChecked = checkboxStates.incidentType.includes(feature.properties.county)
+            const isIncidentChecked = checkboxStates.restricted.includes(feature.properties.restricted)
             //const isYearChecked = checkboxStates.schoolYear.includes(feature.properties.schoolYear)
             return isIncidentChecked // && isYearChecked //only true if all are true
         },
         pointToLayer: function(feature, latlng) {
             var circleRadius;
-            if (feature.properties.county == 'WELD') {
-                //circleRadius = (feature.properties.incidentCount * 1.5)
-                circleRadius = 5
+            if (feature.properties.restricted == 'TRUE') {
+                //circleRadius = (feature.properties.restricted * 1.5)
+                circleRadius = 45
             } else {
                 circleRadius = 5
             };
@@ -254,9 +503,11 @@
                 fillOpacity: .5
             };
 
-            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + feature.properties.age + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+            var storageString = Number(feature.properties.normal_storage).toLocaleString();
+            var damAge = (2019 - feature.properties.year_completed)
+            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
 
-            if (feature.properties.county == 'WELD') {
+            if (feature.properties.restricted == 'TRUE') {
                 return L.circleMarker(latlng, lockdownCircle).bindPopup(tooltipText)
             } else {
                 return L.circleMarker(latlng, lockoutCircle).bindPopup(tooltipText)
@@ -266,15 +517,16 @@
 
     function updateCheckboxStates() {
         checkboxStates = {
-            incidentType: [],
+            restricted: [],
             schoolYear: []
         }
+        console.log(checkboxStates);
 
         for (let input of document.querySelectorAll('input')) {
             if (input.checked) {
                 switch (input.className) {
                     case 'incident-type':
-                        checkboxStates.incidentType.push(input.value);
+                        checkboxStates.restricted.push(input.value);
                         break
                         // case 'school-year':
                         //     checkboxStates.schoolYear.push(input.value);
