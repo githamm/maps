@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adams 12 School District Lockdowns and Lockouts | The Denver Post</title>
+    <title>Colorado High Hazard Dams | The Denver Post</title>
     <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
@@ -18,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
     <style>
-    body {
+        body {
         background-color: #fafafa !important;
     }
 
@@ -49,38 +49,6 @@
         color: #969696;
         font-weight: bold;
     }
-
-    #map-container {
-        height: 600px;
-        width: 100%;
-    }
-
-    #dam-map {
-        height: 90%;
-        border: 2px solid silver;
-    }
-
-    #active {
-        border-radius: 50%;
-        width: 13px;
-        height: 13px;
-        background-color: rgba(255, 0, 0, .3);
-        border: 1px solid red;
-        float: left;
-        margin-right: 3px;
-        margin-left: 10px;
-    }
-
-    #inactive {
-        border-radius: 50%;
-        width: 13px;
-        height: 13px;
-        background-color: rgba(0, 0, 255, .3);
-        border: 1px solid blue;
-        float: left;
-        margin-right: 3px;
-    }
-
     #legend {
         width: 100%;
         margin: 5px;
@@ -103,21 +71,6 @@
     }
 
     /* CHANGE HERE */
-    html,
-    body {
-        height: 100%;
-        width: 100%;
-        padding: 0;
-        background-color: #fafafa;
-        font-family: 'Roboto', sans-serif;
-        margin-top: 1%;
-    }
-
-    #container {
-        /*height: 600px;*/
-        /*width: 893px;
-        margin: 0 auto;*/
-    }
 
     #map {
         height: 600px;
@@ -125,28 +78,13 @@
         /*width: 893px;
         height: 600px;
         margin: 0 auto;*/
+        padding: 0 5px 0 5px;
         border: 2px solid silver;
     }
-
-    .leaflet-popup-content-wrapper {
-        border-radius: 0;
-        background-color: #fafafa;
-        /*max-width: 200px;*/
-        line-height: 100%;
+    #map-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
-
-    .leaflet-container {
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .leaflet-popup-content {
-        font-size: 1.2em;
-        letter-spacing: .2px;
-    }
-
-    /*#content-container {
-        padding: 15px;
-    }*/
     .legend-text {
         text-transform: uppercase;
         font-size: .9rem;
@@ -171,54 +109,6 @@
         font-style: italic;
         color: #ff5959;
         opacity: .8;
-    }
-
-    #years {
-        display: inline-block;
-    }
-
-    h2 {
-        font-family: 'Roboto', sans-serif;
-        font-size: 2em;
-        font-weight: 700;
-        letter-spacing: 0px;
-        line-height: 100%
-    }
-
-    h3.chart-title {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .neighborhood {
-        font-size: 1.3em;
-        font-weight: 700;
-        margin-bottom: -16px;
-        line-height: 22px;
-    }
-
-    .address {
-        font-style: italic;
-        color: rgba(0, 0, 0, .8);
-    }
-
-    .popup-text {
-        margin-bottom: -12px !important;
-        color: rgba(0, 0, 0, .8);
-    }
-
-    .popup-header {
-        font-weight: 700;
-        font-size: 1.1em;
-        /*letter-spacing: .5px;*/
-        /*text-transform: uppercase;*/
-        color: #000;
-        margin-bottom: 0;
-    }
-
-    hr {
-        margin: -12px 0 -8px 0;
     }
 
     .note {
@@ -263,69 +153,6 @@
         line-height: 1.45;
     }*/
 
-    .icon-2018 {
-        border-radius: 50%;
-        border: 2px solid rgba(0, 0, 0, .5);
-        background: #ca0020;
-    }
-
-    .icon-2017 {
-        border-radius: 50%;
-        border: 2px solid rgba(0, 0, 0, .5);
-        background: #f4a582;
-    }
-
-    .icon-2016 {
-        border-radius: 50%;
-        border: 2px solid rgba(0, 0, 0, .5);
-        background: #f7f7f7;
-    }
-
-    .icon-2015 {
-        border-radius: 50%;
-        border: 2px solid rgba(0, 0, 0, .5);
-        background: #92c5de;
-    }
-
-    .icon-2014 {
-        border-radius: 50%;
-        border: 2px solid rgba(0, 0, 0, .5);
-        background: #0571b0;
-    }
-
-    .selector-2018,
-    .selector-2017,
-    .selector-2016,
-    .selector-2015,
-    .selector-2014 {
-        height: 12px;
-        width: 12px;
-        display: inline-block;
-        border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, .5);
-        margin: 0 0 0 3px;
-    }
-
-    .selector-2018 {
-        background: #ca0020;
-    }
-
-    .selector-2017 {
-        background: #f4a582;
-    }
-
-    .selector-2016 {
-        background: #f7f7f7;
-    }
-
-    .selector-2015 {
-        background: #92c5de;
-    }
-
-    .selector-2014 {
-        background: #0571b0;
-    }
-
     a.leaflet-control-layers-toggle {
         background-color: red;
     }
@@ -357,37 +184,43 @@
 </head>
 
 <body>
-    <div id="row">
-        <div id="map-container" class="large-12 columns">
-        	<p class="instructions">Zoom map and click circles for details &bull; circle size represents number of incidents &bull; to see individual incidents, go to the table at the bottom of the page</p>
-                <fieldset class="fieldset">
-                    <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
-                    <div class="legend-container">
-                        <div class="inputs" id="incidents">
-                            <div class="legend-item">
-                                <input type="checkbox" class="incident-type" id="lockdown-box" name="lockdown-box" value="TRUE" checked="true">
-                                <label for="lockdown-box"><span style="border-top: 3px solid  rgba(255,0,0,.5)">Lockdown</span> (18)</label>
-                            </div>
-                            <div class="legend-item">
-                                <input type="checkbox" class="incident-type" id="lockout-box" name="lockout-box" value="FALSE" checked="true">
-                                <label for="lockout-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">Lockout</span> (466)</label>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-circle-small"><span class="circle-number" style="margin:0 0 0 9px">1</span></div>
-                            </div>
-                            <div class="legend-item">
-                                <span style="margin: 0 5px 0 5px">&xrarr;</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-circle-large"><span class="circle-number" style="margin:17px 0 0 18px">32</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <div id="map"></div>
-                <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Adams 12 Five Star Schools</p>
-            </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>High hazard dams in Colorado</h1>
+            <p>There are more than 1,700 regulated dams in Colorado, many of them privately owned. More than 400 of those dams are classified as "high hazard" because they are located near populated areas, and 27 of those are operating with restrictions in place. The Colorado Division of Water Resources orders restrictions, such as lowering the reservoir level, if a dam receives an unsatisfactory inspection, until necessary repairs are made. <em>All dams on the map are classified as "high hazard;" use the checkboxes below to toggle between restricted and unrestricted dams.</em></p>
         </div>
+    </div>
+    <div class="row">
+        <div id="map-container" class="large-12 columns">
+            <p class="instructions">Zoom map and click circles for details &bull; circle size represents dam storage capacity</p>
+            <fieldset class="fieldset">
+                <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
+                <div class="legend-container">
+                    <div class="inputs" id="incidents">
+                        <div class="legend-item">
+                            <input type="checkbox" class="dam-type" id="restrictions-box" name="restrictions-box" value="TRUE" checked="true">
+                            <label for="restrictions-box"><span style="border-top: 3px solid  rgba(255,0,0,.5)">Restrictions</span></label>
+                        </div>
+                        <div class="legend-item">
+                            <input type="checkbox" class="dam-type" id="no-restrictions-box" name="no-restrictions-box" value="FALSE" checked="true">
+                            <label for="no-restrictions-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">No restrictions</span></label>
+                        </div>
+                        <!-- <div class="legend-item">
+                            <div class="legend-circle-small"><span class="circle-number" style="margin:0 0 0 9px">0</span></div>
+                        </div>
+                        <div class="legend-item">
+                            <span style="margin: 0 5px 0 5px">&xrarr;</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-circle-large"><span class="circle-number" style="margin:17px 0 0 18px">940K</span></div>
+                        </div> -->
+                    </div>
+                </div>
+            </fieldset>
+            <div id="map"></div>
+            <p class="source">By Kevin Hamm, The Denver Post &bull; Source: <a href="https://dwr.state.co.us/Tools/DamSafety/Dams" target="_blank">Colorado Division of Water Resources</a></p>
+        </div>
+    </div>
     </div>
     <script src="all_colorado_high_hazard_dams_cut.js"></script>
     <script>
@@ -457,18 +290,18 @@
 
     // });
 
-   let checkboxStates
+    let checkboxStates
 
-    var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     });
 
     var map = L.map('map', {
-        center: [39.918559, -104.987851],
+        center: [39.113, -105.359],
         zoom: 7,
-        //minZoom: 11,
+        minZoom: 7,
         preferCanvas: true
     }).addLayer(cartoTiles);
 
@@ -479,15 +312,26 @@
             return isIncidentChecked // && isYearChecked //only true if all are true
         },
         pointToLayer: function(feature, latlng) {
+            console.log(feature);
+            var normalStorage = Number(feature.properties.normal_storage);
             var circleRadius;
-            if (feature.properties.restricted == 'TRUE') {
-                //circleRadius = (feature.properties.restricted * 1.5)
-                circleRadius = 45
-            } else {
-                circleRadius = 5
-            };
+            var circleSize;
+
+            // if (feature.properties.restricted == 'TRUE') {
+            //     circleSize = Math.sqrt(feature.properties.normal_storage) * .075
+            //     } else {
+            //     circleSize = 4
+            // };
+            if (normalStorage < 1000) {
+                circleSize = 5
+            } else if (normalStorage >= 1000 && normalStorage < 10000) {
+                circleSize = 10
+            } else if (normalStorage >= 10000 && normalStorage < 50000) {
+                circleSize = 15
+            } else circleSize = 20;
+
             var lockdownCircle = {
-                radius: circleRadius,
+                radius: circleSize,
                 fillColor: "red",
                 color: "#aaa",
                 weight: 0,
@@ -495,7 +339,7 @@
                 fillOpacity: .5
             };
             var lockoutCircle = {
-                radius: circleRadius,
+                radius: circleSize,
                 fillColor: "blue",
                 color: "#aaa",
                 weight: 0,
@@ -505,7 +349,7 @@
 
             var storageString = Number(feature.properties.normal_storage).toLocaleString();
             var damAge = (2019 - feature.properties.year_completed)
-            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><span class="tooltip-label">Last inspection: </span>' + feature.properties.last_inspection_date + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
 
             if (feature.properties.restricted == 'TRUE') {
                 return L.circleMarker(latlng, lockdownCircle).bindPopup(tooltipText)
@@ -525,7 +369,7 @@
         for (let input of document.querySelectorAll('input')) {
             if (input.checked) {
                 switch (input.className) {
-                    case 'incident-type':
+                    case 'dam-type':
                         checkboxStates.restricted.push(input.value);
                         break
                         // case 'school-year':
