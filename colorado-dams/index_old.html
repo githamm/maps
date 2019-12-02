@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Colorado High Hazard Dams</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <style>
+    body {
+        background-color: #fafafa !important;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        /*border: 1px solid silver;*/
+        font-size: 15px;
+        /*background-color: rgba(255, 255, 255, .8);*/
+    }
+
+    /*.leaflet-popup-tip {
+    width: 0px;
+    height: 0px;
+}*/
+
+    .tooltip-header {
+        color: #662506;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .tooltip-subhead {
+        color: #969696;
+        font-style: italic;
+    }
+
+    .tooltip-label {
+        color: #969696;
+        font-weight: bold;
+    }
+
+    #map-container {
+        height: 600px;
+        width: 100%;
+    }
+
+    #dam-map {
+        height: 90%;
+        border: 2px solid silver;
+    }
+
+    #active {
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background-color: rgba(255, 0, 0, .3);
+        border: 1px solid red;
+        float: left;
+        margin-right: 3px;
+        margin-left: 10px;
+    }
+
+    #inactive {
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background-color: rgba(0, 0, 255, .3);
+        border: 1px solid blue;
+        float: left;
+        margin-right: 3px;
+    }
+
+    #legend {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .legend-text {
+        float: left;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .source {
+        float: right;
+        font-style: italic;
+        font-family: Helvetica;
+        font-size: 15px;
+        margin-right: 25px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="row">
+        <div id="map-container" class="large-12 columns">
+            <div id="dam-map"></div>
+            <div id="legend">
+                <div id="active"></div>
+                <div class="legend-text">Active</div>
+                <div id="inactive"></div>
+                <div class="legend-text">Inactive</div>
+                <div class="source">Source: <a href="https://inciweb.nwcg.gov" target="_blank">InciWeb</a></div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var mapTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    });
+
+    $.getJSON("colorado_dams.geojson", function(data) {
+        var geojson = L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var popupOptions = {
+                    maxWidth: 200
+                };
+                var storageString = Number(feature.properties.normal_storage).toLocaleString();
+                var popupContent = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + feature.properties.age + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+
+                function getOptions(properties) {
+                    var normalStorage = Number(properties.normal_storage);
+                    var circleSize;
+                    // if (properties.normal_storage > 999) {
+                    //     circleSize = Math.sqrt(properties.normal_storage) * .075
+                    // } else {
+                    //     circleSize = 4
+                    // };
+                    if (normalStorage < 1000) {
+                        circleSize = 5
+                    } else if (normalStorage >= 1000 && normalStorage < 10000) {
+                        circleSize = 10
+                    } else if (normalStorage >= 10000 && normalStorage < 50000) {
+                        circleSize = 15
+                    } else circleSize = 20;
+
+
+                    var damAge = Number(properties.age);
+                    if (damAge <= 60) {
+                        return {
+                            radius: circleSize,
+                            color: '#fe9929',
+                            fillColor: '#fe9929'
+                        }
+                    } else if (damAge > 60 && damAge <= 100) {
+                        return {
+                            radius: circleSize,
+                            color: '#662506',
+                            fillColor: '#662506'
+                        }
+                    } else {
+                        return {
+                            radius: circleSize,
+                            color: '#000',
+                            fillColor: '#000'
+                        }
+                    }
+                }
+                return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
+
+            }
+        });
+        var map = L.map('dam-map', {
+            minZoom: 7,
+            maxZoom: 16
+        }).fitBounds(geojson.getBounds());
+        mapTiles.addTo(map);
+        geojson.addTo(map);
+
+    });
+    </script>
+</body>
+
+</html>

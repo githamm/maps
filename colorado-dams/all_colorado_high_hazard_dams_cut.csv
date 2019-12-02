@@ -1,0 +1,432 @@
+dam_name,restricted,year_completed,normal_storage,county,stream,downstream_town,town_distance,last_inspection_date,details,latitude,longitude
+Trujillo Meadows,FALSE,1956,913,Conejos,Los Pinos River,Antonito,36,06/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/220103,37.048268,-106.447553
+Long Hollow,FALSE,2014,5309,La Plata,Long Hollow,,,04/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/330107,37.058153,-108.175138
+Sanchez,TRUE,1911,103114,Costilla,Ventero Creek,San Luis,7,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/240106,37.113873,-105.410642
+Trinidad,FALSE,1976,119877,Las Animas,Purgatoire River,Trinidad,1,08/21/2012,https://dwr.state.co.us/Tools/DamSafety/Details/190122,37.143336,-104.555573
+Fisher Peak Det. Fpc-1,FALSE,1961,274,Las Animas,Purgatoire River,Trinidad,1,06/07/2019,https://dwr.state.co.us/Tools/DamSafety/Details/190104,37.154387,-104.49706
+Fisher Peak Det. Fpc-2,FALSE,1961,94,Las Animas,Purgatoire River,Trinidad,0,06/07/2019,https://dwr.state.co.us/Tools/DamSafety/Details/190105,37.158453,-104.509928
+Red Mesa Ward,FALSE,1915,1176,La Plata,Hay Gulch,"Farmington, Nm",32,06/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/330105,37.166679,-108.14223
+Pinon Canyon Detention,FALSE,1954,406,Las Animas,Pinon Canyon Arroyo,Trinidad,2,06/07/2019,https://dwr.state.co.us/Tools/DamSafety/Details/190125,37.186137,-104.52141
+Monument Lake,FALSE,1935,1511,Las Animas,Cherry Creek,Monument Park,0,09/21/2018,https://dwr.state.co.us/Tools/DamSafety/Details/190115,37.208339,-105.048898
+Ridges Basin,FALSE,2006,121070,La Plata,Basin Creek,,,,https://dwr.state.co.us/Tools/DamSafety/Details/300151,37.219407,-107.895413
+North Lake,FALSE,1963,4214,Las Animas,Coal Creek,Vigil,6,09/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/190116,37.24001,-105.038896
+Johnson,FALSE,1982,1023,La Plata,Coal Gulch,Durango,6,07/31/2019,https://dwr.state.co.us/Tools/DamSafety/Details/300128,37.25626,-107.968204
+Durango Terminal,FALSE,1954,232,La Plata,Goeglein Gulch,Durango,0,07/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/300102,37.290747,-107.847124
+Stevens,FALSE,1948,1775,Archuleta,Dutton Creek,Pagosa Springs,0,08/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/780105,37.29944,-107.075579
+Hatcher,FALSE,1965,1735,Archuleta,Martinez Creek,Pagosa Springs,0,06/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/780102,37.312775,-107.111398
+Mountain View,FALSE,2000,1025,Archuleta,Hidden Valley,"Pagosa Springs, Co",5,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/290118,37.317885,-107.043159
+Wommer #1,FALSE,1952,178,La Plata,Wommer Draw,Bayfield,9,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/310104,37.321957,-107.588976
+Apishapa,TRUE,1892,209,Las Animas,Apishapa River,Aguilar,10,07/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/180206,37.335008,-104.770567
+Platoro,FALSE,1951,59571,Conejos,Conejos River,Platoro,1,09/22/1998,https://dwr.state.co.us/Tools/DamSafety/Details/220102,37.350835,-106.545289
+Terrace,FALSE,1912,15182,Conejos,Alamosa River,Capulin,12,06/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/210102,37.356809,-106.28565
+Totten,TRUE,1965,3302,Montezuma,Simon Draw,Cortez,2,07/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/320107,37.360846,-108.534699
+Turner,FALSE,1969,472,La Plata,Falls Creek,Durango,6,07/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/300113,37.36835,-107.866878
+Bauer Lake #2 - Main Dam,FALSE,1905,1532,Montezuma,Chicken Creek,Mancos,3,09/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/340102,37.380101,-108.303015
+Lemon,FALSE,1963,40100,La Plata,Florida River,Bondad,15,07/10/2002,https://dwr.state.co.us/Tools/DamSafety/Details/300111,37.382738,-107.627406
+Vallecito,FALSE,1941,129700,La Plata,Pine River,Bayfield,13,01/01/2003,https://dwr.state.co.us/Tools/DamSafety/Details/310105,37.382786,-107.576127
+Mountain Home,FALSE,1908,17964,Costilla,Trinchera Creek,"Arroya Hondo, Nm",93,03/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/350102,37.393408,-105.393962
+Jackson Gulch,FALSE,1949,9980,Montezuma,Jackson Gulch,Mancos,5,01/01/2003,https://dwr.state.co.us/Tools/DamSafety/Details/340107,37.398337,-108.273901
+Summit - South Dam,FALSE,1937,2234,Montezuma,East Fork Mud Creek,"Bluff, Ut",100,06/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/340205,37.405565,-108.38473
+Summit - Main Dam,TRUE,1905,5954,Montezuma,Lost Canyon Creek,Dolores,9,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/340203,37.422529,-108.3879
+Alberta Park,FALSE,1953,598,Mineral,Pass Creek,South Fork,17,09/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200101,37.470288,-106.765578
+Fuchs,FALSE,1930,237,Rio Grande,E. Fork Pinos Creek,Del Norte,16,08/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200114,37.474352,-106.515792
+Narraguinnep - Main Dam,FALSE,1908,18960,Montezuma,Narraguinnep Canyon,"Bluff, Ut",42,06/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/320108,37.483297,-108.626239
+Narraguinnep - Dam 2,FALSE,1957,18960,Montezuma,Yellowjacket Canyon,"Bluff, Ut",35,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/320207,37.489473,-108.633107
+Narraguinnep - Dam 3,FALSE,1957,18960,Montezuma,Yellowjacket Canyon,"Bluff, Ut",35,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/320208,37.494744,-108.631316
+Williams Creek,FALSE,1958,10084,Hinsdale,Williams Creek,Piedra,26,09/18/2018,https://dwr.state.co.us/Tools/DamSafety/Details/780108,37.503339,-107.222792
+Wahatoya Lake,FALSE,1901,330,Huerfano,Wahatoya Creek,La Veta,0,04/01/2019,https://dwr.state.co.us/Tools/DamSafety/Details/160326,37.508341,-104.997226
+Haviland Lake,FALSE,1927,526,La Plata,Elbert Creek,Durango,22,08/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/300106,37.532659,-107.807388
+Big Meadows - Main Dam,FALSE,1968,2436,Mineral,S Fork Rio Grande,South Fork,12,06/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200103,37.539449,-106.800857
+Big Meadows - North Dike,FALSE,1968,2436,Mineral,S. Fork Rio Grande,South Fork,12,06/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200230,37.541162,-106.801373
+Terminal,FALSE,1981,23385,La Plata,Elbert Creek,Rockwood,4,07/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/300105,37.545016,-107.804988
+Mcphee Reservoir,FALSE,1985,381100,Montezuma,Dolores River,Slick Rock,40,01/01/2001,https://dwr.state.co.us/Tools/DamSafety/Details/710106,37.57668,-108.570573
+Beaver Park,FALSE,1912,4746,Rio Grande,Beaver Creek,South Fork,6,05/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200102,37.596117,-106.666687
+Walsenburg City Lake,FALSE,2019,600,Huerfano,Cucharas River,Walsenburg,2,09/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/160327,37.596678,-104.85723
+Horseshoe Lake,FALSE,1961,2760,Huerfano,Cucharas River,Walsenburg,2,11/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/160112,37.605005,-104.848899
+Martin Lake,FALSE,1910,3077,Huerfano,Cucharas River,Walsenburg,2,07/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/160218,37.606677,-104.83223
+Alessi Flood Control Dam,FALSE,1970,104,Huerfano,Pictou Arroyo,Walsenburg,0,07/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/160125,37.625648,-104.796592
+Two Buttes,TRUE,1908,22165,Baca,Two Butte Creek,Holly,58,11/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/670236,37.635929,-102.538116
+Humphreys - Main Dam,FALSE,1926,842,Mineral,Goose Creek,South Fork,18,06/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200121,37.680285,-106.850295
+Humphreys - Spillway Dam,FALSE,1926,842,Mineral,Goose Creek,South Fork,18,06/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200233,37.680439,-106.850865
+Rio Grande,FALSE,1914,54082,Hinsdale,Rio Grande River,South Fork,47,06/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200137,37.720834,-107.266966
+Groundhog,FALSE,1939,26640,Dolores,Groundhog Creek,Dolores,24,07/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/710107,37.790833,-108.290842
+Santa Maria,FALSE,1911,43826,Mineral,Boulder Creek,South Fork,41,06/10/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200204,37.805935,-107.099947
+Trout Lake,FALSE,1954,3422,San Miguel,Lake Fork,Telluride,14,08/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/600124,37.830001,-107.888899
+Continental,FALSE,1927,22825,Hinsdale,North Clear Creek,South Fork,50,06/10/2019,https://dwr.state.co.us/Tools/DamSafety/Details/200110,37.886713,-107.206449
+Beckwith,FALSE,1911,1033,Pueblo,Greenhorn Creek,Colorado City,0,06/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/150101,37.945009,-104.862227
+Miramonte,FALSE,1978,6851,San Miguel,West Naturita Creek,Norwood,11,09/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/600113,37.973336,-108.335573
+Lake Isabel,FALSE,1936,760,Pueblo,St. Charles River,Lombard Village,40,07/19/2017,https://dwr.state.co.us/Tools/DamSafety/Details/150112,37.985006,-105.052233
+Lone Cone,FALSE,1912,1840,San Miguel,Goshorn Creek,Norwood,17,07/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/600112,38.005004,-108.257226
+Gurley,TRUE,1961,9000,San Miguel,Gurley Canyon,Norwood,12,06/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/600108,38.035009,-108.250571
+John Martin,FALSE,1943,232942,Bent,Arkansas River,Caddoa,0,09/07/1995,https://dwr.state.co.us/Tools/DamSafety/Details/670215,38.054171,-102.929728
+St. Charles #3,FALSE,1913,8638,Pueblo,Salt Creek,Pueblo,2,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/150111,38.170008,-104.65057
+St. Charles #2,FALSE,1913,2700,Pueblo,Salt Creek,Pueblo,2,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/150110,38.181672,-104.642236
+Deweese,FALSE,1903,4338,Custer,Grape Creek,Canon City,19,10/19/2018,https://dwr.state.co.us/Tools/DamSafety/Details/130103,38.210006,-105.452226
+Florence South Res. No. 1,FALSE,1904,284,Fremont,Alkali Creek,Coal Creek,3,05/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/120118,38.216673,-105.120574
+Adobe Creek,FALSE,1904,81592,Bent,Adobe Creek,Las Animas,15,06/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/170101,38.235006,-103.280565
+Ridgway,FALSE,1987,94126,Ouray,Uncompahgre River,Montrose,20,07/26/2017,https://dwr.state.co.us/Tools/DamSafety/Details/680114,38.236945,-107.758903
+Silver Jack,FALSE,1971,13520,Gunnison,Cimarron River,Delta,59,07/23/2018,https://dwr.state.co.us/Tools/DamSafety/Details/620112,38.245004,-107.543902
+Lake Henry,FALSE,1914,9500,Crowley,Horse Creek,Ordway,3,07/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/170203,38.248333,-103.713904
+Pueblo,FALSE,1975,357678,Pueblo,Arkansas River,Pueblo,3,09/18/2017,https://dwr.state.co.us/Tools/DamSafety/Details/140133,38.268334,-104.736682
+Florence South Res. No. 2,FALSE,,208,Fremont,First Alkali Creek,Florence,3.2,05/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/120245,38.338352,-105.119208
+Vouga,TRUE,1978,920,Saguache,Razor Creek,Gunnison,24,07/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/280109,38.355003,-106.663902
+Dry Creek Flood Control,FALSE,1970,157,Fremont,Dry Creek,Florence,0,03/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/120117,38.385009,-105.135566
+Canon Wtrsd C-3,FALSE,1972,1141,Fremont,Sand Creek,Canon City,2,11/21/2018,https://dwr.state.co.us/Tools/DamSafety/Details/120114,38.413335,-105.223899
+Canon Wtrshd. Det. C-4,FALSE,1972,207,Fremont,Arkansas River,Canon City,2,11/21/2018,https://dwr.state.co.us/Tools/DamSafety/Details/120115,38.415004,-105.232231
+Buckeye #1,FALSE,1910,2483,Montrose,Buckeye Creek,Paradox,8,09/10/2019,https://dwr.state.co.us/Tools/DamSafety/Details/610101,38.438335,-109.045571
+Cerro,FALSE,1966,675,Montrose,Uncompahgre River,Montrose,15,05/14/2019,https://dwr.state.co.us/Tools/DamSafety/Details/620105,38.445809,-107.637519
+Teller,TRUE,1910,1290,El Paso,Turkey Creek,Pueblo,19,10/23/2018,https://dwr.state.co.us/Tools/DamSafety/Details/100440,38.450002,-104.833905
+Morrow Point,FALSE,1968,117190,Montrose,Gunnison River,Delta,40,09/24/1997,https://dwr.state.co.us/Tools/DamSafety/Details/620111,38.451673,-107.54057
+Blue Mesa,FALSE,1965,940800,Gunnison,Gunnison River,Montrose,35,09/23/1997,https://dwr.state.co.us/Tools/DamSafety/Details/620102,38.453352,-107.334401
+Brush Hollow,FALSE,1922,3933,Fremont,Brush Hollow Creek,Pueblo,33,05/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/120101,38.458336,-105.053902
+Shavano Valley #1 - Sv-1,FALSE,1993,184,Montrose,Coal Creek,Delta,25,04/27/2016,https://dwr.state.co.us/Tools/DamSafety/Details/410203,38.461114,-108.001952
+Shavano Valley #2 - Sv-2,FALSE,1996,269,Montrose,Uncompahgre,Olathe,6,04/27/2016,https://dwr.state.co.us/Tools/DamSafety/Details/410204,38.461116,-108.002227
+Fairview,FALSE,1968,350,Montrose,"Uncompahgre River,Tr&Sp",Montrose,3,10/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/410106,38.477332,-107.778214
+Crystal,FALSE,1977,26000,Montrose,Gunnison River,Delta,44,01/01/2010,https://dwr.state.co.us/Tools/DamSafety/Details/620106,38.510563,-107.623896
+Boss Lake,FALSE,1894,190,Chaffee,"Middle Fork, South Ark.",Garfield,2,09/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/110105,38.556674,-106.32057
+Onion Valley,FALSE,1954,9000,Montrose,Iron Creek,Crawford,5,09/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400421,38.603332,-107.593907
+Roatcap Wash Watershed Rw-1,FALSE,1964,790,Montrose,"Uncompahgre River,Tr&Sp",Delta,13,07/12/2016,https://dwr.state.co.us/Tools/DamSafety/Details/410110,38.61168,-108.050569
+Crawford,FALSE,1962,14395,Delta,Iron Creek,Crawford,1,08/02/2018,https://dwr.state.co.us/Tools/DamSafety/Details/400210,38.690068,-107.606913
+Garnet Mesa,FALSE,1954,1333,Delta,Uncompahgre River,Delta,2,06/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/410107,38.715004,-108.040575
+Fountain Valley No 2,FALSE,1910,3950,El Paso,Fountain Creek,Widefield,1,03/19/2018,https://dwr.state.co.us/Tools/DamSafety/Details/100128,38.748339,-104.700566
+Spires Broadmoor South Debris Dam,FALSE,2005,5,El Paso,,,,09/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100458,38.749449,-104.844733
+Spires Broadmoor North Debris Dam,FALSE,2005,10,El Paso,,Colorado Springs,0,09/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100457,38.752224,-104.844175
+Fishers Canyon Debris Basin Dam,FALSE,1999,13,El Paso,Fishers Canyon Channel,Colorado Springs,0,09/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100455,38.755565,-104.856401
+Fisher Canon,FALSE,1929,53,El Paso,Fishers Canyon,Colorado Springs,2,09/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100121,38.761674,-104.848896
+Penrose,FALSE,1917,43,El Paso,Spring Run,Colorado Springs,0,05/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100231,38.775007,-104.85223
+Mc Reynolds,FALSE,1903,2050,Teller,Middle Beaver Creek,Pueblo,39,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/120107,38.776668,-105.008898
+Stratton,FALSE,1919,88,El Paso,North Cheyenne Creek,Colorado Springs,,08/19/2015,https://dwr.state.co.us/Tools/DamSafety/Details/100459,38.778912,-104.988233
+Mason,FALSE,1903,1965,Teller,Boehmer Creek,Pueblo,39,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/120106,38.780002,-105.013895
+South Lake,FALSE,1973,319,El Paso,Fountain Creek,Colorado Springs,0,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100305,38.785004,-104.810575
+Gold Camp,FALSE,1954,380,El Paso,North Cheyenne Creek,Colorado Springs,0,05/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100301,38.795002,-104.873895
+Spring Run #2,FALSE,1970,311,El Paso,Spring Run,Colorado Springs,0,03/07/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100106,38.79501,-104.830574
+South Suburban,FALSE,1932,231,El Paso,North Cheyenne Creek,Colorado Springs,0,05/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100213,38.796397,-104.863897
+Trout Creek,FALSE,2001,645,Chaffee,Trout Creek,Nathrop,6,06/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/110233,38.805833,-106.087515
+Lake Moraine,FALSE,1891,1250,El Paso,Ruxton Creek,Manitou Springs,4,08/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100208,38.815004,-104.993905
+Taylor Park,FALSE,1937,106200,Gunnison,Taylor River,Gunnison,30,07/24/2018,https://dwr.state.co.us/Tools/DamSafety/Details/590109,38.818339,-106.607229
+Beaver,FALSE,1958,1600,Gunnison,Minnesota Creek,Paonia,11,07/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400115,38.82155,-107.449081
+Fruit Growers,FALSE,1938,4540,Delta,Dry Creek,Delta,10,03/15/2018,https://dwr.state.co.us/Tools/DamSafety/Details/400236,38.826735,-107.954906
+Big Tooth,FALSE,1927,277,El Paso,South Ruxton Creek,Manitou Springs,2,08/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100302,38.829446,-104.970839
+Spring Creek,FALSE,1961,1631,Gunnison,Taylor River Tr & Sp,Gunnison,28,08/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/590108,38.861038,-106.707096
+Valley No. 2,TRUE,1906,126,El Paso,Camp Creek,Colorado Springs,0,04/18/2017,https://dwr.state.co.us/Tools/DamSafety/Details/100402,38.864723,-104.880296
+Highline,FALSE,1938,55,El Paso,Monument Creek,Colorado Springs,2,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100137,38.871678,-104.862232
+Valley No. 1,TRUE,1901,137,El Paso,Camp Creek,Colorado Springs,0,04/18/2017,https://dwr.state.co.us/Tools/DamSafety/Details/100309,38.872503,-104.875014
+Manitou,FALSE,1971,700,El Paso,North Fork French Creek,Cascade,3,06/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100211,38.876679,-104.993623
+Glen Eyrie #3,FALSE,1901,154,El Paso,Camp Creek,Colorado Springs,2,03/21/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100132,38.891675,-104.870564
+Wagon Tongue,FALSE,1960,130,Park,Wagon Tongue Gulch,Lake George,6,09/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230210,38.905006,-105.398903
+Eleven Mile Canyon,FALSE,1932,97800,Park,South Platte River,Lake George,6,05/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230115,38.905009,-105.477235
+Crystal Creek,FALSE,1934,3479,El Paso,Crystal Creek,Green Mt Falls,1,06/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100116,38.920004,-105.0239
+West #1,FALSE,1950,470,Delta,Jay Creek,Hotchkiss,8,10/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400538,38.92501,-107.732226
+South Catamount,FALSE,1935,2604,Teller,South Catamount Creek,Green Mt Falls,1,06/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100111,38.926674,-105.048902
+North Catamount,FALSE,1959,12300,Teller,North Catamount Creek,Green Mt Falls,1,06/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100110,38.930006,-105.052792
+Paonia,FALSE,1962,20950,Gunnison,Muddy Creek,Somerset,7,07/03/2018,https://dwr.state.co.us/Tools/DamSafety/Details/400424,38.943339,-107.353899
+Chapel Hills #2,FALSE,1984,120,El Paso,Monument,Colorado Springs,0,12/11/2018,https://dwr.state.co.us/Tools/DamSafety/Details/100407,38.950007,-104.780571
+Carl Smith,FALSE,2000,920,Delta,Leroux Creek,Lazear,11,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400517,38.960866,-107.752194
+Juniata,FALSE,1979,7281,Mesa,Kannah Creek,Whitewater,13,05/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/420128,38.967599,-108.285478
+Regulating Reservoir,FALSE,1996,443,El Paso,West Monument Creek,Colorado Springs,6,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100452,38.968062,-104.894736
+Hallenbeck #1,FALSE,1970,659,Mesa,Kahnah Creek,Whitewater,13,05/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/420125,38.969271,-108.293875
+Kettle Creek,FALSE,1957,2700,El Paso,Kettle Creek,Colorado Springs,4,09/12/2018,https://dwr.state.co.us/Tools/DamSafety/Details/100313,38.971672,-104.807228
+Spinney Mountain,FALSE,1982,53873,Park,South Platte River,Lake George,22,05/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230304,38.971679,-105.621955
+Rampart,FALSE,1968,38783,El Paso,West Monument Creek,Colorado Springs,11,09/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100221,38.974727,-104.961117
+Bruce Park,FALSE,1950,598,Delta,Hubbard Creek,Paonia,7,09/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400125,38.978705,-107.560739
+Antero,FALSE,1909,44733,Park,S. Fork S. Platte River,Hartsel,5,08/07/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230102,38.988337,-105.895576
+Big Battlement,TRUE,1949,780,Delta,Dirty George Creek,Cedaredge,12,10/01/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400112,38.995001,-108.052231
+Hogchute,FALSE,1947,520,Mesa,Kannah Creek,Whitewater,23,08/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/420127,38.995009,-108.112238
+Granby #12,FALSE,1949,664,Delta,Dirty George Creek,Cedaredge,12,08/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400306,38.998334,-108.042226
+Granby #5-11,FALSE,1930,775,Delta,Dirty George Creek,Cedaredge,12,08/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400307,38.998337,-108.035565
+Woodland Park,FALSE,1963,60,El Paso,Loy Gulch,Woodland Park,2,05/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080416,39.005568,-105.022785
+Ward Creek,FALSE,1957,284,Delta,Ward Creek,Cedaredge,7,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400532,39.013337,-107.997235
+Non-Potable Reservoir #2,FALSE,1958,336,El Paso,Monument,Colorado Springs,4,08/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100430,39.016678,-104.86723
+Non-Potable Reservoir #3,FALSE,1958,156,El Paso,Monument,Colorado Springs,4,08/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100431,39.016678,-104.86723
+Clear Creek,FALSE,1910,11500,Chaffee,Clear Creek,Buena Vista,15,06/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/110102,39.021674,-106.247233
+Kiser Slough,FALSE,1952,490,Delta,Kiser Creek,Cedaredge,7,07/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400329,39.023303,-107.948423
+Kennicott Slough,FALSE,1946,490,Delta,Kiser Creek,Cedaredge,7,07/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400327,39.027422,-107.95475
+Deep Slough,FALSE,1965,523,Delta,Ward Creek,Cedaredge,9,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400213,39.028353,-107.992418
+Ward Lake,TRUE,1958,1710,Delta,Ward Creek,Cedaredge,7,08/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400533,39.034276,-107.985218
+Marcot Park,FALSE,1956,448,Delta,Surface Creek,Cedaredge,11,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400407,39.034615,-107.809218
+Barren,FALSE,1886,759,Delta,Kiser Creek,Cedaredge,8,07/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400108,39.039353,-107.950338
+Eggleston,FALSE,1949,2560,Delta,Kiser Creek,Cedaredge,9,07/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400224,39.039577,-107.94791
+Somerville-Mccullah,FALSE,1972,947,Mesa,Whitewater Cr,Grand Junction,18,07/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/420306,39.041368,-108.21015
+Hotel Lake Dam,FALSE,1953,549,Delta,Ward Creek,Cedaredge,9,07/10/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400318,39.043068,-107.965487
+Park,FALSE,1940,3390,Delta,Surface Creek,Cedaredge,13,09/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400425,39.046672,-107.875572
+Cedar Mesa,FALSE,1944,926,Delta,Surface Creek,Cedaredge,13,08/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400135,39.049358,-107.846531
+Coon Creek #1,FALSE,1900,484,Mesa,Coon Creek,Mesa,10,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720119,39.062111,-108.057213
+Weir And Johnson,FALSE,1974,567,Delta,Surface Creek,Cedaredge,13,09/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400536,39.066675,-107.830574
+Leon Lake,FALSE,1898,2339,Mesa,Middle Leon Creek,Collbran,20,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720308,39.068396,-107.802225
+Cottonwood #4,FALSE,1896,372,Mesa,Cottonwood Creek,Molina,10,08/10/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720124,39.075007,-107.952228
+Cottonwood #1,FALSE,1894,1902,Mesa,Cottonwood Creek,Molina,9,08/10/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720122,39.075009,-107.97057
+Bull Creek #4,FALSE,1901,425,Mesa,Bull Creek,Molina,9,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720115,39.076368,-108.037349
+Overland #1,FALSE,1987,5828,Delta,Muddy Creek,Paonia,13,07/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/400422,39.078337,-107.645574
+Big Creek #1,FALSE,1893,764,Mesa,Big Creek,Plateau City,13,08/07/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720103,39.080009,-107.8889
+Grizzly,FALSE,1930,590,Pitkin,Lincoln Creek,Aspen,18,07/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/380109,39.08001,-106.618896
+Kitson,FALSE,1911,204,Mesa,Cottonwood Creek,Molina,9,08/08/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720206,39.08001,-107.953904
+Twin Lakes,FALSE,1948,86000,Lake,Lake Creek,Granite,5,09/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/110118,39.081674,-106.315574
+Palisade Cabin,FALSE,1956,1018,Mesa,Cottonwood Creek,Palisade,8,07/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720223,39.085005,-108.273897
+Cottonwood #5,FALSE,1909,352,Mesa,Cottonwood Creek,Molina,9,08/09/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720302,39.088336,-107.95557
+Big Creek #3,FALSE,1893,1549,Mesa,E Fork Big Creek,Plateau City,11,08/07/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720104,39.095009,-107.877235
+Woodmoor Lake,FALSE,1973,690,El Paso,Dirty Woman Creek,Monument,0,05/14/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100311,39.098339,-104.860566
+Parker Basin #3,FALSE,1899,400,Mesa,Cottonwood Creek,Molina,8,08/09/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720226,39.101672,-107.957237
+Bonham-Wells,FALSE,1900,1223,Mesa,Big Creek,Plateau City,10,08/08/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720109,39.103335,-107.902236
+Bosley Wash Detention Basin,FALSE,2019,155,Mesa,,Clifton,0.5,,https://dwr.state.co.us/Tools/DamSafety/Details/720425,39.109685,-108.424922
+Palmer Lake #2,FALSE,1904,144,El Paso,N. Monument Ck,Palmer Lake,2,10/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/100227,39.113339,-104.940568
+Mount Elbert Forebay,FALSE,1981,11530,Lake,Halfmoon,Buena Vista,30,08/15/2016,https://dwr.state.co.us/Tools/DamSafety/Details/110203,39.11668,-106.367235
+Indian Wash Det.,FALSE,1965,570,Mesa,Indian Wash,Grand Junction,5,05/31/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720138,39.12862,-108.507512
+W. Cherry Creek Det. #7,FALSE,1959,115,Douglas,West Cherry Creek,Franktown,10,04/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080314,39.141677,-104.771402
+Leach Creek Detention Basin,FALSE,2015,248,Mesa,Leach Creek,Grand Junction,1.5,05/31/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720422,39.158975,-108.541729
+Y T Ranch,TRUE,1911,125,Mesa,Grove Creek,Collbran,5,05/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720237,39.186675,-107.893902
+Jerry Creek #2,FALSE,1978,7634,Mesa,Jerry Gulch,Grand Junction,32,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720323,39.190006,-108.112228
+Jerry Creek #1,FALSE,1964,1033,Mesa,Plateau Creek,Grand Junction,32,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720201,39.190833,-108.116003
+Jerry Creek Dike 1,FALSE,1978,4965,Mesa,Jerry Gulch,Grand Junction,32,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720421,39.196117,-108.098617
+Lake Deborah,FALSE,1962,248,Pitkin,Brush Creek,Snowmass Village,0.4,07/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/380222,39.206674,-106.963071
+Cheesman,FALSE,1905,79064,Douglas,South Platte River,Deckers,5,06/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/800102,39.208333,-105.273901
+Tarryall,TRUE,1929,1963,Park,Tarryall Creek,Deckers,20,07/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230208,39.223338,-105.607233
+Vega,FALSE,1959,33800,Mesa,Plateau Creek,Collbran,8,07/18/2018,https://dwr.state.co.us/Tools/DamSafety/Details/720235,39.225009,-107.815571
+Wildcat,FALSE,1953,1100,Pitkin,Wildcat Creek,Basalt,6,06/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/380133,39.24168,-106.952229
+Sugarloaf,FALSE,1968,129432,Lake,Lake Fork Creek,Buena Vista,38,06/22/2016,https://dwr.state.co.us/Tools/DamSafety/Details/110121,39.251677,-106.370293
+Upper Highline,FALSE,1967,3400,Mesa,Mack Wash,Mack,4,06/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/720234,39.270007,-108.845566
+Limon Watershed L-1,FALSE,1964,1200,Lincoln,Big Sandy Creek,Limon,2,11/05/2018,https://dwr.state.co.us/Tools/DamSafety/Details/670210,39.278341,-103.703903
+Flagler,FALSE,1965,1360,Kit Carson,S Fork Republican Rvr,"St. Francis, Kansas",51,11/05/2018,https://dwr.state.co.us/Tools/DamSafety/Details/490103,39.293335,-102.983906
+Lake Ann,FALSE,1912,460,Pitkin,West Sopris Creek,El Jebel,8,06/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/380117,39.303333,-107.117234
+Wellington,FALSE,1895,4399,Jefferson,S. Fork Buffalo Creek,Buffalo Creek,5,09/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/800116,39.313335,-105.363895
+James Tingle,FALSE,2009,400,Park,Michigan Creek,Jefferson,2,07/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230317,39.349378,-105.809157
+Montgomery,FALSE,1956,5088,Park,Middle Fork S. Platte,Alma,5,08/21/2019,https://dwr.state.co.us/Tools/DamSafety/Details/230134,39.353336,-106.073902
+Ruedi,FALSE,1968,102369,Pitkin,Fryingpan River,Basalt,12,05/16/2017,https://dwr.state.co.us/Tools/DamSafety/Details/380136,39.361392,-106.818346
+Homestake Project,FALSE,1967,42900,Eagle,Middle Fork Homestake,Minturn,16,08/01/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370109,39.368338,-106.463904
+Upper Blue,FALSE,1965,2140,Summit,Monte Cristo Creek,Breckenridge,7,08/21/2019,https://dwr.state.co.us/Tools/DamSafety/Details/360102,39.385285,-106.101121
+Robinson,FALSE,1936,3317,Eagle,East Fork Eagle River,Redcliff,11,07/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370107,39.396396,-106.222791
+Eagle Park Reservoir,FALSE,1968,3302,Eagle,East Fork Eagle River,Redcliff,11,07/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370103,39.403335,-106.226118
+Clinton Gulch,FALSE,1977,4372,Summit,Tenmile Creek,Frisco,14,09/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/360133,39.415568,-106.176685
+Strontia Springs,FALSE,1982,7700,Jefferson,South Platte River,Kassler,8,06/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080401,39.432786,-105.126117
+Spring Park,FALSE,1911,1732,Eagle,Blue Creek,El Jebel,3,05/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/380125,39.435565,-107.088898
+Jefferson Lake,FALSE,1951,2560,Park,Jefferson Creek,Jefferson,5,07/11/2018,https://dwr.state.co.us/Tools/DamSafety/Details/230123,39.450561,-105.862511
+Goose Pasture Tarn,TRUE,1965,812,Summit,Blue River,Breckenridge,2,08/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/360105,39.455008,-106.032226
+L E D E,FALSE,1931,953,Eagle,Gypsum Creek,Gypsum,17,06/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370105,39.466678,-106.7789
+Sylvan Lake,FALSE,1947,425,Eagle,W Brush Creek,Eagle,15,07/11/2017,https://dwr.state.co.us/Tools/DamSafety/Details/370106,39.480001,-106.735571
+Franktown Parker Fps-1,FALSE,1963,40,Douglas,Cherry Creek,Parker,0.1,04/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080206,39.480841,-104.747227
+Rueter Hess,FALSE,2012,75689,Douglas,Newlin Gulch,Parker,0.1,04/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080450,39.494421,-104.820911
+Consolidated,FALSE,1913,866,Garfield,West Coulter Creek,Glenwood Springs,10,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/380106,39.520004,-107.142237
+Von Springs #2,FALSE,1943,232,Eagle,East Coulter Creek,Glenwood Springs,16,05/17/2017,https://dwr.state.co.us/Tools/DamSafety/Details/380131,39.520005,-107.087227
+Franktown Parker Fpp-1,FALSE,1963,56,Douglas,Baldwin Gulch,Denver,0.1,04/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080203,39.523334,-104.751122
+Barton Porter West,FALSE,2005,1140,Garfield,Alkali Creek (East),Silt,14,06/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/450125,39.525287,-107.433066
+Franktown Parker Fpb-1,FALSE,1963,128,Douglas,Cherry Creek,Parker,0.1,04/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080129,39.534175,-104.747511
+Black Lake #1,FALSE,1939,469,Eagle,Black Gore Creek,Vail,7,07/10/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370123,39.54279,-106.220574
+Chambers Reservoir,FALSE,2012,1410,Douglas,Happy Canyon Creek,"Parker, Co",4,03/21/2018,https://dwr.state.co.us/Tools/DamSafety/Details/080451,39.550314,-104.809442
+Chatfield,FALSE,1973,26600,Jefferson,South Platte River,Littleton,0.1,09/11/2013,https://dwr.state.co.us/Tools/DamSafety/Details/080324,39.557229,-105.062507
+South Platte Reservoir,FALSE,2007,6480,Arapahoe,South Platte River,Littleton,0,05/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080446,39.570095,-105.044426
+Mc Lellan,FALSE,1964,6200,Arapahoe,Dad Clark Gulch,Littleton,0.1000000015,05/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080225,39.57084,-105.022783
+Shoshone Diversion Dam,FALSE,1909,420,Garfield,Colorado River,Glenwood Springs,10,05/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/530210,39.58784,-107.194057
+Englewood,FALSE,1936,0,Arapahoe,Willow Creek,Littleton,0.1000000015,11/09/2018,https://dwr.state.co.us/Tools/DamSafety/Details/080221,39.589691,-104.918176
+Holly,FALSE,1979,0,Arapahoe,Little Dry Creek,Littleton,0.1000000015,11/09/2018,https://dwr.state.co.us/Tools/DamSafety/Details/080335,39.598334,-104.921403
+Western Hillside Reservoir,FALSE,1997,124,Eagle,Bachelor Gulch,Avon,2,07/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370206,39.60418,-106.542237
+Polly A. Deane,TRUE,1908,512,Jefferson,Dutch Creek,Littleton,0.1,10/01/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090131,39.605676,-105.138149
+Grass Valley,TRUE,1892,5060,Garfield,Harvey Gap,Silt,4,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/390108,39.606674,-107.660573
+Old Dillon,FALSE,1939,303,Summit,Salt Lick Creek,Silverthorne,1,09/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/360117,39.611677,-106.072233
+Dillon,FALSE,1963,254036,Summit,Blue River,Silverthorne,0,07/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/360104,39.618333,-106.065567
+Willow Springs #1,TRUE,1963,108,Jefferson,Turkey Creek,Lakewood,5,01/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090204,39.619142,-105.180502
+Senac,FALSE,1990,32400,Arapahoe,Senac Creek,Aurora,10,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020614,39.620009,-104.665574
+Bergen East,FALSE,1874,706,Jefferson,Weaver Gulch,Morrison,0,10/01/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090104,39.621056,-105.153209
+Marston Lake - South Dam,FALSE,1899,19795,Denver,South Platte River,Denver,0.1,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090231,39.623753,-105.06167
+Rifle Gap,FALSE,1967,13602,Garfield,Rifle Creek,Rifle,5,05/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/390119,39.626672,-107.760569
+Marston Lake - East Dam,FALSE,1899,19795,Denver,South Platte River,Denver,0.1000000015,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090232,39.628497,-105.0541
+Bonny,FALSE,1951,41342,Yuma,South Republican River,Hale,1,05/17/2005,https://dwr.state.co.us/Tools/DamSafety/Details/490101,39.629469,-102.176722
+Evergreen,FALSE,1927,669,Jefferson,Bear Creek,Evergreen,0.1000000015,09/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090111,39.6318,-105.323002
+Marston Lake - North Dam,FALSE,1899,19795,Denver,South Platte River,Denver,0.1000000015,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090129,39.635286,-105.062798
+Quincy,FALSE,1974,2800,Arapahoe,West Toll Gate Creek,Aurora,1,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020406,39.636673,-104.780573
+Benchmark Lake,FALSE,1977,125,Eagle,Eagle River,Avon,0,07/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370124,39.636674,-106.528905
+Marston Lake - Northwest Dike,FALSE,1899,19795,Denver,South Platte River,Denver,0.1000000015,04/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090233,39.63668,-105.068347
+Harriman,FALSE,2013,762,Jefferson,Weaver Creek,Lakewood,1,04/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090115,39.638094,-105.123203
+Middle Fork,FALSE,1984,140,Garfield,Middle Fork Parachute Cr,Grand Valley,14,08/29/2018,https://dwr.state.co.us/Tools/DamSafety/Details/390121,39.643337,-108.100569
+Idaho Springs,FALSE,1906,230,Clear Creek,Chicago Creek,Idaho Springs,9,09/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070111,39.644848,-105.614948
+Morrison Raw Water,FALSE,1982,29,Jefferson,Bear Creek,Morrison,1,10/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090208,39.648894,-105.197795
+Upper Cabin Creek,FALSE,1964,1602,Clear Creek,South Clear Creek,Georgetown,4,07/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070109,39.65001,-105.717237
+Cherry Creek,FALSE,1935,13226,Arapahoe,Cherry Creek,Denver,0.1,06/29/2015,https://dwr.state.co.us/Tools/DamSafety/Details/080116,39.651395,-104.854729
+Bear Creek,FALSE,1979,2000,Jefferson,Bear Creek,Lakewood,1,07/05/2016,https://dwr.state.co.us/Tools/DamSafety/Details/090112,39.655007,-105.138899
+Skeel,TRUE,1900,205,Denver,South Platte River,Denver,0.1000000015,03/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/080327,39.656671,-104.943893
+Lower Cabin Creek,FALSE,1964,1988,Clear Creek,South Clear Creek,Georgetown,3,07/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070110,39.662228,-105.706953
+Genesee No. 2,FALSE,2008,101,Jefferson,,,,09/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/090240,39.668726,-105.276666
+Clear Lake,FALSE,1914,703,Clear Creek,South Clear Creek,Georgetown,3,07/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070117,39.672223,-105.700572
+Smith,TRUE,1908,638,Jefferson,Bear Creek,Lakewood,0,05/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/075311,39.686778,-105.113423
+East,FALSE,1910,102,Jefferson,Weir Gulch,Lakewood,0.1,05/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/075309,39.692772,-105.110576
+Upper Beaver Brook,FALSE,1924,397,Clear Creek,Beaver Brook,Golden,14,07/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070103,39.693996,-105.431701
+Main,FALSE,1908,583,Jefferson,Weir Gulch,Lakewood,0.1000000015,05/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/075310,39.694129,-105.11445
+Windsor,FALSE,1892,600,Denver,Westerly Creek,Denver,0.1,06/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/085439,39.702332,-104.889488
+Lower Beaver Brook,FALSE,1903,30,Clear Creek,Beaver Brook,Golden,11,07/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070102,39.706018,-105.411117
+Exposition Park,FALSE,2002,0,Arapahoe,Westerly Creek,Aurora,0,01/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020643,39.710564,-104.860834
+Magic Mountain #1,FALSE,1958,145,Jefferson,Jackson Gulch,Pleasant View,1,08/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070214,39.711676,-105.208905
+Noecker,FALSE,1903,134,Eagle,Eby Creek,Eagle,3,06/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/370111,39.716673,-106.823899
+Westerly Creek,FALSE,1991,4150,Denver,Westerly Creek,Denver,1,08/29/2018,https://dwr.state.co.us/Tools/DamSafety/Details/020616,39.71668,-104.8839
+Lookout Mountain,FALSE,1903,101,Jefferson,Clear Creek,Golden,2,07/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070104,39.730677,-105.237961
+Kelly Road Detention,FALSE,1954,360,Denver,Westerly Creek,Denver,0.1000000015,09/21/2017,https://dwr.state.co.us/Tools/DamSafety/Details/020609,39.73168,-104.890573
+Georgetown,FALSE,1973,386,Clear Creek,South Clear Creek,Lawson,5,06/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070132,39.733335,-105.689113
+Maple Grove,FALSE,1956,1123,Jefferson,Lena Gulch,Lakewood,0.1,09/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070219,39.755617,-105.137957
+Guanella,FALSE,2004,1340,Clear Creek,West Fork Of Clear Creek,Empire,0.5,08/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070318,39.758325,-105.695841
+Heart Lake,FALSE,1953,3088,Garfield,Deep Creek,Dotsero,15,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/530112,39.771674,-107.318907
+Fairmount Reservoir,FALSE,1993,981,Jefferson,Clear Creek,Wheat Ridge,0.1000000015,09/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070312,39.778615,-105.174449
+Hyatt,TRUE,1863,760,Jefferson,Van Bibber Creek,Arvada,0.1,08/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070136,39.806577,-105.159858
+Meadow Creek,FALSE,1958,984,Garfield,Meadow Creek,New Castle,20,09/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/390112,39.806676,-107.547231
+Chase Gulch,FALSE,1996,602,Gilpin,Chase Gulch,Black Hawk,2,09/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070314,39.816551,-105.529723
+Lower Chinns,FALSE,1934,108,Clear Creek,Fall River,Idaho Springs,10,08/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070113,39.817293,-105.693245
+Lower Long Lake,TRUE,1939,292,Jefferson,Ralston Creek,Arvada,2,06/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070115,39.819386,-105.226734
+Fall River,FALSE,1974,890,Clear Creek,Fall River,Idaho Springs,8,08/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070129,39.819876,-105.690771
+Upper Long Lake,TRUE,1939,1500,Jefferson,Ralston Creek,Arvada,2,06/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070114,39.822846,-105.23565
+Blunn,FALSE,1979,6361,Jefferson,Ralston Creek,Arvada,0,01/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070302,39.822986,-105.204323
+Tucker Lake - South Dam,FALSE,1899,882,Jefferson,Ralston Creek,Arvada,0.1,01/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070232,39.825441,-105.19719
+Tucker Lake - North Dam,FALSE,1906,586,Jefferson,Ralston Creek,Arvada,0,01/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070320,39.830126,-105.196888
+Ralston,FALSE,1937,10749,Jefferson,Ralston Creek,Arvada,1,06/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070224,39.831358,-105.241183
+Loch Lomond,FALSE,1963,875,Clear Creek,Fall River,Idaho Springs,9,08/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/070210,39.833713,-105.675833
+Leyden,FALSE,1902,90,Jefferson,Leyden Creek,Arvada,0.1,03/06/2017,https://dwr.state.co.us/Tools/DamSafety/Details/070209,39.83834,-105.170567
+Kalcevic,FALSE,1955,43,Adams,Clear Creek,Westminster,0.1000000015,01/25/2017,https://dwr.state.co.us/Tools/DamSafety/Details/070201,39.841042,-105.003785
+South Tani Reservoir,FALSE,2006,6607,Adams,South Platte River,Thornton,0.1000000015,04/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020652,39.844018,-104.939487
+Fortune,FALSE,2001,9800,Jefferson,Big Dry Creek,Westminster,4,09/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020635,39.856119,-105.175288
+Niver Creek Detention,FALSE,1978,415,Adams,South Platte River,Thornton,0.1000000015,05/17/2017,https://dwr.state.co.us/Tools/DamSafety/Details/020418,39.856981,-104.989243
+Standley Lake,FALSE,1913,43344,Jefferson,Big Dry Creek,Westminster,0.1,05/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020326,39.866677,-105.110574
+Woman Creek,FALSE,1995,836,Jefferson,Woman Creek,Westminster,0.1000000015,12/13/2017,https://dwr.state.co.us/Tools/DamSafety/Details/020633,39.872585,-105.159111
+Green Mountain,FALSE,1941,154600,Summit,Blue River,Kremmling,12,05/14/2019,https://dwr.state.co.us/Tools/DamSafety/Details/360106,39.877796,-106.330298
+Ketner,FALSE,1961,166,Jefferson,Walnut Creek,Westminster,0,03/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020226,39.881591,-105.108282
+Great Western,FALSE,1903,2200,Broomfield,Walnut Creek,Westminster,1,05/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020212,39.896062,-105.14838
+Dunes,FALSE,2012,5192,Adams,South Platte River,Brighton,4,05/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020651,39.903147,-104.877537
+Nissen #2,FALSE,1974,154,Broomfield,Big Dry Creek,Broomfield,0.1,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020411,39.935149,-105.068537
+Superior,FALSE,1994,400,Boulder,Coal Creek,Superior,0.1,09/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060310,39.940285,-105.166396
+Gross,FALSE,1955,41811,Boulder,South Boulder Creek,Eldorado Springs,7,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060211,39.948336,-105.358902
+Mckay Lake - South,FALSE,1900,375,Adams,Big Dry Creek,Westminster,0.200000003,03/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060324,39.950567,-105.013824
+Marshall Lake,FALSE,1908,11545,Boulder,South Boulder Creek,Marshall,4,10/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060203,39.951045,-105.209304
+Barr Lake,FALSE,1893,30057,Adams,Beebe Draw,Hudson,9,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020101,39.954119,-104.746219
+Mckay Lake - East,FALSE,1900,375,Adams,Big Dry Creek,Westminster,1,03/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060202,39.955036,-105.007807
+Terminal Storage Reservoir,FALSE,1995,386,Broomfield,Big Dry Creek,Westminster,2.5,05/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060315,39.96029,-105.044736
+Barker Meadow,FALSE,1909,11200,Boulder,Middle Boulder Creek,Boulder,11,06/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060102,39.965926,-105.482281
+Big Beaver,FALSE,1964,7658,Rio Blanco,Big Beaver Creek,Meeker,18,09/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/430103,39.97029,-107.647511
+Jasper,FALSE,1988,325,Boulder,Jasper Creek,Eldora,5,09/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060129,39.974949,-105.660547
+Smith Irrigation,FALSE,1908,257,Adams,Todd Creek,Brighton,3,06/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020325,39.97626,-104.893779
+Kossler,FALSE,1909,180,Boulder,Woods Gulch,Eldorado Springs,6,06/26/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060130,39.977729,-105.330585
+Harper Lake,FALSE,1985,715,Boulder,Coal Creek,Louisville,1,09/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060304,39.981405,-105.161003
+Siena,FALSE,2004,450,Broomfield,Coal Creek,Lafayette,2,05/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060326,39.981639,-105.030204
+Sylvan,FALSE,1910,835,Grand,Little Muddy Creek,Parshall,6,06/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/510125,39.983338,-106.123897
+Grimes Brooks,FALSE,1903,426,Routt,Red Dirt Creek,Mc Coy,10,06/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/530109,39.990287,-106.815006
+Waneka,FALSE,1865,604,Boulder,Coal Creek,Lafayette,0.1000000015,03/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060225,39.993042,-105.109945
+Baseline - East,FALSE,1905,5300,Boulder,Dry Creek,Boulder,0.14,03/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060103,39.998573,-105.198472
+Baseline - Northwest,FALSE,1905,5300,Boulder,South Boulder Creek,Boulder,0,03/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060318,40.002785,-105.206404
+Horse Creek,FALSE,1910,15537,Weld,Horse Creek,Kuner,25,09/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/010222,40.007916,-104.576495
+Bull Canal (Main Reservoir),FALSE,1982,4000,Weld,Big Dry Creek,Fort Lupton,10,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020607,40.014548,-104.959596
+Erie,FALSE,1935,306,Boulder,Boulder Creek,Erie,2,10/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060115,40.019335,-105.096722
+Glacier Lake,FALSE,1905,229,Boulder,Pennsylvania Gulch,Boulder,13,09/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060119,40.02393,-105.499541
+Leggett & Hillcrest,FALSE,1917,11234,Boulder,South Boulder Creek,Boulder,0.1000000015,10/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060131,40.025549,-105.208547
+Silver Lake,FALSE,1887,3987,Boulder,North Boulder Creek,Boulder,17,09/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060214,40.028217,-105.577357
+Valmont A,FALSE,1962,11234,Boulder,Boulder Creek,Boulder,0.1000000015,10/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060221,40.030005,-105.183901
+Stillwater #1,TRUE,1939,6088,Garfield,Bear River,Yampa,15,09/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580135,40.030006,-107.120567
+Williams Fork,FALSE,1938,90640,Grand,Williams Fork River,Parshall,2,08/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/510127,40.035006,-106.20557
+Hayden,FALSE,1905,502,Boulder,Boulder Creek,Boulder,0.1000000015,09/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060126,40.035028,-105.236366
+Pine Brook,FALSE,2006,120,Boulder,Two Mile Creek,Boulder,1,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060328,40.049074,-105.312395
+Mesa Park,FALSE,1907,120,Boulder,Fourmile Canyon Creek,Boulder,0.1000000015,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060205,40.04951,-105.286687
+Meadow Creek,FALSE,1974,5370,Grand,Meadow Creek,Tabernash,6,08/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/510118,40.052225,-105.752234
+Yamcolo,FALSE,1980,9580,Garfield,Bear River,Yampa,11,10/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580301,40.052929,-107.047681
+Davis No. 1,FALSE,1910,138,Boulder,Dry Creek,Boulder,0.1000000015,09/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060111,40.063579,-105.198145
+Six Mile - Main,FALSE,1892,1367,Boulder,Little Dry Creek,Boulder,1,10/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/060215,40.067508,-105.218068
+Left Hand Park,FALSE,1966,1429,Boulder,Left Hand Creek,Longmont,28,08/27/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050209,40.069894,-105.557515
+Boulder - South,FALSE,1955,13300,Boulder,Little Dry Creek,Boulder,1,11/21/2018,https://dwr.state.co.us/Tools/DamSafety/Details/060317,40.075841,-105.213345
+Boulder - North,FALSE,1955,13300,Boulder,Dry Creek,Boulder,1,11/21/2018,https://dwr.state.co.us/Tools/DamSafety/Details/060104,40.078339,-105.212226
+Fort Lupton Terminal,FALSE,2018,253,Weld,Tributary To Beebe Draw,Unincorpirated Weld County,1,06/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/020665,40.099595,-104.736153
+Left Hand Valley,FALSE,1952,1624,Boulder,Dry Creek,Boulder,3,08/01/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050210,40.099673,-105.261345
+Taylor Draw,FALSE,1984,13800,Rio Blanco,White River,Rangely,2,09/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/430204,40.107313,-108.711991
+Ritschard,FALSE,1995,65985,Grand,Muddy Creek,Kremmling,5,05/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/500133,40.113068,-106.415296
+Beaver Park,FALSE,1892,2161,Boulder,Beaver Creek,Lyons,18,09/10/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050108,40.118876,-105.519364
+Lagerman,FALSE,1878,923,Boulder,Dry Creek,Longmont,3,11/30/2018,https://dwr.state.co.us/Tools/DamSafety/Details/050207,40.133318,-105.184355
+Willow Creek,FALSE,1953,10600,Grand,Willow Creek,Hot Sulphur Springs,13,07/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/510128,40.148335,-105.942231
+Granby,FALSE,1950,539800,Grand,N. Fork Colorado River,Hot Sulphur Springs,15,07/20/2016,https://dwr.state.co.us/Tools/DamSafety/Details/510108,40.148336,-105.867234
+Sheriff,TRUE,1955,987,Rio Blanco,Trout Creek,Milner,25,10/02/2019,https://dwr.state.co.us/Tools/DamSafety/Details/570129,40.148892,-107.137233
+Clover Basin,FALSE,1910,584,Boulder,Dry Creek,Longmont,3,10/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050117,40.152524,-105.186368
+Mcmahon #2,FALSE,1913,3460,Grand,Red Dirt Creek,Kremmling,18,10/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/500115,40.178332,-106.572227
+Foothills,FALSE,1911,4139,Boulder,St. Vrain Creek,Longmont,3,06/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050124,40.189088,-105.220007
+Mccall,FALSE,1909,510,Boulder,St. Vrain Creek,Longmont,5,08/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050218,40.202083,-105.203388
+Shadow Mountain,FALSE,1946,18400,Grand,N. Fork Colorado River,Hot Sulphur Springs,21,08/08/2017,https://dwr.state.co.us/Tools/DamSafety/Details/510123,40.208334,-105.842229
+Longmont Wtp Forebay Embankment,FALSE,2005,102,Boulder,St. Vrain Creek,Hygiene,4,08/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050328,40.216394,-105.230285
+Button Rock,FALSE,1969,16080,Boulder,North St. Vrain Creek,Lyons,9,09/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050112,40.217059,-105.36705
+Pleasant Valley,FALSE,1868,2915,Boulder,St. Vrain Creek,Longmont,2,06/06/2019,https://dwr.state.co.us/Tools/DamSafety/Details/050234,40.223414,-105.122987
+Milton Lake,FALSE,1911,21695,Weld,Beebe Seep Canal,Kersey,11,11/05/2018,https://dwr.state.co.us/Tools/DamSafety/Details/020304,40.238481,-104.637757
+Ish #3 (Main Dam),FALSE,1905,7128,Larimer,Big Thompson River,Berthoud,3,07/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040131,40.26309,-105.095552
+Empire (Outlet Embankment),FALSE,1905,37710,Weld,South Platte River,Orchard,5,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/010210,40.273178,-104.188757
+Empire (Nw Embankment),FALSE,1905,37710,Weld,South Platte River,Orchard,5,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/010726,40.276369,-104.182473
+Empire (East Embankment),FALSE,1905,37710,Weld,South Platte River,Orchard,4,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/010728,40.27665,-104.140524
+Crow Lane No. 1,FALSE,2008,37,Larimer,Unamed Trib Lt Thompson,Lyons,8.6,09/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040247,40.276684,-105.358232
+Empire (Mcintyre Dike),FALSE,1905,37710,Weld,South Platte River,Orchard,5,07/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/010727,40.278034,-104.167184
+Stagecoach,FALSE,1989,36400,Routt,Yampa River,Steamboat Springs,16,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580305,40.286679,-106.842228
+Dry Creek,FALSE,2007,8900,Larimer,Dry Creek,Berthoud,0.2,09/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040246,40.294559,-105.161273
+Handy,FALSE,1915,6747,Larimer,Dry Creek,Berthoud,2,07/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040126,40.322101,-105.115974
+Carter Lake Dam #1,FALSE,1952,112200,Larimer,Dry Creek,Berthoud,8,06/07/2016,https://dwr.state.co.us/Tools/DamSafety/Details/040106,40.32501,-105.212232
+Whiteley Peak,FALSE,1941,773,Grand,Diamond Cr,Kremmling,21,06/15/2018,https://dwr.state.co.us/Tools/DamSafety/Details/500121,40.328334,-106.517236
+Riverside,FALSE,1908,63303,Weld,Sanborn Draw,Orchard,7,11/29/2018,https://dwr.state.co.us/Tools/DamSafety/Details/010506,40.328503,-104.243079
+Johnstown,FALSE,1953,122,Weld,Big Thompson River,Johnstown,2,05/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040132,40.337504,-104.95918
+Carter Lake Dam #2,FALSE,1952,112200,Larimer,Dry Creek,Berthoud,8,06/07/2016,https://dwr.state.co.us/Tools/DamSafety/Details/040107,40.34001,-105.207228
+Carter Lake Dam #3,FALSE,1952,112200,Larimer,Big Thompson River,Loveland,9,06/07/2016,https://dwr.state.co.us/Tools/DamSafety/Details/040108,40.35168,-105.210573
+Lake Catamount,FALSE,1974,7422,Routt,Yampa River,Steamboat Springs,8,05/24/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580214,40.365007,-106.800572
+Lon Hagler,FALSE,1967,5228,Larimer,Big Thompson River,Loveland,4,07/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040137,40.366883,-105.143
+Flatiron,FALSE,1953,1000,Larimer,Dry Creek,Loveland,7,06/27/2016,https://dwr.state.co.us/Tools/DamSafety/Details/040124,40.371673,-105.228904
+Jackson Lake,FALSE,1900,27256,Morgan,South Platte River,Goodrich,2,11/20/2018,https://dwr.state.co.us/Tools/DamSafety/Details/010227,40.372863,-104.077886
+Olympus,FALSE,1949,3100,Larimer,Big Thompson River,Loveland,25,08/10/2016,https://dwr.state.co.us/Tools/DamSafety/Details/040134,40.376677,-105.488896
+Erickson,FALSE,1906,142,Weld,Ashcroft Draw,Evans,3,12/10/2018,https://dwr.state.co.us/Tools/DamSafety/Details/020637,40.379501,-104.789644
+Mariano,FALSE,1889,5550,Larimer,Big Thompson River,Loveland,2,07/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040203,40.384708,-105.130867
+Lake Loveland,FALSE,1894,12736,Larimer,Big Thompson River,Loveland,0,06/11/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040135,40.404876,-105.087479
+Rist - Benson,FALSE,1903,456,Larimer,Big Thompson River,Loveland,0.1000000015,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040208,40.407795,-105.117512
+Equalizer,FALSE,1902,1139,Larimer,Trib Of Big T. River,Milliken,12,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040231,40.414432,-105.002698
+Boyd Lake,FALSE,1900,48871,Larimer,Big Thompson River,Loveland,0,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040105,40.42069,-105.024517
+Loveland Water Storage,FALSE,1977,6836,Larimer,Big Thompson River,Loveland,5,08/03/2019,https://dwr.state.co.us/Tools/DamSafety/Details/040217,40.429761,-105.211417
+Prewitt,TRUE,1912,28840,Washington,South Platte River,Merino,8,10/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/640108,40.430011,-103.370571
+Long Lake,FALSE,1942,396,Routt,South Fork Fish Creek,Steamboat Springs,9,08/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580118,40.475838,-106.688337
+Windsor Lake,FALSE,1904,3008,Weld,Cache La Poudre River,Windsor,0.1,11/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030336,40.480772,-104.894899
+Fossil Creek,FALSE,1903,11100,Larimer,Fossil Creek,Windsor,3,10/21/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030135,40.491675,-104.993898
+Fish Creek,FALSE,1954,4167,Routt,Middle Fork Fish Creek,Steamboat Springs,7,08/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580108,40.493899,-106.705569
+Fish Creek Saddle,FALSE,1972,4167,Routt,Middle Fork Fish Creek,Steamboat Springs,7,08/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580313,40.496679,-106.699727
+Long Draw,FALSE,1975,10900,Larimer,La Poudre Pass Creek,Fort Collins,37,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030217,40.503517,-105.77256
+Hunters Overlook Reservoir,FALSE,2018,340,Weld,,,,05/16/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030538,40.515819,-104.887124
+Spring Canyon,FALSE,1949,152000,Larimer,Spring Creek,Fort Collins,0.5,06/09/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030323,40.530002,-105.142236
+Windsor,FALSE,1978,17538,Weld,Cache La Poudre River,Windsor,3,11/05/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030335,40.531675,-104.870568
+Warren Lake,FALSE,1882,2185,Larimer,Cache La Poudre,Windsor,3,10/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030330,40.535086,-105.054798
+Cache La Poudre,FALSE,1977,10070,Larimer,Cache La Poudre River,Timnath,1,11/04/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030327,40.540867,-104.959199
+Dixon Canyon,FALSE,1949,152000,Larimer,Dixon Creek,Fort Collins,1,06/08/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030125,40.555003,-105.148904
+Elkhead Creek,FALSE,1979,24778,Moffat,Elkhead Creek,Craig,7,05/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/440126,40.557789,-107.383619
+Joe Wright,FALSE,1979,7161,Larimer,Joe Wright Creek,Fort Collins,46,08/07/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030402,40.5594,-105.871111
+Peterson Lake,FALSE,1973,1183,Larimer,Cache La Poudre River,Fort Collins,42,08/14/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030313,40.560314,-105.793045
+College #3,FALSE,1919,782,Larimer,Cache La Poudre,Fort Collins,2,10/23/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030120,40.580707,-105.147484
+Hourglass,FALSE,1898,1729,Larimer,Beaver Creek,Fort Collins,37,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030209,40.582265,-105.631449
+Comanche,FALSE,1966,2629,Larimer,Beaver Creek,Fort Collins,33,07/31/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030121,40.584758,-105.644778
+Soldier Canyon,FALSE,1949,152000,Larimer,Cache La Poudre River,Fort Collins,0.5,06/09/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030324,40.588336,-105.162236
+Horsetooth,FALSE,1949,152000,Larimer,Cache La Poudre,Fort Collins,5,06/08/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030208,40.598333,-105.170569
+Barnes Meadow,FALSE,1923,2329,Larimer,Joe Wright Creek,Fort Collins,44,08/28/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030104,40.600004,-105.835566
+Satanka,FALSE,1949,152000,Larimer,Cache La Poudre River,Fort Collins,2,06/08/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030317,40.60001,-105.175573
+Chambers Lake,FALSE,1924,8854,Larimer,Joe Wright Creek,Fort Collins,43,07/30/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030115,40.607255,-105.844403
+East Side Detention Facility,FALSE,2016,1166,Larimer,Boxelder Creek,Timnath,,05/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030527,40.610494,-104.98891
+Black Hollow,FALSE,1918,8058,Weld,Black Hollow Creek,Severance,7,10/24/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030107,40.611152,-104.870686
+Terry Lake,FALSE,1890,8345,Larimer,Dry Creek,Fort Collins,0.1,06/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030326,40.617028,-105.076252
+Long Pond,FALSE,1922,3500,Larimer,Dry Creek,Fort Collins,2,06/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030216,40.618563,-105.052786
+Richards,FALSE,1904,515,Larimer,Cache La Poudre River,Fort Collins,2,06/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030315,40.628724,-105.05497
+Water Supply No 4,FALSE,1880,1480,Larimer,Dry Creek,Fort Collins,2,06/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030333,40.645174,-105.085332
+Elder,FALSE,1904,666,Larimer,Cache La Poudre River,Fort Collins,5,04/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030131,40.646802,-105.040023
+Cobb Lake,FALSE,1953,22300,Larimer,Cache La Poudre River,Windsor,12,06/12/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030119,40.65195,-104.9729
+Windsor #8,FALSE,1903,8993,Larimer,Cache La Poudre River,Fort Collins,3,04/18/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030337,40.655007,-105.045575
+Water Supply No 3,FALSE,1944,3350,Larimer,Dry Creek,Fort Collins,2,06/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030332,40.657361,-105.088233
+Kluver,FALSE,1925,1147,Larimer,Cache La Poudre River,Fort Collins,3,06/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030212,40.657587,-105.09752
+Indian Creek,FALSE,1948,1697,Larimer,Indian Creek,Timnath,16,09/08/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030210,40.660442,-104.960392
+Offield,FALSE,1914,350,Moffat,Pot Creek,"Ouray, Utah",51,06/25/2019,https://dwr.state.co.us/Tools/DamSafety/Details/560106,40.661674,-108.998896
+Flood Control Basin No. 1,FALSE,2006,0,Larimer,Dry Creek,Fort Collins,1,06/19/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030526,40.662384,-105.103324
+Rocky Ridge,FALSE,1940,4270,Larimer,Cache La Poudre River,Fort Collins,5,06/13/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030316,40.665592,-105.080199
+North Poudre # 6,FALSE,1905,10969,Larimer,Cache La Poudre River,Fort Collins,5,08/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030303,40.669274,-105.026785
+North Poudre # 5,FALSE,1905,7704,Larimer,Cache La Poudre River,Fort Collins,6,08/29/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030302,40.687216,-105.037893
+Douglas,FALSE,1901,8940,Larimer,Dry Creek,Fort Collins,8,05/20/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030126,40.703874,-105.087087
+Milton Seaman,FALSE,1948,5008,Larimer,N Fork Cache La Poudre,Laporte,10,08/02/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030223,40.706672,-105.237233
+North Poudre # 2,FALSE,1955,3748,Larimer,Cache La Poudre River,Fort Collins,12,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030237,40.714202,-105.050292
+North Poudre # 3,FALSE,1980,3080,Larimer,Boxelder Creek,Wellington,2,08/15/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030238,40.73253,-105.038451
+Floodwater Ret. B-4,FALSE,1978,1270,Larimer,Indian Creek,Wellington,5,09/21/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030414,40.771094,-104.957411
+North Poudre #15,FALSE,1949,5560,Larimer,Dry Creek,Fort Collins,15,07/17/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030305,40.775119,-105.121807
+Lester Creek,FALSE,1962,5592,Routt,Lester Creek,Milner,20,07/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580113,40.780008,-106.888902
+Point Of Rocks,FALSE,1948,74590,Logan,Cedar Creek,Iliff,9,10/09/2019,https://dwr.state.co.us/Tools/DamSafety/Details/640107,40.785229,-103.266339
+Willow Creek,FALSE,1966,23064,Routt,Willow Creek,Milner,21,07/22/2019,https://dwr.state.co.us/Tools/DamSafety/Details/580210,40.791676,-106.947237
+Floodwater Ret. B-3,FALSE,1979,3839,Larimer,Coal Creek,Wellington,5,09/21/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030415,40.80001,-104.992234
+Floodwater Ret. B-2,FALSE,1982,6470,Larimer,Boxelder Creek,Wellington,9,09/21/2016,https://dwr.state.co.us/Tools/DamSafety/Details/030505,40.821681,-105.072228
+Park Creek,FALSE,1970,7343,Larimer,Park Creek,Fort Collins,17,08/08/2019,https://dwr.state.co.us/Tools/DamSafety/Details/030308,40.837026,-105.151597
+Rawhide,FALSE,1980,15400,Larimer,Coal Creek,Wellington,13,08/30/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030508,40.848168,-105.020391
+Panhandle,FALSE,1971,1018,Larimer,Panhandle Creek,Fort Collins,32,08/08/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030307,40.850083,-105.645848
+Halligan,FALSE,1970,6428,Larimer,N Fork Cache La Poudre,Fort Collins,23,05/18/2018,https://dwr.state.co.us/Tools/DamSafety/Details/030204,40.879234,-105.337083
+Julesburg #1A,FALSE,1910,16817,Logan,Cottonwood Creek,Dorsey,,10/16/2018,https://dwr.state.co.us/Tools/DamSafety/Details/640213,40.91962,-102.656345
+Julesburg #1,FALSE,1910,23202,Logan,Cottonwood Creek,Dorsey,,10/16/2018,https://dwr.state.co.us/Tools/DamSafety/Details/640212,40.920756,-102.66438
+Julesburg #3,FALSE,1910,27919,Sedgwick,Cottonwood Creek,Dorsey,2.8,10/16/2018,https://dwr.state.co.us/Tools/DamSafety/Details/640215,40.920879,-102.643024
+Julesburg #2,FALSE,1910,28178,Sedgwick,Cottonwood Creek,Dorsey,2.9,10/16/2018,https://dwr.state.co.us/Tools/DamSafety/Details/640214,40.921745,-102.649252
+Julesburg #4,TRUE,1910,27186,Sedgwick,South Platte River,Sedgwick,7,10/16/2018,https://dwr.state.co.us/Tools/DamSafety/Details/640104,40.938905,-102.632121
