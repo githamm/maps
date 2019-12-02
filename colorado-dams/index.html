@@ -62,12 +62,8 @@
         margin-right: 10px;
     }
 
-    .source {
-        float: right;
-        font-style: italic;
-        font-family: Helvetica;
-        font-size: 15px;
-        margin-right: 25px;
+    hr {
+        margin: 5px 0 12px 0;
     }
 
     /* CHANGE HERE */
@@ -101,6 +97,11 @@
 
     .legend-item {
         float: left;
+    }
+
+    .details-link {
+        font-style: italic;
+        margin-top: 5px !important;
     }
 
     .instructions {
@@ -158,28 +159,32 @@
     }
 
     div.legend-circle-small {
-        height: 25px;
-        width: 25px;
+        height: 15px;
+        width: 15px;
         border-radius: 50%;
         background-color: rgba(0,0,255,.1);
-        margin-top: 0px;
+        /*margin-top: 0px;*/
+        margin: 0 auto;
     }
 
     div.legend-circle-large {
-        height: 50px;
-        width: 50px;
+        height: 38px;
+        width: 38px;
         border-radius: 50%;
         background-color: rgba(0,0,255,.1);
-        margin-top: -13px;
+        margin-top: -17px;
     }
 
     span.circle-number {
         font-size: .7rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
+        /*font-family: 'Roboto', sans-serif;
+        font-weight: 700;*/
         color: #737373;
-        display: inline-block;
-    }
+        display: block;
+        margin: 5px 0 0 0;
+        text-align: center;
+        line-height: 11px;
+        }
     </style>
 </head>
 
@@ -187,32 +192,32 @@
     <div class="row">
         <div class="large-12 columns">
             <h1>High hazard dams in Colorado</h1>
-            <p>There are more than 1,700 regulated dams in Colorado, many of them privately owned. More than 400 of those dams are classified as "high hazard" because they are located near populated areas, and 27 of those are operating with restrictions in place. The Colorado Division of Water Resources orders restrictions, such as lowering the reservoir level, if a dam receives an unsatisfactory inspection, until necessary repairs are made. <em>All dams on the map are classified as "high hazard;" use the checkboxes below to toggle between restricted and unrestricted dams.</em></p>
+            <p>There are more than 1,700 regulated dams in Colorado, many of them privately owned. More than 400 of those dams are classified as "high hazard" because they are located near populated areas, and 27 of those are operating with restrictions in place. The Colorado Division of Water Resources orders restrictions, such as lowering the reservoir level, if a dam receives an unsatisfactory inspection, until necessary repairs are made. <em>All dams on the map are classified as "high hazard;" use the checkboxes below to toggle between restricted and unrestricted dams. Reservoir storage is measured in acre-feet, which is the amount of water that would cover an acre of land to a depth of one foot, or about 325,851 gallons.</em></p>
         </div>
     </div>
     <div class="row">
         <div id="map-container" class="large-12 columns">
-            <p class="instructions">Zoom map and click circles for details &bull; circle size represents dam storage capacity</p>
+            <p class="instructions">Zoom map and click circles for details &bull; circle size represents reservoir storage capacity</p>
             <fieldset class="fieldset">
                 <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
                 <div class="legend-container">
                     <div class="inputs" id="incidents">
                         <div class="legend-item">
                             <input type="checkbox" class="dam-type" id="restrictions-box" name="restrictions-box" value="TRUE" checked="true">
-                            <label for="restrictions-box"><span style="border-top: 3px solid  rgba(255,0,0,.5)">Restrictions</span></label>
+                            <label for="restrictions-box"><span style="border-top: 3px solid  rgba(165,42,42,.5)">Restrictions</span></label>
                         </div>
                         <div class="legend-item">
                             <input type="checkbox" class="dam-type" id="no-restrictions-box" name="no-restrictions-box" value="FALSE" checked="true">
                             <label for="no-restrictions-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">No restrictions</span></label>
                         </div>
-                        <!-- <div class="legend-item">
-                            <div class="legend-circle-small"><span class="circle-number" style="margin:0 0 0 9px">0</span></div>
+                       <!--  <div class="legend-item">
+                            <div class="legend-circle-small"></div><span class="circle-number">0-1,000<br>acre-feet</span>
                         </div>
                         <div class="legend-item">
                             <span style="margin: 0 5px 0 5px">&xrarr;</span>
                         </div>
                         <div class="legend-item">
-                            <div class="legend-circle-large"><span class="circle-number" style="margin:17px 0 0 18px">940K</span></div>
+                            <div class="legend-circle-large"></div><span class="circle-number">50,000+<br>acre-feet</span>
                         </div> -->
                     </div>
                 </div>
@@ -330,15 +335,15 @@
                 circleSize = 15
             } else circleSize = 20;
 
-            var lockdownCircle = {
+            var restrictedCircle = {
                 radius: circleSize,
-                fillColor: "red",
+                fillColor: "brown",
                 color: "#aaa",
                 weight: 0,
                 opacity: 0,
                 fillOpacity: .5
             };
-            var lockoutCircle = {
+            var notRestrictedCircle = {
                 radius: circleSize,
                 fillColor: "blue",
                 color: "#aaa",
@@ -349,12 +354,12 @@
 
             var storageString = Number(feature.properties.normal_storage).toLocaleString();
             var damAge = (2019 - feature.properties.year_completed)
-            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><span class="tooltip-label">Last inspection: </span>' + feature.properties.last_inspection_date + '<br><a href="' + feature.properties.details + '" target="_blank">Click for details</a>';
+            var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><span class="tooltip-label">Last inspection: </span>' + feature.properties.last_inspection_date + '<p class="details-link"><a href="' + feature.properties.details + '" target="_blank">Click for dam details</a></p>';
 
             if (feature.properties.restricted == 'TRUE') {
-                return L.circleMarker(latlng, lockdownCircle).bindPopup(tooltipText)
+                return L.circleMarker(latlng, restrictedCircle).bindPopup(tooltipText)
             } else {
-                return L.circleMarker(latlng, lockoutCircle).bindPopup(tooltipText)
+                return L.circleMarker(latlng, notRestrictedCircle).bindPopup(tooltipText)
             }
         }
     }).addTo(map);
