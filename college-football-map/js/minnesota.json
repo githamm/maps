@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.89777,
+          39.637518
+        ]
+      },
+      "properties": {
+        "business": "The Dam Grille ",
+        "team": "Minnesota ",
+        "city": "Denver ",
+        "address": "8000 E Quincy Ave, Denver, CO 80237",
+        "votes": "1",
+        "nickname": "Golden Gophers"
+      }
+    }
+  ]
+}

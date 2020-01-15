@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.013319,
+          39.762274
+        ]
+      },
+      "properties": {
+        "business": "Highland Tap & Burger",
+        "team": "Kansas State",
+        "city": "Denver",
+        "address": "2219 W 32nd Ave, Denver, CO 80211",
+        "votes": "1",
+        "nickname": "Wildcats"
+      }
+    }
+  ]
+}
