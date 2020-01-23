@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorado High Hazard Dams | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+        body {
+        background-color: #fafafa !important;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        /*border: 1px solid silver;*/
+        font-size: 15px;
+        /*background-color: rgba(255, 255, 255, .8);*/
+    }
+
+    /*.leaflet-popup-tip {
+    width: 0px;
+    height: 0px;
+}*/
+
+    .tooltip-header {
+        color: #662506;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .tooltip-subhead {
+        color: #969696;
+        font-style: italic;
+    }
+
+    .tooltip-label {
+        color: #969696;
+        font-weight: bold;
+    }
+    #legend {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .legend-text {
+        float: left;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    hr {
+        margin: 5px 0 12px 0;
+    }
+
+    /* CHANGE HERE */
+
+    #map {
+        height: 600px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        padding: 0 5px 0 5px;
+        border: 2px solid silver;
+    }
+    #map-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .legend-container {
+        width: 100%;
+        clear: both;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    .details-link {
+        font-style: italic;
+        margin-top: 5px !important;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #ff5959;
+        opacity: .8;
+    }
+
+    .note {
+        font-size: .85em;
+        font-style: italic;
+        color: #808080;
+    }
+
+    .source {
+        font-size: .9em;
+        font-style: italic;
+        text-align: right;
+    }
+
+    /*.legend {
+        width: 60px;
+        height: 30px;
+        opacity: .6;
+        float: left;
+    }*/
+
+    label, .legend-text {
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 7px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    .fieldset {
+        padding: .75rem;
+    }
+
+    input.leaflet-control-layers-selector {
+        margin: 0;
+    }
+
+    /*label {
+        line-height: 1.45;
+    }*/
+
+    a.leaflet-control-layers-toggle {
+        background-color: red;
+    }
+
+    div.legend-circle-small {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: rgba(0,0,255,.1);
+        /*margin-top: 0px;*/
+        margin: 0 auto;
+    }
+
+    div.legend-circle-large {
+        height: 38px;
+        width: 38px;
+        border-radius: 50%;
+        background-color: rgba(0,0,255,.1);
+        margin-top: -17px;
+    }
+
+    span.circle-number {
+        font-size: .7rem;
+        /*font-family: 'Roboto', sans-serif;
+        font-weight: 700;*/
+        color: #737373;
+        display: block;
+        margin: 5px 0 0 0;
+        text-align: center;
+        line-height: 11px;
+        }
+
+        path.leaflet-interactive {
+            fill-opacity: .4;
+        }
+
+        .county-name {
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: -16px;
+        }
+
+        .dem-winner, .rep-winner {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        .dem-winner {
+            background-color: blue;
+        }
+
+        .rep-winner {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>High hazard dams in Colorado</h1>
+            <p>There are more than 1,700 regulated dams in Colorado, many of them privately owned. More than 400 of those dams are classified as "high hazard" because they are located near populated areas, and 27 of those are operating with restrictions in place. The Colorado Division of Water Resources orders restrictions, such as lowering the reservoir level, if a dam receives an unsatisfactory inspection, until necessary repairs are made. <em>All dams on the map are classified as "high hazard;" use the checkboxes below to toggle between restricted and unrestricted dams. Reservoir storage is measured in acre-feet, which is the amount of water that would cover an acre of land to a depth of one foot, or about 325,851 gallons.</em></p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="map-container" class="large-12 columns">
+            <p class="instructions">Zoom map and click circles for details &bull; circle size represents reservoir storage capacity</p>
+            <fieldset class="fieldset">
+                <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
+                <div class="legend-container">
+                    <div class="inputs" id="incidents">
+                        <div class="legend-item">
+                            <input type="checkbox" class="dam-type" id="restrictions-box" name="restrictions-box" value="TRUE" checked="true">
+                            <label for="restrictions-box"><span style="border-top: 3px solid  rgba(165,42,42,.5)">Restrictions</span></label>
+                        </div>
+                        <div class="legend-item">
+                            <input type="checkbox" class="dam-type" id="no-restrictions-box" name="no-restrictions-box" value="FALSE" checked="true">
+                            <label for="no-restrictions-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">No restrictions</span></label>
+                        </div>
+                        <!--  <div class="legend-item">
+                            <div class="legend-circle-small"></div><span class="circle-number">0-1,000<br>acre-feet</span>
+                        </div>
+                        <div class="legend-item">
+                            <span style="margin: 0 5px 0 5px">&xrarr;</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-circle-large"></div><span class="circle-number">50,000+<br>acre-feet</span>
+                        </div> -->
+                    </div>
+                </div>
+            </fieldset>
+            <div id="map"></div>
+            <p class="source">By Kevin Hamm, The Denver Post &bull; Source: <a href="https://dwr.state.co.us/Tools/DamSafety/Dams" target="_blank">Colorado Division of Water Resources</a></p>
+        </div>
+    </div>
+    </div>
+    <!-- <script src="all_colorado_high_hazard_dams_cut.js"></script> -->
+    <script>
+    var mapTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    });
+
+    $.getJSON("data.geojson", function(data) {
+        var geojson = L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var popupOptions = {
+                    maxWidth: 200
+                };
+
+                var countyWinner;
+                if (feature.properties.cory_gardner_votes > feature.properties.mark_udall_votes) {
+                    countyWinner = 'Gardner'
+                } else countyWinner = 'Udall';
+
+                var partyWinner;
+                var udallPct = (feature.properties.mark_udall_votes / feature.properties.total) * 100;
+                var gardnerPct = (feature.properties.cory_gardner_votes / feature.properties.total) * 100;
+                var pctDiff = Math.round(Math.abs(udallPct - gardnerPct));
+                if (udallPct > gardnerPct) {
+                    partyWinner = '<div class="dem-winner">D'
+                } else partyWinner = '<div class="rep-winner">R';
+
+                // var storageString = Number(feature.properties.normal_storage).toLocaleString();
+                var popupContent = '<h3 class="county-name">' + feature.properties.county + ' County</h3><br>' + partyWinner + '+' + pctDiff + '</div><br>Gardner: ' + feature.properties.cory_gardner_votes + '<br>Udall: ' + feature.properties.mark_udall_votes;
+
+                function getOptions(properties) {
+                    //var normalStorage = Number(properties.normal_storage);
+                    var gardnerCircleSize = Math.sqrt(properties.cory_gardner_circle) / 12.5;
+                    var udallCircleSize = Math.sqrt(properties.mark_udall_circle) / 12.5;
+
+                    if (properties.cory_gardner_circle != null) {
+                        return {
+                            radius: gardnerCircleSize,
+                            color: 'none',
+                            fillColor: 'red'
+                        }
+                    } else if (properties.mark_udall_circle != null) {
+                        return {
+                            radius: udallCircleSize,
+                            color: 'none',
+                            fillColor: 'blue'
+                        }
+                    }
+                }
+                return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
+
+            }
+        });
+        var map = L.map('map', {
+            minZoom: 7,
+            maxZoom: 16
+        }).fitBounds(geojson.getBounds());
+        mapTiles.addTo(map);
+        geojson.addTo(map);
+
+    });
+
+    // let checkboxStates
+
+    // var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    //     subdomains: 'abcd',
+    //     maxZoom: 19
+    // });
+
+    // var map = L.map('map', {
+    //     center: [39.113, -105.359],
+    //     zoom: 7,
+    //     minZoom: 7,
+    //     preferCanvas: true
+    // }).addLayer(cartoTiles);
+
+    // const geojsonLayer = L.geoJSON(null, {
+    //     filter: (feature) => {
+    //         const isIncidentChecked = checkboxStates.restricted.includes(feature.properties.restricted)
+    //         //const isYearChecked = checkboxStates.schoolYear.includes(feature.properties.schoolYear)
+    //         return isIncidentChecked // && isYearChecked //only true if all are true
+    //     },
+    //     pointToLayer: function(feature, latlng) {
+    //         console.log(feature);
+    //         var normalStorage = Number(feature.properties.normal_storage);
+    //         var circleRadius;
+    //         var circleSize;
+
+    //         // if (feature.properties.restricted == 'TRUE') {
+    //         //     circleSize = Math.sqrt(feature.properties.normal_storage) * .075
+    //         //     } else {
+    //         //     circleSize = 4
+    //         // };
+    //         if (normalStorage < 1000) {
+    //             circleSize = 5
+    //         } else if (normalStorage >= 1000 && normalStorage < 10000) {
+    //             circleSize = 10
+    //         } else if (normalStorage >= 10000 && normalStorage < 50000) {
+    //             circleSize = 15
+    //         } else circleSize = 20;
+
+    //         var restrictedCircle = {
+    //             radius: circleSize,
+    //             fillColor: "brown",
+    //             color: "#aaa",
+    //             weight: 0,
+    //             opacity: 0,
+    //             fillOpacity: .5
+    //         };
+    //         var notRestrictedCircle = {
+    //             radius: circleSize,
+    //             fillColor: "blue",
+    //             color: "#aaa",
+    //             weight: 0,
+    //             opacity: 0,
+    //             fillOpacity: .5
+    //         };
+
+    //         var storageString = Number(feature.properties.normal_storage).toLocaleString();
+    //         var damAge = (2019 - feature.properties.year_completed)
+    //         var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><span class="tooltip-label">Last inspection: </span>' + feature.properties.last_inspection_date + '<p class="details-link"><a href="' + feature.properties.details + '" target="_blank">Click for dam details</a></p>';
+
+    //         if (feature.properties.restricted == 'TRUE') {
+    //             return L.circleMarker(latlng, restrictedCircle).bindPopup(tooltipText)
+    //         } else {
+    //             return L.circleMarker(latlng, notRestrictedCircle).bindPopup(tooltipText)
+    //         }
+    //     }
+    // }).addTo(map);
+
+    // function updateCheckboxStates() {
+    //     checkboxStates = {
+    //         restricted: [],
+    //         schoolYear: []
+    //     }
+    //     console.log(checkboxStates);
+
+    //     for (let input of document.querySelectorAll('input')) {
+    //         if (input.checked) {
+    //             switch (input.className) {
+    //                 case 'dam-type':
+    //                     checkboxStates.restricted.push(input.value);
+    //                     break
+    //                     // case 'school-year':
+    //                     //     checkboxStates.schoolYear.push(input.value);
+    //                     //     break
+    //             }
+    //         }
+    //     }
+    // }
+
+    // for (let input of document.querySelectorAll('input')) {
+    //     //Listen to 'change' event of all inputs
+    //     input.onchange = (e) => {
+    //         geojsonLayer.clearLayers()
+    //         updateCheckboxStates()
+    //         geojsonLayer.addData(jsonData)
+    //     }
+    // }
+
+    // /****** INIT ******/
+    // updateCheckboxStates()
+    // geojsonLayer.addData(jsonData)
+    </script>
+</body>
+
+</html>

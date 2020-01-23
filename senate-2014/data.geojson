@@ -1,0 +1,2181 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.331872,39.874325 ]
+    },
+    "properties": {
+    "county":"Adams",
+    "registered_voters":261353,
+    "ballots_cast":132897,
+    "mark_udall_circle":62296,
+    "mark_udall_votes":62296,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":58614,
+    "total":130613
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.331872,39.874325 ]
+    },
+    "properties": {
+    "county":"Adams",
+    "registered_voters":261353,
+    "ballots_cast":132897,
+    "mark_udall_circle":null,
+    "mark_udall_votes":62296,
+    "cory_gardner_circle":58614,
+    "cory_gardner_votes":58614,
+    "total":130613
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.788041,37.568442 ]
+    },
+    "properties": {
+    "county":"Alamosa",
+    "registered_voters":9048,
+    "ballots_cast":5294,
+    "mark_udall_circle":2440,
+    "mark_udall_votes":2440,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2350,
+    "total":5146
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.788041,37.568442 ]
+    },
+    "properties": {
+    "county":"Alamosa",
+    "registered_voters":9048,
+    "ballots_cast":5294,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2440,
+    "cory_gardner_circle":2350,
+    "cory_gardner_votes":2350,
+    "total":5146
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.331733,39.644632 ]
+    },
+    "properties": {
+    "county":"Arapahoe",
+    "registered_voters":387958,
+    "ballots_cast":227209,
+    "mark_udall_circle":107347,
+    "mark_udall_votes":107347,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":103915,
+    "total":223546
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.331733,39.644632 ]
+    },
+    "properties": {
+    "county":"Arapahoe",
+    "registered_voters":387958,
+    "ballots_cast":227209,
+    "mark_udall_circle":null,
+    "mark_udall_votes":107347,
+    "cory_gardner_circle":103915,
+    "cory_gardner_votes":103915,
+    "total":223546
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.050863,37.202395 ]
+    },
+    "properties": {
+    "county":"Archuleta",
+    "registered_voters":9844,
+    "ballots_cast":5578,
+    "mark_udall_circle":2030,
+    "mark_udall_votes":2030,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":3103,
+    "total":5453
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.050863,37.202395 ]
+    },
+    "properties": {
+    "county":"Archuleta",
+    "registered_voters":9844,
+    "ballots_cast":5578,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2030,
+    "cory_gardner_circle":3103,
+    "cory_gardner_votes":3103,
+    "total":5453
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.535457,37.303144 ]
+    },
+    "properties": {
+    "county":"Baca",
+    "registered_voters":2784,
+    "ballots_cast":1949,
+    "mark_udall_circle":353,
+    "mark_udall_votes":353,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1374,
+    "total":1859
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.535457,37.303144 ]
+    },
+    "properties": {
+    "county":"Baca",
+    "registered_voters":2784,
+    "ballots_cast":1949,
+    "mark_udall_circle":null,
+    "mark_udall_votes":353,
+    "cory_gardner_circle":1374,
+    "cory_gardner_votes":1374,
+    "total":1859
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.077584,37.931891 ]
+    },
+    "properties": {
+    "county":"Bent",
+    "registered_voters":2721,
+    "ballots_cast":1630,
+    "mark_udall_circle":503,
+    "mark_udall_votes":503,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":949,
+    "total":1565
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.077584,37.931891 ]
+    },
+    "properties": {
+    "county":"Bent",
+    "registered_voters":2721,
+    "ballots_cast":1630,
+    "mark_udall_circle":null,
+    "mark_udall_votes":503,
+    "cory_gardner_circle":949,
+    "cory_gardner_votes":949,
+    "total":1565
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.398382,40.094826 ]
+    },
+    "properties": {
+    "county":"Boulder",
+    "registered_voters":252506,
+    "ballots_cast":144333,
+    "mark_udall_circle":97612,
+    "mark_udall_votes":97612,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":38931,
+    "total":142321
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.398382,40.094826 ]
+    },
+    "properties": {
+    "county":"Boulder",
+    "registered_voters":252506,
+    "ballots_cast":144333,
+    "mark_udall_circle":null,
+    "mark_udall_votes":97612,
+    "cory_gardner_circle":38931,
+    "cory_gardner_votes":38931,
+    "total":142321
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.052125,39.953383 ]
+    },
+    "properties": {
+    "county":"Broomfield",
+    "registered_voters":43814,
+    "ballots_cast":28052,
+    "mark_udall_circle":13309,
+    "mark_udall_votes":13309,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":12833,
+    "total":27611
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.052125,39.953383 ]
+    },
+    "properties": {
+    "county":"Broomfield",
+    "registered_voters":43814,
+    "ballots_cast":28052,
+    "mark_udall_circle":null,
+    "mark_udall_votes":13309,
+    "cory_gardner_circle":12833,
+    "cory_gardner_votes":12833,
+    "total":27611
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.316972,38.738246 ]
+    },
+    "properties": {
+    "county":"Chaffee",
+    "registered_voters":13491,
+    "ballots_cast":9085,
+    "mark_udall_circle":4025,
+    "mark_udall_votes":4025,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":4393,
+    "total":8902
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.316972,38.738246 ]
+    },
+    "properties": {
+    "county":"Chaffee",
+    "registered_voters":13491,
+    "ballots_cast":9085,
+    "mark_udall_circle":null,
+    "mark_udall_votes":4025,
+    "cory_gardner_circle":4393,
+    "cory_gardner_votes":4393,
+    "total":8902
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.604585,38.835387 ]
+    },
+    "properties": {
+    "county":"Cheyenne",
+    "registered_voters":1424,
+    "ballots_cast":1070,
+    "mark_udall_circle":122,
+    "mark_udall_votes":122,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":848,
+    "total":1038
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.604585,38.835387 ]
+    },
+    "properties": {
+    "county":"Cheyenne",
+    "registered_voters":1424,
+    "ballots_cast":1070,
+    "mark_udall_circle":null,
+    "mark_udall_votes":122,
+    "cory_gardner_circle":848,
+    "cory_gardner_votes":848,
+    "total":1038
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.670791,39.689403 ]
+    },
+    "properties": {
+    "county":"Clear Creek",
+    "registered_voters":7707,
+    "ballots_cast":4734,
+    "mark_udall_circle":2344,
+    "mark_udall_votes":2344,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1987,
+    "total":4650
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.670791,39.689403 ]
+    },
+    "properties": {
+    "county":"Clear Creek",
+    "registered_voters":7707,
+    "ballots_cast":4734,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2344,
+    "cory_gardner_circle":1987,
+    "cory_gardner_votes":1987,
+    "total":4650
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.176447,37.213407 ]
+    },
+    "properties": {
+    "county":"Conejos",
+    "registered_voters":5606,
+    "ballots_cast":3586,
+    "mark_udall_circle":1621,
+    "mark_udall_votes":1621,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1659,
+    "total":3465
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.176447,37.213407 ]
+    },
+    "properties": {
+    "county":"Conejos",
+    "registered_voters":5606,
+    "ballots_cast":3586,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1621,
+    "cory_gardner_circle":1659,
+    "cory_gardner_votes":1659,
+    "total":3465
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.42894,37.277547 ]
+    },
+    "properties": {
+    "county":"Costilla",
+    "registered_voters":2757,
+    "ballots_cast":1515,
+    "mark_udall_circle":912,
+    "mark_udall_votes":912,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":396,
+    "total":1401
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.42894,37.277547 ]
+    },
+    "properties": {
+    "county":"Costilla",
+    "registered_voters":2757,
+    "ballots_cast":1515,
+    "mark_udall_circle":null,
+    "mark_udall_votes":912,
+    "cory_gardner_circle":396,
+    "cory_gardner_votes":396,
+    "total":1401
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.787562,38.321956 ]
+    },
+    "properties": {
+    "county":"Crowley",
+    "registered_voters":2052,
+    "ballots_cast":1360,
+    "mark_udall_circle":344,
+    "mark_udall_votes":344,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":878,
+    "total":1340
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.787562,38.321956 ]
+    },
+    "properties": {
+    "county":"Crowley",
+    "registered_voters":2052,
+    "ballots_cast":1360,
+    "mark_udall_circle":null,
+    "mark_udall_votes":344,
+    "cory_gardner_circle":878,
+    "cory_gardner_votes":878,
+    "total":1340
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.373515,38.101994 ]
+    },
+    "properties": {
+    "county":"Custer",
+    "registered_voters":3500,
+    "ballots_cast":2552,
+    "mark_udall_circle":740,
+    "mark_udall_votes":740,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1659,
+    "total":2516
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.373515,38.101994 ]
+    },
+    "properties": {
+    "county":"Custer",
+    "registered_voters":3500,
+    "ballots_cast":2552,
+    "mark_udall_circle":null,
+    "mark_udall_votes":740,
+    "cory_gardner_circle":1659,
+    "cory_gardner_votes":1659,
+    "total":2516
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.864757,38.861756 ]
+    },
+    "properties": {
+    "county":"Delta",
+    "registered_voters":21080,
+    "ballots_cast":13676,
+    "mark_udall_circle":3504,
+    "mark_udall_votes":3504,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":9199,
+    "total":13440
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.864757,38.861756 ]
+    },
+    "properties": {
+    "county":"Delta",
+    "registered_voters":21080,
+    "ballots_cast":13676,
+    "mark_udall_circle":null,
+    "mark_udall_votes":3504,
+    "cory_gardner_circle":9199,
+    "cory_gardner_votes":9199,
+    "total":13440
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.880625,39.761849 ]
+    },
+    "properties": {
+    "county":"Denver",
+    "registered_voters":476006,
+    "ballots_cast":235418,
+    "mark_udall_circle":163783,
+    "mark_udall_votes":163783,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":56789,
+    "total":231553
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.880625,39.761849 ]
+    },
+    "properties": {
+    "county":"Denver",
+    "registered_voters":476006,
+    "ballots_cast":235418,
+    "mark_udall_circle":null,
+    "mark_udall_votes":163783,
+    "cory_gardner_circle":56789,
+    "cory_gardner_votes":56789,
+    "total":231553
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.530383,37.747602 ]
+    },
+    "properties": {
+    "county":"Dolores",
+    "registered_voters":1632,
+    "ballots_cast":1002,
+    "mark_udall_circle":246,
+    "mark_udall_votes":246,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":653,
+    "total":966
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.530383,37.747602 ]
+    },
+    "properties": {
+    "county":"Dolores",
+    "registered_voters":1632,
+    "ballots_cast":1002,
+    "mark_udall_circle":null,
+    "mark_udall_votes":246,
+    "cory_gardner_circle":653,
+    "cory_gardner_votes":653,
+    "total":966
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.926199,39.326435 ]
+    },
+    "properties": {
+    "county":"Douglas",
+    "registered_voters":225805,
+    "ballots_cast":139685,
+    "mark_udall_circle":45163,
+    "mark_udall_votes":45163,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":86626,
+    "total":137809
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.926199,39.326435 ]
+    },
+    "properties": {
+    "county":"Douglas",
+    "registered_voters":225805,
+    "ballots_cast":139685,
+    "mark_udall_circle":null,
+    "mark_udall_votes":45163,
+    "cory_gardner_circle":86626,
+    "cory_gardner_votes":86626,
+    "total":137809
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.692944,39.630638 ]
+    },
+    "properties": {
+    "county":"Eagle",
+    "registered_voters":33136,
+    "ballots_cast":17773,
+    "mark_udall_circle":9438,
+    "mark_udall_votes":9438,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":7102,
+    "total":17347
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.692944,39.630638 ]
+    },
+    "properties": {
+    "county":"Eagle",
+    "registered_voters":33136,
+    "ballots_cast":17773,
+    "mark_udall_circle":null,
+    "mark_udall_votes":9438,
+    "cory_gardner_circle":7102,
+    "cory_gardner_votes":7102,
+    "total":17347
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.527472,38.827383 ]
+    },
+    "properties": {
+    "county":"El Paso",
+    "registered_voters":424553,
+    "ballots_cast":231635,
+    "mark_udall_circle":73208,
+    "mark_udall_votes":73208,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":141475,
+    "total":228154
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.527472,38.827383 ]
+    },
+    "properties": {
+    "county":"El Paso",
+    "registered_voters":424553,
+    "ballots_cast":231635,
+    "mark_udall_circle":null,
+    "mark_udall_votes":73208,
+    "cory_gardner_circle":141475,
+    "cory_gardner_votes":141475,
+    "total":228154
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.117928,39.310817 ]
+    },
+    "properties": {
+    "county":"Elbert",
+    "registered_voters":18784,
+    "ballots_cast":12650,
+    "mark_udall_circle":2556,
+    "mark_udall_votes":2556,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":9137,
+    "total":12459
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.117928,39.310817 ]
+    },
+    "properties": {
+    "county":"Elbert",
+    "registered_voters":18784,
+    "ballots_cast":12650,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2556,
+    "cory_gardner_circle":9137,
+    "cory_gardner_votes":9137,
+    "total":12459
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.421438,38.455658 ]
+    },
+    "properties": {
+    "county":"Fremont",
+    "registered_voters":28372,
+    "ballots_cast":17608,
+    "mark_udall_circle":4773,
+    "mark_udall_votes":4773,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":11085,
+    "total":17221
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.421438,38.455658 ]
+    },
+    "properties": {
+    "county":"Fremont",
+    "registered_voters":28372,
+    "ballots_cast":17608,
+    "mark_udall_circle":null,
+    "mark_udall_votes":4773,
+    "cory_gardner_circle":11085,
+    "cory_gardner_votes":11085,
+    "total":17221
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.90978,39.599352 ]
+    },
+    "properties": {
+    "county":"Garfield",
+    "registered_voters":33336,
+    "ballots_cast":19671,
+    "mark_udall_circle":8387,
+    "mark_udall_votes":8387,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":9894,
+    "total":19309
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.90978,39.599352 ]
+    },
+    "properties": {
+    "county":"Garfield",
+    "registered_voters":33336,
+    "ballots_cast":19671,
+    "mark_udall_circle":null,
+    "mark_udall_votes":8387,
+    "cory_gardner_circle":9894,
+    "cory_gardner_votes":9894,
+    "total":19309
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.528947,39.861082 ]
+    },
+    "properties": {
+    "county":"Gilpin",
+    "registered_voters":4671,
+    "ballots_cast":2960,
+    "mark_udall_circle":1450,
+    "mark_udall_votes":1450,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1169,
+    "total":2875
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.528947,39.861082 ]
+    },
+    "properties": {
+    "county":"Gilpin",
+    "registered_voters":4671,
+    "ballots_cast":2960,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1450,
+    "cory_gardner_circle":1169,
+    "cory_gardner_votes":1169,
+    "total":2875
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.095876,40.123289 ]
+    },
+    "properties": {
+    "county":"Grand",
+    "registered_voters":11580,
+    "ballots_cast":6980,
+    "mark_udall_circle":2795,
+    "mark_udall_votes":2795,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":3638,
+    "total":6799
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.095876,40.123289 ]
+    },
+    "properties": {
+    "county":"Grand",
+    "registered_voters":11580,
+    "ballots_cast":6980,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2795,
+    "cory_gardner_circle":3638,
+    "cory_gardner_votes":3638,
+    "total":6799
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.078108,38.669679 ]
+    },
+    "properties": {
+    "county":"Gunnison",
+    "registered_voters":12358,
+    "ballots_cast":7130,
+    "mark_udall_circle":3840,
+    "mark_udall_votes":3840,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2671,
+    "total":6933
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.078108,38.669679 ]
+    },
+    "properties": {
+    "county":"Gunnison",
+    "registered_voters":12358,
+    "ballots_cast":7130,
+    "mark_udall_circle":null,
+    "mark_udall_votes":3840,
+    "cory_gardner_circle":2671,
+    "cory_gardner_votes":2671,
+    "total":6933
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.383405,37.811625 ]
+    },
+    "properties": {
+    "county":"Hinsdale",
+    "registered_voters":743,
+    "ballots_cast":538,
+    "mark_udall_circle":191,
+    "mark_udall_votes":191,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":307,
+    "total":523
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.383405,37.811625 ]
+    },
+    "properties": {
+    "county":"Hinsdale",
+    "registered_voters":743,
+    "ballots_cast":538,
+    "mark_udall_circle":null,
+    "mark_udall_votes":191,
+    "cory_gardner_circle":307,
+    "cory_gardner_votes":307,
+    "total":523
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.959928,37.687815 ]
+    },
+    "properties": {
+    "county":"Huerfano",
+    "registered_voters":5035,
+    "ballots_cast":3280,
+    "mark_udall_circle":1504,
+    "mark_udall_votes":1504,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1449,
+    "total":3197
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.959928,37.687815 ]
+    },
+    "properties": {
+    "county":"Huerfano",
+    "registered_voters":5035,
+    "ballots_cast":3280,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1504,
+    "cory_gardner_circle":1449,
+    "cory_gardner_votes":1449,
+    "total":3197
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.329248,40.663432 ]
+    },
+    "properties": {
+    "county":"Jackson",
+    "registered_voters":1150,
+    "ballots_cast":787,
+    "mark_udall_circle":163,
+    "mark_udall_votes":163,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":531,
+    "total":735
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.329248,40.663432 ]
+    },
+    "properties": {
+    "county":"Jackson",
+    "registered_voters":1150,
+    "ballots_cast":787,
+    "mark_udall_circle":null,
+    "mark_udall_votes":163,
+    "cory_gardner_circle":531,
+    "cory_gardner_votes":531,
+    "total":735
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.245601,39.58646 ]
+    },
+    "properties": {
+    "county":"Jefferson",
+    "registered_voters":423508,
+    "ballots_cast":260389,
+    "mark_udall_circle":121109,
+    "mark_udall_votes":121109,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":120240,
+    "total":256144
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.245601,39.58646 ]
+    },
+    "properties": {
+    "county":"Jefferson",
+    "registered_voters":423508,
+    "ballots_cast":260389,
+    "mark_udall_circle":null,
+    "mark_udall_votes":121109,
+    "cory_gardner_circle":120240,
+    "cory_gardner_votes":120240,
+    "total":256144
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.75621,38.388466 ]
+    },
+    "properties": {
+    "county":"Kiowa",
+    "registered_voters":1035,
+    "ballots_cast":795,
+    "mark_udall_circle":107,
+    "mark_udall_votes":107,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":616,
+    "total":761
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.75621,38.388466 ]
+    },
+    "properties": {
+    "county":"Kiowa",
+    "registered_voters":1035,
+    "ballots_cast":795,
+    "mark_udall_circle":null,
+    "mark_udall_votes":107,
+    "cory_gardner_circle":616,
+    "cory_gardner_votes":616,
+    "total":761
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.603023,39.30534 ]
+    },
+    "properties": {
+    "county":"Kit Carson",
+    "registered_voters":5107,
+    "ballots_cast":3172,
+    "mark_udall_circle":487,
+    "mark_udall_votes":487,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2448,
+    "total":3100
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.603023,39.30534 ]
+    },
+    "properties": {
+    "county":"Kit Carson",
+    "registered_voters":5107,
+    "ballots_cast":3172,
+    "mark_udall_circle":null,
+    "mark_udall_votes":487,
+    "cory_gardner_circle":2448,
+    "cory_gardner_votes":2448,
+    "total":3100
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.839718,37.287367 ]
+    },
+    "properties": {
+    "county":"La Plata",
+    "registered_voters":42734,
+    "ballots_cast":23215,
+    "mark_udall_circle":11852,
+    "mark_udall_votes":11852,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":10174,
+    "total":22879
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.839718,37.287367 ]
+    },
+    "properties": {
+    "county":"La Plata",
+    "registered_voters":42734,
+    "ballots_cast":23215,
+    "mark_udall_circle":null,
+    "mark_udall_votes":11852,
+    "cory_gardner_circle":10174,
+    "cory_gardner_votes":10174,
+    "total":22879
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.349696,39.204316 ]
+    },
+    "properties": {
+    "county":"Lake",
+    "registered_voters":5064,
+    "ballots_cast":2552,
+    "mark_udall_circle":1311,
+    "mark_udall_votes":1311,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":906,
+    "total":2442
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.349696,39.204316 ]
+    },
+    "properties": {
+    "county":"Lake",
+    "registered_voters":5064,
+    "ballots_cast":2552,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1311,
+    "cory_gardner_circle":906,
+    "cory_gardner_votes":906,
+    "total":2442
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.482131,40.663091 ]
+    },
+    "properties": {
+    "county":"Larimer",
+    "registered_voters":235905,
+    "ballots_cast":148136,
+    "mark_udall_circle":68659,
+    "mark_udall_votes":68659,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":69198,
+    "total":145672
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.482131,40.663091 ]
+    },
+    "properties": {
+    "county":"Larimer",
+    "registered_voters":235905,
+    "ballots_cast":148136,
+    "mark_udall_circle":null,
+    "mark_udall_votes":68659,
+    "cory_gardner_circle":69198,
+    "cory_gardner_votes":69198,
+    "total":145672
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.04411,37.318831 ]
+    },
+    "properties": {
+    "county":"Las Animas",
+    "registered_voters":10184,
+    "ballots_cast":5762,
+    "mark_udall_circle":2380,
+    "mark_udall_votes":2380,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2803,
+    "total":5564
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.04411,37.318831 ]
+    },
+    "properties": {
+    "county":"Las Animas",
+    "registered_voters":10184,
+    "ballots_cast":5762,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2380,
+    "cory_gardner_circle":2803,
+    "cory_gardner_votes":2803,
+    "total":5564
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.507555,38.99374 ]
+    },
+    "properties": {
+    "county":"Lincoln",
+    "registered_voters":3053,
+    "ballots_cast":2046,
+    "mark_udall_circle":321,
+    "mark_udall_votes":321,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1557,
+    "total":1998
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.507555,38.99374 ]
+    },
+    "properties": {
+    "county":"Lincoln",
+    "registered_voters":3053,
+    "ballots_cast":2046,
+    "mark_udall_circle":null,
+    "mark_udall_votes":321,
+    "cory_gardner_circle":1557,
+    "cory_gardner_votes":1557,
+    "total":1998
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.090464,40.728091 ]
+    },
+    "properties": {
+    "county":"Logan",
+    "registered_voters":12433,
+    "ballots_cast":7885,
+    "mark_udall_circle":1591,
+    "mark_udall_votes":1591,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":5662,
+    "total":7720
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.090464,40.728091 ]
+    },
+    "properties": {
+    "county":"Logan",
+    "registered_voters":12433,
+    "ballots_cast":7885,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1591,
+    "cory_gardner_circle":5662,
+    "cory_gardner_votes":5662,
+    "total":7720
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.461837,39.019492 ]
+    },
+    "properties": {
+    "county":"Mesa",
+    "registered_voters":109032,
+    "ballots_cast":58748,
+    "mark_udall_circle":15410,
+    "mark_udall_votes":15410,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":39313,
+    "total":57491
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.461837,39.019492 ]
+    },
+    "properties": {
+    "county":"Mesa",
+    "registered_voters":109032,
+    "ballots_cast":58748,
+    "mark_udall_circle":null,
+    "mark_udall_votes":15410,
+    "cory_gardner_circle":39313,
+    "cory_gardner_votes":39313,
+    "total":57491
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.9323,37.651478 ]
+    },
+    "properties": {
+    "county":"Mineral",
+    "registered_voters":809,
+    "ballots_cast":635,
+    "mark_udall_circle":254,
+    "mark_udall_votes":254,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":304,
+    "total":601
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.9323,37.651478 ]
+    },
+    "properties": {
+    "county":"Mineral",
+    "registered_voters":809,
+    "ballots_cast":635,
+    "mark_udall_circle":null,
+    "mark_udall_votes":254,
+    "cory_gardner_circle":304,
+    "cory_gardner_votes":304,
+    "total":601
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.204521,40.573984 ]
+    },
+    "properties": {
+    "county":"Moffat",
+    "registered_voters":9470,
+    "ballots_cast":4963,
+    "mark_udall_circle":826,
+    "mark_udall_votes":826,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":3727,
+    "total":4874
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.204521,40.573984 ]
+    },
+    "properties": {
+    "county":"Moffat",
+    "registered_voters":9470,
+    "ballots_cast":4963,
+    "mark_udall_circle":null,
+    "mark_udall_votes":826,
+    "cory_gardner_circle":3727,
+    "cory_gardner_votes":3727,
+    "total":4874
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.595786,37.338025 ]
+    },
+    "properties": {
+    "county":"Montezuma",
+    "registered_voters":18678,
+    "ballots_cast":9868,
+    "mark_udall_circle":3353,
+    "mark_udall_votes":3353,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":5784,
+    "total":9697
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.595786,37.338025 ]
+    },
+    "properties": {
+    "county":"Montezuma",
+    "registered_voters":18678,
+    "ballots_cast":9868,
+    "mark_udall_circle":null,
+    "mark_udall_votes":3353,
+    "cory_gardner_circle":5784,
+    "cory_gardner_votes":5784,
+    "total":9697
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.263042,38.413427 ]
+    },
+    "properties": {
+    "county":"Montrose",
+    "registered_voters":26241,
+    "ballots_cast":16897,
+    "mark_udall_circle":4071,
+    "mark_udall_votes":4071,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":11907,
+    "total":16649
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.263042,38.413427 ]
+    },
+    "properties": {
+    "county":"Montrose",
+    "registered_voters":26241,
+    "ballots_cast":16897,
+    "mark_udall_circle":null,
+    "mark_udall_votes":4071,
+    "cory_gardner_circle":11907,
+    "cory_gardner_votes":11907,
+    "total":16649
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.807092,40.262354 ]
+    },
+    "properties": {
+    "county":"Morgan",
+    "registered_voters":15095,
+    "ballots_cast":9010,
+    "mark_udall_circle":2164,
+    "mark_udall_votes":2164,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":6119,
+    "total":8812
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.807092,40.262354 ]
+    },
+    "properties": {
+    "county":"Morgan",
+    "registered_voters":15095,
+    "ballots_cast":9010,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2164,
+    "cory_gardner_circle":6119,
+    "cory_gardner_votes":6119,
+    "total":8812
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.72126,37.88417 ]
+    },
+    "properties": {
+    "county":"Otero",
+    "registered_voters":11179,
+    "ballots_cast":6838,
+    "mark_udall_circle":2332,
+    "mark_udall_votes":2332,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":3814,
+    "total":6641
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.72126,37.88417 ]
+    },
+    "properties": {
+    "county":"Otero",
+    "registered_voters":11179,
+    "ballots_cast":6838,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2332,
+    "cory_gardner_circle":3814,
+    "cory_gardner_votes":3814,
+    "total":6641
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.767133,38.1506 ]
+    },
+    "properties": {
+    "county":"Ouray",
+    "registered_voters":4287,
+    "ballots_cast":2745,
+    "mark_udall_circle":1355,
+    "mark_udall_votes":1355,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1234,
+    "total":2689
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.767133,38.1506 ]
+    },
+    "properties": {
+    "county":"Ouray",
+    "registered_voters":4287,
+    "ballots_cast":2745,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1355,
+    "cory_gardner_circle":1234,
+    "cory_gardner_votes":1234,
+    "total":2689
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.717648,39.118914 ]
+    },
+    "properties": {
+    "county":"Park",
+    "registered_voters":13016,
+    "ballots_cast":8157,
+    "mark_udall_circle":2827,
+    "mark_udall_votes":2827,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":4673,
+    "total":8035
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.717648,39.118914 ]
+    },
+    "properties": {
+    "county":"Park",
+    "registered_voters":13016,
+    "ballots_cast":8157,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2827,
+    "cory_gardner_circle":4673,
+    "cory_gardner_votes":4673,
+    "total":8035
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.345105,40.594712 ]
+    },
+    "properties": {
+    "county":"Phillips",
+    "registered_voters":3272,
+    "ballots_cast":2037,
+    "mark_udall_circle":357,
+    "mark_udall_votes":357,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":1516,
+    "total":1977
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.345105,40.594712 ]
+    },
+    "properties": {
+    "county":"Phillips",
+    "registered_voters":3272,
+    "ballots_cast":2037,
+    "mark_udall_circle":null,
+    "mark_udall_votes":357,
+    "cory_gardner_circle":1516,
+    "cory_gardner_votes":1516,
+    "total":1977
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.915943,39.217533 ]
+    },
+    "properties": {
+    "county":"Pitkin",
+    "registered_voters":15496,
+    "ballots_cast":7861,
+    "mark_udall_circle":5409,
+    "mark_udall_votes":5409,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2106,
+    "total":7749
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.915943,39.217533 ]
+    },
+    "properties": {
+    "county":"Pitkin",
+    "registered_voters":15496,
+    "ballots_cast":7861,
+    "mark_udall_circle":null,
+    "mark_udall_votes":5409,
+    "cory_gardner_circle":2106,
+    "cory_gardner_votes":2106,
+    "total":7749
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.392161,37.958181 ]
+    },
+    "properties": {
+    "county":"Prowers",
+    "registered_voters":6848,
+    "ballots_cast":4081,
+    "mark_udall_circle":887,
+    "mark_udall_votes":887,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2874,
+    "total":3981
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.392161,37.958181 ]
+    },
+    "properties": {
+    "county":"Prowers",
+    "registered_voters":6848,
+    "ballots_cast":4081,
+    "mark_udall_circle":null,
+    "mark_udall_votes":887,
+    "cory_gardner_circle":2874,
+    "cory_gardner_votes":2874,
+    "total":3981
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.489893,38.170658 ]
+    },
+    "properties": {
+    "county":"Pueblo",
+    "registered_voters":108623,
+    "ballots_cast":60543,
+    "mark_udall_circle":27877,
+    "mark_udall_votes":27877,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":27571,
+    "total":59657
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.489893,38.170658 ]
+    },
+    "properties": {
+    "county":"Pueblo",
+    "registered_voters":108623,
+    "ballots_cast":60543,
+    "mark_udall_circle":null,
+    "mark_udall_votes":27877,
+    "cory_gardner_circle":27571,
+    "cory_gardner_votes":27571,
+    "total":59657
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.200685,39.972606 ]
+    },
+    "properties": {
+    "county":"Rio Blanco",
+    "registered_voters":4427,
+    "ballots_cast":2790,
+    "mark_udall_circle":361,
+    "mark_udall_votes":361,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2214,
+    "total":2721
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.200685,39.972606 ]
+    },
+    "properties": {
+    "county":"Rio Blanco",
+    "registered_voters":4427,
+    "ballots_cast":2790,
+    "mark_udall_circle":null,
+    "mark_udall_votes":361,
+    "cory_gardner_circle":2214,
+    "cory_gardner_votes":2214,
+    "total":2721
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.453214,37.485763 ]
+    },
+    "properties": {
+    "county":"Rio Grande",
+    "registered_voters":7734,
+    "ballots_cast":4595,
+    "mark_udall_circle":1566,
+    "mark_udall_votes":1566,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2534,
+    "total":4442
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.453214,37.485763 ]
+    },
+    "properties": {
+    "county":"Rio Grande",
+    "registered_voters":7734,
+    "ballots_cast":4595,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1566,
+    "cory_gardner_circle":2534,
+    "cory_gardner_votes":2534,
+    "total":4442
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.985289,40.48316 ]
+    },
+    "properties": {
+    "county":"Routt",
+    "registered_voters":18602,
+    "ballots_cast":10674,
+    "mark_udall_circle":5639,
+    "mark_udall_votes":5639,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":4278,
+    "total":10452
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.985289,40.48316 ]
+    },
+    "properties": {
+    "county":"Routt",
+    "registered_voters":18602,
+    "ballots_cast":10674,
+    "mark_udall_circle":null,
+    "mark_udall_votes":5639,
+    "cory_gardner_circle":4278,
+    "cory_gardner_votes":4278,
+    "total":10452
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.246675,38.033952 ]
+    },
+    "properties": {
+    "county":"Saguache",
+    "registered_voters":4290,
+    "ballots_cast":2468,
+    "mark_udall_circle":1307,
+    "mark_udall_votes":1307,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":861,
+    "total":2377
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.246675,38.033952 ]
+    },
+    "properties": {
+    "county":"Saguache",
+    "registered_voters":4290,
+    "ballots_cast":2468,
+    "mark_udall_circle":null,
+    "mark_udall_votes":1307,
+    "cory_gardner_circle":861,
+    "cory_gardner_votes":861,
+    "total":2377
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.670257,37.781075 ]
+    },
+    "properties": {
+    "county":"San Juan",
+    "registered_voters":714,
+    "ballots_cast":478,
+    "mark_udall_circle":255,
+    "mark_udall_votes":255,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":182,
+    "total":462
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -107.670257,37.781075 ]
+    },
+    "properties": {
+    "county":"San Juan",
+    "registered_voters":714,
+    "ballots_cast":478,
+    "mark_udall_circle":null,
+    "mark_udall_votes":255,
+    "cory_gardner_circle":182,
+    "cory_gardner_votes":182,
+    "total":462
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.427326,38.009374 ]
+    },
+    "properties": {
+    "county":"San Miguel",
+    "registered_voters":6545,
+    "ballots_cast":3321,
+    "mark_udall_circle":2226,
+    "mark_udall_votes":2226,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":870,
+    "total":3257
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -108.427326,38.009374 ]
+    },
+    "properties": {
+    "county":"San Miguel",
+    "registered_voters":6545,
+    "ballots_cast":3321,
+    "mark_udall_circle":null,
+    "mark_udall_votes":2226,
+    "cory_gardner_circle":870,
+    "cory_gardner_votes":870,
+    "total":3257
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.355358,40.871568 ]
+    },
+    "properties": {
+    "county":"Sedgwick",
+    "registered_voters":1684,
+    "ballots_cast":1241,
+    "mark_udall_circle":262,
+    "mark_udall_votes":262,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":853,
+    "total":1206
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.355358,40.871568 ]
+    },
+    "properties": {
+    "county":"Sedgwick",
+    "registered_voters":1684,
+    "ballots_cast":1241,
+    "mark_udall_circle":null,
+    "mark_udall_votes":262,
+    "cory_gardner_circle":853,
+    "cory_gardner_votes":853,
+    "total":1206
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.137555,39.621023 ]
+    },
+    "properties": {
+    "county":"Summit",
+    "registered_voters":25819,
+    "ballots_cast":11733,
+    "mark_udall_circle":6957,
+    "mark_udall_votes":6957,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":4046,
+    "total":11532
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -106.137555,39.621023 ]
+    },
+    "properties": {
+    "county":"Summit",
+    "registered_voters":25819,
+    "ballots_cast":11733,
+    "mark_udall_circle":null,
+    "mark_udall_votes":6957,
+    "cory_gardner_circle":4046,
+    "cory_gardner_votes":4046,
+    "total":11532
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.182552,38.871994 ]
+    },
+    "properties": {
+    "county":"Teller",
+    "registered_voters":17693,
+    "ballots_cast":11509,
+    "mark_udall_circle":3158,
+    "mark_udall_votes":3158,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":7337,
+    "total":11267
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.182552,38.871994 ]
+    },
+    "properties": {
+    "county":"Teller",
+    "registered_voters":17693,
+    "ballots_cast":11509,
+    "mark_udall_circle":null,
+    "mark_udall_votes":3158,
+    "cory_gardner_circle":7337,
+    "cory_gardner_votes":7337,
+    "total":11267
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.209605,39.965413 ]
+    },
+    "properties": {
+    "county":"Washington",
+    "registered_voters":3281,
+    "ballots_cast":2397,
+    "mark_udall_circle":237,
+    "mark_udall_votes":237,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":2055,
+    "total":2358
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -103.209605,39.965413 ]
+    },
+    "properties": {
+    "county":"Washington",
+    "registered_voters":3281,
+    "ballots_cast":2397,
+    "mark_udall_circle":null,
+    "mark_udall_votes":237,
+    "cory_gardner_circle":2055,
+    "cory_gardner_votes":2055,
+    "total":2358
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.383649,40.555794 ]
+    },
+    "properties": {
+    "county":"Weld",
+    "registered_voters":166157,
+    "ballots_cast":92321,
+    "mark_udall_circle":29785,
+    "mark_udall_votes":29785,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":54823,
+    "total":90811
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.383649,40.555794 ]
+    },
+    "properties": {
+    "county":"Weld",
+    "registered_voters":166157,
+    "ballots_cast":92321,
+    "mark_udall_circle":null,
+    "mark_udall_votes":29785,
+    "cory_gardner_circle":54823,
+    "cory_gardner_votes":54823,
+    "total":90811
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.422649,40.000631 ]
+    },
+    "properties": {
+    "county":"Yuma",
+    "registered_voters":6220,
+    "ballots_cast":4338,
+    "mark_udall_circle":512,
+    "mark_udall_votes":512,
+    "cory_gardner_circle":null,
+    "cory_gardner_votes":3678,
+    "total":4294
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -102.422649,40.000631 ]
+    },
+    "properties": {
+    "county":"Yuma",
+    "registered_voters":6220,
+    "ballots_cast":4338,
+    "mark_udall_circle":null,
+    "mark_udall_votes":512,
+    "cory_gardner_circle":3678,
+    "cory_gardner_votes":3678,
+    "total":4294
+    }
+  }
+]
+}
