@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.995234,
+          39.754382
+        ]
+      },
+      "properties": {
+        "business": "Jackson's Sports Bar",
+        "team": "Virginia Tech",
+        "city": "Denver",
+        "address": "1520 20th St, Denver, CO 80202",
+        "votes": "1",
+        "nickname": "Hokies"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.042283,
+          39.742126
+        ]
+      },
+      "properties": {
+        "business": "Sloan's Lake Tap & Burger",
+        "team": "Virginia Tech",
+        "city": "Denver",
+        "address": "1565 Raleigh St, Denver, CO 80204",
+        "votes": "1",
+        "nickname": "Hokies"
+      }
+    }
+  ]
+}

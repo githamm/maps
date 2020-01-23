@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.99056,
+          39.736192
+        ]
+      },
+      "properties": {
+        "business": "Cap City Tavern",
+        "team": "Nebraska ",
+        "city": "Denver",
+        "address": "1247 Bannock St, Denver, CO 80204",
+        "votes": "1",
+        "nickname": "Cornhuskers"
+      }
+    }
+  ]
+}

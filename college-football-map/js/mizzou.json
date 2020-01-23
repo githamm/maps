@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.990184,
+          39.755171
+        ]
+      },
+      "properties": {
+        "business": "Whiskey Bar",
+        "team": "Mizzou",
+        "city": "Denver",
+        "address": "2203 Larimer St, Denver, CO 80205",
+        "votes": "1",
+        "nickname": "Tigers"
+      }
+    }
+  ]
+}
