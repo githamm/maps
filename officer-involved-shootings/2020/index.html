@@ -134,7 +134,7 @@
         Tabletop.init({
             key: code,
             callback: function(sheet, tabletop) {
-                console.log(sheet);
+                // console.log(sheet);
                 // var incidentCount = sheet.length;
                 // var lastDate = sheet[(incidentCount - 1)].date;
                 // var lastCity = sheet[(incidentCount - 1)].city;
@@ -153,11 +153,11 @@
 
                 for (var i in sheet) {
                     var incident = sheet[i];
-                    if (incident.victimstatus == 'Wounded') {
+                    if (incident.victimstatus == 'Wounded' || incident.victimstatus == 'Wounded/died by suicide') {
                         iconColor = woundedIcon
                     } else if (incident.victimstatus == 'Killed') {
                         iconColor = killedIcon
-                    } else if (incident.victimstatus == 'Other death') {
+                    } else if (incident.victimstatus == 'Died by suicide' || incident.victimstatus == 'Other death') {
                         iconColor = otherIcon
                     } else {
                         iconColor = tbdIcon
