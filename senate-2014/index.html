@@ -18,9 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-        body {
+    body {
         background-color: #fafafa !important;
         font-family: 'Roboto', sans-serif;
     }
@@ -52,6 +52,7 @@
         color: #969696;
         font-weight: bold;
     }
+
     #legend {
         width: 100%;
         margin: 5px;
@@ -80,10 +81,12 @@
         padding: 0 5px 0 5px;
         border: 2px solid silver;
     }
+
     #map-container {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
+
     .legend-text {
         text-transform: uppercase;
         font-size: .9rem;
@@ -134,7 +137,8 @@
         float: left;
     }*/
 
-    label, .legend-text {
+    label,
+    .legend-text {
         font-size: .7em;
         font-weight: bold;
         text-align: center;
@@ -165,7 +169,7 @@
         height: 15px;
         width: 15px;
         border-radius: 50%;
-        background-color: rgba(0,0,255,.1);
+        background-color: rgba(0, 0, 255, .1);
         /*margin-top: 0px;*/
         margin: 0 auto;
     }
@@ -174,7 +178,7 @@
         height: 38px;
         width: 38px;
         border-radius: 50%;
-        background-color: rgba(0,0,255,.1);
+        background-color: rgba(0, 0, 255, .1);
         margin-top: -17px;
     }
 
@@ -187,33 +191,38 @@
         margin: 5px 0 0 0;
         text-align: center;
         line-height: 11px;
-        }
+    }
 
-        path.leaflet-interactive {
-            fill-opacity: .4;
-        }
+    path.leaflet-interactive {
+        fill-opacity: .5;
+    }
 
-        .county-name {
-            font-size: 20px;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: -16px;
-        }
+    .county-name {
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: -16px;
+    }
 
-        .dem-winner, .rep-winner {
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-        }
+    .dem-winner,
+    .rep-winner {
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
 
-        .dem-winner {
-            background-color: blue;
-        }
+    .dem-winner {
+        background-color: rgba(33, 102, 172, .5);
+    }
 
-        .rep-winner {
-            background-color: red;
-        }
+    .rep-winner {
+        background-color: rgba(178, 24, 43, .5);
+    }
+
+    td.long-table-header {
+        line-height: 1;
+    }
     </style>
 </head>
 
@@ -226,201 +235,121 @@
     </div>
     <div class="row">
         <div id="map-container" class="large-12 columns">
-            <p class="instructions">Zoom map and click circles for details &bull; circle size represents reservoir storage capacity</p>
-            <fieldset class="fieldset">
-                <legend><strong><em>Use checkboxes to show/hide</em></strong></legend>
-                <div class="legend-container">
-                    <div class="inputs" id="incidents">
-                        <div class="legend-item">
-                            <input type="checkbox" class="dam-type" id="restrictions-box" name="restrictions-box" value="TRUE" checked="true">
-                            <label for="restrictions-box"><span style="border-top: 3px solid  rgba(165,42,42,.5)">Restrictions</span></label>
-                        </div>
-                        <div class="legend-item">
-                            <input type="checkbox" class="dam-type" id="no-restrictions-box" name="no-restrictions-box" value="FALSE" checked="true">
-                            <label for="no-restrictions-box"><span style="border-top: 3px solid rgba(0,0,255,.5)">No restrictions</span></label>
-                        </div>
-                        <!--  <div class="legend-item">
-                            <div class="legend-circle-small"></div><span class="circle-number">0-1,000<br>acre-feet</span>
-                        </div>
-                        <div class="legend-item">
-                            <span style="margin: 0 5px 0 5px">&xrarr;</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-circle-large"></div><span class="circle-number">50,000+<br>acre-feet</span>
-                        </div> -->
-                    </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <fieldset class="fieldset">
+                        <legend><strong><em>Choose a map</em></strong></legend>
+                        <div id="layer-control"></div>
+                    </fieldset>
                 </div>
-            </fieldset>
+            </div>
+            <p class="instructions">Zoom map and click circles for details &bull; circle size represents reservoir storage capacity</p>
             <div id="map"></div>
             <p class="source">By Kevin Hamm, The Denver Post &bull; Source: <a href="https://dwr.state.co.us/Tools/DamSafety/Dams" target="_blank">Colorado Division of Water Resources</a></p>
         </div>
     </div>
-    </div>
     <!-- <script src="all_colorado_high_hazard_dams_cut.js"></script> -->
     <script>
+    var senate2014 = new L.LayerGroup();
+    var president2016 = new L.LayerGroup();
+    var governor2018 = new L.LayerGroup();
+
+    // Overlay layers are grouped
+    var groupedOverlays = {
+        "": {
+            '2014 Senate': senate2014,
+            '2016 President': president2016,
+            '2018 Governor': governor2018
+        }
+    };
+
+    var options = {
+        // Make the groups exclusive (use radio inputs)
+        exclusiveGroups: [""]
+        // Show a checkbox next to non-exclusive group labels for toggling all
+        //groupCheckboxes: true
+    };
+
     var mapTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     });
 
-    $.getJSON("data.geojson", function(data) {
-        var geojson = L.geoJson(data, {
-            pointToLayer: function(feature, latlng) {
-                var popupOptions = {
-                    maxWidth: 200
-                };
+    // $.getJSON("data.geojson", function(data) {
+    //     var geojson = L.geoJson(data, {
+    //         pointToLayer: function(feature, latlng) {
+    //             var popupOptions = {
+    //                 maxWidth: 300
+    //             };
 
-                var countyWinner;
-                if (feature.properties.cory_gardner_votes > feature.properties.mark_udall_votes) {
-                    countyWinner = 'Gardner'
-                } else countyWinner = 'Udall';
+    //             var udallVotes = feature.properties.mark_udall_votes.toLocaleString();
+    //             var gardnerVotes = feature.properties.cory_gardner_votes.toLocaleString();
+    //             var countyWinner;
+    //             if (gardnerVotes > udallVotes) {
+    //                 countyWinner = 'Gardner'
+    //             } else countyWinner = 'Udall';
 
-                var partyWinner;
-                var udallPct = (feature.properties.mark_udall_votes / feature.properties.total) * 100;
-                var gardnerPct = (feature.properties.cory_gardner_votes / feature.properties.total) * 100;
-                var pctDiff = Math.round(Math.abs(udallPct - gardnerPct));
-                if (udallPct > gardnerPct) {
-                    partyWinner = '<div class="dem-winner">D'
-                } else partyWinner = '<div class="rep-winner">R';
+    //             var partyWinner;
+    //             var udallPct = ((feature.properties.mark_udall_votes / feature.properties.total) * 100).toFixed(2);
+    //             var gardnerPct = ((feature.properties.cory_gardner_votes / feature.properties.total) * 100).toFixed(2);
+    //             var pctDiff = Math.round(Math.abs(udallPct - gardnerPct));
+    //             if (udallPct > gardnerPct) {
+    //                 partyWinner = '<div class="dem-winner">D'
+    //             } else partyWinner = '<div class="rep-winner">R';
 
-                // var storageString = Number(feature.properties.normal_storage).toLocaleString();
-                var popupContent = '<h3 class="county-name">' + feature.properties.county + ' County</h3><br>' + partyWinner + '+' + pctDiff + '</div><br>Gardner: ' + feature.properties.cory_gardner_votes + '<br>Udall: ' + feature.properties.mark_udall_votes;
+    //             var demVotePct = ((feature.properties.mark_udall_votes / 1809505) * 100).toFixed(2);
+    //             var repVotePct = ((feature.properties.cory_gardner_votes / 1809505) * 100).toFixed(2);
 
-                function getOptions(properties) {
-                    //var normalStorage = Number(properties.normal_storage);
-                    var gardnerCircleSize = Math.sqrt(properties.cory_gardner_circle) / 12.5;
-                    var udallCircleSize = Math.sqrt(properties.mark_udall_circle) / 12.5;
+    //             // var storageString = Number(feature.properties.normal_storage).toLocaleString();
+    //             // var popupContent = '<h3 class="county-name">' + feature.properties.county + ' County</h3><br>' + partyWinner + '+' + pctDiff + '</div><br>Gardner: ' + gardnerVotes + '<br>Udall: ' + udallVotes + '<br>Dem vote pct: ' + demVotePct + '%<br>Rep vote pct: ' + repVotePct + '%';
 
-                    if (properties.cory_gardner_circle != null) {
-                        return {
-                            radius: gardnerCircleSize,
-                            color: 'none',
-                            fillColor: 'red'
-                        }
-                    } else if (properties.mark_udall_circle != null) {
-                        return {
-                            radius: udallCircleSize,
-                            color: 'none',
-                            fillColor: 'blue'
-                        }
-                    }
-                }
-                return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
+    //             var popupContent = '<h3 class="county-name">' + feature.properties.county + ' County</h3><br>' + partyWinner + '+' + pctDiff + '</div><table><tr><td></td><td>Votes</td><td class="long-table-header">Pct. of<br>county total</td><td class="long-table-header">Pct. of<br>state total</td></tr><tr><td>Gardner</td><td>' + gardnerVotes + '</td><td>' + gardnerPct + '%</td><td>' + repVotePct + '%</td></tr><tr><td>Udall</td><td>' + udallVotes + '</td><td>' + udallPct + '%</td><td>' + demVotePct + '%</td></tr></table>'
 
-            }
-        });
-        var map = L.map('map', {
-            minZoom: 7,
-            maxZoom: 16
-        }).fitBounds(geojson.getBounds());
-        mapTiles.addTo(map);
-        geojson.addTo(map);
+    //             function getOptions(properties) {
+    //                 //var normalStorage = Number(properties.normal_storage);
+    //                 var gardnerCircleSize = Math.sqrt(properties.cory_gardner_circle) / 11;
+    //                 var udallCircleSize = Math.sqrt(properties.mark_udall_circle) / 11;
 
-    });
-
-    // let checkboxStates
-
-    // var cartoTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
-    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    //     subdomains: 'abcd',
-    //     maxZoom: 19
-    // });
-
-    // var map = L.map('map', {
-    //     center: [39.113, -105.359],
-    //     zoom: 7,
-    //     minZoom: 7,
-    //     preferCanvas: true
-    // }).addLayer(cartoTiles);
-
-    // const geojsonLayer = L.geoJSON(null, {
-    //     filter: (feature) => {
-    //         const isIncidentChecked = checkboxStates.restricted.includes(feature.properties.restricted)
-    //         //const isYearChecked = checkboxStates.schoolYear.includes(feature.properties.schoolYear)
-    //         return isIncidentChecked // && isYearChecked //only true if all are true
-    //     },
-    //     pointToLayer: function(feature, latlng) {
-    //         console.log(feature);
-    //         var normalStorage = Number(feature.properties.normal_storage);
-    //         var circleRadius;
-    //         var circleSize;
-
-    //         // if (feature.properties.restricted == 'TRUE') {
-    //         //     circleSize = Math.sqrt(feature.properties.normal_storage) * .075
-    //         //     } else {
-    //         //     circleSize = 4
-    //         // };
-    //         if (normalStorage < 1000) {
-    //             circleSize = 5
-    //         } else if (normalStorage >= 1000 && normalStorage < 10000) {
-    //             circleSize = 10
-    //         } else if (normalStorage >= 10000 && normalStorage < 50000) {
-    //             circleSize = 15
-    //         } else circleSize = 20;
-
-    //         var restrictedCircle = {
-    //             radius: circleSize,
-    //             fillColor: "brown",
-    //             color: "#aaa",
-    //             weight: 0,
-    //             opacity: 0,
-    //             fillOpacity: .5
-    //         };
-    //         var notRestrictedCircle = {
-    //             radius: circleSize,
-    //             fillColor: "blue",
-    //             color: "#aaa",
-    //             weight: 0,
-    //             opacity: 0,
-    //             fillOpacity: .5
-    //         };
-
-    //         var storageString = Number(feature.properties.normal_storage).toLocaleString();
-    //         var damAge = (2019 - feature.properties.year_completed)
-    //         var tooltipText = '<h3 class="tooltip-header">' + feature.properties.dam_name + '</h3><span class="tooltip-subhead">' + feature.properties.county + ' County</span><hr><span class="tooltip-label">Storage:</span> ' + storageString + ' acre feet<br><span class="tooltip-label">Age:</span> ' + damAge + ' years old<br><span class="tooltip-label">Downstream town:</span> ' + feature.properties.downstream_town + '<br><span class="tooltip-label">Distance from dam:</span> ' + feature.properties.town_distance + ' miles<br><span class="tooltip-label">Waterway:</span> ' + feature.properties.stream + '<br><span class="tooltip-label">Last inspection: </span>' + feature.properties.last_inspection_date + '<p class="details-link"><a href="' + feature.properties.details + '" target="_blank">Click for dam details</a></p>';
-
-    //         if (feature.properties.restricted == 'TRUE') {
-    //             return L.circleMarker(latlng, restrictedCircle).bindPopup(tooltipText)
-    //         } else {
-    //             return L.circleMarker(latlng, notRestrictedCircle).bindPopup(tooltipText)
-    //         }
-    //     }
-    // }).addTo(map);
-
-    // function updateCheckboxStates() {
-    //     checkboxStates = {
-    //         restricted: [],
-    //         schoolYear: []
-    //     }
-    //     console.log(checkboxStates);
-
-    //     for (let input of document.querySelectorAll('input')) {
-    //         if (input.checked) {
-    //             switch (input.className) {
-    //                 case 'dam-type':
-    //                     checkboxStates.restricted.push(input.value);
-    //                     break
-    //                     // case 'school-year':
-    //                     //     checkboxStates.schoolYear.push(input.value);
-    //                     //     break
+    //                 if (properties.cory_gardner_circle != null) {
+    //                     return {
+    //                         radius: gardnerCircleSize,
+    //                         color: 'none',
+    //                         fillColor: 'rgb(178,24,43)'
+    //                     }
+    //                 } else if (properties.mark_udall_circle != null) {
+    //                     return {
+    //                         radius: udallCircleSize,
+    //                         color: 'none',
+    //                         fillColor: 'rgb(33,102,172)'
+    //                     }
+    //                 }
     //             }
+    //             return L.circleMarker(latlng, getOptions(feature.properties)).bindPopup(popupContent, popupOptions);
+
     //         }
-    //     }
-    // }
+    //     });
+    //     var map = L.map('map', {
+    //         minZoom: 8,
+    //         maxZoom: 10
+    //     }).fitBounds(geojson.getBounds());
+    //     mapTiles.addTo(senate2014);
+    //     geojson.addTo(senate2014);
 
-    // for (let input of document.querySelectorAll('input')) {
-    //     //Listen to 'change' event of all inputs
-    //     input.onchange = (e) => {
-    //         geojsonLayer.clearLayers()
-    //         updateCheckboxStates()
-    //         geojsonLayer.addData(jsonData)
-    //     }
-    // }
+    // });
+    var layerControl = L.control.groupedLayers(basemaps, groupedOverlays, options);
+    map.addControl(layerControl);
 
-    // /****** INIT ******/
-    // updateCheckboxStates()
-    // geojsonLayer.addData(jsonData)
+    // Call the getContainer routine.
+    var htmlObject = layerControl.getContainer();
+    // Get the desired parent node.
+    var a = document.getElementById('layer-control');
+
+    // Finally append that node to the new parent.
+    function setParent(el, newParent) {
+        newParent.appendChild(el);
+    }
+    setParent(htmlObject, a);
     </script>
 </body>
 
