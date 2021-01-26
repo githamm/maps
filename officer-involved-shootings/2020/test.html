@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Police shootings in 2020 | The Denver Post</title>
+    <title>Law-enforcement officer-involved shootings in 2020 | The Denver Post</title>
     <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -48,35 +48,9 @@
     }
 
     .legend-text {
+        font-weight: 700;
         margin-top: 30px;
         text-align: center;
-    }
-
-    .legend {
-        color: #f5f5f5;
-        padding: 2px 4px 2px 4px;
-        display: inline-block;
-        margin-top: 5px;
-    }
-
-    .killed {
-        background: #cb2b3e;
-    }
-
-    .killed-other {
-        background: #2a81cb;
-    }
-
-    .wounded {
-        background: #3d3d3d;
-    }
-
-    .injured-other {
-        background: #cb8427;
-    }
-
-    .tbd {
-        background: #7b7b7b;
     }
 
     .leaflet-popup-content {
@@ -98,28 +72,21 @@
 </head>
 
 <body>
-    <h2>Tracking Colorado police shootings</h2>
-    <p style="line-height:125%">There have been <strong><span id="incident-count"></span> incidents</strong> in which a person has been killed or wounded in an altercation with law-enforcement officers* in Colorado in 2020. The last incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
-    <p style="font-size:.85em"><em>*Incidents in which law-enforcement officers are involved in an altercation in which someone is wounded or killed. The "other death" category includes self-inflicted gunshot wounds. Information will be updated as it becomes available.</em></p>
-    <p class="legend-text"><span class="legend killed">Killed: <span id="killed-count"></span></span> &bull; <span class="legend wounded">Wounded: <span id="wounded-count"></span></span> &bull; <span class="legend killed-other">Other death*: <span id="killed-count-other"></span></span> &bull; <span class="legend injured-other">Other injury: <span id="injured-count-other"></span></span> &bull; <span class="legend tbd">TBD</span></p>
+    <h2>Colorado officer-involved shootings, other deaths</h2>
+    <p style="line-height:125%">There has been <strong><span id="incident-count"></span> incident</strong> in which a person has been killed or wounded in an altercation with law-enforcement officers* in Colorado in 2020 &mdash; <strong><span id="killed-count"></span> person has died</strong> and <strong><span id="wounded-count"></span> people have been wounded</strong> in officer-involved shootings; <strong><span id="killed-count-other"></span> people have died by other means</strong>, including self-inflicted gunshot wounds. The latest incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
+    <p style="font-size:.85em"><em>*Incidents in which law-enforcement officers are involved in an altercation in which someone is wounded or killed. Information will be updated as it becomes available.</em></p>
+    <p class="legend-text"><span style="border-top:4px solid #cb364a">Killed</span> &bull; <span style="border-top:4px solid #4c4c4c">Wounded</span> &bull; <span style="border-top:4px solid #aaa">TBD</span> &bull; <span style="border-top:4px solid #3689ca">Other death</span></p>
     <div id="map"></div>
     <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Post research</p>
     <script>
     var map;
-    var code = "1IID4j_pHhdlAseHfiNlIKzkqDS8YIy5o8vfnnh87ckY";
-    //https://docs.google.com/spreadsheets/d/1IID4j_pHhdlAseHfiNlIKzkqDS8YIy5o8vfnnh87ckY/edit#gid=0
+
+    var code = '1FjlDhvPzafA_VUVMNKoZ-_MKP_ybok4Yvvtu11pzfas';
 
     // Markers from https://github.com/pointhi/leaflet-color-markers
     var otherIcon = new L.Icon({
         iconUrl: 'marker-blue.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
-
-    var otherInjuryIcon = new L.Icon({
-        iconUrl: 'marker-orange.png',
+        //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -128,6 +95,7 @@
 
     var killedIcon = new L.Icon({
         iconUrl: 'marker-red.png',
+        //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -136,6 +104,7 @@
 
     var woundedIcon = new L.Icon({
         iconUrl: 'marker-black.png',
+        //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -144,6 +113,7 @@
 
     var tbdIcon = new L.Icon({
         iconUrl: 'marker-gray.png',
+        //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -162,35 +132,49 @@
 
         Tabletop.init({
             key: code,
-            callback: function(sheet, tabletop) {
-                // console.log(sheet);
-                // var incidentCount = sheet.length;
-                // var lastDate = sheet[(incidentCount - 1)].date;
-                // var lastCity = sheet[(incidentCount - 1)].city;
-                var incidentCount = sheet[0].incidenttotal;
-                var woundedCount = sheet[0].woundedtotal;
-                var injuredCountOther = sheet[0].injuredtotalother;
-                var killedCount = sheet[0].killedtotal;
-                var killedCountOther = sheet[0].killedtotalother;
-                var lastDate = sheet[1].date;
-                var lastCity = sheet[1].city;
+            callback: function(data, tabletop) {
+                console.log(data);
+                var incidentCount = (data.length);
+                var lastIncident = data.slice(-1)[0];
+                var lastDate = lastIncident.date;
+                var lastCity = lastIncident.city;
+                var woundedArray = [];
+                var killedArray = [];
+                var otherArray = [];
+
+                for (var j in data) {
+                    var incident = data[j];
+                    var woundedObject = {};
+                    var killedObject = {};
+                    var otherObject = {};
+                    woundedObject = parseFloat(incident.numberwounded);
+                    woundedArray.push(woundedObject);
+                    killedObject = parseFloat(incident.numberkilled);
+                    killedArray.push(killedObject);
+                    otherObject = parseFloat(incident.numberkilledother);
+                    otherArray.push(otherObject);
+                }
+
+                let numOr0 = n => isNaN(n) ? 0 : n;
+                var totalWounded = woundedArray.reduce((a, b) => numOr0(a) + numOr0(b));
+                var totalKilled = killedArray.reduce((a, b) => numOr0(a) + numOr0(b));
+                var totalOtherDeaths = otherArray.reduce((a, b) => numOr0(a) + numOr0(b));
+                console.log('Wounded: ' + totalWounded + '; Killed: ' + totalKilled + '; Other deaths: ' + totalOtherDeaths);
+
                 document.getElementById('incident-count').innerHTML = incidentCount;
                 document.getElementById('last-date').innerHTML = lastDate;
                 document.getElementById('last-city').innerHTML = lastCity;
-                document.getElementById('wounded-count').innerHTML = woundedCount;
-                document.getElementById('injured-count-other').innerHTML = injuredCountOther;
-                document.getElementById('killed-count').innerHTML = killedCount;
-                document.getElementById('killed-count-other').innerHTML = killedCountOther;
+                document.getElementById('wounded-count').innerHTML = totalWounded;
+                document.getElementById('killed-count').innerHTML = totalKilled;
+                document.getElementById('killed-count-other').innerHTML = totalOtherDeaths;
 
-                for (var i in sheet) {
-                    var incident = sheet[i];
-                    if (incident.victimstatus == 'Wounded' || incident.victimstatus == 'Wounded/died by suicide') {
+                for (var i in data) {
+                    var incident = data[i];
+                    if (incident.victimstatus == 'Wounded') {
                         iconColor = woundedIcon
-                    } else if (incident.victimstatus == 'Other injury') {
-                        iconColor = otherInjuryIcon
                     } else if (incident.victimstatus == 'Killed') {
                         iconColor = killedIcon
-                    } else if (incident.victimstatus == 'Died by suicide' || incident.victimstatus == 'Other death') {
+                    } else if (incident.victimstatus == 'Other death') {
                         iconColor = otherIcon
                     } else {
                         iconColor = tbdIcon

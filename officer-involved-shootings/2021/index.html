@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Police shootings in 2020 | The Denver Post</title>
+    <title>Colorado Police Shootings in 2021 | The Denver Post</title>
     <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -99,15 +99,15 @@
 
 <body>
     <h2>Tracking Colorado police shootings</h2>
-    <p style="line-height:125%">There have been <strong><span id="incident-count"></span> incidents</strong> in which a person has been killed or wounded in an altercation with law-enforcement officers* in Colorado in 2020. The last incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
+    <p style="line-height:125%">There have been <strong><span id="incident-count"></span> incidents</strong> in which a person has been killed or wounded in an altercation with law-enforcement officers* in Colorado in 2021. The last incident occurred <span id="last-date"></span>, in <span id="last-city"></span>. <em>Zoom the map and click markers for details.</em></p>
     <p style="font-size:.85em"><em>*Incidents in which law-enforcement officers are involved in an altercation in which someone is wounded or killed. The "other death" category includes self-inflicted gunshot wounds. Information will be updated as it becomes available.</em></p>
     <p class="legend-text"><span class="legend killed">Killed: <span id="killed-count"></span></span> &bull; <span class="legend wounded">Wounded: <span id="wounded-count"></span></span> &bull; <span class="legend killed-other">Other death*: <span id="killed-count-other"></span></span> &bull; <span class="legend injured-other">Other injury: <span id="injured-count-other"></span></span> &bull; <span class="legend tbd">TBD</span></p>
     <div id="map"></div>
     <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Post research</p>
     <script>
     var map;
-    var code = "1IID4j_pHhdlAseHfiNlIKzkqDS8YIy5o8vfnnh87ckY";
-    //https://docs.google.com/spreadsheets/d/1IID4j_pHhdlAseHfiNlIKzkqDS8YIy5o8vfnnh87ckY/edit#gid=0
+    var code = "1jkm5I0C7e4P3P0aXhncloI5L3pF4OWdFjYmeHC4_p1k";
+    //https://docs.google.com/spreadsheets/d/1jkm5I0C7e4P3P0aXhncloI5L3pF4OWdFjYmeHC4_p1k/edit#gid=0
 
     // Markers from https://github.com/pointhi/leaflet-color-markers
     var otherIcon = new L.Icon({
