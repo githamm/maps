@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
     <style>
-    #map {
+        #map {
         width: 100%px;
         height: 600px;
     }
@@ -26,11 +26,44 @@
     div.leaflet-tooltip {
         background-color: rgba(255, 255, 255, .7);
     }
+
+    .float-container {
+        /*border: 3px solid #fff;
+        padding: 20px;*/
+    }
+
+    .float-child {
+        width: 20%;
+        height: 30px;
+        float: left;
+        padding-top: 10px;
+        font-family: Helvetica;
+        font-size: 15px;
+        text-align: center;
+        color: #fff;
+        /*padding: 20px;
+        border: 2px solid red;*/
+    }
+
+    #dropdown-menu {
+        margin-top: 13px;
+        height: 40px;
+        width:  33%;
+    }
     </style>
 </head>
 
 <body>
-    <select id="14erDropdown">
+    <div>
+        <!--['#e66101','#fdb863','#b2abd2','#5e3c99']-->
+        <p style="margin-bottom:4px;font-family:Helvetica;text-transform:uppercase;font-weight:bold;text-align:center;">Popularity with hikers</p>
+        <div class="float-child" style="background-color:#e66101;">Very high</div>
+        <div class="float-child" style="background-color:#fdb863;">High</div>
+        <div class="float-child" style="background-color:#b2abd2;">Medium</div>
+        <div class="float-child" style="background-color:#5e3c99;">Low</div>
+        <div class="float-child" style="background-color:#000000;">No data</div>
+    </div>
+    <select id="dropdown-menu">
         <option>Zoom to peak</option>
         <option value='blanca'>Blanca Peak</option>
         <option value='capitol'>Capitol Peak</option>
@@ -93,7 +126,7 @@
     </select>
     <div>&nbsp;</div>
     <div id='map'></div>
-    <script src="colorado-14ers-geojson.js" type="text/javascript"></script>
+    <script src="colorado_14ers_2021.js" type="text/javascript"></script>
     <script>
     var terrain = L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
@@ -107,7 +140,7 @@
         attribution: 'Map data: &copy; <a href="//www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="//viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
     });
     var map = L.map('map', {
-        center: [38.6255, -106.2509﻿],
+        center: [38.6255, -106.2509],
         zoom: 7,
         layers: [terrain, satellite, topo]
     });
@@ -124,8 +157,8 @@
     // }).addTo(map);
 
     //     var Esri_NatGeoWorldMap = L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-    // 	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-    // 	maxZoom: 16
+    //  attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    //  maxZoom: 16
     // }).addTo(map);
 
     // function onEachFeature(feature, layer) {
@@ -141,7 +174,7 @@
 
     function onEachFeature(feature, layer) {
         if (feature.properties.peak) {
-            layer.bindPopup('<span style="font-size: 1.4em; color: #ff7800; font-weight: bold;">' + feature.properties.peak + '</span><br>' + feature.properties.range + '<hr>' + 'Elevation (rank): ' + feature.properties.elevation + ' feet (' + feature.properties.rank + ')<br>Est. annual trips: ' + feature.properties.hikerDays + '<br><a href="' + feature.properties.link + '" target="_blank">Click for details</a>');
+            layer.bindPopup('<span style="font-size: 1.4em; color: #ff7800; font-weight: bold;">' + feature.properties.peak + '</span><br>' + feature.properties.range + '<hr>' + 'Elevation (rank): <strong>' + feature.properties.elevation + ' feet (' + feature.properties.rank + ')</strong><br>Est. annual trips: <strong>' + feature.properties.hikerDays + '</strong><br>Popularity: <strong>' + feature.properties.hikerDaysCategory + '</strong><br><a href="' + feature.properties.link + '" target="_blank">Click for details</a>');
             layer.bindTooltip(feature.properties.peak);
         }
     }
@@ -155,282 +188,294 @@
         onEachFeature: onEachFeature,
 
         pointToLayer: function(feature, latlng) {
+            var popularityColor;
+            // ['#e66101','#fdb863','#b2abd2','#5e3c99']
+            if (feature.properties.hikerDaysCategory == 'Very high') {
+                popularityColor = '#e66101'
+            } else if (feature.properties.hikerDaysCategory == 'High') {
+                popularityColor = '#fdb863'
+            } else if (feature.properties.hikerDaysCategory == 'Medium') {
+                popularityColor = '#b2abd2'
+            } else if (feature.properties.hikerDaysCategory == 'Low') {
+                popularityColor = '#5e3c99'
+            } else popularityColor = '#000000';
+
             return L.circleMarker(latlng, {
-                radius: 6,
-                fillColor: "red",
+                radius: 7,
+                fillColor: popularityColor,
                 color: "#fff",
-                weight: 2,
+                weight: 3,
                 opacity: 1,
-                fillOpacity: 0.8
+                fillOpacity: 1
             });
         }
     }).addTo(map);
 
     function updateDropdown() {
-        var e = document.getElementById("14erDropdown");
+        var e = document.getElementById("dropdown-menu");
         var dropdownSelection = e.options[e.selectedIndex].value;
         if (dropdownSelection == 'blanca') {
-            map.flyTo([37.5775, -105.4856﻿], 12, {
+            map.flyTo([37.5775, -105.4856], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'capitol') {
-            map.flyTo([39.1503, -107.0829﻿], 12, {
+            map.flyTo([39.1503, -107.0829], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'castle') {
-            map.flyTo([39.0097, -106.8614﻿], 12, {
+            map.flyTo([39.0097, -106.8614], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'challenger') {
-            map.flyTo([37.9804, -105.6066﻿], 12, {
+            map.flyTo([37.9804, -105.6066], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'crestoneNeedle') {
-            map.flyTo([37.9647, -105.5766﻿], 12, {
+            map.flyTo([37.9647, -105.5766], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'crestonePeak') {
-            map.flyTo([37.9669, -105.5855﻿], 12, {
+            map.flyTo([37.9669, -105.5855], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'culebra') {
-            map.flyTo([37.1224, -105.1858﻿], 12, {
+            map.flyTo([37.1224, -105.1858], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'ellingwood') {
-            map.flyTo([37.5826, -105.4927﻿], 12, {
+            map.flyTo([37.5826, -105.4927], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'grays') {
-            map.flyTo([39.6339, -105.8176﻿], 12, {
+            map.flyTo([39.6339, -105.8176], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'handies') {
-            map.flyTo([37.913, -107.5044﻿], 12, {
+            map.flyTo([37.913, -107.5044], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'humboldt') {
-            map.flyTo([37.9762, -105.5552﻿], 12, {
+            map.flyTo([37.9762, -105.5552], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'huron') {
-            map.flyTo([38.9455, -106.4381﻿], 12, {
+            map.flyTo([38.9455, -106.4381], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'kitCarson') {
-            map.flyTo([37.9797, -105.6026﻿], 12, {
+            map.flyTo([37.9797, -105.6026], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'laPlata') {
-            map.flyTo([39.0294, -106.4729﻿], 12, {
+            map.flyTo([39.0294, -106.4729], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'littleBear') {
-            map.flyTo([37.5666, -105.4972﻿], 12, {
+            map.flyTo([37.5666, -105.4972], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'longs') {
-            map.flyTo([40.255, -105.6151﻿], 12, {
+            map.flyTo([40.255, -105.6151], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'maroon') {
-            map.flyTo([39.0708, -106.9890﻿], 12, {
+            map.flyTo([39.0708, -106.9890], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'missouri') {
-            map.flyTo([38.9476, -106.3785﻿], 12, {
+            map.flyTo([38.9476, -106.3785], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'antero') {
-            map.flyTo([38.6741, -106.2462﻿], 12, {
+            map.flyTo([38.6741, -106.2462], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'belford') {
-            map.flyTo([38.9607, -106.3607﻿], 12, {
+            map.flyTo([38.9607, -106.3607], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'bierstadt') {
-            map.flyTo([39.5826, -105.6688﻿], 12, {
+            map.flyTo([39.5826, -105.6688], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'bross') {
-            map.flyTo([39.3354, -106.1077﻿], 12, {
+            map.flyTo([39.3354, -106.1077], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'columbia') {
-            map.flyTo([38.9039, -106.2975﻿], 12, {
+            map.flyTo([38.9039, -106.2975], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'democrat') {
-            map.flyTo([39.3396, -106.1400﻿], 12, {
+            map.flyTo([39.3396, -106.1400], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'elbert') {
-            map.flyTo([39.1178, -106.4454﻿], 12, {
+            map.flyTo([39.1178, -106.4454], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'eolus') {
-            map.flyTo([37.6218, -107.6227﻿], 12, {
+            map.flyTo([37.6218, -107.6227], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'evans') {
-            map.flyTo([39.5883, -105.6438﻿], 12, {
+            map.flyTo([39.5883, -105.6438], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'harvard') {
-            map.flyTo([38.9244, -106.3207﻿], 12, {
+            map.flyTo([38.9244, -106.3207], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'lincoln') {
-            map.flyTo([39.3515, -106.1116﻿], 12, {
+            map.flyTo([39.3515, -106.1116], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'lindsey') {
-            map.flyTo([37.5837, -105.4449﻿], 12, {
+            map.flyTo([37.5837, -105.4449], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'massive') {
-            map.flyTo([39.1875, -106.4757﻿], 12, {
+            map.flyTo([39.1875, -106.4757], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'holyCross') {
-            map.flyTo([39.4668, -106.4817﻿], 12, {
+            map.flyTo([39.4668, -106.4817], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'oxford') {
-            map.flyTo([38.9648, -106.3388﻿], 12, {
+            map.flyTo([38.9648, -106.3388], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'princeton') {
-            map.flyTo([38.7492, -106.2424﻿], 12, {
+            map.flyTo([38.7492, -106.2424], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'shavano') {
-            map.flyTo([38.6192, -106.2393﻿], 12, {
+            map.flyTo([38.6192, -106.2393], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'sherman') {
-            map.flyTo([39.225, -106.1699﻿], 12, {
+            map.flyTo([39.225, -106.1699], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'sneffels') {
-            map.flyTo([38.0038, -107.7923﻿], 12, {
+            map.flyTo([38.0038, -107.7923], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'wilson') {
-            map.flyTo([37.8391, -107.9916﻿], 12, {
+            map.flyTo([37.8391, -107.9916], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'yale') {
-            map.flyTo([38.8442, -106.3138﻿], 12, {
+            map.flyTo([38.8442, -106.3138], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'pikes') {
-            map.flyTo([38.8405, -105.0442﻿], 12, {
+            map.flyTo([38.8405, -105.0442], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'pyramid') {
-            map.flyTo([39.0717, -106.9502﻿], 12, {
+            map.flyTo([39.0717, -106.9502], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'quandary') {
-            map.flyTo([39.3973, -106.1064﻿], 12, {
+            map.flyTo([39.3973, -106.1064], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'redcloud') {
-            map.flyTo([37.941, -107.4219﻿], 12, {
+            map.flyTo([37.941, -107.4219], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'sanLuis') {
-            map.flyTo([37.9868, -106.9313﻿], 12, {
+            map.flyTo([37.9868, -106.9313], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'snowmass') {
-            map.flyTo([39.1188, -107.0665﻿], 12, {
+            map.flyTo([39.1188, -107.0665], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'sunlight') {
-            map.flyTo([37.6274, -107.5959﻿], 12, {
+            map.flyTo([37.6274, -107.5959], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'sunshine') {
-            map.flyTo([37.9228, -107.4256﻿], 12, {
+            map.flyTo([37.9228, -107.4256], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'tabeguache') {
-            map.flyTo([38.6255, -106.2509﻿], 12, {
+            map.flyTo([38.6255, -106.2509], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'torreys') {
-            map.flyTo([39.6428, -105.8212﻿], 12, {
+            map.flyTo([39.6428, -105.8212], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'uncompahgre') {
-            map.flyTo([38.0717, -107.4621﻿], 12, {
+            map.flyTo([38.0717, -107.4621], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'wetterhorn') {
-            map.flyTo([38.0607, -107.5109﻿], 12, {
+            map.flyTo([38.0607, -107.5109], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'wilson') {
-            map.flyTo([37.8603, -107.9847﻿], 12, {
+            map.flyTo([37.8603, -107.9847], 12, {
                 animate: true,
                 duration: 3
             });
         } else if (dropdownSelection == 'windom') {
-            map.flyTo([37.6212, -107.5919﻿], 12, {
+            map.flyTo([37.6212, -107.5919], 12, {
                 animate: true,
                 duration: 3
             });
@@ -440,7 +485,7 @@
                 duration: 3
             });
         } else if (dropdownSelection == 'diente') {
-            map.flyTo([37.839438, -108.005347﻿], 12, {
+            map.flyTo([37.839438, -108.005347], 12, {
                 animate: true,
                 duration: 3
             });
@@ -455,13 +500,13 @@
                 duration: 3
             });
         } else if (dropdownSelection == 'northMaroon') {
-            map.flyTo([39.076077, -106.987267﻿], 12, {
+            map.flyTo([39.076077, -106.987267], 12, {
                 animate: true,
                 duration: 3
             });
         }
     }
-    $('#14erDropdown').change(updateDropdown);
+    $('#dropdown-menu').change(updateDropdown);
     </script>
 </body>
 

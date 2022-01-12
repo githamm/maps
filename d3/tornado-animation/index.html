@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="d3.slider.css" />
+  <title>Google Flu Trends Visualization</title>
+</head>
+<body>
+  <div id="container">
+    <h1>Visualizing the Flu:</h1>
+    <h2>Google Flu Trends in D3.js (September 2003 - March 2015)</h2>
+    <p id="intro"><a href="https://www.google.org/flutrends/us/#US" target="_blank">Google Flu Trends Data</a>. Mapping inspired/hacked by/from <a href="http://axismaps.com/" target="_blank">Axis Map's</a> <a href="http://tipstrategies.com/geography-of-jobs/" target="_blank">Geography of Jobs</a> Map.</p> 
+    <p id="intro"></p>
+    <div id="date">
+      <!-- <p>12 months ending on:</p> -->
+      <p id="month"></p>
+    </div>
+    <div id="play"></div>
+    <div id="slider-container">
+      <div id="slider-div"></div>
+      <div id="slider-probe">
+        <p></p>
+        <div></div>
+      </div>
+    </div>
+    <div id="map-container"></div>
+    <!-- <a href="http://axismaps.com" target="_blank" id="axis-maps"><img src="images/axismaps.png" alt="Axis Maps" title="Designed and built by Axis Maps"/></a> -->
+   <!--  <p id="source">Source: US Bureau of Labor Statistics, Current Employment Statistics and TIP Strategies</p> -->
+     <p id="source"></p>
+  </div>
+  <script src="d3.v3.min.js"></script>
+  <script src="topojson.v1.min.js"></script>
+  <script src="d3.slider.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

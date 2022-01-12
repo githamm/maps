@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Wildfires in the U.S.</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <script src="moment.js"></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 5px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #map {
+        width: 100%;
+        height: 600px;
+        border: 1px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+    }
+
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+        background: #fafafa;
+    }
+
+    .leaflet-popup-content {
+        font-size: .9rem;
+    }
+
+    .fire-name {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.2rem;
+        color: #c03639;
+        border-bottom: 1px solid #c3c3c3;
+        margin-top: 0;
+        margin-bottom: -13px;
+    }
+
+    .update {
+        font-size: .8rem;
+        color: #9b9b9b;
+        font-style: italic;
+    }
+
+    .credit {
+        font-size: .8rem;
+        color: #9b9b9b;
+        font-style: italic;
+        text-align: right;
+        margin-top: 5px;
+    }
+
+    ul>li {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+    }
+
+    .legend-types {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+    }
+
+    #viewSelect a,
+    #viewSelect a:hover,
+    #viewSelect a:active,
+    #viewSelect a:visited {
+        color:#224499;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    #viewSelect a.active,
+    #viewSelect a.active:hover,
+    #viewSelect a.active:active,
+    #viewSelect a.active:visited {
+        color:#aabbee;
+        text-decoration:none;
+        pointer-events: none;
+    }
+    .legend-marker-text {
+        margin-top: -32px;
+        margin-left: 35px;
+        margin-right: 10px;
+    }
+
+    .legend-perimeter-text {
+        margin-top: -17px;
+        margin-left: 23px;
+        margin-right: 10px;
+    }
+
+    .legend-title {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        margin-left: -20px;
+        margin-bottom: -13px;
+    }
+
+    #legend-active,
+    #legend-inactive {
+        height: 17px;
+        width: 17px;
+        border-radius: 50%;
+    }
+
+    #legend-active {
+        background: #c03639;
+    }
+
+    #legend-inactive {
+        background: #000;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="legend-types">
+        <ul>
+            <p class="legend-title">Markers</p>
+            <br>
+            <li><img src="small-fire.png">
+                <p class="legend-marker-text">
+                    < 1,000 acres</p>
+            </li>
+            <li><img src="medium-fire.png">
+                <p class="legend-marker-text">1,000-10,000 acres</p>
+            </li>
+            <li><img src="large-fire.png">
+                <p class="legend-marker-text">10,000+ acres</p>
+            </li>
+        </ul>
+    </div>
+    <div class="legend-types">
+        <ul style="margin-top: -20px">
+            <p class="legend-title">Perimeters</p>
+            <br>
+            <li>
+                <div id="legend-active"></div>
+                <p class="legend-perimeter-text">Active fire</p>
+            </li>
+            <li>
+                <div id="legend-inactive"></div>
+                <p class="legend-perimeter-text">Inactive fire</p>
+            </li>
+        </ul>
+    </div>
+    <hr style="margin-top:-8px;margin-bottom:-6px;">
+    <div id="viewSelect" style="float:left;display:inline-block;margin-right:3em;">
+        <p><strong>View:</strong> <a href="./?view=colorado" id="viewSelectColorado">Colorado</a> | <a href="./" id="viewSelectUs">U.S.</a></p>
+    </div>
+    <div id="fireDropdownWrap" style="display:none;">
+        <p style="float:left;display:inline-block;margin-right:1em;"><strong>Zoom to a Colorado fire:</strong> </p>
+        <form style="margin-top:15px;margin-left: 5px;display:inline-block;float:left;">
+            <select id="fireDropdown">
+                <option>Choose a fire</option>
+            </select>
+        </form>
+    </div>
+    <div id="map"></div>
+    <script>
+    // VERSIONING FOR BROWSER CACHE
+    function vSec() {
+        var dt = new Date();
+        var secs = dt.getSeconds() + (60 * dt.getMinutes());
+        return secs;
+    }
+
+    function slugify(text) {
+        return text.toString().toLowerCase()
+            .replace(/\s+/g, '-') // Replace spaces with -
+            .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+            .replace(/\-\-+/g, '-') // Replace multiple - with single -
+            .replace(/^-+/, '') // Trim - from start of text
+            .replace(/-+$/, ''); // Trim - from end of text
+    }
+
+    var QueryString = function() {
+        // This function is anonymous, is executed immediately and 
+        // the return value is assigned to QueryString!
+        var query_string = {};
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            // If first entry with this name
+            if (typeof query_string[pair[0]] === "undefined") {
+                query_string[pair[0]] = decodeURIComponent(pair[1]);
+                // If second entry with this name
+            } else if (typeof query_string[pair[0]] === "string") {
+                var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                query_string[pair[0]] = arr;
+                // If third or later entry with this name
+            } else {
+                query_string[pair[0]].push(decodeURIComponent(pair[1]));
+            }
+        }
+        return query_string;
+    }();
+
+    if (typeof QueryString.fire != 'undefined') {
+        var zoom_to_fire = QueryString.fire;
+    }
+    if (typeof QueryString.view != 'undefined') {
+        var view_colorado = QueryString.view;
+    }
+    if (view_colorado == 'colorado') {
+        $('#viewSelectColorado').addClass('active');
+    } else{
+        $('#viewSelectUs').addClass('active');
+    }
+
+    var coFires = new Array();
+
+    var activeWildfiresUS2018 = new L.LayerGroup();
+    var containedWildfiresUS2018 = new L.LayerGroup();
+    var perimeters2018 = new L.LayerGroup();
+
+    var terrainMap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 13,
+        ext: 'png'
+    });
+    var roadMap = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+        attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+        minZoom: 1,
+        maxZoom: 13
+    });
+    var satelliteMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    var monochromeMap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 13,
+        ext: 'png'
+    });
+
+    var baseLayers = {
+        "Road map": roadMap,
+        "Terrain map": terrainMap,
+        "Satellite map": satelliteMap,
+        "Monochrome map": monochromeMap
+    }
+
+    var groupedOverlays = {
+        "Background": {
+            "Active wildfires": activeWildfiresUS2018,
+            "Contained wildfires": containedWildfiresUS2018,
+            "Wildfire perimeters": perimeters2018
+        },
+    };
+
+    var map = L.map('map', {
+        center: [37.0119, -105.4842],
+        zoom: 6,
+        //dragging: false,
+        layers: [roadMap, activeWildfiresUS2018, perimeters2018]
+    });
+    var smallFireIcon = L.icon({
+        iconUrl: 'small-fire.png',
+        iconSize: [35, 35]
+    });
+    var mediumFireIcon = L.icon({
+        iconUrl: 'medium-fire.png',
+        iconSize: [35, 35]
+    });
+    var largeFireIcon = L.icon({
+        iconUrl: 'large-fire.png',
+        iconSize: [35, 35]
+    });
+    var containedSmallFireIcon = L.icon({
+        iconUrl: 'small-fire.png',
+        iconSize: [25, 25]
+    });
+    var containedMediumFireIcon = L.icon({
+        iconUrl: 'medium-fire.png',
+        iconSize: [25, 25]
+    });
+    var containedLargeFireIcon = L.icon({
+        iconUrl: 'large-fire.png',
+        iconSize: [25, 25]
+    });
+
+    activeFireNames = [];
+    activeFireLat = [];
+    activeFireLong = [];
+    activeFireID = [];
+
+    // TESTING 5,000 ACRE CIRCLE SIZE
+    // var circle = L.circle([37.0119, -105.4842], {
+    //     radius: 3590,
+    //     color: 'blue',
+    //     fillColor: 'blue',
+    //     fillOpacity: 0.1
+    // }).addTo(map);
+
+    // circle.on({
+    //     mousedown: function() {
+    //         map.dragging.disable();
+    //         map.on('mousemove', function(e) {
+    //             circle.setLatLng(e.latlng);
+    //         });
+    //     }
+    // });
+    // map.on('mouseup', function(e) {
+    //     map.dragging.enable();
+    //     map.removeEventListener('mousemove');
+    // })
+
+    // MANUALLY ADD FIRES
+    // L.marker([39.625579999999999, -106.1103], { icon: smallFireIcon }).addTo(activeWildfiresUS2018).bindPopup('<h3 class="fire-name">' + 'Buffalo' + '</h3><br>' + 'Acres: ' + '91' + '<br>' + 'Contained: ' + '20' + '%' + '<br>' + 'Started: ' + 'June 12, 2018' + '<br>' + 'Cause: ' + 'Unknown' + '<br>' + '<span class="update"><a href="' + 'https://inciweb.nwcg.gov/incident/5841/' + '" target="_blank">Fire details</a> &bull; Updated<br>' + 'June 14, 2018 7:08 AM' + '</span>');
+
+    
+    var pointDataFile = (view_colorado == 'colorado') ? 'https://extras.denverpost.com/app/wildfire/combined/wildfires-combined-all-co.json?v=' + vSec() : 'https://extras.denverpost.com/app/wildfire/combined/wildfires-combined-all.json?v=' + vSec();
+    //var pointDataFile = (view_colorado == 'colorado') ? 'wildfires-combined-all-co.json?v=' + vSec() : 'wildfires-combined-all.json?v=' + vSec();
+
+    $.getJSON(pointDataFile, getData);
+    // ACTIVE U.S. WILDFIRES IN 2018
+    function getData(data) {
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var discoveryDate = moment(feature.properties.firediscoverydatetime).format('LL');
+                var updateDate = moment(feature.properties.reportdatetime).format('LLL');
+                var popupFooter;
+                var linkExists = (typeof feature.properties.iw_link !== 'undefined') ? true : false;
+                // DATE DIFFERENCE
+                var oneDay = 24 * 60 * 60 * 1000;
+                var todayDate = Date.now();
+                var reportDate = feature.properties.reportdatetime;
+                var diffDays = Math.round(Math.abs((todayDate - reportDate) / (oneDay)));
+                var pctContained = feature.properties.percentcontained;
+                var acres = Math.round(feature.properties.acres);
+                var marker;
+
+                if (linkExists === true) {
+                    popupFooter = '<span class="update"><a href="' + feature.properties.iw_link + '" target="_blank">Fire details</a> &bull; Updated<br>' + updateDate + '</span>'
+                } else {
+                    popupFooter = '<span class="update">Updated ' + updateDate + '</span>'
+                };
+
+                if (pctContained < 100 && diffDays < 14) {
+                    if (acres < 1000) {
+                        marker = L.marker(latlng, { icon: smallFireIcon })
+                    } else if (acres < 10000) {
+                        marker = L.marker(latlng, { icon: mediumFireIcon })
+                    } else(marker = L.marker(latlng, { icon: largeFireIcon }))
+                    marker.bindPopup('<h3 class="fire-name">' + feature.properties.incidentname + '</h3><br>' + 'Acres: ' + acres.toLocaleString() + '<br>' + 'Contained: ' + feature.properties.percentcontained + '%' + '<br>' + 'Started: ' + discoveryDate + '<br>' + 'Cause: ' + feature.properties.firecause + '<br>' + popupFooter);
+                    return marker;
+                }
+            }
+        }).addTo(activeWildfiresUS2018);
+
+        // CONTAINED U.S. WILDFIRES IN 2018
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                var discoveryDate = moment(feature.properties.firediscoverydatetime).format('LL');
+                var updateDate = moment(feature.properties.reportdatetime).format('LLL');
+                var popupFooter;
+                var linkExists = (typeof feature.properties.iw_link !== 'undefined') ? true : false;
+                // DATE DIFFERENCE
+                var oneDay = 24 * 60 * 60 * 1000;
+                var todayDate = Date.now();
+                var reportDate = feature.properties.reportdatetime;
+                var diffDays = Math.round(Math.abs((todayDate - reportDate) / (oneDay)));
+                var pctContained = feature.properties.percentcontained;
+                var acres = Math.round(feature.properties.acres);
+                var marker;
+
+                if (linkExists === true) {
+                    popupFooter = '<span class="update"><a href="' + feature.properties.iw_link + '" target="_blank">Fire details</a> &bull; Updated<br>' + updateDate + '</span>'
+                } else {
+                    popupFooter = '<span class="update">Updated ' + updateDate + '</span>'
+                };
+
+                if (pctContained === 100 || pctContained < 100 && diffDays >= 14) {
+                    if (acres < 1000) {
+                        marker = L.marker(latlng, { icon: containedSmallFireIcon })
+                    } else if (acres < 10000) {
+                        marker = L.marker(latlng, { icon: containedMediumFireIcon })
+                    } else(marker = L.marker(latlng, { icon: containedLargeFireIcon }))
+                    marker.bindPopup('<h3 class="fire-name">' + feature.properties.incidentname + '</h3><br>' + 'Acres: ' + acres.toLocaleString() + '<br>' + 'Contained: ' + feature.properties.percentcontained + '%' + '<br>' + 'Started: ' + discoveryDate + '<br>' + 'Cause: ' + feature.properties.firecause + '<br>' + popupFooter);
+                    return marker;
+                }
+            },
+        }).addTo(containedWildfiresUS2018);
+    };
+
+    var geojsonLayer = false;
+    // All 2018 FIRE PERIMETERS
+    // 
+    var perimDataFile = (view_colorado == 'colorado') ? 'https://extras.denverpost.com/app/wildfire/combined/wildfires-combined-perims-co.json?v=' + vSec() : 'https://extras.denverpost.com/app/wildfire/combined/wildfires-combined-perims.json?v=' + vSec();
+    //var perimDataFile = (view_colorado == 'colorado') ? 'wildfires-combined-perims-co.json?v=' + vSec() : 'wildfires-combined-perims.json?v=' + vSec();
+
+    $.getJSON(perimDataFile, function(data) {
+        geojsonLayer = L.geoJson(data, {
+            style: function(feature) {
+                var fillColor;
+                var color;
+                fireStatus = feature.properties.active;
+                if (fireStatus === 'Y') fillColor = "#c03639", color = "#c03639";
+                else fillColor = "000", color = "#000"; // no data
+                return {
+                    color: color,
+                    weight: 3,
+                    fillColor: fillColor,
+                    fillOpacity: .4
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var perimeterDate = moment(feature.properties.perimeterdatetime).format('LLL');
+                layer.bindPopup('<h3 class="fire-name">' + feature.properties.incidentname + '</h3><br>' + 'Acres: ' + Math.round(feature.properties.gisacres).toLocaleString() + '<br>' + '<span class="update">Updated ' + perimeterDate + '</span>');
+                if (slugify(feature.properties.state) == 'co') {
+                    layer._leaflet_id = feature.id;
+                    coFires[slugify(feature.properties.incidentname)] = feature.id;
+                    if (fireStatus === 'Y') {
+                        activeFireNames.push(feature.properties.incidentname);
+                    }
+                    //console.log(coFires);
+                }
+            }
+        }).addTo(perimeters2018);
+    });
+    L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+    function populateSelect(list) {
+        // POPULATE DROPDOWN WITH ACTIVE FIRE NAMES
+        for (var i = 0; i < list.length; i++) {
+            //console.log(list + ' ' + i);
+            var opt = list[i];
+            var el = document.createElement("option");
+            var sel = document.getElementById('fireDropdown');
+            el.textContent = opt;
+            el.value = slugify(list[i]);
+            //console.log(el.value);
+            sel.appendChild(el);
+        };
+        $('#fireDropdownWrap').css('display', 'inline-block');
+        $('#fireDropdown').on('change', function() {
+            var fire = $(this).val();
+            changeView(coFires[fire]);
+        });
+    }
+
+    function changeView(poly) {
+        feature = geojsonLayer.getLayer(poly);
+        map.flyToBounds(feature.getBounds(), { maxZoom: 12 });
+    }
+
+    function init(){
+        populateSelect(activeFireNames);
+        if (typeof zoom_to_fire != 'undefined') {
+            changeView(coFires[zoom_to_fire]);
+        }
+    }
+    $(document).ready(function() {
+        var checkExist = setInterval(function() {
+           if (activeFireNames.length > 0) {
+              //console.log(activeFireNames);
+              init();
+              clearInterval(checkExist);
+           }
+        }, 100);
+    });
+    </script>
+</body>
+
+</html>

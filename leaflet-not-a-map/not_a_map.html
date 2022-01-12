@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRS.Simple example - Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    #map {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <script>
+    var map = L.map('map', {
+        crs: L.CRS.Simple,
+        keyboard: false,
+        dragging: false,
+        zoomControl: false,
+        boxZoom: false,
+        doubleClickZoom: false,
+        scrollWheelZoom: false,
+        tap: false,
+        touchZoom: false
+    });
+
+    var bounds = [
+        [0, 0],
+        [400, 600]
+    ];
+    var image = L.imageOverlay('https://www.denverpost.com/wp-content/uploads/2022/01/AP22006141796560.jpg', bounds).addTo(map);
+
+    // map.getContainer().addEventListener('mouseover', function() {
+    // map.dragging.disable();
+    // map.doubleClickZoom.disable();
+    // });
+
+    var circleStyle = {
+    	radius: 25,
+    	fillColor: '',
+    	color: 'red',
+    	weight: 5,
+    	opacity: 1,
+    	fillOpacity: 0
+    }
+
+    var headStyle = {
+    	radius: 55,
+    	fillColor: '',
+    	color: 'red',
+    	weight: 5,
+    	opacity: 1,
+    	fillOpacity: 0
+    }
+
+    var yx = L.latLng;
+
+    var xy = function(x, y) {
+        if (L.Util.isArray(x)) { // When doing xy([x, y]);
+            return yx(x[1], x[0]);
+        }
+        return yx(y, x); // When doing xy(x, y);
+    };
+
+    var sol = xy(175.2, 145.0);
+    var mizar = xy(41.6, 130.1);
+    var kruegerZ = xy(13.4, 56.5);
+    var deneb = xy(218.7, 8.3);
+    var head = xy(295, 315);
+
+    L.circleMarker(sol, circleStyle).addTo(map).bindPopup('This is Nikola Jokic\'s arm');
+    L.marker(mizar).addTo(map).bindPopup('Mizar');
+    L.marker(kruegerZ).addTo(map).bindPopup('Krueger-Z');
+    L.circleMarker(deneb, circleStyle).addTo(map).bindPopup('Deneb');
+    L.circleMarker(head, headStyle).addTo(map).bindPopup('This is Jokic\'s head');
+
+    var travel = L.polyline([sol, deneb]).addTo(map);
+
+    var addressCircle = {
+        radius: 5,
+        fillColor: 'red',
+        color: '#646464',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: .5
+    };
+
+    //return L.circleMarker(latlng, addressCircle).bindPopup(popupTextBusiness);
+
+    map.fitBounds(bounds);
+    </script>
+</body>
+
+</html>

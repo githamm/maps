@@ -1,0 +1,530 @@
+[
+  {
+    "zipCode": 80237,
+    "medianSold2017": 306250,
+    "medianSold2018": 428500,
+    "medianPctChange": 0.3991836735
+  },
+  {
+    "zipCode": 80230,
+    "medianSold2017": 522000,
+    "medianSold2018": 729402,
+    "medianPctChange": 0.3973218391
+  },
+  {
+    "zipCode": 80223,
+    "medianSold2017": 295000,
+    "medianSold2018": 411000,
+    "medianPctChange": 0.393220339
+  },
+  {
+    "zipCode": 80125,
+    "medianSold2017": 407450,
+    "medianSold2018": 540000,
+    "medianPctChange": 0.3253159897
+  },
+  {
+    "zipCode": 80401,
+    "medianSold2017": 447500,
+    "medianSold2018": 579000,
+    "medianPctChange": 0.2938547486
+  },
+  {
+    "zipCode": 80121,
+    "medianSold2017": 436000,
+    "medianSold2018": 545000,
+    "medianPctChange": 0.25
+  },
+  {
+    "zipCode": 80236,
+    "medianSold2017": 305000,
+    "medianSold2018": 379000,
+    "medianPctChange": 0.2426229508
+  },
+  {
+    "zipCode": 80111,
+    "medianSold2017": 545000,
+    "medianSold2018": 667300,
+    "medianPctChange": 0.2244036697
+  },
+  {
+    "zipCode": 80214,
+    "medianSold2017": 324000,
+    "medianSold2018": 396000,
+    "medianPctChange": 0.2222222222
+  },
+  {
+    "zipCode": 80247,
+    "medianSold2017": 192500,
+    "medianSold2018": 234750,
+    "medianPctChange": 0.2194805195
+  },
+  {
+    "zipCode": 80216,
+    "medianSold2017": 243000,
+    "medianSold2018": 290000,
+    "medianPctChange": 0.1934156379
+  },
+  {
+    "zipCode": 80010,
+    "medianSold2017": 245099,
+    "medianSold2018": 292500,
+    "medianPctChange": 0.1933953219
+  },
+  {
+    "zipCode": 80224,
+    "medianSold2017": 360000,
+    "medianSold2018": 427500,
+    "medianPctChange": 0.1875
+  },
+  {
+    "zipCode": 80212,
+    "medianSold2017": 462500,
+    "medianSold2018": 541000,
+    "medianPctChange": 0.1697297297
+  },
+  {
+    "zipCode": 80222,
+    "medianSold2017": 372500,
+    "medianSold2018": 430000,
+    "medianPctChange": 0.1543624161
+  },
+  {
+    "zipCode": 80124,
+    "medianSold2017": 526250,
+    "medianSold2018": 606250,
+    "medianPctChange": 0.1520190024
+  },
+  {
+    "zipCode": 80130,
+    "medianSold2017": 419900,
+    "medianSold2018": 480000,
+    "medianPctChange": 0.1431293165
+  },
+  {
+    "zipCode": 80219,
+    "medianSold2017": 276000,
+    "medianSold2018": 315000,
+    "medianPctChange": 0.1413043478
+  },
+  {
+    "zipCode": 80122,
+    "medianSold2017": 385000,
+    "medianSold2018": 437000,
+    "medianPctChange": 0.1350649351
+  },
+  {
+    "zipCode": 80210,
+    "medianSold2017": 600000,
+    "medianSold2018": 680000,
+    "medianPctChange": 0.1333333333
+  },
+  {
+    "zipCode": 80002,
+    "medianSold2017": 322500,
+    "medianSold2018": 365250,
+    "medianPctChange": 0.1325581395
+  },
+  {
+    "zipCode": 80129,
+    "medianSold2017": 415000,
+    "medianSold2018": 470000,
+    "medianPctChange": 0.1325301205
+  },
+  {
+    "zipCode": 80030,
+    "medianSold2017": 270000,
+    "medianSold2018": 305500,
+    "medianPctChange": 0.1314814815
+  },
+  {
+    "zipCode": 80027,
+    "medianSold2017": 524000,
+    "medianSold2018": 591000,
+    "medianPctChange": 0.1278625954
+  },
+  {
+    "zipCode": 80204,
+    "medianSold2017": 418000,
+    "medianSold2018": 470000,
+    "medianPctChange": 0.1244019139
+  },
+  {
+    "zipCode": 80221,
+    "medianSold2017": 302500,
+    "medianSold2018": 340000,
+    "medianPctChange": 0.1239669421
+  },
+  {
+    "zipCode": 80205,
+    "medianSold2017": 418750,
+    "medianSold2018": 470000,
+    "medianPctChange": 0.1223880597
+  },
+  {
+    "zipCode": 80031,
+    "medianSold2017": 325000,
+    "medianSold2018": 364750,
+    "medianPctChange": 0.1223076923
+  },
+  {
+    "zipCode": 80601,
+    "medianSold2017": 323590,
+    "medianSold2018": 363000,
+    "medianPctChange": 0.1217899193
+  },
+  {
+    "zipCode": 80218,
+    "medianSold2017": 330000,
+    "medianSold2018": 369500,
+    "medianPctChange": 0.1196969697
+  },
+  {
+    "zipCode": 80022,
+    "medianSold2017": 322000,
+    "medianSold2018": 360000,
+    "medianPctChange": 0.1180124224
+  },
+  {
+    "zipCode": 80231,
+    "medianSold2017": 246000,
+    "medianSold2018": 275000,
+    "medianPctChange": 0.1178861789
+  },
+  {
+    "zipCode": 80249,
+    "medianSold2017": 300000,
+    "medianSold2018": 335000,
+    "medianPctChange": 0.1166666667
+  },
+  {
+    "zipCode": 80239,
+    "medianSold2017": 270000,
+    "medianSold2018": 301110,
+    "medianPctChange": 0.1152222222
+  },
+  {
+    "zipCode": 80209,
+    "medianSold2017": 621000,
+    "medianSold2018": 692500,
+    "medianPctChange": 0.115136876
+  },
+  {
+    "zipCode": 80011,
+    "medianSold2017": 262000,
+    "medianSold2018": 292000,
+    "medianPctChange": 0.1145038168
+  },
+  {
+    "zipCode": 80229,
+    "medianSold2017": 265000,
+    "medianSold2018": 295000,
+    "medianPctChange": 0.1132075472
+  },
+  {
+    "zipCode": 80303,
+    "medianSold2017": 540000,
+    "medianSold2018": 600450,
+    "medianPctChange": 0.1119444444
+  },
+  {
+    "zipCode": 80603,
+    "medianSold2017": 301400,
+    "medianSold2018": 335000,
+    "medianPctChange": 0.1114797611
+  },
+  {
+    "zipCode": 80013,
+    "medianSold2017": 305000,
+    "medianSold2018": 339000,
+    "medianPctChange": 0.1114754098
+  },
+  {
+    "zipCode": 80104,
+    "medianSold2017": 362750,
+    "medianSold2018": 403000,
+    "medianPctChange": 0.11095796
+  },
+  {
+    "zipCode": 80207,
+    "medianSold2017": 419000,
+    "medianSold2018": 465000,
+    "medianPctChange": 0.1097852029
+  },
+  {
+    "zipCode": 80110,
+    "medianSold2017": 322500,
+    "medianSold2018": 357000,
+    "medianPctChange": 0.1069767442
+  },
+  {
+    "zipCode": 80234,
+    "medianSold2017": 334250,
+    "medianSold2018": 370000,
+    "medianPctChange": 0.1069558714
+  },
+  {
+    "zipCode": 80202,
+    "medianSold2017": 479000,
+    "medianSold2018": 530000,
+    "medianPctChange": 0.1064718163
+  },
+  {
+    "zipCode": 80602,
+    "medianSold2017": 398500,
+    "medianSold2018": 440075,
+    "medianPctChange": 0.1043287327
+  },
+  {
+    "zipCode": 80126,
+    "medianSold2017": 468000,
+    "medianSold2018": 515000,
+    "medianPctChange": 0.1004273504
+  },
+  {
+    "zipCode": 80014,
+    "medianSold2017": 245250,
+    "medianSold2018": 269500,
+    "medianPctChange": 0.09887869521
+  },
+  {
+    "zipCode": 80233,
+    "medianSold2017": 298500,
+    "medianSold2018": 327500,
+    "medianPctChange": 0.09715242881
+  },
+  {
+    "zipCode": 80109,
+    "medianSold2017": 420000,
+    "medianSold2018": 459950,
+    "medianPctChange": 0.09511904762
+  },
+  {
+    "zipCode": 80005,
+    "medianSold2017": 400000,
+    "medianSold2018": 436500,
+    "medianPctChange": 0.09125
+  },
+  {
+    "zipCode": 80241,
+    "medianSold2017": 339359,
+    "medianSold2018": 370000,
+    "medianPctChange": 0.09029081297
+  },
+  {
+    "zipCode": 80123,
+    "medianSold2017": 349159,
+    "medianSold2018": 380000,
+    "medianPctChange": 0.08832938575
+  },
+  {
+    "zipCode": 80015,
+    "medianSold2017": 359900,
+    "medianSold2018": 390000,
+    "medianPctChange": 0.08363434287
+  },
+  {
+    "zipCode": 80112,
+    "medianSold2017": 365000,
+    "medianSold2018": 395500,
+    "medianPctChange": 0.08356164384
+  },
+  {
+    "zipCode": 80003,
+    "medianSold2017": 337500,
+    "medianSold2018": 365000,
+    "medianPctChange": 0.08148148148
+  },
+  {
+    "zipCode": 80033,
+    "medianSold2017": 370000,
+    "medianSold2018": 400000,
+    "medianPctChange": 0.08108108108
+  },
+  {
+    "zipCode": 80020,
+    "medianSold2017": 365400,
+    "medianSold2018": 395000,
+    "medianPctChange": 0.08100711549
+  },
+  {
+    "zipCode": 80017,
+    "medianSold2017": 256500,
+    "medianSold2018": 276700,
+    "medianPctChange": 0.07875243665
+  },
+  {
+    "zipCode": 80004,
+    "medianSold2017": 380300,
+    "medianSold2018": 410000,
+    "medianPctChange": 0.07809623981
+  },
+  {
+    "zipCode": 80215,
+    "medianSold2017": 416500,
+    "medianSold2018": 448250,
+    "medianPctChange": 0.0762304922
+  },
+  {
+    "zipCode": 80127,
+    "medianSold2017": 399900,
+    "medianSold2018": 430000,
+    "medianPctChange": 0.0752688172
+  },
+  {
+    "zipCode": 80016,
+    "medianSold2017": 479450,
+    "medianSold2018": 514900,
+    "medianPctChange": 0.07393888831
+  },
+  {
+    "zipCode": 80007,
+    "medianSold2017": 525000,
+    "medianSold2018": 562450,
+    "medianPctChange": 0.07133333333
+  },
+  {
+    "zipCode": 80134,
+    "medianSold2017": 435000,
+    "medianSold2018": 465000,
+    "medianPctChange": 0.06896551724
+  },
+  {
+    "zipCode": 80220,
+    "medianSold2017": 427200,
+    "medianSold2018": 456500,
+    "medianPctChange": 0.06858614232
+  },
+  {
+    "zipCode": 80021,
+    "medianSold2017": 345500,
+    "medianSold2018": 368000,
+    "medianPctChange": 0.06512301013
+  },
+  {
+    "zipCode": 80203,
+    "medianSold2017": 306250,
+    "medianSold2018": 325500,
+    "medianPctChange": 0.06285714286
+  },
+  {
+    "zipCode": 80120,
+    "medianSold2017": 401000,
+    "medianSold2018": 425000,
+    "medianPctChange": 0.05985037406
+  },
+  {
+    "zipCode": 80135,
+    "medianSold2017": 567500,
+    "medianSold2018": 600000,
+    "medianPctChange": 0.05726872247
+  },
+  {
+    "zipCode": 80232,
+    "medianSold2017": 339750,
+    "medianSold2018": 358500,
+    "medianPctChange": 0.05518763797
+  },
+  {
+    "zipCode": 80012,
+    "medianSold2017": 232250,
+    "medianSold2018": 245000,
+    "medianPctChange": 0.0548977395
+  },
+  {
+    "zipCode": 80113,
+    "medianSold2017": 421500,
+    "medianSold2018": 444250,
+    "medianPctChange": 0.05397390273
+  },
+  {
+    "zipCode": 80228,
+    "medianSold2017": 403000,
+    "medianSold2018": 424500,
+    "medianPctChange": 0.05334987593
+  },
+  {
+    "zipCode": 80138,
+    "medianSold2017": 458875,
+    "medianSold2018": 481229,
+    "medianPctChange": 0.04871479161
+  },
+  {
+    "zipCode": 80018,
+    "medianSold2017": 369500,
+    "medianSold2018": 387000,
+    "medianPctChange": 0.04736129905
+  },
+  {
+    "zipCode": 80260,
+    "medianSold2017": 243500,
+    "medianSold2018": 255000,
+    "medianPctChange": 0.04722792608
+  },
+  {
+    "zipCode": 80128,
+    "medianSold2017": 350500,
+    "medianSold2018": 366000,
+    "medianPctChange": 0.04422253923
+  },
+  {
+    "zipCode": 80226,
+    "medianSold2017": 360000,
+    "medianSold2018": 371250,
+    "medianPctChange": 0.03125
+  },
+  {
+    "zipCode": 80211,
+    "medianSold2017": 525000,
+    "medianSold2018": 540000,
+    "medianPctChange": 0.02857142857
+  },
+  {
+    "zipCode": 80238,
+    "medianSold2017": 540000,
+    "medianSold2018": 555000,
+    "medianPctChange": 0.02777777778
+  },
+  {
+    "zipCode": 80465,
+    "medianSold2017": 402000,
+    "medianSold2018": 413000,
+    "medianPctChange": 0.02736318408
+  },
+  {
+    "zipCode": 80403,
+    "medianSold2017": 527200,
+    "medianSold2018": 540000,
+    "medianPctChange": 0.02427921093
+  },
+  {
+    "zipCode": 80108,
+    "medianSold2017": 557475,
+    "medianSold2018": 564750,
+    "medianPctChange": 0.01304991255
+  },
+  {
+    "zipCode": 80227,
+    "medianSold2017": 315000,
+    "medianSold2018": 303750,
+    "medianPctChange": -0.03571428571
+  },
+  {
+    "zipCode": 80206,
+    "medianSold2017": 639500,
+    "medianSold2018": 615250,
+    "medianPctChange": -0.0379202502
+  },
+  {
+    "zipCode": 80640,
+    "medianSold2017": 340000,
+    "medianSold2018": 320000,
+    "medianPctChange": -0.05882352941
+  },
+  {
+    "zipCode": 80235,
+    "medianSold2017": 300000,
+    "medianSold2018": 260750,
+    "medianPctChange": -0.1308333333
+  }
+]

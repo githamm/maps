@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v0.min.js"></script>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+    <style type="text/css">
+	.Colorado_School_District_Boundaries {
+        	fill: #aaa;
+        	stroke: #fff;
+        	stroke-width: 0.75px;
+	}
+	#container {
+		margin:2%;
+		padding:20px;
+		border:2px solid #d0d0d0;
+		border-radius: 5px;
+	}
+    </style>
+  </head>
+  <body onload="sizeChange()">
+  
+    <div id="container"></div>
+
+  <script type="text/javascript">
+	d3.select(window)
+    		.on("resize", sizeChange);
+
+	var projection = d3.geo.albersUsa()
+		.scale(2500);
+
+	var path = d3.geo.path()
+		.projection(projection);
+
+	var svg = d3.select("#container")
+		.append("svg")
+		.attr("width", "100%")
+    		.append("g");
+	
+	d3.json("colorado-school-district-boundaries-topojson.json", function(error, us) {
+	  svg.selectAll(".Colorado_School_District_Boundaries")
+		.data(topojson.object(us, us.objects.Colorado_School_District_Boundaries).geometries)
+	 .enter().append("path")
+		.attr("class", "Colorado_School_District_Boundaries")
+		.attr("d", path);
+	});
+
+	function sizeChange() {
+	    d3.select("g").attr("transform", "scale(" + $("#container").width()/900 + ")");
+	    $("svg").height($("#container").width()*0.618);
+	}
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Colorado 14ers List | The Denver Post</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.foundation.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.foundation.min.css" />
+    <!-- <link rel="stylesheet" href="jquery.dataTables.yadcf.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.foundation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.16/dataRender/datetime.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yadcf/0.9.2/jquery.dataTables.yadcf.js"></script>
+    <script src="https://extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/natural.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        /*background-color: #fafafa;*/
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1%;
+    }
+
+    .table-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 120%;
+        padding-top: 5px;
+    }
+
+    #filters {
+        font-size: .85rem;
+    }
+
+    .table-instructions {
+        color: #990012;
+        font-style: italic;
+        text-align: center;
+        font-size: .9rem;
+    }
+
+    #contributions-table-container {
+        margin-top: 10px;
+        padding: 3px;
+    }
+
+    #contributions-table {
+        font-size: .85rem;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    button.yadcf-filter-reset-button {
+        color: red;
+        margin-left: 10px;
+    }
+
+    select {
+        margin-top: 7px;
+        margin-bottom: 0;
+        font-size: .95rem;
+    }
+
+    .yadcf-filter-range {
+        height: 2.9em;
+        border: 1px solid silver;
+    }
+
+    .filter-text {
+        font-weight: bold;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+    /*.row-color {
+        background-color: #e4e4e4 !important;
+    }
+
+    tr {
+        background-color: #fafafa !important;
+        border-bottom: 1px solid silver;
+    }*/
+
+    table,
+    thead,
+    tbody {
+        /*border: 0px solid silver !important;*/
+        font-family: 'Roboto', Helvetica, sans-serif;
+        font-size: .95rem;
+    }
+
+    /*thead {
+        border-bottom: 2px solid #0a0a0a !important;
+    }*/
+
+    table tr:nth-of-type(even) {
+        background-color: transparent !important;
+    }
+
+    table tr {
+        border-bottom: 1px solid #0a0a0a;
+    }
+
+    button.yadcf-filter-reset-button {
+        color: #990012;
+        font-weight: normal;
+    }
+
+    .incidents {
+        font-size: .8rem;
+        font-style: italic;
+        line-height: 14px;
+        display: inline-block;
+    }
+
+    .source {
+        text-align: right;
+        font-size: .8rem;
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    .very-high {
+        background: rgba(230, 97, 1, .5);
+        display: inline-block;
+    }
+
+    .high {
+        background: rgba(253, 184, 99, .5);
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .medium {
+        background: rgba(178, 171, 210, .5);
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .low {
+        background: rgba(94, 60, 153, .5);
+        display: inline-block;
+        margin-left: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-12 columns">
+            <p class="table-instructions">Click column headers to sort &bull; Use dropdown menu to filter table &bull; Scroll right to see full table</p>
+        </div>
+    </div>
+    <div id="filters">
+        <div class="row">
+            <div class="large-3 medium-3 small-6 columns">
+                <p id="filter-1"></p>
+            </div>
+            <div class="large-3 medium-3 small-6 columns end">
+                <p id="filter-2"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <p style="font-weight:bold;margin-bottom:3px">POPULARITY</p>
+            <div><span class="very-high">&nbsp;&nbsp;&nbsp;&nbsp;</span> Very high<span class="high">&nbsp;&nbsp;&nbsp;&nbsp;</span> High <span class="medium">&nbsp;&nbsp;&nbsp;&nbsp;</span> Medium <span class="low">&nbsp;&nbsp;&nbsp;&nbsp;</span> Low</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <table id="colorado-14ers" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Elevation rank</th>
+                        <th>Peak name</th>
+                        <th>Elevation</th>
+                        <th>Est. annual trips</th>
+                        <th>Range</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <p class="source">Source: <a href="https://www.14ers.org" target="_blank">Colorado Fourteeners Initiative</a> &bull; By Kevin Hamm, The Denver Post</p>
+        </div>
+    </div>
+    <script>
+    var dataFile = 'colorado_14ers_2021_table.json';
+
+    $(document).ready(function() {
+        function disableDependentFilter(level, inuse) {
+            if (level < 4) {
+                filter = $('#yadcf-filter--example-' + level);
+                yadcf.exResetFilters(colorado14ersTable, [level]);
+                filter.prop('disabled', !inuse);
+
+                disableDependentFilter(level + 1, false);
+            }
+        }
+
+        var colorado14ersTable = $('#colorado-14ers').DataTable({
+            ajax: {
+                'url': dataFile,
+                'dataSrc': ''
+            },
+            // pageLength: 15,
+            scrollY: '1000px',
+            //scrollCollapse: true,
+            scrollX: true,
+            paging: false,
+            pageLength: null,
+            fixedHeader: true,
+            // responsive: {
+            //     details: {
+            //         type: 'column'
+            //     }
+            // },
+            //dom: '<if<t>lp>',
+            order: [
+                [0, 'asc']
+            ],
+            rowCallback: function(row, data, index) {
+                // ['#e66101','#fdb863','#b2abd2','#5e3c99']
+                if (data.hikerDaysCategory == 'Very high') {
+                    $(row).find('td:eq(3)').css('background-color', 'rgba(230, 97, 1, .5)');
+                } else if (data.hikerDaysCategory == 'High') {
+                    $(row).find('td:eq(3)').css('background-color', 'rgba(253, 184, 99,.5)');
+                } else if (data.hikerDaysCategory == 'Medium') {
+                    $(row).find('td:eq(3)').css('background-color', 'rgba(178, 171, 210,.5)');
+                };
+                if (data.hikerDaysCategory == 'Low') {
+                    $(row).find('td:eq(3)').css('background-color', 'rgba(94, 60, 153,.5)');
+                };
+            },
+            columnDefs: [
+                { 'orderData': [5], 'targets': [3] }
+            ],
+            columns: [{
+                    data: 'rank'
+                },
+                {
+                    data: 'peak',
+                    render: function(data, type, row) {
+                        //return '<a href="' + row.link + '" target="_blank"' + data + '</a>'
+                        return '<a href="' + row.link + '" target="_blank">' + data + '</a>'
+                    }
+                },
+                {
+                    data: 'elevation',
+                    render: $.fn.dataTable.render.number(',')
+                },
+                {
+                    data: 'hikerDays'
+                },
+                {
+                    data: 'range'
+                },
+                {
+                    data: 'hikerDaysRank',
+                    visible: false
+                },
+                {
+                    data: 'hikerDaysCategory',
+                    visible: false
+                },
+                {
+                    data: 'link',
+                    visible: false,
+                    searchable: false
+                }
+            ],
+
+            initComplete: function() {
+                yadcf.init(colorado14ersTable, [{
+                        column_number: 6,
+                        filter_container_id: 'filter-1',
+                        filter_default_label: 'Filter by popularity',
+                        data: ['Very high', 'High', 'Medium', 'Low'],
+                        sort_as: 'none',
+                        filter_match_mode: 'exact'
+                    },
+                    {
+                        column_number: 4,
+                        filter_container_id: 'filter-2',
+                        filter_default_label: 'Filter by range',
+                        //data: donorTypes
+                    },
+                ], {
+                    //cumulative_filtering: true,
+                    filter_reset_button_text: 'Reset filter'
+                });
+
+                disableDependentFilter(1, true);
+
+                $('.yadcf-filter-reset-button').on('click', function() {
+                    level = parseInt(this.id.split('-')[1]);
+                    disableDependentFilter(level, true);
+                });
+
+                $('.yadcf-filter').on('change', function() {
+                    level = parseInt(this.id.slice(-1));
+                    inuse = $(this).hasClass('inuse');
+
+                    disableDependentFilter(level + 1, inuse);
+                });
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorado Police Shootings in 2021 | The Denver Post</title>
     <link rel="shortcut icon" href="https://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
+    <!-- <link rel="styledata" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet-src.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
     body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;a
         /*width: 900px;
         height: 100%;*/
         /*margin: 0 auto;*/
@@ -106,8 +107,6 @@
     <p class="source">By Kevin Hamm, The Denver Post &bull; Source: Denver Post research</p>
     <script>
     var map;
-    var code = "1jkm5I0C7e4P3P0aXhncloI5L3pF4OWdFjYmeHC4_p1k";
-    //https://docs.google.com/spreadsheets/d/1jkm5I0C7e4P3P0aXhncloI5L3pF4OWdFjYmeHC4_p1k/edit#gid=0
 
     // Markers from https://github.com/pointhi/leaflet-color-markers
     var otherIcon = new L.Icon({
@@ -160,20 +159,24 @@
             maxZoom: 19
         }).addTo(map);
 
-        Tabletop.init({
-            key: code,
-            callback: function(sheet, tabletop) {
-                // console.log(sheet);
-                // var incidentCount = sheet.length;
-                // var lastDate = sheet[(incidentCount - 1)].date;
-                // var lastCity = sheet[(incidentCount - 1)].city;
-                var incidentCount = sheet[0].incidenttotal;
-                var woundedCount = sheet[0].woundedtotal;
-                var injuredCountOther = sheet[0].injuredtotalother;
-                var killedCount = sheet[0].killedtotal;
-                var killedCountOther = sheet[0].killedtotalother;
-                var lastDate = sheet[1].date;
-                var lastCity = sheet[1].city;
+        var data;
+
+        //Papa.parse('./police_shootings.csv', {
+        Papa.parse('https://gist.githubusercontent.com/githamm/a3750b44450ca10f9ed5e520534e6ade/raw/', {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function(results) {
+                console.log(results);
+                data = results.data;;
+                var incidentCount = data.length;
+                var woundedCount = data.reduce((total, obj) => obj['Count wounded'] + total,0);;
+                var killedCount = data.reduce((total, obj) => obj['Count killed'] + total,0);
+                var injuredCountOther = data.reduce((total, obj) => obj['Count wounded other'] + total,0);;
+                var killedCountOther = data.reduce((total, obj) => obj['Count killed other'] + total,0);
+                var lastItemIndex = (incidentCount - 1);
+                var lastDate = data[lastItemIndex]['Date'];
+                var lastCity = data[lastItemIndex]['City'];
                 document.getElementById('incident-count').innerHTML = incidentCount;
                 document.getElementById('last-date').innerHTML = lastDate;
                 document.getElementById('last-city').innerHTML = lastCity;
@@ -182,26 +185,25 @@
                 document.getElementById('killed-count').innerHTML = killedCount;
                 document.getElementById('killed-count-other').innerHTML = killedCountOther;
 
-                for (var i in sheet) {
-                    var incident = sheet[i];
-                    if (incident.victimstatus == 'Wounded' || incident.victimstatus == 'Wounded/died by suicide') {
+                for (var i in data) {
+                    var incident = data[i];
+                    if (incident['Victim status'] == 'Wounded' || incident['Victim status'] == 'Wounded/died by suicide') {
                         iconColor = woundedIcon
-                    } else if (incident.victimstatus == 'Other injury') {
+                    } else if (incident['Victim status'] == 'Other injury') {
                         iconColor = otherInjuryIcon
-                    } else if (incident.victimstatus == 'Killed') {
+                    } else if (incident['Victim status'] == 'Killed') {
                         iconColor = killedIcon
-                    } else if (incident.victimstatus == 'Died by suicide' || incident.victimstatus == 'Other death') {
+                    } else if (incident['Victim status'] == 'Died by suicide' || incident['Victim status'] == 'Other death') {
                         iconColor = otherIcon
                     } else {
                         iconColor = tbdIcon
                     }
 
-                    L.marker([incident.lat, incident.lng], { icon: iconColor })
+                    L.marker([incident.Lat, incident.Lng], { icon: iconColor })
                         .addTo(map)
-                        .bindPopup('<h3>' + incident.city + ' &bull; ' + incident.date + '</h3><hr><p class="popup-text" style="margin-top:5px;"><strong>Agency: </strong>' + incident.agency + '</p><p class="popup-text" ><strong>Location: </strong>' + incident.address + '</p><p  class="popup-text" style="text-align:center;">&bull; &bull; &bull;</p><p class="popup-text" >' + incident.description + '</p><p class="popup-text" style="margin-bottom: 8px !important;text-align:right;"><a href="' + incident.storylink + '" target="_blank">Read the story</a></p>')
+                        .bindPopup('<h3>' + incident['City'] + ' &bull; ' + incident['Date'] + '</h3><hr><p class="popup-text" style="margin-top:5px;"><strong>Agency: </strong>' + incident['Agency'] + '</p><p class="popup-text" ><strong>Location: </strong>' + incident['Address'] + '</p><p  class="popup-text" style="text-align:center;">&bull; &bull; &bull;</p><p class="popup-text" >' + incident['Description'] + '</p><p class="popup-text" style="margin-bottom: 8px !important;text-align:right;"><a href="' + incident['Story link'] + '" target="_blank">Read the story</a></p>')
                 }
-            },
-            simpleSheet: true
+            }
         })
     })
     </script>
