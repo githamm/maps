@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denver Mayoral Election 2023 | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/leaflet-grouped-layer-control.js"></script>
+    <style>
+    @import url('//fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1%;
+    }
+
+    #container {
+        /*height: 600px;
+        width: 893px;
+        margin: 0 auto;*/
+    }
+
+    #map {
+        height: 600px;
+        width: 100%;
+        /*width: 893px;
+        height: 600px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        /*max-width: 200px;*/
+        line-height: 100%;
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*.leaflet-popup-content {
+        font-size: 1.2em;
+        letter-spacing: .2px;
+    }*/
+
+    /*#content-container {
+        padding: 15px;
+    }*/
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .legend-container {
+        width: 100%;
+        clear: both;
+    }
+
+    .legend-item {
+        float: left;
+    }
+
+    .instructions {
+        text-align: center;
+        font-size: .9rem;
+        font-style: italic;
+        color: #ff5959;
+        opacity: .8;
+        margin: -3px 0 -7px 0;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 100%
+    }
+
+    /*.tooltip-header {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-align: left;
+        text-transform: uppercase;
+        padding-left: 13px;
+        color: #7F462C;
+    }*/
+
+    /*.popup-text {
+        margin-bottom: -17px !important;
+        color: rgba(0, 0, 0, .8);
+    }*/
+
+    /*.popup-header {
+        font-weight: 700;
+        font-size: 1.1em;
+        letter-spacing: .5px;
+        /*text-transform: uppercase;
+        color: #000;
+        margin-bottom: 0;
+    }*/
+
+    .note {
+        font-size: .85em;
+        font-style: italic;
+    }
+
+    .legend {
+        width: 60px;
+        /*height: 30px;*/
+        opacity: .6;
+        float: left;
+    }
+
+    label,
+    .legend-text {
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 7px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+    .fieldset {
+        padding: .75rem;
+    }
+
+    input.leaflet-control-layers-selector {
+        margin: 0;
+    }
+
+    a.leaflet-control-layers-toggle {
+        background-color: red;
+    }
+
+    .leaflet-control-layers .leaflet-control-layers-list {
+        display: inline-block;
+    }
+
+    .leaflet-control-layers {
+        box-shadow: none;
+        background: #fafafa;
+        border-radius: 0;
+    }
+
+    .leaflet-control-layers-toggle {
+        /*width: 0;
+        height: 0;*/
+        display: none;
+    }
+
+    .leaflet-control-layers-expanded {
+        padding: 0;
+    }
+
+    .leaflet-control-layers label {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .leaflet-control-layers-base {
+        display: none;
+    }
+
+    .leaflet-control-layers-separator {
+        display: none;
+    }
+
+    h4 {
+        font-weight: 700;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        /*color: #8e1024;*/
+        margin-bottom: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table thead {
+        background-color: #fafafa;
+        padding-bottom: 0;
+    }
+
+    table thead th {
+        border-bottom: 2px solid silver;
+        padding-bottom: 0;
+        color: #acacac;
+        font-weight: normal;
+    }
+
+    table tbody td {
+        padding: 4px 8px 4px 8px;
+        font-size: 1em;
+    }
+
+    table tr {
+        border-bottom: 1px solid silver;
+        border-top: 1px solid #fafafa;
+        border-left: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+    }
+
+    table tr:last-child {
+        border: 1px solid #fafafa;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background-color: #fafafa;
+    }
+
+    table tbody tr:nth-child(1n) {
+        background-color: #fafafa;
+    }
+
+    .source {
+        font-size: .85em;
+        text-align: right;
+        font-style: italic;
+    }
+
+    .difference {
+        margin: 15px 0 -10px 0 !important;
+        font-size: 1.08rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .diff-precinct {
+        font-weight: normal;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        /* color: #8e1024; */
+        margin-bottom: -5px;
+    }
+
+    .winner {
+        font-weight: normal;
+    }
+
+    .precinct {
+        font-style: italic;
+        margin-bottom: -10px !important;
+    }
+
+    .neighborhood {
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0 0 -19px 0 !important;
+    }
+
+    #layer-control {
+        margin-top: -10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Denver mayoral election results by precinct</h2>
+        <p>The two top vote-getters in the April 4 mayoral election &mdash; Michael Johnston (24.45% of the vote) and Kelly Brough (20.03%) &mdash; will face off in a June 6 runoff. The maps show precinct winners in the election, in what parts of the city Johnston and Brough showed strength, and how they fared head-to-head in each precinct.</p>
+        <div class="row">
+            <div class="large-9 large-centered medium-8 medium-centered small-12 columns">
+                <p class="instructions">Zoom map and click precincts for details; use radio buttons to switch maps</p>
+            </div>
+        </div>
+        <fieldset class="fieldset">
+            <legend><strong><em>Choose a map</em></strong></legend>
+            <p><em>Percentage vote won in precinct</em></p>
+            <div id="layer-control"></div>
+        </fieldset>
+        <div id="map"></div>
+        <p class="source">By Kevin Hamm, The Denver Post &bull; Source: City and County of Denver</p>
+    </div> <!-- End "container" -->
+    <script>
+    var electionResults = new L.LayerGroup();
+    var johnstonStrength = new L.LayerGroup();
+    var broughStrength = new L.LayerGroup();
+    var johnstonBroughDiff = new L.LayerGroup();
+
+    var basemaps = {
+        One: L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 20,
+            ext: 'png'
+        }),
+        Two: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        })
+    };
+
+    // Overlay layers are grouped
+    var groupedOverlays = {
+        "": {
+            // ['#7b3294','#c2a5cf','#f7f7f7','#a6dba0','#008837']
+            'Precinct winner<br><span style="background-color:#7b3294;opacity:1;padding:5px;color:#fff;">Johnston</span><span style="background-color:#c2a5cf;opacity:1;padding:5px;color:#fff;">Rougeot</span><span style="background-color:#c6c6c6;opacity:1;padding:5px;color:#fff;text-transform:uppercase">Calderón</span><br><span style="background-color:#a6dba0;opacity:1;padding:5px;color:#fff">Herod</span><span style="background-color:#008837;opacity:1;padding:5px;color:#fff">Brough</span><span style="background-color:#000;opacity:1;padding:5px;color:#fff">Tie</span>': electionResults,
+            'Johnston strength<br><span style="background-color:#000;opacity:.6;padding:5px;color:#fff;">&lt;10%</span><span style="background-color:#ca0020;opacity:.6;padding:5px;color:#000;">10%</span><span style="background-color:#f4a582;opacity:.6;padding:5px;color:#000">20%</span><span style="background-color:#92c5de;opacity:.6;padding:5px;color:#000">30%</span><span style="background-color:#0571b0;opacity:.6;padding:5px;color:#000">&gt;40%</span><br><span>&nbsp;</span>': johnstonStrength,
+            'Brough strength<br><span style="background-color:#000;opacity:.6;padding:5px;color:#fff;">&lt;10%</span><span style="background-color:#ca0020;opacity:.6;padding:5px;color:#000;">10%</span><span style="background-color:#f4a582;opacity:.6;padding:5px;color:#000">20%</span><span style="background-color:#92c5de;opacity:.6;padding:5px;color:#000">30%</span><span style="background-color:#0571b0;opacity:.6;padding:5px;color:#000">&gt;40%</span><br><span>&nbsp;</span>': broughStrength,
+            'Johnston-Brough difference<br><span style="background-color:#6a51a3;opacity:.6;padding:5px;color:#000;">+20</span><span style="background-color:#9e9ac8;opacity:.6;padding:5px;color:#000;">+10</span><span style="background-color:#cbc9e2;opacity:.6;padding:5px;color:#000">+3</span><span style="background-color:#000;opacity:.6;padding:5px;color:#fff">&lt;3</span><span style="background-color:#bae4b3;opacity:.6;padding:5px;color:#000">+3</span><span style="background-color:#74c476;opacity:.6;padding:5px;color:#000;">+10</span><span style="background-color:#238b45;opacity:.6;padding:5px;color:#000;">+20</span><br><span>&nbsp;</span>': johnstonBroughDiff
+        }
+    };
+
+    var options = {
+        // Make the "Landmarks" group exclusive (use radio inputs)
+        exclusiveGroups: [""]
+        // Show a checkbox next to non-exclusive group labels for toggling all
+        //groupCheckboxes: true
+    };
+
+
+    var map = L.map('map', {
+        center: [39.72, -104.97],
+        zoom: 12,
+        minZoom: 11,
+        maxZoom: 16,
+        layers: [basemaps.One, electionResults],
+        preferCanvas: true
+    }); //.addLayer(cartoTiles);
+
+    $.getJSON("denver_mayor_election_merge.geojson", function(data) {
+
+        /***** BROUGH STRENGTH *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var precinctLeader = feature.properties.precinctLeader;
+                var fillColor;
+                var fillOpacity;
+
+                // ['#edf8e9','#bae4b3','#74c476','#238b45']
+                // if (feature.properties.brough_pct > .4) fillColor = "#238b45";
+                // else if (feature.properties.brough_pct > .3) fillColor = "#74c476";
+                // else if (feature.properties.brough_pct > .2) fillColor = "#bae4b3";
+                // else if (feature.properties.brough_pct > .1) fillColor = "#edf8e9";
+                if (feature.properties.brough_pct > .4) fillColor = "#0571b0";
+                else if (feature.properties.brough_pct > .3) fillColor = "#92c5de";
+                else if (feature.properties.brough_pct > .2) fillColor = "#f4a582";
+                else if (feature.properties.brough_pct > .1) fillColor = "#ca0020";
+                return {
+                    color: "#000",
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .6
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var broughPct = (feature.properties.brough_pct * 100).toFixed(1);
+                var johnstonPct = (feature.properties.johnston_pct * 100).toFixed(1);
+                var winnerPct = (feature.properties.winner_pct * 100).toFixed(1);
+                var precinctWinner;
+                if (feature.properties.precinct_winner == 'Andy Rougeot') {
+                    precinctWinner = 'Rougeot'
+                } else if (feature.properties.precinct_winner == 'Lisa Calderón') {
+                    precinctWinner = 'Calderón'
+                } else if (feature.properties.precinct_winner == 'Leslie Herod') {
+                    precinctWinner = 'Herod'
+                };
+                var precinct = feature.properties.PRECINCT_N;
+                var neighborhood = feature.properties.STAT_NBHD;
+                var winnerString;
+
+                if (feature.properties.johnston_place < feature.properties.brough_place) {
+                    winnerString = '<tr class="winner"><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr>'
+                } else winnerString = '<tr class="winner"><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr><tr><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr>'
+
+                layer.bindPopup(
+                    '<p class="neighborhood">' + neighborhood + '<p class="precinct">Precinct ' + precinct + '</p><table><thead><tr><th></th><th>vote</th><th>place</th></thead><tbody>' + winnerString + '</tbody></table>'
+                )
+            }
+        }).addTo(broughStrength);
+
+        /***** JOHNSTON STRENGTH *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var precinctLeader = feature.properties.precinctLeader;
+                var fillColor;
+                var fillOpacity;
+
+                // ['#f2f0f7','#cbc9e2','#9e9ac8','#6a51a3']
+                // if (feature.properties.johnston_pct > .4) fillColor = "#6a51a3";
+                // else if (feature.properties.johnston_pct > .3) fillColor = "#9e9ac8";
+                // else if (feature.properties.johnston_pct > .2) fillColor = "#cbc9e2";
+                // else if (feature.properties.johnston_pct > .1) fillColor = "#f2f0f7";
+                if (feature.properties.johnston_pct > .4) fillColor = "#0571b0";
+                else if (feature.properties.johnston_pct > .3) fillColor = "#92c5de";
+                else if (feature.properties.johnston_pct > .2) fillColor = "#f4a582";
+                else if (feature.properties.johnston_pct > .1) fillColor = "#ca0020";
+                return {
+                    color: "#000",
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .6
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var broughPct = (feature.properties.brough_pct * 100).toFixed(1);
+                var johnstonPct = (feature.properties.johnston_pct * 100).toFixed(1);
+                var winnerPct = (feature.properties.winner_pct * 100).toFixed(1);
+                var precinctWinner;
+                if (feature.properties.precinct_winner == 'Andy Rougeot') {
+                    precinctWinner = 'Rougeot'
+                } else if (feature.properties.precinct_winner == 'Lisa Calderón') {
+                    precinctWinner = 'Calderón'
+                } else if (feature.properties.precinct_winner == 'Leslie Herod') {
+                    precinctWinner = 'Herod'
+                };
+                var precinct = feature.properties.PRECINCT_N;
+                var neighborhood = feature.properties.STAT_NBHD;
+                var winnerString;
+
+                if (feature.properties.johnston_place < feature.properties.brough_place) {
+                    winnerString = '<tr class="winner"><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr>'
+                } else winnerString = '<tr class="winner"><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr><tr><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr>'
+                
+                layer.bindPopup(
+                    '<p class="neighborhood">' + neighborhood + '<p class="precinct">Precinct ' + precinct + '</p><table><thead><tr><th></th><th>vote</th><th>place</th></thead><tbody>' + winnerString + '</tbody></table>'
+                )
+            }
+        }).addTo(johnstonStrength);
+
+        /***** JOHNSTON-BROUGH DIFFERENCE MAP *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var precinctLeader = feature.properties.precinctLeader;
+                var fillColor;
+                var fillOpacity;
+
+                var difference = (feature.properties.johnston_pct - feature.properties.brough_pct);
+
+                if (difference > .2) fillColor = "#6a51a3";
+                else if (difference > .1) fillColor = "#9e9ac8";
+                else if (difference > .03) fillColor = "#cbc9e2";
+                //else if (difference > .05) fillColor = "#cbc9e2";
+                else if (difference < -.2) fillColor = "#238b45";
+                else if (difference < -.1) fillColor = "#74c476";
+                else if (difference < -.03) fillColor = "#bae4b3";
+                return {
+                    color: "#000",
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .9
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var broughPct = (feature.properties.brough_pct * 100).toFixed(1);
+                var johnstonPct = (feature.properties.johnston_pct * 100).toFixed(1);
+                var precinct = feature.properties.PRECINCT_N;
+                var neighborhood = feature.properties.STAT_NBHD;
+                var absolute = Math.abs(johnstonPct - broughPct);
+                var margin = Math.round(absolute);
+                var winner;
+
+                if (feature.properties.johnston_pct > feature.properties.brough_pct) {
+                    winner = 'Johnston +' + margin
+                } else if (feature.properties.brough_pct > feature.properties.johnston_pct) {
+                    winner = 'Brough +' + margin
+                } else {
+                    winner = 'Tied +' + margin
+                };
+
+                layer.bindPopup(
+                    '<p class="neighborhood">' + neighborhood + '<p class="precinct">Precinct ' + precinct + '</p><p class="difference">' + winner + '</p><table><thead><tr><th></th><th>vote</th></tr></thead><tr><td>Johnston</td><td>' + johnstonPct + '%</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td></tr></table>'
+                )
+            }
+        }).addTo(johnstonBroughDiff);
+
+        /***** ELECTION RESULTS MAP *****/
+        L.geoJson(data, {
+            style: function(feature) {
+                var precinctLeader = feature.properties.precinct_winner;
+                var fillColor;
+                var fillOpacity;
+
+                // ['#7b3294','#c2a5cf','#f7f7f7','#a6dba0','#008837']
+                if (feature.properties.precinct_short != 424 && feature.properties.precinct_short != 722) {
+                    if (precinctLeader == 'Mike Johnston') fillColor = '#7b3294';
+                    else if (precinctLeader == 'Andy Rougeot') fillColor = '#c2a5cf';
+                    else if (precinctLeader == 'Lisa Calderón') fillColor = '#c6c6c6';
+                    else if (precinctLeader == 'Leslie Herod') fillColor = '#a6dba0';
+                    else if (precinctLeader == 'Kelly Brough') fillColor = '#008837';
+                }
+                return {
+                    color: '#000',
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .8
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                var broughPct = (feature.properties.brough_pct * 100).toFixed(1);
+                var johnstonPct = (feature.properties.johnston_pct * 100).toFixed(1);
+                var winnerPct = (feature.properties.winner_pct * 100).toFixed(1);
+                var precinctWinner;
+                if (feature.properties.precinct_winner == 'Andy Rougeot') {
+                    precinctWinner = 'Rougeot'
+                } else if (feature.properties.precinct_winner == 'Lisa Calderón') {
+                    precinctWinner = 'Calderón'
+                } else if (feature.properties.precinct_winner == 'Leslie Herod') {
+                    precinctWinner = 'Herod'
+                };
+                var precinct = feature.properties.PRECINCT_N;
+                var neighborhood = feature.properties.STAT_NBHD;
+                var winnerString;
+
+                if (feature.properties.johnston_place == 1 && feature.properties.precinct_short != 424 && feature.properties.precinct_short != 722) {
+                    winnerString = '<tr class="winner"><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr>'
+                } else if (feature.properties.brough_place == 1) {
+                    winnerString = '<tr class="winner"><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr><tr><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr>'
+                } else if (feature.properties.johnston_place < feature.properties.brough_place) {
+                    winnerString = '<tr class="winner"><td>' + precinctWinner + '</td><td>' + winnerPct + '%</td><td>1</td></tr><tr><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr>'
+                } else if (feature.properties.precinct_short == 424 && feature.properties.precinct_short == 722) {
+                    winnerString = '<tr><td>' + precinctWinner + '</td><td>' + winnerPct + '%</td><td>1</td></tr><tr><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr>'
+                } else winnerString = '<tr class="winner"><td>' + precinctWinner + '</td><td>' + winnerPct + '%</td><td>1</td></tr><tr><td>Brough</td><td>' + broughPct + '%</td><td>' + feature.properties.brough_place + '</td></tr><tr><td>Johnston</td><td>' + johnstonPct + '%</td><td>' + feature.properties.johnston_place + '</td></tr>'
+
+                layer.bindPopup(
+                    '<p class="neighborhood">' + neighborhood + '<p class="precinct">Precinct ' + precinct + '</p><table><thead><tr><th></th><th>vote</th><th>place</th></thead><tbody>' + winnerString + '</tbody></table>'
+                )
+            }
+        }).addTo(electionResults);
+    });
+
+    var layerControl = L.control.groupedLayers(basemaps, groupedOverlays, options);
+    map.addControl(layerControl);
+
+    // Call the getContainer routine.
+    var htmlObject = layerControl.getContainer();
+    // Get the desired parent node.
+    var a = document.getElementById('layer-control');
+
+    // Finally append that node to the new parent.
+    function setParent(el, newParent) {
+        newParent.appendChild(el);
+    }
+    setParent(htmlObject, a);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Castle Rock Wildfire Hazard Map</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 1%;
+        }
+        #map {
+            width: 100%;
+            height: 600px;
+            border: 2px solid silver;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Roboto Condensed';
+            font-size: .9rem;
+            line-height: 1;
+        }
+        tr {
+            border-bottom: 1px solid lightgray;
+        }
+        td {
+            padding: 5px 0 5px 0;
+            text-align: center;
+        }
+        th {
+            text-align: center;
+            vertical-align: bottom;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .leaflet-popup-content-wrapper {
+            width: 300px;
+            border-radius: 0;
+            z-index: 20000;
+        }
+        .popup-header {
+            font-family: Helvetica, sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.1;
+            margin: 0 0 -15px 0;
+            color: #282828;
+        }
+
+        .counties {
+            font-family: 'Roboto Condensed';
+            font-style: italic;
+            color: #787878;
+            margin-bottom: -10px;
+        }
+
+        .popup-text {
+            font-family: Helvetica, sans-serif;
+            font-size: 1rem;
+        }
+
+        .note {
+            font-family: 'Roboto Condensed';
+            font-size: .9rem;
+            color: #aaa;
+            font-style: italic;
+            margin: 5px 0 -13px 0 !important;
+        }
+
+        .info { padding: 6px 8px; font: 14px/16px Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+
+        .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+
+        .graphic-title {
+            font-family: Helvetica, sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .graphic-text {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.4 !important;
+        }
+        .source {
+            font-family: Helvetica, sans-serif;
+            font-size: .8rem;
+            font-style: italic;
+            margin: 5px 5px 0 0;
+        }
+        /*div.info.legend.leaflet-control {
+            width: 155px;
+        }*/
+
+        #legend-very-high-perimeter, #legend-high-perimeter, #legend-moderate-perimeter, #legend-city-boundary, #legend-low-perimeter, #legend-extreme-perimeter {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            vertical-align: middle;
+            margin: 0 6px 4px 12px;
+        }
+
+        #legend-very-high-perimeter {
+            background-color: red;
+        }
+
+        #legend-high-perimeter {
+            background-color: orange;
+        }
+
+        #legend-moderate-perimeter {
+            background-color: yellow;
+        }
+
+        #legend-low-perimeter {
+            background-color: green;
+        }
+
+        #legend-extreme-perimeter {
+            background-color: brown;
+        }
+
+        #legend-city-boundary {
+            background-color: #afafaf;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="graphic-title">Wildfire risk in Castle Rock</h2>
+    <p class="graphic-text">This Douglas County town recently adopted its first wildfire protection plan, which slices the town of 80,000 residents and 24,000 homes into 19 zones. Seventeen of those zones were deemed high or very high risk for wildfire hazard while just two zones in town fell into the moderate risk category. No parts of Castle Rock were considered at extreme or low risk. <em>Click map for details.</em></p>
+    <div style="font-family:Helvetica,sans-serif;margin-bottom:10px"><span id="legend-extreme-perimeter"></span>Extreme<span id="legend-very-high-perimeter"></span>Very high<span id="legend-high-perimeter"></span>High<span id="legend-moderate-perimeter"></span>Moderate<span id="legend-low-perimeter"></span>Low<span id="legend-city-boundary"></span>Municipal boundary</div>
+    <div id='map'></div>
+    <p class="source">Source: Town of Castle Rock / By Kevin Hamm, The Denver Post</p>
+    <script src="map_data.js" type="text/javascript"></script>
+    <script>
+    var map = L.map('map', {
+        //scrollWheelZoom: false,
+        preferCanvas: true
+    });
+
+    // var tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    //     subdomains: 'abcd',
+    //     //maxZoom: 11,
+    //     minZoom: 6
+    // }).addTo(map);
+
+    // var tiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    //     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    // }).addTo(map);
+
+    var tiles = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 16,
+        minZoom: 10,
+        attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
+    }).addTo(map);
+
+    function onEachFeature(feature, layer) {
+
+        var popupContent = '<h3 class="popup-header">' + feature.properties.Name + '</h3><p class="popup-text"><span style="color:#646464">Rating:</span> ' + feature.properties.Rating + '</p>';
+
+        var townPopupContent = '<h3 style="margin-bottom: 10px" class="popup-header">Town of Castle Rock</h3>';
+
+        if (feature.properties && feature.properties.popupContent) {
+            popupContent += feature.properties.popupContent;
+        }
+
+        if (feature.properties.CITY === 'Castle Rock') {
+            layer.bindPopup(townPopupContent)
+        } else layer.bindPopup(popupContent)
+    };
+
+    function style(feature) {
+        var polygonStrokeColor;
+        var polygonFillColor;
+        var polygonFillOpacity;
+
+        if (feature.properties.Rating === 'Very high') {
+            [polygonStrokeColor = 'red',
+            polygonFillOpacity = .2,
+            polygonDashArray = '1']
+        } else if (feature.properties.Rating === 'High') {
+            [polygonStrokeColor = 'orange',
+            polygonFillOpacity = .2,
+            polygonDashArray = '1']
+        } else if (feature.properties.Rating === 'Moderate') {
+            [polygonStrokeColor = 'yellow',
+            polygonFillOpacity = .2,
+            polygonDashArray = '1']
+        };
+        
+        if (feature.properties.CITY === 'Castle Rock') {
+            [polygonStrokeColor = '#afafaf',
+            polygonFillOpacity = 0,
+            polygonDashArray = '5']
+        }
+
+        return {
+            weight: 3,
+            opacity: 1,
+            color: polygonStrokeColor,
+            dashArray: polygonDashArray,
+            fillOpacity: polygonFillOpacity,
+            //fillColor: getColor(feature.properties.hourly_counseling)
+            fillColor: ''
+        };
+    }
+
+    var hazardZones = L.geoJSON([castleRockBoundary, hazardZonesData], {
+        style: function(feature) {
+            return feature.properties && feature.properties.style;
+        },
+
+        onEachFeature: onEachFeature,
+        style: style
+    }).addTo(map);
+
+    
+    map.fitBounds(hazardZones.getBounds());
+    </script>
+</body>
+
+</html>

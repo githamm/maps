@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denver Mayoral Election 2019 Map | The Denver Post</title>
+    <link rel="shortcut icon" href="//extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <style>
+    @import url('//fonts.googleapis.com/css?family=Roboto');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #map {
+        height: 700px;
+        width: 100%;
+        /*width: 893px;
+        margin: 0 auto;*/
+        border: 2px solid silver;
+    }
+
+    .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background-color: #fafafa;
+        /*max-width: 250px;*/
+    }
+
+    .leaflet-container {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .legend-text {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: bold;
+        color: #737373;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    h4 {
+        font-weight: 700;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        /*color: #8e1024;*/
+        margin-bottom: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table thead {
+        background-color: #fafafa;
+        padding-bottom: 0;
+    }
+
+    table thead th {
+        border-bottom: 2px solid silver;
+        padding-bottom: 0;
+        color: #acacac;
+        font-weight: normal;
+    }
+
+    table tbody td {
+        padding: 4px 8px 4px 8px;
+        font-size: 1em;
+    }
+
+    table tr {
+        border-bottom: 1px solid silver;
+        border-top: 1px solid #fafafa;
+        border-left: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+    }
+
+    table tr:last-child {
+        border: 1px solid #fafafa;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background-color: #fafafa;
+    }
+
+    table tbody tr:nth-child(1n) {
+        background-color: #fafafa;
+    }
+
+    .source {
+        font-size: .85em;
+        text-align: right;
+        font-style: italic;
+    }
+
+    .dem-diff {
+        color: blue;
+    }
+
+    .rep-diff {
+        color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-8 large-centered columns">
+            <h2>Giellis map</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-8 large-centered columns">
+    <div style="margin: 10px 0 10px 0;overflow:hidden;float:right;" id="legend">
+        <div style="width:60px;height:30px;background-color:#000;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;"><20%</p>
+        </div>
+        <div style="width:60px;height:30px;background-color:#ca0020;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">20%</p>
+        </div>
+        <div style="width:60px;height:30px;background-color:#f4a582;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">30%</p>
+        </div>
+        <div style="width:60px;height:30px;background-color:#92c5de;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">40%</p>
+        </div>
+        <div style="width:60px;height:30px;background-color:#0571b0;opacity:.6;float:left;">
+            <p style="color:#f0f0f0;font-size:.8em;font-weight:bold;text-align:center;margin-top:5px;letter-spacing:1px;">>50%</p>
+        </div>
+    </div>
+    <div id="map"></div>
+    <p class="source">Source: <a href="https://www.denvergov.org/electionresults#/results/20190507" target="_blank">City and County of Denver</a></p>
+</div>
+</div>
+    <script>
+    var map = L.map('map', {
+        center: [39.71, -104.97],
+        zoom: 12,
+        scrollWheelZoom: true,
+        // touchZoom: true,
+        keyboard: false
+    });
+
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+    }).addTo(map);
+
+    $.getJSON("denver-election-results.geojson", function(data) {
+        L.geoJson(data, {
+            style: function(feature) {
+                //console.log(feature.properties.calderon);
+                var precinctLeader = feature.properties.precinctLeader;
+
+                var fillColor;
+                var fillOpacity;
+
+                // if (precinctLeader == 'Michael B. Hancock') fillColor = '#7b3294';
+                // else if (precinctLeader == 'Jamie Giellis') fillColor = '#008837';
+                // else if (precinctLeader == 'Lisa Calderón') fillColor = '#324b94';
+                // else if (precinctLeader == 'Penfield Tate') fillColor = '#947b32';
+                // return {
+                //     color: '#000',
+                //     weight: 1,
+                //     fillColor: fillColor,
+                //     fillOpacity: .6
+                // };
+
+                if (feature.properties.giellis > .5) fillColor = "#0571b0";
+                else if (feature.properties.giellis > .4) fillColor = "#92c5de";
+                else if (feature.properties.giellis > .3) fillColor = "#f4a582";
+                else if (feature.properties.giellis > .2) fillColor = "#ca0020";
+                return {
+                    color: "#000",
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: .6
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                //console.log(feature);
+
+                // voteArray = [];
+
+                // var test;
+                // if (feature.properties.calderon) {
+                //     test = 'Calderon: ' + feature.properties.calderon
+                // };
+
+                // console.log(test);
+
+
+                //var names = Object.keys(feature.properties);
+                //var votes = Object.values(feature.properties);
+                //console.log(votes);
+
+                //var newArray = [];
+                //newArray.push(names, votes);
+                //console.log(newArray);
+
+                //var calderon = feature.properties.calderon;
+                //console.log(calderon);
+
+                // var sortable = [];
+                // for (var vehicle in maxSpeed) {
+                //     sortable.push([vehicle, maxSpeed[vehicle]]);
+                // }
+
+                // sortable.sort(function(a, b) {
+                //     return a[1] - b[1];
+                // });
+
+                // var demVotes = feature.properties.demVotes;
+                // var repVotes = feature.properties.repVotes;
+                // var totalVotes = feature.properties.totalVotes;
+                // var otherVotes = (feature.properties.totalVotes - (demVotes + repVotes));
+                // var pctDem = ((demVotes / totalVotes) * 100).toFixed(1);
+                // var pctRep = ((repVotes / totalVotes) * 100).toFixed(1);;
+                // var pctOther = ((otherVotes / totalVotes) * 100).toFixed(1);
+
+                // function checkDem(pctDem) {
+                //     if (isNaN(pctDem)) {
+                //         return 'n/a'
+                //     } else {
+                //         return pctDem + '%'
+                //     }
+                // };
+
+                // function checkRep(pctRep) {
+                //     if (isNaN(pctRep)) {
+                //         return 'n/a'
+                //     } else {
+                //         return pctRep + '%'
+                //     }
+                // };
+
+                // function checkOther(pctOther) {
+                //     if (isNaN(pctOther)) {
+                //         return 'n/a'
+                //     } else {
+                //         return pctOther + '%'
+                //     }
+                // };
+
+                // function isNullDem(demVotes) {
+                //     if (demVotes === null) {
+                //         return '***'
+                //     } else {
+                //         return demVotes
+                //     }
+                // };
+
+                // function isNullRep(repVotes) {
+                //     if (repVotes === null) {
+                //         return '***'
+                //     } else {
+                //         return repVotes
+                //     }
+                // };
+
+                // function isNullOther(otherVotes) {
+                //     if (otherVotes === null) {
+                //         return '***'
+                //     } else {
+                //         return otherVotes
+                //     }
+                // };
+
+                // var demDiff;
+                // var repDiff;
+
+                // function getDemDiff() {
+                //     if (pctDem > pctRep) {
+                //         var demDiff = (pctDem - pctRep);
+                //         return '<span class="dem-diff">+' + Math.round(demDiff) + '</span>';
+                //     } else {
+                //         return ''
+                //     }
+                // }
+
+                // function getRepDiff() {
+                //     if (pctRep > pctDem) {
+                //         var repDiff = (pctRep - pctDem);
+                //         return '<span class="rep-diff">+' + Math.round(repDiff) + '</span>';
+                //     } else {
+                //         return ''
+                //     }
+                // }
+                var giellisPct = (feature.properties.giellis * 100).toFixed(1);
+                var heffernanPct = (feature.properties.heffernan * 100).toFixed(1);
+                var simpsonPct = (feature.properties.simpson * 100).toFixed(1);
+                var scottPct = (feature.properties.scott * 100).toFixed(1);
+                var calderonPct = (feature.properties.calderon * 100).toFixed(1);
+                var giavanniPct = (feature.properties.giavanni * 100).toFixed(1);
+                var hancockPct = (feature.properties.hancock * 100).toFixed(1);
+                var fiorinoPct = (feature.properties.fiorino * 100).toFixed(1);
+                var tatePct = (feature.properties.tate * 100).toFixed(1);
+                var evansPct = (feature.properties.evans * 100).toFixed(1);
+                var precinct = feature.properties.precinct;
+                var writeInPct = ((feature.properties.simpson + feature.properties.scott + feature.properties.giavanni + feature.properties.fiorino) * 100).toFixed(1);
+                var winnerString;
+
+                if (feature.properties.precinctLeader == 'Jamie Giellis') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (feature.properties.precinctLeader == 'Lisa Calderón') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (feature.properties.precinctLeader == 'Penfield Tate') {
+                    winnerString = '<tr><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr style="font-weight:bold"><td>Tate</td><td>' + tatePct + '%</td>'
+                } else if (precinct == '914') {
+                    winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr style="font-weight:bold"><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+                } else winnerString = '<tr style="font-weight:bold"><td>Hancock</td><td>' + hancockPct + '%</td></tr>' + '<tr><td>Giellis</td><td>' + giellisPct + '%</td></tr>' + '<tr><td>Calderon</td><td>' + calderonPct + '%</td></tr><tr><td>Tate</td><td>' + tatePct + '%</td>'
+
+
+                layer.bindPopup(
+                    '<h4>Precinct ' + precinct + '</h4><table><thead><tr><th></th><th>vote</th></tr></thead>' + winnerString + '</tr><tr><td>Heffernan</td><td>' + heffernanPct + '%</td></tr><tr><td>Evans</td><td>' + evansPct + '%</td></tr><tr><td>Write-in</td><td>' + writeInPct + '%</td></tr></table>'
+                )
+            }
+        }).addTo(map);
+    });
+    </script>
+</body>
+
+</html>

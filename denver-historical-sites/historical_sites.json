@@ -1,0 +1,2482 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0004525,
+                39.73348
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Mariposa Health Center",
+            "Area": "Westside",
+            "Address": "1020 W. 11th Avenue",
+            "Additional Notes": "Former location",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1020 W. 11th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9901132,
+                39.7512997
+            ]
+        },
+        "properties":
+        {
+            "Site": "Twentieth Street Recreation Center",
+            "Area": "Eastside",
+            "Address": "1021 20th Street",
+            "Additional Notes": "Close to Northside neighborhoods; Leagues and teams formed here",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1021 20th Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9978962,
+                39.7327139
+            ]
+        },
+        "properties":
+        {
+            "Site": "Operation SER/ Jobs for Progress",
+            "Area": "Westside",
+            "Address": "1039 Inca Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1039 Inca Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.99838,
+                39.733007
+            ]
+        },
+        "properties":
+        {
+            "Site": "West Side Action Center",
+            "Area": "Westside",
+            "Address": "1042-1048 Santa Fe Drive",
+            "Additional Notes": "Both former locations of center",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1042-1048 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0010915,
+                39.7396965
+            ]
+        },
+        "properties":
+        {
+            "Site": "Zocalo Shopping Center",
+            "Area": "Westside",
+            "Address": "1050 W. Colfax Avenue",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "1050 W. Colfax Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0010915,
+                39.7396965
+            ]
+        },
+        "properties":
+        {
+            "Site": "Zocalo Shopping Center",
+            "Area": "Westside",
+            "Address": "1050 W. Colfax Avenue",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1050 W. Colfax Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0242368,
+                39.7343218
+            ]
+        },
+        "properties":
+        {
+            "Site": "Sam Sandos Westside Family Health Center",
+            "Area": "Westside",
+            "Address": "1100 Federal Boulevard (current location)",
+            "Additional Notes": "Current location Former location (no longer exists)",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1100 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0242368,
+                39.7343218
+            ]
+        },
+        "properties":
+        {
+            "Site": "Sam Sandos Westside Family Health Center",
+            "Area": "Westside",
+            "Address": "1100 Federal Boulevard",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1100 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0242368,
+                39.7343218
+            ]
+        },
+        "properties":
+        {
+            "Site": "Sam Sandos Westside Family Health Center",
+            "Area": "Westside",
+            "Address": "1100 Federal Boulevard",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "1100 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9984668,
+                39.7338793
+            ]
+        },
+        "properties":
+        {
+            "Site": "West Side Action Center",
+            "Area": "Westside",
+            "Address": "1100 Santa Fe Drive",
+            "Additional Notes": "Both former locations of center",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1100 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0012285,
+                39.7345198
+            ]
+        },
+        "properties":
+        {
+            "Site": "Greenlee Elementary School",
+            "Area": "Westside",
+            "Address": "1150 Lipan Street",
+            "Additional Notes": "Officially Eligible for the National Register – 2005",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "1150 Lipan Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.001548,
+                39.7697135
+            ]
+        },
+        "properties":
+        {
+            "Site": "The Original Chubby’s",
+            "Area": "Northside",
+            "Address": "1231 W. 38th Avenue",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "1231 W. 38th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9717882,
+                39.7624516
+            ]
+        },
+        "properties":
+        {
+            "Site": "Mitchell Elementary School",
+            "Area": "Eastside",
+            "Address": "1350 E. 33rd Avenue",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "1350 E. 33rd Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9991743,
+                39.7375076
+            ]
+        },
+        "properties":
+        {
+            "Site": "Plaza de Santa Fe",
+            "Area": "Westside",
+            "Address": "1355 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "1355 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9991743,
+                39.7375076
+            ]
+        },
+        "properties":
+        {
+            "Site": "Plaza de Santa Fe",
+            "Area": "Westside",
+            "Address": "1355 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1355 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0256977,
+                39.7382243
+            ]
+        },
+        "properties":
+        {
+            "Site": "El Centro de las Familias Mental Health Center",
+            "Area": "Westside",
+            "Address": "1405 Federal Boulevard",
+            "Additional Notes": "Current location",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1405 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0313036,
+                39.7387718
+            ]
+        },
+        "properties":
+        {
+            "Site": "GAO Homes",
+            "Area": "Westside",
+            "Address": "1409 Julian Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1409 Julian Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0326146,
+                39.7393391
+            ]
+        },
+        "properties":
+        {
+            "Site": "GAO Homes",
+            "Area": "Westside",
+            "Address": "1445 Knox Court, 1409 Julian Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1445 Knox Court Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0044467,
+                39.7703352
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Raza  (formerly Columbus) Park",
+            "Area": "Northside",
+            "Address": "1501 W. 38th Avenue",
+            "Additional Notes": "",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "1501 W. 38th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0044467,
+                39.7703352
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Raza  (formerly Columbus) Park",
+            "Area": "Northside",
+            "Address": "1501 W. 38th Avenue",
+            "Additional Notes": "Chicano Movement, activism",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1501 W. 38th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0311764,
+                39.7419111
+            ]
+        },
+        "properties":
+        {
+            "Site": "Cheltenham Elementary",
+            "Area": "Northside",
+            "Address": "1580 Julian Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "1580 Julian Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0058648,
+                39.7656434
+            ]
+        },
+        "properties":
+        {
+            "Site": "Gang Rescue and Support Project (GRASP)",
+            "Area": "Eastside",
+            "Address": "1625 W. 35th Avenue",
+            "Additional Notes": "Tramway Nonprofit Center  (former tramway building)",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1625 W. 35th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9680001,
+                39.7563751
+            ]
+        },
+        "properties":
+        {
+            "Site": "Manual High School",
+            "Area": "Eastside",
+            "Address": "1700 E. 28th Avenue",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "1700 E. 28th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0528756,
+                39.744609
+            ]
+        },
+        "properties":
+        {
+            "Site": "Sloan’s Lake Park",
+            "Area": "Northside",
+            "Address": "1700 N. Sheridan Boulevard",
+            "Additional Notes": "Boxing fights held in building located at W.17th Avenue and Sheridan Boulevard",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "1700 N. Sheridan Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0257434,
+                39.7443999
+            ]
+        },
+        "properties":
+        {
+            "Site": "GI Forum",
+            "Area": "Westside",
+            "Address": "1717 Federal Boulevard",
+            "Additional Notes": "",
+            "Category": "Labor-related",
+            "": "",
+            "address_for_geocoding": "1717 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0257434,
+                39.7443999
+            ]
+        },
+        "properties":
+        {
+            "Site": "GI Forum",
+            "Area": "Westside",
+            "Address": "1717 Federal Boulevard",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "1717 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0084182,
+                39.7647344
+            ]
+        },
+        "properties":
+        {
+            "Site": "Grupo Folklórico Sabor Latino",
+            "Area": "Northside",
+            "Address": "1815 W. 34th Avenue",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "1815 W. 34th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0517231,
+                39.6827115
+            ]
+        },
+        "properties":
+        {
+            "Site": "Denison Montessori",
+            "Area": "Southwest",
+            "Address": "1821 S. Yates Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "1821 S. Yates Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9934913,
+                39.7533561
+            ]
+        },
+        "properties":
+        {
+            "Site": "El Chapultepec",
+            "Area": "Eastside",
+            "Address": "1962 Market Street",
+            "Additional Notes": "Closed in 2021",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "1962 Market Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9934913,
+                39.7533561
+            ]
+        },
+        "properties":
+        {
+            "Site": "El Chapultepec",
+            "Area": "Eastside",
+            "Address": "1962 Market Street",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "1962 Market Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9921068,
+                39.7530131
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Casa de Manuel",
+            "Area": "Eastside",
+            "Address": "2010 Larimer Street, Original Location (no longer exists)",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2010 Larimer Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9918544,
+                39.7532573
+            ]
+        },
+        "properties":
+        {
+            "Site": "Johnnie’s Market",
+            "Area": "Eastside",
+            "Address": "2030 Larimer Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2030 Larimer Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.991346,
+                39.7529299
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Popular Food Company",
+            "Area": "Eastside",
+            "Address": "2033 Lawrence Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2033 Lawrence Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9917682,
+                39.7532976
+            ]
+        },
+        "properties":
+        {
+            "Site": "Los Compadres",
+            "Area": "Eastside",
+            "Address": "2034 Larimer Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2034 Larimer Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9913003,
+                39.7543139
+            ]
+        },
+        "properties":
+        {
+            "Site": "Mexico City",
+            "Area": "Eastside",
+            "Address": "2115 Larimer Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2115 Larimer Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0125953,
+                39.6790076
+            ]
+        },
+        "properties":
+        {
+            "Site": "Sam’s Kustom Hydraulics",
+            "Area": "Southwest",
+            "Address": "2165 W. Evans Avenue",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "2165 W. Evans Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9876261,
+                39.7525179
+            ]
+        },
+        "properties":
+        {
+            "Site": "KFSC Radio",
+            "Area": "Eastside",
+            "Address": "2185 Broadway, second location",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2185 Broadway Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0254923,
+                39.7159016
+            ]
+        },
+        "properties":
+        {
+            "Site": "Grandpa’s Burger Haven",
+            "Area": "Westside",
+            "Address": "23 S. Federal Boulevard",
+            "Additional Notes": "Lowrider events",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "23 S. Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9155471,
+                39.7525271
+            ]
+        },
+        "properties":
+        {
+            "Site": "Rodolfo and Geraldine Gonzales Residence",
+            "Area": "Eastside",
+            "Address": "2385 Leyden Street",
+            "Additional Notes": "Not shown within map boundaries",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "2385 Leyden Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0199714,
+                39.7618252
+            ]
+        },
+        "properties":
+        {
+            "Site": "Panaderia Rosales",
+            "Area": "Northside",
+            "Address": "2636 W. 32nd Avenue",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2636 W. 32nd Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0202467,
+                39.7618863
+            ]
+        },
+        "properties":
+        {
+            "Site": "Holiday Theater",
+            "Area": "Northside",
+            "Address": "2644 W. 32nd Avenue",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "2644 W. 32nd Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0202467,
+                39.7618863
+            ]
+        },
+        "properties":
+        {
+            "Site": "Holiday Theater",
+            "Area": "Northside",
+            "Address": "2644 W. 32nd Avenue",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "2644 W. 32nd Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.95545,
+                39.7840429
+            ]
+        },
+        "properties":
+        {
+            "Site": "Our Lady of Grace",
+            "Area": "Eastside",
+            "Address": "2645 E. 48th Avenue",
+            "Additional Notes": "",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "2645 E. 48th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0235147,
+                39.7726517
+            ]
+        },
+        "properties":
+        {
+            "Site": "Columbian Elementary School",
+            "Area": "Northside",
+            "Address": "2925 W. 40th Street",
+            "Additional Notes": "Field Eligible – 1983",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "2925 W. 40th Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0427606,
+                39.7115369
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Cajetan Catholic Parish",
+            "Area": "Westside",
+            "Address": "299 S. Raleigh Street",
+            "Additional Notes": "Current Location",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "299 S. Raleigh Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0427606,
+                39.7115369
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Cajetan Catholic Parish",
+            "Area": "Westside",
+            "Address": "299 South Raleigh Street",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "299 South Raleigh Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0248074,
+                39.7213094
+            ]
+        },
+        "properties":
+        {
+            "Site": "Columbine Steak House",
+            "Area": "Westside",
+            "Address": "300 Federal Boulevard",
+            "Additional Notes": "Lowrider events",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "300 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9619244,
+                39.7604752
+            ]
+        },
+        "properties":
+        {
+            "Site": "Rodolfo and Geraldine Gonzales Residence",
+            "Area": "Eastside",
+            "Address": "3050 Vine Street 2385 Leyden Street",
+            "Additional Notes": "Not shown within map boundaries",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "3050 Vine Street 2385 Leyden Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9780894,
+                39.7636979
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Casa de Manuel",
+            "Area": "Eastside",
+            "Address": "3158 Larimer Street (current location)",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "3158 Larimer Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0110356,
+                39.7618608
+            ]
+        },
+        "properties":
+        {
+            "Site": "Tejon Drugs",
+            "Area": "Northside",
+            "Address": "3158 Tejon Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "3158 Tejon Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9705787,
+                39.7640869
+            ]
+        },
+        "properties":
+        {
+            "Site": "KFSC Radio",
+            "Area": "Eastside",
+            "Address": "3340 Lafayette Street, original location",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "3340 Lafayette Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0066607,
+                39.7647889
+            ]
+        },
+        "properties":
+        {
+            "Site": "Chávez (César E.) Park",
+            "Area": "Northside Westside",
+            "Address": "3401 Pecos Street",
+            "Additional Notes": "Chicano Movement, activism current location?",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "3401 Pecos Street  Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0066607,
+                39.7647889
+            ]
+        },
+        "properties":
+        {
+            "Site": "Saint Patrick’s School/ Escuela Guadalupe/Call for Action Center/Chicano Humanities & Arts Council (CHAC)",
+            "Area": "Northside",
+            "Address": "3401 Pecos Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "3401 Pecos Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0066607,
+                39.7647889
+            ]
+        },
+        "properties":
+        {
+            "Site": "Call for Action Center/ Chicano Humanities & Arts Council (CHAC)/Saint Patrick’s School",
+            "Area": "Northside",
+            "Address": "3401 Pecos Street",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "3401 Pecos Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0265994,
+                39.710451
+            ]
+        },
+        "properties":
+        {
+            "Site": "Mi Casa Resource Center",
+            "Area": "Westside",
+            "Address": "345 S. Grove Street",
+            "Additional Notes": "Current Location; Includes Salazar Center for Family Prosperity",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "345 S. Grove Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9705103,
+                39.7662413
+            ]
+        },
+        "properties":
+        {
+            "Site": "Annunciation Catholic School",
+            "Area": "Eastside",
+            "Address": "3536 Lafayette Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "3536 Lafayette Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9705546,
+                39.7665549
+            ]
+        },
+        "properties":
+        {
+            "Site": "Annunciation Catholic School",
+            "Area": "Eastside",
+            "Address": "3546 Lafayette Street",
+            "Additional Notes": "",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "3546 Lafayette Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0115909,
+                39.7664218
+            ]
+        },
+        "properties":
+        {
+            "Site": "Tamales by La Casita",
+            "Area": "Northside",
+            "Address": "3561 Tejon Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "3561 Tejon Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0115909,
+                39.7664218
+            ]
+        },
+        "properties":
+        {
+            "Site": "Tamales by La Casita",
+            "Area": "Northside",
+            "Address": "3561 Tejon Street",
+            "Additional Notes": "2005 building extant",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "3561 Tejon Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0346007,
+                39.7179491
+            ]
+        },
+        "properties":
+        {
+            "Site": "Ross-Barnum Branch Library",
+            "Area": "Westside",
+            "Address": "3570 W. 1st Avenue",
+            "Additional Notes": "Officially Eligible for the National Register– 2014",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "3570 W. 1st Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0360161,
+                39.6958195
+            ]
+        },
+        "properties":
+        {
+            "Site": "Garfield Lake Park",
+            "Area": "Southwest",
+            "Address": "3600 W. Mississippi Avenue",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "3600 W. Mississippi Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0349431,
+                39.7386773
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Luz Del Mundo Iglesia Del Dios Vivo Columna Y Apoyo De La Verdad",
+            "Area": "Westside",
+            "Address": "3607 W. 14th Avenue",
+            "Additional Notes": "",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "3607 W. 14th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0114083,
+                39.7670757
+            ]
+        },
+        "properties":
+        {
+            "Site": "Papa Rocks/Lechuga’s",
+            "Area": "Northside",
+            "Address": "3609 Tejon Street",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "3609 Tejon Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0114083,
+                39.7670757
+            ]
+        },
+        "properties":
+        {
+            "Site": "Papa Rocks/Lechuga’s",
+            "Area": "Northside",
+            "Address": "3609 Tejon Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "3609 Tejon Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0044011,
+                39.7678616
+            ]
+        },
+        "properties":
+        {
+            "Site": "Pirate: A Contemporary Art Oasis",
+            "Area": "Northside",
+            "Address": "3655 Navajo Street",
+            "Additional Notes": "Former Location",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "3655 Navajo Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0044011,
+                39.7678616
+            ]
+        },
+        "properties":
+        {
+            "Site": "Pirate: A Contemporary Art Oasis",
+            "Area": "Northside",
+            "Address": "3655 Navajo Street",
+            "Additional Notes": "Former Location",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "3655 Navajo Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0152887,
+                39.7677841
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Academia Sandoval (Sandoval Elementary)",
+            "Area": "Northside",
+            "Address": "3655 Wyandot Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "3655 Wyandot Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0280832,
+                39.7227185
+            ]
+        },
+        "properties":
+        {
+            "Site": "Barnum Park",
+            "Area": "Westside",
+            "Address": "370 Hooker Street",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "370 Hooker Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0048349,
+                39.7689651
+            ]
+        },
+        "properties":
+        {
+            "Site": "SPMDTU Meeting Hall",
+            "Area": "Northside",
+            "Address": "3758 Osage Street",
+            "Additional Notes": "Location needs to be confirmed",
+            "Category": "Labor-related",
+            "": "",
+            "address_for_geocoding": "3758 Osage Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9713318,
+                39.769361
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Charles Recreation Center",
+            "Area": "Eastside",
+            "Address": "3777 Lafayette Street",
+            "Additional Notes": "On land of former boyhood home of Rodolfo “Corky” Gonzales",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "3777 Lafayette Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0372945,
+                39.7027426
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Anthony of Padua",
+            "Area": "Southwest",
+            "Address": "3801 W. Ohio Avenue",
+            "Additional Notes": "",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "3801 W. Ohio Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0372945,
+                39.7027426
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Anthony of Padua",
+            "Area": "Southwest",
+            "Address": "3801 W. Ohio Avenue",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "3801 W. Ohio Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0100959,
+                39.7698562
+            ]
+        },
+        "properties":
+        {
+            "Site": "Troy Chavez Memorial Peace Garden",
+            "Area": "Northside",
+            "Address": "3825 Shoshone Street",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "3825 Shoshone Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0100959,
+                39.7698562
+            ]
+        },
+        "properties":
+        {
+            "Site": "Troy Chavez Memorial Peace Garden",
+            "Area": "Northside",
+            "Address": "3825 Shoshone Street",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "3825 Shoshone Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0114996,
+                39.772731
+            ]
+        },
+        "properties":
+        {
+            "Site": "Servicios de la Raza",
+            "Area": "Northside",
+            "Address": "4051 Tejon Street",
+            "Additional Notes": "Former location",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "4051 Tejon Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0437464,
+                39.7729812
+            ]
+        },
+        "properties":
+        {
+            "Site": "Chávez (César E.) Park",
+            "Area": "Northside Westside",
+            "Address": "4134 N. Tennyson Street",
+            "Additional Notes": "Chicano Movement, activism Original Location",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "4134 N. Tennyson Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0437464,
+                39.7729812
+            ]
+        },
+        "properties":
+        {
+            "Site": "Chavez (Cesar E.) Park",
+            "Area": "Northside",
+            "Address": "4134 N. Tennyson Street",
+            "Additional Notes": "",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "4134 N. Tennyson Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0247304,
+                39.7743748
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Catherine of Siena",
+            "Area": "",
+            "Address": "4200 Federal Boulevard",
+            "Additional Notes": "Officially Eligible for the National Register – 2001",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "4200 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0454675,
+                39.7761173
+            ]
+        },
+        "properties":
+        {
+            "Site": "Holy Family Church",
+            "Area": "Northside",
+            "Address": "4377 Utica Street",
+            "Additional Notes": "",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "4377 Utica Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0045152,
+                39.7775478
+            ]
+        },
+        "properties":
+        {
+            "Site": "Aztlán Recreation Center",
+            "Area": "Northside",
+            "Address": "4435 Navajo Street",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "4435 Navajo Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9825518,
+                39.778064
+            ]
+        },
+        "properties":
+        {
+            "Site": "St. Jacob’s Lodge Hall",
+            "Area": "Northside",
+            "Address": "4483 Logan Street",
+            "Additional Notes": "",
+            "Category": "Labor-related",
+            "": "",
+            "address_for_geocoding": "4483 Logan Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0459013,
+                39.7309297
+            ]
+        },
+        "properties":
+        {
+            "Site": "Juanita Nolasco Residences",
+            "Area": "Westside",
+            "Address": "4550 W. 9th Avenue",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "4550 W. 9th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9702685,
+                39.779002
+            ]
+        },
+        "properties":
+        {
+            "Site": "Denver Coliseum",
+            "Area": "Eastside",
+            "Address": "4600 Humboldt Street",
+            "Additional Notes": "Boxing",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "4600 Humboldt Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0534811,
+                39.7785794
+            ]
+        },
+        "properties":
+        {
+            "Site": "Lakeside Amusement Park",
+            "Area": "Northside",
+            "Address": "4601 Sheridan Boulevard",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "4601 Sheridan Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.047859,
+                39.7813028
+            ]
+        },
+        "properties":
+        {
+            "Site": "Berkeley Lake Park",
+            "Area": "Northside",
+            "Address": "4601 W. 46th Avenue",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "4601 W. 46th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9621129,
+                39.781672
+            ]
+        },
+        "properties":
+        {
+            "Site": "Valdez-Perry Branch Library",
+            "Area": "Eastside",
+            "Address": "4690 Vine Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "4690 Vine Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0011828,
+                39.7822763
+            ]
+        },
+        "properties":
+        {
+            "Site": "Good Americans Organization (GAO) Hall",
+            "Area": "Northside",
+            "Address": "4700 Lipan Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "4700 Lipan Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0487323,
+                39.7001878
+            ]
+        },
+        "properties":
+        {
+            "Site": "MGM’s Nightclub",
+            "Area": "Southwest",
+            "Address": "4801 Morrison Road",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "4801 Morrison Road Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0487323,
+                39.7001878
+            ]
+        },
+        "properties":
+        {
+            "Site": "MGM’s Nightclub",
+            "Area": "Southwest",
+            "Address": "4801 Morrison Road",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "4801 Morrison Road Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9811218,
+                39.7781689
+            ]
+        },
+        "properties":
+        {
+            "Site": "Emmanuel’s Bakery",
+            "Area": "Northside",
+            "Address": "500 E. 45th Avenue",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "500 E. 45th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0448054,
+                39.7077977
+            ]
+        },
+        "properties":
+        {
+            "Site": "Knapp Elementary School",
+            "Area": "Southwest",
+            "Address": "500 S Utica Street",
+            "Additional Notes": "Field Not Eligible for the National Register – 2001",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "500 S Utica Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.024933,
+                39.7881448
+            ]
+        },
+        "properties":
+        {
+            "Site": "Mr. James Beauty Salon",
+            "Area": "Northside",
+            "Address": "5038 Federal Boulevard",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "5038 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9966409,
+                39.7250219
+            ]
+        },
+        "properties":
+        {
+            "Site": "Lucia Lucero residence",
+            "Area": "Westside",
+            "Address": "547 Galapago Street",
+            "Additional Notes": "Mrs. Lucero helped provide shelter to young LGBTQ Latinos",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "547 Galapago Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9941853,
+                39.7157063
+            ]
+        },
+        "properties":
+        {
+            "Site": "La Familia Recreation Center",
+            "Area": "Westside",
+            "Address": "55 S. Elati Street",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "55 S. Elati Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9966181,
+                39.7253991
+            ]
+        },
+        "properties":
+        {
+            "Site": "Mi Casa Resource Center",
+            "Area": "Westside",
+            "Address": "571 Galapago Street",
+            "Additional Notes": "Original Location",
+            "Category": "Chicano Movement or Crusade for Justice",
+            "": "",
+            "address_for_geocoding": "571 Galapago Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9960703,
+                39.7228716
+            ]
+        },
+        "properties":
+        {
+            "Site": "Flores (Hector M.) Park",
+            "Area": "Westside",
+            "Address": "621 W. 4th Avenue",
+            "Additional Notes": "Mini (pocket) park",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "621 W. 4th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9878043,
+                39.7477707
+            ]
+        },
+        "properties":
+        {
+            "Site": "Holy Ghost Church",
+            "Area": "Eastside",
+            "Address": "633 19th Street",
+            "Additional Notes": "",
+            "Category": "Religious",
+            "": "",
+            "address_for_geocoding": "633 19th Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.981099,
+                39.703568
+            ]
+        },
+        "properties":
+        {
+            "Site": "Lincoln Elementary and Montessori School",
+            "Area": "South Denver",
+            "Address": "710 S. Pennsylvania Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "710 S. Pennsylvania Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9968088,
+                39.7290301
+            ]
+        },
+        "properties":
+        {
+            "Site": "8th Avenue Barbershop",
+            "Area": "Westside",
+            "Address": "715 W. 8th Avenue",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "715 W. 8th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9988656,
+                39.7277691
+            ]
+        },
+        "properties":
+        {
+            "Site": "Su Teatro Cultural and Performing Arts Center/ Denver Civic Theatre",
+            "Area": "Westside",
+            "Address": "721 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "721 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9983527,
+                39.7277702
+            ]
+        },
+        "properties":
+        {
+            "Site": "El Noa Noa",
+            "Area": "Westside",
+            "Address": "722 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "722 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.036427,
+                39.7179443
+            ]
+        },
+        "properties":
+        {
+            "Site": "El Centro de las Familias Mental Health Center",
+            "Area": "Westside",
+            "Address": "75 Meade Street",
+            "Additional Notes": "Original location – slated to be demolished",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "75 Meade Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9959334,
+                39.7286008
+            ]
+        },
+        "properties":
+        {
+            "Site": "Del Pueblo/Girls Athletic Leadership Schools",
+            "Area": "West Side",
+            "Address": "750 Galapago Street",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "750 Galapago Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.999052,
+                39.728325
+            ]
+        },
+        "properties":
+        {
+            "Site": "Joe’s Buffet",
+            "Area": "Westside",
+            "Address": "753 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "753 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9978049,
+                39.7242975
+            ]
+        },
+        "properties":
+        {
+            "Site": "Casita Esperanza Health Station",
+            "Area": "Westside",
+            "Address": "801 W. 5th Avenue",
+            "Additional Notes": "Closed in 1979",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "801 W. 5th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.998444,
+                39.7296487
+            ]
+        },
+        "properties":
+        {
+            "Site": "Jiggs Barbershop",
+            "Area": "Westside",
+            "Address": "836 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "836 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9589019,
+                39.7301819
+            ]
+        },
+        "properties":
+        {
+            "Site": "Congress Park",
+            "Area": "In Denver, outside of map boundaries",
+            "Address": "850 N. Josephine Street",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "850 N. Josephine Street Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9989918,
+                39.7300491
+            ]
+        },
+        "properties":
+        {
+            "Site": "Museo de las Americas",
+            "Area": "Westside",
+            "Address": "861 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "861 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.998832,
+                39.7303655
+            ]
+        },
+        "properties":
+        {
+            "Site": "West Side Coalition Office",
+            "Area": "Westside",
+            "Address": "877 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "877 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0076422,
+                39.7453106
+            ]
+        },
+        "properties":
+        {
+            "Site": "Auraria Higher Education Center",
+            "Area": "Westside",
+            "Address": "890 Auraria Parkway",
+            "Additional Notes": "",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "890 Auraria Parkway Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0076422,
+                39.7453106
+            ]
+        },
+        "properties":
+        {
+            "Site": "Metropolitan State University of Denver",
+            "Area": "Westside",
+            "Address": "890 Auraria Parkway",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "890 Auraria Parkway Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0285283,
+                39.6998022
+            ]
+        },
+        "properties":
+        {
+            "Site": "Kepner Middle School",
+            "Area": "Southwest",
+            "Address": "911 S Hazel Court",
+            "Additional Notes": "Field Not Eligible for the\nNational Register – 2001",
+            "Category": "Educational",
+            "": "",
+            "address_for_geocoding": "911 S Hazel Court Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9996536,
+                39.7338805
+            ]
+        },
+        "properties":
+        {
+            "Site": "Centro Cultural",
+            "Area": "Westside",
+            "Address": "935 W. 11th Avenue",
+            "Additional Notes": "",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "935 W. 11th Avenue Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9984225,
+                39.7317392
+            ]
+        },
+        "properties":
+        {
+            "Site": "Timeo’s Theater Bar",
+            "Area": "Westside",
+            "Address": "966 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "966 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9983527,
+                39.7318662
+            ]
+        },
+        "properties":
+        {
+            "Site": "Aztlán/Santa Fe Theater",
+            "Area": "Westside",
+            "Address": "974 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Commercial",
+            "": "",
+            "address_for_geocoding": "974 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9983527,
+                39.7318662
+            ]
+        },
+        "properties":
+        {
+            "Site": "Aztlán/Santa Fe Theater",
+            "Area": "Westside",
+            "Address": "974 Santa Fe Drive",
+            "Additional Notes": "",
+            "Category": "Arts",
+            "": "",
+            "address_for_geocoding": "974 Santa Fe Drive Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -105.0247846,
+                39.7326744
+            ]
+        },
+        "properties":
+        {
+            "Site": "Sam Sandos Westside Family Health Center",
+            "Area": "Westside",
+            "Address": "990 Federal Boulevard (former location)",
+            "Additional Notes": "Current location Former location (no longer exists)",
+            "Category": "Neighborhood",
+            "": "",
+            "address_for_geocoding": "990 Federal Boulevard Denver, CO"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry":
+        {
+            "type": "Point",
+            "coordinates": [
+                -104.9963698,
+                39.7225298
+            ]
+        },
+        "properties":
+        {
+            "Site": "Hector Flores Park",
+            "Area": "Westside",
+            "Address": "Galapago St. and W. 4th Ave.",
+            "Additional Notes": "",
+            "Category": "Political",
+            "": "",
+            "address_for_geocoding": "Galapago St. and W. 4th Ave. Denver, CO"
+        }
+    }]
+}

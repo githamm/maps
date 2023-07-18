@@ -1,0 +1,1461 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0150936,39.76745558 ]
+    },
+    "properties": {
+    "school_name":"Academia Ana Marie Sandoval",
+    "enrollment_2010":249,
+    "enrollment_2015":294,
+    "enrollment_2020":268
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8498704,39.78211942 ]
+    },
+    "properties": {
+    "school_name":"Academy 360",
+    "enrollment_2010":null,
+    "enrollment_2015":131,
+    "enrollment_2020":145
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9716663,39.6799454 ]
+    },
+    "properties": {
+    "school_name":"Asbury Elementary School",
+    "enrollment_2010":330,
+    "enrollment_2015":347,
+    "enrollment_2020":315
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8983248,39.7463877 ]
+    },
+    "properties": {
+    "school_name":"Ashley Elementary School",
+    "enrollment_2010":313,
+    "enrollment_2015":358,
+    "enrollment_2020":264
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0289685,39.71765973 ]
+    },
+    "properties": {
+    "school_name":"Barnum Elementary School",
+    "enrollment_2010":428,
+    "enrollment_2015":457,
+    "enrollment_2020":311
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.017773,39.7862304 ]
+    },
+    "properties": {
+    "school_name":"Beach Court Elementary School",
+    "enrollment_2010":322,
+    "enrollment_2015":248,
+    "enrollment_2020":212
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9296874,39.66391907 ]
+    },
+    "properties": {
+    "school_name":"Bradley International School",
+    "enrollment_2010":461,
+    "enrollment_2015":438,
+    "enrollment_2020":478
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.95733,39.72199 ]
+    },
+    "properties": {
+    "school_name":"Bromwell Elementary School",
+    "enrollment_2010":317,
+    "enrollment_2015":300,
+    "enrollment_2020":284
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0344321,39.75448621 ]
+    },
+    "properties": {
+    "school_name":"Brown International Academy",
+    "enrollment_2010":456,
+    "enrollment_2015":572,
+    "enrollment_2020":545
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0086096,39.76763462 ]
+    },
+    "properties": {
+    "school_name":"Bryant Webster Dual Language ECE-8 School",
+    "enrollment_2010":292,
+    "enrollment_2015":263,
+    "enrollment_2020":197
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9236728,39.7171703 ]
+    },
+    "properties": {
+    "school_name":"Carson Elementary School",
+    "enrollment_2010":367,
+    "enrollment_2015":407,
+    "enrollment_2020":428
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0348034,39.70134463 ]
+    },
+    "properties": {
+    "school_name":"Castro Elementary School",
+    "enrollment_2010":616,
+    "enrollment_2015":528,
+    "enrollment_2020":319
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0407431,39.78168518 ]
+    },
+    "properties": {
+    "school_name":"Centennial A School for Expeditionary Learning",
+    "enrollment_2010":361,
+    "enrollment_2015":333,
+    "enrollment_2020":376
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0011376,39.7345533 ]
+    },
+    "properties": {
+    "school_name":"Center for Talent Development at Greenlee",
+    "enrollment_2010":373,
+    "enrollment_2015":297,
+    "enrollment_2020":234
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.033752,39.692182 ]
+    },
+    "properties": {
+    "school_name":"Charles M. Schenck (CMS) Community School",
+    "enrollment_2010":607,
+    "enrollment_2015":366,
+    "enrollment_2020":314
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.031187,39.74210249 ]
+    },
+    "properties": {
+    "school_name":"Cheltenham Elementary School",
+    "enrollment_2010":433,
+    "enrollment_2015":381,
+    "enrollment_2020":250
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9691745,39.7626269 ]
+    },
+    "properties": {
+    "school_name":"Cole Arts and Science Academy",
+    "enrollment_2010":450,
+    "enrollment_2015":468,
+    "enrollment_2020":266
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0438445,39.7411387 ]
+    },
+    "properties": {
+    "school_name":"Colfax Elementary School",
+    "enrollment_2010":312,
+    "enrollment_2015":289,
+    "enrollment_2020":208
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0235535,39.6680406 ]
+    },
+    "properties": {
+    "school_name":"College View Elementary School",
+    "enrollment_2010":379,
+    "enrollment_2015":396,
+    "enrollment_2020":308
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0234302,39.77235058 ]
+    },
+    "properties": {
+    "school_name":"Columbian Elementary School",
+    "enrollment_2010":268,
+    "enrollment_2015":240,
+    "enrollment_2020":188
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9568401,39.758218 ]
+    },
+    "properties": {
+    "school_name":"Columbine Elementary School",
+    "enrollment_2010":232,
+    "enrollment_2015":198,
+    "enrollment_2020":219
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9495848,39.6887811 ]
+    },
+    "properties": {
+    "school_name":"Cory Elementary School",
+    "enrollment_2010":420,
+    "enrollment_2015":382,
+    "enrollment_2020":395
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0457089,39.73290988 ]
+    },
+    "properties": {
+    "school_name":"Cowell Elementary School",
+    "enrollment_2010":460,
+    "enrollment_2015":402,
+    "enrollment_2020":275
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9463747,39.6885167 ]
+    },
+    "properties": {
+    "school_name":"Creativity Challenge Community",
+    "enrollment_2010":null,
+    "enrollment_2015":279,
+    "enrollment_2020":307
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8159754,39.79318425 ]
+    },
+    "properties": {
+    "school_name":"DCIS at Ford",
+    "enrollment_2010":null,
+    "enrollment_2015":453,
+    "enrollment_2020":447
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0512573,39.6832413 ]
+    },
+    "properties": {
+    "school_name":"Denison Montessori School",
+    "enrollment_2010":310,
+    "enrollment_2015":278,
+    "enrollment_2020":256
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.993985,39.7206324 ]
+    },
+    "properties": {
+    "school_name":"Denver Center for International Studies at Fairmont",
+    "enrollment_2010":null,
+    "enrollment_2015":354,
+    "enrollment_2020":311
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9090752,39.7067576 ]
+    },
+    "properties": {
+    "school_name":"Denver Green School Southeast",
+    "enrollment_2010":144,
+    "enrollment_2015":372,
+    "enrollment_2020":373
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9002047,39.72903428 ]
+    },
+    "properties": {
+    "school_name":"Denver Language School",
+    "enrollment_2010":242,
+    "enrollment_2015":619,
+    "enrollment_2020":676
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9737314,39.7299702 ]
+    },
+    "properties": {
+    "school_name":"Dora Moore ECE-8 School",
+    "enrollment_2010":325,
+    "enrollment_2015":260,
+    "enrollment_2020":278
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0450207,39.6724163 ]
+    },
+    "properties": {
+    "school_name":"Doull Elementary School",
+    "enrollment_2010":433,
+    "enrollment_2015":445,
+    "enrollment_2020":298
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9857172,39.7457833 ]
+    },
+    "properties": {
+    "school_name":"Downtown Denver Expeditionary School",
+    "enrollment_2010":null,
+    "enrollment_2015":359,
+    "enrollment_2020":302
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0281294,39.730699 ]
+    },
+    "properties": {
+    "school_name":"Eagleton Elementary School",
+    "enrollment_2010":362,
+    "enrollment_2015":387,
+    "enrollment_2020":264
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.039907,39.764869 ]
+    },
+    "properties": {
+    "school_name":"Edison Elementary School",
+    "enrollment_2010":534,
+    "enrollment_2015":533,
+    "enrollment_2020":492
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9325402,39.6865425 ]
+    },
+    "properties": {
+    "school_name":"Ellis Elementary School",
+    "enrollment_2010":489,
+    "enrollment_2015":429,
+    "enrollment_2020":284
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8241845,39.7911622 ]
+    },
+    "properties": {
+    "school_name":"Escalante-Biggs Academy",
+    "enrollment_2010":null,
+    "enrollment_2015":165,
+    "enrollment_2020":96
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.020407,39.7342749 ]
+    },
+    "properties": {
+    "school_name":"Fairview Elementary School",
+    "enrollment_2010":231,
+    "enrollment_2015":203,
+    "enrollment_2020":183
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8333868,39.77608133 ]
+    },
+    "properties": {
+    "school_name":"Farrell B. Howell ECE-8 School",
+    "enrollment_2010":473,
+    "enrollment_2015":505,
+    "enrollment_2020":338
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.7362402,39.78953817 ]
+    },
+    "properties": {
+    "school_name":"Florida Pitt-Waller ECE-8 School",
+    "enrollment_2010":642,
+    "enrollment_2015":568,
+    "enrollment_2020":458
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0477246,39.6888558 ]
+    },
+    "properties": {
+    "school_name":"Force Elementary School",
+    "enrollment_2010":502,
+    "enrollment_2015":529,
+    "enrollment_2020":332
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9863618,39.7769553 ]
+    },
+    "properties": {
+    "school_name":"Garden Place Academy",
+    "enrollment_2010":321,
+    "enrollment_2015":336,
+    "enrollment_2020":265
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.012938,39.69077164 ]
+    },
+    "properties": {
+    "school_name":"Godsman Elementary School",
+    "enrollment_2010":417,
+    "enrollment_2015":517,
+    "enrollment_2020":255
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0155157,39.69788574 ]
+    },
+    "properties": {
+    "school_name":"Goldrick Elementary School",
+    "enrollment_2010":559,
+    "enrollment_2015":530,
+    "enrollment_2020":298
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0643197,39.6174524 ]
+    },
+    "properties": {
+    "school_name":"Grant Ranch ECE-8 School",
+    "enrollment_2010":454,
+    "enrollment_2015":427,
+    "enrollment_2020":157
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.7484316,39.7735048 ]
+    },
+    "properties": {
+    "school_name":"Green Valley Elementary School",
+    "enrollment_2010":530,
+    "enrollment_2015":657,
+    "enrollment_2020":606
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0316796,39.6675875 ]
+    },
+    "properties": {
+    "school_name":"Gust Elementary School",
+    "enrollment_2010":502,
+    "enrollment_2015":646,
+    "enrollment_2020":513
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9182016,39.7595149 ]
+    },
+    "properties": {
+    "school_name":"Hallett Academy",
+    "enrollment_2010":298,
+    "enrollment_2015":266,
+    "enrollment_2020":214
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.7609577,39.79523294 ]
+    },
+    "properties": {
+    "school_name":"Highline Academy Northeast",
+    "enrollment_2010":null,
+    "enrollment_2015":205,
+    "enrollment_2020":488
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9306904,39.6769947 ]
+    },
+    "properties": {
+    "school_name":"Highline Academy Southeast",
+    "enrollment_2010":343,
+    "enrollment_2015":323,
+    "enrollment_2020":308
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8916598,39.65776006 ]
+    },
+    "properties": {
+    "school_name":"Holm Elementary School",
+    "enrollment_2010":551,
+    "enrollment_2015":484,
+    "enrollment_2020":428
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9585798,39.7687288 ]
+    },
+    "properties": {
+    "school_name":"International Academy of Denver at Harrington",
+    "enrollment_2010":359,
+    "enrollment_2015":324,
+    "enrollment_2020":133
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8576231,39.7554747 ]
+    },
+    "properties": {
+    "school_name":"Isabella Bird Community School",
+    "enrollment_2010":null,
+    "enrollment_2015":410,
+    "enrollment_2020":467
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.867553,39.65887828 ]
+    },
+    "properties": {
+    "school_name":"Joe Shoemaker School",
+    "enrollment_2010":null,
+    "enrollment_2015":298,
+    "enrollment_2020":393
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8419588,39.7933266 ]
+    },
+    "properties": {
+    "school_name":"John H. Amesse Elementary",
+    "enrollment_2010":526,
+    "enrollment_2015":488,
+    "enrollment_2020":332
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0294763,39.68372537 ]
+    },
+    "properties": {
+    "school_name":"Johnson Elementary School",
+    "enrollment_2010":385,
+    "enrollment_2015":387,
+    "enrollment_2020":272
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0413184,39.6341646 ]
+    },
+    "properties": {
+    "school_name":"Kaiser Elementary School",
+    "enrollment_2010":259,
+    "enrollment_2015":315,
+    "enrollment_2020":228
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.7779343,39.78041974 ]
+    },
+    "properties": {
+    "school_name":"KIPP Northeast Elementary",
+    "enrollment_2010":null,
+    "enrollment_2015":156,
+    "enrollment_2020":452
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0121813,39.7096955 ]
+    },
+    "properties": {
+    "school_name":"KIPP Sunshine Peak Academy",
+    "enrollment_2010":103,
+    "enrollment_2015":97,
+    "enrollment_2020":63
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0458952,39.70791371 ]
+    },
+    "properties": {
+    "school_name":"Knapp Elementary School",
+    "enrollment_2010":617,
+    "enrollment_2015":592,
+    "enrollment_2020":383
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0396306,39.6758585 ]
+    },
+    "properties": {
+    "school_name":"Kunsmiller Creative Arts Academy",
+    "enrollment_2010":302,
+    "enrollment_2015":348,
+    "enrollment_2020":236
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8028805,39.7939061 ]
+    },
+    "properties": {
+    "school_name":"Lena Archuleta Elementary School",
+    "enrollment_2010":658,
+    "enrollment_2015":564,
+    "enrollment_2020":463
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9810204,39.7035569 ]
+    },
+    "properties": {
+    "school_name":"Lincoln Elementary School",
+    "enrollment_2010":270,
+    "enrollment_2015":298,
+    "enrollment_2020":273
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8964184,39.7128417 ]
+    },
+    "properties": {
+    "school_name":"Lowry Elementary School",
+    "enrollment_2010":494,
+    "enrollment_2015":470,
+    "enrollment_2020":473
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8178671,39.7869882 ]
+    },
+    "properties": {
+    "school_name":"Marie L. Greenwood Academy",
+    "enrollment_2010":563,
+    "enrollment_2015":443,
+    "enrollment_2020":273
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.7652978,39.77226667 ]
+    },
+    "properties": {
+    "school_name":"Marrama Elementary School",
+    "enrollment_2010":516,
+    "enrollment_2015":535,
+    "enrollment_2020":468
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0114655,39.7088543 ]
+    },
+    "properties": {
+    "school_name":"Mathematics and Science Leadership Academy",
+    "enrollment_2010":179,
+    "enrollment_2015":237,
+    "enrollment_2020":157
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8234574,39.7833507 ]
+    },
+    "properties": {
+    "school_name":"Maxwell Elementary School",
+    "enrollment_2010":459,
+    "enrollment_2015":486,
+    "enrollment_2020":568
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8380301,39.7803161 ]
+    },
+    "properties": {
+    "school_name":"McGlone Academy",
+    "enrollment_2010":494,
+    "enrollment_2015":666,
+    "enrollment_2020":605
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9838477,39.6938056 ]
+    },
+    "properties": {
+    "school_name":"McKinley-Thatcher Elementary School",
+    "enrollment_2010":203,
+    "enrollment_2015":149,
+    "enrollment_2020":198
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.921202,39.6984129 ]
+    },
+    "properties": {
+    "school_name":"McMeen Elementary School",
+    "enrollment_2010":587,
+    "enrollment_2015":613,
+    "enrollment_2020":497
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8475429,39.78595209 ]
+    },
+    "properties": {
+    "school_name":"Monarch Montessori",
+    "enrollment_2010":null,
+    "enrollment_2015":256,
+    "enrollment_2020":209
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.909977,39.733539 ]
+    },
+    "properties": {
+    "school_name":"Montclair School of Academics and Enrichment",
+    "enrollment_2010":456,
+    "enrollment_2015":429,
+    "enrollment_2020":320
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0319647,39.70755034 ]
+    },
+    "properties": {
+    "school_name":"Munroe Elementary School",
+    "enrollment_2010":500,
+    "enrollment_2015":542,
+    "enrollment_2020":375
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0460392,39.72183635 ]
+    },
+    "properties": {
+    "school_name":"Newlon Elementary School",
+    "enrollment_2010":543,
+    "enrollment_2015":524,
+    "enrollment_2020":291
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8192529,39.77852147 ]
+    },
+    "properties": {
+    "school_name":"Oakland Elementary",
+    "enrollment_2010":null,
+    "enrollment_2015":402,
+    "enrollment_2020":240
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9120399,39.7484044 ]
+    },
+    "properties": {
+    "school_name":"Odyssey School of Denver",
+    "enrollment_2010":150,
+    "enrollment_2015":156,
+    "enrollment_2020":186
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.765948,39.78616497 ]
+    },
+    "properties": {
+    "school_name":"Omar D Blair Charter School",
+    "enrollment_2010":574,
+    "enrollment_2015":558,
+    "enrollment_2020":418
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.924719,39.7319277 ]
+    },
+    "properties": {
+    "school_name":"Palmer Elementary School",
+    "enrollment_2010":306,
+    "enrollment_2015":236,
+    "enrollment_2020":211
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9293223,39.7451916 ]
+    },
+    "properties": {
+    "school_name":"Park Hill School",
+    "enrollment_2010":486,
+    "enrollment_2015":575,
+    "enrollment_2020":651
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9059452,39.6883538 ]
+    },
+    "properties": {
+    "school_name":"Place Bridge Academy",
+    "enrollment_2010":668,
+    "enrollment_2015":656,
+    "enrollment_2020":423
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9819991,39.7498185 ]
+    },
+    "properties": {
+    "school_name":"Polaris Elementary School",
+    "enrollment_2010":329,
+    "enrollment_2015":333,
+    "enrollment_2020":332
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9513723,39.7324542 ]
+    },
+    "properties": {
+    "school_name":"Reach Charter School",
+    "enrollment_2010":null,
+    "enrollment_2015":59,
+    "enrollment_2020":76
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.043716,39.76887484 ]
+    },
+    "properties": {
+    "school_name":"Rocky Mountain Prep: Berkeley",
+    "enrollment_2010":278,
+    "enrollment_2015":251,
+    "enrollment_2020":292
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8982692,39.67869566 ]
+    },
+    "properties": {
+    "school_name":"Rocky Mountain Prep: Creekside",
+    "enrollment_2010":null,
+    "enrollment_2015":381,
+    "enrollment_2020":517
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0277933,39.69981385 ]
+    },
+    "properties": {
+    "school_name":"Rocky Mountain Prep: Southwest",
+    "enrollment_2010":null,
+    "enrollment_2015":99,
+    "enrollment_2020":408
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.045377,39.659473 ]
+    },
+    "properties": {
+    "school_name":"Sabin World School",
+    "enrollment_2010":605,
+    "enrollment_2015":653,
+    "enrollment_2020":609
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8914358,39.64297439 ]
+    },
+    "properties": {
+    "school_name":"Samuels Elementary School",
+    "enrollment_2010":563,
+    "enrollment_2015":454,
+    "enrollment_2020":414
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0121706,39.6833579 ]
+    },
+    "properties": {
+    "school_name":"Schmitt Elementary School",
+    "enrollment_2010":346,
+    "enrollment_2015":360,
+    "enrollment_2020":214
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9557137,39.6619199 ]
+    },
+    "properties": {
+    "school_name":"Slavens K-8 School",
+    "enrollment_2010":363,
+    "enrollment_2015":469,
+    "enrollment_2020":450
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9182361,39.7667522 ]
+    },
+    "properties": {
+    "school_name":"Smith Elementary School",
+    "enrollment_2010":358,
+    "enrollment_2015":335,
+    "enrollment_2020":302
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.7806519,39.7846467 ]
+    },
+    "properties": {
+    "school_name":"SOAR at Green Valley Ranch",
+    "enrollment_2010":235,
+    "enrollment_2015":452,
+    "enrollment_2020":453
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9118399,39.6481114 ]
+    },
+    "properties": {
+    "school_name":"Southmoor Elementary School",
+    "enrollment_2010":443,
+    "enrollment_2015":449,
+    "enrollment_2020":377
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9385777,39.7237506 ]
+    },
+    "properties": {
+    "school_name":"Steck Elementary School",
+    "enrollment_2010":344,
+    "enrollment_2015":342,
+    "enrollment_2020":316
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.932263,39.75927 ]
+    },
+    "properties": {
+    "school_name":"Stedman Elementary School",
+    "enrollment_2010":328,
+    "enrollment_2015":239,
+    "enrollment_2020":316
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9715665,39.7102351 ]
+    },
+    "properties": {
+    "school_name":"Steele Elementary School",
+    "enrollment_2010":439,
+    "enrollment_2015":477,
+    "enrollment_2020":463
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9490527,39.7045908 ]
+    },
+    "properties": {
+    "school_name":"Stephen Knight Center for Early Education",
+    "enrollment_2010":null,
+    "enrollment_2015":102,
+    "enrollment_2020":81
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0187456,39.6781904 ]
+    },
+    "properties": {
+    "school_name":"STRIVE Prep - Ruby Hill",
+    "enrollment_2010":null,
+    "enrollment_2015":261,
+    "enrollment_2020":465
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.956449,39.781049 ]
+    },
+    "properties": {
+    "school_name":"Swansea Elementary School",
+    "enrollment_2010":492,
+    "enrollment_2015":472,
+    "enrollment_2020":359
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8977182,39.764625 ]
+    },
+    "properties": {
+    "school_name":"Swigert International School",
+    "enrollment_2010":null,
+    "enrollment_2015":608,
+    "enrollment_2020":552
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9434966,39.7344088 ]
+    },
+    "properties": {
+    "school_name":"Teller Elementary School",
+    "enrollment_2010":389,
+    "enrollment_2015":451,
+    "enrollment_2020":478
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0626138,39.6607356 ]
+    },
+    "properties": {
+    "school_name":"Traylor Academy",
+    "enrollment_2010":543,
+    "enrollment_2015":482,
+    "enrollment_2020":342
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0034461,39.7736464 ]
+    },
+    "properties": {
+    "school_name":"Trevista at Horace Mann",
+    "enrollment_2010":396,
+    "enrollment_2015":286,
+    "enrollment_2020":289
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9507467,39.6747581 ]
+    },
+    "properties": {
+    "school_name":"University Park Elementary School",
+    "enrollment_2010":434,
+    "enrollment_2015":423,
+    "enrollment_2020":394
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9857706,39.7559634 ]
+    },
+    "properties": {
+    "school_name":"University Prep - Arapahoe St.",
+    "enrollment_2010":null,
+    "enrollment_2015":363,
+    "enrollment_2020":364
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9492384,39.7688546 ]
+    },
+    "properties": {
+    "school_name":"University Prep - Steele St.",
+    "enrollment_2010":294,
+    "enrollment_2015":228,
+    "enrollment_2020":363
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0185702,39.75867248 ]
+    },
+    "properties": {
+    "school_name":"Valdez Elementary School",
+    "enrollment_2010":281,
+    "enrollment_2015":283,
+    "enrollment_2020":342
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -105.0114992,39.7105199 ]
+    },
+    "properties": {
+    "school_name":"Valverde Elementary School",
+    "enrollment_2010":357,
+    "enrollment_2015":270,
+    "enrollment_2020":230
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8851984,39.7563275 ]
+    },
+    "properties": {
+    "school_name":"Westerly Creek Elementary",
+    "enrollment_2010":478,
+    "enrollment_2015":629,
+    "enrollment_2020":660
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.972661,39.752601 ]
+    },
+    "properties": {
+    "school_name":"Whittier ECE-8 School",
+    "enrollment_2010":209,
+    "enrollment_2015":219,
+    "enrollment_2020":142
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8832572,39.7481825 ]
+    },
+    "properties": {
+    "school_name":"William (Bill) Roberts ECE-8 School",
+    "enrollment_2010":565,
+    "enrollment_2015":615,
+    "enrollment_2020":639
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.8888353,39.78962364 ]
+    },
+    "properties": {
+    "school_name":"Willow Elementary School",
+    "enrollment_2010":null,
+    "enrollment_2015":345,
+    "enrollment_2020":524
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.9680758,39.7676639 ]
+    },
+    "properties": {
+    "school_name":"Wyatt Academy",
+    "enrollment_2010":498,
+    "enrollment_2015":342,
+    "enrollment_2020":183
+    }
+  }
+]
+}
